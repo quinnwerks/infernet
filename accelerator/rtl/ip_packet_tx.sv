@@ -49,7 +49,10 @@ module ip_packet_tx (
         end
     end
 
-    // Internal signal logic
+    // Exposed signals
+    logic [IP_ADDR_WIDTH-1:0]    accelerator_ip_address;
+    logic [MAC_ADDR_WIDTH-1:0]   accelerator_mac_address;
+       
     logic [IP_ADDR_WIDTH-1:0]    recipient_ip_address;
     logic [MAC_ADDR_WIDTH-1:0]   recipient_mac_address;
     logic [ACCEL_DATA_WIDTH-1:0] recipient_message;
@@ -61,6 +64,11 @@ module ip_packet_tx (
     logic                        mac_data_last;
     logic                        mac_data_first;
 
+    // Unexposed signals
+    logic [7:0] state_counter;
+    logic       state_counter_enable;
+    logic       state_counter_reset;
+
     always_comb begin
         ready_for_send = 'd0;
 
@@ -68,11 +76,15 @@ module ip_packet_tx (
         mac_data_valid = 'd0;
         mac_data_last = 'd0;
         mac_data_first = 'd0;
+        
+        state_counter_reset = 'd0;
+        state_counter_enable = 'd0;
 
     // TODO: impl logic :-)
     case(state)
         IDLE: begin
             ready_for_send = mac_data_ready;
+            state_counter_reset = 'd1;
 
             if (start_ip_txn
              && ready_for_send) begin
@@ -81,14 +93,43 @@ module ip_packet_tx (
         end
         SEND_ETH_HDR: begin
             ready_for_send = 'd0;
+            nextstate = SEND_ETH_HDR;
             if (mac_data_ready == 'd1) begin
                 mac_data_valid = 'd1;
+                state_counter_enable = 'd1;
+                case(state_counter)
+                'h0: mac_data_out = recipient_mac_address[47:40];                 
+                'h1: mac_data_out = recipient_mac_address[39:32];         
+                'h2: mac_data_out = recipient_mac_address[31:24];            
+                'h3: mac_data_out = recipient_mac_address[23:16];               
+                'h4: mac_data_out = recipient_mac_address[15: 8];               
+                'h5: mac_data_out = recipient_mac_address[ 8: 0];               
+                'h6: mac_data_out = accelerator_mac_address[47:40];
+                'h7: mac_data_out = accelerator_mac_address[39:32];
+                'h8: mac_data_out = accelerator_mac_address[31:24];                
+                'h9: mac_data_out = accelerator_mac_address[23:16];         
+                'hA: mac_data_out = accelerator_mac_address[15: 8];            
+                'hB: begin
+                     mac_data_out = accelerator_mac_address[ 8: 0];
+                     state_counter_reset = 'd1;
+                     state_counter_enable = 'd0;
+                     nextstate = SEND_IP_HDR;
+                end               
+                default: begin
+                     // Flag error.
+                     mac_data_last = 'd1;
+                     nextstate = IDLE;
+                end
+                endcase
             end
         end
     endcase
     end
 
     // Internal to external
+    assign accelerator_ip_address  = ACCELERATOR_IP_ADDRESS;
+    assign accelerator_mac_address = ACCELERATOR_MAC_ADDRESS;
+    
     assign recipient_ip_address  = RECIPIENT_IP_ADDRESS;
     assign recipient_message     = RECIPIENT_MESSAGE;
     assign recipient_mac_address = RECIPIENT_MAC_ADDRESS;
@@ -98,5 +139,31 @@ module ip_packet_tx (
     assign mac_data_ready        = MAC_DATA_READY;
     assign MAC_DATA_LAST         = mac_data_last;
     assign MAC_DATA_FIRST        = mac_data_first;
+    
+    counter state_counter_business_logic (
+        .CLK(aclk),
+        .RESET(state_counter_reset),
+        .ENABLE(state_counter_enable),
+        .VALUE(state_counter_reset)
+    );
 
+endmodule
+
+module counter #(parameter SIZE=8)(
+          input              CLK,
+          input              RESET,
+          input              ENABLE,
+          output  [SIZE-1:0] VALUE
+       );
+logic [SIZE-1:0] value;
+always_ff @ (posedge CLK or posedge RESET) begin
+    if (RESET) begin
+        value <= 'd0;
+    end
+    else if (ENABLE) begin
+        value <= value + 'd1;
+    end
+end
+
+assign VALUE = value;
 endmodule
