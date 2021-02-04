@@ -65,9 +65,19 @@ module ip_packet_tx (
     logic                        mac_data_first;
 
     // Unexposed signals
-    logic [7:0] state_counter;
-    logic       state_counter_enable;
-    logic       state_counter_reset;
+    logic [7:0]  state_counter;
+    logic        state_counter_enable;
+    logic        state_counter_reset;
+    logic [15:0] checksum;
+    
+    // Constants
+    localparam [ 7:0] ip_version = 'h45;
+    localparam [ 7:0] service_type = 'h00;
+    localparam [15:0] packet_length = 'd20 + 16; // header length + ceil(log2(data length))
+    localparam [15:0] identification = 'h0000;
+    localparam [15:0] flags_and_fragment = 'h0000;
+    localparam [ 7:0] time_to_live = 'h80;
+    localparam [ 7:0] protocol = 'hxx; // TODO
 
     always_comb begin
         ready_for_send = 'd0;
@@ -103,14 +113,14 @@ module ip_packet_tx (
                 'h2: mac_data_out = recipient_mac_address[31:24];            
                 'h3: mac_data_out = recipient_mac_address[23:16];               
                 'h4: mac_data_out = recipient_mac_address[15: 8];               
-                'h5: mac_data_out = recipient_mac_address[ 8: 0];               
+                'h5: mac_data_out = recipient_mac_address[ 7: 0];               
                 'h6: mac_data_out = accelerator_mac_address[47:40];
                 'h7: mac_data_out = accelerator_mac_address[39:32];
                 'h8: mac_data_out = accelerator_mac_address[31:24];                
                 'h9: mac_data_out = accelerator_mac_address[23:16];         
                 'hA: mac_data_out = accelerator_mac_address[15: 8];            
                 'hB: begin
-                     mac_data_out = accelerator_mac_address[ 8: 0];
+                     mac_data_out = accelerator_mac_address[ 7: 0];
                      state_counter_reset = 'd1;
                      state_counter_enable = 'd0;
                      nextstate = SEND_IP_HDR;
@@ -131,18 +141,18 @@ module ip_packet_tx (
                 mac_data_valid = 'd1;
                 state_counter_enable = 'd1;
                 case(state_counter)
-                    'h00: mac_data_out = 'h45; // ip v4, 5 words in header
-                    'h01: mac_data_out = 'h00; // service type
-                    'h02: mac_data_out = 'hxx; // TODO total length upper 8 bits
-                    'h03: mac_data_out = 'hxx; // total length lower 8 bits 
-                    'h04: mac_data_out = 'h00; // identification
-                    'h05: mac_data_out = 'h00; 
-                    'h06: mac_data_out = 'h00; // flags and fragment offset
-                    'h07: mac_data_out = 'h00; 
-                    'h08: mac_data_out = 'h00; // TODO: TTL (time to live)
-                    'h09: mac_data_out = 'h00; // TODO: protocol
-                    'h0A: mac_data_out = 'h00; // TODO: header checksum
-                    'h0B: mac_data_out = 'h00;
+                    'h00: mac_data_out = ip_version; // ip v4, 5 words in header
+                    'h01: mac_data_out = service_type; // service type
+                    'h02: mac_data_out = packet_length[15:8]; // TODO total length upper 8 bits
+                    'h03: mac_data_out = packet_length[ 7:0]; // total length lower 8 bits 
+                    'h04: mac_data_out = identification[15:8]; // identification
+                    'h05: mac_data_out = identification[ 7:0]; 
+                    'h06: mac_data_out = flags_and_fragment[15:8]; // flags and fragment offset
+                    'h07: mac_data_out = flags_and_fragment[ 7:0]; 
+                    'h08: mac_data_out = time_to_live; // TODO: TTL (time to live)
+                    'h09: mac_data_out = protocol; 
+                    'h0A: mac_data_out = checksum[15:8]; // header checksum
+                    'h0B: mac_data_out = checksum[ 7:0];
                     'h0C: mac_data_out = accelerator_ip_address[31:24];          
                     'h0D: mac_data_out = accelerator_ip_address[23:16];          
                     'h0E: mac_data_out = accelerator_ip_address[15:8];          
@@ -166,6 +176,26 @@ module ip_packet_tx (
             end
         end
         SEND_USER_DATA: begin
+            ready_for_send = 'd0;
+            nextstate = SEND_USER_DATA;
+            if(mac_data_ready == 'd1) begin
+                mac_data_valid = 'd1;
+                state_counter_enable = 'd1;
+                case(state_counter)
+                'h00: mac_data_out = {6'b000000, recipient_message[9:8]};
+                'h01: begin
+                      mac_data_last = 'd1;
+                      mac_data_out = recipient_message[7:0];
+                      state_counter_reset = 'd1;
+                      nextstate = IDLE;
+                end
+                default: begin
+                    mac_data_last = 'd1;
+                    state_counter_reset = 'd1;
+                    nextstate = IDLE;
+                end
+                endcase
+            end
         end
     endcase
     end
@@ -190,24 +220,47 @@ module ip_packet_tx (
         .ENABLE(state_counter_enable),
         .VALUE(state_counter_reset)
     );
+    
+    ipv4_checksum_calculator get_checksum(
+        .VERSION(ip_version),
+        .SERVICE_TYPE(service_type),
+        .LENGTH(packet_length),
+        .IDENTIFICATION(identification),
+        .FLAGS_AND_FRAGMENT(flags_and_fragment),
+        .TTL(time_to_live),
+        .PROTOCOL(protocol),
+        .SRC_IP_ADDRESS(accelerator_ip_address),
+        .DST_IP_ADDRESS(recipient_ip_address),
+        .CHECKSUM(checksum)    
+    );
 
 endmodule
 
-module counter #(parameter SIZE=8)(
-          input              CLK,
-          input              RESET,
-          input              ENABLE,
-          output  [SIZE-1:0] VALUE
-       );
-logic [SIZE-1:0] value;
-always_ff @ (posedge CLK or posedge RESET) begin
-    if (RESET) begin
-        value <= 'd0;
-    end
-    else if (ENABLE) begin
-        value <= value + 'd1;
-    end
-end
+module ipv4_checksum_calculator (
+    input  [ 7:0] VERSION,
+    input  [ 7:0] SERVICE_TYPE,
+    input  [15:0] LENGTH,
+    input  [15:0] IDENTIFICATION,
+    input  [15:0] FLAGS_AND_FRAGMENT,
+    input  [ 7:0] TTL,
+    input  [ 7:0] PROTOCOL,
+    input  [31:0] SRC_IP_ADDRESS,
+    input  [31:0] DST_IP_ADDRESS,
+    
+    output [15:0] CHECKSUM
+);
 
-assign VALUE = value;
+    logic [19:0] sum;
+    assign sum = {VERSION, SERVICE_TYPE} 
+               + LENGTH 
+               + IDENTIFICATION 
+               + FLAGS_AND_FRAGMENT 
+               + {TTL, PROTOCOL} 
+               + SRC_IP_ADDRESS[31:16] 
+               + SRC_IP_ADDRESS[15: 0]
+               + DST_IP_ADDRESS[31:16]
+               + DST_IP_ADDRESS[15: 0];
+     logic [15:0] sum_plus_carry;
+     assign sum_plus_carry = sum[19:16] + sum[15:0];
+     assign CHECKSUM = ~sum_plus_carry;
 endmodule
