@@ -116,12 +116,56 @@ module ip_packet_tx (
                      nextstate = SEND_IP_HDR;
                 end               
                 default: begin
-                     // Flag error.
+                     // Flag error? We should never reach this.
                      mac_data_last = 'd1;
+                     state_counter_reset = 'd1;
                      nextstate = IDLE;
                 end
                 endcase
             end
+        end    
+        SEND_IP_HDR: begin
+            ready_for_send = 'd0;
+            nextstate = SEND_IP_HDR;
+            if(mac_data_ready == 'd1) begin
+                mac_data_valid = 'd1;
+                state_counter_enable = 'd1;
+                case(state_counter)
+                    'h00: mac_data_out = 'h45; // ip v4, 5 words in header
+                    'h01: mac_data_out = 'h00; // service type
+                    'h02: mac_data_out = 'hxx; // TODO total length upper 8 bits
+                    'h03: mac_data_out = 'hxx; // total length lower 8 bits 
+                    'h04: mac_data_out = 'h00; // identification
+                    'h05: mac_data_out = 'h00; 
+                    'h06: mac_data_out = 'h00; // flags and fragment offset
+                    'h07: mac_data_out = 'h00; 
+                    'h08: mac_data_out = 'h00; // TODO: TTL (time to live)
+                    'h09: mac_data_out = 'h00; // TODO: protocol
+                    'h0A: mac_data_out = 'h00; // TODO: header checksum
+                    'h0B: mac_data_out = 'h00;
+                    'h0C: mac_data_out = accelerator_ip_address[31:24];          
+                    'h0D: mac_data_out = accelerator_ip_address[23:16];          
+                    'h0E: mac_data_out = accelerator_ip_address[15:8];          
+                    'h0F: mac_data_out = accelerator_ip_address[7:0];          
+                    'h10: mac_data_out = recipient_ip_address[31:24];          
+                    'h11: mac_data_out = recipient_ip_address[23:16];         
+                    'h12: mac_data_out = recipient_ip_address[15:8];         
+                    'h13: begin
+                          mac_data_out = recipient_ip_address[7:0];
+                          state_counter_reset = 'd1;
+                          state_counter_enable = 'd0;
+                          nextstate = SEND_USER_DATA;  
+                    end
+                    default: begin
+                          // Flag error? We should never reach this.
+                          mac_data_last = 'd1;
+                          state_counter_reset = 'd1;
+                          nextstate = IDLE;
+                    end                
+                endcase
+            end
+        end
+        SEND_USER_DATA: begin
         end
     endcase
     end
