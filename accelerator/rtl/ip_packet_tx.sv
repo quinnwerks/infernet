@@ -6,8 +6,8 @@
 
 module ip_packet_tx (
     // Global signals
-    input        aclk,
-    input        areset,
+    input        ACLK,
+    input        ARESET,
     input [31:0] ACCELERATOR_IP_ADDRESS,
     input [47:0] ACCELERATOR_MAC_ADDRESS,
 
@@ -40,8 +40,8 @@ enum int unsigned {
 } state, nextstate;
 
 // State logic
-always_ff @ (posedge aclk or posedge areset) begin
-    if (areset) begin
+always_ff @ (posedge ACLK or negedge ARESET) begin
+    if (ARESET == 'd0) begin
         state <= IDLE;
     end
     else begin
@@ -73,11 +73,11 @@ logic [15:0] checksum;
 // Constants
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
-localparam [15:0] packet_length = 'd20 + 16; // header length + ceil(log2(data length))
+localparam [15:0] packet_length = 'd20 + 'd2; // header length + data length (bytes)
 localparam [15:0] identification = 'h0000;
 localparam [15:0] flags_and_fragment = 'h0000;
 localparam [ 7:0] time_to_live = 'h80;
-localparam [ 7:0] protocol = 'hxx; // TODO
+localparam [ 7:0] protocol = 'h04; // 4 for IP protocol. Should not matter.
 
 always_comb begin
     ready_for_send = 'd0;
@@ -93,11 +93,10 @@ always_comb begin
 // TODO: impl logic :-)
 case(state)
     IDLE: begin
-        ready_for_send = mac_data_ready;
+        ready_for_send = 'd1;
         state_counter_reset = 'd1;
 
-        if (start_ip_txn
-         && ready_for_send) begin
+        if (start_ip_txn) begin
              nextstate = SEND_ETH_HDR;
         end
     end
@@ -155,8 +154,8 @@ case(state)
                 'h0B: mac_data_out = checksum[ 7:0];
                 'h0C: mac_data_out = accelerator_ip_address[31:24];
                 'h0D: mac_data_out = accelerator_ip_address[23:16];
-                'h0E: mac_data_out = accelerator_ip_address[15:8];
-                'h0F: mac_data_out = accelerator_ip_address[7:0];
+                'h0E: mac_data_out = accelerator_ip_address[15: 8];
+                'h0F: mac_data_out = accelerator_ip_address[ 7: 0];
                 'h10: mac_data_out = recipient_ip_address[31:24];
                 'h11: mac_data_out = recipient_ip_address[23:16];
                 'h12: mac_data_out = recipient_ip_address[15:8];
@@ -211,14 +210,15 @@ assign start_ip_txn          = START_IP_TXN;
 assign READY_FOR_SEND        = ready_for_send;
 assign MAC_DATA_OUT          = mac_data_out;
 assign mac_data_ready        = MAC_DATA_READY;
+assign MAC_DATA_VALID        = mac_data_valid;
 assign MAC_DATA_LAST         = mac_data_last;
 assign MAC_DATA_FIRST        = mac_data_first;
 
-counter state_counter_business_logic (
-    .CLK(aclk),
+counter_sync_reset state_counter_business_logic (
+    .CLK(ACLK),
     .RESET(state_counter_reset),
     .ENABLE(state_counter_enable),
-    .VALUE(state_counter_reset)
+    .VALUE(state_counter)
 );
 
 ipv4_checksum_calculator get_checksum(
