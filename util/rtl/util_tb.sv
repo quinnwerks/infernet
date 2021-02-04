@@ -53,9 +53,9 @@ initial begin
 end
 
 
-counter #(
+counter_sync_reset #(
     .SIZE(COUNTER_SIZE) 
-) test_counter (
+) dut (
     .CLK(clk),
     .RESET(reset),
     .ENABLE(enable),
