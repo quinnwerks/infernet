@@ -95,9 +95,10 @@ initial begin
    ready_low_list = {};
    passed = 0;
    test_tx(data_out_list, ready_wait_list, ready_low_list, passed);
+   mac_data_ready = 'd1;
    #40
-   ready_low_list = {4,5,6,7};
-   ready_wait_list = {1,2,3,4};
+   ready_low_list = {4,5,6,7, 20, 33};
+   ready_wait_list = {1,2,3,4, 5,  6};
    test_tx(data_out_list, ready_wait_list, ready_low_list, passed);
 
    $finish();
@@ -145,7 +146,6 @@ task test_tx(
         end
         assert(ready_for_send == 'd0) else $stop("Simulation failed! Ready for send should be low!");
     end
-    mac_data_ready = 'd0;
     passed = 1;
 endtask
 
