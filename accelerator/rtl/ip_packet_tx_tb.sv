@@ -25,7 +25,7 @@ logic       mac_data_last;
 logic       mac_data_first;
 
 // Simulation params
-localparam total_packet_size_bytes = 46;
+localparam [15:0] eth_packet_type = 'h0800; // ip protocol
 
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
@@ -70,6 +70,8 @@ initial begin
                     accelerator_mac_address[23:16],
                     accelerator_mac_address[15: 8],
                     accelerator_mac_address[ 7: 0],
+                    eth_packet_type[15:8],
+                    eth_packet_type[7:0],
                     ip_version,
                     service_type,
                     packet_length[15:8],

@@ -71,6 +71,8 @@ logic        state_counter_reset;
 logic [15:0] checksum;
 
 // Constants
+localparam [15:0] eth_packet_type = 'h0800; // ip protocol
+
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
 localparam [15:0] packet_length = 'd20 + 'd2; // header length + data length (bytes)
@@ -118,8 +120,10 @@ case(state)
             'h8: mac_data_out = accelerator_mac_address[31:24];
             'h9: mac_data_out = accelerator_mac_address[23:16];
             'hA: mac_data_out = accelerator_mac_address[15: 8];
-            'hB: begin
-                 mac_data_out = accelerator_mac_address[ 7: 0];
+            'hB: mac_data_out = accelerator_mac_address[ 7: 0];
+            'hC: mac_data_out = eth_packet_type[15:8];
+            'hD: begin
+                 mac_data_out = eth_packet_type[7:0];
                  state_counter_reset = 'd1;
                  state_counter_enable = 'd0;
                  nextstate = SEND_IP_HDR;
