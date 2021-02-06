@@ -1,40 +1,59 @@
 module ip_packet_rx_tb();
-logic clk;
-logic reset;
-logic enable;
-    
-initial clk = 'd1;
-always #5 clk = ~clk;
-    
-localparam NUM_BYTES = 13;
-localparam BYTE_NUM_SIZE = 4;
-logic [7:0] input_value;
-logic [BYTE_NUM_SIZE-1:0] byte_num;
-logic [NUM_BYTES*8-1:0] output_value;
+
+logic aclk;
+initial aclk = 'd1;
+always #5 aclk = ~aclk;
+
+logic areset;
+
+localparam IP_ADDR_WIDTH = 32;
+localparam MAC_ADDR_WIDTH = 48;
+localparam AXI_S_DATA_WIDTH = 8;
+localparam COUNTER_WIDTH = 16;
+localparam ETH_HDR_SIZE_BYTES = 14;
+localparam IP_HDR_SIZE_BYTES = 24;
+localparam USER_DATA_BYTES = 785; 
+localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8; 
+
+logic [IP_ADDR_WIDTH-1:0]  accelerator_ip_address;
+logic [MAC_ADDR_WIDTH-1:0] accelerator_mac_address;
+
+logic [AXI_S_DATA_WIDTH-1:0]     mac_data_out;
+logic                            mac_data_ready;
+logic                            mac_data_valid;
+logic                            mac_data_last;
+logic                            mac_data_tuser;
+
+logic [DATA_FRAME_WIDTH-1:0]     data_frame;
+logic [IP_ADDR_WIDTH-1:0]        src_ip_address;
+logic [MAC_ADDR_WIDTH-1:0]       src_mac_address;
+logic                            frame_ready;
+
 
 initial begin
-    reset = 'd0;
-    #10;
-    reset = 'd1;
-    #10;
-    for (int i = 0; i < NUM_BYTES; i++) begin
-        byte_num = i;
-        enable = 'd1;
-        input_value = i;
-        #10;
-    end
-    $finish();
-end
 
     
-byte_write_register #(.SIZE_IN_BYTES(NUM_BYTES), .BYTE_NUM_SIZE(BYTE_NUM_SIZE)) 
-dut (
-    .CLK(clk),
-    .ARESET(reset),
-    .ENABLE(enable),
-    .INPUT_VALUE(input_value),
-    .BYTE_NUM(byte_num),
-    .OUTPUT_VALUE(output_value)
+end
+
+task test_rx(); 
+
+endtask
+
+
+ip_packet_rx dut (
+    .ACLK(aclk),
+    .ARESET(areset),
+    .ACCELERATOR_IP_ADDRESS(accelerator_ip_address),
+    .ACCELERATOR_MAC_ADDRESS(accelerator_mac_address),
+    .MAC_DATA_OUT(mac_data_out),
+    .MAC_DATA_READY(mac_data_ready),
+    .MAC_DATA_VALID(mac_data_valid),
+    .MAC_DATA_LAST(mac_data_last),
+    .MAC_DATA_TUSER(mac_data_tuser),
+    .DATA_FRAME(data_frame),
+    .SRC_IP_ADDRESS(src_ip_address),
+    .SRC_MAC_ADDRESS(src_mac_address),
+    .FRAME_READY(frame_ready)
 );
 
 endmodule
