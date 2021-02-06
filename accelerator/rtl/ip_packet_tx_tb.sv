@@ -22,7 +22,7 @@ logic [7:0] mac_data_out;
 logic       mac_data_ready;
 logic       mac_data_valid;
 logic       mac_data_last;
-logic       mac_data_first;
+logic       mac_data_tuser;
 
 // Simulation params
 localparam [15:0] eth_packet_type = 'h0800; // ip protocol
@@ -131,7 +131,7 @@ task test_tx(
             mac_data_ready = 'd0;
             for (int n = 0; n < ready_wait_list[j]; n++) begin
                 #10;
-                assert(mac_data_valid == 'd0) else $stop("Simulation failed! Bad valid!");
+                assert(mac_data_valid == 'd1) else $stop("Simulation failed! Bad valid!");
                 assert(mac_data_out == 'd0) else $stop("Simulation failed! Bad data out!"); 
             end
             j++;
@@ -173,7 +173,7 @@ ip_packet_tx dut (
     .MAC_DATA_READY(mac_data_ready),
     .MAC_DATA_VALID(mac_data_valid),
     .MAC_DATA_LAST(mac_data_last),
-    .MAC_DATA_FIRST(mac_data_first)
+    .MAC_DATA_TUSER(mac_data_tuser)
 );
 
 ipv4_checksum_calculator get_checksum(

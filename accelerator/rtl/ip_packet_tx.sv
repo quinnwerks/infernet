@@ -23,7 +23,7 @@ module ip_packet_tx (
     input        MAC_DATA_READY,
     output       MAC_DATA_VALID,
     output       MAC_DATA_LAST,
-    output       MAC_DATA_FIRST
+    output       MAC_DATA_TUSER
 );
 
 parameter AXI_S_DATA_WIDTH = 8;
@@ -62,7 +62,7 @@ logic [AXI_S_DATA_WIDTH-1:0] mac_data_out;
 logic                        mac_data_ready;
 logic                        mac_data_valid;
 logic                        mac_data_last;
-logic                        mac_data_first;
+logic                        mac_data_tuser;
 
 // Unexposed signals
 logic [7:0]  state_counter;
@@ -87,7 +87,7 @@ always_comb begin
     mac_data_out = 'd0;
     mac_data_valid = 'd0;
     mac_data_last = 'd0;
-    mac_data_first = 'd0;
+    mac_data_tuser = 'd0;
 
     state_counter_reset = 'd0;
     state_counter_enable = 'd0;
@@ -104,9 +104,9 @@ case(state)
     end
     SEND_ETH_HDR: begin
         ready_for_send = 'd0;
+        mac_data_valid = 'd1;
         nextstate = SEND_ETH_HDR;
         if (mac_data_ready == 'd1) begin
-            mac_data_valid = 'd1;
             state_counter_enable = 'd1;
             case(state_counter)
             'h0: mac_data_out = recipient_mac_address[47:40];
@@ -139,9 +139,9 @@ case(state)
     end
     SEND_IP_HDR: begin
         ready_for_send = 'd0;
+        mac_data_valid = 'd1;
         nextstate = SEND_IP_HDR;
         if(mac_data_ready == 'd1) begin
-            mac_data_valid = 'd1;
             state_counter_enable = 'd1;
             case(state_counter)
                 'h00: mac_data_out = ip_version; // ip v4, 5 words in header
@@ -180,9 +180,9 @@ case(state)
     end
     SEND_USER_DATA: begin
         ready_for_send = 'd0;
+        mac_data_valid = 'd1;
         nextstate = SEND_USER_DATA;
         if(mac_data_ready == 'd1) begin
-            mac_data_valid = 'd1;
             state_counter_enable = 'd1;
             case(state_counter)
             'h00: mac_data_out = {6'b000000, recipient_message[9:8]};
@@ -216,7 +216,7 @@ assign MAC_DATA_OUT          = mac_data_out;
 assign mac_data_ready        = MAC_DATA_READY;
 assign MAC_DATA_VALID        = mac_data_valid;
 assign MAC_DATA_LAST         = mac_data_last;
-assign MAC_DATA_FIRST        = mac_data_first;
+assign MAC_DATA_TUSER        = mac_data_tuser;
 
 counter_sync_reset state_counter_business_logic (
     .CLK(ACLK),
