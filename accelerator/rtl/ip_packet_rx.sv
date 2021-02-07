@@ -15,7 +15,10 @@ module ip_packet_rx(
     output [785*8-1:0] DATA_FRAME,
     output [31     :0] SRC_IP_ADDRESS,
     output [47     :0] SRC_MAC_ADDRESS,
-    output             FRAME_READY
+    output             FRAME_READY,
+    
+    // Useful signals for debug
+    output             PACKET_FOR_ACCELERATOR
 );
 
 localparam IP_ADDR_WIDTH = 32;
@@ -32,7 +35,7 @@ localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8;
 
 // List of FSM states
 enum int unsigned {
-    IDLE,          // No transation IPR
+    START,         // Set up reset and other stuff
     GET_ETH_HDR,   // Process ethernet header
     GET_IP_HDR,    // Process ip header
     GET_USER_DATA, // Get user data
@@ -42,7 +45,7 @@ enum int unsigned {
 // State logic
 always_ff @ (posedge ACLK or negedge ARESET) begin
     if (ARESET == 'd0) begin
-        state <= IDLE;
+        state <= START;
     end
     else begin
         state <= nextstate;
@@ -63,6 +66,8 @@ logic [DATA_FRAME_WIDTH-1:0]     data_frame;
 logic [IP_ADDR_WIDTH-1:0]        src_ip_address;
 logic [MAC_ADDR_WIDTH-1:0]       src_mac_address;
 logic                            frame_ready;
+
+logic                            packet_for_accelerator;
 
 // Unexposed signals
 logic [IP_ADDR_WIDTH-1:0]        dst_ip_address;
@@ -85,23 +90,21 @@ always_comb begin
     
     state_counter_enable = 'd0;
     state_counter_reset = 'd0;
-        
+      
     eth_header_enable = 'd0;
     ip_header_enable  = 'd0;
     data_frame_enable = 'd0;
     
     case(state)
-    IDLE:begin
-        state_counter_reset = 'd0;
-        if (mac_data_valid == 'd1) begin
-            nextstate = GET_ETH_HDR;
-        end
+    START:begin
+        state_counter_reset = 'd1; 
+        nextstate = GET_ETH_HDR;
     end
     GET_ETH_HDR:begin
         mac_data_ready = 'd1;
         if (mac_data_last == 'd1) begin
             state_counter_reset = 'd1;
-            nextstate = IDLE;
+            nextstate = GET_ETH_HDR;
         end
         else if (mac_data_valid == 'd1) begin
             state_counter_enable = 'd1;
@@ -120,7 +123,7 @@ always_comb begin
         mac_data_ready = 'd1;
         if (mac_data_last == 'd1) begin
             state_counter_reset = 'd1;
-            nextstate = IDLE;
+            nextstate = GET_ETH_HDR;
         end
         else if (mac_data_valid == 'd1) begin
             state_counter_enable = 'd1;
@@ -140,32 +143,47 @@ always_comb begin
         if (mac_data_valid == 'd1) begin
             state_counter_enable = 'd1;
             data_frame_enable = 'd1;
-            // If the frame is not the 
-            // expected size then abort
-            if (state_counter == DATA_FRAME_WIDTH -1
+            // Case 1: bad fcs
+            if (state_counter == USER_DATA_BYTES -1
              && mac_data_last == 'd1
              && mac_data_tuser == 'd0) begin
                state_counter_reset = 'd1;
-               nextstate = IDLE;
-               frame_ready = 'd1;
+               nextstate = GET_ETH_HDR;
+               // If packet is for us signal ready, otherwise it's garbage
+               if (packet_for_accelerator == 'd1) begin
+                   frame_ready = 'd1;
+               end
             end 
-            else if (state_counter == DATA_FRAME_WIDTH -1
+            // Case 2: good size + fcs
+            else if (state_counter == USER_DATA_BYTES -1
                   && mac_data_last == 'd1
                   && mac_data_tuser == 'd1) begin
                 state_counter_reset = 'd1;
-                nextstate = IDLE;
+                nextstate = GET_ETH_HDR;
             end
-            else if (state_counter != DATA_FRAME_WIDTH - 1
+            // Case 3: too small
+            else if (state_counter < USER_DATA_BYTES - 1
                   && mac_data_last == 'd1) begin
+                state_counter_reset = 'd1; 
+                nextstate = GET_ETH_HDR;            
+            end
+            // Case 3: too big
+            else if (state_counter > USER_DATA_BYTES - 1) begin
                 state_counter_reset = 'd1;
-                nextstate = IDLE;            
-            end       
+                if (mac_data_last == 'd1) begin
+                    nextstate = GET_ETH_HDR;
+                end
+                else begin
+                    nextstate = WAIT_FOR_END;
+                end
+            end  
         end  
     end
     WAIT_FOR_END:begin
         mac_data_ready = 'd1;
-        if(mac_data_last) begin
-            nextstate = IDLE;
+        if(mac_data_last == 'd1) begin
+            state_counter_reset = 'd1;
+            nextstate = GET_ETH_HDR;
         end
     end
     endcase
@@ -175,15 +193,24 @@ end
 assign accelerator_ip_address  = ACCELERATOR_IP_ADDRESS;
 assign accelerator_mac_address = ACCELERATOR_MAC_ADDRESS;
 
-assign mac_data_out          = MAC_DATA_OUT;
-assign MAC_DATA_READY        = mac_data_ready;
-assign mac_data_valid        = MAC_DATA_VALID;
-assign mac_data_last         = MAC_DATA_LAST;
-assign mac_data_tuser        = MAC_DATA_TUSER;
+assign mac_data_out           = MAC_DATA_OUT;
+assign MAC_DATA_READY         = mac_data_ready;
+assign mac_data_valid         = MAC_DATA_VALID;
+assign mac_data_last          = MAC_DATA_LAST;
+assign mac_data_tuser         = MAC_DATA_TUSER;
 
-assign DATA_FRAME            = data_frame;
-assign SRC_IP_ADDRESS        = src_ip_address;
-assign SRC_MAC_ADDRESS       = src_mac_address;
+assign DATA_FRAME             = data_frame;
+assign SRC_IP_ADDRESS         = src_ip_address;
+assign SRC_MAC_ADDRESS        = src_mac_address;
+assign FRAME_READY            = frame_ready;
+assign PACKET_FOR_ACCELERATOR = packet_for_accelerator;
+
+assign packet_for_accelerator = dst_ip_address == accelerator_ip_address;
+
+assign dst_mac_address = eth_header_data[ 6*8-1:0];
+assign src_mac_address = eth_header_data[12*8-1:6*8];
+assign src_ip_address = ip_header_data[20*8-1:16*8];
+assign dst_ip_address = ip_header_data[24*8-1:20*8];
 
 counter_sync_reset #(
     .SIZE(COUNTER_WIDTH)
@@ -193,7 +220,6 @@ counter_sync_reset #(
     .ENABLE(state_counter_enable),
     .VALUE(state_counter)
 );
-
 
 // Using ARESETN on the registers because 
 // we don't actually need to clear the values
@@ -234,7 +260,6 @@ byte_write_register #(
     .BYTE_NUM(state_counter),
     .OUTPUT_VALUE(data_frame)
 );
-
 
 endmodule
 

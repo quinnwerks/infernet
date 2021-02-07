@@ -45,10 +45,10 @@ int ready_low_list[];
 initial begin
    // Reset the ip and set input signals
    areset = 'd0;
-   accelerator_ip_address =  31'hbeefbeef;
+   accelerator_ip_address =  32'hbeefbeef;
    accelerator_mac_address = 48'h54b00bedabba;
    
-   recipient_ip_address =  31'hdeadbeef;
+   recipient_ip_address =  32'hdeadbeef;
    recipient_mac_address = 48'h32dabbadebd5;
    recipient_message = 10'h1ff;
 
