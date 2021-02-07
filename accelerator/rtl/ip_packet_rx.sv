@@ -27,7 +27,7 @@ localparam AXI_S_DATA_WIDTH = 8;
 localparam COUNTER_WIDTH = 16;
 
 localparam ETH_HDR_SIZE_BYTES = 14;
-localparam IP_HDR_SIZE_BYTES = 24;
+localparam IP_HDR_SIZE_BYTES = 20;
 localparam USER_DATA_BYTES = 785; // 784 for inference frame + 1 byte for metadata
 
 localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8; 
@@ -209,8 +209,8 @@ assign packet_for_accelerator = dst_ip_address == accelerator_ip_address;
 
 assign dst_mac_address = eth_header_data[ 6*8-1:0];
 assign src_mac_address = eth_header_data[12*8-1:6*8];
-assign src_ip_address = ip_header_data[20*8-1:16*8];
-assign dst_ip_address = ip_header_data[24*8-1:20*8];
+assign src_ip_address = ip_header_data[16*8-1:12*8];
+assign dst_ip_address = ip_header_data[20*8-1:16*8];
 
 counter_sync_reset #(
     .SIZE(COUNTER_WIDTH)

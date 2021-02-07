@@ -13,7 +13,7 @@ localparam MAC_ADDR_WIDTH = 48;
 localparam AXI_S_DATA_WIDTH = 8;
 localparam COUNTER_WIDTH = 16;
 localparam ETH_HDR_SIZE_BYTES = 14;
-localparam IP_HDR_SIZE_BYTES = 24;
+localparam IP_HDR_SIZE_BYTES = 20;
 localparam USER_DATA_BYTES = 785; 
 localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8; 
 
@@ -48,7 +48,7 @@ initial begin
     // frame + protocol, src, dst
     eth_header = 'h9999ddddddddddddccffffffffff;
     // dst, src, rest of header
-    ip_header = 'hbbaaaaaacccccccc99999999999999999999999999999999;
+    ip_header = 'hbbaaaaaacccccccc999999999999999999999999;
     // Case 1: Happy path
     $display("Case 1:");
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h01,   1, 0, 0, 0);
@@ -74,9 +74,9 @@ initial begin
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h06, 1, 0, 0, 0);
     // Case 7: Bad ip address
     $display("Case 7:");
-    ip_header[24*8-1:20*8] = 'heeeeeeee;
+    ip_header[20*8-1:16*8] = 'heeeeeeee;
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h07, 0, 0, 0, 0);
-    ip_header[24*8-1:20*8] = 'hbbaaaaaa;
+    ip_header[20*8-1:16*8] = 'hbbaaaaaa;
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h07, 1, 0, 0, 0);
     // Case 8: Early frame termination in eth header + recovery
     $display("Case 8:");
@@ -157,7 +157,7 @@ task test_rx (
         assert(frame_ready == 'd1) else $stop("Frame should have signaled ready");
         assert(eth_header[12*8-1:6*8] == src_mac_address) else $stop("Bad src mac!");
         $display("expected:%d result:%d", ip_header[20*8-1:16*8], src_ip_address);
-        assert(ip_header[20*8-1:16*8] == src_ip_address) else $stop("Bad src ip!");
+        assert(ip_header[16*8-1:12*8] == src_ip_address) else $stop("Bad src ip!");
         #10;
         for (int i = 0; i < user_data_size_bytes; i++) begin
             assert(data_frame[i*8+:8] == expected_data_reg[i]) else $stop("Bad user data!");

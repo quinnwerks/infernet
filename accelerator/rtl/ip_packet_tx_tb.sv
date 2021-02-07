@@ -42,6 +42,8 @@ int unsigned data_out_list[];
 int ready_wait_list[];
 int ready_low_list[];
 
+localparam MIN_PAYLOAD_SIZE = 64;
+
 initial begin
    // Reset the ip and set input signals
    areset = 'd0;
@@ -93,7 +95,37 @@ initial begin
                     recipient_ip_address[15: 8],
                     recipient_ip_address[ 7: 0],
                     recipient_message[9:8],
-                    recipient_message[7:0]};
+                    recipient_message[7:0],
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00,
+                    'h00};
+   $display("Size:%d", data_out_list.size);
+   assert(data_out_list.size == MIN_PAYLOAD_SIZE) else $stop("Bad expected payload");
    ready_low_list = {};
    passed = 0;
    test_tx(data_out_list, ready_wait_list, ready_low_list, passed);
@@ -142,7 +174,7 @@ task test_tx(
             assert(mac_data_valid == 'd1) else $stop("Simulation failed! Bad valid!");
             assert(mac_data_out == data_out_list[i]) else $stop("Simulation failed! Bad data out!"); 
             if (i == data_out_list.size - 1) begin
-                assert(mac_data_last == 'd1) else $stop("Simulation failed! Data in should be asserted!");
+                assert(mac_data_last == 'd1) else $stop("Simulation failed! Last should be asserted!");
             end
             i++;
         end

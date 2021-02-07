@@ -81,6 +81,10 @@ localparam [15:0] flags_and_fragment = 'h0000;
 localparam [ 7:0] time_to_live = 'h80;
 localparam [ 7:0] protocol = 'h04; // 4 for IP protocol. Should not matter.
 
+localparam ETH_HDR_SIZE_BYTES = 14;
+localparam IP_HDR_SIZE_BYTES = 20;
+localparam DATA_SIZE_BYTES = 64 - ETH_HDR_SIZE_BYTES - IP_HDR_SIZE_BYTES;
+
 always_comb begin
     ready_for_send = 'd0;
 
@@ -186,16 +190,14 @@ case(state)
             state_counter_enable = 'd1;
             case(state_counter)
             'h00: mac_data_out = {6'b000000, recipient_message[9:8]};
-            'h01: begin
+            'h01: mac_data_out = recipient_message[7:0];        
+            DATA_SIZE_BYTES-1: begin
                   mac_data_last = 'd1;
-                  mac_data_out = recipient_message[7:0];
                   state_counter_reset = 'd1;
                   nextstate = IDLE;
             end
             default: begin
-                mac_data_last = 'd1;
-                state_counter_reset = 'd1;
-                nextstate = IDLE;
+                  mac_data_out = 8'h0;
             end
             endcase
         end
