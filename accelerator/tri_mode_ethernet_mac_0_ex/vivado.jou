@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Tue Feb 16 11:08:11 2021
+# Process ID: 3743
+# Current directory: /home/quinn/ece532-project/vivado/tri_mode_ethernet_mac_0_ex
+# Command line: vivado -notrace -source /home/quinn/ece532-project/vivado/example_design/project_1.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_ex.tcl
+# Log file: /home/quinn/ece532-project/vivado/tri_mode_ethernet_mac_0_ex/vivado.log
+# Journal file: /home/quinn/ece532-project/vivado/tri_mode_ethernet_mac_0_ex/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source /home/quinn/ece532-project/vivado/example_design/project_1.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_ex.tcl -notrace
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
