@@ -131,7 +131,11 @@
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design
-   (
+#  (
+      parameter OUR_MAC_ADDRESS=48'h0605040302DA,
+      // Unused for now...
+      parameter SRC_MAC_ADDRESS=48'hAAAAAAAAAAAA
+)(
       // asynchronous reset
       input         glbl_rst,
 
@@ -290,8 +294,8 @@ module tri_mode_ethernet_mac_0_example_design
    wire [47:0] src_mac_address;
    wire [47:0] our_mac_address;
    
-   assign src_mac_address = 48'd0;
-   assign our_mac_address = 48'h0605040302DA;
+   assign src_mac_address = SRC_MAC_ADDRESS;
+   assign our_mac_address = OUR_MAC_ADDRESS;
 
    assign activity_flash  = int_activity_flash;
    assign activity_flashn = !int_activity_flash;

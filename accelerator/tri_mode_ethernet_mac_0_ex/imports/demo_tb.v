@@ -443,7 +443,7 @@ module demo_tb;
     //-----------
     frame4.data[0]  = dst_addr[ 7: 0];  frame4.valid[0]  = 1'b1;  frame4.error[0]  = 1'b0; // Destination Address (DA)
     frame4.data[1]  = dst_addr[15: 8];  frame4.valid[1]  = 1'b1;  frame4.error[1]  = 1'b0;
-    frame4.data[2]  = 'hff;  frame4.valid[2]  = 1'b1;  frame4.error[2]  = 1'b0;
+    frame4.data[2]  = 'hff;  frame4.valid[2]  = 1'b1;  frame4.error[2]  = 1'b0; // Destination address is not our address
     frame4.data[3]  = dst_addr[31:24];  frame4.valid[3]  = 1'b1;  frame4.error[3]  = 1'b0;
     frame4.data[4]  = dst_addr[39:32];  frame4.valid[4]  = 1'b1;  frame4.error[4]  = 1'b0;
     frame4.data[5]  = dst_addr[47:40];  frame4.valid[5]  = 1'b1;  frame4.error[5]  = 1'b0;
@@ -639,8 +639,10 @@ module demo_tb;
   // Wire up Device Under Test
   //----------------------------------------------------------------------------
 
-  tri_mode_ethernet_mac_0_example_design dut
-    (
+  tri_mode_ethernet_mac_0_example_design #(
+    .OUR_MAC_ADDRESS(dst_addr),
+    .SRC_MAC_ADDRESS(src_addr)
+  ) dut (
       // asynchronous reset
       .glbl_rst                   (reset),
 
