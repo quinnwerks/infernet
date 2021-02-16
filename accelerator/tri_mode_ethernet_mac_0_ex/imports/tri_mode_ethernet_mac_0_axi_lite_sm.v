@@ -62,6 +62,11 @@
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_axi_lite_sm (
+      // Our mac address
+      input       [47:0]   our_mac_address,
+      // Optionally an intended mac address
+      // Could be used to reject requests from other machines
+      input       [47:0]   src_mac_address,
       input                s_axi_aclk,
       input                s_axi_resetn,
 
@@ -454,7 +459,7 @@ begin
             axi_state      <= CNFG_FILTER;
          end
         CNFG_FILTER : begin
-         
+            // TODO: turn off promiscuous mode if on board
             if (design_on_board == 1'b0) begin
                 $display("** Note: Setting core to non-promiscuous mode ...");
                 end
@@ -473,7 +478,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_1;
-            axi_wr_data    <= 32'h040302DA;
+            axi_wr_data    <= our_mac_address[31:0];
             axi_state      <= CNFG_FRM_FILTER_MASK_1;
          end
          CNFG_FRM_FILTER_MASK_1 : begin
@@ -489,7 +494,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_2;
-            axi_wr_data    <= 32'h025A0605;
+            axi_wr_data    <= {16'hAAAA, our_mac_address[47:32]};
             axi_state      <= CNFG_FRM_FILTER_MASK_2;
          end
          CNFG_FRM_FILTER_MASK_2 : begin
@@ -497,7 +502,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_MASK_2;
-            axi_wr_data    <= 32'hFFFFFFF;
+            axi_wr_data    <= 32'h0000FFFF;
             axi_state      <= CNFG_FRM_FILTER_3;
          end
          CNFG_FRM_FILTER_3 : begin
@@ -505,7 +510,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_3;
-            axi_wr_data    <= 32'h06050403;
+            axi_wr_data    <= 32'hAAAAAAAA;
             axi_state      <= CNFG_FRM_FILTER_MASK_3;
          end
          CNFG_FRM_FILTER_MASK_3 : begin
@@ -513,7 +518,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_MASK_3;
-            axi_wr_data    <= 32'hFFFFFFFF;
+            axi_wr_data    <= 32'h00000000;
             axi_state      <= CHECK_SPEED;
          end
          CHECK_SPEED : begin

@@ -128,7 +128,9 @@ module demo_tb;
 
   // The following parameter does not control the value the address filter is set to
   // it is only used in the testbench
-  parameter address_filter_value = 96'h06050403025A_0605040302DA ; //SA and DA
+  parameter src_addr = 48'h06050403025A;
+  parameter dst_addr = 48'h0605040302DA;
+  parameter address_filter_value = {src_addr, dst_addr} ; //SA and DA
   `define FRAME_TYP [8*62+62+62+8*4+4+4+8*4+4+4+1:1]
 
   //----------------------------------------------------------------------------
@@ -156,18 +158,18 @@ module demo_tb;
     //-----------
     // Frame 0
     //-----------
-    frame0.data[0]  = 8'hDA;  frame0.valid[0]  = 1'b1;  frame0.error[0]  = 1'b0; // Destination Address (DA)
-    frame0.data[1]  = 8'h02;  frame0.valid[1]  = 1'b1;  frame0.error[1]  = 1'b0;
-    frame0.data[2]  = 8'h03;  frame0.valid[2]  = 1'b1;  frame0.error[2]  = 1'b0;
-    frame0.data[3]  = 8'h04;  frame0.valid[3]  = 1'b1;  frame0.error[3]  = 1'b0;
-    frame0.data[4]  = 8'h05;  frame0.valid[4]  = 1'b1;  frame0.error[4]  = 1'b0;
-    frame0.data[5]  = 8'h06;  frame0.valid[5]  = 1'b1;  frame0.error[5]  = 1'b0;
-    frame0.data[6]  = 8'h5A;  frame0.valid[6]  = 1'b1;  frame0.error[6]  = 1'b0; // Source Address  (5A)
-    frame0.data[7]  = 8'h02;  frame0.valid[7]  = 1'b1;  frame0.error[7]  = 1'b0;
-    frame0.data[8]  = 8'h03;  frame0.valid[8]  = 1'b1;  frame0.error[8]  = 1'b0;
-    frame0.data[9]  = 8'h04;  frame0.valid[9]  = 1'b1;  frame0.error[9]  = 1'b0;
-    frame0.data[10] = 8'h05;  frame0.valid[10] = 1'b1;  frame0.error[10] = 1'b0;
-    frame0.data[11] = 8'h06;  frame0.valid[11] = 1'b1;  frame0.error[11] = 1'b0;
+    frame0.data[0]  = dst_addr[ 7: 0];  frame0.valid[0]  = 1'b1;  frame0.error[0]  = 1'b0; // Destination Address (DA)
+    frame0.data[1]  = dst_addr[15: 8];  frame0.valid[1]  = 1'b1;  frame0.error[1]  = 1'b0;
+    frame0.data[2]  = dst_addr[23:16];  frame0.valid[2]  = 1'b1;  frame0.error[2]  = 1'b0;
+    frame0.data[3]  = dst_addr[31:24];  frame0.valid[3]  = 1'b1;  frame0.error[3]  = 1'b0;
+    frame0.data[4]  = dst_addr[39:32];  frame0.valid[4]  = 1'b1;  frame0.error[4]  = 1'b0;
+    frame0.data[5]  = dst_addr[47:40];  frame0.valid[5]  = 1'b1;  frame0.error[5]  = 1'b0;
+    frame0.data[6]  = src_addr[ 7: 0];  frame0.valid[6]  = 1'b1;  frame0.error[6]  = 1'b0; // Source Address  (5A)
+    frame0.data[7]  = src_addr[15: 8];  frame0.valid[7]  = 1'b1;  frame0.error[7]  = 1'b0;
+    frame0.data[8]  = src_addr[23:16];  frame0.valid[8]  = 1'b1;  frame0.error[8]  = 1'b0;
+    frame0.data[9]  = src_addr[31:24];  frame0.valid[9]  = 1'b1;  frame0.error[9]  = 1'b0;
+    frame0.data[10] = src_addr[39:32];  frame0.valid[10] = 1'b1;  frame0.error[10] = 1'b0;
+    frame0.data[11] = 'h32;  frame0.valid[11] = 1'b1;  frame0.error[11] = 1'b0;  // We don't care about different src addrs
     frame0.data[12] = 8'h00;  frame0.valid[12] = 1'b1;  frame0.error[12] = 1'b0;
     frame0.data[13] = 8'h2E;  frame0.valid[13] = 1'b1;  frame0.error[13] = 1'b0; // Length/Type = Length = 46
     frame0.data[14] = 8'h01;  frame0.valid[14] = 1'b1;  frame0.error[14] = 1'b0;
@@ -227,18 +229,18 @@ module demo_tb;
     //-----------
     // Frame 1
     //-----------
-    frame1.data[0]  = 8'hDA;  frame1.valid[0]  = 1'b1;  frame1.error[0]  = 1'b0; // Destination Address (DA)
-    frame1.data[1]  = 8'h02;  frame1.valid[1]  = 1'b1;  frame1.error[1]  = 1'b0;
-    frame1.data[2]  = 8'h03;  frame1.valid[2]  = 1'b1;  frame1.error[2]  = 1'b0;
-    frame1.data[3]  = 8'h04;  frame1.valid[3]  = 1'b1;  frame1.error[3]  = 1'b0;
-    frame1.data[4]  = 8'h05;  frame1.valid[4]  = 1'b1;  frame1.error[4]  = 1'b0;
-    frame1.data[5]  = 8'h06;  frame1.valid[5]  = 1'b1;  frame1.error[5]  = 1'b0;
-    frame1.data[6]  = 8'h5A;  frame1.valid[6]  = 1'b1;  frame1.error[6]  = 1'b0; // Source Address  (5A)
-    frame1.data[7]  = 8'h02;  frame1.valid[7]  = 1'b1;  frame1.error[7]  = 1'b0;
-    frame1.data[8]  = 8'h03;  frame1.valid[8]  = 1'b1;  frame1.error[8]  = 1'b0;
-    frame1.data[9]  = 8'h04;  frame1.valid[9]  = 1'b1;  frame1.error[9]  = 1'b0;
-    frame1.data[10] = 8'h05;  frame1.valid[10] = 1'b1;  frame1.error[10] = 1'b0;
-    frame1.data[11] = 8'h06;  frame1.valid[11] = 1'b1;  frame1.error[11] = 1'b0;
+    frame1.data[0]  = dst_addr[ 7: 0];  frame1.valid[0]  = 1'b1;  frame1.error[0]  = 1'b0; // Destination Address (DA)
+    frame1.data[1]  = dst_addr[15: 8];  frame1.valid[1]  = 1'b1;  frame1.error[1]  = 1'b0;
+    frame1.data[2]  = dst_addr[23:16];  frame1.valid[2]  = 1'b1;  frame1.error[2]  = 1'b0;
+    frame1.data[3]  = dst_addr[31:24];  frame1.valid[3]  = 1'b1;  frame1.error[3]  = 1'b0;
+    frame1.data[4]  = dst_addr[39:32];  frame1.valid[4]  = 1'b1;  frame1.error[4]  = 1'b0;
+    frame1.data[5]  = dst_addr[47:40];  frame1.valid[5]  = 1'b1;  frame1.error[5]  = 1'b0;
+    frame1.data[6]  = src_addr[ 7: 0];  frame1.valid[6]  = 1'b1;  frame1.error[6]  = 1'b0; // Source Address  (5A)
+    frame1.data[7]  = src_addr[15: 8];  frame1.valid[7]  = 1'b1;  frame1.error[7]  = 1'b0;
+    frame1.data[8]  = src_addr[23:16];  frame1.valid[8]  = 1'b1;  frame1.error[8]  = 1'b0;
+    frame1.data[9]  = src_addr[31:24];  frame1.valid[9]  = 1'b1;  frame1.error[9]  = 1'b0;
+    frame1.data[10] = src_addr[39:32];  frame1.valid[10] = 1'b1;  frame1.error[10] = 1'b0;
+    frame1.data[11] = src_addr[47:40];  frame1.valid[11] = 1'b1;  frame1.error[11] = 1'b0;
     frame1.data[12] = 8'h80;  frame1.valid[12] = 1'b1;  frame1.error[12] = 1'b0; // Length/Type = Type = 8000
     frame1.data[13] = 8'h00;  frame1.valid[13] = 1'b1;  frame1.error[13] = 1'b0;
     frame1.data[14] = 8'h01;  frame1.valid[14] = 1'b1;  frame1.error[14] = 1'b0;
@@ -298,18 +300,18 @@ module demo_tb;
     //-----------
     // Frame 2
     //-----------
-    frame2.data[0]  = 8'hDA;  frame2.valid[0]  = 1'b1;  frame2.error[0]  = 1'b0; // Destination Address (DA)
-    frame2.data[1]  = 8'h02;  frame2.valid[1]  = 1'b1;  frame2.error[1]  = 1'b0;
-    frame2.data[2]  = 8'h03;  frame2.valid[2]  = 1'b1;  frame2.error[2]  = 1'b0;
-    frame2.data[3]  = 8'h04;  frame2.valid[3]  = 1'b1;  frame2.error[3]  = 1'b0;
-    frame2.data[4]  = 8'h05;  frame2.valid[4]  = 1'b1;  frame2.error[4]  = 1'b0;
-    frame2.data[5]  = 8'h06;  frame2.valid[5]  = 1'b1;  frame2.error[5]  = 1'b0;
-    frame2.data[6]  = 8'h5A;  frame2.valid[6]  = 1'b1;  frame2.error[6]  = 1'b0; // Source Address  (5A)
-    frame2.data[7]  = 8'h02;  frame2.valid[7]  = 1'b1;  frame2.error[7]  = 1'b0;
-    frame2.data[8]  = 8'h03;  frame2.valid[8]  = 1'b1;  frame2.error[8]  = 1'b0;
-    frame2.data[9]  = 8'h04;  frame2.valid[9]  = 1'b1;  frame2.error[9]  = 1'b0;
-    frame2.data[10] = 8'h05;  frame2.valid[10] = 1'b1;  frame2.error[10] = 1'b0;
-    frame2.data[11] = 8'h06;  frame2.valid[11] = 1'b1;  frame2.error[11] = 1'b0;
+    frame2.data[0]  = dst_addr[ 7: 0];  frame2.valid[0]  = 1'b1;  frame2.error[0]  = 1'b0; // Destination Address (DA)
+    frame2.data[1]  = dst_addr[15: 8];  frame2.valid[1]  = 1'b1;  frame2.error[1]  = 1'b0;
+    frame2.data[2]  = dst_addr[23:16];  frame2.valid[2]  = 1'b1;  frame2.error[2]  = 1'b0;
+    frame2.data[3]  = dst_addr[31:24];  frame2.valid[3]  = 1'b1;  frame2.error[3]  = 1'b0;
+    frame2.data[4]  = dst_addr[39:32];  frame2.valid[4]  = 1'b1;  frame2.error[4]  = 1'b0;
+    frame2.data[5]  = dst_addr[47:40];  frame2.valid[5]  = 1'b1;  frame2.error[5]  = 1'b0;
+    frame2.data[6]  = src_addr[ 7: 0];  frame2.valid[6]  = 1'b1;  frame2.error[6]  = 1'b0; // Source Address  (5A)
+    frame2.data[7]  = src_addr[15: 8];  frame2.valid[7]  = 1'b1;  frame2.error[7]  = 1'b0;
+    frame2.data[8]  = src_addr[23:16];  frame2.valid[8]  = 1'b1;  frame2.error[8]  = 1'b0;
+    frame2.data[9]  = src_addr[31:24];  frame2.valid[9]  = 1'b1;  frame2.error[9]  = 1'b0;
+    frame2.data[10] = src_addr[39:32];  frame2.valid[10] = 1'b1;  frame2.error[10] = 1'b0;
+    frame2.data[11] = src_addr[47:40];  frame2.valid[11] = 1'b1;  frame2.error[11] = 1'b0;
     frame2.data[12] = 8'h00;  frame2.valid[12] = 1'b1;  frame2.error[12] = 1'b0;
     frame2.data[13] = 8'h2E;  frame2.valid[13] = 1'b1;  frame2.error[13] = 1'b0; // Length/Type = Length = 46
     frame2.data[14] = 8'h01;  frame2.valid[14] = 1'b1;  frame2.error[14] = 1'b0;
@@ -369,18 +371,18 @@ module demo_tb;
     //-----------
     // Frame 3
     //-----------
-    frame3.data[0]  = 8'hDA;  frame3.valid[0]  = 1'b1;  frame3.error[0]  = 1'b0; // Destination Address (DA)
-    frame3.data[1]  = 8'h02;  frame3.valid[1]  = 1'b1;  frame3.error[1]  = 1'b0;
-    frame3.data[2]  = 8'h03;  frame3.valid[2]  = 1'b1;  frame3.error[2]  = 1'b0;
-    frame3.data[3]  = 8'h04;  frame3.valid[3]  = 1'b1;  frame3.error[3]  = 1'b0;
-    frame3.data[4]  = 8'h05;  frame3.valid[4]  = 1'b1;  frame3.error[4]  = 1'b0;
-    frame3.data[5]  = 8'h06;  frame3.valid[5]  = 1'b1;  frame3.error[5]  = 1'b0;
-    frame3.data[6]  = 8'h5A;  frame3.valid[6]  = 1'b1;  frame3.error[6]  = 1'b0; // Source Address  (5A)
-    frame3.data[7]  = 8'h02;  frame3.valid[7]  = 1'b1;  frame3.error[7]  = 1'b0;
-    frame3.data[8]  = 8'h03;  frame3.valid[8]  = 1'b1;  frame3.error[8]  = 1'b0;
-    frame3.data[9]  = 8'h04;  frame3.valid[9]  = 1'b1;  frame3.error[9]  = 1'b0;
-    frame3.data[10] = 8'h05;  frame3.valid[10] = 1'b1;  frame3.error[10] = 1'b0;
-    frame3.data[11] = 8'h06;  frame3.valid[11] = 1'b1;  frame3.error[11] = 1'b0;
+    frame3.data[0]  = dst_addr[ 7: 0];  frame3.valid[0]  = 1'b1;  frame3.error[0]  = 1'b0; // Destination Address (DA)
+    frame3.data[1]  = dst_addr[15: 8];  frame3.valid[1]  = 1'b1;  frame3.error[1]  = 1'b0;
+    frame3.data[2]  = dst_addr[23:16];  frame3.valid[2]  = 1'b1;  frame3.error[2]  = 1'b0;
+    frame3.data[3]  = dst_addr[31:24];  frame3.valid[3]  = 1'b1;  frame3.error[3]  = 1'b0;
+    frame3.data[4]  = dst_addr[39:32];  frame3.valid[4]  = 1'b1;  frame3.error[4]  = 1'b0;
+    frame3.data[5]  = dst_addr[47:40];  frame3.valid[5]  = 1'b1;  frame3.error[5]  = 1'b0;
+    frame3.data[6]  = src_addr[ 7: 0];  frame3.valid[6]  = 1'b1;  frame3.error[6]  = 1'b0; // Source Address  (5A)
+    frame3.data[7]  = src_addr[15: 8];  frame3.valid[7]  = 1'b1;  frame3.error[7]  = 1'b0;
+    frame3.data[8]  = src_addr[23:16];  frame3.valid[8]  = 1'b1;  frame3.error[8]  = 1'b0;
+    frame3.data[9]  = src_addr[31:24];  frame3.valid[9]  = 1'b1;  frame3.error[9]  = 1'b0;
+    frame3.data[10] = src_addr[39:32];  frame3.valid[10] = 1'b1;  frame3.error[10] = 1'b0;
+    frame3.data[11] = src_addr[47:40];  frame3.valid[11] = 1'b1;  frame3.error[11] = 1'b0;
     frame3.data[12] = 8'h00;  frame3.valid[12] = 1'b1;  frame3.error[12] = 1'b0;
     frame3.data[13] = 8'h03;  frame3.valid[13] = 1'b1;  frame3.error[13] = 1'b0; // Length/Type = Length = 03
     frame3.data[14] = 8'h01;  frame3.valid[14] = 1'b1;  frame3.error[14] = 1'b0; // Therefore padding is required
@@ -439,18 +441,18 @@ module demo_tb;
     //-----------
     // Frame 4
     //-----------
-    frame4.data[0]  = 8'hDB;  frame4.valid[0]  = 1'b1;  frame4.error[0]  = 1'b0; // Destination Address (DA)
-    frame4.data[1]  = 8'h02;  frame4.valid[1]  = 1'b1;  frame4.error[1]  = 1'b0;
-    frame4.data[2]  = 8'h03;  frame4.valid[2]  = 1'b1;  frame4.error[2]  = 1'b0;
-    frame4.data[3]  = 8'h04;  frame4.valid[3]  = 1'b1;  frame4.error[3]  = 1'b0;
-    frame4.data[4]  = 8'h05;  frame4.valid[4]  = 1'b1;  frame4.error[4]  = 1'b0;
-    frame4.data[5]  = 8'h06;  frame4.valid[5]  = 1'b1;  frame4.error[5]  = 1'b0;
-    frame4.data[6]  = 8'h5A;  frame4.valid[6]  = 1'b1;  frame4.error[6]  = 1'b0; // Source Address  (5A)
-    frame4.data[7]  = 8'h02;  frame4.valid[7]  = 1'b1;  frame4.error[7]  = 1'b0;
-    frame4.data[8]  = 8'h03;  frame4.valid[8]  = 1'b1;  frame4.error[8]  = 1'b0;
-    frame4.data[9]  = 8'h04;  frame4.valid[9]  = 1'b1;  frame4.error[9]  = 1'b0;
-    frame4.data[10] = 8'h05;  frame4.valid[10] = 1'b1;  frame4.error[10] = 1'b0;
-    frame4.data[11] = 8'h06;  frame4.valid[11] = 1'b1;  frame4.error[11] = 1'b0;
+    frame4.data[0]  = dst_addr[ 7: 0];  frame4.valid[0]  = 1'b1;  frame4.error[0]  = 1'b0; // Destination Address (DA)
+    frame4.data[1]  = dst_addr[15: 8];  frame4.valid[1]  = 1'b1;  frame4.error[1]  = 1'b0;
+    frame4.data[2]  = 'hff;  frame4.valid[2]  = 1'b1;  frame4.error[2]  = 1'b0;
+    frame4.data[3]  = dst_addr[31:24];  frame4.valid[3]  = 1'b1;  frame4.error[3]  = 1'b0;
+    frame4.data[4]  = dst_addr[39:32];  frame4.valid[4]  = 1'b1;  frame4.error[4]  = 1'b0;
+    frame4.data[5]  = dst_addr[47:40];  frame4.valid[5]  = 1'b1;  frame4.error[5]  = 1'b0;
+    frame4.data[6]  = src_addr[ 7: 0];  frame4.valid[6]  = 1'b1;  frame4.error[6]  = 1'b0; // Source Address  (5A)
+    frame4.data[7]  = src_addr[15: 8];  frame4.valid[7]  = 1'b1;  frame4.error[7]  = 1'b0;
+    frame4.data[8]  = src_addr[23:16];  frame4.valid[8]  = 1'b1;  frame4.error[8]  = 1'b0;
+    frame4.data[9]  = src_addr[31:24];  frame4.valid[9]  = 1'b1;  frame4.error[9]  = 1'b0;
+    frame4.data[10] = src_addr[39:32];  frame4.valid[10] = 1'b1;  frame4.error[10] = 1'b0;
+    frame4.data[11] = src_addr[47:40];  frame4.valid[11] = 1'b1;  frame4.error[11] = 1'b0;
     frame4.data[12] = 8'h00;  frame4.valid[12] = 1'b1;  frame4.error[12] = 1'b0;
     frame4.data[13] = 8'h03;  frame4.valid[13] = 1'b1;  frame4.error[13] = 1'b0; // Length/Type = Length = 03
     frame4.data[14] = 8'h01;  frame4.valid[14] = 1'b1;  frame4.error[14] = 1'b0; // Therefore padding is required
@@ -1166,7 +1168,7 @@ module demo_tb;
         end
     column_index = column_index + 1;
     end
-       if (addr_comp_reg == address_filter_value) begin
+       if (addr_comp_reg[47:0] == address_filter_value[47:0]) begin
            frame_filtered = 0;
        end
        else begin
@@ -1379,10 +1381,15 @@ module demo_tb;
        //-----------------------------------------------------
 
        // Check the frames
+       $display("Frame 0:");
        check_frame_10_100m(frame0.tobits(0));
+       $display("Frame 1:");
        check_frame_10_100m(frame1.tobits(0));
+       $display("Frame 2:");
        check_frame_10_100m(frame2.tobits(0));
+       $display("Frame 3:");
        check_frame_10_100m(frame3.tobits(0));
+       $display("Frame 4:");
        check_frame_10_100m(frame4.tobits(0));
 
        #200000
@@ -1392,10 +1399,15 @@ module demo_tb;
        //-----------------------------------------------------
 
        // Check the frames
+       $display("Frame 0:");
        check_frame_10_100m(frame0.tobits(0));
+       $display("Frame 1:");
        check_frame_10_100m(frame1.tobits(0));
+       $display("Frame 2:");
        check_frame_10_100m(frame2.tobits(0));
+       $display("Frame 3:");
        check_frame_10_100m(frame3.tobits(0));
+       $display("Frame 4:");
        check_frame_10_100m(frame4.tobits(0));
 
        #200000

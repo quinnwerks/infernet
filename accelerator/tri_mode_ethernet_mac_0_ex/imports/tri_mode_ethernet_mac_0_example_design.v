@@ -285,6 +285,13 @@ module tri_mode_ethernet_mac_0_example_design
 
    // signal tie offs
    wire  [7:0]          tx_ifg_delay = 0;    // not used in this example
+   
+   // mac address src/dst
+   wire [47:0] src_mac_address;
+   wire [47:0] our_mac_address;
+   
+   assign src_mac_address = 48'd0;
+   assign our_mac_address = 48'h0605040302DA;
 
    assign activity_flash  = int_activity_flash;
    assign activity_flashn = !int_activity_flash;
@@ -347,7 +354,7 @@ module tri_mode_ethernet_mac_0_example_design
   //----------------------------------------------------------------------------
 
    tri_mode_ethernet_mac_0_example_design_resets example_resets
-   (
+   (      
       // clocks
       .s_axi_aclk       (s_axi_aclk),
       .gtx_clk          (gtx_clk_bufg),
@@ -517,7 +524,11 @@ module tri_mode_ethernet_mac_0_example_design
       .s_axi_rdata                  (s_axi_rdata),
       .s_axi_rresp                  (s_axi_rresp),
       .s_axi_rvalid                 (s_axi_rvalid),
-      .s_axi_rready                 (s_axi_rready)
+      .s_axi_rready                 (s_axi_rready),
+      
+      // mac addresses
+      .src_mac_address(src_mac_address),
+      .our_mac_address(our_mac_address)
    );
 
   //----------------------------------------------------------------------------
