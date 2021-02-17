@@ -14,7 +14,7 @@ module ip_packet_rx # (
     input            MAC_DATA_TUSER,
     
     // Interface with Accelerator
-    output [785*8-1:0] DATA_FRAME,
+    output [USER_DATA_BYTES*8-1:0] DATA_FRAME,
     output [31     :0] SRC_IP_ADDRESS,
     output [47     :0] SRC_MAC_ADDRESS,
     output             FRAME_READY,

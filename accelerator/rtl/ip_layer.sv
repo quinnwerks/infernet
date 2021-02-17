@@ -1,5 +1,7 @@
 `timescale 1 ns / 1 ps
-module ip_layer (
+module ip_layer # (
+    parameter USER_DATA_BYTES=785
+)(
     // Globals
     input        ACLK,
     input        ARESET,
@@ -21,7 +23,7 @@ module ip_layer (
     
     // To/From NN Core   
     // Rx
-    output [785*8-1:0] DATA_FRAME,
+    output [USER_DATA_BYTES*8-1:0] DATA_FRAME,
     output [31     :0] SRC_IP_ADDRESS,
     output [47     :0] SRC_MAC_ADDRESS,
     output             FRAME_READY,
@@ -58,7 +60,9 @@ module ip_layer (
         .MAC_DATA_TUSER()
     );
     
-    ip_packet_rx rx (
+    ip_packet_rx #(
+        .USER_DATA_BYTES(USER_DATA_BYTES)
+    ) rx (
          // Globals
         .ACLK(ACLK),
         .ARESET(ARESET),

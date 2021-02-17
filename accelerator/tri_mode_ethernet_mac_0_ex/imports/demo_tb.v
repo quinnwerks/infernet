@@ -627,6 +627,9 @@ module demo_tb;
   wire         frame_error;
   reg          bist_mode_error;
   wire         serial_response;
+    
+  wire         accelerator_frame_ready;
+  
 
 
 
@@ -692,7 +695,8 @@ module demo_tb;
       .frame_error                (frame_error),
       .frame_errorn               (),
       .activity_flash             (),
-      .activity_flashn            ()
+      .activity_flashn            (),
+      .FRAME_READY(accelerator_frame_ready)
 
     );
 
@@ -1121,6 +1125,7 @@ module demo_tb;
     //send_frame_10_100m(frame2.tobits(2));
     //send_frame_10_100m(frame3.tobits(3));
     //send_frame_10_100m(frame4.tobits(4));
+    $display("Done sending frames!");
 
     wait (tx_monitor_finished_100M == 1);
     #10000;
@@ -1135,7 +1140,7 @@ module demo_tb;
     //send_frame_10_100m(frame2.tobits(2));
     //send_frame_10_100m(frame3.tobits(3));
     //send_frame_10_100m(frame4.tobits(4));
-
+    $display("Done sending frames!");
 
   end // p_rx_stimulus
 
@@ -1383,7 +1388,7 @@ module demo_tb;
        //-----------------------------------------------------
 
        // Check the frames
-       $display("Frame 0:");
+       $display("Checking Frame 0:");
        check_frame_10_100m(frame0.tobits(0));
        //$display("Frame 1:");
        //check_frame_10_100m(frame1.tobits(0));
@@ -1401,7 +1406,7 @@ module demo_tb;
        //-----------------------------------------------------
 
        // Check the frames
-       $display("Frame 0:");
+       $display("Checking Frame 0:");
        check_frame_10_100m(frame0.tobits(0));
        //$display("Frame 1:");
        //check_frame_10_100m(frame1.tobits(0));

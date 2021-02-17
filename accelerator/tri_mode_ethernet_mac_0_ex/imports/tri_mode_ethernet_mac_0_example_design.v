@@ -133,6 +133,8 @@
 module tri_mode_ethernet_mac_0_example_design
 #  (
       parameter OUR_MAC_ADDRESS=48'h0605040302DA,
+      parameter USER_DATA_BYTES=26, // SIZE OF MIN PACKET
+      parameter OUR_IP_ADDRESS=32'h14131211,
       // Unused for now...
       parameter SRC_MAC_ADDRESS=48'hAAAAAAAAAAAA
 )(
@@ -188,8 +190,14 @@ module tri_mode_ethernet_mac_0_example_design
       output        frame_error,
       output        frame_errorn,
       output        activity_flash,
-      output        activity_flashn
-
+      output        activity_flashn,
+    
+      // Accelerator interface
+      output [USER_DATA_BYTES*8-1:0] DATA_FRAME,
+      output                       FRAME_READY,
+      output [48-1:0]              MAC_ADDRESS,
+      output [32-1:0]              IP_ADDRESS,
+      output                       PACKET_FOR_ACCELERATOR
     );
 
    //----------------------------------------------------------------------------
@@ -636,7 +644,7 @@ module tri_mode_ethernet_mac_0_example_design
   //----------------------------------------------------------------------------
   //  Instantiate the address swapping module and simple pattern generator
   //----------------------------------------------------------------------------
-
+   /*
    tri_mode_ethernet_mac_0_basic_pat_gen basic_pat_gen_inst (
       .axi_tclk                     (tx_fifo_clock),
       .axi_tresetn                  (tx_fifo_resetn),
@@ -660,9 +668,51 @@ module tri_mode_ethernet_mac_0_example_design
 
       .frame_error                  (int_frame_error),
       .activity_flash               (int_activity_flash)
-   );
+   );*/
    
+   
+   ip_layer # (
+      .USER_DATA_BYTES(USER_DATA_BYTES)
+   )ip_layer_inst (
+      .ACLK(tx_fifo_clock),
+      .ARESET(tx_fifo_resetn),
+      .ACCELERATOR_IP_ADDRESS(OUR_IP_ADDRESS),
+      .ACCELERATOR_MAC_ADDRESS(OUR_MAC_ADDRESS),
 
+      // To/From FIFO/MAC:
+      // data from the RX data path
+      .RX_AXIS_TDATA(rx_axis_fifo_tdata),
+      .RX_AXIS_TVALID(rx_axis_fifo_tvalid),
+      .RX_AXIS_TLAST(rx_axis_fifo_tlast),
+      .RX_AXIS_TUSER(1'b0),
+      .RX_AXIS_TREADY(rx_axis_fifo_tready),
+        
+      // data TO the TX data path
+      .TX_AXIS_TDATA(tx_axis_fifo_tdata),
+      .TX_AXIS_TVALID(tx_axis_fifo_tvalid),
+      .TX_AXIS_TLAST(tx_axis_fifo_tlast),
+      .TX_AXIS_TREADY(tx_axis_fifo_tready),
+      
+      // To/From NN Core   
+      // Rx
+      .DATA_FRAME(DATA_FRAME),
+      .SRC_IP_ADDRESS(IP_ADDRESS),
+      .SRC_MAC_ADDRESS(MAC_ADDRESS),
+      .FRAME_READY(FRAME_READY),
+      // Useful signals for debug
+      .PACKET_FOR_ACCELERATOR(PACKET_FOR_ACCELERATOR),
+    
+      // Tx
+      // TODO :-).
+      .RECIPIENT_IP_ADDRESS(),
+      .RECIPIENT_MAC_ADDRESS(),
+      .RECIPIENT_MESSAGE(), // Either a response to LB or an inference result
+      .START_IP_TXN(1'b0),
+      .READY_FOR_SEND()
+   );
+   assign int_frame_error = 1'b0;
+   assign int_activity_flash = 1'b0;
+   
 
 
 endmodule
