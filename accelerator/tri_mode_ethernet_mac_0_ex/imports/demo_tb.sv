@@ -627,8 +627,12 @@ module demo_tb;
   wire         frame_error;
   reg          bist_mode_error;
   wire         serial_response;
-    
-  wire         accelerator_frame_ready;
+  
+  localparam    USER_DATA_WIDTH = 26;  
+  logic         accelerator_rx_frame_ready;
+  logic     [USER_DATA_WIDTH*8-1:0] accelerator_rx_data_frame;
+  logic     [31:0]                  accelerator_rx_ip_addr;
+  logic     [47:0]                  accelerator_rx_mac_addr;
   
 
 
@@ -696,8 +700,10 @@ module demo_tb;
       .frame_errorn               (),
       .activity_flash             (),
       .activity_flashn            (),
-      .FRAME_READY(accelerator_frame_ready)
-
+      .FRAME_READY(accelerator_rx_frame_ready),
+      .DATA_FRAME(accelerator_rx_data_frame),
+      .IP_ADDRESS(accelerator_rx_ip_addr),
+      .MAC_ADDRESS(accelerator_rx_mac_addr)
     );
 
   //---------------------------------------------------------------------------
