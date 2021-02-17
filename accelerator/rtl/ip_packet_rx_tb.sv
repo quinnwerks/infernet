@@ -211,7 +211,9 @@ endtask
 
 
 
-ip_packet_rx dut (
+ip_packet_rx #(
+    .USER_DATA_BYTES(USER_DATA_BYTES)
+)dut (
     .ACLK(aclk),
     .ARESET(areset),
     .ACCELERATOR_IP_ADDRESS(accelerator_ip_address),

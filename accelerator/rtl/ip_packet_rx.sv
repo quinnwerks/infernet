@@ -1,4 +1,6 @@
-module ip_packet_rx(
+module ip_packet_rx # (
+    parameter USER_DATA_BYTES=785
+) (
     input            ACLK,
     input            ARESET,
     input [31:0]     ACCELERATOR_IP_ADDRESS,
@@ -28,7 +30,7 @@ localparam COUNTER_WIDTH = 16;
 
 localparam ETH_HDR_SIZE_BYTES = 14;
 localparam IP_HDR_SIZE_BYTES = 20;
-localparam USER_DATA_BYTES = 785; // 784 for inference frame + 1 byte for metadata
+//localparam USER_DATA_BYTES = 785; // 784 for inference frame + 1 byte for metadata
 
 localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8; 
 

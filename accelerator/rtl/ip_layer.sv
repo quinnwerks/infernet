@@ -19,8 +19,7 @@ module ip_layer (
     output       TX_AXIS_TLAST,
     input        TX_AXIS_TREADY,
     
-    // To/From NN Core
-    
+    // To/From NN Core   
     // Rx
     output [785*8-1:0] DATA_FRAME,
     output [31     :0] SRC_IP_ADDRESS,
