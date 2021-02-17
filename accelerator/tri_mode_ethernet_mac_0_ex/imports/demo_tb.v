@@ -128,7 +128,7 @@ module demo_tb;
 
   // The following parameter does not control the value the address filter is set to
   // it is only used in the testbench
-  parameter src_addr = 48'h06050403025A;
+  parameter src_addr = 48'hAABBCCDDEEFF;
   parameter dst_addr = 48'h0605040302DA;
   parameter address_filter_value = {src_addr, dst_addr} ; //SA and DA
   `define FRAME_TYP [8*62+62+62+8*4+4+4+8*4+4+4+1:1]
@@ -169,7 +169,7 @@ module demo_tb;
     frame0.data[8]  = src_addr[23:16];  frame0.valid[8]  = 1'b1;  frame0.error[8]  = 1'b0;
     frame0.data[9]  = src_addr[31:24];  frame0.valid[9]  = 1'b1;  frame0.error[9]  = 1'b0;
     frame0.data[10] = src_addr[39:32];  frame0.valid[10] = 1'b1;  frame0.error[10] = 1'b0;
-    frame0.data[11] = 'h32;  frame0.valid[11] = 1'b1;  frame0.error[11] = 1'b0;  // We don't care about different src addrs
+    frame0.data[11] = src_addr[47:40];  frame0.valid[11] = 1'b1;  frame0.error[11] = 1'b0;  // We don't care about different src addrs
     frame0.data[12] = 8'h00;  frame0.valid[12] = 1'b1;  frame0.error[12] = 1'b0;
     frame0.data[13] = 8'h2E;  frame0.valid[13] = 1'b1;  frame0.error[13] = 1'b0; // Length/Type = Length = 46
     frame0.data[14] = 8'h01;  frame0.valid[14] = 1'b1;  frame0.error[14] = 1'b0;
@@ -1117,10 +1117,10 @@ module demo_tb;
     $display("Rx Stimulus: sending 5 frames at 100M ... ");
 
     send_frame_10_100m(frame0.tobits(0));
-    send_frame_10_100m(frame1.tobits(1));
-    send_frame_10_100m(frame2.tobits(2));
-    send_frame_10_100m(frame3.tobits(3));
-    send_frame_10_100m(frame4.tobits(4));
+    //send_frame_10_100m(frame1.tobits(1));
+    //send_frame_10_100m(frame2.tobits(2));
+    //send_frame_10_100m(frame3.tobits(3));
+    //send_frame_10_100m(frame4.tobits(4));
 
     wait (tx_monitor_finished_100M == 1);
     #10000;
@@ -1131,10 +1131,10 @@ module demo_tb;
     $display("Rx Stimulus: sending 5 frames at 10M ... ");
 
     send_frame_10_100m(frame0.tobits(0));
-    send_frame_10_100m(frame1.tobits(1));
-    send_frame_10_100m(frame2.tobits(2));
-    send_frame_10_100m(frame3.tobits(3));
-    send_frame_10_100m(frame4.tobits(4));
+    //send_frame_10_100m(frame1.tobits(1));
+    //send_frame_10_100m(frame2.tobits(2));
+    //send_frame_10_100m(frame3.tobits(3));
+    //send_frame_10_100m(frame4.tobits(4));
 
 
   end // p_rx_stimulus
@@ -1385,14 +1385,14 @@ module demo_tb;
        // Check the frames
        $display("Frame 0:");
        check_frame_10_100m(frame0.tobits(0));
-       $display("Frame 1:");
-       check_frame_10_100m(frame1.tobits(0));
-       $display("Frame 2:");
-       check_frame_10_100m(frame2.tobits(0));
-       $display("Frame 3:");
-       check_frame_10_100m(frame3.tobits(0));
-       $display("Frame 4:");
-       check_frame_10_100m(frame4.tobits(0));
+       //$display("Frame 1:");
+       //check_frame_10_100m(frame1.tobits(0));
+       //$display("Frame 2:");
+       //check_frame_10_100m(frame2.tobits(0));
+       //$display("Frame 3:");
+       //check_frame_10_100m(frame3.tobits(0));
+       //$display("Frame 4:");
+       //check_frame_10_100m(frame4.tobits(0));
 
        #200000
        tx_monitor_finished_100M  <= 1;
@@ -1403,14 +1403,14 @@ module demo_tb;
        // Check the frames
        $display("Frame 0:");
        check_frame_10_100m(frame0.tobits(0));
-       $display("Frame 1:");
-       check_frame_10_100m(frame1.tobits(0));
-       $display("Frame 2:");
-       check_frame_10_100m(frame2.tobits(0));
-       $display("Frame 3:");
-       check_frame_10_100m(frame3.tobits(0));
-       $display("Frame 4:");
-       check_frame_10_100m(frame4.tobits(0));
+       //$display("Frame 1:");
+       //check_frame_10_100m(frame1.tobits(0));
+       //$display("Frame 2:");
+       //check_frame_10_100m(frame2.tobits(0));
+       //$display("Frame 3:");
+       //check_frame_10_100m(frame3.tobits(0));
+       //$display("Frame 4:");
+       //check_frame_10_100m(frame4.tobits(0));
 
        #200000
        tx_monitor_finished_10M  <= 1;
