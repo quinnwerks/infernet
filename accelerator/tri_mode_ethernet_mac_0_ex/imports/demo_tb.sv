@@ -1366,6 +1366,10 @@ module demo_tb;
    end
   endtask // check_frame_10_100m
 
+  task check_frame_rx();
+    wait(accelerator_rx_frame_ready == 1'b1);
+    $display("Frame signalled ready!!"); 
+  endtask
 
   //----------------------------------------------------------------------------
   // Monitor process. This process checks the data coming out of the
@@ -1395,7 +1399,8 @@ module demo_tb;
 
        // Check the frames
        $display("Checking Frame 0:");
-       check_frame_10_100m(frame0.tobits(0));
+       check_frame_rx();
+       //check_frame_10_100m(frame0.tobits(0));
        //$display("Frame 1:");
        //check_frame_10_100m(frame1.tobits(0));
        //$display("Frame 2:");
@@ -1413,7 +1418,9 @@ module demo_tb;
 
        // Check the frames
        $display("Checking Frame 0:");
-       check_frame_10_100m(frame0.tobits(0));
+       check_frame_rx();
+
+       //check_frame_10_100m(frame0.tobits(0));
        //$display("Frame 1:");
        //check_frame_10_100m(frame1.tobits(0));
        //$display("Frame 2:");
