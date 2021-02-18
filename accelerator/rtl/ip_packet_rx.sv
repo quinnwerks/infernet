@@ -37,11 +37,12 @@ localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8;
 
 // List of FSM states
 enum int unsigned {
-    START,         // Set up reset and other stuff
-    GET_ETH_HDR,   // Process ethernet header
-    GET_IP_HDR,    // Process ip header
-    GET_USER_DATA, // Get user data
-    WAIT_FOR_END   // State for ignoring the current packet
+    START,            // Set up reset and other stuff
+    GET_ETH_HDR,      // Process ethernet header
+    GET_IP_HDR,       // Process ip header
+    GET_USER_DATA,    // Get user data
+    WAIT_FOR_END,     // State for ignoring the current packet
+    PASS_TO_ACCELERATOR // Take one cycle to pass to dataframe
 } state, nextstate;
 
 // State logic
@@ -158,8 +159,7 @@ always_comb begin
                // If packet is for us signal ready, otherwise it's garbage
                if (packet_for_accelerator == 'd1) begin
                    // Make data available 1 cycle earlier
-                   data_frame_external[DATA_FRAME_WIDTH-1:DATA_FRAME_WIDTH-8] = mac_data_out;
-                   frame_ready = 'd1;
+                   nextstate = PASS_TO_ACCELERATOR;
                end
             end 
             // Case 2: good size + fcs, bad tuser
@@ -193,6 +193,11 @@ always_comb begin
             state_counter_reset = 'd1;
             nextstate = GET_ETH_HDR;
         end
+    end
+    PASS_TO_ACCELERATOR: begin
+        mac_data_ready = 'd0;
+        frame_ready = 'd1;
+        nextstate = GET_ETH_HDR;
     end
     endcase
 end

@@ -149,6 +149,8 @@ task test_rx (
         end
         #10;
     end
+    // Wait 1 cycle to enter PASS_TO_ACCELERATOR
+    #10;
     mac_data_valid = 'd0;
     mac_data_last = 'd0;
     mac_data_tuser = 'd0;
@@ -156,7 +158,7 @@ task test_rx (
     if (happy_path == 'd1) begin
         assert(frame_ready == 'd1) else $stop("Frame should have signaled ready");
         assert(eth_header[12*8-1:6*8] == src_mac_address) else $stop("Bad src mac!");
-        $display("expected:%d result:%d", ip_header[20*8-1:16*8], src_ip_address);
+        $display("expected:%08x result:%08x", ip_header[20*8-1:16*8], src_ip_address);
         assert(ip_header[16*8-1:12*8] == src_ip_address) else $stop("Bad src ip!");
         for (int i = 0; i < user_data_size_bytes; i++) begin
             assert(data_frame[i*8+:8] == expected_data_reg[i]) else $stop("Bad user data!");

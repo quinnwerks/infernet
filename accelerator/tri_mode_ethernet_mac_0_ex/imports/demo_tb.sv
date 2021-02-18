@@ -131,7 +131,7 @@ module demo_tb;
   parameter src_addr = 48'hAABBCCDDEEFF;
   parameter dst_addr = 48'h0605040302DA;
   parameter address_filter_value = {src_addr, dst_addr} ; //SA and DA
-  `define FRAME_TYP [8*62+62+62+8*4+4+4+8*4+4+4+1:1]
+  `define FRAME_TYP [8*64+64+64+8*4+4+4+8*4+4+4+1:1]
 
   //----------------------------------------------------------------------------
   // types to support frame data
@@ -144,6 +144,8 @@ module demo_tb;
    tri_mode_ethernet_mac_0_frame_typ frame4();
    tri_mode_ethernet_mac_0_frame_typ rx_stimulus_working_frame();
    tri_mode_ethernet_mac_0_frame_typ tx_monitor_working_frame();
+   tri_mode_ethernet_mac_0_frame_typ rx_validation_working_frame();
+
 
 
   //----------------------------------------------------------------------------
@@ -218,9 +220,12 @@ module demo_tb;
     frame0.data[57] = 8'h2C;  frame0.valid[57] = 1'b1;  frame0.error[57] = 1'b0;
     frame0.data[58] = 8'h2D;  frame0.valid[58] = 1'b1;  frame0.error[58] = 1'b0;
     frame0.data[59] = 8'h2E;  frame0.valid[59] = 1'b1;  frame0.error[59] = 1'b0;  // 46th Byte of Data
-    // unused
-    frame0.data[60] = 8'h00;  frame0.valid[60] = 1'b0;  frame0.error[60] = 1'b0;
-    frame0.data[61] = 8'h00;  frame0.valid[61] = 1'b0;  frame0.error[61] = 1'b0;
+    
+    
+    frame0.data[60] = 8'h2F;  frame0.valid[60] = 1'b0;  frame0.error[60] = 1'b0; // Unused
+    frame0.data[61] = 8'h30;  frame0.valid[61] = 1'b0;  frame0.error[61] = 1'b0;
+    //frame0.data[62] = 8'h31;  frame0.valid[62] = 1'b0;  frame0.error[62] = 1'b0;
+    //frame0.data[63] = 8'h32;  frame0.valid[63] = 1'b0;  frame0.error[63] = 1'b0;
 
     // No error in this frame
     frame0.bad_frame  = 1'b0;
@@ -1366,10 +1371,51 @@ module demo_tb;
    end
   endtask // check_frame_10_100m
 
-  task check_frame_rx();
+  task check_frame_rx(
+      input `FRAME_TYP frame
+  );
+    localparam NUM_DATA_VALUES = 60;
+    int golden_data;
+    int curr_data;
+    int curr_column;
+    rx_validation_working_frame.frombits(frame);
+
     wait(accelerator_rx_frame_ready == 1'b1);
     $display("Frame signalled ready!!"); 
-  endtask
+    curr_column = 0;
+    while(rx_validation_working_frame.valid[curr_column] != 0) begin
+        golden_data = rx_validation_working_frame.data[curr_column];
+        if (curr_column >= 6 && curr_column <= 11) begin
+            automatic int mac_addr_index = curr_column - 6;
+            curr_data = accelerator_rx_mac_addr[8*mac_addr_index+:8];
+        end
+        else if (curr_column >= 26 && curr_column <= 29) begin
+            automatic int ip_addr_index = curr_column - 26;
+            curr_data = accelerator_rx_ip_addr[8*ip_addr_index+:8];
+        end
+        else if (curr_column >= 34 ) begin
+            automatic int data_addr_index = curr_column - 34;
+            curr_data = accelerator_rx_data_frame[8*data_addr_index+:8];
+        end
+        else begin
+            curr_column++;
+            continue;
+        end
+        if (curr_data != golden_data) begin
+            $display("Curr column: %d Golden data: %02x Curr data: %02x", curr_column, golden_data, curr_data);
+            $stop();
+        end
+        curr_column++;
+    end
+    
+    $display("Frame check successful!");
+ endtask
+ 
+ task stimulate_tx (
+ 
+ );
+ 
+ endtask
 
   //----------------------------------------------------------------------------
   // Monitor process. This process checks the data coming out of the
@@ -1399,7 +1445,7 @@ module demo_tb;
 
        // Check the frames
        $display("Checking Frame 0:");
-       check_frame_rx();
+       check_frame_rx(frame0.tobits(0));
        //check_frame_10_100m(frame0.tobits(0));
        //$display("Frame 1:");
        //check_frame_10_100m(frame1.tobits(0));
@@ -1418,7 +1464,7 @@ module demo_tb;
 
        // Check the frames
        $display("Checking Frame 0:");
-       check_frame_rx();
+       check_frame_rx(frame0.tobits(0));
 
        //check_frame_10_100m(frame0.tobits(0));
        //$display("Frame 1:");
