@@ -42,7 +42,8 @@ int unsigned data_out_list[];
 int ready_wait_list[];
 int ready_low_list[];
 
-localparam MIN_PAYLOAD_SIZE = 64;
+// Eth hdr + ip hdr + payload - checksum
+localparam MIN_PAYLOAD_SIZE = 60;
 
 initial begin
    // Reset the ip and set input signals
@@ -119,10 +120,10 @@ initial begin
                     'h00,
                     'h00,
                     'h00,
-                    'h00,
-                    'h00,
-                    'h00,
-                    'h00,
+                    //'h00,
+                    //'h00,
+                    //'h00,
+                    //'h00,
                     'h00};
    $display("Size:%d", data_out_list.size);
    assert(data_out_list.size == MIN_PAYLOAD_SIZE) else $stop("Bad expected payload");

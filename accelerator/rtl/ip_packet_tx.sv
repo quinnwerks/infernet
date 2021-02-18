@@ -83,7 +83,8 @@ localparam [ 7:0] protocol = 'h04; // 4 for IP protocol. Should not matter.
 
 localparam ETH_HDR_SIZE_BYTES = 14;
 localparam IP_HDR_SIZE_BYTES = 20;
-localparam DATA_SIZE_BYTES = 64 - ETH_HDR_SIZE_BYTES - IP_HDR_SIZE_BYTES;
+localparam FRAME_CHECKSUM_BYTES = 4;
+localparam DATA_SIZE_BYTES = 64 - ETH_HDR_SIZE_BYTES - IP_HDR_SIZE_BYTES - FRAME_CHECKSUM_BYTES;
 
 always_comb begin
     ready_for_send = 'd0;
