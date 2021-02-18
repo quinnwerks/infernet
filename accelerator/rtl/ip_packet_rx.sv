@@ -65,6 +65,8 @@ logic                            mac_data_last;
 logic                            mac_data_tuser;
 
 logic [DATA_FRAME_WIDTH-1:0]     data_frame;
+logic [DATA_FRAME_WIDTH-1:0]     data_frame_external;
+
 logic [IP_ADDR_WIDTH-1:0]        src_ip_address;
 logic [MAC_ADDR_WIDTH-1:0]       src_mac_address;
 logic                            frame_ready;
@@ -87,6 +89,8 @@ logic                            ip_header_enable;
 logic                            data_frame_enable;
 
 always_comb begin
+    data_frame_external = data_frame;
+    
     frame_ready = 'd0;
     mac_data_ready = 'd0;
     
@@ -153,10 +157,12 @@ always_comb begin
                nextstate = GET_ETH_HDR;
                // If packet is for us signal ready, otherwise it's garbage
                if (packet_for_accelerator == 'd1) begin
+                   // Make data available 1 cycle earlier
+                   data_frame_external[DATA_FRAME_WIDTH-1:DATA_FRAME_WIDTH-8] = mac_data_out;
                    frame_ready = 'd1;
                end
             end 
-            // Case 2: good size + fcs
+            // Case 2: good size + fcs, bad tuser
             else if (state_counter == USER_DATA_BYTES -1
                   && mac_data_last == 'd1
                   && mac_data_tuser == 'd1) begin
@@ -201,7 +207,7 @@ assign mac_data_valid         = MAC_DATA_VALID;
 assign mac_data_last          = MAC_DATA_LAST;
 assign mac_data_tuser         = MAC_DATA_TUSER;
 
-assign DATA_FRAME             = data_frame;
+assign DATA_FRAME             = data_frame_external;
 assign SRC_IP_ADDRESS         = src_ip_address;
 assign SRC_MAC_ADDRESS        = src_mac_address;
 assign FRAME_READY            = frame_ready;

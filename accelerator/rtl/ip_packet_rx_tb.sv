@@ -158,7 +158,6 @@ task test_rx (
         assert(eth_header[12*8-1:6*8] == src_mac_address) else $stop("Bad src mac!");
         $display("expected:%d result:%d", ip_header[20*8-1:16*8], src_ip_address);
         assert(ip_header[16*8-1:12*8] == src_ip_address) else $stop("Bad src ip!");
-        #10;
         for (int i = 0; i < user_data_size_bytes; i++) begin
             assert(data_frame[i*8+:8] == expected_data_reg[i]) else $stop("Bad user data!");
         end
