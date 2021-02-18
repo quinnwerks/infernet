@@ -29,7 +29,7 @@ localparam [15:0] eth_packet_type = 'h0800; // ip protocol
 
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
-localparam [15:0] packet_length = 'd20 + 'd2; // header length + data length (bytes)
+localparam [15:0] packet_length = 'd20 + 'd26; // header length + data length (bytes)
 localparam [15:0] identification = 'h0000;
 localparam [15:0] flags_and_fragment = 'h0000;
 localparam [ 7:0] time_to_live = 'h80;
@@ -61,42 +61,42 @@ initial begin
    areset = 'd1;
    #10;
    
-   data_out_list = {recipient_mac_address[47:40], 
-                    recipient_mac_address[39:32],
-                    recipient_mac_address[31:24],
-                    recipient_mac_address[23:16],
+   data_out_list = {recipient_mac_address[ 7: 0],
                     recipient_mac_address[15: 8],
-                    recipient_mac_address[ 7: 0],
-                    accelerator_mac_address[47:40],
-                    accelerator_mac_address[39:32],
-                    accelerator_mac_address[31:24],
-                    accelerator_mac_address[23:16],
-                    accelerator_mac_address[15: 8],
+                    recipient_mac_address[23:16],
+                    recipient_mac_address[31:24],
+                    recipient_mac_address[39:32],
+                    recipient_mac_address[47:40], 
                     accelerator_mac_address[ 7: 0],
-                    eth_packet_type[15:8],
+                    accelerator_mac_address[15: 8],
+                    accelerator_mac_address[23:16],
+                    accelerator_mac_address[31:24],
+                    accelerator_mac_address[39:32],
+                    accelerator_mac_address[47:40],
                     eth_packet_type[7:0],
+                    eth_packet_type[15:8],
                     ip_version,
                     service_type,
-                    packet_length[15:8],
                     packet_length[ 7:0],
-                    identification[15:8],
+                    packet_length[15:8],                 
                     identification[ 7:0],
-                    flags_and_fragment[15:8],
+                    identification[15:8],                  
                     flags_and_fragment[7:0],
+                    flags_and_fragment[15:8],       
                     time_to_live,
                     protocol,
-                    checksum[15:8],
                     checksum[ 7:0],
-                    accelerator_ip_address[31:24],
-                    accelerator_ip_address[23:16],
-                    accelerator_ip_address[15: 8],
+                    checksum[15:8],
                     accelerator_ip_address[ 7: 0],
-                    recipient_ip_address[31:24],
-                    recipient_ip_address[23:16],
-                    recipient_ip_address[15: 8],
+                    accelerator_ip_address[15: 8],
+                    accelerator_ip_address[23:16],
+                    accelerator_ip_address[31:24],                  
                     recipient_ip_address[ 7: 0],
-                    recipient_message[9:8],
+                    recipient_ip_address[15: 8],
+                    recipient_ip_address[23:16],
+                    recipient_ip_address[31:24],
                     recipient_message[7:0],
+                    recipient_message[9:8],
                     'h00,
                     'h00,
                     'h00,
@@ -120,10 +120,6 @@ initial begin
                     'h00,
                     'h00,
                     'h00,
-                    //'h00,
-                    //'h00,
-                    //'h00,
-                    //'h00,
                     'h00};
    $display("Size:%d", data_out_list.size);
    assert(data_out_list.size == MIN_PAYLOAD_SIZE) else $stop("Bad expected payload");

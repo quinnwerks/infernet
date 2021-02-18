@@ -75,7 +75,7 @@ localparam [15:0] eth_packet_type = 'h0800; // ip protocol
 
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
-localparam [15:0] packet_length = 'd20 + 'd2; // header length + data length (bytes)
+localparam [15:0] packet_length = 'd20 + 'd26; // header length + data length (bytes)
 localparam [15:0] identification = 'h0000;
 localparam [15:0] flags_and_fragment = 'h0000;
 localparam [ 7:0] time_to_live = 'h80;
@@ -114,21 +114,21 @@ case(state)
         if (mac_data_ready == 'd1) begin
             state_counter_enable = 'd1;
             case(state_counter)
-            'h0: mac_data_out = recipient_mac_address[47:40];
-            'h1: mac_data_out = recipient_mac_address[39:32];
-            'h2: mac_data_out = recipient_mac_address[31:24];
-            'h3: mac_data_out = recipient_mac_address[23:16];
-            'h4: mac_data_out = recipient_mac_address[15: 8];
-            'h5: mac_data_out = recipient_mac_address[ 7: 0];
-            'h6: mac_data_out = accelerator_mac_address[47:40];
-            'h7: mac_data_out = accelerator_mac_address[39:32];
-            'h8: mac_data_out = accelerator_mac_address[31:24];
-            'h9: mac_data_out = accelerator_mac_address[23:16];
-            'hA: mac_data_out = accelerator_mac_address[15: 8];
-            'hB: mac_data_out = accelerator_mac_address[ 7: 0];
-            'hC: mac_data_out = eth_packet_type[15:8];
+            'h0: mac_data_out = recipient_mac_address[ 7: 0];
+            'h1: mac_data_out = recipient_mac_address[15: 8];
+            'h2: mac_data_out = recipient_mac_address[23:16];
+            'h3: mac_data_out = recipient_mac_address[31:24];
+            'h4: mac_data_out = recipient_mac_address[39:32];
+            'h5: mac_data_out = recipient_mac_address[47:40];
+            'h6: mac_data_out = accelerator_mac_address[ 7: 0];
+            'h7: mac_data_out = accelerator_mac_address[15: 8];
+            'h8: mac_data_out = accelerator_mac_address[23:16];
+            'h9: mac_data_out = accelerator_mac_address[31:24];
+            'hA: mac_data_out = accelerator_mac_address[39:32];
+            'hB: mac_data_out = accelerator_mac_address[47:40];
+            'hC: mac_data_out = eth_packet_type[7:0];
             'hD: begin
-                 mac_data_out = eth_packet_type[7:0];
+                 mac_data_out = eth_packet_type[15:8];
                  state_counter_reset = 'd1;
                  state_counter_enable = 'd0;
                  nextstate = SEND_IP_HDR;
@@ -151,25 +151,25 @@ case(state)
             case(state_counter)
                 'h00: mac_data_out = ip_version; // ip v4, 5 words in header
                 'h01: mac_data_out = service_type; // service type
-                'h02: mac_data_out = packet_length[15:8]; // TODO total length upper 8 bits
-                'h03: mac_data_out = packet_length[ 7:0]; // total length lower 8 bits
-                'h04: mac_data_out = identification[15:8]; // identification
-                'h05: mac_data_out = identification[ 7:0];
-                'h06: mac_data_out = flags_and_fragment[15:8]; // flags and fragment offset
-                'h07: mac_data_out = flags_and_fragment[ 7:0];
+                'h02: mac_data_out = packet_length[ 7:0]; // TODO total length upper 8 bits
+                'h03: mac_data_out = packet_length[15:8]; // total length lower 8 bits
+                'h04: mac_data_out = identification[ 7:0]; // identification
+                'h05: mac_data_out = identification[15:8];
+                'h06: mac_data_out = flags_and_fragment[ 7:0]; // flags and fragment offset
+                'h07: mac_data_out = flags_and_fragment[15:8];
                 'h08: mac_data_out = time_to_live; // TODO: TTL (time to live)
                 'h09: mac_data_out = protocol;
-                'h0A: mac_data_out = checksum[15:8]; // header checksum
-                'h0B: mac_data_out = checksum[ 7:0];
-                'h0C: mac_data_out = accelerator_ip_address[31:24];
-                'h0D: mac_data_out = accelerator_ip_address[23:16];
-                'h0E: mac_data_out = accelerator_ip_address[15: 8];
-                'h0F: mac_data_out = accelerator_ip_address[ 7: 0];
-                'h10: mac_data_out = recipient_ip_address[31:24];
-                'h11: mac_data_out = recipient_ip_address[23:16];
-                'h12: mac_data_out = recipient_ip_address[15:8];
+                'h0A: mac_data_out = checksum[ 7:0]; // header checksum
+                'h0B: mac_data_out = checksum[15:8];
+                'h0C: mac_data_out = accelerator_ip_address[ 7: 0];
+                'h0D: mac_data_out = accelerator_ip_address[15: 8];
+                'h0E: mac_data_out = accelerator_ip_address[23:16];
+                'h0F: mac_data_out = accelerator_ip_address[31:24];
+                'h10: mac_data_out = recipient_ip_address[ 7: 0];
+                'h11: mac_data_out = recipient_ip_address[15: 8];
+                'h12: mac_data_out = recipient_ip_address[23:16];
                 'h13: begin
-                      mac_data_out = recipient_ip_address[7:0];
+                      mac_data_out = recipient_ip_address[31:24];
                       state_counter_reset = 'd1;
                       state_counter_enable = 'd0;
                       nextstate = SEND_USER_DATA;
@@ -190,8 +190,8 @@ case(state)
         if(mac_data_ready == 'd1) begin
             state_counter_enable = 'd1;
             case(state_counter)
-            'h00: mac_data_out = {6'b000000, recipient_message[9:8]};
-            'h01: mac_data_out = recipient_message[7:0];        
+            'h00: mac_data_out = recipient_message[7:0];
+            'h01: mac_data_out = {6'b000000, recipient_message[9:8]};
             DATA_SIZE_BYTES-1: begin
                   mac_data_last = 'd1;
                   state_counter_reset = 'd1;
