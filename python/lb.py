@@ -2,7 +2,7 @@
 import networking532 as n532
 import sys
 import scapy.all as scapy
-import matplotlib as mp
+import matplotlib.image as mpimg
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
     print()
 
     print(sys.argv)
-    packet = scapy.IP(dst="10.11.12.13", src=fpganet['ipaddr'])/scapy.Raw([1,2,3])
+    packet = scapy.IP(dst="10.11.12.13", src=fpganet['ipaddr'])/scapy.Raw([1, 2, 3])
     packet.show()
 
 
