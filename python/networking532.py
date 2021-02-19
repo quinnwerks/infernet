@@ -24,13 +24,13 @@ def prompt_alternative_if(ifaces):
     prompt = ''
     for i in range(len(ifaces)):
         # prompt += '%d:\t%s \t(%s)\n' % (i, ifaces[i][0], ifaces[i][1][0])
-        prompt += f'{i}:\t{ifaces[i][0]} \t({ifaces[i][1][0]})\n'
-    print("FPGANet interface not detected, please choose network interface:\n")
+        prompt += f'\n{i}:\t{ifaces[i][0]} \t({ifaces[i][1][0]})'
+    print("\nFPGANet interface not detected, please choose network interface:")
     print(prompt)
     num = None
     while (not isinstance(num, int) or num < 0 or num >= len(ifaces)):
         try:
-            num = int(input("Enter a number: "))
+            num = int(input("\nEnter a number: "))
         except ValueError:
             num = None
     ret = {'ifname': ifaces[num][0], 'ipaddr': ifaces[num][1][0]}
@@ -43,3 +43,15 @@ def get_fpganet():
     if (not fpganet):
         fpganet = prompt_alternative_if(ifaces)
     return fpganet
+
+
+def send_inference_packet(fpganet, ia_ip, imgdata):
+    pkt = scapy.IP(dst = ia_ip)
+    # TODO: use Quinn's packet fields
+    pass
+    pkt = pkt / scapy.Raw(imgdata)
+    print(pkt.show())
+    print(fpganet['ifname'])
+    scapy.send(pkt, iface=fpganet['ifname'])
+    # TODO: receive result
+    pass

@@ -1,8 +1,17 @@
+#!python
 # targeting 3.7.2
+
+"""
+usage:
+1)  lb.py
+    interactively set up load balancer process
+2)  lb.py configuration.conf
+    load saved configuration state to skip setup steps
+"""
+
 import networking532 as n532
 import sys
 import scapy.all as scapy
-import matplotlib.image as mpimg
 
 
 def main():
