@@ -1,0 +1,45 @@
+import scapy.all as scapy
+from netifaces import interfaces, ifaddresses, AF_INET
+
+def get_interfaces():
+    availableIfaces = []
+    for ifaceName in interfaces():
+        addresses = [i['addr'] for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr': 'No IP addr'}])]
+        # print('%s: %s' % (ifaceName, ', '.join(addresses)))
+        availableIfaces.append((ifaceName, addresses))
+    return availableIfaces
+    # print(availableIfaces)
+
+
+def find_fpganet_if(ifaces):
+    ret = False
+    for interface in ifaces:
+        for ip in interface[1]:
+            if(ip.startswith('1.1.')):
+                ret = {'ifname': interface[0], 'ipaddr': ip}
+                return ret
+
+
+def prompt_alternative_if(ifaces):
+    prompt = ''
+    for i in range(len(ifaces)):
+        # prompt += '%d:\t%s \t(%s)\n' % (i, ifaces[i][0], ifaces[i][1][0])
+        prompt += f'{i}:\t{ifaces[i][0]} \t({ifaces[i][1][0]})\n'
+    print("FPGANet interface not detected, please choose network interface:\n")
+    print(prompt)
+    num = None
+    while (not isinstance(num, int) or num < 0 or num >= len(ifaces)):
+        try:
+            num = int(input("Enter a number: "))
+        except ValueError:
+            num = None
+    ret = {'ifname': ifaces[num][0], 'ipaddr': ifaces[num][1][0]}
+    return ret
+
+
+def get_fpganet():
+    ifaces = get_interfaces()
+    fpganet = find_fpganet_if(ifaces)
+    if (not fpganet):
+        fpganet = prompt_alternative_if(ifaces)
+    return fpganet
