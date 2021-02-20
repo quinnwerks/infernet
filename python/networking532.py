@@ -1,5 +1,6 @@
 import scapy.all as scapy
 from netifaces import interfaces, ifaddresses, AF_INET
+import os
 
 def get_interfaces():
     availableIfaces = []
@@ -17,6 +18,9 @@ def find_fpganet_if(ifaces):
         for ip in interface[1]:
             if(ip.startswith('1.1.')):
                 ret = {'ifname': interface[0], 'ipaddr': ip}
+                print(f"\nFPGAnet detected! Using interface: {fpganet}")
+                if os.name == 'nt':
+                    ret['ifname'] = scapy.IFACES[ret['ifname']]
                 return ret
 
 
@@ -34,6 +38,8 @@ def prompt_alternative_if(ifaces):
         except ValueError:
             num = None
     ret = {'ifname': ifaces[num][0], 'ipaddr': ifaces[num][1][0]}
+    if os.name == 'nt':
+        ret['ifname'] = scapy.IFACES[ret['ifname']]
     return ret
 
 

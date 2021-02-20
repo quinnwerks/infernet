@@ -33,7 +33,7 @@ usage:
 
 6)  client.py ia <IA IP addr> <image file>
     skip the load balancer and do an inference request to specified accelerator, and exit.
-    not implemented yet
+    half implemented
 """
 
 # constants
@@ -74,7 +74,6 @@ def exit_invalid_args():
 
 def main():
     fpganet = n532.get_fpganet()
-    print(f"\nusing interface: {fpganet}")
 
     if len(sys.argv) == 1:
         pass
