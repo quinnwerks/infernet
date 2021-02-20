@@ -89,7 +89,7 @@ def main():
     else:
         exit_invalid_args()
 
-    print(sys.argv)
+    # print(sys.argv)
 
 
 if __name__ == '__main__':

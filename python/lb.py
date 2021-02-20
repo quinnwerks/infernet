@@ -16,7 +16,7 @@ import scapy.all as scapy
 
 def main():
     fpganet = n532.get_fpganet()
-    print(f"using interface: {fpganet}")
+    print(f"\nusing interface: {fpganet}")
     print()
 
     print(sys.argv)

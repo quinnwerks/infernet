@@ -53,11 +53,14 @@ def get_fpganet():
 
 def send_inference_packet(fpganet, ia_ip, imgdata):
     pkt = scapy.IP(dst = ia_ip)
-    # TODO: use Quinn's packet fields
-    pass
+    # use Quinn's packet fields
+    pkt.id = 0
+    pkt.ttl = 0x80
+    # load data
     pkt = pkt / scapy.Raw(imgdata)
-    print(pkt.show())
-    print(fpganet['ifname'])
-    scapy.send(pkt, iface=fpganet['ifname'])
-    # TODO: receive result
+    pkt.show()
+    # print(fpganet['ifname'])
+    res = scapy.sr1(pkt, iface=fpganet['ifname'])
+    # receive result
+    res.show()
     pass
