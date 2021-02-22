@@ -197,7 +197,13 @@ module tri_mode_ethernet_mac_0_example_design
       output                       FRAME_READY,
       output [48-1:0]              MAC_ADDRESS,
       output [32-1:0]              IP_ADDRESS,
-      output                       PACKET_FOR_ACCELERATOR
+      output                       PACKET_FOR_ACCELERATOR,
+      
+      input  [32-1:0] RECIPIENT_IP_ADDRESS,
+      input  [48-1:0] RECIPIENT_MAC_ADDRESS,
+      input  [9:0]    RECIPIENT_MESSAGE, // Either a response to LB or an inference result
+      input           START_IP_TXN,
+      output          READY_FOR_SEND
     );
 
    //----------------------------------------------------------------------------
@@ -704,11 +710,11 @@ module tri_mode_ethernet_mac_0_example_design
     
       // Tx
       // TODO :-).
-      .RECIPIENT_IP_ADDRESS(),
-      .RECIPIENT_MAC_ADDRESS(),
-      .RECIPIENT_MESSAGE(), // Either a response to LB or an inference result
-      .START_IP_TXN(1'b0),
-      .READY_FOR_SEND()
+      .RECIPIENT_IP_ADDRESS(RECIPIENT_IP_ADDRESS),
+      .RECIPIENT_MAC_ADDRESS(RECIPIENT_MAC_ADDRESS),
+      .RECIPIENT_MESSAGE(RECIPIENT_MESSAGE), // Either a response to LB or an inference result
+      .START_IP_TXN(START_IP_TXN),
+      .READY_FOR_SEND(READY_FOR_SEND)
    );
    assign int_frame_error = 1'b0;
    assign int_activity_flash = 1'b0;
