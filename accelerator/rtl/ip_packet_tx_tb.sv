@@ -25,7 +25,7 @@ logic       mac_data_last;
 logic       mac_data_tuser;
 
 // Simulation params
-localparam [15:0] eth_packet_type = 'h0800; // ip protocol
+localparam [15:0] eth_packet_type = 'h8000; // ip protocol
 
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
@@ -73,20 +73,20 @@ initial begin
                     accelerator_mac_address[31:24],
                     accelerator_mac_address[39:32],
                     accelerator_mac_address[47:40],
-                    eth_packet_type[7:0],
                     eth_packet_type[15:8],
+                    eth_packet_type[ 7:0],
                     ip_version,
                     service_type,
-                    packet_length[ 7:0],
-                    packet_length[15:8],                 
-                    identification[ 7:0],
-                    identification[15:8],                  
-                    flags_and_fragment[7:0],
-                    flags_and_fragment[15:8],       
+                    packet_length[15:8],
+                    packet_length[ 7:0],                 
+                    identification[15:8],
+                    identification[ 7:0],                  
+                    flags_and_fragment[15:8],
+                    flags_and_fragment[7:0],       
                     time_to_live,
                     protocol,
-                    checksum[ 7:0],
                     checksum[15:8],
+                    checksum[ 7:0],
                     accelerator_ip_address[ 7: 0],
                     accelerator_ip_address[15: 8],
                     accelerator_ip_address[23:16],
@@ -95,8 +95,8 @@ initial begin
                     recipient_ip_address[15: 8],
                     recipient_ip_address[23:16],
                     recipient_ip_address[31:24],
-                    recipient_message[7:0],
                     recipient_message[9:8],
+                    recipient_message[7:0],
                     'h00,
                     'h00,
                     'h00,

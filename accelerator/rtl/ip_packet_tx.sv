@@ -71,7 +71,7 @@ logic        state_counter_reset;
 logic [15:0] checksum;
 
 // Constants
-localparam [15:0] eth_packet_type = 'h0800; // ip protocol
+localparam [15:0] eth_packet_type = 'h8000; // ip protocol
 
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
@@ -126,9 +126,9 @@ case(state)
             'h9: mac_data_out = accelerator_mac_address[31:24];
             'hA: mac_data_out = accelerator_mac_address[39:32];
             'hB: mac_data_out = accelerator_mac_address[47:40];
-            'hC: mac_data_out = eth_packet_type[7:0];
+            'hC: mac_data_out = eth_packet_type[15:8];
             'hD: begin
-                 mac_data_out = eth_packet_type[15:8];
+                 mac_data_out = eth_packet_type[7:0];
                  state_counter_reset = 'd1;
                  state_counter_enable = 'd0;
                  nextstate = SEND_IP_HDR;
@@ -151,16 +151,17 @@ case(state)
             case(state_counter)
                 'h00: mac_data_out = ip_version; // ip v4, 5 words in header
                 'h01: mac_data_out = service_type; // service type
-                'h02: mac_data_out = packet_length[ 7:0]; // TODO total length upper 8 bits
-                'h03: mac_data_out = packet_length[15:8]; // total length lower 8 bits
-                'h04: mac_data_out = identification[ 7:0]; // identification
-                'h05: mac_data_out = identification[15:8];
-                'h06: mac_data_out = flags_and_fragment[ 7:0]; // flags and fragment offset
-                'h07: mac_data_out = flags_and_fragment[15:8];
+                'h02: mac_data_out = packet_length[15:8]; // TODO total length upper 8 bits
+                'h03: mac_data_out = packet_length[ 7:0]; // total length lower 8 bits
+                'h04: mac_data_out = identification[15:8]; // identification
+                'h05: mac_data_out = identification[ 7:0];
+                'h06: mac_data_out = flags_and_fragment[15:8]; // flags and fragment offset
+                'h07: mac_data_out = flags_and_fragment[7:0];
                 'h08: mac_data_out = time_to_live; // TODO: TTL (time to live)
                 'h09: mac_data_out = protocol;
-                'h0A: mac_data_out = checksum[ 7:0]; // header checksum
-                'h0B: mac_data_out = checksum[15:8];
+                'h0A: mac_data_out = checksum[15:8]; // header checksum
+                'h0B: mac_data_out = checksum[7:0];
+                // Addresses kept as little endian because thats how they were read in by the parser
                 'h0C: mac_data_out = accelerator_ip_address[ 7: 0];
                 'h0D: mac_data_out = accelerator_ip_address[15: 8];
                 'h0E: mac_data_out = accelerator_ip_address[23:16];
@@ -190,8 +191,8 @@ case(state)
         if(mac_data_ready == 'd1) begin
             state_counter_enable = 'd1;
             case(state_counter)
-            'h00: mac_data_out = recipient_message[7:0];
-            'h01: mac_data_out = {6'b000000, recipient_message[9:8]};
+            'h00: mac_data_out = {6'b000000, recipient_message[9:8]};
+            'h01: mac_data_out = recipient_message[7:0];
             DATA_SIZE_BYTES-1: begin
                   mac_data_last = 'd1;
                   state_counter_reset = 'd1;

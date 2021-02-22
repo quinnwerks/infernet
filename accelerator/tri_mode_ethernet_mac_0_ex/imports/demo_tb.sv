@@ -132,7 +132,7 @@ module demo_tb;
   parameter dst_addr = 48'h0605040302DA;
   parameter address_filter_value = {src_addr, dst_addr} ; //SA and DA
 
-  localparam [15:0] eth_packet_type = 'h0800; // ip protocol
+  localparam [15:0] eth_packet_type = 'h8000; // ip protocol
 
   localparam [ 7:0] ip_version = 'h45;
   localparam [ 7:0] service_type = 'h00;
@@ -250,6 +250,7 @@ module demo_tb;
     //-----------
     // Frame 0 Tx - For Validation Only
     //-----------
+    // This is conforming to the storage convention of the Rx
     frame0tx.data[0]  = src_addr[ 7: 0];  frame0tx.valid[0]  = 1'b1;  frame0tx.error[0]  = 1'b0; // Destination Address (DA)
     frame0tx.data[1]  = src_addr[15: 8];  frame0tx.valid[1]  = 1'b1;  frame0tx.error[1]  = 1'b0; // Destination was previous src
     frame0tx.data[2]  = src_addr[23:16];  frame0tx.valid[2]  = 1'b1;  frame0tx.error[2]  = 1'b0;
@@ -262,20 +263,22 @@ module demo_tb;
     frame0tx.data[9]  = dst_addr[31:24];  frame0tx.valid[9]  = 1'b1;  frame0tx.error[9]  = 1'b0;
     frame0tx.data[10] = dst_addr[39:32];  frame0tx.valid[10] = 1'b1;  frame0tx.error[10] = 1'b0;
     frame0tx.data[11] = dst_addr[47:40];  frame0tx.valid[11] = 1'b1;  frame0tx.error[11] = 1'b0;  // We don't care about different src addrs
-    frame0tx.data[12] = 8'h00;            frame0tx.valid[12] = 1'b1;  frame0tx.error[12] = 1'b0;
-    frame0tx.data[13] = 8'h08;                frame0tx.valid[13] = 1'b1;  frame0tx.error[13] = 1'b0; // Protocol is IP
+    // Everything else is big endian
+    frame0tx.data[12] = eth_packet_type[15:8];            frame0tx.valid[12] = 1'b1;  frame0tx.error[12] = 1'b0;
+    frame0tx.data[13] = eth_packet_type[7:0];                frame0tx.valid[13] = 1'b1;  frame0tx.error[13] = 1'b0; // Protocol is IP
     frame0tx.data[14] = ip_version;           frame0tx.valid[14] = 1'b1;  frame0tx.error[14] = 1'b0;
     frame0tx.data[15] = service_type;         frame0tx.valid[15] = 1'b1;  frame0tx.error[15] = 1'b0;
-    frame0tx.data[16] = packet_length[7:0];   frame0tx.valid[16] = 1'b1;  frame0tx.error[16] = 1'b0;
-    frame0tx.data[17] = packet_length[15:8];  frame0tx.valid[17] = 1'b1;  frame0tx.error[17] = 1'b0;
-    frame0tx.data[18] = identification[ 7:0];  frame0tx.valid[18] = 1'b1;  frame0tx.error[18] = 1'b0;
-    frame0tx.data[19] = identification[15:8];  frame0tx.valid[19] = 1'b1;  frame0tx.error[19] = 1'b0;
-    frame0tx.data[20] = flags_and_fragment[ 7:0];  frame0tx.valid[20] = 1'b1;  frame0tx.error[20] = 1'b0;
-    frame0tx.data[21] = flags_and_fragment[15:8];  frame0tx.valid[21] = 1'b1;  frame0tx.error[21] = 1'b0;
+    frame0tx.data[16] = packet_length[15:8];   frame0tx.valid[16] = 1'b1;  frame0tx.error[16] = 1'b0;
+    frame0tx.data[17] = packet_length[ 7:0];  frame0tx.valid[17] = 1'b1;  frame0tx.error[17] = 1'b0;
+    frame0tx.data[18] = identification[15:8];  frame0tx.valid[18] = 1'b1;  frame0tx.error[18] = 1'b0;
+    frame0tx.data[19] = identification[ 7:0];  frame0tx.valid[19] = 1'b1;  frame0tx.error[19] = 1'b0;
+    frame0tx.data[20] = flags_and_fragment[15:8];  frame0tx.valid[20] = 1'b1;  frame0tx.error[20] = 1'b0;
+    frame0tx.data[21] = flags_and_fragment[ 7:0];  frame0tx.valid[21] = 1'b1;  frame0tx.error[21] = 1'b0;
     frame0tx.data[22] = time_to_live;  frame0tx.valid[22] = 1'b1;  frame0tx.error[22] = 1'b0;
     frame0tx.data[23] = protocol;  frame0tx.valid[23] = 1'b1;  frame0tx.error[23] = 1'b0;
-    frame0tx.data[24] = checksum[7:0];  frame0tx.valid[24] = 1'b1;  frame0tx.error[24] = 1'b0;
-    frame0tx.data[25] = checksum[15:8];  frame0tx.valid[25] = 1'b1;  frame0tx.error[25] = 1'b0;
+    frame0tx.data[24] = checksum[15:8];  frame0tx.valid[24] = 1'b1;  frame0tx.error[24] = 1'b0;
+    frame0tx.data[25] = checksum[ 7:0];  frame0tx.valid[25] = 1'b1;  frame0tx.error[25] = 1'b0;
+    // Acutally big endian but stored strangely because of the Rx
     frame0tx.data[26] = accelerator_ip_addr[ 7: 0];  frame0tx.valid[26] = 1'b1;  frame0tx.error[26] = 1'b0;
     frame0tx.data[27] = accelerator_ip_addr[15: 8];  frame0tx.valid[27] = 1'b1;  frame0tx.error[27] = 1'b0;
     frame0tx.data[28] = accelerator_ip_addr[23:16];  frame0tx.valid[28] = 1'b1;  frame0tx.error[28] = 1'b0;
@@ -284,8 +287,8 @@ module demo_tb;
     frame0tx.data[31] = recipient_ip_addr[15: 8];  frame0tx.valid[31] = 1'b1;  frame0tx.error[31] = 1'b0;
     frame0tx.data[32] = recipient_ip_addr[23:16];  frame0tx.valid[32] = 1'b1;  frame0tx.error[32] = 1'b0;
     frame0tx.data[33] = recipient_ip_addr[31:24];  frame0tx.valid[33] = 1'b1;  frame0tx.error[33] = 1'b0;
-    frame0tx.data[34] = user_data[7:0];  frame0tx.valid[34] = 1'b1;  frame0tx.error[34] = 1'b0;
-    frame0tx.data[35] = {6'b0, user_data[9:8]};  frame0tx.valid[35] = 1'b1;  frame0tx.error[35] = 1'b0;
+    frame0tx.data[34] = {6'b0, user_data[9:8]};  frame0tx.valid[34] = 1'b1;  frame0tx.error[34] = 1'b0;
+    frame0tx.data[35] = user_data[7:0];  frame0tx.valid[35] = 1'b1;  frame0tx.error[35] = 1'b0;
     frame0tx.data[36] = 8'h00;  frame0tx.valid[36] = 1'b1;  frame0tx.error[36] = 1'b0;
     frame0tx.data[37] = 8'h00;  frame0tx.valid[37] = 1'b1;  frame0tx.error[37] = 1'b0;
     frame0tx.data[38] = 8'h00;  frame0tx.valid[38] = 1'b1;  frame0tx.error[38] = 1'b0;
