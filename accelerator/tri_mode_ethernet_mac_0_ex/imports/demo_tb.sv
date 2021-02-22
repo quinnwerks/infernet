@@ -189,8 +189,8 @@ module demo_tb;
     frame0.data[9]  = src_addr[31:24];  frame0.valid[9]  = 1'b1;  frame0.error[9]  = 1'b0;
     frame0.data[10] = src_addr[39:32];  frame0.valid[10] = 1'b1;  frame0.error[10] = 1'b0;
     frame0.data[11] = src_addr[47:40];  frame0.valid[11] = 1'b1;  frame0.error[11] = 1'b0;  // We don't care about different src addrs
-    frame0.data[12] = 8'h00;  frame0.valid[12] = 1'b1;  frame0.error[12] = 1'b0;
-    frame0.data[13] = 8'h2E;  frame0.valid[13] = 1'b1;  frame0.error[13] = 1'b0; // Length/Type = Length = 46
+    frame0.data[12] = eth_packet_type[15:8];  frame0.valid[12] = 1'b1;  frame0.error[12] = 1'b0;
+    frame0.data[13] = eth_packet_type[7:0];  frame0.valid[13] = 1'b1;  frame0.error[13] = 1'b0; // Length/Type = Length = 46
     frame0.data[14] = 8'h01;  frame0.valid[14] = 1'b1;  frame0.error[14] = 1'b0;
     frame0.data[15] = 8'h02;  frame0.valid[15] = 1'b1;  frame0.error[15] = 1'b0;
     frame0.data[16] = 8'h03;  frame0.valid[16] = 1'b1;  frame0.error[16] = 1'b0;
