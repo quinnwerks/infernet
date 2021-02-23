@@ -71,7 +71,7 @@ logic        state_counter_reset;
 logic [15:0] checksum;
 
 // Constants
-localparam [15:0] eth_packet_type = 'h8000; // ip protocol
+localparam [15:0] eth_packet_type = 'h0800; // ip protocol
 
 localparam [ 7:0] ip_version = 'h45;
 localparam [ 7:0] service_type = 'h00;
