@@ -1,0 +1,5 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+expected from 2x2 = 0_0000001_1101111010 = 1.869140625
+expected from 3x3 = 1_1111101_0011001011 = -2.8017578125
+$finish called at time : 1160 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sim_1/new/Conv_Kernel_TB.sv" Line 91

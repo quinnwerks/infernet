@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Feb 22 19:53:52 2021
+# Process ID: 27486
+# Current directory: /home/andrew/ECE532-sandbox/MNIST_Solver/MNIST_Solver.runs/Mult_Add_Pipelined_NC_synth_1
+# Command line: vivado -log Mult_Add_Pipelined_NC.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mult_Add_Pipelined_NC.tcl
+# Log file: /home/andrew/ECE532-sandbox/MNIST_Solver/MNIST_Solver.runs/Mult_Add_Pipelined_NC_synth_1/Mult_Add_Pipelined_NC.vds
+# Journal file: /home/andrew/ECE532-sandbox/MNIST_Solver/MNIST_Solver.runs/Mult_Add_Pipelined_NC_synth_1/vivado.jou
+#-----------------------------------------------------------
+source Mult_Add_Pipelined_NC.tcl -notrace

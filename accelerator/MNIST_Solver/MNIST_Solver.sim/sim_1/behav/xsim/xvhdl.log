@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/sim/Mult_Add_Pipelined_COL.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Mult_Add_Pipelined_COL'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/sim/Mult_Add_Pipelined_NC.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Mult_Add_Pipelined_NC'
