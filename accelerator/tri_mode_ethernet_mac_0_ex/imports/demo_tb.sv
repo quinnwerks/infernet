@@ -132,7 +132,7 @@ module demo_tb;
   parameter dst_addr = 48'h0605040302DA;
   parameter address_filter_value = {src_addr, dst_addr} ; //SA and DA
 
-  localparam [15:0] eth_packet_type = 'h8000; // ip protocol
+  localparam [15:0] eth_packet_type = 'h0800; // ip protocol
 
   localparam [ 7:0] ip_version = 'h45;
   localparam [ 7:0] service_type = 'h00;
@@ -348,7 +348,7 @@ module demo_tb;
     frame1.data[9]  = src_addr[31:24];  frame1.valid[9]  = 1'b1;  frame1.error[9]  = 1'b0;
     frame1.data[10] = src_addr[39:32];  frame1.valid[10] = 1'b1;  frame1.error[10] = 1'b0;
     frame1.data[11] = src_addr[47:40];  frame1.valid[11] = 1'b1;  frame1.error[11] = 1'b0;
-    frame1.data[12] = 8'h80;  frame1.valid[12] = 1'b1;  frame1.error[12] = 1'b0; // Length/Type = Type = 8000
+    frame1.data[12] = 8'h08;  frame1.valid[12] = 1'b1;  frame1.error[12] = 1'b0; // Length/Type = Type = 8000
     frame1.data[13] = 8'h00;  frame1.valid[13] = 1'b1;  frame1.error[13] = 1'b0;
     frame1.data[14] = 8'h01;  frame1.valid[14] = 1'b1;  frame1.error[14] = 1'b0;
     frame1.data[15] = 8'h02;  frame1.valid[15] = 1'b1;  frame1.error[15] = 1'b0;
