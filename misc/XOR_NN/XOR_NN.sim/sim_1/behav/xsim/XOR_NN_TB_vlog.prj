@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../XOR_NN.srcs/sources_1/new/FW_FP_Converter.sv" \
+"../../../../XOR_NN.srcs/sources_1/new/XOR_NN.sv" \
+"../../../../XOR_NN.srcs/sim_1/new/XOR_NN_TB.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
