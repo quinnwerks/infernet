@@ -18,9 +18,9 @@ def find_fpganet_if(ifaces):
         for ip in interface[1]:
             if(ip.startswith('1.1.')):
                 ret = {'ifname': interface[0], 'ipaddr': ip}
-                print(f"\nFPGAnet detected! Using interface: {fpganet}")
                 if os.name == 'nt':
                     ret['ifname'] = scapy.IFACES[ret['ifname']]
+                print(f"\nFPGAnet detected! Using interface: {ret}")
                 return ret
 
 
