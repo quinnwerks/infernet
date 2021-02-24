@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/sim/Mult_Add_Pipelined_COL.vhd" \
+
+nosort
