@@ -460,16 +460,19 @@ begin
          end
         CNFG_FILTER : begin
             // TODO: turn off promiscuous mode if on board
+            /*
             if (design_on_board == 1'b0) begin
                 $display("** Note: Setting core to non-promiscuous mode ...");
                 end
             else begin
                 $display("** Note: Setting core to promiscuous mode ...");
             end
+            */
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_ADDR_CTRL_ADD;
-            axi_wr_data    <= {design_on_board ,31'h00000000};
+            /* Turn off promiscuous mode */
+            axi_wr_data    <= {1'b0 ,31'h00000000};
             axi_state      <= CNFG_FRM_FILTER_1;
          end
          
