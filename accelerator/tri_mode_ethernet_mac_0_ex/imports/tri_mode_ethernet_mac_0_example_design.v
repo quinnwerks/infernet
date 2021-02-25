@@ -123,15 +123,15 @@
 //------------------------------------------------------
 
 `timescale 1 ps/1 ps
-
+/*
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module tri_mode_ethernet_mac_0_example_design
+module tri_mode_ethernet_mac_0_example_design_bad
 #  (
       parameter OUR_MAC_ADDRESS=48'h06_05_04_03_02_DA,
       parameter USER_DATA_BYTES=26, // SIZE OF MIN PACKET
       parameter OUR_IP_ADDRESS=32'h14_13_12_11,
       // Unused for now...
-      parameter SRC_MAC_ADDRESS=48'hAAAAAAAAAAAA
+      parameter DUMMY_MAC_ADDRESS=48'hAAAAAAAAAAAA
 )(
       // asynchronous reset
       input         glbl_rst,
@@ -302,8 +302,9 @@ module tri_mode_ethernet_mac_0_example_design
    // mac address src/dst
    wire [47:0] src_mac_address;
    wire [47:0] our_mac_address;
-   
-   assign src_mac_address = SRC_MAC_ADDRESS;
+   wire [47:0] dummy_mac_address;
+
+   assign dummy_mac_address = DUMMY_MAC_ADDRESS;
    assign our_mac_address = OUR_MAC_ADDRESS;
 
    assign activity_flash  = int_activity_flash;
@@ -645,31 +646,31 @@ module tri_mode_ethernet_mac_0_example_design
   //----------------------------------------------------------------------------
   //  Instantiate the address swapping module and simple pattern generator
   //----------------------------------------------------------------------------
-   /*
-   tri_mode_ethernet_mac_0_basic_pat_gen basic_pat_gen_inst (
-      .axi_tclk                     (tx_fifo_clock),
-      .axi_tresetn                  (tx_fifo_resetn),
-      .check_resetn                 (chk_resetn),
+   
+   //tri_mode_ethernet_mac_0_basic_pat_gen basic_pat_gen_inst (
+     // .axi_tclk                     (tx_fifo_clock),
+     // .axi_tresetn                  (tx_fifo_resetn),
+     // .check_resetn                 (chk_resetn),
 
-      .enable_pat_gen               (gen_tx_data),
-      .enable_pat_chk               (chk_tx_data),
-      .enable_address_swap          (enable_address_swap),
-      .speed                        (mac_speed),
+    //  .enable_pat_gen               (gen_tx_data),
+    //  .enable_pat_chk               (chk_tx_data),
+    //  .enable_address_swap          (enable_address_swap),
+   //   .speed                        (mac_speed),
 
-      .rx_axis_tdata                (rx_axis_fifo_tdata),
-      .rx_axis_tvalid               (rx_axis_fifo_tvalid),
-      .rx_axis_tlast                (rx_axis_fifo_tlast),
-      .rx_axis_tuser                (1'b0), // the FIFO drops all bad frames
-      .rx_axis_tready               (rx_axis_fifo_tready),
+   //   .rx_axis_tdata                (rx_axis_fifo_tdata),
+   //   .rx_axis_tvalid               (rx_axis_fifo_tvalid),
+   //   .rx_axis_tlast                (rx_axis_fifo_tlast),
+   //   .rx_axis_tuser                (1'b0), // the FIFO drops all bad frames
+   //   .rx_axis_tready               (rx_axis_fifo_tready),
 
-      .tx_axis_tdata                (tx_axis_fifo_tdata),
-      .tx_axis_tvalid               (tx_axis_fifo_tvalid),
-      .tx_axis_tlast                (tx_axis_fifo_tlast),
-      .tx_axis_tready               (tx_axis_fifo_tready),
+   //   .tx_axis_tdata                (tx_axis_fifo_tdata),
+   //   .tx_axis_tvalid               (tx_axis_fifo_tvalid),
+   //   .tx_axis_tlast                (tx_axis_fifo_tlast),
+   //   .tx_axis_tready               (tx_axis_fifo_tready),
 
-      .frame_error                  (int_frame_error),
-      .activity_flash               (int_activity_flash)
-   );*/
+   //   .frame_error                  (int_frame_error),
+   //   .activity_flash               (int_activity_flash)
+   //);
    
    
    ip_layer # (
@@ -717,18 +718,18 @@ module tri_mode_ethernet_mac_0_example_design
 
 
 endmodule
+*/
 //------------------------------------------------------------------------------
 // The module declaration for the example_design level wrapper.
 //------------------------------------------------------------------------------
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module tri_mode_ethernet_mac_0_example_design_preintegration
+module tri_mode_ethernet_mac_0_example_design
 #  (
-      parameter OUR_MAC_ADDRESS=48'h0605040302DA,
+      parameter OUR_MAC_ADDRESS=48'h06_05_04_03_02_DA,
       parameter USER_DATA_BYTES=26, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h14131211,
-      // Unused for now...
-      parameter SRC_MAC_ADDRESS=48'hAAAAAAAAAAAA
+      parameter OUR_IP_ADDRESS=32'h14_13_12_11,
+      parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
 )(
       // asynchronous reset
       input         glbl_rst,
@@ -782,9 +783,11 @@ module tri_mode_ethernet_mac_0_example_design_preintegration
       output        frame_error,
       output        frame_errorn,
       output        activity_flash,
-      output        activity_flashn,
+      output        activity_flashn
     
+
       // Accelerator interface
+      /*
       output [USER_DATA_BYTES*8-1:0] DATA_FRAME,
       output                       FRAME_READY,
       output [48-1:0]              MAC_ADDRESS,
@@ -796,6 +799,7 @@ module tri_mode_ethernet_mac_0_example_design_preintegration
       input  [9:0]    RECIPIENT_MESSAGE, // Either a response to LB or an inference result
       input           START_IP_TXN,
       output          READY_FOR_SEND
+      */
     );
 
    //----------------------------------------------------------------------------
@@ -896,12 +900,30 @@ module tri_mode_ethernet_mac_0_example_design_preintegration
    // signal tie offs
    wire  [7:0]          tx_ifg_delay = 0;    // not used in this example
    
-   // mac address src/dst
-   wire [47:0] src_mac_address;
-   wire [47:0] our_mac_address;
    
-   assign src_mac_address = SRC_MAC_ADDRESS;
+   wire [USER_DATA_BYTES*8-1:0] data_frame_from_rx;
+   wire                         frame_ready_from_rx;
+   wire [47:0]                  mac_address_from_rx;
+   wire [32-1:0]                ip_address_from_rx;
+   wire                         packet_for_accelerator_from_rx;
+   
+   wire [32-1:0]  ip_address_to_tx;
+   wire [47:0]    mac_address_to_tx;
+   wire  [9:0]    recipient_message_to_tx; // Either a response to LB or an inference result
+   wire           start_ip_txn_to_tx;
+   wire           ready_for_send_to_tx;
+   
+   // mac address src/dst
+
+
+   wire [31:0] our_ip_address;
+   wire [47:0] our_mac_address;
+   wire [47:0] dummy_mac_address;
+   
    assign our_mac_address = OUR_MAC_ADDRESS;
+   assign our_ip_address = OUR_IP_ADDRESS;
+   assign dummy_mac_address = DUMMY_MAC_ADDRESS;
+
 
    assign activity_flash  = int_activity_flash;
    assign activity_flashn = !int_activity_flash;
@@ -1137,7 +1159,7 @@ module tri_mode_ethernet_mac_0_example_design_preintegration
       .s_axi_rready                 (s_axi_rready),
       
       // mac addresses
-      .src_mac_address(src_mac_address),
+      .src_mac_address(dummy_mac_address),
       .our_mac_address(our_mac_address)
    );
 
@@ -1293,23 +1315,39 @@ module tri_mode_ethernet_mac_0_example_design_preintegration
       
       // To/From NN Core   
       // Rx
-      .DATA_FRAME(DATA_FRAME),
-      .SRC_IP_ADDRESS(IP_ADDRESS),
-      .SRC_MAC_ADDRESS(MAC_ADDRESS),
-      .FRAME_READY(FRAME_READY),
+      .DATA_FRAME(data_frame_from_rx),
+      .SRC_IP_ADDRESS(ip_address_from_rx),
+      .SRC_MAC_ADDRESS(mac_address_from_rx),
+      .FRAME_READY(frame_ready_from_rx),
       // Useful signals for debug
-      .PACKET_FOR_ACCELERATOR(PACKET_FOR_ACCELERATOR),
+      .PACKET_FOR_ACCELERATOR(packet_for_accelerator_from_rx),
     
       // Tx
-      // TODO :-).
-      .RECIPIENT_IP_ADDRESS(RECIPIENT_IP_ADDRESS),
-      .RECIPIENT_MAC_ADDRESS(RECIPIENT_MAC_ADDRESS),
-      .RECIPIENT_MESSAGE(RECIPIENT_MESSAGE), // Either a response to LB or an inference result
-      .START_IP_TXN(START_IP_TXN),
-      .READY_FOR_SEND(READY_FOR_SEND)
+      .RECIPIENT_IP_ADDRESS(ip_address_to_tx),
+      .RECIPIENT_MAC_ADDRESS(mac_address_to_tx),
+      .RECIPIENT_MESSAGE(recipient_message_to_tx), // Either a response to LB or an inference result
+      .START_IP_TXN(start_ip_txn_to_tx),
+      .READY_FOR_SEND(ready_for_send_to_tx)
    );
    assign int_frame_error = 1'b0;
    assign int_activity_flash = 1'b0;
+   
+   // Neural Network
+   wire net_out_to_tx;
+   XOR_NN nn(
+    .clock(tx_fifo_clock),
+    .reset_n(tx_fifo_resetn),
+    .start(frame_ready_from_rx),
+    .ip_address(ip_address_from_rx),
+    .mac_address(mac_address_from_rx),
+    .x(data_frame_from_rx[0]),
+    .y(data_frame_from_rx[1]),
+    .done(start_ip_txn_to_tx),
+    .ip_out(ip_address_to_tx),
+    .mac_out(mac_address_to_tx),
+    .out(net_out_to_tx)
+   );
+   assign recipient_message_to_tx = {9'd0, net_out_to_tx};
    
 
 

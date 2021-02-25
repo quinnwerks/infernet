@@ -121,7 +121,7 @@
 // This module is the demonstration testbench
 //------------------------------------------------------------------------------
 
-module demo_tb;
+module demo_tb_integration;
 
 
   parameter TB_MODE = "DEMO";
@@ -143,7 +143,7 @@ module demo_tb;
   localparam [ 7:0] protocol = 'h04;
   localparam [31:0] accelerator_ip_addr = 32'h14131211;
   localparam [31:0] recipient_ip_addr = 32'h100f0e0d;
-  localparam [9:0]  user_data = 10'h2aa;
+  localparam [9:0]  user_data = 10'h000;
   logic      [15:0] checksum;
 
   `define FRAME_TYP [8*64+64+64+8*4+4+4+8*4+4+4+1:1]
@@ -211,8 +211,8 @@ module demo_tb;
     frame0.data[31] = 8'h12;  frame0.valid[31] = 1'b1;  frame0.error[31] = 1'b0;
     frame0.data[32] = 8'h13;  frame0.valid[32] = 1'b1;  frame0.error[32] = 1'b0;
     frame0.data[33] = 8'h14;  frame0.valid[33] = 1'b1;  frame0.error[33] = 1'b0;
-    frame0.data[34] = 8'h15;  frame0.valid[34] = 1'b1;  frame0.error[34] = 1'b0;
-    frame0.data[35] = 8'h16;  frame0.valid[35] = 1'b1;  frame0.error[35] = 1'b0;
+    frame0.data[34] = 8'h03;  frame0.valid[34] = 1'b1;  frame0.error[34] = 1'b0;
+    frame0.data[35] = 8'h00;  frame0.valid[35] = 1'b1;  frame0.error[35] = 1'b0;
     frame0.data[36] = 8'h17;  frame0.valid[36] = 1'b1;  frame0.error[36] = 1'b0;
     frame0.data[37] = 8'h18;  frame0.valid[37] = 1'b1;  frame0.error[37] = 1'b0;
     frame0.data[38] = 8'h19;  frame0.valid[38] = 1'b1;  frame0.error[38] = 1'b0;
@@ -234,9 +234,9 @@ module demo_tb;
     frame0.data[54] = 8'h29;  frame0.valid[54] = 1'b1;  frame0.error[54] = 1'b0;
     frame0.data[55] = 8'h2A;  frame0.valid[55] = 1'b1;  frame0.error[55] = 1'b0;
     frame0.data[56] = 8'h2B;  frame0.valid[56] = 1'b1;  frame0.error[56] = 1'b0;
-    frame0.data[57] = 8'h2C;  frame0.valid[57] = 1'b1;  frame0.error[57] = 1'b0;
-    frame0.data[58] = 8'h2D;  frame0.valid[58] = 1'b1;  frame0.error[58] = 1'b0;
-    frame0.data[59] = 8'h2E;  frame0.valid[59] = 1'b1;  frame0.error[59] = 1'b0;  // 46th Byte of Data
+    frame0.data[57] = 8'h00;  frame0.valid[57] = 1'b1;  frame0.error[57] = 1'b0;
+    frame0.data[58] = 8'h00;  frame0.valid[58] = 1'b1;  frame0.error[58] = 1'b0;
+    frame0.data[59] = 8'h00;  frame0.valid[59] = 1'b1;  frame0.error[59] = 1'b0;  // 46th Byte of Data
 
 
     frame0.data[60] = 8'h2F;  frame0.valid[60] = 1'b0;  frame0.error[60] = 1'b0; // Unused
@@ -753,9 +753,9 @@ module demo_tb;
   // Wire up Device Under Test
   //----------------------------------------------------------------------------
 
-  tri_mode_ethernet_mac_0_example_design_preintegration #(
+  tri_mode_ethernet_mac_0_example_design #(
     .OUR_MAC_ADDRESS(dst_addr),
-    .SRC_MAC_ADDRESS(src_addr),
+    .DUMMY_MAC_ADDRESS(src_addr),
     .OUR_IP_ADDRESS(accelerator_ip_addr)
   ) dut (
       // asynchronous reset
@@ -807,7 +807,8 @@ module demo_tb;
       .frame_error                (frame_error),
       .frame_errorn               (),
       .activity_flash             (),
-      .activity_flashn            (),
+      .activity_flashn            ()
+      /*
       .FRAME_READY(accelerator_rx_frame_ready),
       .DATA_FRAME(accelerator_rx_data_frame),
       .IP_ADDRESS(accelerator_rx_ip_addr),
@@ -817,6 +818,7 @@ module demo_tb;
       .RECIPIENT_MESSAGE(accelerator_tx_user_data), // Either a response to LB or an inference result
       .START_IP_TXN(accelerator_tx_start_txn),
       .READY_FOR_SEND(accelerator_tx_ready_for_send)
+      */
     );
     
     ipv4_checksum_calculator get_checksum(
@@ -1255,7 +1257,7 @@ module demo_tb;
     $display("Tx/Rx Stimulus: sending 5 frames at 100M ... ");
 
     send_frame_10_100m(frame0.tobits(0));
-    stimulate_tx();
+    //stimulate_tx();
     //send_frame_10_100m(frame1.tobits(1));
     //send_frame_10_100m(frame2.tobits(2));
     //send_frame_10_100m(frame3.tobits(3));
@@ -1271,7 +1273,7 @@ module demo_tb;
     $display("Tx/Rx Stimulus: sending 5 frames at 10M ... ");
 
     send_frame_10_100m(frame0.tobits(0));
-    stimulate_tx();
+    //stimulate_tx();
     //send_frame_10_100m(frame1.tobits(1));
     //send_frame_10_100m(frame2.tobits(2));
     //send_frame_10_100m(frame3.tobits(3));
@@ -1363,7 +1365,7 @@ module demo_tb;
           end
 
           if (mii_txd !== {tx_monitor_working_frame.data[(column_index)][3:0]}) begin
-            $display("** ERROR: mii_txd incorrect during Destination Address");
+            $display("** ERROR: mii_txd incorrect during Destination Address %02h", tx_monitor_working_frame.data[(column_index)][7:0]);
             demo_mode_error <= 1;
           end
 
@@ -1417,7 +1419,7 @@ module demo_tb;
           end
 
           if (mii_txd !== {tx_monitor_working_frame.data[column_index][3:0]}) begin
-            $display("** ERROR: mii_txd incorrect %d", column_index);
+            $display("** ERROR: mii_txd incorrect %d %02h", column_index, tx_monitor_working_frame.data[column_index][7:0]);
             demo_mode_error <= 1;
           end
 
@@ -1429,7 +1431,7 @@ module demo_tb;
           end
 
           if (mii_txd !== {tx_monitor_working_frame.data[column_index][7:4]}) begin
-            $display("** ERROR: mii_txd incorrect %d", column_index);
+            $display("** ERROR: mii_txd incorrect %d %02h", column_index, tx_monitor_working_frame.data[column_index][7:0]);
             demo_mode_error <= 1;
           end
         end
@@ -1564,7 +1566,7 @@ end
     rx_monitor_finished_10M   <= 0;
     @(negedge reset);
     $display("Checking Rx Frame 0:");
-    check_frame_rx(frame0.tobits(0));
+    //check_frame_rx(frame0.tobits(0));
     #200000
     rx_monitor_finished_100M  <= 1;
 
@@ -1573,7 +1575,7 @@ end
 
     // Check the frames
     $display("Checking Rx Frame 0:");
-    check_frame_rx(frame0.tobits(0));
+    //check_frame_rx(frame0.tobits(0));
     #200000
     rx_monitor_finished_10M  <= 1;
   end
