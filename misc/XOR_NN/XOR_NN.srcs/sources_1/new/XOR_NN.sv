@@ -4,9 +4,13 @@ module XOR_NN(
     input clock,
     input reset_n,
     input start,
+    input [31:0] ip_address,
+    input [47:0] mac_address,
     input x,
     input y,
     output logic done,
+    output [31:0] ip_out,
+    output [47:0] mac_out,
     output out
 );
     
@@ -20,9 +24,15 @@ module XOR_NN(
     logic signed [17:0] N1_wires;
     logic signed [17:0] N2_wires;
     logic signed [17:0] N3_wires;
+    
+    logic [31:0] ip_latch;
+    logic [47:0] mac_latch;
         
     assign x_FP = {7'b0, x, 10'b0};
     assign y_FP = {7'b0, y, 10'b0};
+    
+    assign mac_out = mac_latch;
+    assign ip_out = ip_latch;
     
     // Start/done control logic
     always_ff @(posedge clock) begin
@@ -33,6 +43,8 @@ module XOR_NN(
         end else begin
             if (start && !operating) begin
                 operating <= 1'b1;
+                ip_latch <= ip_address;
+                mac_latch <= mac_address;
             end
             if (operating && counter != 3'b000) begin
                 counter = counter - 1'b1;

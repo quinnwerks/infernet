@@ -2,8 +2,8 @@
 # Webtalk v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Tue Feb 23 16:05:19 2021
-# Process ID: 10781
+# Start of session at: Wed Feb 24 18:54:32 2021
+# Process ID: 10832
 # Current directory: /home/andrew/infernet/misc/XOR_NN/XOR_NN.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/andrew/infernet/misc/XOR_NN/XOR_NN.sim/sim_1/behav/xsim/xsim.dir/XOR_NN_TB_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/andrew/infernet/misc/XOR_NN/XOR_NN.sim/sim_1/behav/xsim/webtalk.log
