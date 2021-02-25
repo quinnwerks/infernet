@@ -57,7 +57,7 @@ def send_inference_packet(fpganet, ia_ip, imgdata):
     pkt.id = 0
     pkt.ttl = 0x80
     # load data
-    pkt = Ether(dst=f"00:0a:35:00:00:{fpganet.ipaddr.split('.')[2]}") / pkt / scapy.Raw(imgdata)
+    pkt = Ether(dst=f"00:0a:35:00:00:{ip_ip.split('.')[2]}") / pkt / scapy.Raw(imgdata)
     pkt.show()
     # print(fpganet['ifname'])
     res = scapy.srp1(pkt, iface=fpganet['ifname'])
