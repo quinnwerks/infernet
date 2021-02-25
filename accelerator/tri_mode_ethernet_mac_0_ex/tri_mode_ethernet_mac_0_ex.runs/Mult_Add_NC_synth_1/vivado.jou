@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Wed Feb 24 18:34:07 2021
+# Process ID: 17239
+# Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/Mult_Add_NC_synth_1
+# Command line: vivado -log Mult_Add_NC.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mult_Add_NC.tcl
+# Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/Mult_Add_NC_synth_1/Mult_Add_NC.vds
+# Journal file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/Mult_Add_NC_synth_1/vivado.jou
+#-----------------------------------------------------------
+source Mult_Add_NC.tcl -notrace

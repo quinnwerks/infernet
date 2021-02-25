@@ -753,7 +753,7 @@ module demo_tb;
   // Wire up Device Under Test
   //----------------------------------------------------------------------------
 
-  tri_mode_ethernet_mac_0_example_design #(
+  tri_mode_ethernet_mac_0_example_design_preintegration #(
     .OUR_MAC_ADDRESS(dst_addr),
     .SRC_MAC_ADDRESS(src_addr),
     .OUR_IP_ADDRESS(accelerator_ip_addr)

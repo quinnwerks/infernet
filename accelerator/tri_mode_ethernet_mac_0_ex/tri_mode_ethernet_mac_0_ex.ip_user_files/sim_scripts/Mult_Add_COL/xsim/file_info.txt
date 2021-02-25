@@ -1,0 +1,1 @@
+Mult_Add_COL.vhd,vhdl,xil_defaultlib,../../../../tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/sim/Mult_Add_COL.vhd,
