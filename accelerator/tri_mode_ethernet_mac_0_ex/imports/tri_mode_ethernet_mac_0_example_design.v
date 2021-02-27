@@ -727,7 +727,7 @@ endmodule
 module tri_mode_ethernet_mac_0_example_design
 #  (
       parameter OUR_MAC_ADDRESS=48'h06_05_04_03_02_DA,
-      parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
+      parameter USER_DATA_BYTES=26, // SIZE OF MIN PACKET
       parameter OUR_IP_ADDRESS=32'h14_13_12_11,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
 )(
