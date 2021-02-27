@@ -5,5 +5,8 @@
 
 # XDC: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc
 
-# IP: ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==tri_mode_ethernet_mac_0 || ORIG_REF_NAME==tri_mode_ethernet_mac_0} -quiet] -quiet
+# IP: ip/Mult_Add_COL/Mult_Add_COL.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_COL || ORIG_REF_NAME==Mult_Add_COL} -quiet] -quiet
+
+# IP: ip/Mult_Add_NC/Mult_Add_NC.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_NC || ORIG_REF_NAME==Mult_Add_NC} -quiet] -quiet

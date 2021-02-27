@@ -6563,3 +6563,355 @@ selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
 selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
 selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
 expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_basic_pat_gen (tri_mode_ethernet_mac_0_basic_pat_gen.v)]", 2); // B (D, cp)
+// Elapsed time: 175 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v)]", 1); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), nn : XOR_NN (XOR_NN.sv), N1 : FC_Neuron (XOR_NN.sv), M0 : Mult_Add_NC (Mult_Add_NC.xci)]", 19, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectCodeEditor("tri_mode_ethernet_mac_0_user_phytiming.xdc", 341, 336); // cl (w, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), nn : XOR_NN (XOR_NN.sv), N1 : FC_Neuron (XOR_NN.sv), M1 : Mult_Add_COL (Mult_Add_COL.xci)]", 20); // B (D, cp)
+// A (cp): Show IP Hierarchy: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (A)
+dismissDialog("Show IP Hierarchy"); // A (cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), nn : XOR_NN (XOR_NN.sv), N1 : FC_Neuron (XOR_NN.sv), M0 : Mult_Add_NC (Mult_Add_NC.xci)]", 19, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE, "Reset Output Products..."); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE
+// aI (cp): Reset Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_RESET_OUTPUT_PRODUCTS, "Reset"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: reset_target all [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects  [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] -sync -no_script -force -quiet 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// Tcl Message: delete_ip_run [get_files -of_objects [get_fileset Mult_Add_NC] /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] 
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// Tcl Message: INFO: [Project 1-386] Moving file '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' from fileset 'Mult_Add_NC' to fileset 'sources_1'. 
+// 'bn' command handler elapsed time: 3 seconds
+dismissDialog("Managing Output Products"); // bx (cp)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), nn : XOR_NN (XOR_NN.sv), N1 : FC_Neuron (XOR_NN.sv), M1 : Mult_Add_COL (Mult_Add_COL.xci)]", 20, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE, "Reset Output Products..."); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE
+// aI (cp): Reset Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_RESET_OUTPUT_PRODUCTS, "Reset"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: reset_target all [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci] 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects  [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci] -sync -no_script -force -quiet 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// Tcl Message: delete_ip_run [get_files -of_objects [get_fileset Mult_Add_COL] /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci] 
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// Tcl Message: INFO: [Project 1-386] Moving file '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' from fileset 'Mult_Add_COL' to fileset 'sources_1'. 
+// 'bn' command handler elapsed time: 3 seconds
+dismissDialog("Managing Output Products"); // bx (cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), ip_layer_inst : ip_layer (ip_layer.sv)]", 16); // B (D, cp)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), trimac_fifo_block : tri_mode_ethernet_mac_0_fifo_block (tri_mode_ethernet_mac_0_fifo_block.v)]", 15); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), trimac_fifo_block : tri_mode_ethernet_mac_0_fifo_block (tri_mode_ethernet_mac_0_fifo_block.v), trimac_sup_block : tri_mode_ethernet_mac_0_support (tri_mode_ethernet_mac_0_support.v)]", 16); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), trimac_fifo_block : tri_mode_ethernet_mac_0_fifo_block (tri_mode_ethernet_mac_0_fifo_block.v), trimac_sup_block : tri_mode_ethernet_mac_0_support (tri_mode_ethernet_mac_0_support.v), tri_mode_ethernet_mac_i : tri_mode_ethernet_mac_0 (tri_mode_ethernet_mac_0.xci)]", 17, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE, "Reset Output Products..."); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE
+// aI (cp): Reset Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_RESET_OUTPUT_PRODUCTS, "Reset"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: reset_target all [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci] 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects  [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci] -sync -no_script -force -quiet 
+dismissDialog("Managing Output Products"); // bx (cp)
+// [GUI Memory]: 285 MB (+5419kb) [02:29:32]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), trimac_fifo_block : tri_mode_ethernet_mac_0_fifo_block (tri_mode_ethernet_mac_0_fifo_block.v), trimac_sup_block : tri_mode_ethernet_mac_0_support (tri_mode_ethernet_mac_0_support.v), tri_mode_ethernet_mac_i : tri_mode_ethernet_mac_0 (tri_mode_ethernet_mac_0.xci)]", 17, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+// aI (cp): Generate Output Products: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 4,300 MB. GUI used memory: 212 MB. Current time: 2/24/21, 8:51:44 PM EST
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// Tcl Message: generate_target all [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'tri_mode_ethernet_mac_0'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'tri_mode_ethernet_mac_0'... 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'tri_mode_ethernet_mac_0'... 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'tri_mode_ethernet_mac_0'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'tri_mode_ethernet_mac_0'... 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 9263.242 ; gain = 0.000 ; free physical = 1953 ; free virtual = 6440 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all tri_mode_ethernet_mac_0] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 2 tri_mode_ethernet_mac_0_synth_1 
+// Tcl Message: [Wed Feb 24 20:51:53 2021] Launched tri_mode_ethernet_mac_0_synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/tri_mode_ethernet_mac_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// 'bn' command handler elapsed time: 17 seconds
+// Elapsed time: 13 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUNS_WERE_LAUNCHED_OK", "OK"); // JButton (C, I)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), nn : XOR_NN (XOR_NN.sv), N1 : FC_Neuron (XOR_NN.sv), M0 : Mult_Add_NC (Mult_Add_NC.xci)]", 26, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+// aI (cp): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Mult_Add_NC'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Mult_Add_NC'... INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Mult_Add_NC'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Mult_Add_NC'... 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: catch { config_ip_cache -export [get_ips -all Mult_Add_NC] } 
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Mult_Add_NC, cache-ID = 403192589c6a5347; cache size = 0.258 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] -no_script -sync -force -quiet 
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] 
+// Tcl Message: INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// 'bn' command handler elapsed time: 7 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_GENERATION_OF_OUTPUT_PRODUCTS_COMPLETED_OK", "OK"); // JButton (C, I)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), nn : XOR_NN (XOR_NN.sv), N1 : FC_Neuron (XOR_NN.sv), M1 : Mult_Add_COL (Mult_Add_COL.xci)]", 27, false, false, false, false, true, false); // B (D, cp) - Popup Trigger
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenu(PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, "IP Documentation"); // ac (al, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+// aI (cp): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'Mult_Add_COL'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'Mult_Add_COL'... INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'Mult_Add_COL'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'Mult_Add_COL'... 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all Mult_Add_COL] } 
+// TclEventType: OOC_IP_CACHE_USED
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP Mult_Add_COL, cache-ID = 00962c91ce166603; cache size = 0.258 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci] -no_script -sync -force -quiet 
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci] 
+// Tcl Message: INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// 'bn' command handler elapsed time: 12 seconds
+// Elapsed time: 10 seconds
+selectButton("PAResourceQtoS.SimpleOutputProductDialog_GENERATION_OF_OUTPUT_PRODUCTS_COMPLETED_OK", "OK"); // JButton (C, I)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 6 seconds
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// bx (cp):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Wed Feb 24 20:52:43 2021] Launched tri_mode_ethernet_mac_0_synth_1, synth_1... Run output will be captured here: tri_mode_ethernet_mac_0_synth_1: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/tri_mode_ethernet_mac_0_synth_1/runme.log synth_1: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Wed Feb 24 20:52:43 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (cp)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tri_mode_ethernet_mac_0_example_design.v", 3); // k (j, cp)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 300 MB (+924kb) [02:31:11]
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// ah (cp): Bitstream Generation Failed: addNotify
+// Elapsed time: 210 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // ah (cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, [Common 17-69] Command failed: This design contains one or more cells for which bitstream generation is not permitted:. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/tri_mode_ethernet_mac_0_core (<encrypted cellview>). If a new IP Core license was added, in order for the new license to be picked up, the current netlist needs to be updated by resetting and re-generating the IP output products before bitstream generation.. ]", 2, false); // ah (Q, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,370 MB. GUI used memory: 221 MB. Current time: 2/24/21, 8:56:35 PM EST
+// Elapsed time: 11 seconds
+selectButton(PAResourceOtoP.ProjectTab_CLOSE_DESIGN, "Close Design"); // h (cQ, cp)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,178 MB. GUI used memory: 165 MB. Current time: 2/24/21, 8:56:43 PM EST
+// TclEventType: TIMING_RESULTS_UNLOAD
+// Engine heap size: 4,178 MB. GUI used memory: 166 MB. Current time: 2/24/21, 8:56:43 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1770 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// bx (cp):  Closing : addNotify
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Closing"); // bx (cp)
+selectButton(PAResourceOtoP.ProjectTab_CLOSE_DESIGN, "Close Design"); // h (cQ, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,117 MB. GUI used memory: 157 MB. Current time: 2/24/21, 8:56:47 PM EST
+// Engine heap size: 4,117 MB. GUI used memory: 157 MB. Current time: 2/24/21, 8:56:47 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1288 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// bx (cp):  Closing : addNotify
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Closing"); // bx (cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "tri mode ether"); // OverlayTextField (ay, cp)
+selectTreeTableHeader(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI4", 1); // O (Q, cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3, "Tri Mode Ethernet MAC", 0, false); // O (Q, cp)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3); // O (Q, cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3, "Tri Mode Ethernet MAC", 0, false, false, false, false, false, true); // O (Q, cp) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// r (cp): Customize IP: addNotify
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Features", 3); // bg (C, r)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Customize IP"); // r (cp)
+selectTreeTableHeader(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "License", 3); // O (Q, cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3, "Production", 3, false); // O (Q, cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3, "Production", 3, false, false, false, false, false, true); // O (Q, cp) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// r (cp): Customize IP: addNotify
+dismissDialog("Customize IP"); // r (cp)
+// Elapsed time: 100 seconds
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "2.5 g"); // OverlayTextField (ay, cp)
+selectTreeTableHeader(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "VLNV", 4); // O (Q, cp)
+selectTreeTableHeader(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Status", 2); // O (Q, cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "1G/2.5G Ethernet PCS/PMA or SGMII ; AXI4 ; Production ; Included ; xilinx.com:ip:gig_ethernet_pcs_pma:16.1", 6, "1G/2.5G Ethernet PCS/PMA or SGMII", 0, false); // O (Q, cp)
+// Elapsed time: 105 seconds
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "tri mode"); // OverlayTextField (ay, cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3, "Tri Mode Ethernet MAC", 0, false, false, false, false, true, false); // O (Q, cp) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SHOW_LICENSE_STATUS, "License Status"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SHOW_LICENSE_STATUS
+// aa (cp): Select License Type: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 4,020 MB. GUI used memory: 137 MB. Current time: 2/24/21, 9:00:55 PM EST
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+// [Engine Memory]: 5,183 MB (+309927kb) [02:38:50]
+dismissDialog("Select License Type"); // aa (cp)
+// bx (cp):  License Status : addNotify
+// Z (cp): License Status for Tri Mode Ethernet MAC: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (Z)
+// [Engine Memory]: 6,730 MB (+1350780kb) [02:38:59]
+dismissDialog("License Status for Tri Mode Ethernet MAC"); // Z (cp)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Tri Mode Ethernet MAC ; AXI4, AXI4-Stream ; Production ; Purchase ; xilinx.com:ip:tri_mode_ethernet_mac:9.0", 3, "Tri Mode Ethernet MAC", 0, false, false, false, false, true, false); // O (Q, cp) - Popup Trigger
