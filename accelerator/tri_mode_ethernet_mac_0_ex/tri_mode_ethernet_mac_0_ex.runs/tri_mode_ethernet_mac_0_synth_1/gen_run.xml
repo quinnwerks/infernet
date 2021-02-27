@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="tri_mode_ethernet_mac_0_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1614219976">
-  <File Type="VDS-TIMING-PB" Name="tri_mode_ethernet_mac_0_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="tri_mode_ethernet_mac_0_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="tri_mode_ethernet_mac_0.dcp"/>
-  <File Type="REPORTS-TCL" Name="tri_mode_ethernet_mac_0_reports.tcl"/>
-  <File Type="PA-TCL" Name="tri_mode_ethernet_mac_0.tcl"/>
-  <File Type="RDS-RDS" Name="tri_mode_ethernet_mac_0.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="tri_mode_ethernet_mac_0_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="tri_mode_ethernet_mac_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="tri_mode_ethernet_mac_0_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="tri_mode_ethernet_mac_0_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="tri_mode_ethernet_mac_0.vds"/>
+  <File Type="RDS-DCP" Name="tri_mode_ethernet_mac_0.dcp"/>
+  <File Type="PA-TCL" Name="tri_mode_ethernet_mac_0.tcl"/>
+  <File Type="REPORTS-TCL" Name="tri_mode_ethernet_mac_0_reports.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/tri_mode_ethernet_mac_0">
     <File Path="$PSRCDIR/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci">
       <FileInfo>
@@ -46,9 +43,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

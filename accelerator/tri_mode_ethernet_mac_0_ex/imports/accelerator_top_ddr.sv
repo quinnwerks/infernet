@@ -71,12 +71,16 @@ assign gen_tx_data = 1'b0;
 assign pause_req_s = 1'b0;
 
 
-// GPIO
-// Things we need to do with the GPIOs
+// VIO
+// Things we need to do with the VIOs
 // 1. Active high reset
 // 2. Configure speed
 // 3. Update Speed
-
+accelerator_controls(
+    .probe_out0(glbl_rst),
+    .probe_out1(mac_speed),
+    .probe_out2(update_speed)
+);
 
 
 // TODO: CLOCKING WIZARD
@@ -138,11 +142,11 @@ assign pause_req_s = 1'b0;
       .serial_response            (serial_response),
       .gen_tx_data                (gen_tx_data),
       .chk_tx_data                (chk_tx_data),
-      .reset_error                (1'b0),
+      .reset_error                (reset_error),
       .frame_error                (frame_error),
-      .frame_errorn               (),
-      .activity_flash             (),
-      .activity_flashn            ()
+      .frame_errorn               (frame_errorn),
+      .activity_flash             (activity_flash),
+      .activity_flashn            (activity_flashn)
     );
 
 endmodule

@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Mon Feb 22 14:35:04 2021
-# Process ID: 2250
+# Start of session at: Sat Feb 27 13:08:55 2021
+# Process ID: 4595
 # Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex
 # Command line: vivado tri_mode_ethernet_mac_0_ex.xpr
 # Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.log
@@ -12,18 +12,11 @@
 start_gui
 open_project tri_mode_ethernet_mac_0_ex.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
-source demo_tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
-source demo_tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
-source demo_tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
-source demo_tb.tcl
+add_files -norecurse /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator_top_ddr.sv
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top accelerator_top_ddr [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1

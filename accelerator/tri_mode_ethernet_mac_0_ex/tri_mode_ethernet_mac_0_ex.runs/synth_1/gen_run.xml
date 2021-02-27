@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1614219976">
-  <File Type="VDS-TIMING-PB" Name="tri_mode_ethernet_mac_0_example_design_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="tri_mode_ethernet_mac_0_example_design_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="tri_mode_ethernet_mac_0_example_design.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="tri_mode_ethernet_mac_0_example_design_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="tri_mode_ethernet_mac_0_example_design_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="tri_mode_ethernet_mac_0_example_design_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="tri_mode_ethernet_mac_0_example_design.vds"/>
-  <File Type="REPORTS-TCL" Name="tri_mode_ethernet_mac_0_example_design_reports.tcl"/>
   <File Type="PA-TCL" Name="tri_mode_ethernet_mac_0_example_design.tcl"/>
+  <File Type="REPORTS-TCL" Name="tri_mode_ethernet_mac_0_example_design_reports.tcl"/>
+  <File Type="RDS-RDS" Name="tri_mode_ethernet_mac_0_example_design.vds"/>
+  <File Type="RDS-DCP" Name="tri_mode_ethernet_mac_0_example_design.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci">

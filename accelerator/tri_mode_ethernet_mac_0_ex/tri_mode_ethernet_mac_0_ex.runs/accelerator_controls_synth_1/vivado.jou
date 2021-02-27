@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Sat Feb 27 13:53:42 2021
+# Process ID: 2434
+# Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/accelerator_controls_synth_1
+# Command line: vivado -log accelerator_controls.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source accelerator_controls.tcl
+# Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/accelerator_controls_synth_1/accelerator_controls.vds
+# Journal file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/accelerator_controls_synth_1/vivado.jou
+#-----------------------------------------------------------
+source accelerator_controls.tcl -notrace
