@@ -77,6 +77,7 @@ assign pause_req_s = 1'b0;
 // 2. Configure speed
 // 3. Update Speed
 accelerator_controls(
+    .clk(sys_clk),
     .probe_out0(glbl_rst),
     .probe_out1(mac_speed),
     .probe_out2(update_speed)

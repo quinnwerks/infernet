@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log tri_mode_ethernet_mac_0_example_design.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tri_mode_ethernet_mac_0_example_design.tcl
+    with args -log tri_mode_ethernet_mac_0_example_design_ddr.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tri_mode_ethernet_mac_0_example_design_ddr.tcl
 
 
 ****** Vivado v2018.3.1 (64-bit)
@@ -8,36 +8,38 @@
   **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source tri_mode_ethernet_mac_0_example_design.tcl -notrace
-Command: synth_design -top tri_mode_ethernet_mac_0_example_design -part xc7a100tcsg324-1
+source tri_mode_ethernet_mac_0_example_design_ddr.tcl -notrace
+Command: synth_design -top tri_mode_ethernet_mac_0_example_design_ddr -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2697 
+INFO: Helper process launched with PID 28093 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1473.176 ; gain = 65.918 ; free physical = 4176 ; free virtual = 7783
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1481.180 ; gain = 73.996 ; free physical = 3080 ; free virtual = 6358
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.v:727]
-	Parameter OUR_MAC_ADDRESS bound to: 48'b000001100000010100000100000000110000001011011010 
+INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_ddr' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:6]
+	Parameter OUR_MAC_ADDRESS bound to: 48'b000001110000000000000000001101010000101000000000 
 	Parameter USER_DATA_BYTES bound to: 784 - type: integer 
-	Parameter OUR_IP_ADDRESS bound to: 336794129 - type: integer 
+	Parameter OUR_IP_ADDRESS bound to: 34013441 - type: integer 
 	Parameter DUMMY_MAC_ADDRESS bound to: 48'b101010101010101010101010101010101010101010101010 
-INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_clocks' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_clocks.v:56]
-INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:20424]
-	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
-	Parameter DIFF_TERM bound to: FALSE - type: string 
-	Parameter DQS_BIAS bound to: FALSE - type: string 
-	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
-	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
-	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
-	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:20424]
-INFO: [Synth 8-6157] synthesizing module 'BUFGCE' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:619]
-	Parameter CE_TYPE bound to: SYNC - type: string 
-	Parameter IS_CE_INVERTED bound to: 1'b0 
-	Parameter IS_I_INVERTED bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'BUFGCE' (2#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:619]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:32]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:129]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:183]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:185]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:186]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:256]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:257]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:258]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:264]
+INFO: [Synth 8-6157] synthesizing module 'mii_to_rmii_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/mii_to_rmii_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mii_to_rmii_0' (1#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/mii_to_rmii_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'accelerator_controls' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/accelerator_controls_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'accelerator_controls' (2#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/accelerator_controls_stub.v:6]
+WARNING: [Synth 8-350] instance 'vio' of module 'accelerator_controls' requires 4 connections, but only 2 given [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:325]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (3#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_resets' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_resets.v:54]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_sync_block' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_sync_block.v:63]
 	Parameter INITIALISE bound to: 1'b0 
 	Parameter DEPTH bound to: 5 - type: integer 
@@ -46,8 +48,8 @@ INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2018.3/scr
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_R_INVERTED bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'FDRE' (3#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_sync_block' (4#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_sync_block.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'FDRE' (4#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_sync_block' (5#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_sync_block.v:63]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_reset_sync' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_reset_sync.v:66]
 	Parameter INITIALISE bound to: 1'b1 
 	Parameter DEPTH bound to: 5 - type: integer 
@@ -56,63 +58,9 @@ INFO: [Synth 8-6157] synthesizing module 'FDPE' [/tools/Xilinx/Vivado/2018.3/scr
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D_INVERTED bound to: 1'b0 
 	Parameter IS_PRE_INVERTED bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'FDPE' (5#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_reset_sync' (6#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_reset_sync.v:66]
-INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_clk_wiz' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_clk_wiz.v:69]
-INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26718]
-	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 5.000000 - type: float 
-	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKIN1_PERIOD bound to: 5.000000 - type: float 
-	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
-	Parameter CLKOUT0_DIVIDE_F bound to: 8.000000 - type: float 
-	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT1_DIVIDE bound to: 10 - type: integer 
-	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT2_DIVIDE bound to: 5 - type: integer 
-	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
-	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT4_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT5_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
-	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
-	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter COMPENSATION bound to: ZHOLD - type: string 
-	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
-	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
-	Parameter IS_PSEN_INVERTED bound to: 1'b0 
-	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
-	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
-	Parameter IS_RST_INVERTED bound to: 1'b0 
-	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
-	Parameter REF_JITTER2 bound to: 0.010000 - type: float 
-	Parameter SS_EN bound to: FALSE - type: string 
-	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
-	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
-	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (7#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26718]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_clk_wiz' (8#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_clk_wiz.v:69]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_example_design_clocks' (9#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_clocks.v:56]
-INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_resets' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_resets.v:54]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_example_design_resets' (10#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_resets.v:54]
+INFO: [Synth 8-6155] done synthesizing module 'FDPE' (6#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_reset_sync' (7#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_reset_sync.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_example_design_resets' (8#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_resets.v:54]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_axi_lite_sm' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_axi_lite_sm.v:64]
 	Parameter STARTUP bound to: 0 - type: integer 
 	Parameter UPDATE_SPEED bound to: 1 - type: integer 
@@ -168,12 +116,12 @@ INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_axi_lite_sm' [
 	Parameter PHY_ABILITY_REG bound to: 8'b00000100 
 	Parameter PHY_1000BASET_CONTROL_REG bound to: 8'b00001001 
 WARNING: [Synth 8-6014] Unused sequential element design_on_board_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_axi_lite_sm.v:339]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_axi_lite_sm' (11#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_axi_lite_sm.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_axi_lite_sm' (9#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_axi_lite_sm.v:64]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_fifo_block' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_fifo_block.v:89]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_support' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_support.v:66]
-INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-2674-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0' (12#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-2674-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_support' (13#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_support.v:66]
+INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0' (10#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_support' (11#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_support.v:66]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo.v:71]
 	Parameter FULL_DUPLEX_ONLY bound to: 1 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_tx_client_fifo' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:100]
@@ -205,8 +153,8 @@ INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_bram_tdp' [/ho
 	Parameter DATA_WIDTH bound to: 9 - type: integer 
 	Parameter ADDR_WIDTH bound to: 12 - type: integer 
 	Parameter RAM_DEPTH bound to: 4096 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_bram_tdp' (14#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_bram_tdp.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_tx_client_fifo' (15#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:100]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_bram_tdp' (12#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_bram_tdp.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_tx_client_fifo' (13#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:100]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_rx_client_fifo' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_rx_client_fifo.v:111]
 	Parameter WAIT_s bound to: 3'b000 
 	Parameter QUEUE1_s bound to: 3'b001 
@@ -222,9 +170,9 @@ INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_rx_client_fifo
 	Parameter BF_s bound to: 3'b011 
 	Parameter OVFLOW_s bound to: 3'b100 
 INFO: [Synth 8-226] default block is never used [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_rx_client_fifo.v:255]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_rx_client_fifo' (16#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_rx_client_fifo.v:111]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo' (17#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_fifo_block' (18#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_fifo_block.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_rx_client_fifo' (14#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_rx_client_fifo.v:111]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo' (15#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_fifo_block' (16#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_fifo_block.v:89]
 INFO: [Synth 8-6157] synthesizing module 'ip_layer' [/home/quinn/ece532-project/accelerator/rtl/ip_layer.sv:2]
 	Parameter USER_DATA_BYTES bound to: 784 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'ip_packet_tx' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:7]
@@ -244,14 +192,13 @@ INFO: [Synth 8-6157] synthesizing module 'ip_packet_tx' [/home/quinn/ece532-proj
 	Parameter IP_HDR_SIZE_BYTES bound to: 20 - type: integer 
 	Parameter FRAME_CHECKSUM_BYTES bound to: 4 - type: integer 
 	Parameter DATA_SIZE_BYTES bound to: 26 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:101]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:103]
 INFO: [Synth 8-6157] synthesizing module 'counter_sync_reset' [/home/quinn/ece532-project/util/rtl/util.sv:1]
 	Parameter SIZE bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counter_sync_reset' (19#1) [/home/quinn/ece532-project/util/rtl/util.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter_sync_reset' (17#1) [/home/quinn/ece532-project/util/rtl/util.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'ipv4_checksum_calculator' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_checksum.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ipv4_checksum_calculator' (20#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_checksum.sv:1]
-WARNING: [Synth 8-87] always_comb on 'nextstate_reg' did not result in combinational logic [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:107]
-INFO: [Synth 8-6155] done synthesizing module 'ip_packet_tx' (21#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'ipv4_checksum_calculator' (18#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_checksum.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ip_packet_tx' (19#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:7]
 INFO: [Synth 8-6157] synthesizing module 'ip_packet_rx' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:1]
 	Parameter USER_DATA_BYTES bound to: 784 - type: integer 
 	Parameter IP_ADDR_WIDTH bound to: 32 - type: integer 
@@ -261,60 +208,83 @@ INFO: [Synth 8-6157] synthesizing module 'ip_packet_rx' [/home/quinn/ece532-proj
 	Parameter ETH_HDR_SIZE_BYTES bound to: 14 - type: integer 
 	Parameter IP_HDR_SIZE_BYTES bound to: 20 - type: integer 
 	Parameter DATA_FRAME_WIDTH bound to: 6272 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:105]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:39]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:66]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:78]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:79]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:81]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:82]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:83]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:85]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:86]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:88]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:89]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:90]
 INFO: [Synth 8-6157] synthesizing module 'counter_sync_reset__parameterized0' [/home/quinn/ece532-project/util/rtl/util.sv:1]
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counter_sync_reset__parameterized0' (21#1) [/home/quinn/ece532-project/util/rtl/util.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter_sync_reset__parameterized0' (19#1) [/home/quinn/ece532-project/util/rtl/util.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'byte_write_register' [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
 	Parameter SIZE_IN_BYTES bound to: 14 - type: integer 
 	Parameter BYTE_NUM_SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'byte_write_register' (22#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'byte_write_register' (20#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'byte_write_register__parameterized0' [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
 	Parameter SIZE_IN_BYTES bound to: 20 - type: integer 
 	Parameter BYTE_NUM_SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'byte_write_register__parameterized0' (22#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'byte_write_register__parameterized0' (20#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'byte_write_register__parameterized1' [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
 	Parameter SIZE_IN_BYTES bound to: 784 - type: integer 
 	Parameter BYTE_NUM_SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'byte_write_register__parameterized1' (22#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
-WARNING: [Synth 8-87] always_comb on 'nextstate_reg' did not result in combinational logic [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:108]
-INFO: [Synth 8-6155] done synthesizing module 'ip_packet_rx' (23#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'ip_layer' (24#1) [/home/quinn/ece532-project/accelerator/rtl/ip_layer.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'byte_write_register__parameterized1' (20#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'state_counter_logic'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:235]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'user_data_register'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:273]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ip_hdr_register'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:261]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'eth_hdr_register'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:249]
+INFO: [Synth 8-6155] done synthesizing module 'ip_packet_rx' (21#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ip_layer' (22#1) [/home/quinn/ece532-project/accelerator/rtl/ip_layer.sv:2]
 INFO: [Synth 8-6157] synthesizing module 'XOR_NN' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'FC_Neuron' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
 	Parameter weights bound to: 36'b000000010000000000000000010000000000 
 	Parameter bias bound to: 18'sb111111110111111111 
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_NC' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-2674-hw-dev/realtime/Mult_Add_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_NC' (25#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-2674-hw-dev/realtime/Mult_Add_NC_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_COL' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-2674-hw-dev/realtime/Mult_Add_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_COL' (26#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-2674-hw-dev/realtime/Mult_Add_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_NC' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/Mult_Add_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_NC' (23#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/Mult_Add_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_COL' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/Mult_Add_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_COL' (24#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-28035-hw-dev/realtime/Mult_Add_COL_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'FW_FP_Converter' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/FW_FP_Converter.sv:7]
 	Parameter NUM_M bound to: 7 - type: integer 
 	Parameter NUM_F bound to: 10 - type: integer 
 	Parameter NUM_P bound to: 48 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'FW_FP_Converter' (27#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/FW_FP_Converter.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'FW_FP_Converter' (25#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/FW_FP_Converter.sv:7]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FW_FP_Converter' requires 5 connections, but only 2 given [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:159]
 INFO: [Synth 8-6157] synthesizing module 'Hard_Threshold' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:177]
 	Parameter WIDTH bound to: 18 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Hard_Threshold' (28#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:177]
-INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron' (29#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
+INFO: [Synth 8-6155] done synthesizing module 'Hard_Threshold' (26#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:177]
+INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron' (27#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
 INFO: [Synth 8-6157] synthesizing module 'FC_Neuron__parameterized0' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
 	Parameter weights bound to: 36'b000000010000000000000000010000000000 
 	Parameter bias bound to: 18'sb111111100111111111 
 WARNING: [Synth 8-350] instance 'rounding' of module 'FW_FP_Converter' requires 5 connections, but only 2 given [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:159]
-INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron__parameterized0' (29#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
+INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron__parameterized0' (27#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
 INFO: [Synth 8-6157] synthesizing module 'FC_Neuron__parameterized1' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
 	Parameter weights bound to: 36'b000000010000000000111111101111111111 
 	Parameter bias bound to: 18'sb111111110111111111 
 WARNING: [Synth 8-350] instance 'rounding' of module 'FW_FP_Converter' requires 5 connections, but only 2 given [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:159]
-INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron__parameterized1' (29#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
-INFO: [Synth 8-6155] done synthesizing module 'XOR_NN' (30#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:3]
-WARNING: [Synth 8-6014] Unused sequential element enable_address_swap_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.v:941]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_example_design' (31#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.v:727]
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port frame_error driven by constant 0
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port frame_errorn driven by constant 1
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port activity_flash driven by constant 0
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port activity_flashn driven by constant 1
+INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron__parameterized1' (27#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99]
+INFO: [Synth 8-6155] done synthesizing module 'XOR_NN' (28#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:3]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mii_to_rmii'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:135]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'vio'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:325]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'example_resets'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:372]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'clocking_wizard'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:342]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'trimac_fifo_block'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:553]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ip_layer_inst'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:680]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nn'. This will prevent further optimization [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:721]
+WARNING: [Synth 8-6014] Unused sequential element enable_address_swap_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:292]
+WARNING: [Synth 8-6014] Unused sequential element rx_stats_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:418]
+WARNING: [Synth 8-6014] Unused sequential element rx_stats_toggle_sync_reg_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:431]
+WARNING: [Synth 8-6014] Unused sequential element rx_stats_shift_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:439]
+WARNING: [Synth 8-6014] Unused sequential element tx_stats_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:455]
+WARNING: [Synth 8-6014] Unused sequential element tx_stats_toggle_sync_reg_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:468]
+WARNING: [Synth 8-6014] Unused sequential element tx_stats_shift_reg was removed.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:476]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_example_design_ddr' (29#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:6]
 WARNING: [Synth 8-3331] design Hard_Threshold has unconnected port in[16]
 WARNING: [Synth 8-3331] design Hard_Threshold has unconnected port in[15]
 WARNING: [Synth 8-3331] design Hard_Threshold has unconnected port in[14]
@@ -417,7 +387,7 @@ WARNING: [Synth 8-3331] design tri_mode_ethernet_mac_0_axi_lite_sm has unconnect
 WARNING: [Synth 8-3331] design tri_mode_ethernet_mac_0_axi_lite_sm has unconnected port src_mac_address[15]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1557.926 ; gain = 150.668 ; free physical = 4150 ; free virtual = 7758
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1564.930 ; gain = 157.746 ; free physical = 3056 ; free virtual = 6335
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -430,13 +400,11 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1557.926 ; gain = 150.668 ; free physical = 4158 ; free virtual = 7767
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1564.930 ; gain = 157.746 ; free physical = 3064 ; free virtual = 6343
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1557.926 ; gain = 150.668 ; free physical = 4158 ; free virtual = 7767
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1564.930 ; gain = 157.746 ; free physical = 3064 ; free virtual = 6343
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -456,25 +424,32 @@ Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC/Mult_Add_NC_in_context.xdc] for cell 'nn/N3/M0'
 Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i'
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i'
+Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls/accelerator_controls_in_context.xdc] for cell 'vio'
+Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls/accelerator_controls_in_context.xdc] for cell 'vio'
+Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clocking_wizard'
+Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clocking_wizard'
+Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0/mii_to_rmii_0_in_context.xdc] for cell 'mii_to_rmii'
+Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0/mii_to_rmii_0_in_context.xdc] for cell 'mii_to_rmii'
 Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]
-INFO: [Timing 38-2] Deriving generated clocks [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:94]
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1916.730 ; gain = 0.000 ; free physical = 3832 ; free virtual = 7440
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1930.758 ; gain = 0.000 ; free physical = 2737 ; free virtual = 6016
 Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1930.758 ; gain = 0.000 ; free physical = 2737 ; free virtual = 6016
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1916.730 ; gain = 0.000 ; free physical = 3832 ; free virtual = 7441
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1930.758 ; gain = 0.000 ; free physical = 2738 ; free virtual = 6017
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
-  BUFGCE => BUFGCTRL: 3 instances
+No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1916.730 ; gain = 0.000 ; free physical = 3832 ; free virtual = 7441
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1916.730 ; gain = 0.000 ; free physical = 3832 ; free virtual = 7441
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1930.758 ; gain = 0.000 ; free physical = 2738 ; free virtual = 6017
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1930.758 ; gain = 0.000 ; free physical = 2738 ; free virtual = 6017
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N1/M0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N1/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N2/M0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
@@ -482,14 +457,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N3/M0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N3/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1916.730 ; gain = 509.473 ; free physical = 3966 ; free virtual = 7575
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1930.758 ; gain = 523.574 ; free physical = 2869 ; free virtual = 6148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1916.730 ; gain = 509.473 ; free physical = 3966 ; free virtual = 7575
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1930.758 ; gain = 523.574 ; free physical = 2869 ; free virtual = 6148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -498,34 +473,8 @@ Applied set_property IO_BUFFER_TYPE = NONE for mdc. (constraint file  /home/quin
 Applied set_property CLOCK_BUFFER_TYPE = NONE for mdc. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 6).
 Applied set_property IO_BUFFER_TYPE = NONE for mdio. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 7).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for mdio. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 8).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rx_clk. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 9).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rx_clk. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 10).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rx_dv. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 11).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rx_dv. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 12).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rx_er. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 13).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rx_er. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 14).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rxd[0]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 15).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rxd[0]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 16).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rxd[1]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 17).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rxd[1]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 18).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rxd[2]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 19).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rxd[2]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 20).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_rxd[3]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 21).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_rxd[3]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 22).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_tx_clk. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 23).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_tx_clk. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 24).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_tx_en. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 25).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_tx_en. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 26).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_tx_er. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 27).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_tx_er. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 28).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_txd[0]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 29).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_txd[0]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 30).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_txd[1]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 31).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_txd[1]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 32).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_txd[2]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 33).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_txd[2]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 34).
-Applied set_property IO_BUFFER_TYPE = NONE for mii_txd[3]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 35).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for mii_txd[3]. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0_in_context.xdc, line 36).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk. (constraint file  /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
 Applied set_property DONT_TOUCH = true for nn/N1/M1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for nn/N2/M1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for nn/N3/M1. (constraint file  auto generated constraint, line ).
@@ -533,8 +482,11 @@ Applied set_property DONT_TOUCH = true for nn/N1/M0. (constraint file  auto gene
 Applied set_property DONT_TOUCH = true for nn/N2/M0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for nn/N3/M0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for vio. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for clocking_wizard. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mii_to_rmii. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1916.730 ; gain = 509.473 ; free physical = 3966 ; free virtual = 7575
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1930.758 ; gain = 523.574 ; free physical = 2869 ; free virtual = 6148
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'axi_state_reg' in module 'tri_mode_ethernet_mac_0_axi_lite_sm'
 INFO: [Synth 8-802] inferred FSM for state register 'mdio_access_sm_reg' in module 'tri_mode_ethernet_mac_0_axi_lite_sm'
@@ -684,8 +636,8 @@ INFO: [Synth 8-5546] ROM "output_value" won't be mapped to RAM because it is too
 INFO: [Synth 8-5546] ROM "output_value" won't be mapped to RAM because it is too sparse
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ip_packet_rx'
-INFO: [Synth 8-5545] ROM "frame_ready" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "mac_data_ready" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nextstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -773,8 +725,6 @@ INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encodi
                     BF_s |                            10000 |                              011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'wr_state_reg' using encoding 'one-hot' in module 'tri_mode_ethernet_mac_0_rx_client_fifo'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextstate_reg' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:107]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_nextstate_reg' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:107]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -784,41 +734,36 @@ WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_nextstate_reg' [
           SEND_USER_DATA |                               11 | 00000000000000000000000000000011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ip_packet_tx'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextstate_reg' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:107]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextstate_reg' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:108]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_nextstate_reg' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:108]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                   START |                              000 | 00000000000000000000000000000000
-             GET_ETH_HDR |                              001 | 00000000000000000000000000000001
-              GET_IP_HDR |                              010 | 00000000000000000000000000000010
-           GET_USER_DATA |                              011 | 00000000000000000000000000000011
-     PASS_TO_ACCELERATOR |                              100 | 00000000000000000000000000000101
-            WAIT_FOR_END |                              101 | 00000000000000000000000000000100
+                   START |                              000 |                         00000000
+             GET_ETH_HDR |                              001 |                         00000001
+              GET_IP_HDR |                              010 |                         00000010
+           GET_USER_DATA |                              011 |                         00000011
+     PASS_TO_ACCELERATOR |                              100 |                         00000101
+            WAIT_FOR_END |                              101 |                         00000100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ip_packet_rx'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_nextstate_reg' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:108]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1916.730 ; gain = 509.473 ; free physical = 3922 ; free virtual = 7532
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1930.758 ; gain = 523.574 ; free physical = 2825 ; free virtual = 6105
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------------------------------+------------+----------+
-|      |RTL Partition                                      |Replication |Instances |
-+------+---------------------------------------------------+------------+----------+
-|1     |tri_mode_ethernet_mac_0_example_design_clocks__GC0 |           1|        18|
-|2     |byte_write_register__parameterized1__GB0           |           1|     34497|
-|3     |byte_write_register__parameterized1__GB1           |           1|      8883|
-|4     |byte_write_register__parameterized1__GB2           |           1|     11167|
-|5     |byte_write_register__parameterized1__GB3           |           1|     13926|
-|6     |byte_write_register__parameterized1__GB4           |           1|     17345|
-|7     |byte_write_register__parameterized1__GB5           |           1|     21674|
-|8     |byte_write_register__parameterized1__GB6           |           1|     27100|
-|9     |ip_packet_rx__GC0                                  |           1|      5935|
-|10    |ip_packet_tx                                       |           1|      1237|
-|11    |tri_mode_ethernet_mac_0_example_design__GC0        |           1|      5149|
-+------+---------------------------------------------------+------------+----------+
++------+------------------------------------------------+------------+----------+
+|      |RTL Partition                                   |Replication |Instances |
++------+------------------------------------------------+------------+----------+
+|1     |byte_write_register__parameterized1__GB0        |           1|     34497|
+|2     |byte_write_register__parameterized1__GB1        |           1|      8883|
+|3     |byte_write_register__parameterized1__GB2        |           1|     11167|
+|4     |byte_write_register__parameterized1__GB3        |           1|     13926|
+|5     |byte_write_register__parameterized1__GB4        |           1|     17345|
+|6     |byte_write_register__parameterized1__GB5        |           1|     21674|
+|7     |byte_write_register__parameterized1__GB6        |           1|     27100|
+|8     |ip_packet_rx__GC0                               |           1|      6504|
+|9     |ip_packet_tx                                    |           1|      1233|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0 |           1|      4854|
++------+------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -842,10 +787,7 @@ Detailed RTL Component Info :
 	              112 Bit    Registers := 1     
 	               48 Bit    Registers := 1     
 	               37 Bit    Registers := 1     
-	               34 Bit    Registers := 1     
-	               32 Bit    Registers := 6     
-	               30 Bit    Registers := 1     
-	               28 Bit    Registers := 1     
+	               32 Bit    Registers := 5     
 	               21 Bit    Registers := 1     
 	               19 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
@@ -856,7 +798,7 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 5     
 	                2 Bit    Registers := 5     
-	                1 Bit    Registers := 92    
+	                1 Bit    Registers := 88    
 +---RAMs : 
 	              36K Bit         RAMs := 2     
 +---Muxes : 
@@ -867,21 +809,19 @@ Detailed RTL Component Info :
 	   3 Input    112 Bit        Muxes := 1     
 	   2 Input    112 Bit        Muxes := 1     
 	   2 Input     37 Bit        Muxes := 1     
-	   2 Input     34 Bit        Muxes := 1     
-	   6 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 4     
 	   4 Input     32 Bit        Muxes := 1     
 	  22 Input     32 Bit        Muxes := 1     
-	   2 Input     30 Bit        Muxes := 1     
 	  22 Input     22 Bit        Muxes := 1     
 	   2 Input     22 Bit        Muxes := 3     
 	   2 Input     18 Bit        Muxes := 6     
 	  22 Input     17 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 13    
 	   5 Input     12 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 30    
+	   2 Input      8 Bit        Muxes := 40    
 	  21 Input      8 Bit        Muxes := 1     
-	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 1     
 	  22 Input      8 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
 	   5 Input      5 Bit        Muxes := 1     
@@ -890,8 +830,8 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 23    
 	   3 Input      4 Bit        Muxes := 14    
 	   9 Input      4 Bit        Muxes := 12    
-	  14 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 3     
+	  21 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 5     
 	   3 Input      3 Bit        Muxes := 3     
 	   8 Input      3 Bit        Muxes := 3     
 	   4 Input      2 Bit        Muxes := 10    
@@ -900,16 +840,16 @@ Detailed RTL Component Info :
 	  21 Input      2 Bit        Muxes := 1     
 	  22 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 96    
+	   2 Input      1 Bit        Muxes := 88    
 	  15 Input      1 Bit        Muxes := 3     
 	  21 Input      1 Bit        Muxes := 3     
-	   4 Input      1 Bit        Muxes := 11    
-	   3 Input      1 Bit        Muxes := 6     
-	   6 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 10    
+	   7 Input      1 Bit        Muxes := 7     
 	   5 Input      1 Bit        Muxes := 3     
 	  22 Input      1 Bit        Muxes := 10    
 	   8 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -918,24 +858,12 @@ Start RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3538] Detected potentially large (wide) register latched_value_reg [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:16]
 Hierarchical RTL Component report 
-Module tri_mode_ethernet_mac_0_example_design 
+Module tri_mode_ethernet_mac_0_example_design_ddr 
 Detailed RTL Component Info : 
 +---Registers : 
-	               34 Bit    Registers := 1     
-	               32 Bit    Registers := 1     
-	               30 Bit    Registers := 1     
-	               28 Bit    Registers := 1     
 	               19 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 8     
-+---Muxes : 
-	   2 Input     34 Bit        Muxes := 1     
-	   2 Input     30 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-Module tri_mode_ethernet_mac_0_example_design_clocks 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
 Module counter_sync_reset 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -957,10 +885,10 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 3     
 	  15 Input      2 Bit        Muxes := 1     
 	  21 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 7     
 	  15 Input      1 Bit        Muxes := 3     
 	  21 Input      1 Bit        Muxes := 3     
-	   4 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 7     
 Module byte_write_register__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -988,11 +916,13 @@ Detailed RTL Component Info :
 Module ip_packet_rx 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   6 Input     32 Bit        Muxes := 1     
-	  14 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 18    
-	   3 Input      1 Bit        Muxes := 2     
-	   6 Input      1 Bit        Muxes := 9     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 10    
+	   4 Input      8 Bit        Muxes := 1     
+	  21 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 14    
+	   7 Input      1 Bit        Muxes := 6     
 Module tri_mode_ethernet_mac_0_example_design_resets 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1156,22 +1086,112 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port frame_error driven by constant 0
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port frame_errorn driven by constant 1
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port activity_flash driven by constant 0
-INFO: [Synth 8-3917] design tri_mode_ethernet_mac_0_example_design has port activity_flashn driven by constant 1
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[0] )
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_reg_addr_reg[1]' (FDRE) to 'i_0/axi_lite_controller/mdio_reg_addr_reg[4]'
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_reg_addr_reg[4]' (FDRE) to 'i_0/axi_lite_controller/mdio_reg_addr_reg[5]'
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_reg_addr_reg[5]' (FDRE) to 'i_0/axi_lite_controller/mdio_reg_addr_reg[6]'
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_reg_addr_reg[6]' (FDRE) to 'i_0/axi_lite_controller/mdio_reg_addr_reg[7]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/mdio_reg_addr_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_axis_mac_tuser_reg )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/speed_reg[0]' (FDE) to 'i_0/axi_lite_controller/speed_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/speed_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/FSM_onehot_axi_state_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\pause_shift_reg[0] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[0]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[2]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/pause_shift_reg[1]' (FD) to 'i_0/pause_req_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/pause_req_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[3]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[4]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[5]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[6]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[0]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[7]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_wr_data_reg[0]' (FDE) to 'i_0/axi_lite_controller/mdio_wr_data_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[8]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/s_axi_wdata_reg[0]' (FDRE) to 'i_0/axi_lite_controller/s_axi_wdata_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[9]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[10]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[11]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[1]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[12]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_wr_data_reg[1]' (FDE) to 'i_0/axi_lite_controller/mdio_wr_data_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[13]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/s_axi_wdata_reg[1]' (FDRE) to 'i_0/axi_lite_controller/s_axi_wdata_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[1] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[1]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[15]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[16]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[17]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[18]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[19]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[20]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[21]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[22]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[16]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[18]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[23]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[17]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[24]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[18]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[20]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[25]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[26]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[27]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[19]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[28]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_wr_data_reg[17]' (FDE) to 'i_0/axi_lite_controller/mdio_wr_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[22]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[24]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[29]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[23]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/s_axi_wdata_reg[17]' (FDRE) to 'i_0/axi_lite_controller/s_axi_wdata_reg[23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[30]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[24]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[31]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_wr_data_reg[24]' (FDE) to 'i_0/axi_lite_controller/mdio_wr_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[25]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[27]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[32]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/s_axi_wdata_reg[24]' (FDRE) to 'i_0/axi_lite_controller/s_axi_wdata_reg[26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[33]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[27]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/mdio_wr_data_reg[27]' (FDE) to 'i_0/axi_lite_controller/mdio_wr_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/s_axi_wdata_reg[27]' (FDRE) to 'i_0/axi_lite_controller/s_axi_wdata_reg[29]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/trimac_fifo_block/\user_side_FIFO/tx_fifo_i/tx_axis_mac_tuser_reg )
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:01:12 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1809 ; free virtual = 5444
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:01:10 . Memory (MB): peak = 1934.680 ; gain = 527.496 ; free physical = 717 ; free virtual = 4022
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1191,35 +1211,40 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------------------------------+------------+----------+
-|      |RTL Partition                                      |Replication |Instances |
-+------+---------------------------------------------------+------------+----------+
-|1     |tri_mode_ethernet_mac_0_example_design_clocks__GC0 |           1|        18|
-|2     |byte_write_register__parameterized1__GB0           |           1|     25303|
-|3     |byte_write_register__parameterized1__GB1           |           1|       122|
-|4     |byte_write_register__parameterized1__GB2           |           1|       186|
-|5     |byte_write_register__parameterized1__GB3           |           1|       161|
-|6     |byte_write_register__parameterized1__GB4           |           1|       193|
-|7     |byte_write_register__parameterized1__GB5           |           1|       219|
-|8     |byte_write_register__parameterized1__GB6           |           1|       262|
-|9     |ip_packet_rx__GC0                                  |           1|       333|
-|10    |ip_packet_tx                                       |           1|       451|
-|11    |tri_mode_ethernet_mac_0_example_design__GC0        |           1|      2871|
-+------+---------------------------------------------------+------------+----------+
++------+------------------------------------------------+------------+----------+
+|      |RTL Partition                                   |Replication |Instances |
++------+------------------------------------------------+------------+----------+
+|1     |byte_write_register__parameterized1__GB0        |           1|     25303|
+|2     |byte_write_register__parameterized1__GB1        |           1|       122|
+|3     |byte_write_register__parameterized1__GB2        |           1|       186|
+|4     |byte_write_register__parameterized1__GB3        |           1|       161|
+|5     |byte_write_register__parameterized1__GB4        |           1|       193|
+|6     |byte_write_register__parameterized1__GB5        |           1|       219|
+|7     |byte_write_register__parameterized1__GB6        |           1|       262|
+|8     |ip_packet_rx__GC0                               |           1|       801|
+|9     |ip_packet_tx                                    |           1|       994|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0 |           1|      2384|
++------+------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_rx_clk' to pin 'mii_to_rmii/bbstub_rmii2mac_rx_clk/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_tx_clk' to pin 'mii_to_rmii/bbstub_rmii2mac_tx_clk/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/rx_mac_aclk' to pin 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/bbstub_rx_mac_aclk/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/tx_mac_aclk' to pin 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/bbstub_tx_mac_aclk/O'
-INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking_wizard/clk_out1' to pin 'clocking_wizard/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking_wizard/clk_out2' to pin 'clocking_wizard/bbstub_clk_out2/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking_wizard/clk_out3' to pin 'clocking_wizard/bbstub_clk_out3/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking_wizard/clk_out4' to pin 'clocking_wizard/bbstub_clk_out4/O'
+INFO: [Synth 8-5819] Moved 8 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:01:18 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1676 ; free virtual = 5323
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:01:16 . Memory (MB): peak = 1934.680 ; gain = 527.496 ; free physical = 581 ; free virtual = 3898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:01:20 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1670 ; free virtual = 5317
+Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:01:20 . Memory (MB): peak = 1934.680 ; gain = 527.496 ; free physical = 551 ; free virtual = 3869
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1238,28 +1263,43 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------------------------------+------------+----------+
-|      |RTL Partition                                      |Replication |Instances |
-+------+---------------------------------------------------+------------+----------+
-|1     |tri_mode_ethernet_mac_0_example_design_clocks__GC0 |           1|        18|
-|2     |byte_write_register__parameterized1__GB0           |           1|        50|
-|3     |ip_packet_rx__GC0                                  |           1|       333|
-|4     |ip_packet_tx                                       |           1|       451|
-|5     |tri_mode_ethernet_mac_0_example_design__GC0        |           1|      2871|
-+------+---------------------------------------------------+------------+----------+
++------+------------------------------------------------+------------+----------+
+|      |RTL Partition                                   |Replication |Instances |
++------+------------------------------------------------+------------+----------+
+|1     |byte_write_register__parameterized1__GB0        |           1|     20571|
+|2     |byte_write_register__parameterized1__GB1        |           1|       122|
+|3     |byte_write_register__parameterized1__GB2        |           1|       186|
+|4     |byte_write_register__parameterized1__GB3        |           1|       161|
+|5     |byte_write_register__parameterized1__GB4        |           1|       193|
+|6     |byte_write_register__parameterized1__GB5        |           1|       219|
+|7     |byte_write_register__parameterized1__GB6        |           1|       262|
+|8     |ip_packet_rx__GC0                               |           1|       801|
+|9     |ip_packet_tx                                    |           1|       784|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0 |           1|      2384|
++------+------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[2]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[14]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:01:21 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1668 ; free virtual = 5318
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:01:34 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 381 ; free virtual = 3703
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+------------------------------------------------+------------+----------+
+|      |RTL Partition                                   |Replication |Instances |
++------+------------------------------------------------+------------+----------+
+|1     |byte_write_register__parameterized1__GB0        |           1|     12786|
+|2     |byte_write_register__parameterized1__GB1        |           1|        79|
+|3     |byte_write_register__parameterized1__GB2        |           1|       112|
+|4     |byte_write_register__parameterized1__GB3        |           1|       115|
+|5     |byte_write_register__parameterized1__GB4        |           1|       142|
+|6     |byte_write_register__parameterized1__GB5        |           1|       169|
+|7     |byte_write_register__parameterized1__GB6        |           1|       204|
+|8     |ip_packet_rx__GC0                               |           1|       477|
+|9     |ip_packet_tx                                    |           1|       247|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0 |           1|      1883|
++------+------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1276,7 +1316,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:01:36 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 369 ; free virtual = 3706
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1289,7 +1329,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:01:37 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 369 ; free virtual = 3706
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1301,37 +1341,37 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:01:38 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 369 ; free virtual = 3706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:01:38 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 369 ; free virtual = 3706
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:45 ; elapsed = 00:03:31 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 368 ; free virtual = 3705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:45 ; elapsed = 00:03:31 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 368 ; free virtual = 3704
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+---------------------------------------+----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name                            | RTL Name                                                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+---------------------------------------+----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|tri_mode_ethernet_mac_0_example_design | axi_lite_controller/count_shift_reg[20]                        | 21     | 1     | NO           | NO                 | YES               | 0      | 1       | 
-|tri_mode_ethernet_mac_0_example_design | trimac_fifo_block/user_side_FIFO/rx_fifo_i/wr_data_bram_reg[7] | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
-+---------------------------------------+----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++-------------------------------------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                                | RTL Name                                     | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-------------------------------------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|tri_mode_ethernet_mac_0_fifo_block         | user_side_FIFO/rx_fifo_i/wr_data_bram_reg[7] | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|tri_mode_ethernet_mac_0_example_design_ddr | axi_lite_controller/count_shift_reg[20]      | 21     | 1     | NO           | NO                 | YES               | 0      | 1       | 
++-------------------------------------------+----------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -1344,9 +1384,12 @@ Report BlackBoxes:
 +------+------------------------+----------+
 |      |BlackBox name           |Instances |
 +------+------------------------+----------+
-|1     |Mult_Add_NC             |         3|
-|2     |Mult_Add_COL            |         3|
-|3     |tri_mode_ethernet_mac_0 |         1|
+|1     |tri_mode_ethernet_mac_0 |         1|
+|2     |Mult_Add_NC             |         3|
+|3     |Mult_Add_COL            |         3|
+|4     |mii_to_rmii_0           |         1|
+|5     |accelerator_controls    |         1|
+|6     |clk_wiz_0               |         1|
 +------+------------------------+----------+
 
 Report Cell Usage: 
@@ -1359,85 +1402,79 @@ Report Cell Usage:
 |4     |Mult_Add_NC             |     1|
 |5     |Mult_Add_NC__3          |     1|
 |6     |Mult_Add_NC__4          |     1|
-|7     |tri_mode_ethernet_mac_0 |     1|
-|8     |BUFGCE                  |     3|
-|9     |CARRY4                  |    74|
-|10    |LUT1                    |    42|
-|11    |LUT2                    |   139|
-|12    |LUT3                    |   128|
-|13    |LUT4                    |   153|
-|14    |LUT5                    |    94|
-|15    |LUT6                    |   210|
-|16    |MMCME2_ADV              |     1|
-|17    |MUXF7                   |     2|
+|7     |accelerator_controls    |     1|
+|8     |clk_wiz_0               |     1|
+|9     |mii_to_rmii_0           |     1|
+|10    |tri_mode_ethernet_mac_0 |     1|
+|11    |CARRY4                  |    74|
+|12    |LUT1                    |   129|
+|13    |LUT2                    |   133|
+|14    |LUT3                    |   166|
+|15    |LUT4                    |   133|
+|16    |LUT5                    |  6685|
+|17    |LUT6                    |   913|
 |18    |RAMB36E1_1              |     2|
 |19    |SRL16E                  |     8|
 |20    |SRLC32E                 |     1|
 |21    |FDCE                    |     5|
-|22    |FDPE                    |    35|
-|23    |FDRE                    |   898|
-|24    |FDSE                    |   131|
-|25    |LD                      |     5|
-|26    |IBUF                    |     8|
-|27    |IBUFDS                  |     1|
-|28    |OBUF                    |     9|
+|22    |FDPE                    |    30|
+|23    |FDRE                    |  6916|
+|24    |FDSE                    |   280|
+|25    |IBUF                    |     4|
+|26    |OBUF                    |     4|
 +------+------------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------+----------------------------------------------+------+
 |      |Instance                           |Module                                        |Cells |
 +------+-----------------------------------+----------------------------------------------+------+
-|1     |top                                |                                              |  2661|
-|2     |  rx_stats_sync                    |tri_mode_ethernet_mac_0_sync_block__11        |     5|
-|3     |  tx_stats_sync                    |tri_mode_ethernet_mac_0_sync_block            |     5|
-|4     |  axi_lite_controller              |tri_mode_ethernet_mac_0_axi_lite_sm           |   494|
-|5     |    update_speed_sync_inst         |tri_mode_ethernet_mac_0_sync_block__9         |     5|
-|6     |  example_clocks                   |tri_mode_ethernet_mac_0_example_design_clocks |    19|
-|7     |    lock_sync                      |tri_mode_ethernet_mac_0_sync_block__1         |     5|
-|8     |    mmcm_reset_gen                 |tri_mode_ethernet_mac_0_reset_sync__1         |     5|
-|9     |    clock_generator                |tri_mode_ethernet_mac_0_clk_wiz               |     3|
-|10    |  example_resets                   |tri_mode_ethernet_mac_0_example_design_resets |    54|
-|11    |    dcm_sync                       |tri_mode_ethernet_mac_0_sync_block__10        |     5|
-|12    |    glbl_reset_gen                 |tri_mode_ethernet_mac_0_reset_sync__4         |     5|
-|13    |    axi_lite_reset_gen             |tri_mode_ethernet_mac_0_reset_sync__5         |     5|
-|14    |    gtx_reset_gen                  |tri_mode_ethernet_mac_0_reset_sync__6         |     5|
-|15    |    chk_reset_gen                  |tri_mode_ethernet_mac_0_reset_sync            |     5|
-|16    |  ip_layer_inst                    |ip_layer                                      |   353|
-|17    |    rx                             |ip_packet_rx                                  |   228|
-|18    |      eth_hdr_register             |byte_write_register                           |    52|
-|19    |      ip_hdr_register              |byte_write_register__parameterized0           |    79|
-|20    |      state_counter_logic          |counter_sync_reset__parameterized0            |    80|
-|21    |      user_data_register           |byte_write_register__parameterized1           |     3|
-|22    |    tx                             |ip_packet_tx                                  |   125|
-|23    |      get_checksum                 |ipv4_checksum_calculator                      |     5|
-|24    |      state_counter_business_logic |counter_sync_reset                            |    95|
-|25    |  nn                               |XOR_NN                                        |   731|
-|26    |    N1                             |FC_Neuron                                     |   203|
-|27    |    N2                             |FC_Neuron__parameterized0                     |   203|
-|28    |    N3                             |FC_Neuron__parameterized1                     |   205|
-|29    |  trimac_fifo_block                |tri_mode_ethernet_mac_0_fifo_block            |   747|
-|30    |    rx_mac_reset_gen               |tri_mode_ethernet_mac_0_reset_sync__2         |     5|
-|31    |    tx_mac_reset_gen               |tri_mode_ethernet_mac_0_reset_sync__3         |     5|
-|32    |    trimac_sup_block               |tri_mode_ethernet_mac_0_support               |   139|
-|33    |    user_side_FIFO                 |tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo   |   594|
-|34    |      rx_fifo_i                    |tri_mode_ethernet_mac_0_rx_client_fifo        |   248|
-|35    |        resync_wr_store_frame_tog  |tri_mode_ethernet_mac_0_sync_block__2         |     5|
-|36    |        sync_rd_addr_tog           |tri_mode_ethernet_mac_0_sync_block__3         |     5|
-|37    |        rx_ramgen_i                |tri_mode_ethernet_mac_0_bram_tdp_0            |     7|
-|38    |      tx_fifo_i                    |tri_mode_ethernet_mac_0_tx_client_fifo        |   346|
-|39    |        resync_rd_tran_frame_tog   |tri_mode_ethernet_mac_0_sync_block__4         |     5|
-|40    |        resync_wr_frame_in_fifo    |tri_mode_ethernet_mac_0_sync_block__5         |     5|
-|41    |        resync_wr_frames_in_fifo   |tri_mode_ethernet_mac_0_sync_block__6         |     5|
-|42    |        resync_fif_valid_tog       |tri_mode_ethernet_mac_0_sync_block__7         |     5|
-|43    |        resync_rd_txfer_tog        |tri_mode_ethernet_mac_0_sync_block__8         |     5|
-|44    |        tx_ramgen_i                |tri_mode_ethernet_mac_0_bram_tdp              |     5|
+|1     |top                                |                                              | 16217|
+|2     |  ip_layer_inst                    |ip_layer                                      | 14353|
+|3     |    rx                             |ip_packet_rx                                  | 14106|
+|4     |      user_data_register           |byte_write_register__parameterized1           | 13544|
+|5     |      state_counter_logic          |counter_sync_reset__parameterized0            |    21|
+|6     |      eth_hdr_register             |byte_write_register                           |   159|
+|7     |      ip_hdr_register              |byte_write_register__parameterized0           |   218|
+|8     |    tx                             |ip_packet_tx                                  |   183|
+|9     |      get_checksum                 |ipv4_checksum_calculator                      |    12|
+|10    |      state_counter_business_logic |counter_sync_reset                            |   165|
+|11    |  example_resets                   |tri_mode_ethernet_mac_0_example_design_resets |    56|
+|12    |    dcm_sync                       |tri_mode_ethernet_mac_0_sync_block__9         |     5|
+|13    |    glbl_reset_gen                 |tri_mode_ethernet_mac_0_reset_sync__3         |     5|
+|14    |    axi_lite_reset_gen             |tri_mode_ethernet_mac_0_reset_sync__4         |     5|
+|15    |    gtx_reset_gen                  |tri_mode_ethernet_mac_0_reset_sync__5         |     5|
+|16    |    chk_reset_gen                  |tri_mode_ethernet_mac_0_reset_sync            |     5|
+|17    |  rx_stats_sync                    |tri_mode_ethernet_mac_0_sync_block__10        |     5|
+|18    |  tx_stats_sync                    |tri_mode_ethernet_mac_0_sync_block            |     5|
+|19    |  trimac_fifo_block                |tri_mode_ethernet_mac_0_fifo_block            |   734|
+|20    |    rx_mac_reset_gen               |tri_mode_ethernet_mac_0_reset_sync__1         |     5|
+|21    |    tx_mac_reset_gen               |tri_mode_ethernet_mac_0_reset_sync__2         |     5|
+|22    |    trimac_sup_block               |tri_mode_ethernet_mac_0_support               |   136|
+|23    |    user_side_FIFO                 |tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo   |   588|
+|24    |      rx_fifo_i                    |tri_mode_ethernet_mac_0_rx_client_fifo        |   238|
+|25    |        resync_wr_store_frame_tog  |tri_mode_ethernet_mac_0_sync_block__1         |     5|
+|26    |        sync_rd_addr_tog           |tri_mode_ethernet_mac_0_sync_block__2         |     5|
+|27    |        rx_ramgen_i                |tri_mode_ethernet_mac_0_bram_tdp_0            |     8|
+|28    |      tx_fifo_i                    |tri_mode_ethernet_mac_0_tx_client_fifo        |   350|
+|29    |        resync_rd_tran_frame_tog   |tri_mode_ethernet_mac_0_sync_block__3         |     5|
+|30    |        resync_wr_frame_in_fifo    |tri_mode_ethernet_mac_0_sync_block__4         |     5|
+|31    |        resync_wr_frames_in_fifo   |tri_mode_ethernet_mac_0_sync_block__5         |     5|
+|32    |        resync_fif_valid_tog       |tri_mode_ethernet_mac_0_sync_block__6         |     5|
+|33    |        resync_rd_txfer_tog        |tri_mode_ethernet_mac_0_sync_block__7         |     5|
+|34    |        tx_ramgen_i                |tri_mode_ethernet_mac_0_bram_tdp              |     5|
+|35    |  nn                               |XOR_NN                                        |   707|
+|36    |    N1                             |FC_Neuron                                     |   205|
+|37    |    N2                             |FC_Neuron__parameterized0                     |   204|
+|38    |    N3                             |FC_Neuron__parameterized1                     |   204|
+|39    |  axi_lite_controller              |tri_mode_ethernet_mac_0_axi_lite_sm           |   321|
+|40    |    update_speed_sync_inst         |tri_mode_ethernet_mac_0_sync_block__8         |     5|
 +------+-----------------------------------+----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 1667 ; free virtual = 5317
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:45 ; elapsed = 00:03:31 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 368 ; free virtual = 3704
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:01:15 . Memory (MB): peak = 1920.652 ; gain = 154.590 ; free physical = 3827 ; free virtual = 7477
-Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 1920.652 ; gain = 513.395 ; free physical = 3832 ; free virtual = 7477
+Synthesis finished with 0 errors, 0 critical warnings and 48 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:40 ; elapsed = 00:03:24 . Memory (MB): peak = 1951.684 ; gain = 178.672 ; free physical = 2687 ; free virtual = 6023
+Synthesis Optimization Complete : Time (s): cpu = 00:02:46 ; elapsed = 00:03:32 . Memory (MB): peak = 1951.684 ; gain = 544.500 ; free physical = 2693 ; free virtual = 6023
 INFO: [Project 1-571] Translating synthesized netlist
 WARNING: [Synth 37-28] Duplicate attribute 'INIT' found for instance 'rd_store_frame_delay_reg' of module 'FDRE'.
 Resolution: Check your design sources near the definition of the module or any related 'include files, looking for duplicate definitions with different values.
@@ -1453,23 +1490,22 @@ WARNING: [Synth 37-28] Duplicate attribute 'INIT' found for instance 'rd_txfer_t
 Resolution: Check your design sources near the definition of the module or any related 'include files, looking for duplicate definitions with different values.
 WARNING: [Synth 37-28] Duplicate attribute 'INIT' found for instance 'frame_in_fifo_valid_tog_reg' of module 'FDRE'.
 Resolution: Check your design sources near the definition of the module or any related 'include files, looking for duplicate definitions with different values.
-INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 76 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'tri_mode_ethernet_mac_0_example_design_ddr' is not ideal for floorplanning, since the cellview 'byte_write_register__parameterized1' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1932.738 ; gain = 0.000 ; free physical = 3766 ; free virtual = 7411
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1963.777 ; gain = 0.000 ; free physical = 2632 ; free virtual = 5962
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 8 instances were transformed.
-  BUFGCE => BUFGCTRL: 3 instances
-  LD => LDCE: 5 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-281 Infos, 126 Warnings, 0 Critical Warnings and 0 Errors encountered.
+399 Infos, 126 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:24 . Memory (MB): peak = 1932.738 ; gain = 525.480 ; free physical = 3823 ; free virtual = 7468
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1932.738 ; gain = 0.000 ; free physical = 3823 ; free virtual = 7468
+synth_design: Time (s): cpu = 00:02:49 ; elapsed = 00:03:34 . Memory (MB): peak = 1963.777 ; gain = 556.594 ; free physical = 2697 ; free virtual = 6027
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1963.777 ; gain = 0.000 ; free physical = 2697 ; free virtual = 6027
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file tri_mode_ethernet_mac_0_example_design_utilization_synth.rpt -pb tri_mode_ethernet_mac_0_example_design_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Feb 24 21:29:03 2021...
+INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tri_mode_ethernet_mac_0_example_design_ddr_utilization_synth.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Feb 28 18:13:06 2021...

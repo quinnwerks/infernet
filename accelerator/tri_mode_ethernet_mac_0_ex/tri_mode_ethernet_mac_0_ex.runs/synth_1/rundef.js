@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log tri_mode_ethernet_mac_0_example_design.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tri_mode_ethernet_mac_0_example_design.tcl" );
+         "-log tri_mode_ethernet_mac_0_example_design_ddr.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tri_mode_ethernet_mac_0_example_design_ddr.tcl" );
 
 
 

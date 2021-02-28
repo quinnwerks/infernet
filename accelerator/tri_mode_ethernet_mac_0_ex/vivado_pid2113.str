@@ -1,0 +1,426 @@
+/*
+
+Xilinx Vivado v2018.3.1 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2489853 on Tue Mar 26 04:18:30 MDT 2019
+IP Build: 2486929 on Tue Mar 26 06:44:21 MDT 2019
+
+Process ID (PID): 2113
+License: Customer
+
+Current time: 	Sat Feb 27 15:08:19 EST 2021
+Time zone: 	Eastern Standard Time (America/Toronto)
+
+OS: Ubuntu
+OS Version: 5.4.0-66-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 9 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/tools/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4
+Java executable location: 	/tools/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	quinn
+User home directory: /home/quinn
+User working directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex
+User country: 	CA
+User language: 	en
+User locale: 	en_CA
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2018.3
+RDI_DATADIR: /tools/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: /home/quinn/.Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: /home/quinn/.Xilinx/Vivado/2018.3/
+Vivado layouts directory: /home/quinn/.Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.log
+Vivado journal file location: 	/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-2113-hw-dev
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINXD_LICENSE_FILE: 27012@mlm.ece.utoronto.ca:40012@mlm.ece.utoronto.ca
+XILINX_DSP: /tools/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2018.3
+XILINX_SDK: /tools/Xilinx/SDK/2018.3
+XILINX_VIVADO: /tools/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 790 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 79 MB (+80747kb) [00:00:10]
+// [Engine Memory]: 776 MB (+661948kb) [00:00:10]
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: tri_mode_ethernet_mac_0_ex.xpr. Version: Vivado v2018.3.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project tri_mode_ethernet_mac_0_ex.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// HMemoryUtils.trashcanNow. Engine heap size: 819 MB. GUI used memory: 45 MB. Current time: 2/27/21, 3:08:21 PM EST
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 100 MB (+17727kb) [00:00:27]
+// [Engine Memory]: 903 MB (+92311kb) [00:00:27]
+// [Engine Memory]: 953 MB (+5982kb) [00:00:29]
+// WARNING: HEventQueue.dispatchEvent() is taking  3712 ms.
+// Tcl Message: open_project tri_mode_ethernet_mac_0_ex.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 983 MB. GUI used memory: 55 MB. Current time: 2/27/21, 3:08:38 PM EST
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 6475.082 ; gain = 175.219 ; free physical = 4730 ; free virtual = 8217 
+// Project name: tri_mode_ethernet_mac_0_ex; location: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex; part: xc7a100tcsg324-1
+// [Engine Memory]: 1,204 MB (+212776kb) [00:00:33]
+dismissDialog("Open Project"); // bx (cp)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aI (aF, cp)
+// [Engine Memory]: 1,443 MB (+187365kb) [00:00:35]
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aI (aF, cp)
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 115 MB (+9721kb) [00:00:38]
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // g (aR, cp): FALSE
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // g (aR, cp): FALSE
+// [Engine Memory]: 1,717 MB (+211363kb) [00:00:40]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-69] Instance accelerator/example_clocks/clkin1_buf (IBUFDS) is unplaced after IO placer. ]", 2, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-69] Instance accelerator/example_clocks/clkin1_buf (IBUFDS) is unplaced after IO placer. ]", 2, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-69] Instance accelerator/example_clocks/clkin1_buf (IBUFDS) is unplaced after IO placer. ]", 2, false, false, false, false, false, true); // ah (Q, cp) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-378] Input pin of input buffer accelerator/example_clocks/clkin1_buf has an illegal connection to a logic constant value.. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-99] Placer failed with error: 'Implementation Feasibility check failed, Please see the previously displayed individual error or warning messages for more details.'. Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.. ]", 4, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Common 17-69] Command failed: Placer could not place all instances. ]", 5, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-99] Placer failed with error: 'Implementation Feasibility check failed, Please see the previously displayed individual error or warning messages for more details.'. Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.. ]", 4, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-378] Input pin of input buffer accelerator/example_clocks/clkin1_buf has an illegal connection to a logic constant value.. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-69] Instance accelerator/example_clocks/clkin1_buf (IBUFDS) is unplaced after IO placer. ]", 2, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-378] Input pin of input buffer accelerator/example_clocks/clkin1_buf has an illegal connection to a logic constant value.. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-99] Placer failed with error: 'Implementation Feasibility check failed, Please see the previously displayed individual error or warning messages for more details.'. Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.. ]", 4, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Common 17-69] Command failed: Placer could not place all instances. ]", 5, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-99] Placer failed with error: 'Implementation Feasibility check failed, Please see the previously displayed individual error or warning messages for more details.'. Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.. ]", 4, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-378] Input pin of input buffer accelerator/example_clocks/clkin1_buf has an illegal connection to a logic constant value.. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-69] Instance accelerator/example_clocks/clkin1_buf (IBUFDS) is unplaced after IO placer. ]", 2, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-378] Input pin of input buffer accelerator/example_clocks/clkin1_buf has an illegal connection to a logic constant value.. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-99] Placer failed with error: 'Implementation Feasibility check failed, Please see the previously displayed individual error or warning messages for more details.'. Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.. ]", 4, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Common 17-69] Command failed: Placer could not place all instances. ]", 5, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-378] Input pin of input buffer accelerator/example_clocks/clkin1_buf has an illegal connection to a logic constant value.. ]", 3, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Place 30-69] Instance accelerator/example_clocks/clkin1_buf (IBUFDS) is unplaced after IO placer. ]", 2, false); // ah (Q, cp)
+// [Engine Memory]: 1,825 MB (+23726kb) [00:01:15]
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 4); // B (D, cp)
+// PAPropertyPanels.initPanels (tri_mode_ethernet_mac_0_example_design.xdc) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, tri_mode_ethernet_mac_0_example_design.xdc]", 5, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, tri_mode_ethernet_mac_0_example_design.xdc]", 5, false, false, false, false, false, true); // B (D, cp) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 9, 101); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 16, 207); // cl (w, cp)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 61 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// TclEventType: RUN_MODIFY
+// HMemoryUtils.trashcanNow. Engine heap size: 1,130 MB. GUI used memory: 57 MB. Current time: 2/27/21, 3:10:57 PM EST
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat Feb 27 15:10:56 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Sat Feb 27 15:10:56 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 100 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aI (aF, cp)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// ah (cp): Implementation Failed: addNotify
+// Elapsed time: 57 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ah (cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Common 17-1548] Command failed: can't read axi_clk_name: no such variable.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:128]. ]", 2, false); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Common 17-1548] Command failed: can't read axi_clk_name: no such variable.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:128]. ]", 2, false, false, false, false, false, true); // ah (Q, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 367, 448); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 367, 448, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 369, 456); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 369, 456, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 302, 277); // cl (w, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, accelerator_top_ddr (accelerator_top_ddr.sv)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, accelerator_top_ddr (accelerator_top_ddr.sv), accelerator : tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v)]", 3); // B (D, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Common 17-1548] Command failed: can't read axi_clk_name: no such variable.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:128]. ]", 2, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;128;-;;-;16;-;"); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5, true); // ah (Q, cp) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;86;-;;-;16;-;"); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-602] set_input_delay: list contains '6' objects of types '(pin)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 6, true); // ah (Q, cp) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc;-;;-;16;-;line;-;27;-;;-;16;-;"); // ah (Q, cp)
+// Elapsed time: 15 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-472] set_input_delay: list does not contain any object of type(s) '(input port,internal pin)' supported by the constraint. The constraint will not be applied. Please check to make sure that this is intended. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 7, true); // ah (Q, cp) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc;-;;-;16;-;line;-;27;-;;-;16;-;"); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Common 17-55] 'get_property' expects at least one object. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/.Xil/Vivado-2922-hw-dev/dbg_hub_CV.0/out/xsdbm_cc_late_late.xdc:10]. ]", 10, true); // ah (Q, cp) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/.Xil/Vivado-2922-hw-dev/dbg_hub_CV.0/out/xsdbm_cc_late_late.xdc;-;;-;16;-;line;-;10;-;;-;16;-;"); // ah (Q, cp)
+// ad (cp): Unable to Open File: addNotify
+selectButton(PAResourceOtoP.OpenFileAction_OK, "OK"); // a (ad)
+dismissDialog("Unable to Open File"); // ad (cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Common 17-1548] Command failed: can't read axi_clk_name: no such variable.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:128]. ]", 2, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;128;-;;-;16;-;"); // ah (Q, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 371, 160); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 371, 160, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 371, 160); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 375, 150); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 375, 150, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 375, 150); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 208, 81); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 365, 162); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 240, 247); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 240, 247, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 216, 315); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 392, 176); // cl (w, cp)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "axi_clk_name"); // l (aT, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 214, 265); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 94, 209); // cl (w, cp)
+// Elapsed time: 25 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 112, 367); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 112, 367, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 112, 367); // cl (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,142 MB. GUI used memory: 56 MB. Current time: 2/27/21, 3:16:27 PM EST
+// Elapsed time: 51 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5, true); // ah (Q, cp) - Node
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5); // ah (Q, cp)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-602] set_input_delay: list contains '6' objects of types '(pin)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 6); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-472] set_input_delay: list does not contain any object of type(s) '(input port,internal pin)' supported by the constraint. The constraint will not be applied. Please check to make sure that this is intended. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 8); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5); // ah (Q, cp)
+// [Engine Memory]: 1,931 MB (+15682kb) [00:09:47]
+// Elapsed time: 153 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 433, 173); // cl (w, cp)
+// Elapsed time: 15 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 370, 67); // cl (w, cp)
+// Elapsed time: 16 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 223, 295); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 225, 309); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 228, 319); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 226, 337); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 227, 349); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 225, 367); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 222, 384); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 220, 340); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 226, 200); // cl (w, cp)
+typeControlKey((HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 'c'); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 216, 335); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 295, 339); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 293, 337); // cl (w, cp)
+typeControlKey((HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 'v'); // cl (w, cp)
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Sat Feb 27 15:21:01 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Sat Feb 27 15:21:01 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (cp)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aI (aF, cp)
+// Elapsed time: 77 seconds
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aI (aF, cp)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 59 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 355, 340); // cl (w, cp)
+// TclEventType: RUN_STEP_COMPLETED
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-472] set_input_delay: list does not contain any object of type(s) '(input port,internal pin)' supported by the constraint. The constraint will not be applied. Please check to make sure that this is intended. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 7); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-602] set_input_delay: list contains '6' objects of types '(pin)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 6); // ah (Q, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,150 MB. GUI used memory: 56 MB. Current time: 2/27/21, 3:23:37 PM EST
+// TclEventType: RUN_FAILED
+// ah (cp): Implementation Failed: addNotify
+// Elapsed time: 13 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ah (cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Constraints 18-602] set_input_delay: list contains '6' objects of types '(pin)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]. ]", 6); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Common 17-1548] Command failed: can't read wr_clk_period: no such variable.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/.Xil/Vivado-4086-hw-dev/dbg_hub_CV.0/out/xsdbm_cc_late_late.xdc:12]. ]", 10); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Common 17-55] 'get_property' expects at least one object. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/.Xil/Vivado-4086-hw-dev/dbg_hub_CV.0/out/xsdbm_cc_late_late.xdc:10]. ]", 16); // ah (Q, cp)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports accelerator_top_ddr/clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5); // ah (Q, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports accelerator_top_ddr/clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. , [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_ports accelerator_top_ddr/config_board]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:101]. ]", 7, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;101;-;;-;16;-;"); // ah (Q, cp)
+// [Engine Memory]: 2,100 MB (+75009kb) [00:16:03]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports accelerator_top_ddr/clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. , [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_ports accelerator_top_ddr/pause_req_s]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:102]. ]", 8, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;102;-;;-;16;-;"); // ah (Q, cp)
+// Elapsed time: 16 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports accelerator_top_ddr/clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. , [Vivado 12-4739] set_false_path:No valid object(s) found for '-from [get_ports accelerator_top_ddr/config_board]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:101]. ]", 7, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;101;-;;-;16;-;"); // ah (Q, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 363, 162); // cl (w, cp)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, accelerator_top_ddr (accelerator_top_ddr.sv), accelerator : tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v)]", 3, true); // B (D, cp) - Node
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 219, 246); // cl (w, cp)
+typeControlKey((HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 'c'); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 301, 143); // cl (w, cp)
+typeControlKey((HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 'v'); // cl (w, cp)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Sat Feb 27 15:25:23 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Sat Feb 27 15:25:23 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (cp)
+// Elapsed time: 11 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 198, 75); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 198, 75, false, false, false, false, true); // cl (w, cp) - Double Click
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 113 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Design Initialization, [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports accelerator_top_ddr/clk_in_p]'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:86]. ]", 5); // ah (Q, cp)
+// TclEventType: RUN_FAILED
+// ah (cp): Implementation Failed: addNotify
+// Elapsed time: 20 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_LOG_WINDOW, "View Log"); // a (Q, ah)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Implementation Failed"); // ah (cp)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aI (aF, cp)
+// Elapsed time: 19 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 298, 286); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 506, 345); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 502, 332); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 508, 334); // cl (w, cp)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 209, 267); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 218, 273); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 192, 264); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 192, 264, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 192, 264); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 262, 264); // cl (w, cp)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Common 17-1548] Command failed: can't read axi_clk_name: no such variable.  [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc:128]. ]", 2, false); // ah (Q, cp)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc;-;;-;16;-;line;-;128;-;;-;16;-;"); // ah (Q, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 355, 201); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 311, 230); // cl (w, cp)
+typeControlKey((HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 'c'); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 353, 109); // cl (w, cp)
+typeControlKey((HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 'v'); // cl (w, cp)
+// Elapsed time: 16 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 358, 157); // cl (w, cp)
+// Elapsed time: 21 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 50, 162); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 50, 162, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 50, 162); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 198, 182); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 198, 182, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 198, 182); // cl (w, cp)
+// Elapsed time: 26 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 185, 158); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 185, 158, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 248, 197); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 206, 164); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 206, 164, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 332, 150); // cl (w, cp)
+// Elapsed time: 15 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 188, 150); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 188, 150, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 14 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 333, 339); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 333, 339, false, false, false, false, true); // cl (w, cp) - Double Click
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Sat Feb 27 15:30:55 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Sat Feb 27 15:30:56 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// ah (cp): Implementation Failed: addNotify
