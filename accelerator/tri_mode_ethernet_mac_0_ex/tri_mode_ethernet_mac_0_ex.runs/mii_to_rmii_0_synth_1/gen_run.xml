@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="mii_to_rmii_0_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1614463960">
-  <File Type="RDS-UTIL-PB" Name="mii_to_rmii_0_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="mii_to_rmii_0_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="mii_to_rmii_0_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="mii_to_rmii_0.vds"/>
   <File Type="RDS-DCP" Name="mii_to_rmii_0.dcp"/>
   <File Type="PA-TCL" Name="mii_to_rmii_0.tcl"/>

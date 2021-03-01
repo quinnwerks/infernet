@@ -5,9 +5,9 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design_ddr
 #  (
-      parameter OUR_MAC_ADDRESS=48'h07_00_00_35_0a_00,
+      parameter OUR_MAC_ADDRESS=48'h08_00_00_35_0a_00,
       parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h02_07_01_01,
+      parameter OUR_IP_ADDRESS=32'h02_08_01_01,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
 )(
       // asynchronous reset
@@ -190,11 +190,11 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    wire                 tx_fifo_clock;
    wire                 tx_fifo_resetn;
    
-   wire  [7:0]          tx_axis_fifo_tdata;
+   (* mark_debug = "true" *) wire  [7:0]          tx_axis_fifo_tdata;
    
-   wire                 tx_axis_fifo_tvalid;
-   wire                 tx_axis_fifo_tlast;
-   wire                 tx_axis_fifo_tready;
+   (* mark_debug = "true" *) wire                 tx_axis_fifo_tvalid;
+   (* mark_debug = "true" *) wire                 tx_axis_fifo_tlast;
+   (* mark_debug = "true" *) wire                 tx_axis_fifo_tready;
 
    // RX Statistics serialisation signals
    wire                 rx_statistics_valid;
@@ -260,9 +260,9 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    
    wire [32-1:0]  ip_address_to_tx;
    wire [47:0]    mac_address_to_tx;
-   wire  [9:0]    recipient_message_to_tx; // Either a response to LB or an inference result
+   (* mark_debug = "true" *) wire  [9:0]    recipient_message_to_tx; // Either a response to LB or an inference result
    (* mark_debug = "true" *) wire           start_ip_txn_to_tx;
-   wire           ready_for_send_to_tx;
+   (* mark_debug = "true" *) wire           ready_for_send_to_tx;
    
    // mac address src/dst
 

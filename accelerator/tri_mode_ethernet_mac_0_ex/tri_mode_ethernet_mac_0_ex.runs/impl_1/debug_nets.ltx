@@ -88,7 +88,7 @@
                             "slave_index": 1,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "23e7d65a79bc59f7bc47406c1714dfae",
+                        "uuid": "23E7D65A79BC59F7BC47406C1714DFAE",
                         "pins": [
                             {
                                 "name": "probe0",
@@ -97,8 +97,388 @@
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 31,
+                                "rightIndex": 7,
                                 "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ip_layer_inst/tx/nextstate",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[7]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[6]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[5]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[4]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[3]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[2]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[1]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/nextstate[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "ip_layer_inst/tx/state",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ip_layer_inst/tx/state[7]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[6]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[5]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[4]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[3]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[2]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[1]",
+                                                "parentNetId": 15
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/tx/state[0]",
+                                                "parentNetId": 16
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "tx_axis_fifo_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "tx_axis_fifo_tdata[7]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[6]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[5]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[4]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[3]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[2]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[1]"
+                                            },
+                                            {
+                                                "name": "tx_axis_fifo_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "recipient_message_to_tx",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "recipient_message_to_tx[9]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[8]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[7]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[6]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[5]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[4]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[3]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[2]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[1]"
+                                            },
+                                            {
+                                                "name": "recipient_message_to_tx[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "rx_axis_fifo_tdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx_axis_fifo_tdata[7]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[6]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[5]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[4]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[3]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[2]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[1]"
+                                            },
+                                            {
+                                                "name": "rx_axis_fifo_tdata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 47,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "ip_layer_inst/rx/dst_mac_address",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[47]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[46]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[45]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[44]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[43]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[42]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[41]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[40]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[39]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[38]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[37]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[36]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[35]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[34]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[33]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[32]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[31]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[30]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[29]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[28]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[27]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[26]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[25]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[24]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[23]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[22]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[21]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[20]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[19]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[18]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[17]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[16]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[15]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[14]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[13]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[12]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[11]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[10]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[9]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[8]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[7]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[6]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[5]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[4]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[3]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[2]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[1]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/dst_mac_address[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 6,
                                 "nets": [
                                     {
                                         "name": "ip_layer_inst/rx/dst_ip_address",
@@ -205,204 +585,284 @@
                                 ]
                             },
                             {
-                                "name": "probe1",
-                                "id": 4,
+                                "name": "probe7",
+                                "id": 10,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 1,
+                                "rightIndex": 7,
+                                "portIndex": 7,
                                 "nets": [
                                     {
-                                        "name": "ip_address_from_rx",
+                                        "name": "ip_layer_inst/rx/nextstate",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "ip_address_from_rx[31]"
+                                                "name": "ip_layer_inst/rx/nextstate[7]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[30]"
+                                                "name": "ip_layer_inst/rx/nextstate[6]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[29]"
+                                                "name": "ip_layer_inst/rx/nextstate[5]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[28]"
+                                                "name": "ip_layer_inst/rx/nextstate[4]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[27]"
+                                                "name": "ip_layer_inst/rx/nextstate[3]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[26]"
+                                                "name": "ip_layer_inst/rx/nextstate[2]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[25]"
+                                                "name": "ip_layer_inst/rx/nextstate[1]"
                                             },
                                             {
-                                                "name": "ip_address_from_rx[24]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[23]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[22]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[21]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[20]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[19]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[18]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[17]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[16]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[15]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[14]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[13]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[12]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[11]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[10]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[9]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[8]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[7]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[6]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[5]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[4]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[3]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[2]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[1]"
-                                            },
-                                            {
-                                                "name": "ip_address_from_rx[0]"
+                                                "name": "ip_layer_inst/rx/nextstate[0]"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe2",
-                                "id": 5,
+                                "name": "probe8",
+                                "id": 11,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 15,
-                                "portIndex": 2,
+                                "rightIndex": 47,
+                                "portIndex": 8,
                                 "nets": [
                                     {
-                                        "name": "u_ila_0_state_counter[15]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[14]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[13]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[12]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[11]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[10]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[9]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[8]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[7]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[6]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[5]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[4]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[3]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[2]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[1]",
-                                        "isBus": false
-                                    },
-                                    {
-                                        "name": "u_ila_0_state_counter[0]",
-                                        "isBus": false
+                                        "name": "ip_layer_inst/rx/eth_header_data_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[47]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[46]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[45]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[44]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[43]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[42]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[41]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[40]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[39]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[38]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[37]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[36]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[35]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[34]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[33]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[32]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[31]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[30]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[29]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[28]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[27]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[26]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[25]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[24]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[23]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[22]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[21]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[20]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[19]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[18]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[17]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[16]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[15]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[14]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[13]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[12]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[11]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[10]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[9]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[8]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[7]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[6]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[5]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[4]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[3]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[2]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[1]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data_1[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe3",
-                                "id": 6,
+                                "name": "probe8",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 48,
+                                "rightIndex": 63,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "ip_layer_inst/rx/eth_header_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[111]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[110]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[109]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[108]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[107]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[106]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[105]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[104]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[103]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[102]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[101]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[100]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[99]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[98]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[97]"
+                                            },
+                                            {
+                                                "name": "ip_layer_inst/rx/eth_header_data[96]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 13,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 95,
-                                "portIndex": 3,
+                                "portIndex": 9,
                                 "nets": [
                                     {
                                         "name": "ip_layer_inst/rx/ip_header_data_1",
@@ -701,14 +1161,14 @@
                                 ]
                             },
                             {
-                                "name": "probe3",
-                                "id": 7,
+                                "name": "probe9",
+                                "id": 14,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 96,
                                 "rightIndex": 127,
-                                "portIndex": 3,
+                                "portIndex": 9,
                                 "nets": [
                                     {
                                         "name": "ip_layer_inst/rx/ip_header_data",
@@ -815,284 +1275,14 @@
                                 ]
                             },
                             {
-                                "name": "probe4",
-                                "id": 8,
+                                "name": "probe10",
+                                "id": 15,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 7,
-                                "portIndex": 4,
-                                "nets": [
-                                    {
-                                        "name": "ip_layer_inst/rx/nextstate",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[7]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[6]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[5]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[4]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[3]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[2]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[1]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/nextstate[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe5",
-                                "id": 9,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 47,
-                                "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "ip_layer_inst/rx/eth_header_data_1",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[47]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[46]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[45]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[44]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[43]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[42]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[41]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[40]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[39]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[38]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[37]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[36]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[35]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[34]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[33]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[32]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[31]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[30]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[29]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[28]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[27]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[26]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[25]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[24]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[23]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[22]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[21]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[20]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[19]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[18]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[17]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[16]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[15]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[14]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[13]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[12]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[11]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[10]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[9]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[8]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[7]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[6]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[5]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[4]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[3]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[2]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[1]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data_1[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe5",
-                                "id": 10,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 48,
-                                "rightIndex": 63,
-                                "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "ip_layer_inst/rx/eth_header_data",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[111]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[110]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[109]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[108]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[107]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[106]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[105]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[104]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[103]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[102]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[101]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[100]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[99]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[98]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[97]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/eth_header_data[96]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe6",
-                                "id": 11,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 7,
-                                "portIndex": 6,
+                                "portIndex": 10,
                                 "nets": [
                                     {
                                         "name": "ip_layer_inst/rx/state",
@@ -1127,218 +1317,194 @@
                                 ]
                             },
                             {
-                                "name": "probe7",
-                                "id": 12,
+                                "name": "probe11",
+                                "id": 16,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 47,
-                                "portIndex": 7,
+                                "rightIndex": 15,
+                                "portIndex": 11,
                                 "nets": [
                                     {
-                                        "name": "ip_layer_inst/rx/dst_mac_address",
+                                        "name": "ip_layer_inst/rx/state_counter",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[47]"
+                                                "name": "ip_layer_inst/rx/state_counter[15]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[46]"
+                                                "name": "ip_layer_inst/rx/state_counter[14]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[45]"
+                                                "name": "ip_layer_inst/rx/state_counter[13]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[44]"
+                                                "name": "ip_layer_inst/rx/state_counter[12]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[43]"
+                                                "name": "ip_layer_inst/rx/state_counter[11]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[42]"
+                                                "name": "ip_layer_inst/rx/state_counter[10]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[41]"
+                                                "name": "ip_layer_inst/rx/state_counter[9]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[40]"
+                                                "name": "ip_layer_inst/rx/state_counter[8]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[39]"
+                                                "name": "ip_layer_inst/rx/state_counter[7]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[38]"
+                                                "name": "ip_layer_inst/rx/state_counter[6]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[37]"
+                                                "name": "ip_layer_inst/rx/state_counter[5]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[36]"
+                                                "name": "ip_layer_inst/rx/state_counter[4]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[35]"
+                                                "name": "ip_layer_inst/rx/state_counter[3]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[34]"
+                                                "name": "ip_layer_inst/rx/state_counter[2]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[33]"
+                                                "name": "ip_layer_inst/rx/state_counter[1]"
                                             },
                                             {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[32]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[31]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[30]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[29]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[28]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[27]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[26]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[25]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[24]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[23]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[22]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[21]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[20]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[19]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[18]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[17]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[16]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[15]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[14]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[13]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[12]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[11]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[10]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[9]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[8]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[7]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[6]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[5]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[4]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[3]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[2]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[1]"
-                                            },
-                                            {
-                                                "name": "ip_layer_inst/rx/dst_mac_address[0]"
+                                                "name": "ip_layer_inst/rx/state_counter[0]"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe8",
-                                "id": 13,
+                                "name": "probe12",
+                                "id": 17,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 7,
-                                "portIndex": 8,
+                                "rightIndex": 31,
+                                "portIndex": 12,
                                 "nets": [
                                     {
-                                        "name": "rx_axis_fifo_tdata",
+                                        "name": "ip_address_from_rx",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "rx_axis_fifo_tdata[7]"
+                                                "name": "ip_address_from_rx[31]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[6]"
+                                                "name": "ip_address_from_rx[30]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[5]"
+                                                "name": "ip_address_from_rx[29]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[4]"
+                                                "name": "ip_address_from_rx[28]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[3]"
+                                                "name": "ip_address_from_rx[27]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[2]"
+                                                "name": "ip_address_from_rx[26]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[1]"
+                                                "name": "ip_address_from_rx[25]"
                                             },
                                             {
-                                                "name": "rx_axis_fifo_tdata[0]"
+                                                "name": "ip_address_from_rx[24]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[23]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[22]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[21]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[20]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[19]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[18]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[17]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[16]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[15]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[14]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[13]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[12]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[11]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[10]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[9]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[8]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[7]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[6]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[5]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[4]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[3]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[2]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[1]"
+                                            },
+                                            {
+                                                "name": "ip_address_from_rx[0]"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe9",
-                                "id": 14,
+                                "name": "probe13",
+                                "id": 18,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 47,
-                                "portIndex": 9,
+                                "portIndex": 13,
                                 "nets": [
                                     {
                                         "name": "mac_address_from_rx",
@@ -1493,70 +1659,6 @@
                                 ]
                             },
                             {
-                                "name": "probe10",
-                                "id": 15,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 10,
-                                "nets": [
-                                    {
-                                        "name": "u_ila_0_data_frame_enable",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe11",
-                                "id": 16,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 11,
-                                "nets": [
-                                    {
-                                        "name": "ip_layer_inst/rx/eth_header_enable",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe12",
-                                "id": 17,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 12,
-                                "nets": [
-                                    {
-                                        "name": "frame_ready_from_rx",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe13",
-                                "id": 18,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 13,
-                                "nets": [
-                                    {
-                                        "name": "ip_layer_inst/rx/ip_header_enable",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
                                 "name": "probe14",
                                 "id": 19,
                                 "type": "DATA_TRIGGER",
@@ -1567,7 +1669,7 @@
                                 "portIndex": 14,
                                 "nets": [
                                     {
-                                        "name": "rx_axis_fifo_tlast",
+                                        "name": "ip_layer_inst/rx/data_frame_enable",
                                         "isBus": false
                                     }
                                 ]
@@ -1583,7 +1685,7 @@
                                 "portIndex": 15,
                                 "nets": [
                                     {
-                                        "name": "rx_axis_fifo_tvalid",
+                                        "name": "ip_layer_inst/rx/eth_header_enable",
                                         "isBus": false
                                     }
                                 ]
@@ -1599,7 +1701,7 @@
                                 "portIndex": 16,
                                 "nets": [
                                     {
-                                        "name": "start_ip_txn_to_tx",
+                                        "name": "frame_ready_from_rx",
                                         "isBus": false
                                     }
                                 ]
@@ -1615,7 +1717,7 @@
                                 "portIndex": 17,
                                 "nets": [
                                     {
-                                        "name": "ip_layer_inst/rx/state_counter_enable",
+                                        "name": "ip_layer_inst/rx/ip_header_enable",
                                         "isBus": false
                                     }
                                 ]
@@ -1631,7 +1733,135 @@
                                 "portIndex": 18,
                                 "nets": [
                                     {
+                                        "name": "ready_for_send_to_tx",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe19",
+                                "id": 24,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 19,
+                                "nets": [
+                                    {
+                                        "name": "rx_axis_fifo_tlast",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe20",
+                                "id": 25,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 20,
+                                "nets": [
+                                    {
+                                        "name": "rx_axis_fifo_tvalid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe21",
+                                "id": 26,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 21,
+                                "nets": [
+                                    {
+                                        "name": "start_ip_txn_to_tx",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe22",
+                                "id": 27,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 22,
+                                "nets": [
+                                    {
+                                        "name": "ip_layer_inst/rx/state_counter_enable",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe23",
+                                "id": 28,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 23,
+                                "nets": [
+                                    {
                                         "name": "ip_layer_inst/rx/state_counter_reset",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe24",
+                                "id": 29,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 24,
+                                "nets": [
+                                    {
+                                        "name": "tx_axis_fifo_tlast",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe25",
+                                "id": 30,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 25,
+                                "nets": [
+                                    {
+                                        "name": "tx_axis_fifo_tready",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe26",
+                                "id": 31,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 26,
+                                "nets": [
+                                    {
+                                        "name": "tx_axis_fifo_tvalid",
                                         "isBus": false
                                     }
                                 ]
@@ -1647,41 +1877,17 @@
                             "slave_index": 2,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "3b505a030738513c98471d25f5b1f848",
+                        "uuid": "3B505A030738513C98471D25F5B1F848",
                         "pins": [
                             {
                                 "name": "probe0",
-                                "id": 24,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 1,
-                                "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "phy2rmii_rxd_IBUF",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "phy2rmii_rxd_IBUF[1]"
-                                            },
-                                            {
-                                                "name": "phy2rmii_rxd_IBUF[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 25,
+                                "id": 32,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 3,
-                                "portIndex": 1,
+                                "portIndex": 0,
                                 "nets": [
                                     {
                                         "name": "mii_rxd",
@@ -1700,6 +1906,86 @@
                                                 "name": "mii_rxd[0]"
                                             }
                                         ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 33,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "phy2rmii_rxd_IBUF",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "phy2rmii_rxd_IBUF[1]"
+                                            },
+                                            {
+                                                "name": "phy2rmii_rxd_IBUF[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 15,
+                        "name": "ip_layer_inst/tx/state[1]",
+                        "state_reg": [
+                            {
+                                "name": "ip_layer_inst/tx/FSM_sequential_state_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "SEND_ETH_HDR",
+                                        "val": "01"
+                                    },
+                                    {
+                                        "name": "SEND_IP_HDR",
+                                        "val": "10"
+                                    },
+                                    {
+                                        "name": "IDLE",
+                                        "val": "00"
+                                    },
+                                    {
+                                        "name": "SEND_USER_DATA",
+                                        "val": "11"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 16,
+                        "name": "ip_layer_inst/tx/state[0]",
+                        "state_reg": [
+                            {
+                                "name": "ip_layer_inst/tx/FSM_sequential_state_reg[0]",
+                                "states": [
+                                    {
+                                        "name": "SEND_ETH_HDR",
+                                        "val": "01"
+                                    },
+                                    {
+                                        "name": "SEND_IP_HDR",
+                                        "val": "10"
+                                    },
+                                    {
+                                        "name": "IDLE",
+                                        "val": "00"
+                                    },
+                                    {
+                                        "name": "SEND_USER_DATA",
+                                        "val": "11"
                                     }
                                 ]
                             }
