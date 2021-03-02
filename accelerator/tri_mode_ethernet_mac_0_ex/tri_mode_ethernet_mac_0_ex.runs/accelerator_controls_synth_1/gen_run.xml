@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="accelerator_controls_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1614452020">
-  <File Type="RDS-UTIL-PB" Name="accelerator_controls_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="accelerator_controls_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="accelerator_controls_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="accelerator_controls.vds"/>
   <File Type="RDS-DCP" Name="accelerator_controls.dcp"/>
   <File Type="PA-TCL" Name="accelerator_controls.tcl"/>

@@ -1,0 +1,829 @@
+/*
+
+Xilinx Vivado v2018.3.1 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2489853 on Tue Mar 26 04:18:30 MDT 2019
+IP Build: 2486929 on Tue Mar 26 06:44:21 MDT 2019
+
+Process ID (PID): 2138
+License: Customer
+
+Current time: 	Mon Mar 01 19:35:06 EST 2021
+Time zone: 	Eastern Standard Time (America/Toronto)
+
+OS: Ubuntu
+OS Version: 5.4.0-66-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 9 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/tools/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4
+Java executable location: 	/tools/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	quinn
+User home directory: /home/quinn
+User working directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex
+User country: 	CA
+User language: 	en
+User locale: 	en_CA
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2018.3
+RDI_DATADIR: /tools/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: /home/quinn/.Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: /home/quinn/.Xilinx/Vivado/2018.3/
+Vivado layouts directory: /home/quinn/.Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.log
+Vivado journal file location: 	/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-2138-hw-dev
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINXD_LICENSE_FILE: 27012@mlm.ece.utoronto.ca:40012@mlm.ece.utoronto.ca
+XILINX_DSP: /tools/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2018.3
+XILINX_SDK: /tools/Xilinx/SDK/2018.3
+XILINX_VIVADO: /tools/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 819 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 94 MB (+96531kb) [00:00:10]
+// [Engine Memory]: 765 MB (+650594kb) [00:00:10]
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: tri_mode_ethernet_mac_0_ex.xpr. Version: Vivado v2018.3.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project tri_mode_ethernet_mac_0_ex.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// HMemoryUtils.trashcanNow. Engine heap size: 837 MB. GUI used memory: 44 MB. Current time: 3/1/21, 7:35:08 PM EST
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 963 MB (+167553kb) [00:00:27]
+// [GUI Memory]: 103 MB (+4512kb) [00:00:28]
+// WARNING: HEventQueue.dispatchEvent() is taking  3507 ms.
+// Tcl Message: open_project tri_mode_ethernet_mac_0_ex.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,013 MB. GUI used memory: 54 MB. Current time: 3/1/21, 7:35:24 PM EST
+// [Engine Memory]: 1,014 MB (+3004kb) [00:00:30]
+// WARNING: HEventQueue.dispatchEvent() is taking  1245 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 6486.660 ; gain = 198.180 ; free physical = 4669 ; free virtual = 8196 
+// Project name: tri_mode_ethernet_mac_0_ex; location: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex; part: xc7a100tcsg324-1
+// [Engine Memory]: 1,958 MB (+936293kb) [00:00:32]
+dismissDialog("Open Project"); // bx (cp)
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 112 MB (+3386kb) [00:00:35]
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; write_bitstream Complete! ; -0.05691536143422127 ; -0.10651035606861115 ; 0.021945001557469368 ; 0.0 ; 0.0 ; 0.28403449058532715 ; 0 ; 5844 ; 9693 ; 15.0 ; 0 ; 6 ; Mon Mar 01 18:17:43 EST 2021 ; 00:08:17 ; Vivado Implementation Defaults (Vivado Implementation 2018) ; Vivado Implementation Default Reports (Vivado Implementation 2018) ; xc7a100tcsg324-1 ;  ; Default settings for Implementation.", 1, "100", 3, false); // ax (Q, cp)
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.7s
+// [GUI Memory]: 121 MB (+3438kb) [00:00:38]
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Out-of-Context Module Runs ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2, "Out-of-Context Module Runs", 0, true); // ax (Q, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv)]", 1, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), mii_to_rmii : mii_to_rmii_0 (mii_to_rmii_0.xci)]", 2, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("accelerator.sv", 271, 113); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 282, 144); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 336, 169); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,043 MB. GUI used memory: 69 MB. Current time: 3/1/21, 7:35:53 PM EST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 4 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// TclEventType: RUN_LAUNCH
+// bx (cp):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar  1 19:35:59 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Mon Mar  1 19:35:59 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (cp)
+selectCodeEditor("accelerator.sv", 330, 207); // cl (w, cp)
+// Elapsed time: 108 seconds
+selectCodeEditor("accelerator.sv", 307, 357); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 353, 210); // cl (w, cp)
+// Elapsed time: 27 seconds
+selectCodeEditor("accelerator.sv", 385, 159); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 228, 114); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 322, 193); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 253, 365); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 134, 181); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 166, 50); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 408, 361); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 373, 470); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 247, 105); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 195, 39); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 414, 326); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 360, 415); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 263, 153); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 218, 82); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 489, 388); // cl (w, cp)
+// Elapsed time: 41 seconds
+selectCodeEditor("accelerator.sv", 41, 204); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 207, 192); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 284, 162); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 247, 142); // cl (w, cp)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 210 seconds
+selectCodeEditor("accelerator.sv", 301, 139); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 301, 139, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 301, 139); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 322, 110); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 322, 110, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 322, 110); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 243, 146); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 243, 146, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 243, 146); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 284, 110); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 284, 110, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 284, 110); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 251, 144); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 251, 144, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 251, 144); // cl (w, cp)
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 44 seconds
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv)]", 10); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv)]", 11); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv)]", 11, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv)]", 11, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// [GUI Memory]: 132 MB (+5263kb) [00:08:59]
+selectCodeEditor("ip_packet_tx.sv", 181, 200); // cl (w, cp)
+// Elapsed time: 59 seconds
+selectCodeEditor("ip_packet_tx.sv", 332, 225); // cl (w, cp)
+// Elapsed time: 30 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv)]", 1); // B (D, cp)
+// Elapsed time: 28 seconds
+selectCodeEditor("ip_packet_tx.sv", 181, 247); // cl (w, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+// Elapsed time: 11 seconds
+setFileChooser("/home/quinn/ecf-share/accelerator/accelerator.bit");
+// 'a' command handler elapsed time: 11 seconds
+// [Engine Memory]: 2,057 MB (+1837kb) [00:11:19]
+selectButton("RDIResource.HChooserHelpers_FILE_ALREADY_EXISTS_OK_TO_OVERWRITE_OK", "OK"); // JButton (C, I)
+// Tcl Message: file copy -force /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.bit /home/quinn/ecf-share/accelerator/accelerator.bit 
+selectButton("PAResourceEtoH.ExportBitstreamFile_BITSTREAM_EXPORT_SUCCESSFUL_OK", "OK"); // JButton (C, I)
+// Elapsed time: 912 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "accelerator.sv", 1); // k (j, cp)
+selectCodeEditor("accelerator.sv", 274, 141); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 286, 141); // cl (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,224 MB. GUI used memory: 67 MB. Current time: 3/1/21, 8:05:54 PM EST
+// Elapsed time: 332 seconds
+selectCodeEditor("accelerator.sv", 266, 115); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 291, 117); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 347, 115); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 380, 112); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 307, 150); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 290, 173); // cl (w, cp)
+// Elapsed time: 531 seconds
+selectCodeEditor("accelerator.sv", 374, 213); // cl (w, cp)
+// Elapsed time: 26 seconds
+selectCodeEditor("accelerator.sv", 321, 262); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 174, 91); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 131, 44); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 329, 277); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 306, 151); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 283, 141); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 283, 141, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 276, 108); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 276, 108, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 58 seconds
+selectCodeEditor("accelerator.sv", 264, 118); // cl (w, cp)
+// Elapsed time: 54 seconds
+selectCodeEditor("accelerator.sv", 342, 163); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 4 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Mon Mar  1 20:18:34 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Mon Mar  1 20:18:34 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+selectCodeEditor("accelerator.sv", 382, 384); // cl (w, cp)
+// Elapsed time: 11 seconds
+selectCodeEditor("accelerator.sv", 270, 113); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton("PAResourceQtoS.RunRun_TASK_ALREADY_RUNNING_WOULD_YOU_LIKE_Cancel", "Cancel"); // JButton (C, I)
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h (Q, cp)
+// bx (cp):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.StateMonitor_OK_TO_CANCEL_YOUR_RUNNING_SYNTHESIS_Cancel Process", "Cancel Process"); // JButton (C, I)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bx (cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+// f (cp): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cp)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Mon Mar  1 20:19:06 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Mon Mar  1 20:19:06 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+// Elapsed time: 42 seconds
+selectCodeEditor("accelerator.sv", 232, 136); // cl (w, cp)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 277 seconds
+selectCodeEditor("accelerator.sv", 250, 391); // cl (w, cp)
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 105 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+setFileChooser("/home/quinn/ecf-share/accelerator/accelerator.bit");
+// 'a' command handler elapsed time: 4 seconds
+selectButton("RDIResource.HChooserHelpers_FILE_ALREADY_EXISTS_OK_TO_OVERWRITE_OK", "OK"); // JButton (C, I)
+// Tcl Message: file copy -force /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.bit /home/quinn/ecf-share/accelerator/accelerator.bit 
+selectButton("PAResourceEtoH.ExportBitstreamFile_BITSTREAM_EXPORT_SUCCESSFUL_OK", "OK"); // JButton (C, I)
+// Elapsed time: 16 seconds
+selectCodeEditor("accelerator.sv", 685, 174); // cl (w, cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,261 MB. GUI used memory: 64 MB. Current time: 3/1/21, 8:35:55 PM EST
+// Elapsed time: 1111 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15, true); // u (Q, cp) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// bx (cp):  Open Synthesized Design : addNotify
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7a100tcsg324-1 
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_CORE_ADD
+// TclEventType: DEBUG_CORE_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_CORE_ADD
+// TclEventType: DEBUG_CORE_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: DEBUG_PORT_CONFIG_CHANGE
+// TclEventType: DEBUG_CORE_CONFIG_CHANGE
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,017 MB. GUI used memory: 63 MB. Current time: 3/1/21, 8:45:29 PM EST
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Xgd.load filename: /tools/Xilinx/Vivado/2018.3/data/parts/xilinx/artix7/devint/artix7/xc7a100t/xc7a100t.xgd; ZipEntry: xc7a100t_detail.xgd elapsed time: 0.9s
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2760 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers. 
+// Tcl Message: INFO: [Chipscope 16-324] Core: vio UUID: 1be27d51-1a4c-50dc-974f-3e22d2c609b9  
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57] INFO: [Timing 38-2] Deriving generated clocks [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57] 
+// Tcl Message: get_clocks: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 7492.418 ; gain = 490.516 ; free physical = 3535 ; free virtual = 7318 
+// Tcl Message: Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc] Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst' 
+// Tcl Message: Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst' 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7493.418 ; gain = 0.000 ; free physical = 3548 ; free virtual = 7331 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 161 instances were transformed.   IOBUF => IOBUF (IBUF, OBUFT): 1 instances   RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 160 instances  
+// Elapsed time: 21 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: open_run: Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 7562.680 ; gain = 741.211 ; free physical = 3462 ; free virtual = 7251 
+// [GUI Memory]: 142 MB (+3247kb) [01:10:39]
+// [GUI Memory]: 150 MB (+1632kb) [01:10:39]
+// 'dQ' command handler elapsed time: 23 seconds
+// S (cp): Critical Messages: addNotify
+dismissDialog("Open Synthesized Design"); // bx (cp)
+dismissDialog("Critical Messages"); // S (cp)
+// Elapsed time: 274 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aI (aF, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv)]", 1); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv)]", 10); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv)]", 11); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv), get_checksum : ipv4_checksum_calculator (ip_packet_checksum.sv)]", 13, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv), get_checksum : ipv4_checksum_calculator (ip_packet_checksum.sv)]", 13, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("ip_packet_checksum.sv", 240, 356); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 183, 307); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 90, 231); // cl (w, cp)
+// Elapsed time: 13 seconds
+selectCodeEditor("ip_packet_checksum.sv", 184, 405); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 184, 405, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_checksum.sv", 125, 401); // cl (w, cp)
+// Elapsed time: 44 seconds
+selectCodeEditor("ip_packet_checksum.sv", 186, 334); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 180, 334); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 180, 334, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_checksum.sv", 168, 355); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 168, 355, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_checksum.sv", 156, 339); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 156, 339, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_checksum.sv", 129, 359); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 129, 359, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_checksum.sv", 110, 432); // cl (w, cp)
+// Elapsed time: 15 seconds
+selectCodeEditor("ip_packet_checksum.sv", 67, 365); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 86, 364); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 294, 401); // cl (w, cp)
+// Elapsed time: 12 seconds
+selectCodeEditor("ip_packet_checksum.sv", 44, 218); // cl (w, cp)
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_checksum.sv", 3); // k (j, cp)
+// Elapsed time: 20 seconds
+selectCodeEditor("ip_packet_checksum.sv", 312, 418); // cl (w, cp)
+selectCodeEditor("ip_packet_checksum.sv", 135, 224); // cl (w, cp)
+// Elapsed time: 616 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
+selectCodeEditor("ip_packet_tx.sv", 231, 323); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("ip_packet_tx.sv", 250, 296); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 237, 230); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 242, 232); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 242, 232); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 242, 232, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 229, 251); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 251, 243); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 251, 243, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 256, 263); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 256, 263, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 256, 263); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 374, 254); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 368, 269); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 368, 269, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 307, 298); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 307, 298, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 267, 283); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 267, 283, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 297, 290); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 297, 290, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 255, 310); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 255, 310, false, false, false, false, true); // cl (w, cp) - Double Click
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 32, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 3 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Mon Mar  1 21:03:46 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Mon Mar  1 21:03:46 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+// [GUI Memory]: 160 MB (+1982kb) [01:28:52]
+selectButton(PAResourceOtoP.ProjectTab_CLOSE_DESIGN, "Close Design"); // h (cQ, cp)
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,127 MB. GUI used memory: 89 MB. Current time: 3/1/21, 9:03:49 PM EST
+// Engine heap size: 2,127 MB. GUI used memory: 90 MB. Current time: 3/1/21, 9:03:49 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1507 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: close_design 
+// bx (cp):  Closing : addNotify
+// TclEventType: DESIGN_CLOSE
+// [Engine Memory]: 2,196 MB (+37629kb) [01:28:56]
+dismissDialog("Closing"); // bx (cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
+// [Engine Memory]: 2,349 MB (+44832kb) [01:28:57]
+// Elapsed time: 83 seconds
+selectCodeEditor("ip_packet_tx.sv", 210, 217); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 310, 328); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 247, 244); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 247, 244, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 221, 329); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 221, 329, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("ip_packet_tx.sv", 271, 317); // cl (w, cp)
+selectCodeEditor("ip_packet_tx.sv", 399, 320); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,107 MB. GUI used memory: 69 MB. Current time: 3/1/21, 9:05:36 PM EST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 376 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 640 seconds
+selectCodeEditor("ip_packet_tx.sv", 293, 299); // cl (w, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "accelerator.sv", 1); // k (j, cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 31, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_NO, "No"); // a (A)
+// f (cp): Launch Runs: addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (f)
+// 'cw' command handler elapsed time: 3 seconds
+dismissDialog("Launch Runs"); // f (cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv), get_checksum : ipv4_checksum_calculator (ip_packet_checksum.sv)]", 13, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv), get_checksum : ipv4_checksum_calculator (ip_packet_checksum.sv)]", 13, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (cQ, cp)
+selectCodeEditor("ip_packet_checksum.sv", 445, 245); // cl (w, cp)
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h (cQ, cp)
+selectCodeEditor("ip_packet_checksum.sv", 362, 228); // cl (w, cp)
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 31, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// al (cp): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (al)
+// bx (cp):  Save Constraints : addNotify
+// TclEventType: DG_GRAPH_STALE
+// A (cp): Synthesis is Out-of-date: addNotify
+dismissDialog("Save Project"); // al (cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// HOptionPane Warning: 'A background task is running. Please wait until it completes and try again. (Background Task)'
+selectButton("OptionPane.button", "OK"); // JButton (C, J)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 10 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Mon Mar  1 21:23:05 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Mon Mar  1 21:23:05 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+// bx (cp):  Generate Bitstream : addNotify
+dismissDialog("Generate Bitstream"); // bx (cp)
+selectCodeEditor("ip_packet_checksum.sv", 365, 242); // cl (w, cp)
+// Elapsed time: 110 seconds
+selectCodeEditor("ip_packet_checksum.sv", 243, 276); // cl (w, cp)
+// Elapsed time: 24 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
+// Elapsed time: 45 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "accelerator.sv", 1); // k (j, cp)
+// Elapsed time: 21 seconds
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h (Q, cp)
+// bx (cp):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.StateMonitor_OK_TO_CANCEL_YOUR_RUNNING_SYNTHESIS_Cancel Process", "Cancel Process"); // JButton (C, I)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bx (cp)
+selectCodeEditor("accelerator.sv", 24, 215); // cl (w, cp)
+typeControlKey((HResource) null, "accelerator.sv", 'c'); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 23, 173); // cl (w, cp)
+typeControlKey((HResource) null, "accelerator.sv", 'v'); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 23, 185); // cl (w, cp)
+typeControlKey(null, null, 'z');
+selectCodeEditor("accelerator.sv", 226, 257); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 73, 285); // cl (w, cp)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("accelerator.sv", 21, 370); // cl (w, cp)
+typeControlKey((HResource) null, "accelerator.sv", 'c'); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 21, 385); // cl (w, cp)
+typeControlKey((HResource) null, "accelerator.sv", 'v'); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 23, 399); // cl (w, cp)
+typeControlKey((HResource) null, "accelerator.sv", 'v'); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("accelerator.sv", 196, 385); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 193, 367); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 31, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+// f (cp): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cp)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 4 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// Tcl Message: [Mon Mar  1 21:27:14 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Mon Mar  1 21:27:14 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+// bx (cp):  Generate Bitstream : addNotify
+dismissDialog("Generate Bitstream"); // bx (cp)
+// Elapsed time: 162 seconds
+selectCodeEditor("accelerator.sv", 321, 52); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 321, 52, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 185, 468); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 185, 468, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 197, 382); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 197, 382, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 218, 468); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 218, 464); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 218, 469); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 218, 469, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 184, 253); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 184, 253, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 173, 381); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 173, 381, false, false, false, false, true); // cl (w, cp) - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("accelerator.sv", 168, 384); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 168, 384, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 119, 384); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 119, 384, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 161, 382); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 161, 382, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 171, 245); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 171, 245, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("accelerator.sv", 171, 245); // cl (w, cp)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 66 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 18); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 19, true); // B (D, cp) - Node
+// TclEventType: RUN_STEP_COMPLETED
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 19); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, tri_mode_ethernet_mac_0_example_design.xdc]", 20, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, tri_mode_ethernet_mac_0_example_design.xdc]", 20, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 544, 373); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 544, 373, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 501, 373); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 501, 373, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 529, 381); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 529, 381, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 536, 371); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 536, 371, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 525, 362); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 525, 362, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 512, 394); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 512, 394, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 512, 394); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 512, 394, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 512, 394); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 518, 358); // cl (w, cp)
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 518, 358, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 518, 358); // cl (w, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_checksum.sv", 3); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tri_mode_ethernet_mac_0_example_design.xdc", 4); // k (j, cp)
+// Elapsed time: 49 seconds
+selectCodeEditor("tri_mode_ethernet_mac_0_example_design.xdc", 725, 339); // cl (w, cp)
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 114 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // X (q, cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+setFileChooser("/home/quinn/ecf-share/accelerator/accelerator.bit");
+// 'a' command handler elapsed time: 4 seconds
+selectButton("RDIResource.HChooserHelpers_FILE_ALREADY_EXISTS_OK_TO_OVERWRITE_OK", "OK"); // JButton (C, I)
+// Tcl Message: file copy -force /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.bit /home/quinn/ecf-share/accelerator/accelerator.bit 
+selectButton("PAResourceEtoH.ExportBitstreamFile_BITSTREAM_EXPORT_SUCCESSFUL_OK", "OK"); // JButton (C, I)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,184 MB. GUI used memory: 72 MB. Current time: 3/1/21, 9:35:36 PM EST

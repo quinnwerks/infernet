@@ -5,9 +5,9 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design_ddr
 #  (
-      parameter OUR_MAC_ADDRESS=48'h08_00_00_35_0a_00,
+      parameter OUR_MAC_ADDRESS=48'h11_00_00_35_0a_00,
       parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h02_08_01_01,
+      parameter OUR_IP_ADDRESS=32'h02_0B_01_01,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
 )(
       // asynchronous reset
@@ -123,9 +123,9 @@ module tri_mode_ethernet_mac_0_example_design_ddr
 
    // MII Interface
    
-   logic [3:0]  mii_txd;
-   logic        mii_tx_en;
-   logic        mii_tx_er;
+   (* mark_debug = "true" *) logic [3:0]  mii_txd;
+   (* mark_debug = "true" *) logic        mii_tx_en;
+   (* mark_debug = "true" *) logic        mii_tx_er;
    (* mark_debug = "true" *) logic  [3:0]  mii_rxd;
    logic         mii_rx_dv;
    logic         mii_rx_er;

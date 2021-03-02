@@ -18,10 +18,10 @@ assign sum = {VERSION, SERVICE_TYPE}
            + IDENTIFICATION 
            + FLAGS_AND_FRAGMENT 
            + {TTL, PROTOCOL} 
-           + SRC_IP_ADDRESS[31:16] 
-           + SRC_IP_ADDRESS[15: 0]
-           + DST_IP_ADDRESS[31:16]
-           + DST_IP_ADDRESS[15: 0];
+           + {SRC_IP_ADDRESS[23:16], SRC_IP_ADDRESS[31:24]} 
+           + {SRC_IP_ADDRESS[ 7: 0], SRC_IP_ADDRESS[15: 8]}
+           + {DST_IP_ADDRESS[23:16], DST_IP_ADDRESS[31:24]} 
+           + {DST_IP_ADDRESS[ 7: 0], DST_IP_ADDRESS[15: 8]};
 logic [15:0] sum_plus_carry;
 assign sum_plus_carry = sum[19:16] + sum[15:0];
 assign CHECKSUM = ~sum_plus_carry;

@@ -79,7 +79,7 @@ localparam [15:0] packet_length = 'd20 + 'd26; // header length + data length (b
 localparam [15:0] identification = 'h0000;
 localparam [15:0] flags_and_fragment = 'h0000;
 localparam [ 7:0] time_to_live = 'h80;
-localparam [ 7:0] protocol = 'h04; // 4 for IP protocol. Should not matter.
+localparam [ 7:0] protocol = 'h00; // 0 for IP protocol. Determined experimentally with python script.
 
 localparam ETH_HDR_SIZE_BYTES = 14;
 localparam IP_HDR_SIZE_BYTES = 20;

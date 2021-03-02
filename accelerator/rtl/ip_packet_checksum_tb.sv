@@ -13,20 +13,20 @@ logic [31:0] dst_ip_address;
 logic [15:0] checksum;
 
 initial begin
-    int golden_value = 'hb861;
+    int golden_value = 'h22cc;
     // See: 
     // https://en.wikipedia.org/wiki/IPv4_header_checksum#Calculating_the_IPv4_header_checksum
     version = 'h45;
     service_type = 'h00;
-    length = 'h0073;
+    length = 'h002e;
     identification = 'h0000;
-    flags_and_fragment = 'h4000;
-    ttl = 'h40;
-    protocol = 'h11;
-    src_ip_address = 'hc0a80001;
-    dst_ip_address = 'hc0a800c7;
+    flags_and_fragment = 'h0000;
+    ttl = 'h80;
+    protocol = 'h00;
+    src_ip_address = 'h020b0101;
+    dst_ip_address = 'h010b0101;
     #20
-    assert(golden_value == checksum) else $error("Checksum does not equal golden value");
+    assert(golden_value == checksum) else $stop("Checksum does not equal golden value");
     $finish();
 end
     

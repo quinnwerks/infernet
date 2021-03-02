@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date             : Mon Mar  1 18:24:05 2021
+| Date             : Mon Mar  1 21:34:43 2021
 | Host             : hw-dev running 64-bit Ubuntu 18.04.5 LTS
 | Command          : report_power -file tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_power_summary_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpx
 | Design           : tri_mode_ethernet_mac_0_example_design_ddr
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.284        |
+| Total On-Chip Power (W)  | 0.285        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.186        |
+| Dynamic (W)              | 0.187        |
 | Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.7         |
@@ -52,22 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.050 |       12 |       --- |             --- |
-| Slice Logic              |     0.005 |    18281 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     4858 |     63400 |            7.66 |
+| Clocks                   |     0.051 |       12 |       --- |             --- |
+| Slice Logic              |     0.005 |    18268 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     4851 |     63400 |            7.65 |
 |   Register               |    <0.001 |     9693 |    126800 |            7.64 |
-|   LUT as Shift Register  |    <0.001 |      677 |     19000 |            3.56 |
+|   LUT as Shift Register  |    <0.001 |      678 |     19000 |            3.57 |
 |   LUT as Distributed RAM |    <0.001 |      309 |     19000 |            1.63 |
 |   CARRY4                 |    <0.001 |      240 |     15850 |            1.51 |
-|   F7/F8 Muxes            |    <0.001 |      141 |     63400 |            0.22 |
-|   Others                 |     0.000 |     1089 |       --- |             --- |
+|   F7/F8 Muxes            |    <0.001 |      134 |     63400 |            0.21 |
+|   Others                 |     0.000 |     1090 |       --- |             --- |
 | Signals                  |     0.007 |    13814 |       --- |             --- |
 | Block RAM                |     0.011 |       15 |       135 |           11.11 |
 | MMCM                     |     0.107 |        1 |         6 |           16.67 |
 | DSPs                     |     0.000 |        6 |       240 |            2.50 |
 | I/O                      |     0.006 |       11 |       210 |            5.24 |
 | Static Power             |     0.098 |          |           |                 |
-| Total                    |     0.284 |          |           |                 |
+| Total                    |     0.285 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.089 |       0.073 |      0.016 |
+| Vccint    |       1.000 |     0.090 |       0.074 |      0.016 |
 | Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -155,7 +155,7 @@ Table of Contents
 +--------------------------------------------+-----------+
 | Name                                       | Power (W) |
 +--------------------------------------------+-----------+
-| tri_mode_ethernet_mac_0_example_design_ddr |     0.186 |
+| tri_mode_ethernet_mac_0_example_design_ddr |     0.187 |
 |   axi_lite_controller                      |     0.002 |
 |   clocking_wizard                          |     0.108 |
 |     inst                                   |     0.108 |
@@ -166,15 +166,15 @@ Table of Contents
 |     rx                                     |     0.003 |
 |       eth_hdr_register                     |     0.001 |
 |       ip_hdr_register                      |     0.001 |
-|   trimac_fifo_block                        |     0.019 |
+|   trimac_fifo_block                        |     0.020 |
 |     trimac_sup_block                       |     0.015 |
 |       tri_mode_ethernet_mac_i              |     0.015 |
 |     user_side_FIFO                         |     0.005 |
 |       rx_fifo_i                            |     0.003 |
 |       tx_fifo_i                            |     0.002 |
-|   u_ila_0                                  |     0.035 |
-|     inst                                   |     0.035 |
-|       ila_core_inst                        |     0.035 |
+|   u_ila_0                                  |     0.036 |
+|     inst                                   |     0.036 |
+|       ila_core_inst                        |     0.036 |
 |   u_ila_1                                  |     0.006 |
 |     inst                                   |     0.006 |
 |       ila_core_inst                        |     0.006 |
