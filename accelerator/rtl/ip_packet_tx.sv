@@ -32,7 +32,7 @@ parameter MAC_ADDR_WIDTH = 48;
 parameter ACCEL_DATA_WIDTH = 10;
 
 // List of FSM states
-enum int unsigned {
+(* mark_debug = "true" *) enum logic[7:0] {
     IDLE,          // No transation IPR
     SEND_ETH_HDR,  // Send ethernet header
     SEND_IP_HDR,   // Send ip header
@@ -96,6 +96,8 @@ always_comb begin
 
     state_counter_reset = 'd0;
     state_counter_enable = 'd0;
+    
+    nextstate = state;
 
 // TODO: impl logic :-)
 case(state)
@@ -203,6 +205,9 @@ case(state)
             end
             endcase
         end
+    end
+    default: begin
+        nextstate = state;
     end
 endcase
 end

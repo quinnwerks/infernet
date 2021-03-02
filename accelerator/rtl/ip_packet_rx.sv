@@ -36,7 +36,7 @@ localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8;
 
 
 // List of FSM states
-enum int unsigned {
+(* mark_debug = "true" *) enum logic[7:0] {
     START,            // Set up reset and other stuff
     GET_ETH_HDR,      // Process ethernet header
     GET_IP_HDR,       // Process ip header
@@ -63,7 +63,7 @@ logic [AXI_S_DATA_WIDTH-1:0]     mac_data_out;
 logic                            mac_data_ready;
 logic                            mac_data_valid;
 logic                            mac_data_last;
-logic                            mac_data_tuser;
+(* mark_debug = "true" *) logic                            mac_data_tuser;
 
 logic [DATA_FRAME_WIDTH-1:0]     data_frame;
 logic [DATA_FRAME_WIDTH-1:0]     data_frame_external;
@@ -75,19 +75,19 @@ logic                            frame_ready;
 logic                            packet_for_accelerator;
 
 // Unexposed signals
-logic [IP_ADDR_WIDTH-1:0]        dst_ip_address;
-logic [MAC_ADDR_WIDTH-1:0]       dst_mac_address;
+(* mark_debug = "true" *) logic [IP_ADDR_WIDTH-1:0]        dst_ip_address;
+(* mark_debug = "true" *) logic [MAC_ADDR_WIDTH-1:0]       dst_mac_address;
 
-logic [COUNTER_WIDTH-1:0]        state_counter;
-logic                            state_counter_enable;
-logic                            state_counter_reset;
+(* mark_debug = "true" *) logic [COUNTER_WIDTH-1:0]        state_counter;
+(* mark_debug = "true" *) logic                            state_counter_enable;
+(* mark_debug = "true" *) logic                            state_counter_reset;
 
-logic [ETH_HDR_SIZE_BYTES*8-1:0] eth_header_data;
-logic [IP_HDR_SIZE_BYTES*8-1 :0] ip_header_data;
+(* mark_debug = "true" *) logic [ETH_HDR_SIZE_BYTES*8-1:0] eth_header_data;
+(* mark_debug = "true" *) logic [IP_HDR_SIZE_BYTES*8-1 :0] ip_header_data;
 
-logic                            eth_header_enable;
-logic                            ip_header_enable;
-logic                            data_frame_enable;
+(* mark_debug = "true" *) logic                            eth_header_enable;
+(* mark_debug = "true" *) logic                            ip_header_enable;
+(* mark_debug = "true" *) logic                            data_frame_enable;
 
 always_comb begin
     data_frame_external = data_frame;
@@ -101,6 +101,8 @@ always_comb begin
     eth_header_enable = 'd0;
     ip_header_enable  = 'd0;
     data_frame_enable = 'd0;
+    
+    nextstate = state;
     
     case(state)
     START:begin
@@ -198,6 +200,9 @@ always_comb begin
         mac_data_ready = 'd0;
         frame_ready = 'd1;
         nextstate = GET_ETH_HDR;
+    end
+    default: begin
+        nextstate = state;
     end
     endcase
 end
