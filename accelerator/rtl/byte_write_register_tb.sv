@@ -27,7 +27,7 @@ initial begin
 end
 
     
-byte_write_register #(.SIZE_IN_BYTES(NUM_BYTES), .BYTE_NUM_SIZE(BYTE_NUM_SIZE)) 
+byte_write_register_little_endian #(.SIZE_IN_BYTES(NUM_BYTES), .BYTE_NUM_SIZE(BYTE_NUM_SIZE)) 
 dut (
     .CLK(clk),
     .ARESET(reset),

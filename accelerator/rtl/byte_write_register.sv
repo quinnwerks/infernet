@@ -1,4 +1,4 @@
-module byte_write_register #(parameter SIZE_IN_BYTES=12, parameter BYTE_NUM_SIZE=16)(
+module byte_write_register_little_endian #(parameter SIZE_IN_BYTES=12, parameter BYTE_NUM_SIZE=16)(
     input                        CLK,
     input                        ARESET,
     input                        ENABLE,

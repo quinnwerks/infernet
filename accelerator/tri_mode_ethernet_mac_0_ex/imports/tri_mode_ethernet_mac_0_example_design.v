@@ -901,15 +901,15 @@ module tri_mode_ethernet_mac_0_example_design
    wire  [7:0]          tx_ifg_delay = 0;    // not used in this example
    
    
-   wire [USER_DATA_BYTES*8-1:0] data_frame_from_rx;
+   wire [0:USER_DATA_BYTES*8-1] data_frame_from_rx;
    wire                         frame_ready_from_rx;
-   wire [47:0]                  mac_address_from_rx;
-   wire [32-1:0]                ip_address_from_rx;
+   wire [0:47]                  mac_address_from_rx;
+   wire [0:31]                ip_address_from_rx;
    wire                         packet_for_accelerator_from_rx;
    
-   wire [32-1:0]  ip_address_to_tx;
-   wire [47:0]    mac_address_to_tx;
-   wire  [9:0]    recipient_message_to_tx; // Either a response to LB or an inference result
+   wire [0:31]  ip_address_to_tx;
+   wire [0:47]    mac_address_to_tx;
+   wire  [0:9]    recipient_message_to_tx; // Either a response to LB or an inference result
    wire           start_ip_txn_to_tx;
    wire           ready_for_send_to_tx;
    
@@ -1340,8 +1340,8 @@ module tri_mode_ethernet_mac_0_example_design
     .start(frame_ready_from_rx),
     .ip_address(ip_address_from_rx),
     .mac_address(mac_address_from_rx),
-    .x(data_frame_from_rx[0]),
-    .y(data_frame_from_rx[1]),
+    .x(data_frame_from_rx[6]),
+    .y(data_frame_from_rx[7]),
     .done(start_ip_txn_to_tx),
     .ip_out(ip_address_to_tx),
     .mac_out(mac_address_to_tx),

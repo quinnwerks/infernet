@@ -63,10 +63,10 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_axi_lite_sm (
       // Our mac address
-      input       [47:0]   our_mac_address,
+      input       [ 0:47]   our_mac_address,
       // Optionally an intended mac address
       // Could be used to reject requests from other machines
-      input       [47:0]   src_mac_address,
+      input       [ 0:47]   src_mac_address,
       input                s_axi_aclk,
       input                s_axi_resetn,
 
@@ -481,7 +481,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_1;
-            axi_wr_data    <= our_mac_address[31:0];
+            axi_wr_data    <= {our_mac_address[24:31], our_mac_address[16:23], our_mac_address[8:15], our_mac_address[0:7]};
             axi_state      <= CNFG_FRM_FILTER_MASK_1;
          end
          CNFG_FRM_FILTER_MASK_1 : begin
@@ -497,7 +497,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_2;
-            axi_wr_data    <= {16'hAAAA, our_mac_address[47:32]};
+            axi_wr_data    <= {16'hAAAA, our_mac_address[40:47], our_mac_address[32:39]};
             axi_state      <= CNFG_FRM_FILTER_MASK_2;
          end
          CNFG_FRM_FILTER_MASK_2 : begin
@@ -505,7 +505,7 @@ begin
             start_access   <= 1;
             writenread     <= 1;
             addr           <= CONFIG_FRAME_FILTER_MASK_2;
-            axi_wr_data    <= 32'h0000FFFF;
+            axi_wr_data    <= 32'h00000000;
             axi_state      <= CNFG_FRM_FILTER_3;
          end
          CNFG_FRM_FILTER_3 : begin

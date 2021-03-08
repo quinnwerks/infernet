@@ -5,9 +5,11 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design_ddr
 #  (
-      parameter OUR_MAC_ADDRESS=48'h11_00_00_35_0a_00,
+      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_01,
+      //01_00_00_35_0a_00,
       parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h02_0B_01_01,
+      parameter OUR_IP_ADDRESS=32'h01_01_01_02,
+      //02_01_01_01,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
 )(
       // asynchronous reset
@@ -252,14 +254,14 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    wire  [7:0]          tx_ifg_delay = 0;    // not used in this example
    
    
-   wire [USER_DATA_BYTES*8-1:0] data_frame_from_rx;
+   wire [0:USER_DATA_BYTES*8-1] data_frame_from_rx;
    (* mark_debug = "true" *) wire                         frame_ready_from_rx;
-   (* mark_debug = "true" *) wire [47:0]                  mac_address_from_rx;
-   (* mark_debug = "true" *) wire [32-1:0]                ip_address_from_rx;
+   (* mark_debug = "true" *) wire [0:47]                  mac_address_from_rx;
+   (* mark_debug = "true" *) wire [0:31]                ip_address_from_rx;
    wire                         packet_for_accelerator_from_rx;
    
-   wire [32-1:0]  ip_address_to_tx;
-   wire [47:0]    mac_address_to_tx;
+   wire [0:31]  ip_address_to_tx;
+   wire [0:47]    mac_address_to_tx;
    (* mark_debug = "true" *) wire  [9:0]    recipient_message_to_tx; // Either a response to LB or an inference result
    (* mark_debug = "true" *) wire           start_ip_txn_to_tx;
    (* mark_debug = "true" *) wire           ready_for_send_to_tx;
@@ -267,9 +269,9 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    // mac address src/dst
 
 
-   wire [31:0] our_ip_address;
-   wire [47:0] our_mac_address;
-   wire [47:0] dummy_mac_address;
+   wire [0:31] our_ip_address;
+   wire [0:47] our_mac_address;
+   wire [0:47] dummy_mac_address;
    
    assign our_mac_address = OUR_MAC_ADDRESS;
    assign our_ip_address = OUR_IP_ADDRESS;
@@ -724,8 +726,8 @@ module tri_mode_ethernet_mac_0_example_design_ddr
     .start(frame_ready_from_rx),
     .ip_address(ip_address_from_rx),
     .mac_address(mac_address_from_rx),
-    .x(data_frame_from_rx[0]),
-    .y(data_frame_from_rx[1]),
+    .x(data_frame_from_rx[6]),
+    .y(data_frame_from_rx[7]),
     .done(start_ip_txn_to_tx),
     .ip_out(ip_address_to_tx),
     .mac_out(mac_address_to_tx),

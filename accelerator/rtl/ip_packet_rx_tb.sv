@@ -17,8 +17,8 @@ localparam IP_HDR_SIZE_BYTES = 20;
 localparam USER_DATA_BYTES = 785; 
 localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8; 
 
-logic [IP_ADDR_WIDTH-1:0]  accelerator_ip_address;
-logic [MAC_ADDR_WIDTH-1:0] accelerator_mac_address;
+logic [0:IP_ADDR_WIDTH-1]  accelerator_ip_address;
+logic [0:MAC_ADDR_WIDTH-1] accelerator_mac_address;
 
 logic [AXI_S_DATA_WIDTH-1:0]     mac_data_out;
 logic                            mac_data_ready;
@@ -26,18 +26,18 @@ logic                            mac_data_valid;
 logic                            mac_data_last;
 logic                            mac_data_tuser;
 
-logic [DATA_FRAME_WIDTH-1:0]     data_frame;
-logic [IP_ADDR_WIDTH-1:0]        src_ip_address;
-logic [MAC_ADDR_WIDTH-1:0]       src_mac_address;
+logic [0:DATA_FRAME_WIDTH-1]     data_frame;
+logic [0:IP_ADDR_WIDTH-1]        src_ip_address;
+logic [0:MAC_ADDR_WIDTH-1]       src_mac_address;
 logic                            frame_ready;
 logic                            packet_for_accelerator;
 
-logic[ETH_HDR_SIZE_BYTES*8-1:0] eth_header;
-logic[IP_HDR_SIZE_BYTES*8-1:0]  ip_header; 
+logic[0:ETH_HDR_SIZE_BYTES*8-1] eth_header;
+logic[0:IP_HDR_SIZE_BYTES*8-1]  ip_header; 
 
 initial begin
-    accelerator_ip_address = 32'hbbaaaaaa;
-    accelerator_mac_address = 48'hccffffffffff;
+    accelerator_ip_address = 32'h01_01_02_02;
+    accelerator_mac_address = 48'h010203040506;
     areset = 0;
     mac_data_valid = 0;
     mac_data_last = 0;
@@ -45,10 +45,10 @@ initial begin
     #10;
     areset = 1;
     #10;
-    // frame + protocol, src, dst
-    eth_header = 'h9999ddddddddddddccffffffffff;
-    // dst, src, rest of header
-    ip_header = 'hbbaaaaaacccccccc999999999999999999999999;
+    // dst, src, protocol/length
+    eth_header = 'h010203040506_112233445566_0800;
+    // version/ihl, tos, total length, id, flags/fragment, ttl/protocol, checksum, src, dst
+    ip_header = 'h4500_ffff_0000_0000_8000_aaaa_01010201_01010202;
     // Case 1: Happy path
     $display("Case 1:");
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h01,   1, 0, 0, 0);
@@ -74,9 +74,9 @@ initial begin
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h06, 1, 0, 0, 0);
     // Case 7: Bad ip address
     $display("Case 7:");
-    ip_header[20*8-1:16*8] = 'heeeeeeee;
+    ip_header[16*8:20*8-1] = 'heeeeeeee;
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h07, 0, 0, 0, 0);
-    ip_header[20*8-1:16*8] = 'hbbaaaaaa;
+    ip_header[16*8:20*8-1] = 'h01_01_02_02;
     test_rx(eth_header, ip_header, USER_DATA_BYTES,    'h07, 1, 0, 0, 0);
     // Case 8: Early frame termination in eth header + recovery
     $display("Case 8:");
@@ -93,8 +93,8 @@ initial begin
 end
 
 task test_rx (
-    input logic[ETH_HDR_SIZE_BYTES*8-1:0] eth_header,
-    input logic[IP_HDR_SIZE_BYTES*8-1:0]  ip_header,
+    input logic[0:ETH_HDR_SIZE_BYTES*8-1] eth_header,
+    input logic[0:IP_HDR_SIZE_BYTES*8-1]  ip_header,
     input int                             user_data_size_bytes, 
     input logic[7:0]                      byte_fill,
     input int                             happy_path,
@@ -156,16 +156,16 @@ task test_rx (
     mac_data_tuser = 'd0;
     // Confirm all values are correct if you're on a happy path.
     if (happy_path == 'd1) begin
-        assert(frame_ready == 'd1) else $stop("Frame should have signaled ready");
-        assert(eth_header[12*8-1:6*8] == src_mac_address) else $stop("Bad src mac!");
-        $display("expected:%08x result:%08x", ip_header[20*8-1:16*8], src_ip_address);
-        assert(ip_header[16*8-1:12*8] == src_ip_address) else $stop("Bad src ip!");
+        assert(frame_ready == 'd1) else $error("Frame should have signaled ready");
+        assert(eth_header[6*8:12*8-1] == src_mac_address) else $error("Bad src mac! %h, %h", eth_header[6*8:12*8-1], src_mac_address);
+        $display("expected:%08x result:%08x", ip_header[12*8:16*8-1], src_ip_address);
+        assert(ip_header[12*8:16*8-1] == src_ip_address) else $error("Bad src ip! %h %h", ip_header[12*8:16*8-1], src_ip_address);
         for (int i = 0; i < user_data_size_bytes; i++) begin
-            assert(data_frame[i*8+:8] == expected_data_reg[i]) else $stop("Bad user data!");
+            assert(data_frame[i*8+:8] == expected_data_reg[i]) else $error("Bad user data!");
         end
     end
     else begin
-         assert(frame_ready == 'd0) else $stop("Frame should not have signaled ready");
+         assert(frame_ready == 'd0) else $error("Frame should not have signaled ready");
     end
 
     #100;
@@ -194,7 +194,12 @@ task get_dummy_dataframe (
     data_frame = {};
     for (int i = 0; i < size; i++) begin
         k = byte_fill;
-        data_frame = {data_frame, byte_fill};
+        if (i % 2 == 0) begin
+            data_frame = {data_frame, byte_fill};
+        end
+        else begin
+            data_frame = {data_frame, i % 256  };
+        end
     end
 endtask
 

@@ -3,8 +3,8 @@ module ip_packet_rx # (
 ) (
     input            ACLK,
     input            ARESET,
-    input [31:0]     ACCELERATOR_IP_ADDRESS,
-    input [47:0]     ACCELERATOR_MAC_ADDRESS,
+    input [0:31]     ACCELERATOR_IP_ADDRESS,
+    input [0:47]     ACCELERATOR_MAC_ADDRESS,
     
     // Interface with MAC
     input [7:0]      MAC_DATA_OUT,
@@ -14,10 +14,10 @@ module ip_packet_rx # (
     input            MAC_DATA_TUSER,
     
     // Interface with Accelerator
-    output [USER_DATA_BYTES*8-1:0] DATA_FRAME,
-    output [31     :0] SRC_IP_ADDRESS,
-    output [47     :0] SRC_MAC_ADDRESS,
-    output             FRAME_READY,
+    output [0:USER_DATA_BYTES*8-1] DATA_FRAME,
+    output [0:31] SRC_IP_ADDRESS,
+    output [0:47] SRC_MAC_ADDRESS,
+    output FRAME_READY,
     
     // Useful signals for debug
     output             PACKET_FOR_ACCELERATOR
@@ -56,8 +56,8 @@ always_ff @ (posedge ACLK or negedge ARESET) begin
 end
 
 // Exposed signals
-logic [IP_ADDR_WIDTH-1:0]        accelerator_ip_address;
-logic [MAC_ADDR_WIDTH-1:0]       accelerator_mac_address;
+logic [0:IP_ADDR_WIDTH-1]        accelerator_ip_address;
+logic [0:MAC_ADDR_WIDTH-1]       accelerator_mac_address;
 
 logic [AXI_S_DATA_WIDTH-1:0]     mac_data_out;
 logic                            mac_data_ready;
@@ -65,25 +65,25 @@ logic                            mac_data_valid;
 logic                            mac_data_last;
 (* mark_debug = "true" *) logic                            mac_data_tuser;
 
-logic [DATA_FRAME_WIDTH-1:0]     data_frame;
-logic [DATA_FRAME_WIDTH-1:0]     data_frame_external;
+logic [0:DATA_FRAME_WIDTH-1]     data_frame;
+logic [0:DATA_FRAME_WIDTH-1]     data_frame_external;
 
-logic [IP_ADDR_WIDTH-1:0]        src_ip_address;
-logic [MAC_ADDR_WIDTH-1:0]       src_mac_address;
+logic [0:IP_ADDR_WIDTH-1]        src_ip_address;
+logic [0:MAC_ADDR_WIDTH-1]       src_mac_address;
 logic                            frame_ready;
 
 logic                            packet_for_accelerator;
 
 // Unexposed signals
-(* mark_debug = "true" *) logic [IP_ADDR_WIDTH-1:0]        dst_ip_address;
-(* mark_debug = "true" *) logic [MAC_ADDR_WIDTH-1:0]       dst_mac_address;
+(* mark_debug = "true" *) logic [0:IP_ADDR_WIDTH-1]        dst_ip_address;
+(* mark_debug = "true" *) logic [0:MAC_ADDR_WIDTH-1]       dst_mac_address;
 
 (* mark_debug = "true" *) logic [COUNTER_WIDTH-1:0]        state_counter;
 (* mark_debug = "true" *) logic                            state_counter_enable;
 (* mark_debug = "true" *) logic                            state_counter_reset;
 
-(* mark_debug = "true" *) logic [ETH_HDR_SIZE_BYTES*8-1:0] eth_header_data;
-(* mark_debug = "true" *) logic [IP_HDR_SIZE_BYTES*8-1 :0] ip_header_data;
+(* mark_debug = "true" *) logic [0:ETH_HDR_SIZE_BYTES*8-1] eth_header_data;
+(* mark_debug = "true" *) logic [0:IP_HDR_SIZE_BYTES*8-1]  ip_header_data;
 
 (* mark_debug = "true" *) logic                            eth_header_enable;
 (* mark_debug = "true" *) logic                            ip_header_enable;
@@ -225,10 +225,10 @@ assign PACKET_FOR_ACCELERATOR = packet_for_accelerator;
 
 assign packet_for_accelerator = dst_ip_address == accelerator_ip_address;
 
-assign dst_mac_address = eth_header_data[ 6*8-1:0];
-assign src_mac_address = eth_header_data[12*8-1:6*8];
-assign src_ip_address = ip_header_data[16*8-1:12*8];
-assign dst_ip_address = ip_header_data[20*8-1:16*8];
+assign dst_mac_address = eth_header_data[0  :6*8-1];
+assign src_mac_address = eth_header_data[6*8:12*8-1];
+assign src_ip_address = ip_header_data[12*8: 16*8-1];
+assign dst_ip_address = ip_header_data[16*8: 20*8-1];
 
 counter_sync_reset #(
     .SIZE(COUNTER_WIDTH)
@@ -243,7 +243,7 @@ counter_sync_reset #(
 // we don't actually need to clear the values
 // because they will be simply over written by
 // the next valid packet
-byte_write_register #(
+byte_write_register_little_endian #(
     .SIZE_IN_BYTES(ETH_HDR_SIZE_BYTES),
     .BYTE_NUM_SIZE(COUNTER_WIDTH)     
 ) eth_hdr_register (
@@ -251,11 +251,11 @@ byte_write_register #(
     .ARESET(ARESET),
     .ENABLE(eth_header_enable),
     .INPUT_VALUE(mac_data_out),
-    .BYTE_NUM(state_counter),
+    .BYTE_NUM(ETH_HDR_SIZE_BYTES-1-state_counter),
     .OUTPUT_VALUE(eth_header_data)
 );
 
-byte_write_register #(
+byte_write_register_little_endian #(
     .SIZE_IN_BYTES(IP_HDR_SIZE_BYTES),
     .BYTE_NUM_SIZE(COUNTER_WIDTH)     
 ) ip_hdr_register (
@@ -263,11 +263,11 @@ byte_write_register #(
     .ARESET(ARESET),
     .ENABLE(ip_header_enable),
     .INPUT_VALUE(mac_data_out),
-    .BYTE_NUM(state_counter),
+    .BYTE_NUM(IP_HDR_SIZE_BYTES-1-state_counter),
     .OUTPUT_VALUE(ip_header_data)
 );
 
-byte_write_register #(
+byte_write_register_little_endian #(
     .SIZE_IN_BYTES(USER_DATA_BYTES),
     .BYTE_NUM_SIZE(COUNTER_WIDTH)    
 ) user_data_register (
@@ -275,7 +275,7 @@ byte_write_register #(
     .ARESET(ARESET),
     .ENABLE(data_frame_enable),
     .INPUT_VALUE(mac_data_out),
-    .BYTE_NUM(state_counter),
+    .BYTE_NUM(USER_DATA_BYTES-1-state_counter),
     .OUTPUT_VALUE(data_frame)
 );
 

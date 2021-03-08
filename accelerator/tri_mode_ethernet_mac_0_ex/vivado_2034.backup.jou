@@ -1,0 +1,109 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Sun Mar  7 17:21:45 2021
+# Process ID: 2034
+# Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex
+# Command line: vivado tri_mode_ethernet_mac_0_ex.xpr
+# Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.log
+# Journal file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project tri_mode_ethernet_mac_0_ex.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+current_wave_config {demo_tb_behav.wcfg}
+add_wave {{/demo_tb_integration/dut/ip_layer_inst}} 
+relaunch_sim
+current_wave_config {demo_tb_behav.wcfg}
+add_wave {{/demo_tb_integration/dut/ip_layer_inst/rx}} 
+relaunch_sim
+save_wave_config {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+current_wave_config {demo_tb_behav.wcfg}
+add_wave {{/demo_tb_integration}} 
+relaunch_sim
+current_wave_config {demo_tb_behav.wcfg}
+add_wave {{/demo_tb_integration/dut/ip_layer_inst}} 
+save_wave_config {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+current_wave_config {demo_tb_behav.wcfg}
+add_wave {{/demo_tb_integration/dut}} 
+relaunch_sim
+save_wave_config {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+current_wave_config {demo_tb_behav.wcfg}
+add_wave {{/demo_tb_integration/dut/nn}} 
+save_wave_config {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+save_wave_config {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl
+close_sim
+launch_simulation
+open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg
+source demo_tb_integration.tcl

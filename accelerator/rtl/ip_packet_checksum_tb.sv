@@ -23,8 +23,8 @@ initial begin
     flags_and_fragment = 'h0000;
     ttl = 'h80;
     protocol = 'h00;
-    src_ip_address = 'h020b0101;
-    dst_ip_address = 'h010b0101;
+    src_ip_address = 'h01010b02;
+    dst_ip_address = 'h01010b01;
     #20
     assert(golden_value == checksum) else $stop("Checksum does not equal golden value");
     $finish();

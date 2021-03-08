@@ -5,8 +5,8 @@ module ip_layer # (
     // Globals
     input        ACLK,
     input        ARESET,
-    input [31:0] ACCELERATOR_IP_ADDRESS,
-    input [47:0] ACCELERATOR_MAC_ADDRESS,
+    input [ 0:31] ACCELERATOR_IP_ADDRESS,
+    input [ 0:47] ACCELERATOR_MAC_ADDRESS,
 
     // To/From FIFO/MAC:
     // data from the RX data path
@@ -23,17 +23,17 @@ module ip_layer # (
     
     // To/From NN Core   
     // Rx
-    output [USER_DATA_BYTES*8-1:0] DATA_FRAME,
-    output [31     :0] SRC_IP_ADDRESS,
-    output [47     :0] SRC_MAC_ADDRESS,
+    output [0:USER_DATA_BYTES*8-1] DATA_FRAME,
+    output [0:31] SRC_IP_ADDRESS,
+    output [0:47] SRC_MAC_ADDRESS,
     output             FRAME_READY,
     // Useful signals for debug
     output             PACKET_FOR_ACCELERATOR,
     
     // Tx
-    input [31:0] RECIPIENT_IP_ADDRESS,
-    input [47:0] RECIPIENT_MAC_ADDRESS,
-    input [9:0]  RECIPIENT_MESSAGE, // Either a response to LB or an inference result
+    input [0:31] RECIPIENT_IP_ADDRESS,
+    input [0:47] RECIPIENT_MAC_ADDRESS,
+    input [0:9]  RECIPIENT_MESSAGE, // Either a response to LB or an inference result
     input        START_IP_TXN,
     output       READY_FOR_SEND
 );

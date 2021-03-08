@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
          "-log tri_mode_ethernet_mac_0_example_design_ddr.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source tri_mode_ethernet_mac_0_example_design_ddr.tcl -notrace" );
 

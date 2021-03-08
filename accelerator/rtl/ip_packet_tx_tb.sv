@@ -7,13 +7,13 @@ always #5 aclk = ~aclk;
 
 logic areset;
 
-logic [31:0] accelerator_ip_address;
-logic [47:0] accelerator_mac_address;
+logic [ 0:31] accelerator_ip_address;
+logic [ 0:47] accelerator_mac_address;
 
 // Signals interfacing with accelerator
-logic [31:0] recipient_ip_address;
-logic [47:0] recipient_mac_address;
-logic [9:0]  recipient_message; // Either a response to LB or an inference result
+logic [ 0:31] recipient_ip_address;
+logic [ 0:47] recipient_mac_address;
+logic [ 0:9]  recipient_message; // Either a response to LB or an inference result
 logic        start_ip_txn;
 logic        ready_for_send;
 
@@ -25,15 +25,15 @@ logic       mac_data_last;
 logic       mac_data_tuser;
 
 // Simulation params
-localparam [15:0] eth_packet_type = 'h0800; // ip protocol
+localparam [ 0:15] eth_packet_type = 'h0800; // ip protocol
 
-localparam [ 7:0] ip_version = 'h45;
-localparam [ 7:0] service_type = 'h00;
-localparam [15:0] packet_length = 'd20 + 'd26; // header length + data length (bytes)
-localparam [15:0] identification = 'h0000;
-localparam [15:0] flags_and_fragment = 'h0000;
-localparam [ 7:0] time_to_live = 'h80;
-localparam [ 7:0] protocol = 'h04; 
+localparam [ 0: 7] ip_version = 'h45;
+localparam [ 0: 7] service_type = 'h00;
+localparam [ 0:15] packet_length = 'd20 + 'd26; // header length + data length (bytes)
+localparam [ 0:15] identification = 'h0000;
+localparam [ 0:15] flags_and_fragment = 'h0000;
+localparam [ 0: 7] time_to_live = 'h80;
+localparam [ 0: 7] protocol = 'h00; 
 int checksum;
 int passed;
 
@@ -48,10 +48,10 @@ localparam MIN_PAYLOAD_SIZE = 60;
 initial begin
    // Reset the ip and set input signals
    areset = 'd0;
-   accelerator_ip_address =  32'hbeefbeef;
+   accelerator_ip_address =  32'h01_02_03_04;
    accelerator_mac_address = 48'h54b00bedabba;
    
-   recipient_ip_address =  32'hdeadbeef;
+   recipient_ip_address =  32'h0a_0b_0c_0d;
    recipient_mac_address = 48'h32dabbadebd5;
    recipient_message = 10'h1ff;
 
@@ -61,42 +61,42 @@ initial begin
    areset = 'd1;
    #10;
    
-   data_out_list = {recipient_mac_address[ 7: 0],
-                    recipient_mac_address[15: 8],
-                    recipient_mac_address[23:16],
-                    recipient_mac_address[31:24],
-                    recipient_mac_address[39:32],
-                    recipient_mac_address[47:40], 
-                    accelerator_mac_address[ 7: 0],
-                    accelerator_mac_address[15: 8],
-                    accelerator_mac_address[23:16],
-                    accelerator_mac_address[31:24],
-                    accelerator_mac_address[39:32],
-                    accelerator_mac_address[47:40],
-                    eth_packet_type[15:8],
-                    eth_packet_type[ 7:0],
+   data_out_list = {recipient_mac_address[ 0: 7],
+                    recipient_mac_address[ 8:15],
+                    recipient_mac_address[16:23],
+                    recipient_mac_address[24:31],
+                    recipient_mac_address[32:39],
+                    recipient_mac_address[40:47], 
+                    accelerator_mac_address[ 0: 7],
+                    accelerator_mac_address[ 8:15],
+                    accelerator_mac_address[16:23],
+                    accelerator_mac_address[24:31],
+                    accelerator_mac_address[32:39],
+                    accelerator_mac_address[40:47],
+                    eth_packet_type[ 0:7],
+                    eth_packet_type[ 8:15],
                     ip_version,
                     service_type,
-                    packet_length[15:8],
-                    packet_length[ 7:0],                 
-                    identification[15:8],
-                    identification[ 7:0],                  
-                    flags_and_fragment[15:8],
-                    flags_and_fragment[7:0],       
+                    packet_length[ 0:7],
+                    packet_length[ 8:15],                 
+                    identification[ 0: 7],
+                    identification[ 8:15],                  
+                    flags_and_fragment[ 0: 7],
+                    flags_and_fragment[ 8:15],       
                     time_to_live,
                     protocol,
                     checksum[15:8],
                     checksum[ 7:0],
-                    accelerator_ip_address[ 7: 0],
-                    accelerator_ip_address[15: 8],
-                    accelerator_ip_address[23:16],
-                    accelerator_ip_address[31:24],                  
-                    recipient_ip_address[ 7: 0],
-                    recipient_ip_address[15: 8],
-                    recipient_ip_address[23:16],
-                    recipient_ip_address[31:24],
-                    recipient_message[9:8],
-                    recipient_message[7:0],
+                    accelerator_ip_address[ 0: 7],
+                    accelerator_ip_address[ 8:15],
+                    accelerator_ip_address[16:23],
+                    accelerator_ip_address[24:31],                  
+                    recipient_ip_address[ 0: 7],
+                    recipient_ip_address[ 8:15],
+                    recipient_ip_address[16:23],
+                    recipient_ip_address[24:31],
+                    recipient_message[0:1],
+                    recipient_message[2:9],
                     'h00,
                     'h00,
                     'h00,

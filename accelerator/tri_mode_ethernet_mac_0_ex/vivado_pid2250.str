@@ -7,11 +7,11 @@ IP Build: 2486929 on Tue Mar 26 06:44:21 MDT 2019
 Process ID (PID): 2250
 License: Customer
 
-Current time: 	Mon Feb 22 14:35:40 EST 2021
+Current time: 	Wed Mar 03 11:31:40 EST 2021
 Time zone: 	Eastern Standard Time (America/Toronto)
 
 OS: Ubuntu
-OS Version: 5.4.0-65-generic
+OS Version: 5.4.0-66-generic
 OS Architecture: amd64
 Available processors (cores): 4
 
@@ -19,7 +19,7 @@ Display: :0
 Screen size: 1920x1080
 Screen resolution (DPI): 96
 Available screens: 1
-Available disk space: 1 GB
+Available disk space: 9 GB
 Default font: family=Dialog,name=Dialog,style=plain,size=12
 
 Java version: 	9.0.4 64-bit
@@ -52,6 +52,7 @@ Engine tmp dir: 	./.Xil/Vivado-2250-hw-dev
 Xilinx Environment Variables
 ----------------------------
 XILINX: /tools/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINXD_LICENSE_FILE: 27012@mlm.ece.utoronto.ca:40012@mlm.ece.utoronto.ca
 XILINX_DSP: /tools/Xilinx/Vivado/2018.3/ids_lite/ISE
 XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2018.3
 XILINX_SDK: /tools/Xilinx/SDK/2018.3
@@ -61,7 +62,7 @@ XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2018.3
 
 GUI allocated memory:	154 MB
 GUI max memory:		3,072 MB
-Engine allocated memory: 819 MB
+Engine allocated memory: 823 MB
 
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
@@ -70,15 +71,20 @@ Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // TclEventType: START_GUI
 // Tcl Message: start_gui 
 // TclEventType: PROJECT_OPEN_DIALOG
-// [GUI Memory]: 95 MB (+97469kb) [00:00:10]
-// [Engine Memory]: 767 MB (+652876kb) [00:00:10]
+// [GUI Memory]: 94 MB (+96292kb) [00:00:10]
+// [Engine Memory]: 781 MB (+667429kb) [00:00:10]
 // bx (cp):  Open Project : addNotify
 // Opening Vivado Project: tri_mode_ethernet_mac_0_ex.xpr. Version: Vivado v2018.3.1 
 // TclEventType: DEBUG_PROBE_SET_CHANGE
 // Tcl Message: open_project tri_mode_ethernet_mac_0_ex.xpr 
-// HMemoryUtils.trashcanNow. Engine heap size: 831 MB. GUI used memory: 44 MB. Current time: 2/22/21, 2:35:42 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 834 MB. GUI used memory: 45 MB. Current time: 3/3/21, 11:31:42 AM EST
 // TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
 // TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
 // TclEventType: RUN_CURRENT
 // TclEventType: PROJECT_DASHBOARD_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
@@ -95,913 +101,355 @@ Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: PROJECT_NEW
-// [Engine Memory]: 941 MB (+142241kb) [00:00:21]
-// WARNING: HEventQueue.dispatchEvent() is taking  2453 ms.
+// [Engine Memory]: 958 MB (+144446kb) [00:00:27]
+// [GUI Memory]: 104 MB (+5109kb) [00:00:28]
+// WARNING: HEventQueue.dispatchEvent() is taking  4002 ms.
 // Tcl Message: open_project tri_mode_ethernet_mac_0_ex.xpr 
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2018.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,009 MB. GUI used memory: 54 MB. Current time: 3/3/21, 11:31:58 AM EST
+// [Engine Memory]: 1,010 MB (+5008kb) [00:00:30]
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 6487.785 ; gain = 182.922 ; free physical = 4557 ; free virtual = 8136 
 // Project name: tri_mode_ethernet_mac_0_ex; location: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex; part: xc7a100tcsg324-1
-// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 6448.391 ; gain = 157.605 ; free physical = 4694 ; free virtual = 8193 
+// [Engine Memory]: 1,979 MB (+962512kb) [00:00:32]
 dismissDialog("Open Project"); // bx (cp)
-// [Engine Memory]: 997 MB (+8926kb) [00:00:24]
 // Tcl Message: update_compile_order -fileset sources_1 
-// HMemoryUtils.trashcanNow. Engine heap size: 1,018 MB. GUI used memory: 49 MB. Current time: 2/22/21, 2:35:57 PM EST
-// Elapsed time: 247 seconds
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3, true); // B (D, cp) - Node
-// PAPropertyPanels.initPanels (tri_mode_ethernet_mac_0_example_design.v) elapsed time: 0.2s
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v)]", 1, true); // B (D, cp) - Node
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v)]", 1, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
-// HMemoryUtils.trashcanNow. Engine heap size: 1,038 MB. GUI used memory: 51 MB. Current time: 2/22/21, 2:40:28 PM EST
-// Elapsed time: 33 seconds
-selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
-selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
-// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
-// e (cp):  Run Simulation : addNotify
-// TclEventType: LAUNCH_SIM
-// TclEventType: FILE_SET_OPTIONS_CHANGE
-// Tcl Message: launch_simulation 
-// Tcl Message: INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator... INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-7] Finding pre-compiled libraries... INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' 
-// Tcl Message: INFO: [SIM-utils-54] Inspecting design source files for 'demo_tb' in fileset 'sim_1'... INFO: [SIM-utils-43] Exported '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim/tx_ptp_pkt_buff_init.mem' 
-// TclEventType: LOAD_FEATURE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// Tcl Message: INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' 
-// Tcl Message: xvlog --incr --relax -prj demo_tb_vlog.prj 
-// Tcl Message: xvhdl --incr --relax -prj demo_tb_vhdl.prj 
-// TclEventType: LAUNCH_SIM_LOG
-// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '3' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' 
-// Tcl Message: Vivado Simulator 2018.3 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 18990161c9854c098cced77f1755ea89 --incr --debug typical --relax --mt 8 -L xbip_utils_v3_0_9 -L xbip_pipe_v3_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L axi_lite_ipif_v3_0_4 -L tri_mode_ethernet_mac_v9_0_13 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot demo_tb_behav xil_defaultlib.demo_tb xil_defaultlib.glbl -log elaborate.log  Using 8 slave threads. Starting static elaboration 
-// Tcl Message: Completed static elaboration INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel 
-// TclEventType: LAUNCH_SIM
-// TclEventType: LOAD_FEATURE
-// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
-// Tcl Message:    with args "demo_tb_behav -key {Behavioral:sim_1:Functional:demo_tb} -tclbatch {demo_tb.tcl} -view {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg} -log {simulate.log}" 
-// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
-// Tcl Message: Vivado Simulator 2018.3 
-// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// [Engine Memory]: 1,081 MB (+36579kb) [00:05:16]
-// Tcl Message: Time resolution is 1 ps 
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// [GUI Memory]: 108 MB (+8392kb) [00:05:17]
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
 // Elapsed time: 10 seconds
-closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_OPEN_WCFG
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// Waveform: addNotify
-// Waveform: addNotify
-// Tcl Message: open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg 
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,114 MB. GUI used memory: 58 MB. Current time: 2/22/21, 2:40:46 PM EST
-// Tcl Message: source demo_tb.tcl 
-// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 680000ns 
-// Tcl Message: ** Note: Resetting core... ** Note: Timing checks are valid Checking Rx Frame 0: Checking Frame 0: ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 100M ...  Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! Checking Rx Frame 0: ** Note: Comparing Transmitted Frame with Injected Frame 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: Checking Frame 0: ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 10M ...  
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: Ready for send went high! Done sending frames! 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: Frame signalled ready!! Frame check successful! ** Note: Comparing Transmitted Frame with Injected Frame 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
-// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
-// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
-// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
-// TclEventType: SIMULATION_UPDATE_LOCALS
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// TclEventType: SIMULATION_STOPPED
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// Tcl Message: Test completed successfully Simulation Stopped 
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// Tcl Message: run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 6612.004 ; gain = 29.742 ; free physical = 4482 ; free virtual = 8108 xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 6612.004 ; gain = 91.586 ; free physical = 4481 ; free virtual = 8107 
-// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'demo_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 680000ns 
-// Tcl Message: launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 6612.004 ; gain = 100.602 ; free physical = 4481 ; free virtual = 8107 
-// 'd' command handler elapsed time: 20 seconds
-// Elapsed time: 10 seconds
-dismissDialog("Run Simulation"); // e (cp)
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_MODEL_EVENT
-// [Engine Memory]: 1,136 MB (+515kb) [00:05:37]
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb_behav.wcfg", 1); // k (j, cp)
-selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 213, 548, false, false, false, true, false); // n (o, cp) - Popup Trigger
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,145 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:41:08 PM EST
-selectMenuItem((HResource) null, "Full View"); // af (al, cp)
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// HMemoryUtils.trashcanNow. Engine heap size: 1,145 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:41:09 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:41:20 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:41:22 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:41:24 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:41:25 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,158 MB. GUI used memory: 63 MB. Current time: 2/22/21, 2:41:27 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// Elapsed time: 100 seconds
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mdio_read]", 2, false); // a (r, cp)
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mii_tx_er]", 6, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// HMemoryUtils.trashcanNow. Engine heap size: 1,159 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:42:51 PM EST
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mii_rx_clk]", 3, false); // a (r, cp)
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,160 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:42:55 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,161 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:00 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,161 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:01 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, update_speed]", 18, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,161 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:05 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, last_mdio]", 4, false); // a (r, cp)
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mdc]", 1, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,161 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:11 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mii_rx_dv_dut]", 3, false); // a (r, cp)
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, bist_mode_error]", 9, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,161 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:18 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, TB_MODE[31:0]]", 13, true); // a (r, cp) - Node
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:25 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 78 MB. Current time: 2/22/21, 2:43:26 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 62 MB. Current time: 2/22/21, 2:43:26 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:27 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:27 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:28 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:29 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:29 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:30 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:31 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:31 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:32 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:32 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 61 MB. Current time: 2/22/21, 2:43:33 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 65 MB. Current time: 2/22/21, 2:43:33 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:33 PM EST
-// Elapsed time: 16 seconds
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, gtx_clk_bufg]", 14, false); // a (r, cp)
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:38 PM EST
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, rx_fifo_resetn]", 17, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, rx_axis_fifo_tvalid]", 6, false); // a (r, cp)
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:45 PM EST
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_fifo_resetn]", 10, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, tx_axis_fifo_tvalid]", 7, false); // a (r, cp)
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:56 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:43:59 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 61 MB. Current time: 2/22/21, 2:44:00 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:00 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:00 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:01 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:01 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, DATA_SIZE_BYTES[31:0]]", 21, true, true, false, false, false, false); // a (r, cp) - Shift Key - Node
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:03 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, rx_axis_fifo_tdata[7:0]]", 22, true); // a (r, cp) - Node
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,163 MB. GUI used memory: 70 MB. Current time: 2/22/21, 2:44:10 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// Elapsed time: 10 seconds
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, activity_flashn]", 9, false); // a (r, cp)
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:16 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 64 MB. Current time: 2/22/21, 2:44:16 PM EST
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mdc]", 7, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// [GUI Memory]: 119 MB (+5730kb) [00:08:52]
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, mdio]", 6, false); // a (r, cp)
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:24 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:26 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 62 MB. Current time: 2/22/21, 2:44:26 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// Elapsed time: 10 seconds
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, TB_MODE[31:0]]", 16, true); // a (r, cp) - Node
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 69 MB. Current time: 2/22/21, 2:44:32 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 62 MB. Current time: 2/22/21, 2:44:33 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:33 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:34 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// HMemoryUtils.trashcanNow. Engine heap size: 1,164 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:44:35 PM EST
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, READY_FOR_SEND]", 19, false, true, false, false, false, false); // a (r, cp) - Shift Key
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_UPDATE_COMMANDS
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// Elapsed time: 409 seconds
-selectTab((HResource) null, (HResource) null, "Sources", 1); // aI (aF, cp)
-// Elapsed time: 13 seconds
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tri_mode_ethernet_mac_0_example_design.v", 0); // k (j, cp)
-// Elapsed time: 19 seconds
-expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), ip_layer_inst : ip_layer (ip_layer.sv)]", 8); // B (D, cp)
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv)]", 9, true); // B (D, cp) - Node
-selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design (tri_mode_ethernet_mac_0_example_design.v), ip_layer_inst : ip_layer (ip_layer.sv), tx : ip_packet_tx (ip_packet_tx.sv)]", 9, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
-// Elapsed time: 20 seconds
-selectCodeEditor("ip_packet_tx.sv", 276, 200); // cl (w, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv)]", 1, true); // B (D, cp) - Node
+// [GUI Memory]: 114 MB (+4771kb) [00:00:42]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tri_mode_ethernet_mac_0_example_design_ddr (accelerator.sv), mii_to_rmii : mii_to_rmii_0 (mii_to_rmii_0.xci)]", 2, false, false, false, false, false, true); // B (D, cp) - Double Click
+selectCodeEditor("accelerator.sv", 266, 109); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 283, 139); // cl (w, cp)
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,182 MB. GUI used memory: 59 MB. Current time: 2/22/21, 2:52:28 PM EST
-// [Engine Memory]: 1,198 MB (+5775kb) [00:17:01]
-// Elapsed time: 14 seconds
-selectCodeEditor("ip_packet_tx.sv", 191, 268); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 191, 268, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 260, 265); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 260, 265, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 311, 264); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 311, 264, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 260, 265); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 260, 265, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 269, 283); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 269, 283, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 285, 297); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 285, 297, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 256, 340); // cl (w, cp)
-// Elapsed time: 35 seconds
-selectCodeEditor("ip_packet_tx.sv", 265, 259); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 265, 259, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 299, 261); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 299, 262, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 205, 256); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 205, 256, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 164, 252); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 164, 252, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 171, 238); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 171, 238, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 170, 252); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 170, 252, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 169, 265); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 169, 265, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 163, 277); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 163, 277, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 164, 291); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 164, 291, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 154, 311); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 154, 311, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 158, 348); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 158, 330); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 158, 330, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 159, 317); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 159, 317, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 164, 307); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 164, 307, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 172, 295); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 172, 295, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 180, 282); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 180, 282, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 196, 250); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 196, 250, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 190, 235); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 190, 235, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 237, 234); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 237, 234, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 177, 277); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 177, 277, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 177, 277); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 177, 277, false, false, false, false, true); // cl (w, cp) - Double Click
-// Elapsed time: 13 seconds
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb_behav.wcfg*", 1); // k (j, cp)
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb.sv", 2); // k (j, cp)
-// Elapsed time: 36 seconds
-selectCodeEditor("demo_tb.sv", 206, 468); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 206, 468, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 207, 451); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 207, 451, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 210, 437); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 210, 437, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 215, 424); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 215, 424, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 223, 461); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 225, 460, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 230, 483); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 230, 483, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 210, 512); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 210, 512, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 207, 528); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 207, 528, false, false, false, false, true); // cl (w, cp) - Double Click
-// Elapsed time: 15 seconds
-selectCodeEditor("demo_tb.sv", 256, 442); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 256, 442, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 240, 471); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 240, 471, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 231, 490); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 231, 490, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 234, 471); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 234, 471, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 240, 442); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 240, 442, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 279, 412); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 279, 412, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 255, 368); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 255, 368, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 245, 385); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 245, 385, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 240, 399); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 240, 399, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 238, 414); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 238, 414, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 236, 365); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 236, 365, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 241, 293); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 241, 293, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 240, 273); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 240, 273, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 267, 179); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 267, 179, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 237, 157); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 237, 157, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 227, 188); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 227, 188, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 197, 369); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 197, 369, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 197, 369); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 196, 382); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 196, 382, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 196, 382); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 204, 363); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 204, 363, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 204, 363); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 199, 376); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 199, 376, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 199, 376); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 183, 393); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 183, 393, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 196, 378); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 196, 378, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 195, 389); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 195, 389, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 208, 369); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 208, 369, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 215, 296); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 215, 296, false, false, false, false, true); // cl (w, cp) - Double Click
-// Elapsed time: 45 seconds
-selectCodeEditor("demo_tb.sv", 262, 451); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 262, 451, false, false, false, false, true); // cl (w, cp) - Double Click
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 3); // k (j, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,244 MB. GUI used memory: 60 MB. Current time: 2/22/21, 2:59:28 PM EST
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// [Engine Memory]: 1,260 MB (+1463kb) [00:24:11]
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,276 MB. GUI used memory: 60 MB. Current time: 2/22/21, 3:01:23 PM EST
-// Elapsed time: 425 seconds
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb.sv", 2); // k (j, cp)
-selectCodeEditor("demo_tb.sv", 298, 169); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 298, 169, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 286, 162); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 293, 172); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cp): Synthesis is Out-of-date: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,162 MB. GUI used memory: 60 MB. Current time: 3/3/21, 11:32:22 AM EST
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bx (cp):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cp)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// 'cw' command handler elapsed time: 5 seconds
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// [GUI Memory]: 121 MB (+1509kb) [00:00:56]
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// bx (cp):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 3 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' is already up-to-date 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Mar  3 11:32:25 2021] Launched synth_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/runme.log [Wed Mar  3 11:32:25 2021] Launched impl_1... Run output will be captured here: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bx (cp)
+// Elapsed time: 142 seconds
+selectCodeEditor("accelerator.sv", 332, 321); // cl (w, cp)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aI (aF, cp)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// ah (cp): Bitstream Generation Completed: addNotify
+// Elapsed time: 244 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Bitstream Generation Completed"); // ah (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
 // Elapsed time: 31 seconds
-selectCodeEditor("demo_tb.sv", 195, 191); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 195, 191, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 139, 355); // cl (w, cp)
-typeControlKey((HResource) null, "demo_tb.sv", 'c'); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 166, 327); // cl (w, cp)
-typeControlKey((HResource) null, "demo_tb.sv", 'v'); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
+setFileChooser("/home/quinn/ecf-share/accelerator/accelerator.bit");
+// 'a' command handler elapsed time: 31 seconds
+selectButton("RDIResource.HChooserHelpers_FILE_ALREADY_EXISTS_OK_TO_OVERWRITE_OK", "OK"); // JButton (C, I)
+// Tcl Message: file copy -force /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.bit /home/quinn/ecf-share/accelerator/accelerator.bit 
+selectButton("PAResourceEtoH.ExportBitstreamFile_BITSTREAM_EXPORT_SUCCESSFUL_OK", "OK"); // JButton (C, I)
+// Elapsed time: 320 seconds
+selectCodeEditor("accelerator.sv", 284, 140); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 225, 121); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 257, 107); // cl (w, cp)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 131 seconds
+selectCodeEditor("accelerator.sv", 253, 102); // cl (w, cp)
+selectCodeEditor("accelerator.sv", 256, 157); // cl (w, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+dismissFileChooser();
+// 'a' command handler elapsed time: 3 seconds
+// [GUI Memory]: 128 MB (+1149kb) [00:16:19]
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ac (cp)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+setFileChooser("/home/quinn/ecf-share/accelerator/accelerator.bit");
+// 'a' command handler elapsed time: 6 seconds
+selectButton("RDIResource.HChooserHelpers_FILE_ALREADY_EXISTS_OK_TO_OVERWRITE_OK", "OK"); // JButton (C, I)
+// Tcl Message: file copy -force /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.bit /home/quinn/ecf-share/accelerator/accelerator.bit 
+selectButton("PAResourceEtoH.ExportBitstreamFile_BITSTREAM_EXPORT_SUCCESSFUL_OK", "OK"); // JButton (C, I)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,192 MB. GUI used memory: 63 MB. Current time: 3/3/21, 12:02:23 PM EST
+// Elapsed time: 1420 seconds
+selectCodeEditor("accelerator.sv", 353, 284); // cl (w, cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15, true); // u (Q, cp) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// bx (cp):  Open Synthesized Design : addNotify
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7a100tcsg324-1 
+// TclEventType: DEBUG_PORT_ADD
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
 // Elapsed time: 13 seconds
-selectCodeEditor("demo_tb.sv", 275, 382); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 265, 382); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 265, 382, false, false, false, false, true); // cl (w, cp) - Double Click
-// Elapsed time: 22 seconds
-selectCodeEditor("demo_tb.sv", 235, 416); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 235, 416, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 235, 442); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 235, 442, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 141, 446); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 166, 434); // cl (w, cp)
-typeControlKey((HResource) null, "demo_tb.sv", 'c'); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 328, 440); // cl (w, cp)
-typeControlKey((HResource) null, "demo_tb.sv", 'v'); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 169, 446); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 167, 431); // cl (w, cp)
-typeControlKey((HResource) null, "demo_tb.sv", 'v'); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-selectCodeEditor("demo_tb.sv", 684, 297); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// Elapsed time: 16 seconds
-selectCodeEditor("demo_tb.sv", 140, 135); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 139, 134); // cl (w, cp)
-// HMemoryUtils.trashcanNow. Engine heap size: 1,301 MB. GUI used memory: 60 MB. Current time: 2/22/21, 3:05:23 PM EST
-// [Engine Memory]: 1,332 MB (+9650kb) [00:30:06]
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// Elapsed time: 19 seconds
-selectCodeEditor("demo_tb.sv", 32, 339); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// Elapsed time: 12 seconds
-selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
-selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
-// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
-selectButton("PAResourceQtoS.SimulationRun_SIMULATION_ALREADY_RUNNING_DO_YOU_Yes", "Yes"); // JButton (C, I)
-// HMemoryUtils.trashcanNow. Engine heap size: 1,357 MB. GUI used memory: 60 MB. Current time: 2/22/21, 3:05:58 PM EST
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_CLOSE_WCFG
-// bx (cp):  Close : addNotify
-selectButton("RDIResource.WaveformUtils_WAVEFORM_CONFIGURATION_HAS_BEEN_MODIFIED_Discard", "Discard"); // JButton (C, I)
-// TclEventType: SIMULATION_CLOSE_SIMULATION
-// Tcl Message: close_sim 
-// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
-// e (cp):  Run Simulation : addNotify
-dismissDialog("Close"); // bx (cp)
-// TclEventType: LAUNCH_SIM
-// TclEventType: FILE_SET_OPTIONS_CHANGE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// Tcl Message: launch_simulation 
-// TclEventType: LAUNCH_SIM_LOG
-// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' 
-// Tcl Message: Vivado Simulator 2018.3 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 18990161c9854c098cced77f1755ea89 --incr --debug typical --relax --mt 8 -L xbip_utils_v3_0_9 -L xbip_pipe_v3_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L axi_lite_ipif_v3_0_4 -L tri_mode_ethernet_mac_v9_0_13 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot demo_tb_behav xil_defaultlib.demo_tb xil_defaultlib.glbl -log elaborate.log  Using 8 slave threads. Starting static elaboration Completed static elaboration 
-// Tcl Message: Built simulation snapshot demo_tb_behav 
-// Tcl Message:  ****** Webtalk v2018.3.1 (64-bit)   **** SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019   **** IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.  source /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim/xsim.dir/demo_tb_behav/webtalk/xsim_webtalk.tcl -notrace 
-// TclEventType: LAUNCH_SIM
-// Tcl Message: INFO: [Common 17-206] Exiting Webtalk at Mon Feb 22 15:06:12 2021... 
-// Tcl Message: run_program: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 6795.043 ; gain = 0.000 ; free physical = 3680 ; free virtual = 7363 
-// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
-// Tcl Message:    with args "demo_tb_behav -key {Behavioral:sim_1:Functional:demo_tb} -tclbatch {demo_tb.tcl} -view {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg} -log {simulate.log}" 
-// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
-// Tcl Message: Vivado Simulator 2018.3 
-// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// Elapsed time: 10 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (bx)
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_CLOSE
+// TclEventType: DESIGN_NEW_FAILED
+// Tcl Message: INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers. 
+// Tcl Message: INFO: [Chipscope 16-324] Core: vio UUID: 1be27d51-1a4c-50dc-974f-3e22d2c609b9  
+// Tcl Message: INFO: [Common 17-41] Interrupt caught. Command should exit soon. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57] INFO: [Timing 38-2] Deriving generated clocks [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57] INFO: [Common 17-344] 'get_clocks' was cancelled [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57] 
+// Tcl Message: Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clocking_wizard/inst' 
+// Tcl Message: Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc] Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc] Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc] Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc] 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: open_run: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 7435.809 ; gain = 747.688 ; free physical = 3360 ; free virtual = 7313 
+// Tcl Message: INFO: [Common 17-344] 'open_run' was cancelled 
+// CommandFailedException: ERROR: [Common 17-69] Command failed:  
+// 'dQ' command handler elapsed time: 16 seconds
+// S (cp): Critical Messages: addNotify
+dismissDialog("Open Synthesized Design"); // bx (cp)
+// [Engine Memory]: 2,146 MB (+71884kb) [00:40:31]
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (S)
+dismissDialog("Critical Messages"); // S (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,946 MB. GUI used memory: 64 MB. Current time: 3/3/21, 12:12:03 PM EST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u (Q, cp) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// A (cp): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bx (cp):  Open Elaborated Design : addNotify
+dismissDialog("Elaborate Design"); // A (cp)
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci] 
+// Tcl Message: INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci' 
+// TclEventType: ELABORATE_START
+// Tcl Message: synth_design -rtl -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 Starting synth_design Using part: xc7a100tcsg324-1 Top: tri_mode_ethernet_mac_0_example_design_ddr 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,087 MB. GUI used memory: 62 MB. Current time: 3/3/21, 12:12:14 PM EST
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 2,319 MB (+68315kb) [00:40:47]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Xgd.load filename: /tools/Xilinx/Vivado/2018.3/data/parts/xilinx/artix7/devint/artix7/xc7a100t/xc7a100t.xgd; ZipEntry: xc7a100t_detail.xgd elapsed time: 0.9s
+// Package: addNotify
+// Device: addNotify
+// DeviceView Instantiated
+// [GUI Memory]: 143 MB (+9523kb) [00:40:49]
+// WARNING: HEventQueue.dispatchEvent() is taking  2791 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 7435.809 ; gain = 0.000 ; free physical = 3303 ; free virtual = 7256 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_ddr' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:6] 
+// Tcl Message: 	Parameter OUR_MAC_ADDRESS bound to: 48'b000000010000000000000000001101010000101000000000  	Parameter USER_DATA_BYTES bound to: 784 - type: integer  	Parameter OUR_IP_ADDRESS bound to: 33620225 - type: integer  	Parameter DUMMY_MAC_ADDRESS bound to: 48'b101010101010101010101010101010101010101010101010  
+// Tcl Message: 	Parameter INITIALISE bound to: 1'b0  	Parameter DEPTH bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971] 
+// Tcl Message: 	Parameter INIT bound to: 1'b0  	Parameter IS_C_INVERTED bound to: 1'b0  	Parameter IS_D_INVERTED bound to: 1'b0  	Parameter IS_R_INVERTED bound to: 1'b0  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'FDRE' (4#1) [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971] INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_sync_block' (5#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_sync_block.v:63] INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_reset_sync' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_reset_sync.v:66] 
+// Tcl Message: 	Parameter INITIALISE bound to: 1'b1  	Parameter DEPTH bound to: 5 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'FDPE' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3911] 
+// Tcl Message: 	Parameter INIT bound to: 1'b1  	Parameter IS_C_INVERTED bound to: 1'b0  	Parameter IS_D_INVERTED bound to: 1'b0  	Parameter IS_PRE_INVERTED bound to: 1'b0  
+// Tcl Message: 	Parameter FULL_DUPLEX_ONLY bound to: 1 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_tx_client_fifo' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:100] 
+// Tcl Message: INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:248] INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:270] INFO: [Synth 8-226] default block is never used [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:324] INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_bram_tdp' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_bram_tdp.v:66] 
+// Tcl Message: 	Parameter DATA_WIDTH bound to: 9 - type: integer  	Parameter ADDR_WIDTH bound to: 12 - type: integer  	Parameter RAM_DEPTH bound to: 4096 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_bram_tdp' (12#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_bram_tdp.v:66] INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_tx_client_fifo' (13#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_tx_client_fifo.v:100] INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_rx_client_fifo' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_rx_client_fifo.v:111] 
+// Tcl Message: 	Parameter WAIT_s bound to: 3'b000  	Parameter QUEUE1_s bound to: 3'b001  	Parameter QUEUE2_s bound to: 3'b010  	Parameter QUEUE3_s bound to: 3'b011  	Parameter QUEUE_SOF_s bound to: 3'b100  	Parameter SOF_s bound to: 3'b101  	Parameter DATA_s bound to: 3'b110  	Parameter EOF_s bound to: 3'b111  	Parameter IDLE_s bound to: 3'b000  	Parameter FRAME_s bound to: 3'b001  	Parameter GF_s bound to: 3'b010  	Parameter BF_s bound to: 3'b011  	Parameter OVFLOW_s bound to: 3'b100  
+// Tcl Message: 	Parameter USER_DATA_BYTES bound to: 784 - type: integer  
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'ip_packet_tx' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:7] 
+// Tcl Message: INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:35] INFO: [Synth 8-6157] synthesizing module 'counter_sync_reset' [/home/quinn/ece532-project/util/rtl/util.sv:1] 
+// Tcl Message: 	Parameter SIZE bound to: 8 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'counter_sync_reset' (17#1) [/home/quinn/ece532-project/util/rtl/util.sv:1] INFO: [Synth 8-6157] synthesizing module 'ipv4_checksum_calculator' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_checksum.sv:1] INFO: [Synth 8-6155] done synthesizing module 'ipv4_checksum_calculator' (18#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_checksum.sv:1] INFO: [Synth 8-6155] done synthesizing module 'ip_packet_tx' (19#1) [/home/quinn/ece532-project/accelerator/rtl/ip_packet_tx.sv:7] INFO: [Synth 8-6157] synthesizing module 'ip_packet_rx' [/home/quinn/ece532-project/accelerator/rtl/ip_packet_rx.sv:1] 
+// Tcl Message: 	Parameter USER_DATA_BYTES bound to: 784 - type: integer  	Parameter IP_ADDR_WIDTH bound to: 32 - type: integer  	Parameter MAC_ADDR_WIDTH bound to: 48 - type: integer  	Parameter AXI_S_DATA_WIDTH bound to: 8 - type: integer  	Parameter COUNTER_WIDTH bound to: 16 - type: integer  	Parameter ETH_HDR_SIZE_BYTES bound to: 14 - type: integer  	Parameter IP_HDR_SIZE_BYTES bound to: 20 - type: integer  	Parameter DATA_FRAME_WIDTH bound to: 6272 - type: integer  
+// Tcl Message: 	Parameter SIZE bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'counter_sync_reset__parameterized0' (19#1) [/home/quinn/ece532-project/util/rtl/util.sv:1] INFO: [Synth 8-6157] synthesizing module 'byte_write_register' [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1] 
+// Tcl Message: 	Parameter SIZE_IN_BYTES bound to: 14 - type: integer  	Parameter BYTE_NUM_SIZE bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'byte_write_register' (20#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1] INFO: [Synth 8-6157] synthesizing module 'byte_write_register__parameterized0' [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1] 
+// Tcl Message: 	Parameter SIZE_IN_BYTES bound to: 20 - type: integer  	Parameter BYTE_NUM_SIZE bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'byte_write_register__parameterized0' (20#1) [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1] INFO: [Synth 8-6157] synthesizing module 'byte_write_register__parameterized1' [/home/quinn/ece532-project/accelerator/rtl/byte_write_register.sv:1] 
+// Tcl Message: 	Parameter SIZE_IN_BYTES bound to: 784 - type: integer  	Parameter BYTE_NUM_SIZE bound to: 16 - type: integer  
+// Tcl Message: 	Parameter weights bound to: 36'b000000010000000000000000010000000000  	Parameter bias bound to: 18'sb111111110111111111  
+// Tcl Message: 	Parameter NUM_M bound to: 7 - type: integer  	Parameter NUM_F bound to: 10 - type: integer  	Parameter NUM_P bound to: 48 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'FW_FP_Converter' (25#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/FW_FP_Converter.sv:7] 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Hard_Threshold' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:177] 
+// Tcl Message: 	Parameter WIDTH bound to: 18 - type: integer  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Hard_Threshold' (26#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:177] INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron' (27#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99] INFO: [Synth 8-6157] synthesizing module 'FC_Neuron__parameterized0' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99] 
+// Tcl Message: 	Parameter weights bound to: 36'b000000010000000000000000010000000000  	Parameter bias bound to: 18'sb111111100111111111  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'FC_Neuron__parameterized0' (27#1) [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99] INFO: [Synth 8-6157] synthesizing module 'FC_Neuron__parameterized1' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:99] 
+// Tcl Message: 	Parameter weights bound to: 36'b000000010000000000111111101111111111  	Parameter bias bound to: 18'sb111111110111111111  
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_example_design_ddr' (29#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:6] 
+// Tcl Message: INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 7435.809 ; gain = 0.000 ; free physical = 3281 ; free virtual = 7235 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7435.809 ; gain = 0.000 ; free physical = 3289 ; free virtual = 7243 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 7435.809 ; gain = 0.000 ; free physical = 3289 ; free virtual = 7243 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Opt 31-140] Inserted 5 IBUFs to IO ports without IO buffers. INFO: [Opt 31-141] Inserted 4 OBUFs to IO ports without IO buffers. 
+// Tcl Message: Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst' 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. 
+// Tcl Message: Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0_board.xdc] for cell 'mii_to_rmii/U0' Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0_board.xdc] for cell 'mii_to_rmii/U0' 
+// Tcl Message: INFO: [Timing 38-2] Deriving generated clocks 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 7570.676 ; gain = 0.000 ; free physical = 3131 ; free virtual = 7085 
+// Tcl Message: Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc] Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc] 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7570.676 ; gain = 0.000 ; free physical = 3131 ; free virtual = 7085 
+// Tcl Message: Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc] Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc] 
+// Tcl Message: INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc]. Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis. 
+// Tcl Message: Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst' 
+// Tcl Message: Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst' 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 7570.676 ; gain = 0.000 ; free physical = 3131 ; free virtual = 7085 
+// Tcl Message: Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7570.676 ; gain = 0.000 ; free physical = 3149 ; free virtual = 7103 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 161 instances were transformed.   IOBUF => IOBUF (IBUF, OBUFT): 1 instances   RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 160 instances  
+// Elapsed time: 13 seconds
 closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
-// Tcl Message: Time resolution is 1 ps 
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_OPEN_WCFG
-// Waveform: addNotify
-// Waveform: addNotify
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,342 MB. GUI used memory: 124 MB. Current time: 2/22/21, 3:06:14 PM EST
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// Tcl Message: open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg 
-// Tcl Message: source demo_tb.tcl 
-// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 680000ns 
-// Tcl Message: ** Note: Resetting core... ** Note: Timing checks are valid Checking Rx Frame 0: Checking Frame 0: ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 100M ...  Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! Checking Rx Frame 0: ** Note: Comparing Transmitted Frame with Injected Frame Checking Frame 0: ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 10M ...  
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Comparing Transmitted Frame with Injected Frame 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
-// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
-// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
-// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
-// TclEventType: SIMULATION_UPDATE_LOCALS
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// TclEventType: SIMULATION_STOPPED
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// Tcl Message: Test completed successfully Simulation Stopped run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 6795.043 ; gain = 0.000 ; free physical = 3630 ; free virtual = 7327 xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 6795.043 ; gain = 0.000 ; free physical = 3635 ; free virtual = 7331 
-// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'demo_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 680000ns 
-// Tcl Message: launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 6795.043 ; gain = 0.000 ; free physical = 3635 ; free virtual = 7331 
-// [GUI Memory]: 125 MB (+486kb) [00:30:55]
-// 'd' command handler elapsed time: 28 seconds
-dismissDialog("Run Simulation"); // e (cp)
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_MODEL_EVENT
-// Elapsed time: 148 seconds
-selectCodeEditor("demo_tb.sv", 185, 414); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
-selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
-// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
-// bx (cp):  Close : addNotify
-selectButton("PAResourceQtoS.SimulationRun_SIMULATION_ALREADY_RUNNING_DO_YOU_Yes", "Yes"); // JButton (C, I)
-// TclEventType: WAVEFORM_CLOSE_WCFG
-// TclEventType: SIMULATION_CLOSE_SIMULATION
-// Tcl Message: close_sim 
-// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
-// e (cp):  Run Simulation : addNotify
-dismissDialog("Close"); // bx (cp)
-// TclEventType: LAUNCH_SIM
-// TclEventType: FILE_SET_OPTIONS_CHANGE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// Tcl Message: launch_simulation 
-// TclEventType: LAUNCH_SIM_LOG
-// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' 
-// Tcl Message: Vivado Simulator 2018.3 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 18990161c9854c098cced77f1755ea89 --incr --debug typical --relax --mt 8 -L xbip_utils_v3_0_9 -L xbip_pipe_v3_0_5 -L xbip_bram18k_v3_0_5 -L mult_gen_v12_0_14 -L axi_lite_ipif_v3_0_4 -L tri_mode_ethernet_mac_v9_0_13 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot demo_tb_behav xil_defaultlib.demo_tb xil_defaultlib.glbl -log elaborate.log  Using 8 slave threads. Starting static elaboration 
-// TclEventType: LAUNCH_SIM
-// Tcl Message: Built simulation snapshot demo_tb_behav 
-// Tcl Message: run_program: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 6803.047 ; gain = 0.000 ; free physical = 3668 ; free virtual = 7352 
-// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
-// Tcl Message:    with args "demo_tb_behav -key {Behavioral:sim_1:Functional:demo_tb} -tclbatch {demo_tb.tcl} -view {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg} -log {simulate.log}" 
-// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
-// Tcl Message: Vivado Simulator 2018.3 
-// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_OPEN_WCFG
-// Waveform: addNotify
-// Waveform: addNotify
-// Tcl Message: Time resolution is 1 ps 
-// Tcl Message: open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg 
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,356 MB. GUI used memory: 64 MB. Current time: 2/22/21, 3:09:11 PM EST
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// Tcl Message: source demo_tb.tcl 
-// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 680000ns 
-// Tcl Message: ** Note: Resetting core... ** Note: Timing checks are valid Checking Rx Frame 0: Checking Frame 0: ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 100M ...  Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! Checking Rx Frame 0: ** Note: Comparing Transmitted Frame with Injected Frame Checking Frame 0: ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 10M ...  
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! ** Note: Comparing Transmitted Frame with Injected Frame 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
-// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
-// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
-// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
-// TclEventType: SIMULATION_UPDATE_LOCALS
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// TclEventType: SIMULATION_STOPPED
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// Tcl Message: Test completed successfully Simulation Stopped run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 6803.047 ; gain = 0.000 ; free physical = 3636 ; free virtual = 7333 xsim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 6803.047 ; gain = 0.000 ; free physical = 3636 ; free virtual = 7332 
-// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'demo_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 680000ns 
-// Tcl Message: launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 6803.047 ; gain = 0.000 ; free physical = 3635 ; free virtual = 7332 
-// 'd' command handler elapsed time: 22 seconds
-dismissDialog("Run Simulation"); // e (cp)
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_MODEL_EVENT
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tri_mode_ethernet_mac_0_example_design.v", 0); // k (j, cp)
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb.sv", 1); // k (j, cp)
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb.sv", 1); // k (j, cp)
-selectCodeEditor("demo_tb.sv", 155, 310); // cl (w, cp)
-// TclEventType: DG_GRAPH_STALE
-// TclEventType: FILE_SET_CHANGE
-// Elapsed time: 21 seconds
-selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
-selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
-selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // af (al, cp)
-// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
-// bx (cp):  Close : addNotify
-selectButton("PAResourceQtoS.SimulationRun_SIMULATION_ALREADY_RUNNING_DO_YOU_Yes", "Yes"); // JButton (C, I)
-// TclEventType: WAVEFORM_CLOSE_WCFG
-// TclEventType: SIMULATION_CLOSE_SIMULATION
-// Tcl Message: close_sim 
-// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
-// e (cp):  Run Simulation : addNotify
-dismissDialog("Close"); // bx (cp)
-// TclEventType: LAUNCH_SIM
-// TclEventType: FILE_SET_OPTIONS_CHANGE
-// TclEventType: PACKAGER_MESSAGE_RESET
-// TclEventType: PACKAGER_UNLOAD_CORE
-// Tcl Message: launch_simulation 
-// TclEventType: LAUNCH_SIM_LOG
-// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '2' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' 
-// TclEventType: LAUNCH_SIM
-// Tcl Message: Built simulation snapshot demo_tb_behav 
-// Tcl Message: run_program: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 6816.055 ; gain = 0.000 ; free physical = 3665 ; free virtual = 7349 
-// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
-// Tcl Message:    with args "demo_tb_behav -key {Behavioral:sim_1:Functional:demo_tb} -tclbatch {demo_tb.tcl} -view {/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg} -log {simulate.log}" 
-// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
-// Tcl Message: Vivado Simulator 2018.3 
-// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
-// TclEventType: WAVEFORM_UPDATE_TITLE
-// TclEventType: WAVEFORM_OPEN_WCFG
-// Waveform: addNotify
-// Waveform: addNotify
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// HMemoryUtils.trashcanNow. Engine heap size: 1,361 MB. GUI used memory: 107 MB. Current time: 2/22/21, 3:10:21 PM EST
-// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
-// Tcl Message: Time resolution is 1 ps 
-// Tcl Message: open_wave_config /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/demo_tb_behav.wcfg 
-// Tcl Message: source demo_tb.tcl 
-// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 680000ns 
-// Tcl Message: ** Note: Resetting core... ** Note: Timing checks are valid Checking Rx Frame 0: Checking Frame 0: ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 100M ...  Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! Checking Rx Frame 0: ** Note: Comparing Transmitted Frame with Injected Frame Checking Frame 0: ** Note: Programming MAC speed ** Note: Checking for PHY 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: ** Note: Reseting MAC RX ** Note: Reseting MAC TX ** Note: Setting MDC Frequency to 2.5MHZ.... ** Note: Disabling Flow control.... ** Note: Setting core to non-promiscuous mode ... ** Note: Configuring FRAME FILTER 1 ... ** Note: Configuring FRAME FILTER mask 1 ... ** Note: Configuring FRAME FILTER 2 ... ** Note: Configuring FRAME FILTER mask 2 ... ** Note: Configuring FRAME FILTER 3 ... ** Note: Configuring FRAME FILTER mask 3 ... Tx/Rx Stimulus: sending 5 frames at 10M ...  
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// Tcl Message: Ready for send went high! Done sending frames! Frame signalled ready!! Frame check successful! ** Note: Comparing Transmitted Frame with Injected Frame 
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: SIMULATION_UPDATE_LATEST_TIME
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
-// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
-// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
-// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
-// TclEventType: SIMULATION_UPDATE_LOCALS
-// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
-// TclEventType: SIMULATION_STOPPED
-// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
-// Tcl Message: Test completed successfully Simulation Stopped run: Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:09 . Memory (MB): peak = 6816.055 ; gain = 0.000 ; free physical = 3630 ; free virtual = 7327 xsim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 6816.055 ; gain = 0.000 ; free physical = 3630 ; free virtual = 7327 
-// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'demo_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 680000ns 
-// Tcl Message: launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 6816.055 ; gain = 0.000 ; free physical = 3630 ; free virtual = 7327 
-// 'd' command handler elapsed time: 21 seconds
-dismissDialog("Run Simulation"); // e (cp)
-// TclEventType: WAVEFORM_MODEL_EVENT
-// TclEventType: WAVEFORM_UPDATE_WAVEFORM
-// TclEventType: WAVEFORM_MODEL_EVENT
-// Elapsed time: 477 seconds
-selectCodeEditor("demo_tb.sv", 125, 391); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 125, 391, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 125, 391); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 145, 435); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 145, 435, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 145, 435); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 135, 394); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 135, 394, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 135, 394); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 215, 383); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 215, 383, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 215, 383); // cl (w, cp)
-// Elapsed time: 351 seconds
-selectCodeEditor("demo_tb.sv", 230, 439); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 156, 305); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 128, 177); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 217, 375); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 201, 448); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 151, 319); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 195, 269); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 195, 269, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 195, 269); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 165, 302); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 165, 302, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 165, 302); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 159, 338); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 159, 338, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 159, 338); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 169, 321); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 169, 321, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 169, 321); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 178, 278); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 178, 278, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 178, 278); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 188, 230); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 188, 230, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 188, 230); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 193, 214); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 193, 214, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 193, 214); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 202, 196); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 202, 196, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 202, 196); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 187, 235); // cl (w, cp)
-selectCodeEditor("demo_tb.sv", 187, 235, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("demo_tb.sv", 187, 235); // cl (w, cp)
-// Elapsed time: 26 seconds
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tri_mode_ethernet_mac_0_example_design.v", 0); // k (j, cp)
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "demo_tb.sv", 1); // k (j, cp)
-selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ip_packet_tx.sv", 2); // k (j, cp)
-selectCodeEditor("ip_packet_tx.sv", 253, 216); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 253, 216, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 261, 223); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 202, 219); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 202, 219, false, false, false, false, true); // cl (w, cp) - Double Click
-selectCodeEditor("ip_packet_tx.sv", 248, 214); // cl (w, cp)
-selectCodeEditor("ip_packet_tx.sv", 248, 214, false, false, false, false, true); // cl (w, cp) - Double Click
-// HMemoryUtils.trashcanNow. Engine heap size: 1,362 MB. GUI used memory: 63 MB. Current time: 2/22/21, 3:40:24 PM EST
-// HMemoryUtils.trashcanNow. Engine heap size: 1,362 MB. GUI used memory: 61 MB. Current time: 2/22/21, 4:10:25 PM EST
-// HMemoryUtils.trashcanNow. Engine heap size: 1,362 MB. GUI used memory: 60 MB. Current time: 2/22/21, 4:40:25 PM EST
-// HMemoryUtils.trashcanNow. Engine heap size: 1,362 MB. GUI used memory: 60 MB. Current time: 2/22/21, 5:10:26 PM EST
-// HMemoryUtils.trashcanNow. Engine heap size: 1,362 MB. GUI used memory: 60 MB. Current time: 2/22/21, 5:40:26 PM EST
-// HMemoryUtils.trashcanNow. Engine heap size: 1,362 MB. GUI used memory: 60 MB. Current time: 2/22/21, 6:10:27 PM EST
+// [GUI Memory]: 156 MB (+6051kb) [00:40:50]
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 7639.074 ; gain = 203.266 ; free physical = 3013 ; free virtual = 6971 
+// Tcl Message: 135 Infos, 155 Warnings, 4 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 7639.074 ; gain = 203.266 ; free physical = 3013 ; free virtual = 6971 
+// 'dQ' command handler elapsed time: 16 seconds
+// S (cp): Critical Messages: addNotify
+dismissDialog("Open Elaborated Design"); // bx (cp)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (S)
+dismissDialog("Critical Messages"); // S (cp)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Device", 1); // k (j, cp)
+// Device view-level: 0.0
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package", 0); // k (j, cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design, Schematic]", 16, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+// Schematic: addNotify
+// PAPropertyPanels.initPanels (ip_layer_inst (ip_layer)) elapsed time: 0.4s
+// [GUI Memory]: 165 MB (+829kb) [00:42:30]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,274 MB. GUI used memory: 99 MB. Current time: 3/3/21, 12:42:19 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,260 MB. GUI used memory: 95 MB. Current time: 3/3/21, 1:12:20 PM EST
