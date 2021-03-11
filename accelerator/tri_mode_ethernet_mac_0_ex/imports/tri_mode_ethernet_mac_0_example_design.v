@@ -729,6 +729,7 @@ module tri_mode_ethernet_mac_0_example_design
       parameter OUR_MAC_ADDRESS=48'h06_05_04_03_02_DA,
       parameter USER_DATA_BYTES=26, // SIZE OF MIN PACKET
       parameter OUR_IP_ADDRESS=32'h14_13_12_11,
+      parameter OUR_UDP_PORT = 16'd0666,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
 )(
       // asynchronous reset
@@ -905,10 +906,12 @@ module tri_mode_ethernet_mac_0_example_design
    wire                         frame_ready_from_rx;
    wire [0:47]                  mac_address_from_rx;
    wire [0:31]                ip_address_from_rx;
+   wire [0:15]                  udp_port_from_rx;
    wire                         packet_for_accelerator_from_rx;
    
    wire [0:31]  ip_address_to_tx;
    wire [0:47]    mac_address_to_tx;
+   wire [0:15]  udp_port_to_tx;
    wire  [0:9]    recipient_message_to_tx; // Either a response to LB or an inference result
    wire           start_ip_txn_to_tx;
    wire           ready_for_send_to_tx;
@@ -916,12 +919,14 @@ module tri_mode_ethernet_mac_0_example_design
    // mac address src/dst
 
 
-   wire [31:0] our_ip_address;
-   wire [47:0] our_mac_address;
-   wire [47:0] dummy_mac_address;
+   wire [0:31] our_ip_address;
+   wire [0:47] our_mac_address;
+   wire [0:15] our_udp_port;
+   wire [0:47] dummy_mac_address;
    
    assign our_mac_address = OUR_MAC_ADDRESS;
    assign our_ip_address = OUR_IP_ADDRESS;
+   assign our_udp_port = OUR_UDP_PORT;
    assign dummy_mac_address = DUMMY_MAC_ADDRESS;
 
 
@@ -1298,6 +1303,7 @@ module tri_mode_ethernet_mac_0_example_design
       .ARESET(tx_fifo_resetn),
       .ACCELERATOR_IP_ADDRESS(OUR_IP_ADDRESS),
       .ACCELERATOR_MAC_ADDRESS(OUR_MAC_ADDRESS),
+      .ACCELERATOR_UDP_PORT(OUR_UDP_PORT),
 
       // To/From FIFO/MAC:
       // data from the RX data path
@@ -1318,6 +1324,7 @@ module tri_mode_ethernet_mac_0_example_design
       .DATA_FRAME(data_frame_from_rx),
       .SRC_IP_ADDRESS(ip_address_from_rx),
       .SRC_MAC_ADDRESS(mac_address_from_rx),
+      .SRC_UDP_PORT(udp_port_from_rx),
       .FRAME_READY(frame_ready_from_rx),
       // Useful signals for debug
       .PACKET_FOR_ACCELERATOR(packet_for_accelerator_from_rx),
@@ -1325,6 +1332,7 @@ module tri_mode_ethernet_mac_0_example_design
       // Tx
       .RECIPIENT_IP_ADDRESS(ip_address_to_tx),
       .RECIPIENT_MAC_ADDRESS(mac_address_to_tx),
+      .RECIPIENT_UDP_PORT(udp_port_to_tx),
       .RECIPIENT_MESSAGE(recipient_message_to_tx), // Either a response to LB or an inference result
       .START_IP_TXN(start_ip_txn_to_tx),
       .READY_FOR_SEND(ready_for_send_to_tx)
@@ -1340,11 +1348,13 @@ module tri_mode_ethernet_mac_0_example_design
     .start(frame_ready_from_rx),
     .ip_address(ip_address_from_rx),
     .mac_address(mac_address_from_rx),
+    .udp_port(udp_port_from_rx),
     .x(data_frame_from_rx[6]),
     .y(data_frame_from_rx[7]),
     .done(start_ip_txn_to_tx),
     .ip_out(ip_address_to_tx),
     .mac_out(mac_address_to_tx),
+    .port_out(udp_port_to_tx),
     .out(net_out_to_tx)
    );
    assign recipient_message_to_tx = {9'd0, net_out_to_tx};

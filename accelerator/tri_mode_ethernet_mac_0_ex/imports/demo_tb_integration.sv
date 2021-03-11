@@ -140,11 +140,17 @@ module demo_tb_integration;
   localparam [ 0:15] identification = 'h0000;
   localparam [ 0:15] flags_and_fragment = 'h0000;
   localparam [ 0: 7] time_to_live = 'h80;
-  localparam [ 0: 7] protocol = 'h00;
+  localparam [ 0: 7] protocol = 'h11;
   localparam [ 0:31] accelerator_ip_addr = 32'h11_12_13_14;
+  localparam [ 0:15] accelerator_udp_port = 16'h17_18;
   localparam [ 0:31] recipient_ip_addr = 32'h0d_0e_0f_10;
   localparam [ 0: 9]  user_data = 10'h001;
   logic      [ 0:15] checksum;
+  
+  logic      [ 0:15] recipient_udp_port = 16'h15_16;
+  logic      [ 0:15] checksum_udp = 16'h0000;
+  logic      [ 0:15] length_udp = 16'd8 + 16'd18;
+
 
   `define FRAME_TYP [8*64+64+64+8*4+4+4+8*4+4+4+1:1]
 
@@ -211,29 +217,29 @@ module demo_tb_integration;
     frame0.data[31] = 8'h12;  frame0.valid[31] = 1'b1;  frame0.error[31] = 1'b0;
     frame0.data[32] = 8'h13;  frame0.valid[32] = 1'b1;  frame0.error[32] = 1'b0;
     frame0.data[33] = 8'h14;  frame0.valid[33] = 1'b1;  frame0.error[33] = 1'b0;
-    frame0.data[34] = 8'h02;  frame0.valid[34] = 1'b1;  frame0.error[34] = 1'b0;
-    frame0.data[35] = 8'h00;  frame0.valid[35] = 1'b1;  frame0.error[35] = 1'b0;
+    frame0.data[34] = 8'h15;  frame0.valid[34] = 1'b1;  frame0.error[34] = 1'b0;
+    frame0.data[35] = 8'h16;  frame0.valid[35] = 1'b1;  frame0.error[35] = 1'b0;
     frame0.data[36] = 8'h17;  frame0.valid[36] = 1'b1;  frame0.error[36] = 1'b0;
     frame0.data[37] = 8'h18;  frame0.valid[37] = 1'b1;  frame0.error[37] = 1'b0;
     frame0.data[38] = 8'h19;  frame0.valid[38] = 1'b1;  frame0.error[38] = 1'b0;
     frame0.data[39] = 8'h1A;  frame0.valid[39] = 1'b1;  frame0.error[39] = 1'b0;
     frame0.data[40] = 8'h1B;  frame0.valid[40] = 1'b1;  frame0.error[40] = 1'b0;
     frame0.data[41] = 8'h1C;  frame0.valid[41] = 1'b1;  frame0.error[41] = 1'b0;
-    frame0.data[42] = 8'h1D;  frame0.valid[42] = 1'b1;  frame0.error[42] = 1'b0;
-    frame0.data[43] = 8'h1E;  frame0.valid[43] = 1'b1;  frame0.error[43] = 1'b0;
-    frame0.data[44] = 8'h1F;  frame0.valid[44] = 1'b1;  frame0.error[44] = 1'b0;
-    frame0.data[45] = 8'h20;  frame0.valid[45] = 1'b1;  frame0.error[45] = 1'b0;
-    frame0.data[46] = 8'h21;  frame0.valid[46] = 1'b1;  frame0.error[46] = 1'b0;
-    frame0.data[47] = 8'h22;  frame0.valid[47] = 1'b1;  frame0.error[47] = 1'b0;
-    frame0.data[48] = 8'h23;  frame0.valid[48] = 1'b1;  frame0.error[48] = 1'b0;
-    frame0.data[49] = 8'h24;  frame0.valid[49] = 1'b1;  frame0.error[49] = 1'b0;
-    frame0.data[50] = 8'h25;  frame0.valid[50] = 1'b1;  frame0.error[50] = 1'b0;
-    frame0.data[51] = 8'h26;  frame0.valid[51] = 1'b1;  frame0.error[51] = 1'b0;
-    frame0.data[52] = 8'h27;  frame0.valid[52] = 1'b1;  frame0.error[52] = 1'b0;
-    frame0.data[53] = 8'h28;  frame0.valid[53] = 1'b1;  frame0.error[53] = 1'b0;
-    frame0.data[54] = 8'h29;  frame0.valid[54] = 1'b1;  frame0.error[54] = 1'b0;
-    frame0.data[55] = 8'h2A;  frame0.valid[55] = 1'b1;  frame0.error[55] = 1'b0;
-    frame0.data[56] = 8'h2B;  frame0.valid[56] = 1'b1;  frame0.error[56] = 1'b0;
+    frame0.data[42] = 8'h02;  frame0.valid[42] = 1'b1;  frame0.error[42] = 1'b0;
+    frame0.data[43] = 8'h00;  frame0.valid[43] = 1'b1;  frame0.error[43] = 1'b0;
+    frame0.data[44] = 8'h00;  frame0.valid[44] = 1'b1;  frame0.error[44] = 1'b0;
+    frame0.data[45] = 8'h00;  frame0.valid[45] = 1'b1;  frame0.error[45] = 1'b0;
+    frame0.data[46] = 8'h00;  frame0.valid[46] = 1'b1;  frame0.error[46] = 1'b0;
+    frame0.data[47] = 8'h00;  frame0.valid[47] = 1'b1;  frame0.error[47] = 1'b0;
+    frame0.data[48] = 8'h00;  frame0.valid[48] = 1'b1;  frame0.error[48] = 1'b0;
+    frame0.data[49] = 8'h00;  frame0.valid[49] = 1'b1;  frame0.error[49] = 1'b0;
+    frame0.data[50] = 8'h00;  frame0.valid[50] = 1'b1;  frame0.error[50] = 1'b0;
+    frame0.data[51] = 8'h00;  frame0.valid[51] = 1'b1;  frame0.error[51] = 1'b0;
+    frame0.data[52] = 8'h00;  frame0.valid[52] = 1'b1;  frame0.error[52] = 1'b0;
+    frame0.data[53] = 8'h00;  frame0.valid[53] = 1'b1;  frame0.error[53] = 1'b0;
+    frame0.data[54] = 8'h00;  frame0.valid[54] = 1'b1;  frame0.error[54] = 1'b0;
+    frame0.data[55] = 8'h00;  frame0.valid[55] = 1'b1;  frame0.error[55] = 1'b0;
+    frame0.data[56] = 8'h00;  frame0.valid[56] = 1'b1;  frame0.error[56] = 1'b0;
     frame0.data[57] = 8'h00;  frame0.valid[57] = 1'b1;  frame0.error[57] = 1'b0;
     frame0.data[58] = 8'h00;  frame0.valid[58] = 1'b1;  frame0.error[58] = 1'b0;
     frame0.data[59] = 8'h00;  frame0.valid[59] = 1'b1;  frame0.error[59] = 1'b0;  // 46th Byte of Data
@@ -287,16 +293,16 @@ module demo_tb_integration;
     frame0tx.data[31] = recipient_ip_addr[ 8:15];  frame0tx.valid[31] = 1'b1;  frame0tx.error[31] = 1'b0;
     frame0tx.data[32] = recipient_ip_addr[16:23];  frame0tx.valid[32] = 1'b1;  frame0tx.error[32] = 1'b0;
     frame0tx.data[33] = recipient_ip_addr[24:31];  frame0tx.valid[33] = 1'b1;  frame0tx.error[33] = 1'b0;
-    frame0tx.data[34] = {6'b0, user_data[0:1]};  frame0tx.valid[34] = 1'b1;  frame0tx.error[34] = 1'b0;
-    frame0tx.data[35] = user_data[2:9];  frame0tx.valid[35] = 1'b1;  frame0tx.error[35] = 1'b0;
-    frame0tx.data[36] = 8'h00;  frame0tx.valid[36] = 1'b1;  frame0tx.error[36] = 1'b0;
-    frame0tx.data[37] = 8'h00;  frame0tx.valid[37] = 1'b1;  frame0tx.error[37] = 1'b0;
-    frame0tx.data[38] = 8'h00;  frame0tx.valid[38] = 1'b1;  frame0tx.error[38] = 1'b0;
-    frame0tx.data[39] = 8'h00;  frame0tx.valid[39] = 1'b1;  frame0tx.error[39] = 1'b0;
-    frame0tx.data[40] = 8'h00;  frame0tx.valid[40] = 1'b1;  frame0tx.error[40] = 1'b0;
-    frame0tx.data[41] = 8'h00;  frame0tx.valid[41] = 1'b1;  frame0tx.error[41] = 1'b0;
-    frame0tx.data[42] = 8'h00;  frame0tx.valid[42] = 1'b1;  frame0tx.error[42] = 1'b0;
-    frame0tx.data[43] = 8'h00;  frame0tx.valid[43] = 1'b1;  frame0tx.error[43] = 1'b0;
+    frame0tx.data[34] = accelerator_udp_port[0:7];  frame0tx.valid[34] = 1'b1;  frame0tx.error[34] = 1'b0;
+    frame0tx.data[35] = accelerator_udp_port[8:15];  frame0tx.valid[35] = 1'b1;  frame0tx.error[35] = 1'b0;
+    frame0tx.data[36] = recipient_udp_port[0:7];  frame0tx.valid[36] = 1'b1;  frame0tx.error[36] = 1'b0;
+    frame0tx.data[37] = recipient_udp_port[8:15];  frame0tx.valid[37] = 1'b1;  frame0tx.error[37] = 1'b0;
+    frame0tx.data[38] = length_udp[0:7];  frame0tx.valid[38] = 1'b1;  frame0tx.error[38] = 1'b0;
+    frame0tx.data[39] = length_udp[8:15];  frame0tx.valid[39] = 1'b1;  frame0tx.error[39] = 1'b0;
+    frame0tx.data[40] = checksum_udp[0:7];  frame0tx.valid[40] = 1'b1;  frame0tx.error[40] = 1'b0;
+    frame0tx.data[41] = checksum_udp[8:15];  frame0tx.valid[41] = 1'b1;  frame0tx.error[41] = 1'b0;
+    frame0tx.data[42] = {6'b0, user_data[0:1]};  frame0tx.valid[42] = 1'b1;  frame0tx.error[42] = 1'b0;
+    frame0tx.data[43] = user_data[2:9];  frame0tx.valid[43] = 1'b1;  frame0tx.error[43] = 1'b0;
     frame0tx.data[44] = 8'h00;  frame0tx.valid[44] = 1'b1;  frame0tx.error[44] = 1'b0;
     frame0tx.data[45] = 8'h00;  frame0tx.valid[45] = 1'b1;  frame0tx.error[45] = 1'b0;
     frame0tx.data[46] = 8'h00;  frame0tx.valid[46] = 1'b1;  frame0tx.error[46] = 1'b0;
@@ -757,7 +763,9 @@ module demo_tb_integration;
   tri_mode_ethernet_mac_0_example_design #(
     .OUR_MAC_ADDRESS(dst_addr),
     .DUMMY_MAC_ADDRESS(src_addr),
-    .OUR_IP_ADDRESS(accelerator_ip_addr)
+    .OUR_IP_ADDRESS(accelerator_ip_addr),
+    .OUR_UDP_PORT(accelerator_udp_port),
+    .USER_DATA_BYTES(26-8)
   ) dut (
       // asynchronous reset
       .glbl_rst                   (reset),
