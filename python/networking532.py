@@ -74,7 +74,7 @@ def send_inference_packet(fpganet, ia_ip, imgdata):
     pkt.ttl = 0x80
     # load data
     pkt = scapy.Ether(dst=f"00:0a:35:00:00:{ia_ip.split('.')[2]}") / pkt
-    pkt = pkt / scapy.UDP(sport=69, dport=420)
+    pkt = pkt / scapy.UDP(sport=69, dport=666)
     pkt = pkt / scapy.Raw(imgdata)
     pkt.show()
     # send and receive
@@ -96,25 +96,26 @@ def send_inference_packet_hardcore(fpganet, ia_ip, imgdata):
     pkt.ttl = 0x80
     # load data
     pkt = scapy.Ether(dst=f"00:0a:35:00:00:{ia_ip.split('.')[2]}") / pkt
-    pkt = pkt / scapy.UDP(sport=69, dport=420)
+    pkt = pkt / scapy.UDP(sport=4000, dport=666)
     pkt = pkt / scapy.Raw(imgdata)
-    pkt.show()
+    #pkt.show()
     # start async sniff and send
     res = []
     cb = lambda: send_actual_pkt_hardcore(pkt, fpganet['ifname'])
-    s = scapy.AsyncSniffer(iface=fpganet['ifname'], count=1, filter="udp src port 420", prn=lambda x: res.append(x),
+    s = scapy.AsyncSniffer(iface=fpganet['ifname'], count=1, filter="udp src port 666", prn=lambda x: res.append(x),
                            started_callback=cb)
     s.start()
     while (len(res) < 1):
         pass
-    print(len(res))
+    #print(len(res))
     try:
         s.stop()
     except scapy.Scapy_Exception:
         pass
     # print result
-    res[0].show()
-    pass
+    # res[0].show()
+    byte_list = list(res[0].getlayer(scapy.Raw).load)
+    return [byte_list[0], byte_list[1]]
 
 
 # sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="ether[0:4] = 0x000a3500 or ether [6:4] = 0x000a3500", prn=lambda x: x.show())
