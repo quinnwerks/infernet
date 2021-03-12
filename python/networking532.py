@@ -19,6 +19,12 @@ CLIENT_UDP_PORT = 4000
 IA_UDP_PORT = 666
 LB_UDP_PORT = 6666
 LB_TCP_PORT = 8080
+CLIENT_REQ_STR = b'i can has cheezburger'
+CLIENT_DONE_STR = b'put it back'
+LB_UNAVAILABLE_STR = b'gone reduced to atoms'
+LB_NOT_EXIST_STR = b'the salami lid wont fit'
+LB_RETURNED_STR = b'thanks for the fish'
+LB_MALFORMED_STR = b'it hurts when IP'
 
 
 def get_interfaces():
@@ -99,7 +105,7 @@ def send_inference_packet(fpganet, ia_ip, imgdata):
     res = scapy.srp1(pkt, iface=fpganet['ifname'])
     # print result
     res.show()
-    pass
+    return res
 
 
 def send_actual_pkt_hardcore(pkt, iface):
