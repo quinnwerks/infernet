@@ -1,7 +1,25 @@
 import scapy.all as scapy
 from netifaces import interfaces, ifaddresses, AF_INET
 import os
-import threading
+import time
+
+
+def fpganet_num_to_ip(i):
+    return f"1.1.{i}.2"
+
+
+def fpganet_num_to_mac(i):
+    return f"00:0a:35:00:00:{i}"
+
+
+FPGA_NUM_SET = set(range(1, 12+1))  # | set(range(19, 30+1))
+FPGA_IP_SET = {fpganet_num_to_ip(i) for i in FPGA_NUM_SET}
+FPGA_MAC_SET = {fpganet_num_to_mac(i) for i in FPGA_NUM_SET}
+CLIENT_UDP_PORT = 4000
+IA_UDP_PORT = 666
+LB_UDP_PORT = 6666
+LB_TCP_PORT = 8080
+
 
 def get_interfaces():
     availableIfaces = []
@@ -58,7 +76,7 @@ def send_inference_packet_old(fpganet, ia_ip, imgdata):
     pkt.id = 0
     pkt.ttl = 0x80
     # load data
-    pkt = scapy.Ether(dst=f"00:0a:35:00:00:{ia_ip.split('.')[2]}") / pkt / scapy.Raw(imgdata)
+    pkt = scapy.Ether(dst=fpganet_num_to_mac(ia_ip.split('.')[2])) / pkt / scapy.Raw(imgdata)
     pkt.show()
     # print(fpganet['ifname'])
     res = scapy.srp1(pkt, iface=fpganet['ifname'])
@@ -73,8 +91,8 @@ def send_inference_packet(fpganet, ia_ip, imgdata):
     pkt.id = 0
     pkt.ttl = 0x80
     # load data
-    pkt = scapy.Ether(dst=f"00:0a:35:00:00:{ia_ip.split('.')[2]}") / pkt
-    pkt = pkt / scapy.UDP(sport=69, dport=666)
+    pkt = scapy.Ether(dst=fpganet_num_to_mac(ia_ip.split('.')[2])) / pkt
+    pkt = pkt / scapy.UDP(sport=CLIENT_UDP_PORT, dport=IA_UDP_PORT)
     pkt = pkt / scapy.Raw(imgdata)
     pkt.show()
     # send and receive
@@ -85,37 +103,56 @@ def send_inference_packet(fpganet, ia_ip, imgdata):
 
 
 def send_actual_pkt_hardcore(pkt, iface):
-    print("sending!")
+    # print("sending!")
     scapy.sendp(pkt, iface=iface)
 
 
-def send_inference_packet_hardcore(fpganet, ia_ip, imgdata):
+def send_inference_packet_hardcore(fpganet, ia_ip, imgdata, timeout=None):
+    """
+    :param fpganet:
+    :param ia_ip:
+    :param imgdata:
+    :param timeout: async sniffer timeout in seconds, omit or None for no timeout
+    :return: the packet captured or None if timed out without capturing
+    """
     pkt = scapy.IP(dst=ia_ip)
     # use Quinn's packet fields
     pkt.id = 0
     pkt.ttl = 0x80
     # load data
-    pkt = scapy.Ether(dst=f"00:0a:35:00:00:{ia_ip.split('.')[2]}") / pkt
-    pkt = pkt / scapy.UDP(sport=4000, dport=666)
+    pkt = scapy.Ether(dst=fpganet_num_to_mac(ia_ip.split('.')[2])) / pkt
+    pkt = pkt / scapy.UDP(sport=CLIENT_UDP_PORT, dport=IA_UDP_PORT)
     pkt = pkt / scapy.Raw(imgdata)
-    #pkt.show()
+    # pkt.show()
     # start async sniff and send
-    res = []
-    cb = lambda: send_actual_pkt_hardcore(pkt, fpganet['ifname'])
-    s = scapy.AsyncSniffer(iface=fpganet['ifname'], count=1, filter="udp src port 666", prn=lambda x: res.append(x),
-                           started_callback=cb)
+    # res = []
+    s = scapy.AsyncSniffer(iface=fpganet['ifname'],
+                           count=1,
+                           filter=f"udp src port {IA_UDP_PORT}",
+                           # prn=lambda x: res.append(x),
+                           started_callback=lambda: send_actual_pkt_hardcore(pkt, fpganet['ifname']),
+                           timeout=timeout)
     s.start()
-    while (len(res) < 1):
-        pass
-    #print(len(res))
-    try:
-        s.stop()
-    except scapy.Scapy_Exception:
-        pass
+    # while s.running:
+    #     time.sleep(0.001)# maybe sleep instead of poll, but that'll be slower
+    #     pass
+    # time.sleep(0.001) # the millisecond yields thread and give
+    s.join()
+    # print(len(res))
+    # try:
+    #     s.stop()
+    # except scapy.Scapy_Exception:
+    #     pass
+    res = s.results
+    if len(res):
+        res = res[0]
+        # res.show()
+    else:
+        res = None
     # print result
-    # res[0].show()
-    byte_list = list(res[0].getlayer(scapy.Raw).load)
-    return [byte_list[0], byte_list[1]]
+    # byte_list = list(res[0].getlayer(scapy.Raw).load)
+    # return [byte_list[0], byte_list[1]]
+    return res
 
 
 # sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="ether[0:4] = 0x000a3500 or ether [6:4] = 0x000a3500", prn=lambda x: x.show())
