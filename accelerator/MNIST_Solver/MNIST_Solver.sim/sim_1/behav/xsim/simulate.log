@@ -1,39 +1,4 @@
 Vivado Simulator 2018.3
 Time resolution is 1 ps
-Test 00 : x = 18'b0_0000000_0000000000 y= 18'b0_0000000_0000000000
-Test 0 : PASS
-
-Test 00 : x = 18'b0_0000000_0000000000 y= 18'b0_0000000_0000000000
-Test 0 : PASS
-
-Test 01 : x = 18'b0_0000011_0010000000 y= 18'b0_0000110_0000000000
-Test 1 : PASS
-
-Test 02 : x = 18'b1_1110000_1011010111 y= 18'b0_0000011_0000000000
-Test 2 : PASS
-
-Test 03 : x = 18'b1_1101000_0101001100 y= 18'b1_1111111_1100000000
-Test 3 : PASS
-
-Test 04 : x = 18'b0_0000000_1111111111 y= 18'b0_0000000_1000000000
-Test 4 : PASS
-
-Test 05 : x = 18'b1_1111111_1111111101 y= 18'b0_0000000_1000000000
-Test 5 : PASS
-
-Test 06 : x = 18'b0_1000000_0001000000 y= 18'b0_0000000_0000000100
-Test 6 : PASS
-
-Test 07 : x = 18'b1_0111111_1111000000 y= 18'b0_0000000_0000000100
-Test 7 : PASS
-
-Test 08 : x = 18'b0_1000000_0000000000 y= 18'b0_0000010_0000000000
-Test 8 : PASS
-
-Test 09 : x = 18'b1_0111111_0000000000 y= 18'b0_0000010_0000000000
-Test 9 : PASS
-
-Test 10 : x = 18'b0_1111111_1110000000 y= 18'b0_0000001_0000000001
-Test 10 : PASS
-
-Success! All test cases passed :)
+PASS! All outputs within 000000000000001000 tolerance to expected.
+$finish called at time : 1019750 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" Line 136
