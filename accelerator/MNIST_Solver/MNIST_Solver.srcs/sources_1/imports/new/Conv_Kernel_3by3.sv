@@ -2,14 +2,16 @@
 
 // Output appears 12 cycles after inputs clocked in
 module Conv_Kernel_3by3 #(
-    parameter signed [17:0] weights [2:0][2:0] = '{'{18'h0, 18'h0, 18'h0}, 
-                                                   '{18'h0, 18'h0, 18'h0}, 
-                                                   '{18'h0, 18'h0, 18'h0}},
-    parameter signed [17:0] bias = 18'h0
+//    parameter signed [17:0] weights [2:0][2:0] = '{'{18'h0, 18'h0, 18'h0}, 
+//                                                   '{18'h0, 18'h0, 18'h0}, 
+//                                                   '{18'h0, 18'h0, 18'h0}},
+//    parameter signed [17:0] bias = 18'h0
 )(
     input clock,
     input reset_n,
     input signed [17:0] x [2:0][2:0],
+    input signed [17:0] weights [2:0][2:0],
+    input signed [17:0] bias,
     output signed [17:0] out
 );
 

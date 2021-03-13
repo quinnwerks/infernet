@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Thu Mar 11 21:57:29 2021
+# Process ID: 20778
+# Current directory: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1
+# Command line: vivado -log Conv_1_Channel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Conv_1_Channel.tcl
+# Log file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/Conv_1_Channel.vds
+# Journal file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source Conv_1_Channel.tcl -notrace

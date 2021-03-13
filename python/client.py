@@ -7,6 +7,10 @@ import scapy.all as scapy
 import matplotlib.image as mpimg
 import PIL.Image as Image
 import PIL.ImageOps as ImageOps
+import socket
+import re
+from typing import Union
+import threading
 
 
 helptxt = """
@@ -64,7 +68,41 @@ def do_inference(fpganet, ia_ip, imgpath):
     # send packet
     res = n532.send_inference_packet(fpganet, ia_ip, img.tobytes())
     # TODO: parse result
+    return res
     pass
+
+
+def scan_for_lb(fpganet):
+    # TODO
+    pass
+
+
+def get_ia_from_lb(fpganet, lb_ip) -> Union[str, None]:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((lb_ip, n532.LB_TCP_PORT))
+        s.sendall(n532.CLIENT_REQ_STR)
+        res = s.recv(1024)
+        r = re.search(r'1\.1\.\d{1,2}\.2', str(res))
+        if r:
+            ip = r.group()
+            return ip
+        else:
+            return None
+
+
+def return_ia_to_lb(fpganet, lb_ip, ia_ip) -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((lb_ip, n532.LB_TCP_PORT))
+        s.sendall(n532.CLIENT_DONE_STR + bytes(ia_ip, "utf8"))
+        res = s.recv(1024)
+        if n532.LB_RETURNED_STR in res:
+            return True
+        elif n532.LB_NOT_EXIST_STR in res:
+            return False
+        elif n532.LB_MALFORMED_STR in res:
+            return False
+        else:
+            raise RuntimeError('load balancer returned garbage')
 
 
 def exit_invalid_args():

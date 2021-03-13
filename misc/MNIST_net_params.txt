@@ -1,4 +1,4 @@
-Top-left corner is (0,0)
+# Top-left corner is (0,0)
 ####### conv_1 #######
 ##### BIASES #####
 -0.5002284049987793

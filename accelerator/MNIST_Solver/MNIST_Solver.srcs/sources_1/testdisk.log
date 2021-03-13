@@ -1,0 +1,741 @@
+
+
+Thu Mar 11 20:41:45 2021
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.19.0-14-amd64 (#1 SMP Debian 4.19.171-2 (2021-01-30)) x86_64
+Compiler: GCC 8.2
+ext2fs lib: 1.44.5, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.1
+/dev/sda: LBA, HPA, LBA48, DCO support
+/dev/sda: size       976773168 sectors
+/dev/sda: user_max   976773168 sectors
+/dev/sda: native_max 976773168 sectors
+/dev/sdb: LBA, HPA, LBA48, DCO support
+/dev/sdb: size       234441648 sectors
+/dev/sdb: user_max   234441648 sectors
+/dev/sdb: native_max 234441648 sectors
+/dev/sdc: LBA, HPA, LBA48, DCO support
+/dev/sdc: size       1953525168 sectors
+/dev/sdc: user_max   1953525168 sectors
+/dev/sdc: native_max 1953525168 sectors
+/dev/sdd: LBA, HPA, LBA48, DCO support
+/dev/sdd: size       7814037168 sectors
+/dev/sdd: user_max   7814037168 sectors
+/dev/sdd: native_max 7814037168 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - Samsung SSD 860 EVO 500GB, S/N:S598NJ0NA35947J, FW:RVT04B6Q
+Disk /dev/sdb - 120 GB / 111 GiB - CHS 14593 255 63, sector size=512 - Samsung SSD 840 EVO 120GB, S/N:S1D5NSADA81001F, FW:EXT0BB0Q
+Disk /dev/sdc - 1000 GB / 931 GiB - CHS 121601 255 63, sector size=512 - WDC WD1003FZEX-00K3CA0, S/N:WD-WCC6Y7EZA48P, FW:01.01A01
+Disk /dev/sdd - 4000 GB / 3726 GiB - CHS 486401 255 63, sector size=512 - ST4000VN008-2DR166, S/N:ZGY85WR7, FW:SC60
+Disk /dev/mapper/andrew--debian--vg-home - 461 GB / 429 GiB - 901013504 sectors, sector size=512
+Disk /dev/mapper/andrew--debian--vg-root - 29 GB / 27 GiB - 58589184 sectors, sector size=512
+Disk /dev/mapper/andrew--debian--vg-swap_1 - 8527 MB / 8132 MiB - 16654336 sectors, sector size=512
+Disk /dev/mapper/sdb5_crypt - 499 GB / 465 GiB - 976265216 sectors, sector size=512
+Disk /dev/dm-0 - 499 GB / 465 GiB - 976265216 sectors, sector size=512
+Disk /dev/dm-1 - 29 GB / 27 GiB - 58589184 sectors, sector size=512
+Disk /dev/dm-2 - 8527 MB / 8132 MiB - 16654336 sectors, sector size=512
+Disk /dev/dm-3 - 461 GB / 429 GiB - 901013504 sectors, sector size=512
+
+Partition table type (auto): None
+Disk /dev/mapper/andrew--debian--vg-home - 461 GB / 429 GiB
+Partition table type: None
+
+Interface Advanced
+
+recover_EXT2: s_block_group_nr=0/3437, s_mnt_count=60/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 112626688
+recover_EXT2: part_size 901013504
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+
+
+dir_partition inode=2
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+      11 drwx------     0      0     16384  7-Mar-2019 01:36 lost+found
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 andrew
+
+dir_partition inode=27787265
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+ 27789721 -rw-r--r--  1000   1000      3774 12-Jan-2021 17:36 .bashrc
+ 27787267 -rw-r--r--  1000   1000       220  7-Mar-2019 08:10 .bash_logout
+ 27787268 -rw-r--r--  1000   1000       675  7-Mar-2019 08:10 .profile
+ 27787269 drwxr-xr-x  1000   1000      4096 11-Feb-2021 20:54 .local
+ 27788055 -rw-------  1000   1000        58 11-Mar-2021 09:55 .Xauthority
+ 27787275 -rw-------  1000   1000  31124675 11-Mar-2021 20:42 .xsession-errors
+ 27787276 drwxr-xr-x  1000   1000      4096 26-Feb-2021 16:13 Desktop
+ 27787278 drwxr-xr-x  1000   1000      4096  5-Mar-2021 16:44 Downloads
+ 27787279 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Templates
+ 27787280 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Public
+ 27787281 drwxr-xr-x  1000   1000      4096  3-Feb-2021 16:14 Documents
+ 27787282 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Music
+ 27787283 drwxr-xr-x  1000   1000      4096 11-Feb-2021 20:04 Pictures
+ 27787284 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Videos
+ 27787285 drwx------  1000   1000      4096 11-Mar-2021 20:09 .config
+ 27787288 drwx------  1000   1000      4096  7-Mar-2019 08:12 .dbus
+ 27787291 drwx------  1000   1000      4096  7-Mar-2019 08:12 .gnupg
+ 27787298 drwxr-xr-x  1000   1000      4096 11-Mar-2021 15:22 .cache
+ 27787295 -rw-r--r--  1000   1000       336 11-Mar-2021 09:55 .gtkrc-2.0
+ 27787317 drwxr-xr-x  1000   1000      4096 22-Mar-2019 20:41 .kde
+ 27787332 drwx------  1000   1000      4096 21-Dec-2020 17:40 .gconf
+ 27790317 -rw-------  1000   1000     37415 11-Mar-2021 19:41 .bash_history
+ 27787502 drwx------  1000   1000      4096 12-Jan-2021 17:26 .mozilla
+ 27793477 -rw-------  1000   1000     49898 11-Mar-2021 20:38 .viminfo
+ 27790279 drwxr-xr-x  1000   1000      4096 27-Mar-2019 10:15 CSC418
+ 27918337 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:35 eclipse-installer
+ 27918830 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:35 .eclipse
+ 27918832 drwxr-xr-x  1000   1000      4096 29-Mar-2019 17:36 .p2
+ 27787780 drwxr-xr-x  1000   1000      4096 29-Mar-2019 17:36 eclipse
+ 27793678 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:36 eclipse-workspace
+ 28051620 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:37 .swt
+ 28052049 drwxr-xr-x  1000   1000      4096  8-Mar-2019 21:04 .atom
+ 28052048 drwx------  1000   1000      4096  8-Mar-2019 20:12 .pki
+  131516 drwxr-xr-x  1000   1000      4096  8-Mar-2019 20:30 .nano
+ 27797118 -rw-r--r--  1000   1000       197 13-Jan-2021 09:59 .gitconfig
+  393228 drwx------  1000   1000      4096 29-Sep-2020 22:31 .ssh
+ 27795109 -rw-r--r--  1000   1000      2311  8-Sep-2020 16:58 .vimrc
+  395406 drwxr-xr-x  1000   1000      4096  5-Nov-2020 17:25 ECE454
+ 27790758 -rw-r--r--  1000   1000      1280  9-Mar-2021 12:14 .bash_aliases
+  787094 drwx------  1000   1000      4096 12-Jan-2021 16:12 .nv
+  395465 drwxr-xr-x  1000   1000      4096 16-Oct-2020 21:58 .gimp-2.8
+ 27790036 -rw-------  1000   1000       365  2-Oct-2020 19:17 .recently-used
+  524778 drwxr-xr-x  1000   1000      4096 21-Dec-2020 11:00 ECE568
+ 27794136 -rw-r--r--  1000   1000       181  5-Mar-2021 16:48 .wget-hsts
+ 27801969 -rw-r--r--  1000   1000       291 30-Sep-2020 14:27 .screenrc
+ 27921238 drwx------  1000   1000      4096  1-Oct-2020 16:52 .thumbnails
+  787313 drwxr-xr-x  1000   1000      4096 12-Jan-2021 16:14 .runelite
+  787316 drwxr-xr-x  1000   1000      4096 14-Jan-2021 17:32 .java
+ 27789477 -rw-r--r--  1000   1000        42 11-Mar-2021 17:57 jagex_cl_oldschool_LIVE.dat
+  787421 drwxr-xr-x  1000   1000      4096  4-Oct-2020 19:47 jagexcache
+ 27796624 -rw-r--r--  1000   1000        24 11-Mar-2021 17:57 random.dat
+ 1048589 drwxr-xr-x  1000   1000      4096  1-Feb-2021 22:34 .oracle_jre_usage
+ 27921236 drwxr-xr-x  1000   1000      4096 21-Dec-2020 16:32 backups
+ 27797595 -rw-r--r--  1000   1000 844832863 21-Dec-2020 16:33 backups-dec-21-2020.tar.gz
+  524634 drwxr-xr-x  1000   1000      4096 30-Jan-2021 18:44 Xilinx
+  663644 drwxrwxrwx  1000   1000      4096  1-Feb-2021 23:11 .Xilinx
+ 27790176 -rw-r--r--  1000   1000      1648 11-Mar-2021 20:35 vivado.jou
+ 27790321 -rw-r--r--  1000   1000     26264 11-Mar-2021 20:35 vivado.log
+ 5898981 drwx------  1000   1000      4096 11-Mar-2021 17:15 .zoom
+ 27790935 -rw-r--r--  1000   1000       857 22-Jan-2021 10:33 IV.sim
+ 7997829 drwxrwxr-x  1000   1000      4096  2-Mar-2021 21:56 .dropbox-dist
+ 28052828 drwxr-xr-x  1000   1000      4096 12-Jan-2021 17:45 RuneLite
+ 7340391 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .Xil
+ 27799162 -rw-r--r--  1000   1000      8789 22-Jan-2021 10:39 Resistor_TS.inp
+ 27789108 -rw-r--r--  1000   1000       606 22-Jan-2021 11:49 l1p3.2-1e13.csv
+ 1843186 drwxr-xr-x  1000   1000      4096 18-Feb-2021 16:58 tmp
+ 27788986 -rw-r--r--  1000   1000       694  2-Feb-2021 00:13 webtalk.jou
+ 28053014 drwx------  1000   1000      4096 11-Mar-2021 09:55 Dropbox
+ 27798210 -rwxr-xr-x  1000   1000       145 24-Feb-2021 20:24 .flexlmrc
+ 28052995 drwx------  1000   1000      4096 11-Mar-2021 09:55 .dropbox
+ 27787762 -rw-r--r--  1000   1000     88492 11-Mar-2021 20:35 vivado_pid1340.str
+ 27797621 -rw-------  1000   1000   6959732 10-Mar-2021 22:56 planet2.mp4
+X27787933 -rw-r--r--  1000   1000      1521 11-Mar-2021 09:55 sAuKeo
+ 27793247 -rw-r--r--  1000   1000     86470 13-Jan-2021 12:26 mozilla.pdf
+ 2369333 drwxr-xr-x  1000   1000      4096  1-Mar-2021 21:57 ECE532-labs
+ 1580719 drwx------  1000   1000      4096  6-Feb-2021 16:26 .thunderbird
+ 7472562 drwxr-xr-x  1000   1000      4096  2-Feb-2021 19:13 managed_ip_project
+ 5898958 drwxr-xr-x  1000   1000      4096  2-Feb-2021 22:37 .vim
+ 27796188 -rw-r--r--  1000   1000        58 11-Mar-2021 12:56 min_area_pfile.tmp
+ 27797297 -rw-r--r--  1000   1000       462  6-Mar-2021 17:13 vivado_7302.backup.jou
+X27789304 -rw-------  1000   1000      8865 10-Mar-2021 20:28 =0.0.7
+ 7997541 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:14 .jupyter
+ 8126543 drwxr-xr-x  1000   1000      4096 26-Feb-2021 16:12 .gphoto
+ 2102278 drwxr-xr-x  1000   1000      4096  5-Mar-2021 16:51 PycharmProjects
+ 2102319 drwxr-xr-x  1000   1000      4096  8-Mar-2021 19:30 darkriscv
+  133900 drwxr-xr-x  1000   1000      4096  3-Mar-2021 12:16 ECE496-sandbox
+X27793477 -rw-------  1000   1000     49898 11-Mar-2021 20:38 .viminfo.tmp
+ 7472566 drwxr-xr-x  1000   1000      4096  2-Feb-2021 19:13 ip_user_files
+ 27790561 -rw-r--r--  1000   1000       763  2-Feb-2021 00:13 webtalk.log
+X27788550 -rw-------  1000   1000      8763 11-Mar-2021 20:04 vivado_5174.backup.log
+ 27790034 -rw-r--r--  1000   1000      8862  8-Mar-2021 22:19 vivado_9199.backup.jou
+ 1839175 drwxr-xr-x  1000   1000      4096 22-Feb-2021 19:37 ECE532-sandbox
+ 27787656 -rw-r--r--  1000   1000      1655  8-Feb-2021 21:12 hs_err_pid18239.log
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 infernet
+ 8128827 drwxr-xr-x  1000   1000      4096  8-Mar-2021 21:31 picorv32
+ 27790175 -rw-------  1000   1000      4013 11-Mar-2021 19:06 .python_history
+ 27788085 -rw-r--r--  1000   1000      2857  8-Mar-2021 22:21 vivado_15544.backup.jou
+ 27797298 -rw-r--r--  1000   1000       535  6-Mar-2021 17:22 vivado_7302.backup.log
+X27801463 -rw-------  1000   1000      9100 11-Mar-2021 16:33 .Xauthority-c
+ 27790698 -rw-r--r--  1000   1000     81698  8-Mar-2021 22:21 vivado_9199.backup.log
+ 7997595 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:12 .ipython
+ 8390283 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:27 .keras
+ 27787959 -rw-r--r--  1000   1000       845 11-Mar-2021 12:56 vivado_7065.backup.jou
+ 27800619 -rw-r--r--  1000   1000      2665 11-Mar-2021 17:56 vivado_7065.backup.log
+ 27794091 -rw-r--r--  1000   1000      8305  8-Mar-2021 22:21 vivado_15544.backup.log
+ 27788504 -rw-r--r--  1000   1000      1067  9-Mar-2021 11:31 vivado_8151.backup.jou
+ 27788956 -rw-r--r--  1000   1000      1403  9-Mar-2021 12:57 vivado_8151.backup.log
+
+dir_partition inode=134070
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 .
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 ..
+  134109 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:39 .git
+  136741 -rw-r--r--  1000   1000        33 19-Feb-2021 11:42 README.md
+ 7733902 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:13 accelerator
+ 7735236 drwxr-xr-x  1000   1000      4096 19-Feb-2021 11:42 util
+  134102 -rw-r--r--  1000   1000        11 22-Feb-2021 19:31 .gitignore
+ 7865865 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 python
+ 7996119 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:10 misc
+X 136820 -rw-r--r--  1000   1000         0 11-Mar-2021 20:39 infernet text.png
+X 136821 -rw-r--r--  1000   1000    323741 11-Mar-2021 20:39 doom flames.png
+
+dir_partition inode=7733902
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator
+ 7733902 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:13 .
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 ..
+ 7733904 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:20 rtl
+ 7734891 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 tri_mode_ethernet_mac_0_ex
+ 7866251 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver
+X7995481 drwxr-xr-x  1000   1000      4096 22-Feb-2021 21:51 XOR_NN
+X7734959 drwxr-xr-x  1000   1000      4096  3-Mar-2021 11:27 goog-unwanted-proto.vlpset
+X7734960 -rw-r--r--  1000   1000       284 19-Feb-2021 11:42 goog-downloadwhite-proto.metadata
+X7734961 drwxr-xr-x  1000   1000      4096  3-Mar-2021 11:27 goog-unwanted-proto.metadata
+X7734962 -rw-r--r--  1000   1000       129 19-Feb-2021 11:42 goog-phish-proto.metadata
+X7734957 -rwxr-xr-x  1000   1000     24101  1-Mar-2021 19:15 goog-malware-proto.vlpset
+X7734965 -rwxr-xr-x  1000   1000      1734  1-Mar-2021 19:15 goog-badbinurl-proto.vlpset
+X7734967 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 goog-downloadwhite-proto.vlpset
+X7734965 -rwxr-xr-x  1000   1000      1734  1-Mar-2021 19:15 goog-badbinurl-proto-1.vlpset
+X7734911 -rw-r--r--  1000   1000     13834 19-Feb-2021 11:42 google-trackwhite-digest256.vlpset
+X7734912 -rw-r--r--  1000   1000     12129 19-Feb-2021 11:42 social-tracking-protection-facebook-digest256.vlpset
+X7734913 -rw-r--r--  1000   1000      6241 19-Feb-2021 11:42 google-trackwhite-digest256.sbstore
+X7734914 -rw-r--r--  1000   1000      9984 19-Feb-2021 11:42 social-tracking-protection-linkedin-digest256.sbstore
+X7734915 -rw-r--r--  1000   1000      4088 19-Feb-2021 11:42 except-flashsubdoc-digest256.vlpset
+X7734916 -rw-r--r--  1000   1000      6526 19-Feb-2021 11:42 social-tracking-protection-facebook-digest256.sbstore
+X7734917 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 except-flashallow-digest256.sbstore
+X7734918 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 mozstd-trackwhite-digest256.vlpset
+X7734919 -rw-r--r--  1000   1000      5006 19-Feb-2021 11:42 test-harmful-simple.pset
+X7734920 -rw-r--r--  1000   1000      6903 19-Feb-2021 11:42 content-track-digest256.sbstore
+X7734921 -rw-r--r--  1000   1000     14213 19-Feb-2021 11:42 test-unwanted-simple.pset
+X7734922 -rw-r--r--  1000   1000      8493 19-Feb-2021 11:42 social-track-digest256.sbstore
+X7734923 -rw-r--r--  1000   1000      4567 19-Feb-2021 11:42 base-cryptomining-track-digest256.sbstore
+X7734924 -rw-r--r--  1000   1000     28055 19-Feb-2021 11:42 base-fingerprinting-track-digest256.vlpset
+X7734925 -rw-r--r--  1000   1000      9702 19-Feb-2021 11:42 except-flashsubdoc-digest256.sbstore
+X7734926 -rw-r--r--  1000   1000      4528 19-Feb-2021 11:42 ads-track-digest256.sbstore
+X7734927 -rw-r--r--  1000   1000      7126 19-Feb-2021 11:42 block-flashsubdoc-digest256.vlpset
+X7734928 -rw-r--r--  1000   1000     59039 19-Feb-2021 11:42 content-track-digest256.vlpset
+X7734930 -rw-r--r--  1000   1000      5298  1-Mar-2021 19:15 test-track-simple.pset
+X7734931 drwxr-xr-x  1000   1000      4096  8-Mar-2021 11:40 google4
+X7734967 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 allow-flashallow-digest256.sbstore
+X7734974 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:20 social-tracking-protection-linkedin-digest256.vlpset
+X7734975 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 social-tracking-protection-twitter-digest256.sbstore
+X7735107 -rw-r--r--  1000   1000   1454137  1-Mar-2021 19:15 block-flash-digest256.vlpset
+X7735108 -rwxr-xr-x  1000   1000   2921413  1-Mar-2021 19:15 test-phish-simple.pset
+X7735109 -rwxr-xr-x  1000   1000   5067835  1-Mar-2021 19:15 mozplugin-block-digest256.vlpset
+X7735127 -rw-r--r--  1000   1000        54  1-Mar-2021 19:15 social-track-digest256.vlpset
+X7735151 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 analytics-track-digest256.sbstore
+X7735152 -rw-r--r--  1000   1000    398429  1-Mar-2021 19:15 except-flashallow-digest256.vlpset
+X7735153 -rw-r--r--  1000   1000   1474916  1-Mar-2021 19:15 block-flash-digest256.sbstore
+X7735154 -rwxr-xr-x  1000   1000   2948274  1-Mar-2021 19:15 test-malware-simple.pset
+X7735155 -rwxr-xr-x  1000   1000   5093516  1-Mar-2021 19:15 ads-track-digest256.vlpset
+X7735156 -rwxr-xr-x  1000   1000      1934  1-Mar-2021 19:15 test-block-simple.pset
+X7735157 -rwxr-xr-x  1000   1000      2316  1-Mar-2021 19:15 test-trackwhite-simple.pset
+X7735158 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 analytics-track-digest256.vlpset
+
+dir_partition inode=7866251
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver
+ 7866251 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .
+ 7733902 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:13 ..
+ 7866252 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.hw
+ 7866254 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.ip_user_files
+ 7864926 -rw-r--r--  1000   1000     15989 11-Mar-2021 20:09 MNIST_Solver.xpr
+ 7866391 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.sim
+ 7866450 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.cache
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.srcs
+ 7995409 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.runs
+X7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .hdi.isWriteableTest.1340.tmp
+
+dir_partition inode=7866482
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .
+ 7866251 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 sources_1
+ 7995406 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 sim_1
+ 7864868 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:11 tb_data
+X7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .hdi.isWriteableTest.1340.tmp
+
+dir_partition inode=7866483
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 .
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866484 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ip
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 imports
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 new
+ 7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 testdisk.log
+
+dir_partition inode=7866539
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 ..
+ 7867103 -rw-r--r--  1000   1000      1312 11-Mar-2021 20:35 Conv_1_Channel.sv
+X7867105 -r--r--r--  1000   1000       213 11-Mar-2021 20:39 .Conv_1_Channel.sv.swp
+X7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 .Conv_1_Channel.sv.swx
+X7867073 -rw-r--r--  1000   1000     47072 10-Mar-2021 17:01 goog-unwanted-proto.vlpset
+X7867074 -rw-r--r--  1000   1000     14351 10-Mar-2021 17:01 goog-downloadwhite-proto.metadata
+X7867075 -rw-r--r--  1000   1000      6683 10-Mar-2021 17:01 goog-unwanted-proto.metadata
+X7867076 -rw-r--r--  1000   1000     31209 10-Mar-2021 17:01 goog-phish-proto.metadata
+X7867077 -rw-r--r--  1000   1000     49152 11-Mar-2021 16:39 goog-malware-proto.vlpset
+X7867078 -rw-r--r--  1000   1000      1050 11-Mar-2021 20:09 goog-badbinurl-proto.vlpset
+X7867079 -rw-r--r--  1000   1000      2884 11-Mar-2021 20:09 goog-downloadwhite-proto.vlpset
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 .
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866484 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ip
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 imports
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 new
+ 7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 testdisk.log
+
+dir_partition inode=7866539
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 ..
+ 7867103 -rw-r--r--  1000   1000      1312 11-Mar-2021 20:35 Conv_1_Channel.sv
+X7867105 -r--r--r--  1000   1000       213 11-Mar-2021 20:39 .Conv_1_Channel.sv.swp
+X7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 .Conv_1_Channel.sv.swx
+X7867073 -rw-r--r--  1000   1000     47072 10-Mar-2021 17:01 goog-unwanted-proto.vlpset
+X7867074 -rw-r--r--  1000   1000     14351 10-Mar-2021 17:01 goog-downloadwhite-proto.metadata
+X7867075 -rw-r--r--  1000   1000      6683 10-Mar-2021 17:01 goog-unwanted-proto.metadata
+X7867076 -rw-r--r--  1000   1000     31209 10-Mar-2021 17:01 goog-phish-proto.metadata
+X7867077 -rw-r--r--  1000   1000     49152 11-Mar-2021 16:39 goog-malware-proto.vlpset
+X7867078 -rw-r--r--  1000   1000      1050 11-Mar-2021 20:09 goog-badbinurl-proto.vlpset
+X7867079 -rw-r--r--  1000   1000      2884 11-Mar-2021 20:09 goog-downloadwhite-proto.vlpset
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 .
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866484 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ip
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 imports
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 new
+ 7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 testdisk.log
+
+dir_partition inode=7866539
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 ..
+ 7867103 -rw-r--r--  1000   1000      1312 11-Mar-2021 20:35 Conv_1_Channel.sv
+X7867105 -r--r--r--  1000   1000       213 11-Mar-2021 20:39 .Conv_1_Channel.sv.swp
+X7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 .Conv_1_Channel.sv.swx
+X7867073 -rw-r--r--  1000   1000     47072 10-Mar-2021 17:01 goog-unwanted-proto.vlpset
+X7867074 -rw-r--r--  1000   1000     14351 10-Mar-2021 17:01 goog-downloadwhite-proto.metadata
+X7867075 -rw-r--r--  1000   1000      6683 10-Mar-2021 17:01 goog-unwanted-proto.metadata
+X7867076 -rw-r--r--  1000   1000     31209 10-Mar-2021 17:01 goog-phish-proto.metadata
+X7867077 -rw-r--r--  1000   1000     49152 11-Mar-2021 16:39 goog-malware-proto.vlpset
+X7867078 -rw-r--r--  1000   1000      1050 11-Mar-2021 20:09 goog-badbinurl-proto.vlpset
+X7867079 -rw-r--r--  1000   1000      2884 11-Mar-2021 20:09 goog-downloadwhite-proto.vlpset
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 .
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866484 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ip
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 imports
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 new
+ 7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 testdisk.log
+
+dir_partition inode=7995399
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 .
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 ..
+ 7995400 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:33 new
+ 7995402 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:34 rtl
+
+dir_partition inode=7995400
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new
+ 7995400 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:33 .
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ..
+ 7995401 -rw-r--r--  1000   1000      3329 22-Feb-2021 20:10 Conv_Kernel_3by3.sv
+ 7998358 -rw-r--r--  1000   1000      1568 11-Mar-2021 20:19 Conv_1_Channel_TB.sv
+X7998546 -r--r--r--  1000   1000       132 11-Mar-2021 20:39 .Conv_Kernel_3by3.sv.swp
+X7998547 -rw-------  1000   1000         0 11-Mar-2021 20:34 .Conv_Kernel_3by3.sv.swx
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 .
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 ..
+ 7995400 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:33 new
+ 7995402 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:34 rtl
+
+dir_partition inode=7995402
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl
+ 7995402 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:34 .
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ..
+ 7995403 -rw-r--r--  1000   1000       526 22-Feb-2021 20:10 ReLU.sv
+ 7995404 -rw-r--r--  1000   1000      1861 22-Feb-2021 20:10 Conv_Kernel_2by2.sv
+ 7995405 -rw-r--r--  1000   1000      2202 22-Feb-2021 20:10 FP_Round.sv
+X7998546 -r--r--r--  1000   1000       132 11-Mar-2021 20:39 .ReLU.sv.swp
+X7998547 -rw-------  1000   1000         0 11-Mar-2021 20:34 .ReLU.sv.swx
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 .
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 ..
+ 7995400 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:33 new
+ 7995402 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:34 rtl
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 .
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866484 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 ip
+ 7995399 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 imports
+ 7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 new
+ 7867109 -rw-r--r--  1000   1000     12288 11-Mar-2021 20:43 testdisk.log
+Directory /andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .
+ 7866251 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 ..
+ 7866483 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:41 sources_1
+ 7995406 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:10 sim_1
+ 7864868 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:11 tb_data
+X7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .hdi.isWriteableTest.1340.tmp
+Directory /andrew/infernet/accelerator/MNIST_Solver
+ 7866251 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .
+ 7733902 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:13 ..
+ 7866252 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.hw
+ 7866254 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.ip_user_files
+ 7864926 -rw-r--r--  1000   1000     15989 11-Mar-2021 20:09 MNIST_Solver.xpr
+ 7866391 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.sim
+ 7866450 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.cache
+ 7866482 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.srcs
+ 7995409 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver.runs
+X7866539 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:38 .hdi.isWriteableTest.1340.tmp
+Directory /andrew/infernet/accelerator
+ 7733902 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:13 .
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 ..
+ 7733904 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:20 rtl
+ 7734891 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 tri_mode_ethernet_mac_0_ex
+ 7866251 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 MNIST_Solver
+X7995481 drwxr-xr-x  1000   1000      4096 22-Feb-2021 21:51 XOR_NN
+X7734959 drwxr-xr-x  1000   1000      4096  3-Mar-2021 11:27 goog-unwanted-proto.vlpset
+X7734960 -rw-r--r--  1000   1000       284 19-Feb-2021 11:42 goog-downloadwhite-proto.metadata
+X7734961 drwxr-xr-x  1000   1000      4096  3-Mar-2021 11:27 goog-unwanted-proto.metadata
+X7734962 -rw-r--r--  1000   1000       129 19-Feb-2021 11:42 goog-phish-proto.metadata
+X7734957 -rwxr-xr-x  1000   1000     24101  1-Mar-2021 19:15 goog-malware-proto.vlpset
+X7734965 -rwxr-xr-x  1000   1000      1734  1-Mar-2021 19:15 goog-badbinurl-proto.vlpset
+X7734967 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 goog-downloadwhite-proto.vlpset
+X7734965 -rwxr-xr-x  1000   1000      1734  1-Mar-2021 19:15 goog-badbinurl-proto-1.vlpset
+X7734911 -rw-r--r--  1000   1000     13834 19-Feb-2021 11:42 google-trackwhite-digest256.vlpset
+X7734912 -rw-r--r--  1000   1000     12129 19-Feb-2021 11:42 social-tracking-protection-facebook-digest256.vlpset
+X7734913 -rw-r--r--  1000   1000      6241 19-Feb-2021 11:42 google-trackwhite-digest256.sbstore
+X7734914 -rw-r--r--  1000   1000      9984 19-Feb-2021 11:42 social-tracking-protection-linkedin-digest256.sbstore
+X7734915 -rw-r--r--  1000   1000      4088 19-Feb-2021 11:42 except-flashsubdoc-digest256.vlpset
+X7734916 -rw-r--r--  1000   1000      6526 19-Feb-2021 11:42 social-tracking-protection-facebook-digest256.sbstore
+X7734917 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 except-flashallow-digest256.sbstore
+X7734918 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 mozstd-trackwhite-digest256.vlpset
+X7734919 -rw-r--r--  1000   1000      5006 19-Feb-2021 11:42 test-harmful-simple.pset
+X7734920 -rw-r--r--  1000   1000      6903 19-Feb-2021 11:42 content-track-digest256.sbstore
+X7734921 -rw-r--r--  1000   1000     14213 19-Feb-2021 11:42 test-unwanted-simple.pset
+X7734922 -rw-r--r--  1000   1000      8493 19-Feb-2021 11:42 social-track-digest256.sbstore
+X7734923 -rw-r--r--  1000   1000      4567 19-Feb-2021 11:42 base-cryptomining-track-digest256.sbstore
+X7734924 -rw-r--r--  1000   1000     28055 19-Feb-2021 11:42 base-fingerprinting-track-digest256.vlpset
+X7734925 -rw-r--r--  1000   1000      9702 19-Feb-2021 11:42 except-flashsubdoc-digest256.sbstore
+X7734926 -rw-r--r--  1000   1000      4528 19-Feb-2021 11:42 ads-track-digest256.sbstore
+X7734927 -rw-r--r--  1000   1000      7126 19-Feb-2021 11:42 block-flashsubdoc-digest256.vlpset
+X7734928 -rw-r--r--  1000   1000     59039 19-Feb-2021 11:42 content-track-digest256.vlpset
+X7734930 -rw-r--r--  1000   1000      5298  1-Mar-2021 19:15 test-track-simple.pset
+X7734931 drwxr-xr-x  1000   1000      4096  8-Mar-2021 11:40 google4
+X7734967 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 allow-flashallow-digest256.sbstore
+X7734974 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:20 social-tracking-protection-linkedin-digest256.vlpset
+X7734975 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 social-tracking-protection-twitter-digest256.sbstore
+X7735107 -rw-r--r--  1000   1000   1454137  1-Mar-2021 19:15 block-flash-digest256.vlpset
+X7735108 -rwxr-xr-x  1000   1000   2921413  1-Mar-2021 19:15 test-phish-simple.pset
+X7735109 -rwxr-xr-x  1000   1000   5067835  1-Mar-2021 19:15 mozplugin-block-digest256.vlpset
+X7735127 -rw-r--r--  1000   1000        54  1-Mar-2021 19:15 social-track-digest256.vlpset
+X7735151 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 analytics-track-digest256.sbstore
+X7735152 -rw-r--r--  1000   1000    398429  1-Mar-2021 19:15 except-flashallow-digest256.vlpset
+X7735153 -rw-r--r--  1000   1000   1474916  1-Mar-2021 19:15 block-flash-digest256.sbstore
+X7735154 -rwxr-xr-x  1000   1000   2948274  1-Mar-2021 19:15 test-malware-simple.pset
+X7735155 -rwxr-xr-x  1000   1000   5093516  1-Mar-2021 19:15 ads-track-digest256.vlpset
+X7735156 -rwxr-xr-x  1000   1000      1934  1-Mar-2021 19:15 test-block-simple.pset
+X7735157 -rwxr-xr-x  1000   1000      2316  1-Mar-2021 19:15 test-trackwhite-simple.pset
+X7735158 drwxr-xr-x  1000   1000      4096  1-Mar-2021 19:15 analytics-track-digest256.vlpset
+Directory /andrew/infernet
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 .
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:47 ..
+  134109 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:39 .git
+  136741 -rw-r--r--  1000   1000        33 19-Feb-2021 11:42 README.md
+ 7733902 drwxr-xr-x  1000   1000      4096 22-Feb-2021 20:13 accelerator
+ 7735236 drwxr-xr-x  1000   1000      4096 19-Feb-2021 11:42 util
+  134102 -rw-r--r--  1000   1000        11 22-Feb-2021 19:31 .gitignore
+ 7865865 drwxr-xr-x  1000   1000      4096 11-Mar-2021 18:11 python
+ 7996119 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:10 misc
+X 136820 -rw-r--r--  1000   1000         0 11-Mar-2021 20:39 infernet text.png
+X 136821 -rw-r--r--  1000   1000    323741 11-Mar-2021 20:39 doom flames.png
+Directory /andrew
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:47 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+ 27789721 -rw-r--r--  1000   1000      3774 12-Jan-2021 17:36 .bashrc
+ 27787267 -rw-r--r--  1000   1000       220  7-Mar-2019 08:10 .bash_logout
+ 27787268 -rw-r--r--  1000   1000       675  7-Mar-2019 08:10 .profile
+ 27787269 drwxr-xr-x  1000   1000      4096 11-Feb-2021 20:54 .local
+ 27788055 -rw-------  1000   1000        58 11-Mar-2021 09:55 .Xauthority
+ 27787275 -rw-------  1000   1000  31130390 11-Mar-2021 20:47 .xsession-errors
+ 27787276 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:44 Desktop
+ 27787278 drwxr-xr-x  1000   1000      4096  5-Mar-2021 16:44 Downloads
+ 27787279 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Templates
+ 27787280 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Public
+ 27787281 drwxr-xr-x  1000   1000      4096  3-Feb-2021 16:14 Documents
+ 27787282 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Music
+ 27787283 drwxr-xr-x  1000   1000      4096 11-Feb-2021 20:04 Pictures
+ 27787284 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Videos
+ 27787285 drwx------  1000   1000      4096 11-Mar-2021 20:44 .config
+ 27787288 drwx------  1000   1000      4096  7-Mar-2019 08:12 .dbus
+ 27787291 drwx------  1000   1000      4096  7-Mar-2019 08:12 .gnupg
+ 27787298 drwxr-xr-x  1000   1000      4096 11-Mar-2021 15:22 .cache
+ 27787295 -rw-r--r--  1000   1000       336 11-Mar-2021 09:55 .gtkrc-2.0
+ 27787317 drwxr-xr-x  1000   1000      4096 22-Mar-2019 20:41 .kde
+ 27787332 drwx------  1000   1000      4096 21-Dec-2020 17:40 .gconf
+ 27790317 -rw-------  1000   1000     37415 11-Mar-2021 19:41 .bash_history
+ 27787502 drwx------  1000   1000      4096 12-Jan-2021 17:26 .mozilla
+ 27794423 -rw-------  1000   1000     50400 11-Mar-2021 20:47 .viminfo
+ 27790279 drwxr-xr-x  1000   1000      4096 27-Mar-2019 10:15 CSC418
+ 27918337 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:35 eclipse-installer
+ 27918830 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:35 .eclipse
+ 27918832 drwxr-xr-x  1000   1000      4096 29-Mar-2019 17:36 .p2
+ 27787780 drwxr-xr-x  1000   1000      4096 29-Mar-2019 17:36 eclipse
+ 27793678 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:36 eclipse-workspace
+ 28051620 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:37 .swt
+ 28052049 drwxr-xr-x  1000   1000      4096  8-Mar-2019 21:04 .atom
+ 28052048 drwx------  1000   1000      4096  8-Mar-2019 20:12 .pki
+  131516 drwxr-xr-x  1000   1000      4096  8-Mar-2019 20:30 .nano
+ 27797118 -rw-r--r--  1000   1000       197 13-Jan-2021 09:59 .gitconfig
+  393228 drwx------  1000   1000      4096 29-Sep-2020 22:31 .ssh
+ 27795109 -rw-r--r--  1000   1000      2311  8-Sep-2020 16:58 .vimrc
+  395406 drwxr-xr-x  1000   1000      4096  5-Nov-2020 17:25 ECE454
+ 27790758 -rw-r--r--  1000   1000      1280  9-Mar-2021 12:14 .bash_aliases
+  787094 drwx------  1000   1000      4096 12-Jan-2021 16:12 .nv
+  395465 drwxr-xr-x  1000   1000      4096 16-Oct-2020 21:58 .gimp-2.8
+ 27790036 -rw-------  1000   1000       365  2-Oct-2020 19:17 .recently-used
+  524778 drwxr-xr-x  1000   1000      4096 21-Dec-2020 11:00 ECE568
+ 27794136 -rw-r--r--  1000   1000       181  5-Mar-2021 16:48 .wget-hsts
+ 27801969 -rw-r--r--  1000   1000       291 30-Sep-2020 14:27 .screenrc
+ 27921238 drwx------  1000   1000      4096  1-Oct-2020 16:52 .thumbnails
+  787313 drwxr-xr-x  1000   1000      4096 12-Jan-2021 16:14 .runelite
+  787316 drwxr-xr-x  1000   1000      4096 14-Jan-2021 17:32 .java
+ 27789477 -rw-r--r--  1000   1000        42 11-Mar-2021 17:57 jagex_cl_oldschool_LIVE.dat
+  787421 drwxr-xr-x  1000   1000      4096  4-Oct-2020 19:47 jagexcache
+ 27796624 -rw-r--r--  1000   1000        24 11-Mar-2021 17:57 random.dat
+ 1048589 drwxr-xr-x  1000   1000      4096  1-Feb-2021 22:34 .oracle_jre_usage
+ 27921236 drwxr-xr-x  1000   1000      4096 21-Dec-2020 16:32 backups
+ 27797595 -rw-r--r--  1000   1000 844832863 21-Dec-2020 16:33 backups-dec-21-2020.tar.gz
+  524634 drwxr-xr-x  1000   1000      4096 30-Jan-2021 18:44 Xilinx
+  663644 drwxrwxrwx  1000   1000      4096  1-Feb-2021 23:11 .Xilinx
+ 27790176 -rw-r--r--  1000   1000      1648 11-Mar-2021 20:35 vivado.jou
+ 27790321 -rw-r--r--  1000   1000     26264 11-Mar-2021 20:35 vivado.log
+ 5898981 drwx------  1000   1000      4096 11-Mar-2021 17:15 .zoom
+ 27790935 -rw-r--r--  1000   1000       857 22-Jan-2021 10:33 IV.sim
+ 7997829 drwxrwxr-x  1000   1000      4096  2-Mar-2021 21:56 .dropbox-dist
+ 28052828 drwxr-xr-x  1000   1000      4096 12-Jan-2021 17:45 RuneLite
+ 7340391 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .Xil
+ 27799162 -rw-r--r--  1000   1000      8789 22-Jan-2021 10:39 Resistor_TS.inp
+ 27789108 -rw-r--r--  1000   1000       606 22-Jan-2021 11:49 l1p3.2-1e13.csv
+ 1843186 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:46 tmp
+ 27788986 -rw-r--r--  1000   1000       694  2-Feb-2021 00:13 webtalk.jou
+ 28053014 drwx------  1000   1000      4096 11-Mar-2021 09:55 Dropbox
+ 27798210 -rwxr-xr-x  1000   1000       145 24-Feb-2021 20:24 .flexlmrc
+ 28052995 drwx------  1000   1000      4096 11-Mar-2021 09:55 .dropbox
+ 27787762 -rw-r--r--  1000   1000     88492 11-Mar-2021 20:35 vivado_pid1340.str
+ 27797621 -rw-------  1000   1000   6959732 10-Mar-2021 22:56 planet2.mp4
+X27787933 -rw-r--r--  1000   1000      1521 11-Mar-2021 09:55 sAuKeo
+ 27793247 -rw-r--r--  1000   1000     86470 13-Jan-2021 12:26 mozilla.pdf
+ 2369333 drwxr-xr-x  1000   1000      4096  1-Mar-2021 21:57 ECE532-labs
+ 1580719 drwx------  1000   1000      4096  6-Feb-2021 16:26 .thunderbird
+ 7472562 drwxr-xr-x  1000   1000      4096  2-Feb-2021 19:13 managed_ip_project
+ 5898958 drwxr-xr-x  1000   1000      4096  2-Feb-2021 22:37 .vim
+ 27796188 -rw-r--r--  1000   1000        58 11-Mar-2021 12:56 min_area_pfile.tmp
+ 27797297 -rw-r--r--  1000   1000       462  6-Mar-2021 17:13 vivado_7302.backup.jou
+X27789304 -rw-------  1000   1000      8865 10-Mar-2021 20:28 =0.0.7
+ 7997541 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:14 .jupyter
+ 8126543 drwxr-xr-x  1000   1000      4096 26-Feb-2021 16:12 .gphoto
+ 2102278 drwxr-xr-x  1000   1000      4096  5-Mar-2021 16:51 PycharmProjects
+ 2102319 drwxr-xr-x  1000   1000      4096  8-Mar-2021 19:30 darkriscv
+  133900 drwxr-xr-x  1000   1000      4096  3-Mar-2021 12:16 ECE496-sandbox
+X27794423 -rw-------  1000   1000     50400 11-Mar-2021 20:47 .viminfo.tmp
+ 7472566 drwxr-xr-x  1000   1000      4096  2-Feb-2021 19:13 ip_user_files
+ 27790561 -rw-r--r--  1000   1000       763  2-Feb-2021 00:13 webtalk.log
+X27788550 -rw-------  1000   1000      8763 11-Mar-2021 20:04 vivado_5174.backup.log
+ 27790034 -rw-r--r--  1000   1000      8862  8-Mar-2021 22:19 vivado_9199.backup.jou
+ 1839175 drwxr-xr-x  1000   1000      4096 22-Feb-2021 19:37 ECE532-sandbox
+ 27787656 -rw-r--r--  1000   1000      1655  8-Feb-2021 21:12 hs_err_pid18239.log
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 infernet
+ 8128827 drwxr-xr-x  1000   1000      4096  8-Mar-2021 21:31 picorv32
+ 27790175 -rw-------  1000   1000      4013 11-Mar-2021 19:06 .python_history
+ 27788085 -rw-r--r--  1000   1000      2857  8-Mar-2021 22:21 vivado_15544.backup.jou
+ 27797298 -rw-r--r--  1000   1000       535  6-Mar-2021 17:22 vivado_7302.backup.log
+X27801463 -rw-------  1000   1000      9100 11-Mar-2021 16:33 .Xauthority-c
+ 27790698 -rw-r--r--  1000   1000     81698  8-Mar-2021 22:21 vivado_9199.backup.log
+ 7997595 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:12 .ipython
+ 8390283 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:27 .keras
+ 27787959 -rw-r--r--  1000   1000       845 11-Mar-2021 12:56 vivado_7065.backup.jou
+ 27800619 -rw-r--r--  1000   1000      2665 11-Mar-2021 17:56 vivado_7065.backup.log
+ 27794091 -rw-r--r--  1000   1000      8305  8-Mar-2021 22:21 vivado_15544.backup.log
+ 27788504 -rw-r--r--  1000   1000      1067  9-Mar-2021 11:31 vivado_8151.backup.jou
+ 27788956 -rw-r--r--  1000   1000      1403  9-Mar-2021 12:57 vivado_8151.backup.log
+Directory /
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+      11 drwx------     0      0     16384  7-Mar-2019 01:36 lost+found
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:47 andrew
+
+Interface Advanced
+
+recover_EXT2: s_block_group_nr=0/3437, s_mnt_count=60/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 112626688
+recover_EXT2: part_size 901013504
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+
+
+dir_partition inode=2
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+      11 drwx------     0      0     16384  7-Mar-2019 01:36 lost+found
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:47 andrew
+
+dir_partition inode=27787265
+   P ext4                           0  901013503  901013504
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 461 GB / 429 GiB
+Directory /andrew
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:47 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+ 27789721 -rw-r--r--  1000   1000      3774 12-Jan-2021 17:36 .bashrc
+ 27787267 -rw-r--r--  1000   1000       220  7-Mar-2019 08:10 .bash_logout
+ 27787268 -rw-r--r--  1000   1000       675  7-Mar-2019 08:10 .profile
+ 27787269 drwxr-xr-x  1000   1000      4096 11-Feb-2021 20:54 .local
+ 27788055 -rw-------  1000   1000        58 11-Mar-2021 09:55 .Xauthority
+ 27787275 -rw-------  1000   1000  31130390 11-Mar-2021 20:47 .xsession-errors
+ 27787276 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:44 Desktop
+ 27787278 drwxr-xr-x  1000   1000      4096  5-Mar-2021 16:44 Downloads
+ 27787279 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Templates
+ 27787280 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Public
+ 27787281 drwxr-xr-x  1000   1000      4096  3-Feb-2021 16:14 Documents
+ 27787282 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Music
+ 27787283 drwxr-xr-x  1000   1000      4096 11-Feb-2021 20:04 Pictures
+ 27787284 drwxr-xr-x  1000   1000      4096  7-Mar-2019 08:12 Videos
+ 27787285 drwx------  1000   1000      4096 11-Mar-2021 20:44 .config
+ 27787288 drwx------  1000   1000      4096  7-Mar-2019 08:12 .dbus
+ 27787291 drwx------  1000   1000      4096  7-Mar-2019 08:12 .gnupg
+ 27787298 drwxr-xr-x  1000   1000      4096 11-Mar-2021 15:22 .cache
+ 27787295 -rw-r--r--  1000   1000       336 11-Mar-2021 09:55 .gtkrc-2.0
+ 27787317 drwxr-xr-x  1000   1000      4096 22-Mar-2019 20:41 .kde
+ 27787332 drwx------  1000   1000      4096 21-Dec-2020 17:40 .gconf
+ 27790317 -rw-------  1000   1000     37415 11-Mar-2021 19:41 .bash_history
+ 27787502 drwx------  1000   1000      4096 12-Jan-2021 17:26 .mozilla
+ 27794423 -rw-------  1000   1000     50400 11-Mar-2021 20:47 .viminfo
+ 27790279 drwxr-xr-x  1000   1000      4096 27-Mar-2019 10:15 CSC418
+ 27918337 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:35 eclipse-installer
+ 27918830 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:35 .eclipse
+ 27918832 drwxr-xr-x  1000   1000      4096 29-Mar-2019 17:36 .p2
+ 27787780 drwxr-xr-x  1000   1000      4096 29-Mar-2019 17:36 eclipse
+ 27793678 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:36 eclipse-workspace
+ 28051620 drwxr-xr-x  1000   1000      4096  8-Mar-2019 19:37 .swt
+ 28052049 drwxr-xr-x  1000   1000      4096  8-Mar-2019 21:04 .atom
+ 28052048 drwx------  1000   1000      4096  8-Mar-2019 20:12 .pki
+  131516 drwxr-xr-x  1000   1000      4096  8-Mar-2019 20:30 .nano
+ 27797118 -rw-r--r--  1000   1000       197 13-Jan-2021 09:59 .gitconfig
+  393228 drwx------  1000   1000      4096 29-Sep-2020 22:31 .ssh
+ 27795109 -rw-r--r--  1000   1000      2311  8-Sep-2020 16:58 .vimrc
+  395406 drwxr-xr-x  1000   1000      4096  5-Nov-2020 17:25 ECE454
+ 27790758 -rw-r--r--  1000   1000      1280  9-Mar-2021 12:14 .bash_aliases
+  787094 drwx------  1000   1000      4096 12-Jan-2021 16:12 .nv
+  395465 drwxr-xr-x  1000   1000      4096 16-Oct-2020 21:58 .gimp-2.8
+ 27790036 -rw-------  1000   1000       365  2-Oct-2020 19:17 .recently-used
+  524778 drwxr-xr-x  1000   1000      4096 21-Dec-2020 11:00 ECE568
+ 27794136 -rw-r--r--  1000   1000       181  5-Mar-2021 16:48 .wget-hsts
+ 27801969 -rw-r--r--  1000   1000       291 30-Sep-2020 14:27 .screenrc
+ 27921238 drwx------  1000   1000      4096  1-Oct-2020 16:52 .thumbnails
+  787313 drwxr-xr-x  1000   1000      4096 12-Jan-2021 16:14 .runelite
+  787316 drwxr-xr-x  1000   1000      4096 14-Jan-2021 17:32 .java
+ 27789477 -rw-r--r--  1000   1000        42 11-Mar-2021 17:57 jagex_cl_oldschool_LIVE.dat
+  787421 drwxr-xr-x  1000   1000      4096  4-Oct-2020 19:47 jagexcache
+ 27796624 -rw-r--r--  1000   1000        24 11-Mar-2021 17:57 random.dat
+ 1048589 drwxr-xr-x  1000   1000      4096  1-Feb-2021 22:34 .oracle_jre_usage
+ 27921236 drwxr-xr-x  1000   1000      4096 21-Dec-2020 16:32 backups
+ 27797595 -rw-r--r--  1000   1000 844832863 21-Dec-2020 16:33 backups-dec-21-2020.tar.gz
+  524634 drwxr-xr-x  1000   1000      4096 30-Jan-2021 18:44 Xilinx
+  663644 drwxrwxrwx  1000   1000      4096  1-Feb-2021 23:11 .Xilinx
+ 27790176 -rw-r--r--  1000   1000      1648 11-Mar-2021 20:35 vivado.jou
+ 27790321 -rw-r--r--  1000   1000     26264 11-Mar-2021 20:35 vivado.log
+ 5898981 drwx------  1000   1000      4096 11-Mar-2021 17:15 .zoom
+ 27790935 -rw-r--r--  1000   1000       857 22-Jan-2021 10:33 IV.sim
+ 7997829 drwxrwxr-x  1000   1000      4096  2-Mar-2021 21:56 .dropbox-dist
+ 28052828 drwxr-xr-x  1000   1000      4096 12-Jan-2021 17:45 RuneLite
+ 7340391 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:24 .Xil
+ 27799162 -rw-r--r--  1000   1000      8789 22-Jan-2021 10:39 Resistor_TS.inp
+ 27789108 -rw-r--r--  1000   1000       606 22-Jan-2021 11:49 l1p3.2-1e13.csv
+ 1843186 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:46 tmp
+ 27788986 -rw-r--r--  1000   1000       694  2-Feb-2021 00:13 webtalk.jou
+ 28053014 drwx------  1000   1000      4096 11-Mar-2021 09:55 Dropbox
+ 27798210 -rwxr-xr-x  1000   1000       145 24-Feb-2021 20:24 .flexlmrc
+ 28052995 drwx------  1000   1000      4096 11-Mar-2021 09:55 .dropbox
+ 27787762 -rw-r--r--  1000   1000     88492 11-Mar-2021 20:35 vivado_pid1340.str
+ 27797621 -rw-------  1000   1000   6959732 10-Mar-2021 22:56 planet2.mp4
+X27787933 -rw-r--r--  1000   1000      1521 11-Mar-2021 09:55 sAuKeo
+ 27793247 -rw-r--r--  1000   1000     86470 13-Jan-2021 12:26 mozilla.pdf
+ 2369333 drwxr-xr-x  1000   1000      4096  1-Mar-2021 21:57 ECE532-labs
+ 1580719 drwx------  1000   1000      4096  6-Feb-2021 16:26 .thunderbird
+ 7472562 drwxr-xr-x  1000   1000      4096  2-Feb-2021 19:13 managed_ip_project
+ 5898958 drwxr-xr-x  1000   1000      4096  2-Feb-2021 22:37 .vim
+ 27796188 -rw-r--r--  1000   1000        58 11-Mar-2021 12:56 min_area_pfile.tmp
+ 27797297 -rw-r--r--  1000   1000       462  6-Mar-2021 17:13 vivado_7302.backup.jou
+X27789304 -rw-------  1000   1000      8865 10-Mar-2021 20:28 =0.0.7
+ 7997541 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:14 .jupyter
+ 8126543 drwxr-xr-x  1000   1000      4096 26-Feb-2021 16:12 .gphoto
+ 2102278 drwxr-xr-x  1000   1000      4096  5-Mar-2021 16:51 PycharmProjects
+ 2102319 drwxr-xr-x  1000   1000      4096  8-Mar-2021 19:30 darkriscv
+  133900 drwxr-xr-x  1000   1000      4096  3-Mar-2021 12:16 ECE496-sandbox
+X27794423 -rw-------  1000   1000     50400 11-Mar-2021 20:47 .viminfo.tmp
+ 7472566 drwxr-xr-x  1000   1000      4096  2-Feb-2021 19:13 ip_user_files
+ 27790561 -rw-r--r--  1000   1000       763  2-Feb-2021 00:13 webtalk.log
+X27788550 -rw-------  1000   1000      8763 11-Mar-2021 20:04 vivado_5174.backup.log
+ 27790034 -rw-r--r--  1000   1000      8862  8-Mar-2021 22:19 vivado_9199.backup.jou
+ 1839175 drwxr-xr-x  1000   1000      4096 22-Feb-2021 19:37 ECE532-sandbox
+ 27787656 -rw-r--r--  1000   1000      1655  8-Feb-2021 21:12 hs_err_pid18239.log
+  134070 drwxr-xr-x  1000   1000      4096 10-Mar-2021 22:19 infernet
+ 8128827 drwxr-xr-x  1000   1000      4096  8-Mar-2021 21:31 picorv32
+ 27790175 -rw-------  1000   1000      4013 11-Mar-2021 19:06 .python_history
+ 27788085 -rw-r--r--  1000   1000      2857  8-Mar-2021 22:21 vivado_15544.backup.jou
+ 27797298 -rw-r--r--  1000   1000       535  6-Mar-2021 17:22 vivado_7302.backup.log
+X27801463 -rw-------  1000   1000      9100 11-Mar-2021 16:33 .Xauthority-c
+ 27790698 -rw-r--r--  1000   1000     81698  8-Mar-2021 22:21 vivado_9199.backup.log
+ 7997595 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:12 .ipython
+ 8390283 drwxr-xr-x  1000   1000      4096  9-Mar-2021 12:27 .keras
+ 27787959 -rw-r--r--  1000   1000       845 11-Mar-2021 12:56 vivado_7065.backup.jou
+ 27800619 -rw-r--r--  1000   1000      2665 11-Mar-2021 17:56 vivado_7065.backup.log
+ 27794091 -rw-r--r--  1000   1000      8305  8-Mar-2021 22:21 vivado_15544.backup.log
+ 27788504 -rw-r--r--  1000   1000      1067  9-Mar-2021 11:31 vivado_8151.backup.jou
+ 27788956 -rw-r--r--  1000   1000      1403  9-Mar-2021 12:57 vivado_8151.backup.log
+Directory /
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 .
+       2 drwxr-xr-x     0      0      4096  7-Mar-2019 08:10 ..
+      11 drwx------     0      0     16384  7-Mar-2019 01:36 lost+found
+ 27787265 drwxr-xr-x  1000   1000      4096 11-Mar-2021 20:47 andrew
+
+TestDisk exited normally.

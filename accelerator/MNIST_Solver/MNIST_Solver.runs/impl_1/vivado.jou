@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Mar  8 12:58:36 2021
+# Process ID: 25548
+# Current directory: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/impl_1
+# Command line: vivado -log Top_Compile_Test.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Top_Compile_Test.tcl -notrace
+# Log file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/impl_1/Top_Compile_Test.vdi
+# Journal file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source Top_Compile_Test.tcl -notrace

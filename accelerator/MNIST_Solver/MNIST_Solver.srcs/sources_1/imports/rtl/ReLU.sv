@@ -9,9 +9,9 @@ module ReLU #(
     parameter WIDTH = 18
 )(
     input signed [WIDTH-1 : 0] in,
-    input signed [WIDTH-1 : 0] out
+    output signed [WIDTH-1 : 0] out
 );
     
-    assign out = (in[WIDTH - 1]) ? 'b0 : in;
+    assign out = (in[WIDTH - 1] == 1'b1) ? 'b0 : in;
     
 endmodule
