@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1615770577">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1615838692">
   <File Type="VDS-TIMING-PB" Name="MNIST_Solver_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="MNIST_Solver_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="MNIST_Solver.dcp"/>
@@ -18,17 +18,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Conv_1_Channel.sv">
+    <File Path="$PSRCDIR/sources_1/imports/new/Conv_Kernel_3by3.sv">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532-sandbox/convSANDBOX/convSANDBOX.srcs/sources_1/new/Conv_Kernel_3by3.sv"/>
+        <Attr Name="ImportTime" Val="1614027756"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/Conv_Kernel_3by3.sv">
+    <File Path="$PSRCDIR/sources_1/new/Conv_Layer_1.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532-sandbox/convSANDBOX/convSANDBOX.srcs/sources_1/new/Conv_Kernel_3by3.sv"/>
-        <Attr Name="ImportTime" Val="1614027756"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -54,6 +54,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/MNIST_Solver.sv">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Conv_1_Channel.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -102,9 +110,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="Conv_1_BRAM"/>

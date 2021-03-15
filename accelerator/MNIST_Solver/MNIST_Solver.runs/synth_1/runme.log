@@ -14,29 +14,33 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8663 
+INFO: Helper process launched with PID 30137 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1433.867 ; gain = 81.855 ; free physical = 10504 ; free virtual = 23063
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1433.871 ; gain = 76.855 ; free physical = 12088 ; free virtual = 25288
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MNIST_Solver' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_Channel' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_1_Channel.sv:3]
-	Parameter weights bound to: 162'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter bias bound to: 18'sb000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'Conv_1_Frame_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Frame_Buffer' (2#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_1' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
+	Parameter weights bound to: 972'b111111101011011110111111101100110010111111001111100100111111010010000011111111101100011110111111011101111101111111000111110010000000101001001101000000001000011110111110111011100001111111000100111000111110101111011101000000100000011110111111111000011101111110100101000010000001011101110100000001000001001001000000010010000001000001000111111001000000011101011110111111100110010100111111101000011111000000100000100011000000000011010010111111000011010110111111111101111010000000010101010101000000101001011010000000100000111001111110110010000001000000101000001101000000010110001110111111000010101110000000101111001011111111011110001101111110101110011111111111100110100010111110111010010001111111110010100110111111011000011000000000011000101111000001001011010101000000101010110010000000101110001100000000001110001101111111011001100110111111100010110100000000111100100110111111100101110011111111011100111111000001000101111001111111100010101110111111010001111001000000110000010110 
+	Parameter biases bound to: 108'b000000101100000110111111111111111001111111111111111011111111111111111110111111110100110100111111111000000000 
 INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_3by3' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
-	Parameter weights bound to: 162'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter bias bound to: 18'sb000000000000000000 
+	Parameter weights bound to: 162'b111111011001100110111111100010110100000000111100100110111111100101110011111111011100111111000001000101111001111111100010101110111111010001111001000000110000010110 
+	Parameter bias bound to: 18'sb111111111000000000 
 INFO: [Synth 8-6157] synthesizing module 'FP_Round' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 	Parameter NUM_M bound to: 7 - type: integer 
 	Parameter NUM_F bound to: 10 - type: integer 
 	Parameter NUM_P bound to: 48 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'FP_Round' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'FP_Round' (3#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-8627-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (2#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-8627-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
 WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
 WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-8627-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (3#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-8627-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
 WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
 WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
 WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
@@ -45,19 +49,90 @@ WARNING: [Synth 8-350] instance 'M1_2' of module 'Mult_Add_Pipelined_COL' requir
 WARNING: [Synth 8-350] instance 'M2_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:111]
 WARNING: [Synth 8-350] instance 'M2_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:122]
 WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:133]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3' (6#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
 INFO: [Synth 8-6157] synthesizing module 'ReLU' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/ReLU.sv:8]
 	Parameter WIDTH bound to: 18 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ReLU' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/ReLU.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'ReLU' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/ReLU.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_3by3__parameterized0' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+	Parameter weights bound to: 162'b111111100110100010111110111010010001111111110010100110111111011000011000000000011000101111000001001011010101000000101010110010000000101110001100000000001110001101 
+	Parameter bias bound to: 18'sb111111110100110100 
+WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
+WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
+WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
+WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
+WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
+WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
+WARNING: [Synth 8-350] instance 'M1_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:89]
+WARNING: [Synth 8-350] instance 'M1_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:100]
+WARNING: [Synth 8-350] instance 'M2_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:111]
+WARNING: [Synth 8-350] instance 'M2_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:122]
+WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3__parameterized0' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_3by3__parameterized1' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+	Parameter weights bound to: 162'b000000101001011010000000100000111001111110110010000001000000101000001101000000010110001110111111000010101110000000101111001011111111011110001101111110101110011111 
+	Parameter bias bound to: 18'sb111111111111111110 
+WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
+WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
+WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
+WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
+WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
+WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
+WARNING: [Synth 8-350] instance 'M1_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:89]
+WARNING: [Synth 8-350] instance 'M1_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:100]
+WARNING: [Synth 8-350] instance 'M2_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:111]
+WARNING: [Synth 8-350] instance 'M2_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:122]
+WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3__parameterized1' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_3by3__parameterized2' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+	Parameter weights bound to: 162'b000001000111111001000000011101011110111111100110010100111111101000011111000000100000100011000000000011010010111111000011010110111111111101111010000000010101010101 
+	Parameter bias bound to: 18'sb111111111111111011 
+WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
+WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
+WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
+WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
+WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
+WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
+WARNING: [Synth 8-350] instance 'M1_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:89]
+WARNING: [Synth 8-350] instance 'M1_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:100]
+WARNING: [Synth 8-350] instance 'M2_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:111]
+WARNING: [Synth 8-350] instance 'M2_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:122]
+WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3__parameterized2' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_3by3__parameterized3' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+	Parameter weights bound to: 162'b111110111011100001111111000100111000111110101111011101000000100000011110111111111000011101111110100101000010000001011101110100000001000001001001000000010010000001 
+	Parameter bias bound to: 18'sb111111111111111001 
+WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
+WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
+WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
+WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
+WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
+WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
+WARNING: [Synth 8-350] instance 'M1_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:89]
+WARNING: [Synth 8-350] instance 'M1_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:100]
+WARNING: [Synth 8-350] instance 'M2_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:111]
+WARNING: [Synth 8-350] instance 'M2_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:122]
+WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3__parameterized3' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_3by3__parameterized4' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
+	Parameter weights bound to: 162'b111111101011011110111111101100110010111111001111100100111111010010000011111111101100011110111111011101111101111111000111110010000000101001001101000000001000011110 
+	Parameter bias bound to: 18'sb000000101100000110 
+WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
+WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
+WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
+WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
+WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
+WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
+WARNING: [Synth 8-350] instance 'M1_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:89]
+WARNING: [Synth 8-350] instance 'M1_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:100]
+WARNING: [Synth 8-350] instance 'M2_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:111]
+WARNING: [Synth 8-350] instance 'M2_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:122]
+WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3__parameterized4' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
 WARNING: [Synth 8-5856] 3D RAM kernel_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Channel' (6#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_1_Channel.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_Frame_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-8627-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-8627-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Frame_Buffer' (8#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_1' (8#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (9#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.617 ; gain = 127.605 ; free physical = 10514 ; free virtual = 23073
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 12096 ; free virtual = 25297
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -70,85 +145,285 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.617 ; gain = 127.605 ; free physical = 10514 ; free virtual = 23072
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 12098 ; free virtual = 25298
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.617 ; gain = 127.605 ; free physical = 10514 ; free virtual = 23072
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 12098 ; free virtual = 25298
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'channel1/kernel/M0_0'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'channel1/kernel/M0_0'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M0_1'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M0_1'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M0_2'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M0_2'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M1_0'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M1_0'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M1_1'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M1_1'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M1_2'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M1_2'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M2_0'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M2_0'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M2_1'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M2_1'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M2_2'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'channel1/kernel/M2_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M0_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M0_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M0_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M0_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M0_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M0_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M0_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M0_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M0_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M0_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M0_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M0_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M0_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M0_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M0_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M0_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M1_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M1_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M1_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M1_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M1_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M1_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M2_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M2_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M2_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M2_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M2_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[0].kernel/M2_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M0_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M0_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M0_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M0_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M1_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M1_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M1_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M1_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M1_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M1_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M2_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M2_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M2_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M2_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M2_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[1].kernel/M2_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M0_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M0_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M0_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M0_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M1_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M1_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M1_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M1_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M1_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M1_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M2_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M2_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M2_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M2_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M2_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[2].kernel/M2_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M0_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M0_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M0_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M0_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M1_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M1_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M1_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M1_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M1_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M1_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M2_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M2_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M2_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M2_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M2_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[3].kernel/M2_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M0_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M0_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M0_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M0_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M1_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M1_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M1_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M1_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M1_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M1_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M2_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M2_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M2_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M2_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M2_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[4].kernel/M2_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M0_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M0_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M0_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M0_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M1_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M1_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M1_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M1_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M1_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M1_2'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_0'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_0'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_1'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_1'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_2'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_2'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'in_buf/ram'
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'in_buf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'out_buf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'out_buf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].obuf/ram'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/constrs_1/new/main.xdc]
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/constrs_1/new/main.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.461 ; gain = 0.000 ; free physical = 10219 ; free virtual = 22778
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.465 ; gain = 0.000 ; free physical = 11790 ; free virtual = 25024
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.461 ; gain = 0.000 ; free physical = 10219 ; free virtual = 22778
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1812.461 ; gain = 0.000 ; free physical = 10219 ; free virtual = 22778
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'channel1/kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.465 ; gain = 0.000 ; free physical = 11788 ; free virtual = 25022
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1820.465 ; gain = 0.000 ; free physical = 11788 ; free virtual = 25022
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[1].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[2].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[3].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[4].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M1_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M1_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M1_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M2_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'in_buf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'out_buf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[0].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[1].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[2].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[3].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[4].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[5].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10320 ; free virtual = 22878
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11866 ; free virtual = 25101
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10319 ; free virtual = 22878
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11866 ; free virtual = 25101
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for channel1/kernel/M0_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M0_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M0_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M1_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M1_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M1_2. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M2_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M2_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for channel1/kernel/M2_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M0_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M0_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M0_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M0_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M0_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M0_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M0_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M0_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M0_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M0_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M0_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M0_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M0_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M0_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M0_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M0_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M0_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M0_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M1_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M1_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M1_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M1_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M1_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M1_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M1_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M1_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M1_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M1_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M1_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M1_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M1_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M2_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M2_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M2_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M2_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M2_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M2_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M2_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M2_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M2_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M2_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M2_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M2_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[0].kernel /M2_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[1].kernel /M2_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[2].kernel /M2_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M2_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M2_2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M2_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for in_buf/ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for out_buf/ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[0].obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[1].obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[2].obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[3].obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[4].obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[5].obuf /ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10322 ; free virtual = 22880
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11867 ; free virtual = 25102
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
@@ -156,7 +431,7 @@ INFO: [Synth 8-5546] ROM "kernel_in_reg[2][0]" won't be mapped to RAM because it
 INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10313 ; free virtual = 22872
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11860 ; free virtual = 25095
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -169,7 +444,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     48 Bit       Adders := 1     
+	   2 Input     48 Bit       Adders := 6     
 	   2 Input      5 Bit       Adders := 6     
 	   3 Input      5 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 1     
@@ -179,7 +454,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 3     
+	   2 Input     18 Bit        Muxes := 18    
 	   2 Input      5 Bit        Muxes := 4     
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 23    
@@ -200,7 +475,7 @@ Module ReLU
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     18 Bit        Muxes := 1     
-Module Conv_1_Channel 
+Module Conv_Layer_1 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      5 Bit       Adders := 6     
@@ -231,10 +506,15 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "channel1/cell_row_offset" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "channel1/row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "kernel_in_reg[2][0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DUT/row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "DUT/cell_row_offset" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10299 ; free virtual = 22860
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11841 ; free virtual = 25081
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -246,13 +526,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10174 ; free virtual = 22738
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11718 ; free virtual = 24964
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10167 ; free virtual = 22731
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11714 ; free virtual = 24960
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -264,7 +544,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11711 ; free virtual = 24958
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -287,109 +567,109 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[47]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[46]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[45]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[44]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[43]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[42]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[41]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[40]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[39]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[38]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[37]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[36]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[35]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[34]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[33]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[32]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[31]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[30]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[29]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[28]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[27]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[26]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[25]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[24]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[23]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[22]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[21]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[20]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[19]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[18]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[17]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[16]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[15]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[14]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[13]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[12]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[11]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[10]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[9]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[8]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[7]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[6]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[5]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[4]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[3]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[2]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[1]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_1  has unconnected pin C[0]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[47]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[46]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[45]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[44]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[43]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[42]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[41]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[40]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[39]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[38]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[37]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[36]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[35]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[34]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[33]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[32]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[31]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[30]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[29]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[28]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[27]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[26]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[25]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[24]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[23]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[22]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[21]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[20]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[19]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[18]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[17]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[16]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[15]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[14]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[13]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[12]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[11]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[10]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[9]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[8]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[7]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[6]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[5]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[4]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[3]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[2]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[1]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M0_2  has unconnected pin C[0]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M1_0  has unconnected pin C[47]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M1_0  has unconnected pin C[46]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M1_0  has unconnected pin C[45]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module \channel1/kernel/M1_0  has unconnected pin C[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[43]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[42]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[41]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[40]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[39]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[38]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[37]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[36]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[35]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[34]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[33]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[32]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_1  has unconnected pin C[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[43]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[42]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[41]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[40]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[39]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[38]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[37]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[36]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[35]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[34]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[33]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[32]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M0_2  has unconnected pin C[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[44]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -402,7 +682,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -414,25 +694,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -442,9 +722,9 @@ Report BlackBoxes:
 +------+-----------------------+----------+
 |      |BlackBox name          |Instances |
 +------+-----------------------+----------+
-|1     |Mult_Add_Pipelined_NC  |         1|
-|2     |Mult_Add_Pipelined_COL |         8|
-|3     |Conv_1_BRAM            |         2|
+|1     |Mult_Add_Pipelined_NC  |         6|
+|2     |Mult_Add_Pipelined_COL |        48|
+|3     |Conv_1_BRAM            |         7|
 +------+-----------------------+----------+
 
 Report Cell Usage: 
@@ -452,62 +732,122 @@ Report Cell Usage:
 |      |Cell                       |Count |
 +------+---------------------------+------+
 |1     |Conv_1_BRAM                |     1|
-|2     |Conv_1_BRAM__2             |     1|
-|3     |Mult_Add_Pipelined_COL     |     1|
-|4     |Mult_Add_Pipelined_COL__10 |     1|
-|5     |Mult_Add_Pipelined_COL__11 |     1|
-|6     |Mult_Add_Pipelined_COL__12 |     1|
-|7     |Mult_Add_Pipelined_COL__13 |     1|
-|8     |Mult_Add_Pipelined_COL__14 |     1|
-|9     |Mult_Add_Pipelined_COL__8  |     1|
-|10    |Mult_Add_Pipelined_COL__9  |     1|
-|11    |Mult_Add_Pipelined_NC      |     1|
-|12    |BUFG                       |     1|
-|13    |CARRY4                     |    10|
-|14    |LUT1                       |     4|
-|15    |LUT2                       |    36|
-|16    |LUT3                       |    25|
-|17    |LUT4                       |    17|
-|18    |LUT5                       |    21|
-|19    |LUT6                       |    39|
-|20    |FDRE                       |   207|
-|21    |FDSE                       |     3|
-|22    |IBUF                       |    42|
-|23    |OBUF                       |    19|
+|2     |Conv_1_BRAM__10            |     1|
+|3     |Conv_1_BRAM__11            |     1|
+|4     |Conv_1_BRAM__12            |     1|
+|5     |Conv_1_BRAM__7             |     1|
+|6     |Conv_1_BRAM__8             |     1|
+|7     |Conv_1_BRAM__9             |     1|
+|8     |Mult_Add_Pipelined_COL     |     1|
+|9     |Mult_Add_Pipelined_COL__48 |     1|
+|10    |Mult_Add_Pipelined_COL__49 |     1|
+|11    |Mult_Add_Pipelined_COL__50 |     1|
+|12    |Mult_Add_Pipelined_COL__51 |     1|
+|13    |Mult_Add_Pipelined_COL__52 |     1|
+|14    |Mult_Add_Pipelined_COL__53 |     1|
+|15    |Mult_Add_Pipelined_COL__54 |     1|
+|16    |Mult_Add_Pipelined_COL__55 |     1|
+|17    |Mult_Add_Pipelined_COL__56 |     1|
+|18    |Mult_Add_Pipelined_COL__57 |     1|
+|19    |Mult_Add_Pipelined_COL__58 |     1|
+|20    |Mult_Add_Pipelined_COL__59 |     1|
+|21    |Mult_Add_Pipelined_COL__60 |     1|
+|22    |Mult_Add_Pipelined_COL__61 |     1|
+|23    |Mult_Add_Pipelined_COL__62 |     1|
+|24    |Mult_Add_Pipelined_COL__63 |     1|
+|25    |Mult_Add_Pipelined_COL__64 |     1|
+|26    |Mult_Add_Pipelined_COL__65 |     1|
+|27    |Mult_Add_Pipelined_COL__66 |     1|
+|28    |Mult_Add_Pipelined_COL__67 |     1|
+|29    |Mult_Add_Pipelined_COL__68 |     1|
+|30    |Mult_Add_Pipelined_COL__69 |     1|
+|31    |Mult_Add_Pipelined_COL__70 |     1|
+|32    |Mult_Add_Pipelined_COL__71 |     1|
+|33    |Mult_Add_Pipelined_COL__72 |     1|
+|34    |Mult_Add_Pipelined_COL__73 |     1|
+|35    |Mult_Add_Pipelined_COL__74 |     1|
+|36    |Mult_Add_Pipelined_COL__75 |     1|
+|37    |Mult_Add_Pipelined_COL__76 |     1|
+|38    |Mult_Add_Pipelined_COL__77 |     1|
+|39    |Mult_Add_Pipelined_COL__78 |     1|
+|40    |Mult_Add_Pipelined_COL__79 |     1|
+|41    |Mult_Add_Pipelined_COL__80 |     1|
+|42    |Mult_Add_Pipelined_COL__81 |     1|
+|43    |Mult_Add_Pipelined_COL__82 |     1|
+|44    |Mult_Add_Pipelined_COL__83 |     1|
+|45    |Mult_Add_Pipelined_COL__84 |     1|
+|46    |Mult_Add_Pipelined_COL__85 |     1|
+|47    |Mult_Add_Pipelined_COL__86 |     1|
+|48    |Mult_Add_Pipelined_COL__87 |     1|
+|49    |Mult_Add_Pipelined_COL__88 |     1|
+|50    |Mult_Add_Pipelined_COL__89 |     1|
+|51    |Mult_Add_Pipelined_COL__90 |     1|
+|52    |Mult_Add_Pipelined_COL__91 |     1|
+|53    |Mult_Add_Pipelined_COL__92 |     1|
+|54    |Mult_Add_Pipelined_COL__93 |     1|
+|55    |Mult_Add_Pipelined_COL__94 |     1|
+|56    |Mult_Add_Pipelined_NC      |     1|
+|57    |Mult_Add_Pipelined_NC__10  |     1|
+|58    |Mult_Add_Pipelined_NC__6   |     1|
+|59    |Mult_Add_Pipelined_NC__7   |     1|
+|60    |Mult_Add_Pipelined_NC__8   |     1|
+|61    |Mult_Add_Pipelined_NC__9   |     1|
+|62    |BUFG                       |     1|
+|63    |CARRY4                     |    60|
+|64    |LUT1                       |     5|
+|65    |LUT2                       |    19|
+|66    |LUT3                       |   114|
+|67    |LUT4                       |    46|
+|68    |LUT5                       |    25|
+|69    |LUT6                       |    45|
+|70    |FDRE                       |   208|
+|71    |FDSE                       |     3|
+|72    |IBUF                       |    42|
+|73    |OBUF                       |   109|
 +------+---------------------------+------+
 
 Report Instance Areas: 
-+------+-----------+-------------------------------+------+
-|      |Instance   |Module                         |Cells |
-+------+-----------+-------------------------------+------+
-|1     |top        |                               |  1324|
-|2     |  channel1 |Conv_1_Channel                 |  1226|
-|3     |    kernel |Conv_Kernel_3by3               |   899|
-|4     |  in_buf   |Conv_1_Frame_Buffer__xdcDup__1 |    18|
-|5     |  out_buf  |Conv_1_Frame_Buffer            |    18|
-+------+-----------+-------------------------------+------+
++------+----------------------------------+---------------------------------+------+
+|      |Instance                          |Module                           |Cells |
++------+----------------------------------+---------------------------------+------+
+|1     |top                               |                                 |  5987|
+|2     |  DUT                             |Conv_Layer_1                     |  5709|
+|3     |    \conv_channels_gen[0].kernel  |Conv_Kernel_3by3                 |   899|
+|4     |    \conv_channels_gen[1].kernel  |Conv_Kernel_3by3__parameterized0 |   898|
+|5     |    \conv_channels_gen[2].kernel  |Conv_Kernel_3by3__parameterized1 |   898|
+|6     |    \conv_channels_gen[3].kernel  |Conv_Kernel_3by3__parameterized2 |   898|
+|7     |    \conv_channels_gen[4].kernel  |Conv_Kernel_3by3__parameterized3 |   898|
+|8     |    \conv_channels_gen[5].kernel  |Conv_Kernel_3by3__parameterized4 |   898|
+|9     |  in_buf                          |Conv_1_Frame_Buffer__xdcDup__1   |    18|
+|10    |  \obuf_gen[0].obuf               |Conv_1_Frame_Buffer__xdcDup__2   |    18|
+|11    |  \obuf_gen[1].obuf               |Conv_1_Frame_Buffer__xdcDup__3   |    18|
+|12    |  \obuf_gen[2].obuf               |Conv_1_Frame_Buffer__xdcDup__4   |    18|
+|13    |  \obuf_gen[3].obuf               |Conv_1_Frame_Buffer__xdcDup__5   |    18|
+|14    |  \obuf_gen[4].obuf               |Conv_1_Frame_Buffer__xdcDup__6   |    18|
+|15    |  \obuf_gen[5].obuf               |Conv_1_Frame_Buffer              |    18|
++------+----------------------------------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.461 ; gain = 460.449 ; free physical = 10166 ; free virtual = 22730
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 384 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1812.461 ; gain = 127.605 ; free physical = 10219 ; free virtual = 22783
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1812.469 ; gain = 460.449 ; free physical = 10219 ; free virtual = 22783
+Synthesis finished with 0 errors, 2304 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1821.465 ; gain = 122.605 ; free physical = 11763 ; free virtual = 25009
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.473 ; gain = 464.449 ; free physical = 11773 ; free virtual = 25020
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 60 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.469 ; gain = 0.000 ; free physical = 10165 ; free virtual = 22726
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1821.473 ; gain = 0.000 ; free physical = 11705 ; free virtual = 24952
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 23 Warnings, 100 Critical Warnings and 0 Errors encountered.
+52 Infos, 128 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1812.469 ; gain = 460.602 ; free physical = 10222 ; free virtual = 22783
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.469 ; gain = 0.000 ; free physical = 10222 ; free virtual = 22783
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1821.473 ; gain = 464.602 ; free physical = 11763 ; free virtual = 25010
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1821.473 ; gain = 0.000 ; free physical = 11763 ; free virtual = 25010
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MNIST_Solver_utilization_synth.rpt -pb MNIST_Solver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 14 21:09:58 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 15 16:05:16 2021...

@@ -16,32 +16,80 @@ module MNIST_Solver(
 //    // Output data
     input [4:0] r_row,
     input [4:0] r_col,
-    output [17:0] r_data
+    output [17:0] r_data [5:0]
 );
 
-    wire [17:0] c1_in_data, c1_out_data;
-    wire [4:0] c1_in_row, c1_in_col, c1_out_row, c1_out_col;
-    wire c1_out_w_en;
+    wire signed [17:0] c1_in_data, c1_out_data;
+    wire [4:0] c1_in_row, c1_in_col;
+    wire [4:0] obuf_row, obuf_col;
+    wire obuf_w_en;
+    wire signed [17:0] obuf_wdata [5:0];
 
-    Conv_1_Channel #(
-//        .weights(),
-//        .bias()
-    ) channel1 (
-        // Control signals
+    Conv_Layer_1 #(
+        .weights('{
+                   '{
+                        '{18'b1_1111110_1011011110, 18'b1_1111110_1100110010, 18'b1_1111100_1111100100},
+                        '{18'b1_1111101_0010000011, 18'b1_1111110_1100011110, 18'b1_1111101_1101111101},
+                        '{18'b1_1111100_0111110010, 18'b0_0000010_1001001101, 18'b0_0000000_1000011110}
+                    },
+                   '{
+                        '{18'b1_1111011_1011100001, 18'b1_1111100_0100111000, 18'b1_1111010_1111011101},
+                        '{18'b0_0000010_0000011110, 18'b1_1111111_1000011101, 18'b1_1111010_0101000010},
+                        '{18'b0_0000101_1101110100, 18'b0_0000100_0001001001, 18'b0_0000001_0010000001}
+                    },
+                   '{
+                        '{18'b0_0000100_0111111001, 18'b0_0000001_1101011110, 18'b1_1111110_0110010100},
+                        '{18'b1_1111110_1000011111, 18'b0_0000010_0000100011, 18'b0_0000000_0011010010},
+                        '{18'b1_1111100_0011010110, 18'b1_1111111_1101111010, 18'b0_0000001_0101010101}
+                    },
+                   '{
+                        '{18'b0_0000010_1001011010, 18'b0_0000010_0000111001, 18'b1_1111011_0010000001},
+                        '{18'b0_0000010_1000001101, 18'b0_0000001_0110001110, 18'b1_1111100_0010101110},
+                        '{18'b0_0000010_1111001011, 18'b1_1111101_1110001101, 18'b1_1111010_1110011111}
+                    },
+                   '{
+                        '{18'b1_1111110_0110100010, 18'b1_1111011_1010010001, 18'b1_1111111_0010100110}, 
+                        '{18'b1_1111101_1000011000, 18'b0_0000001_1000101111, 18'b0_0000100_1011010101}, 
+                        '{18'b0_0000010_1010110010, 18'b0_0000010_1110001100, 18'b0_0000000_1110001101}
+                    },
+                   '{
+                        '{18'b1_1111101_1001100110, 18'b1_1111110_0010110100, 18'b0_0000011_1100100110}, 
+                        '{18'b1_1111110_0101110011, 18'b1_1111101_1100111111, 18'b0_0000100_0101111001}, 
+                        '{18'b1_1111110_0010101110, 18'b1_1111101_0001111001, 18'b0_0000011_0000010110}
+                    }
+                   }),
+        .biases('{18'b0_0000010_1100000110, 18'b1_1111111_1111111001, 18'b1_1111111_1111111011, 18'b1_1111111_1111111110, 18'b1_1111111_0100110100, 18'b1_1111111_1000000000})
+    ) DUT (
         .clock(clock),
         .reset_n(reset_n),
         .start(start),
         .done(done),
-        // Data into channel
         .in_data(c1_in_data),
         .in_row(c1_in_row),
         .in_col(c1_in_col),
-        // Data out from channel
-        .out_data(c1_out_data),
-        .out_row(c1_out_row),
-        .out_col(c1_out_col),
-        .out_w_enable(c1_out_w_en)
+        .out_data(obuf_wdata),
+        .out_row(obuf_col),
+        .out_col(obuf_row),
+        .out_w_enable(obuf_w_en)
     );
+    
+    genvar i;
+    generate
+    for (i = 0; i < 6; i++) begin : obuf_gen
+        Conv_1_Frame_Buffer obuf (
+            .clock(clock),
+            
+            .w_row(obuf_row),
+            .w_col(obuf_col),
+            .w_data(obuf_wdata[i]),
+            .w_en(obuf_w_en),
+            
+            .r_row(r_row),
+            .r_col(r_col),
+            .r_data(r_data[i])
+        );
+    end
+    endgenerate
     
     Conv_1_Frame_Buffer in_buf (
         .clock(clock),
@@ -54,19 +102,6 @@ module MNIST_Solver(
         .r_row(c1_in_row),
         .r_col(c1_in_col),
         .r_data(c1_in_data)
-    );
-    
-    Conv_1_Frame_Buffer out_buf (
-        .clock(clock),
-        
-        .w_row(c1_out_row),
-        .w_col(c1_out_col),
-        .w_data(c1_out_data),
-        .w_en(c1_out_w_en),
-        
-        .r_row(r_row),
-        .r_col(r_col),
-        .r_data(r_data)
     );
 
 endmodule

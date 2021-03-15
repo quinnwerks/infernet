@@ -2,48 +2,83 @@ Vivado Simulator 2018.3
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[0].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[1].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[2].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[3].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[4].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[5].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 blk_mem_gen_v8_4_2 collision detected at time: 450000, Instance: Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[0].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[1].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[2].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[3].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[4].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[5].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 blk_mem_gen_v8_4_2 collision detected at time: 450000, Instance: Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
-blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[5].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[4].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[3].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[2].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[1].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[0].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
 PASS! All outputs within 000000000000001000 tolerance to expected.
-$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" Line 158
+$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sim_1/new/Conv_Layer_1_TB.sv" Line 194
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[0].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[1].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[2].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[3].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[4].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module Conv_1_Channel_TB.obuf_gen[5].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
 Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 blk_mem_gen_v8_4_2 collision detected at time: 450000, Instance: Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
-blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[5].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[4].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[3].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[2].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[1].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
+blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf_gen[0].obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
 PASS! All outputs within 000000000000001000 tolerance to expected.
-$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" Line 158
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-blk_mem_gen_v8_4_2 collision detected at time: 450000, Instance: Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
-blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
-PASS! All outputs within 000000000000001000 tolerance to expected.
-$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" Line 158
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-blk_mem_gen_v8_4_2 collision detected at time: 450000, Instance: Conv_1_Channel_TB.ibuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
-blk_mem_gen_v8_4_2 collision detected at time: 80250000, Instance: Conv_1_Channel_TB.obuf.ram.inst.native_mem_module.blk_mem_gen_v8_4_2_inst, A write address: 0, B read address: 0
-PASS! All outputs within 000000000000001000 tolerance to expected.
-$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" Line 158
+$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sim_1/new/Conv_Layer_1_TB.sv" Line 194
