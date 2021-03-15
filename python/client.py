@@ -7,6 +7,10 @@ import scapy.all as scapy
 import matplotlib.image as mpimg
 import PIL.Image as Image
 import PIL.ImageOps as ImageOps
+import socket
+import re
+from typing import Union
+import concurrent.futures as cf
 
 
 helptxt = """
@@ -64,7 +68,62 @@ def do_inference(fpganet, ia_ip, imgpath):
     # send packet
     res = n532.send_inference_packet(fpganet, ia_ip, img.tobytes())
     # TODO: parse result
+    return res
     pass
+
+
+def scan_for_lb_thread(fpganet, ip) -> Union[str, None]:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.settimeout(0.1)
+        try:
+            s.connect((ip, n532.LB_TCP_PORT))
+            s.sendall(n532.CLIENT_DONE_STR)
+            data = s.recv(1024)
+            if n532.LB_MALFORMED_STR in data:
+                return ip
+            else:
+                return None
+        except socket.timeout:
+            return None
+
+
+def scan_for_lb(fpganet) -> Union[str, None]:
+    with cf.ThreadPoolExecutor(max_workers=len(n532.FPGA_IP_SET)) as pool:
+        futures = {pool.submit(scan_for_lb_thread, fpganet, ip) for ip in n532.FPGA_IP_SET}
+        futures = {f.result() for f in futures}
+        ips = {ip for ip in futures if ip}
+        if(ips):
+            return ips.pop()
+        else:
+            return None
+
+
+def get_ia_from_lb(fpganet, lb_ip) -> Union[str, None]:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((lb_ip, n532.LB_TCP_PORT))
+        s.sendall(n532.CLIENT_REQ_STR)
+        res = s.recv(1024)
+        r = re.search(r'1\.1\.\d{1,2}\.2', str(res))
+        if r:
+            ip = r.group()
+            return ip
+        else:
+            return None
+
+
+def return_ia_to_lb(fpganet, lb_ip, ia_ip) -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((lb_ip, n532.LB_TCP_PORT))
+        s.sendall(n532.CLIENT_DONE_STR + bytes(ia_ip, "utf8"))
+        res = s.recv(1024)
+        if n532.LB_RETURNED_STR in res:
+            return True
+        elif n532.LB_NOT_EXIST_STR in res:
+            return False
+        elif n532.LB_MALFORMED_STR in res:
+            return False
+        else:
+            raise RuntimeError('load balancer returned garbage')
 
 
 def exit_invalid_args():
