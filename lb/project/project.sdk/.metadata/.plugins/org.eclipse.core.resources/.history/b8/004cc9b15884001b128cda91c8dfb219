@@ -1,0 +1,16 @@
+/*
+ * echo.h
+ *
+ *  Created on: Mar 13, 2021
+ *      Author: jamesliu
+ */
+
+#ifndef SRC_ECHO_H_
+#define SRC_ECHO_H_
+
+#define CLIENT_UDP_PORT 4000
+#define IA_UDP_PORT 666
+#define LB_UDP_PORT 6666
+#define LB_TCP_PORT 8080
+
+#endif /* SRC_ECHO_H_ */

@@ -10,7 +10,7 @@ import PIL.ImageOps as ImageOps
 import socket
 import re
 from typing import Union
-import threading
+import concurrent.futures as cf
 
 
 helptxt = """
@@ -72,9 +72,30 @@ def do_inference(fpganet, ia_ip, imgpath):
     pass
 
 
-def scan_for_lb(fpganet):
-    # TODO
-    pass
+def scan_for_lb_thread(fpganet, ip) -> Union[str, None]:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.settimeout(0.1)
+        try:
+            s.connect((ip, n532.LB_TCP_PORT))
+            s.sendall(n532.CLIENT_DONE_STR)
+            data = s.recv(1024)
+            if n532.LB_MALFORMED_STR in data:
+                return ip
+            else:
+                return None
+        except socket.timeout:
+            return None
+
+
+def scan_for_lb(fpganet) -> Union[str, None]:
+    with cf.ThreadPoolExecutor(max_workers=len(n532.FPGA_IP_SET)) as pool:
+        futures = {pool.submit(scan_for_lb_thread, fpganet, ip) for ip in n532.FPGA_IP_SET}
+        futures = {f.result() for f in futures}
+        ips = {ip for ip in futures if ip}
+        if(ips):
+            return ips.pop()
+        else:
+            return None
 
 
 def get_ia_from_lb(fpganet, lb_ip) -> Union[str, None]:
@@ -93,7 +114,7 @@ def get_ia_from_lb(fpganet, lb_ip) -> Union[str, None]:
 def return_ia_to_lb(fpganet, lb_ip, ia_ip) -> bool:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((lb_ip, n532.LB_TCP_PORT))
-        s.sendall(n532.CLIENT_DONE_STR + bytes(ia_ip, "utf8"))
+        s.sendall(n532.CLIENT_DONE_STR + bytes(ia_ip, "utf8") + b' ')
         res = s.recv(1024)
         if n532.LB_RETURNED_STR in res:
             return True

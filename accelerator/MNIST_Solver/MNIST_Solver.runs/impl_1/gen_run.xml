@@ -1,76 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1615226240">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1615770577">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="Top_Compile_Test.drc"/>
-  <File Type="BG-BGN" Name="Top_Compile_Test.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="Top_Compile_Test.sysdef"/>
+  <File Type="BG-DRC" Name="MNIST_Solver.drc"/>
+  <File Type="BG-BGN" Name="MNIST_Solver.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="MNIST_Solver.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Top_Compile_Test.ltx"/>
-  <File Type="BITSTR-MMI" Name="Top_Compile_Test.mmi"/>
-  <File Type="BITSTR-BMM" Name="Top_Compile_Test_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="Top_Compile_Test.nky"/>
-  <File Type="BITSTR-RBT" Name="Top_Compile_Test.rbt"/>
-  <File Type="BITSTR-MSK" Name="Top_Compile_Test.msk"/>
-  <File Type="BG-BIN" Name="Top_Compile_Test.bin"/>
-  <File Type="BG-BIT" Name="Top_Compile_Test.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Top_Compile_Test_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Top_Compile_Test_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Top_Compile_Test_bus_skew_postroute_physopted.rpt"/>
-  <File Type="RDI-RDI" Name="Top_Compile_Test.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Top_Compile_Test_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Top_Compile_Test_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Top_Compile_Test_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Top_Compile_Test_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Top_Compile_Test_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW" Name="Top_Compile_Test_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="Top_Compile_Test_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="Top_Compile_Test_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Top_Compile_Test_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="Top_Compile_Test_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Top_Compile_Test_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Top_Compile_Test_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="Top_Compile_Test_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="Top_Compile_Test_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="Top_Compile_Test_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="Top_Compile_Test_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Top_Compile_Test_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Top_Compile_Test_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Top_Compile_Test_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="Top_Compile_Test_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="Top_Compile_Test_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="Top_Compile_Test_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Top_Compile_Test_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="Top_Compile_Test_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Top_Compile_Test_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="Top_Compile_Test_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="Top_Compile_Test_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="Top_Compile_Test_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Top_Compile_Test_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Top_Compile_Test_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="Top_Compile_Test_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Top_Compile_Test_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Top_Compile_Test_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="Top_Compile_Test_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="Top_Compile_Test_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="Top_Compile_Test_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="Top_Compile_Test_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="Top_Compile_Test_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="Top_Compile_Test_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="Top_Compile_Test_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="Top_Compile_Test_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="Top_Compile_Test_pwropt.dcp"/>
-  <File Type="OPT-TIMING" Name="Top_Compile_Test_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="Top_Compile_Test.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Top_Compile_Test_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="Top_Compile_Test_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="Top_Compile_Test_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="Top_Compile_Test_timing_summary_init.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="Top_Compile_Test_bus_skew_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="Top_Compile_Test_reports.tcl"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="Top_Compile_Test_bus_skew_routed.pb"/>
-  <File Type="PA-TCL" Name="Top_Compile_Test.tcl"/>
+  <File Type="BITSTR-LTX" Name="MNIST_Solver.ltx"/>
+  <File Type="BITSTR-MMI" Name="MNIST_Solver.mmi"/>
+  <File Type="BITSTR-BMM" Name="MNIST_Solver_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="MNIST_Solver.nky"/>
+  <File Type="BITSTR-RBT" Name="MNIST_Solver.rbt"/>
+  <File Type="BITSTR-MSK" Name="MNIST_Solver.msk"/>
+  <File Type="BG-BIN" Name="MNIST_Solver.bin"/>
+  <File Type="BG-BIT" Name="MNIST_Solver.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="MNIST_Solver_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="MNIST_Solver_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="MNIST_Solver_bus_skew_postroute_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="MNIST_Solver.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="MNIST_Solver_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="MNIST_Solver_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="MNIST_Solver_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="MNIST_Solver_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="MNIST_Solver_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW" Name="MNIST_Solver_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="MNIST_Solver_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="MNIST_Solver_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="MNIST_Solver_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="MNIST_Solver_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="MNIST_Solver_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="MNIST_Solver_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="MNIST_Solver_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="MNIST_Solver_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="MNIST_Solver_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="MNIST_Solver_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MNIST_Solver_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MNIST_Solver_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="MNIST_Solver_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="MNIST_Solver_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="MNIST_Solver_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="MNIST_Solver_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="MNIST_Solver_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="MNIST_Solver_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="MNIST_Solver_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="MNIST_Solver_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="MNIST_Solver_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="MNIST_Solver_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="MNIST_Solver_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="MNIST_Solver_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="MNIST_Solver_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="MNIST_Solver_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="MNIST_Solver_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="MNIST_Solver_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="MNIST_Solver_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="MNIST_Solver_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="MNIST_Solver_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="MNIST_Solver_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="MNIST_Solver_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="MNIST_Solver_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="MNIST_Solver_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="MNIST_Solver_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="MNIST_Solver_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="MNIST_Solver.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="MNIST_Solver_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="MNIST_Solver_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="MNIST_Solver_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="MNIST_Solver_timing_summary_init.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="MNIST_Solver_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="MNIST_Solver_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="MNIST_Solver_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="MNIST_Solver.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/Conv1_Frame_Buffer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Conv_1_Channel.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -105,7 +112,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Top_Compile_Test.sv">
+    <File Path="$PSRCDIR/sources_1/new/MNIST_Solver.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -122,14 +129,29 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Conv_1_Channel_TB.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/Conv_1_Channel_TB.sv"/>
+        <Attr Name="ImportTime" Val="1615227266"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Top_Compile_Test"/>
+      <Option Name="TopModule" Val="MNIST_Solver"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/main.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/main.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -140,7 +162,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -151,6 +175,7 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Conv_1_BRAM"/>
   <BlockFileSet Type="BlockSrcs" Name="Mult_Add_Pipelined_COL"/>
   <BlockFileSet Type="BlockSrcs" Name="Mult_Add_Pipelined_NC"/>
 </GenRun>

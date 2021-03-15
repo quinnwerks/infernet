@@ -1,62 +1,52 @@
 `timescale 1ns / 1ps
 
 module Conv_1_Channel #(
-//    parameter signed [17:0] weights [2:0][2:0] = '{'{18'h0, 18'h0, 18'h0}, 
-//                                                   '{18'h0, 18'h0, 18'h0}, 
-//                                                   '{18'h0, 18'h0, 18'h0}},
-//    parameter signed [17:0] bias = 18'h0
+    parameter signed [17:0] weights [2:0][2:0] = '{'{18'h0, 18'h0, 18'h0}, 
+                                                   '{18'h0, 18'h0, 18'h0}, 
+                                                   '{18'h0, 18'h0, 18'h0}},
+    parameter signed [17:0] bias = 18'h0
 )(
+    // Control signals
     input clock,
     input reset_n,
     input start,
-    input logic signed [17:0] x_pad [29:0][29:0],
-    input logic signed [17:0] weights [2:0][2:0],
-    input logic signed [17:0] bias,
-    output logic signed [17:0] y [27:0][27:0],
-    output logic done
+    output logic done,
+    // Channel to read data in
+    input signed [17:0] in_data,
+    output logic [4:0] in_row,
+    output logic [4:0] in_col,
+    // Output data
+    output logic signed [17:0] out_data,
+    output logic [4:0] out_row,
+    output logic [4:0] out_col,
+    output logic out_w_enable  
 );
-
-//    logic signed [17:0] x_padded [29:0][29:0];
     
-    // TODO: verify this actually does what we want
-//    genvar a, b;
-//    generate
-//        for (a = 0; a < 30; a++) begin
-//            for (b = 0; b < 30; b++) begin
-//                if (a == 0 || b == 0 || a == 29 || b == 29) begin
-//                    assign x_padded[a][b] = x[a][b];
-//                end else begin
-//                    assign x_padded[a][b] = 18'b0;
-//                end
-//            end
-//        end
-//    endgenerate
-    
-
-    logic enable;
+    logic channel_enable, read_enable, mult_enable, kernel_in_enable;
     logic signed [17:0] kernel_in [2:0][2:0];
     logic signed [17:0] kernel_out, relu_out;
     
-    logic [4:0] row, col;
+    logic [4:0] row, col, cell_row, cell_col, cell_row_offset, cell_col_offset;
+    logic [4:0] cell_row_old, cell_col_old, cell_row_offset_old, cell_col_offset_old;
+    assign cell_row = row - 1 + cell_row_offset;
+    assign cell_col = col - 1 + cell_col_offset;
+    assign in_row = (cell_row != 0 && cell_row != 29) ? cell_row - 1 : 0;
+    assign in_col = (cell_col != 0 && cell_col != 29) ? cell_col - 1 : 0;
     
     logic [3:0] move_window_counter;
     
-    genvar i, j;
-    generate
-    for (i = -1; i < 2; i++) begin
-        for (j = -1; j < 2; j++) begin
-            assign kernel_in[i + 1][j + 1] = x_pad[row + i][col + j];
-        end
-    end
-    endgenerate
+    assign out_w_enable = (channel_enable && move_window_counter == 4'd0);
+    assign out_data = relu_out;
+    assign out_row = row - 1;
+    assign out_col = col - 1;
     
     always_ff @(posedge clock) begin
         if (reset_n == 1'b0) begin
-            move_window_counter <= 4'd12;
+            move_window_counter <= 4'd04;
         end else begin
-            if (enable) begin
+            if (channel_enable && mult_enable) begin
                 if (move_window_counter == 4'd0) begin
-                    move_window_counter <= 4'd12;
+                    move_window_counter <= 4'd04;
                 end else begin
                     move_window_counter <= move_window_counter - 1;
                 end
@@ -66,43 +56,86 @@ module Conv_1_Channel #(
     
     always_ff @(posedge clock) begin
         if (reset_n == 1'b0) begin
-            enable <= 1'b0;
+            channel_enable <= 1'b0;
+            read_enable <= 1'b0;
+            mult_enable <= 1'b0;
             done <= 1'b0;
             row <= 5'd1;
             col <= 5'd1;
+            cell_row_offset <= 5'd0;
+            cell_col_offset <= 5'd0;
+            cell_row_offset_old <= 5'd0;
+            cell_col_offset_old <= 5'd0;
+            cell_row_old <= 5'd0;
+            cell_col_old <= 5'd0;
+            kernel_in_enable <= 1'b0;
         end else begin
-            if (start && !enable) begin
-                enable <= 1'b1;
+            cell_row_old <= cell_row;
+            cell_col_old <= cell_col;
+            cell_row_offset_old <= cell_row_offset;
+            cell_col_offset_old <= cell_col_offset;
+            kernel_in_enable <= read_enable;
+            
+            if (start && !channel_enable) begin
+                channel_enable <= 1'b1;
+                read_enable <= 1'b1;
             end
-            if (enable && move_window_counter == 4'd0) begin
+            if (channel_enable && move_window_counter == 4'd0) begin
                 if (row == 5'd28 && col == 5'd28) begin
                     row <= 5'd1;
                     col <= 5'd1;
-                    enable <= 1'b0;
+                    channel_enable <= 1'b0;
+                    mult_enable <= 1'b0;
+                    read_enable <= 1'b0;
                     done <= 1'b1;
                 end else if (col == 5'd28) begin
+                    read_enable <= 1'b1;
+                    mult_enable <= 1'b0;
                     col <= 5'd1;
                     row <= row + 1;
                 end else begin
+                    read_enable <= 1'b1;
+                    mult_enable <= 1'b0;
                     col <= col + 1;
                 end
-                y[row - 1][col - 1] <= relu_out;
             end
             if (done) begin
                 done <= 1'b0;
+            end
+            
+            if (read_enable) begin
+                // Control variables for reading data into kernel_in
+                if (cell_row_offset == 5'd2 && cell_col_offset == 5'd2) begin
+                    cell_row_offset <= 5'd0;
+                    cell_col_offset <= 5'd0;
+                    read_enable <= 1'b0;
+                    mult_enable <= 1'b1;
+                end else if (cell_col_offset == 5'd2) begin
+                    cell_row_offset <= cell_row_offset + 1;
+                    cell_col_offset <= 5'd0;
+                end else begin
+                    cell_col_offset <= cell_col_offset + 1;
+                end
+            end
+            
+            if (kernel_in_enable) begin
+                // Actually read the data into kernel_in
+                if (cell_row_old == 5'd0 || cell_col_old == 5'd0 || cell_row_old == 5'd29 || cell_col_old == 5'd29) begin
+                    kernel_in[cell_row_offset_old][cell_col_offset_old] <= 18'b0;
+                end else begin
+                    kernel_in[cell_row_offset_old][cell_col_offset_old] <= in_data;
+                end
             end
         end
     end
 
     Conv_Kernel_3by3 #(
-//        .weights(weights),
-//        .bias(bias)
+        .weights(weights),
+        .bias(bias)
     ) kernel (
         .clock(clock),
         .reset_n(reset_n),
         .x(kernel_in),
-        .weights(weights),
-        .bias(bias),
         .out(kernel_out)
     );
     

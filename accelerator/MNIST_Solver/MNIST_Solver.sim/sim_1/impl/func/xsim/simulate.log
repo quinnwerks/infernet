@@ -1,0 +1,10 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+Memory Collision Error on RAMB18E1 : Conv_1_Channel_TB.ibuf.ram.U0.inst_blk_mem_gen.gnbram.gnativebmg.native_blk_mem_gen.valid.cstr.ramloop[0].ram.r.prim_init.ram.DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram.gen_tdp.INT_RAMB_TDP.chk_for_col_msg at simulation time 450.000 ns.
+A read was performed on address 0000 (hex) of port B while a write was requested to the same address on port A.  The write will be successful however the read value on port B is unknown until the next CLKB cycle.
+Memory Collision Error on RAMB18E1 : Conv_1_Channel_TB.ibuf.ram.U0.inst_blk_mem_gen.gnbram.gnativebmg.native_blk_mem_gen.valid.cstr.ramloop[0].ram.r.prim_init.ram.DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram.gen_tdp.INT_RAMB_TDP.chk_for_col_msg at simulation time 450.000 ns.
+A read was performed on address 0000 (hex) of port B while a write was requested to the same address on port A.  The write will be successful however the read value on port B is unknown until the next CLKB cycle.
+Memory Collision Error on RAMB18E1 : Conv_1_Channel_TB.obuf.ram.U0.inst_blk_mem_gen.gnbram.gnativebmg.native_blk_mem_gen.valid.cstr.ramloop[0].ram.r.prim_init.ram.DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram.gen_tdp.INT_RAMB_TDP.chk_for_col_msg at simulation time 80250.000 ns.
+A read was performed on address 0000 (hex) of port B while a write was requested to the same address on port A.  The write will be successful however the read value on port B is unknown until the next CLKB cycle.
+PASS! All outputs within 000000000000001000 tolerance to expected.
+$finish called at time : 1254900 ns : File "/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" Line 158

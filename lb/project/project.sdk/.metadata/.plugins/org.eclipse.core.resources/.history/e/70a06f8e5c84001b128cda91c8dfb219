@@ -1,0 +1,25 @@
+/*
+ * echo.h
+ *
+ *  Created on: Mar 13, 2021
+ *      Author: jamesliu
+ */
+
+#ifndef SRC_ECHO_H_
+#define SRC_ECHO_H_
+
+#define CLIENT_UDP_PORT 4000
+#define IA_UDP_PORT 666
+#define LB_UDP_PORT 6666
+#define LB_TCP_PORT 8080
+
+char const * const CLIENT_REQ_STR = "i can has cheezburger";
+char const * const CLIENT_DONE_STR = "put it back";
+char const * const LB_UNAVAILABLE_STR = "gone reduced to atoms";
+char const * const LB_NOT_EXIST_STR = "the salami lid wont fit";
+char const * const LB_RETURNED_STR = "thanks for the fish";
+char const * const LB_MALFORMED_STR = "it hurts when IP";
+
+int start_application();
+
+#endif /* SRC_ECHO_H_ */

@@ -164,3 +164,4 @@ def send_inference_packet_hardcore(fpganet, ia_ip, imgdata, timeout=None):
 # sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="ether[0:4] = 0x000a3500 or ether [6:4] = 0x000a3500", prn=lambda x: x.show())
 # sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="ether host 00:0a:35:00:00:XX", prn=lambda x: x.show())
 # sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="ether host 00:0a:35:00:00:09", prn=lambda x: x.show())
+# sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="udp port 666", prn=lambda x: x.show())

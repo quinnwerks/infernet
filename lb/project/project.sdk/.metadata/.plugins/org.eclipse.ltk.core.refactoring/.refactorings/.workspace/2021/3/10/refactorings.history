@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;nortos_ref/src/echo.h&apos;" deleteContents="false" description="Delete resource &apos;nortos_ref/src/echo.h&apos;" element1="/nortos_ref/src/echo.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1614838792804"/>
+</session>

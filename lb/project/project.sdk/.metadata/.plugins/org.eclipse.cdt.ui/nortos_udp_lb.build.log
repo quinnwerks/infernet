@@ -1,0 +1,21 @@
+22:01:20 **** Auto Build of configuration Debug for project nortos_udp_lb ****
+make all 
+Building file: ../src/echo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -I../../nortos_udp_lb_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+Finished building: ../src/echo.c
+ 
+Building target: nortos_udp_lb.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../nortos_udp_lb_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "nortos_udp_lb.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: nortos_udp_lb.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size nortos_udp_lb.elf  |tee "nortos_udp_lb.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 100956	   2240	3962340	4065536	 3e0900	nortos_udp_lb.elf
+Finished building: nortos_udp_lb.elf.size
+ 
+
+22:01:21 Build Finished (took 1s.299ms)
+
