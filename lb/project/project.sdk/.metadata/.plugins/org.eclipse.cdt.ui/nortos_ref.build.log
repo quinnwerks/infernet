@@ -1,0 +1,6 @@
+23:12:05 **** Incremental Build of configuration Debug for project nortos_ref ****
+make all 
+make: Nothing to be done for 'all'.
+
+23:12:05 Build Finished (took 649ms)
+

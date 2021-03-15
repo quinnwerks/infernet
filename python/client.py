@@ -114,7 +114,7 @@ def get_ia_from_lb(fpganet, lb_ip) -> Union[str, None]:
 def return_ia_to_lb(fpganet, lb_ip, ia_ip) -> bool:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((lb_ip, n532.LB_TCP_PORT))
-        s.sendall(n532.CLIENT_DONE_STR + bytes(ia_ip, "utf8"))
+        s.sendall(n532.CLIENT_DONE_STR + bytes(ia_ip, "utf8") + b' ')
         res = s.recv(1024)
         if n532.LB_RETURNED_STR in res:
             return True

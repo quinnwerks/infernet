@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# 
+# Start of session at: Thu Mar  4 03:04:02 2021
+# Process ID: 11030
+# Current directory: /media/psf/Home/Development/Verilog/ECE532/Lab/group/server/Echo_Server_Demo/project/project.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /media/psf/Home/Development/Verilog/ECE532/Lab/group/server/Echo_Server_Demo/project/project.sdk/webtalk/webtalk.log
+# Journal file: /media/psf/Home/Development/Verilog/ECE532/Lab/group/server/Echo_Server_Demo/project/project.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

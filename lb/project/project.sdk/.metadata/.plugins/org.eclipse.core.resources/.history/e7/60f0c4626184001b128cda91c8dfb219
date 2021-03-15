@@ -1,0 +1,30 @@
+/*
+ * echo.h
+ *
+ *  Created on: Mar 13, 2021
+ *      Author: jamesliu
+ */
+
+#ifndef SRC_ECHO_H_
+#define SRC_ECHO_H_
+
+#define CLIENT_UDP_PORT 4000
+#define IA_UDP_PORT 666
+#define LB_UDP_PORT 6666
+#define LB_TCP_PORT 8080
+
+#define CLIENT_REQ_STR "i can has cheezburger"
+#define CLIENT_DONE_STR "put it back"
+#define LB_UNAVAILABLE_STR "gone reduced to atoms"
+#define LB_NOT_EXIST_STR "the salami lid wont fit"
+#define LB_RETURNED_STR "thanks for the fish"
+#define LB_MALFORMED_STR "it hurts when IP"
+
+#define FPGA_COUNT 12
+int const FPGA_NUMS[FPGA_COUNT];
+#define FPGA_NUMS_INIT {1,2,3,4,5,6,7,8,9,10,11,12}
+#define FPGA_NUM_SENTINEL 0
+
+int start_application();
+
+#endif /* SRC_ECHO_H_ */
