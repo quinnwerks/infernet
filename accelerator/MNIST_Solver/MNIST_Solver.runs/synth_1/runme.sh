@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Conv_1_Channel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Conv_1_Channel.tcl
+EAStep vivado -log MNIST_Solver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MNIST_Solver.tcl

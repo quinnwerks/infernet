@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"Conv_1_Channel_TB_func_impl.v" \
+
+sv xil_defaultlib  \
+"../../../../../MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv" \
+"../../../../../MNIST_Solver.srcs/sources_1/new/Conv_1_Channel.sv" \
+"../../../../../MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv" \
+"../../../../../MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv" \
+"../../../../../MNIST_Solver.srcs/sources_1/imports/rtl/ReLU.sv" \
+"../../../../../MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" \
+
+# Do not sort compile order
+nosort

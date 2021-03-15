@@ -6,4 +6,4 @@
 # Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log Conv_1_Channel.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Conv_1_Channel.tcl
+vivado -log MNIST_Solver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MNIST_Solver.tcl
