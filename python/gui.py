@@ -249,8 +249,6 @@ class Infernet_GUI:
         user_entry_frame = tk.Frame(root)
 
         # Configure ip address entry
-        lb_address_label = tk.Label(user_entry_frame, text="Load Balacer IP:", font=FONT_LABELS)
-        lb_port_label = tk.Label(user_entry_frame, text="Load Balacer Port:", font=FONT_LABELS)
         directory_label = tk.Label(user_entry_frame, text="Select Directory:", font=FONT_LABELS)
 
         lb_address_entry = tk.Entry(user_entry_frame,
@@ -270,13 +268,8 @@ class Infernet_GUI:
 
         directory_display_label = tk.Label(user_entry_frame, text="Using Directory:", font=FONT_LABELS)
 
-        lb_address_label.grid(row=0, column=0)
-        lb_port_label.grid(row=0, column=2)
-        directory_label.grid(row=0, column=4)
-
-        lb_address_entry.grid(row=0, column=1)
-        lb_port_entry.grid(row=0, column=3)
-        directory_select.grid(row=0, column=5)
+        directory_label.grid(row=0, column=0)
+        directory_select.grid(row=0, column=1, sticky="W")
         directory_display_label.grid(row=1, column=0)
         directory_display.grid(row=1, column=1, columnspan=3, sticky="W")
 
