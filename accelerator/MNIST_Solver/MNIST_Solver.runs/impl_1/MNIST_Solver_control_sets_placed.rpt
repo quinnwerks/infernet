@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date         : Sun Mar 14 21:10:23 2021
+| Date         : Mon Mar 15 16:05:51 2021
 | Host         : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
 | Command      : report_control_sets -verbose -file MNIST_Solver_control_sets_placed.rpt
 | Design       : MNIST_Solver
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    15 |
-| Unused register locations in slices containing registers |    78 |
+| Number of unique control sets                            |    16 |
+| Unused register locations in slices containing registers |    82 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,6 +35,7 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      1 |            1 |
+|      4 |            1 |
 |      5 |            4 |
 |    16+ |           10 |
 +--------+--------------+
@@ -48,34 +49,35 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               1 |            1 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              27 |           11 |
+| No           | Yes                   | No                     |             219 |           81 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             182 |           54 |
+| Yes          | Yes                   | No                     |             186 |           51 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+--------------------------------------+--------------------------------------+------------------+----------------+
-|   Clock Signal   |             Enable Signal            |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+------------------+--------------------------------------+--------------------------------------+------------------+----------------+
-|  clock_IBUF_BUFG |                                      |                                      |                1 |              1 |
-|  clock_IBUF_BUFG | channel1/row                         | channel1/col[4]_i_1_n_0              |                3 |              5 |
-|  clock_IBUF_BUFG | channel1/read_enable                 | channel1/cell_col_offset[4]_i_1_n_0  |                2 |              5 |
-|  clock_IBUF_BUFG | channel1/cell_row_offset             | channel1/cell_col_offset[4]_i_1_n_0  |                2 |              5 |
-|  clock_IBUF_BUFG | channel1/E[0]                        | channel1/col[4]_i_1_n_0              |                2 |              5 |
-|  clock_IBUF_BUFG | channel1/kernel_in                   | channel1/kernel_in[2][2][17]_i_1_n_0 |                6 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[0][0][17]_i_2_n_0 | channel1/kernel_in[0][0][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[0][1][17]_i_2_n_0 | channel1/kernel_in[0][1][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[0][2][17]_i_2_n_0 | channel1/kernel_in[0][2][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[1][0][17]_i_2_n_0 | channel1/kernel_in[1][0][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[1][1][17]_i_2_n_0 | channel1/kernel_in[1][1][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[1][2][17]_i_2_n_0 | channel1/kernel_in[1][2][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[2][0][17]_i_2_n_0 | channel1/kernel_in[2][0][17]_i_1_n_0 |                4 |             18 |
-|  clock_IBUF_BUFG | channel1/kernel_in[2][1][17]_i_2_n_0 | channel1/kernel_in[2][1][17]_i_1_n_0 |                5 |             18 |
-|  clock_IBUF_BUFG |                                      | channel1/kernel/SR[0]                |               11 |             27 |
-+------------------+--------------------------------------+--------------------------------------+------------------+----------------+
++------------------+------------------------------------+---------------------------------------+------------------+----------------+
+|   Clock Signal   |            Enable Signal           |            Set/Reset Signal           | Slice Load Count | Bel Load Count |
++------------------+------------------------------------+---------------------------------------+------------------+----------------+
+|  clock_IBUF_BUFG |                                    |                                       |                1 |              1 |
+|  clock_IBUF_BUFG | DUT/move_window_counter[3]_i_1_n_0 | DUT/conv_channels_gen[0].kernel/SR[0] |                1 |              4 |
+|  clock_IBUF_BUFG | DUT/cell_row_offset[4]_i_1_n_0     | DUT/cell_col_offset[4]_i_1_n_0        |                2 |              5 |
+|  clock_IBUF_BUFG | DUT/obuf_w_en                      | DUT/clear                             |                3 |              5 |
+|  clock_IBUF_BUFG | DUT/read_enable                    | DUT/cell_col_offset[4]_i_1_n_0        |                2 |              5 |
+|  clock_IBUF_BUFG | DUT/sel                            | DUT/clear                             |                2 |              5 |
+|  clock_IBUF_BUFG | DUT/kernel_in0_in                  | DUT/kernel_in                         |                5 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[0][0][17]_i_2_n_0    | DUT/kernel_in[0][0][17]_i_1_n_0       |                4 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[0][1][17]_i_2_n_0    | DUT/kernel_in[0][1][17]_i_1_n_0       |                5 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[0][2][17]_i_2_n_0    | DUT/kernel_in[0][2][17]_i_1_n_0       |                4 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[1][0][17]_i_2_n_0    | DUT/kernel_in[1][0][17]_i_1_n_0       |                5 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[1][1][17]_i_2_n_0    | DUT/kernel_in[1][1][17]_i_1_n_0       |                5 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[1][2][17]_i_2_n_0    | DUT/kernel_in[1][2][17]_i_1_n_0       |                5 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[2][0][17]_i_2_n_0    | DUT/kernel_in[2][0][17]_i_1_n_0       |                4 |             18 |
+|  clock_IBUF_BUFG | DUT/kernel_in[2][1][17]_i_2_n_0    | DUT/kernel_in[2][1][17]_i_1_n_0       |                4 |             18 |
+|  clock_IBUF_BUFG |                                    | DUT/conv_channels_gen[0].kernel/SR[0] |               81 |            219 |
++------------------+------------------------------------+---------------------------------------+------------------+----------------+
 
 
