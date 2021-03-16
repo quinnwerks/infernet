@@ -7,6 +7,8 @@ Built on top of networking utilities.
 import logging
 import glob
 import time
+from timeit import default_timer as timer
+
 import os
 import statistics
 import numpy as np
@@ -21,7 +23,8 @@ import tkinter as tk
 from PIL import Image as Pil_Image, ImageTk as Pil_ImageTk
 import PIL.ImageOps as Pil_ImageOps
 
-#import networking532 as n532
+import networking532 as n532
+import client as cli
 
 NN_INPUT_W = 28
 NN_INPUT_H = 28
@@ -61,6 +64,16 @@ class Infernet_Statistics:
 
         rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.1e'))
         rtt_plot.legend()
+        
+        max_rtt_x = max(rtt_x) + 1
+        max_ticks_rtt_x = 8
+        ticks_rtt_x = 1
+        if max_rtt_x > max_ticks_rtt_x:
+            ticks_rtt_x = max_rtt_x / max_ticks_rtt_x
+        rtt_plot.xaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
+        rtt_plot.xaxis.set_major_locator(mtick.MultipleLocator(ticks_rtt_x))
+        rtt_plot.set_ylabel("Time (Seconds)")
+        rtt_plot.set_xlabel("Inference #")
         rtt_plot.title.set_text("Round Trip Time")
 
 
@@ -80,10 +93,19 @@ class Infernet_Statistics:
                       color='r', align='center', label="incorrect")
 
         # Set bar graph to integer labels only on y axis
-        class_bar.set_yticks(np.arange(0, max(bar_y_incorrect)+1, 1))
+        max_bar_y = max(max(bar_y_incorrect)+1, max(bar_y_correct)+1)
+        ticks_bar_y = 1
+        max_ticks_bar_y = 6
+        if max_bar_y > max_ticks_bar_y:
+            ticks_bar_y = max_bar_y / max_ticks_bar_y
+        class_bar.yaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
+        class_bar.yaxis.set_major_locator(mtick.MultipleLocator(ticks_bar_y))
+
 
         class_bar.title.set_text("Classification Accuracy")
         class_bar.legend()
+        class_bar.set_ylabel("# Classifications")
+        class_bar.set_xlabel("Digit")
 
         figure.tight_layout(pad=2.0)
 
@@ -171,21 +193,45 @@ class Infernet_GUI:
             self.system_status.set(err_msg)
             return
 
-        image_path_list = glob.glob(directory + "/*.jpg")
-        if image_path_list is []:
+        mnist_image_regex = "[0-9]-*.jpg"
+        image_path_list = glob.glob(directory + "/" + mnist_image_regex)
+        if len(image_path_list) == 0:
             logging.info("No images found in directory " + directory)
             self.system_status.set("No Images Found")
+            return
 
         self.system_status.set("CONTACTING LB")
         # TODO interface with LB
+        #ia = "1.1.8.2"
+        lb, ia = self.contact_lb_and_get_ips()
+        if lb is None or ia is None:
+            return
 
         self.configure_image_list(image_path_list)
-        self.inference_loop("1.1.2.2", 666)
+        
+        self.inference_loop(ia, 666)
+        self.system_status.set("DONE WITH INFERENCE")
+        cli.return_ia_to_lb(None, lb, ia)
 
+    def contact_lb_and_get_ips(self):
+        fpganet = n532.get_fpganet()
+        lb = cli.scan_for_lb(fpganet)
+        if lb is None:
+            self.system_status.set("ERROR: LB NOT FOUND")
+            return None, None
+        logging.info("Found lb:" + lb)
+        ia = cli.get_ia_from_lb(fpganet, lb) 
+        if ia is not None:
+            logging.info("Got ia:" + ia)
+
+        #get_ia_from_lb(fpganet, lb)
+        
+        return lb, ia
+    
 
     def inference_loop(self, ia_ip, ia_port):
         self.stats.reset()
-        fpganet = "" #n532.get_fpganet()
+        fpganet = n532.get_fpganet()
 
         curr_img = 0
         for image_dict in self.image_list:
@@ -200,22 +246,23 @@ class Infernet_GUI:
             self.sent_img_canvas.update_idletasks()
 
             # Do inference, get result
-            start_time = time.time()
-            encoded_result = [0, 1] #n532.send_inference_packet_hardcore(fpganet, ia_ip, image_nn.tobytes())
+            start_time = timer()
+            encoded_result = n532.send_inference_packet_hardcore(fpganet, ia_ip, image_nn.tobytes())
             decoded_result = self.decode_result(encoded_result)
             logging.info("Result is %d" % (decoded_result))
             inference_correct = image_label == decoded_result
-            end_time = time.time()
+            end_time = timer()
 
             # Update statistics and redraw
             round_trip_time = end_time - start_time
+            logging.info("Got round trip time of %f" % (round_trip_time))
             self.stats.update(round_trip_time, str(image_label), inference_correct)
             self.stats.plot(self.stats_fig)
             self.stats_canvas.draw()
             self.stats_canvas.get_tk_widget().update_idletasks()
 
 
-            time.sleep(1)
+            time.sleep(0)
             curr_img += 1
 
         self.system_status.set("DONE")
@@ -229,7 +276,8 @@ class Infernet_GUI:
         for image_path in image_path_list:
             image_nn = self.load_and_shape_image_for_nn(image_path)
             image_gui = Pil_ImageTk.PhotoImage(self.reshape_nn_img_for_gui(image_nn))
-            image_data_dict = {"nn":image_nn, "gui":image_gui, "path":image_path, "label":0}
+            image_label = int(os.path.basename(image_path)[0])
+            image_data_dict = {"nn":image_nn, "gui":image_gui, "path":image_path, "label":image_label}
             self.image_list.append(image_data_dict)
 
     def validate_inputs(self, ip, port, directory):
@@ -248,16 +296,7 @@ class Infernet_GUI:
         """
         user_entry_frame = tk.Frame(root)
 
-        # Configure ip address entry
         directory_label = tk.Label(user_entry_frame, text="Select Directory:", font=FONT_LABELS)
-
-        lb_address_entry = tk.Entry(user_entry_frame,
-                                    textvariable=self.lb_address,
-                                    font=FONT_ENTRIES)
-
-        lb_port_entry = tk.Entry(user_entry_frame,
-                                 textvariable=self.lb_port,
-                                 font=FONT_ENTRIES)
 
         directory_select = tk.Button(user_entry_frame,
                                     text="Browse",
@@ -269,7 +308,7 @@ class Infernet_GUI:
         directory_display_label = tk.Label(user_entry_frame, text="Using Directory:", font=FONT_LABELS)
 
         directory_label.grid(row=0, column=0)
-        directory_select.grid(row=0, column=1, sticky="W")
+        directory_select.grid(row=0, column=1)
         directory_display_label.grid(row=1, column=0)
         directory_display.grid(row=1, column=1, columnspan=3, sticky="W")
 
