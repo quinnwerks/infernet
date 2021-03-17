@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date             : Mon Mar 15 16:06:15 2021
+| Date             : Tue Mar 16 23:32:34 2021
 | Host             : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
 | Command          : report_power -file MNIST_Solver_power_routed.rpt -pb MNIST_Solver_power_summary_routed.pb -rpx MNIST_Solver_power_routed.rpx
 | Design           : MNIST_Solver
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.260        |
+| Total On-Chip Power (W)  | 0.275        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.169        |
+| Dynamic (W)              | 0.182        |
 | Device Static (W)        | 0.092        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.8         |
-| Junction Temperature (C) | 26.2         |
+| Max Ambient (C)          | 83.7         |
+| Junction Temperature (C) | 26.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      862 |       --- |             --- |
-|   LUT as Logic |     0.001 |      181 |     63400 |            0.29 |
-|   CARRY4       |    <0.001 |       60 |     15850 |            0.38 |
-|   Register     |    <0.001 |      406 |    126800 |            0.32 |
-|   Others       |     0.000 |      142 |       --- |             --- |
-| Signals        |     0.010 |     3623 |       --- |             --- |
-| Block RAM      |     0.011 |      3.5 |       135 |            2.59 |
+| Clocks         |     0.006 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |     1364 |       --- |             --- |
+|   LUT as Logic |     0.002 |      296 |     63400 |            0.47 |
+|   CARRY4       |    <0.001 |       78 |     15850 |            0.49 |
+|   Register     |    <0.001 |      696 |    126800 |            0.55 |
+|   Others       |     0.000 |      156 |       --- |             --- |
+| Signals        |     0.013 |     4075 |       --- |             --- |
+| Block RAM      |     0.019 |      6.5 |       135 |            4.81 |
 | DSPs           |     0.046 |       54 |       240 |           22.50 |
 | I/O            |     0.095 |      151 |       210 |           71.90 |
 | Static Power   |     0.092 |          |           |                 |
-| Total          |     0.260 |          |           |                 |
+| Total          |     0.275 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.089 |       0.073 |      0.016 |
+| Vccint    |       1.000 |     0.102 |       0.087 |      0.016 |
 | Vccaux    |       1.800 |     0.026 |       0.008 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -82,7 +82,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.001 |      0.000 |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.000 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -142,43 +142,62 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| MNIST_Solver                    |     0.169 |
+| MNIST_Solver                    |     0.182 |
 |   DUT                           |     0.058 |
 |     conv_channels_gen[0].kernel |     0.009 |
 |       M2_1                      |     0.001 |
 |       M2_2                      |     0.001 |
 |     conv_channels_gen[1].kernel |     0.009 |
-|       M2_2                      |     0.001 |
+|       M2_2                      |     0.002 |
 |     conv_channels_gen[2].kernel |     0.010 |
 |       M2_0                      |     0.001 |
 |       M2_1                      |     0.001 |
 |       M2_2                      |     0.001 |
-|     conv_channels_gen[3].kernel |     0.010 |
+|     conv_channels_gen[3].kernel |     0.009 |
 |       M2_2                      |     0.001 |
-|     conv_channels_gen[4].kernel |     0.008 |
-|       M2_2                      |     0.001 |
-|     conv_channels_gen[5].kernel |     0.010 |
+|     conv_channels_gen[4].kernel |     0.009 |
+|       M2_2                      |     0.002 |
+|     conv_channels_gen[5].kernel |     0.009 |
 |       M2_1                      |     0.001 |
 |       M2_2                      |     0.001 |
+|   MP                            |     0.003 |
 |   in_buf                        |     0.003 |
 |     ram                         |     0.003 |
 |       U0                        |     0.003 |
-|   obuf_gen[0].obuf              |     0.002 |
+|   obuf_gen[0].c1_obuf           |     0.002 |
 |     ram                         |     0.002 |
 |       U0                        |     0.002 |
-|   obuf_gen[1].obuf              |     0.002 |
+|   obuf_gen[0].mp_obuf           |     0.002 |
 |     ram                         |     0.002 |
 |       U0                        |     0.002 |
-|   obuf_gen[2].obuf              |     0.002 |
+|   obuf_gen[1].c1_obuf           |     0.002 |
 |     ram                         |     0.002 |
 |       U0                        |     0.002 |
-|   obuf_gen[3].obuf              |     0.002 |
+|   obuf_gen[1].mp_obuf           |     0.002 |
 |     ram                         |     0.002 |
 |       U0                        |     0.002 |
-|   obuf_gen[4].obuf              |     0.002 |
+|   obuf_gen[2].c1_obuf           |     0.002 |
 |     ram                         |     0.002 |
 |       U0                        |     0.002 |
-|   obuf_gen[5].obuf              |     0.002 |
+|   obuf_gen[2].mp_obuf           |     0.002 |
+|     ram                         |     0.002 |
+|       U0                        |     0.002 |
+|   obuf_gen[3].c1_obuf           |     0.002 |
+|     ram                         |     0.002 |
+|       U0                        |     0.002 |
+|   obuf_gen[3].mp_obuf           |     0.002 |
+|     ram                         |     0.002 |
+|       U0                        |     0.002 |
+|   obuf_gen[4].c1_obuf           |     0.002 |
+|     ram                         |     0.002 |
+|       U0                        |     0.002 |
+|   obuf_gen[4].mp_obuf           |     0.002 |
+|     ram                         |     0.002 |
+|       U0                        |     0.002 |
+|   obuf_gen[5].c1_obuf           |     0.002 |
+|     ram                         |     0.002 |
+|       U0                        |     0.002 |
+|   obuf_gen[5].mp_obuf           |     0.002 |
 |     ram                         |     0.002 |
 |       U0                        |     0.002 |
 +---------------------------------+-----------+

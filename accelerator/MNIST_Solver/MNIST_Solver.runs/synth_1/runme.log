@@ -14,14 +14,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30137 
+INFO: Helper process launched with PID 14545 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1433.871 ; gain = 76.855 ; free physical = 12088 ; free virtual = 25288
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.871 ; gain = 77.855 ; free physical = 17181 ; free virtual = 27748
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MNIST_Solver' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_1_Frame_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-14530-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-14530-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Frame_Buffer' (2#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_1' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
 	Parameter weights bound to: 972'b111111101011011110111111101100110010111111001111100100111111010010000011111111101100011110111111011101111101111111000111110010000000101001001101000000001000011110111110111011100001111111000100111000111110101111011101000000100000011110111111111000011101111110100101000010000001011101110100000001000001001001000000010010000001000001000111111001000000011101011110111111100110010100111111101000011111000000100000100011000000000011010010111111000011010110111111111101111010000000010101010101000000101001011010000000100000111001111110110010000001000000101000001101000000010110001110111111000010101110000000101111001011111111011110001101111110101110011111111111100110100010111110111010010001111111110010100110111111011000011000000000011000101111000001001011010101000000101010110010000000101110001100000000001110001101111111011001100110111111100010110100000000111100100110111111100101110011111111011100111111000001000101111001111111100010101110111111010001111001000000110000010110 
@@ -35,12 +35,12 @@ INFO: [Synth 8-6157] synthesizing module 'FP_Round' [/home/andrew/infernet/accel
 	Parameter NUM_P bound to: 48 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'FP_Round' (3#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-14530-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-14530-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
 WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
 WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-30122-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-14530-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-14530-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
 WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
 WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
 WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
@@ -130,9 +130,11 @@ WARNING: [Synth 8-350] instance 'M2_2' of module 'Mult_Add_Pipelined_COL' requir
 INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_3by3__parameterized4' (7#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:4]
 WARNING: [Synth 8-5856] 3D RAM kernel_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
 INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_1' (8#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (9#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Max_Pool_Layer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'Max_Pool_Layer' (9#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (10#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 12096 ; free virtual = 25297
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 17187 ; free virtual = 27755
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -145,10 +147,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 12098 ; free virtual = 25298
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 17189 ; free virtual = 27757
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 12098 ; free virtual = 25298
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1479.621 ; gain = 122.605 ; free physical = 17189 ; free virtual = 27757
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -265,28 +267,40 @@ Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.sr
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL_in_context.xdc] for cell 'DUT/conv_channels_gen[5].kernel/M2_2'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'in_buf/ram'
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'in_buf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].obuf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].obuf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].obuf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].obuf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].obuf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].obuf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].obuf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].obuf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].obuf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].obuf/ram'
-Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].obuf/ram'
-Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].c1_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].c1_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].mp_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[0].mp_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].c1_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].c1_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].mp_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[1].mp_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].c1_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].c1_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].mp_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[2].mp_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].c1_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].c1_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].mp_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[3].mp_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].c1_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].c1_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].mp_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[4].mp_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].c1_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].c1_obuf/ram'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].mp_obuf/ram'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM/Conv_1_BRAM_in_context.xdc] for cell 'obuf_gen[5].mp_obuf/ram'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/constrs_1/new/main.xdc]
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/constrs_1/new/main.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.465 ; gain = 0.000 ; free physical = 11790 ; free virtual = 25024
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1823.465 ; gain = 0.000 ; free physical = 16905 ; free virtual = 27473
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.465 ; gain = 0.000 ; free physical = 11788 ; free virtual = 25022
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1820.465 ; gain = 0.000 ; free physical = 11788 ; free virtual = 25022
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1823.465 ; gain = 0.000 ; free physical = 16904 ; free virtual = 27472
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1823.465 ; gain = 0.000 ; free physical = 16904 ; free virtual = 27472
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[0].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
@@ -342,21 +356,27 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M2_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'DUT/conv_channels_gen[5].kernel/M2_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'in_buf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[0].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[1].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[2].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[3].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[4].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[5].obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[0].c1_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[0].mp_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[1].c1_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[1].mp_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[2].c1_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[2].mp_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[3].c1_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[3].mp_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[4].c1_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[4].mp_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[5].c1_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'obuf_gen[5].mp_obuf/ram' at clock pin 'clka' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11866 ; free virtual = 25101
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1823.465 ; gain = 466.449 ; free physical = 17000 ; free virtual = 27568
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11866 ; free virtual = 25101
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1823.465 ; gain = 466.449 ; free physical = 17000 ; free virtual = 27568
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -416,22 +436,31 @@ Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[3].kernel /M2_
 Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[4].kernel /M2_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for DUT/\conv_channels_gen[5].kernel /M2_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for in_buf/ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for \obuf_gen[0].obuf /ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for \obuf_gen[1].obuf /ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for \obuf_gen[2].obuf /ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for \obuf_gen[3].obuf /ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for \obuf_gen[4].obuf /ram. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for \obuf_gen[5].obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[0].c1_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[0].mp_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[1].c1_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[1].mp_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[2].c1_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[2].mp_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[3].c1_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[3].mp_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[4].c1_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[4].mp_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[5].c1_obuf /ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for \obuf_gen[5].mp_obuf /ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11867 ; free virtual = 25102
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1823.465 ; gain = 466.449 ; free physical = 17001 ; free virtual = 27570
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][0]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_row_major" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "out_row" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11860 ; free virtual = 25095
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1823.465 ; gain = 466.449 ; free physical = 16992 ; free virtual = 27560
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -445,19 +474,20 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     48 Bit       Adders := 6     
-	   2 Input      5 Bit       Adders := 6     
+	   2 Input      5 Bit       Adders := 14    
 	   3 Input      5 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	               18 Bit    Registers := 9     
-	                5 Bit    Registers := 8     
+	               18 Bit    Registers := 21    
+	                5 Bit    Registers := 14    
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 10    
 +---Muxes : 
 	   2 Input     18 Bit        Muxes := 18    
-	   2 Input      5 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 7     
 	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 23    
+	   2 Input      1 Bit        Muxes := 38    
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -490,6 +520,18 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 4     
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 23    
+Module Max_Pool_Layer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 8     
++---Registers : 
+	               18 Bit    Registers := 12    
+	                5 Bit    Registers := 6     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 15    
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -513,8 +555,10 @@ INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][0]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "DUT/row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "DUT/cell_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "MP/in_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "MP/in_row_major" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11841 ; free virtual = 25081
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1823.465 ; gain = 466.449 ; free physical = 16969 ; free virtual = 27540
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -526,13 +570,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11718 ; free virtual = 24964
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1823.465 ; gain = 466.449 ; free physical = 16849 ; free virtual = 27420
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11714 ; free virtual = 24960
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16832 ; free virtual = 27403
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -544,7 +588,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11711 ; free virtual = 24958
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16828 ; free virtual = 27399
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -669,7 +713,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kerne
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \DUT/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[44]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -682,7 +726,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -694,25 +738,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -724,7 +768,7 @@ Report BlackBoxes:
 +------+-----------------------+----------+
 |1     |Mult_Add_Pipelined_NC  |         6|
 |2     |Mult_Add_Pipelined_COL |        48|
-|3     |Conv_1_BRAM            |         7|
+|3     |Conv_1_BRAM            |        13|
 +------+-----------------------+----------+
 
 Report Cell Usage: 
@@ -732,85 +776,91 @@ Report Cell Usage:
 |      |Cell                       |Count |
 +------+---------------------------+------+
 |1     |Conv_1_BRAM                |     1|
-|2     |Conv_1_BRAM__10            |     1|
-|3     |Conv_1_BRAM__11            |     1|
-|4     |Conv_1_BRAM__12            |     1|
-|5     |Conv_1_BRAM__7             |     1|
-|6     |Conv_1_BRAM__8             |     1|
-|7     |Conv_1_BRAM__9             |     1|
-|8     |Mult_Add_Pipelined_COL     |     1|
-|9     |Mult_Add_Pipelined_COL__48 |     1|
-|10    |Mult_Add_Pipelined_COL__49 |     1|
-|11    |Mult_Add_Pipelined_COL__50 |     1|
-|12    |Mult_Add_Pipelined_COL__51 |     1|
-|13    |Mult_Add_Pipelined_COL__52 |     1|
-|14    |Mult_Add_Pipelined_COL__53 |     1|
-|15    |Mult_Add_Pipelined_COL__54 |     1|
-|16    |Mult_Add_Pipelined_COL__55 |     1|
-|17    |Mult_Add_Pipelined_COL__56 |     1|
-|18    |Mult_Add_Pipelined_COL__57 |     1|
-|19    |Mult_Add_Pipelined_COL__58 |     1|
-|20    |Mult_Add_Pipelined_COL__59 |     1|
-|21    |Mult_Add_Pipelined_COL__60 |     1|
-|22    |Mult_Add_Pipelined_COL__61 |     1|
-|23    |Mult_Add_Pipelined_COL__62 |     1|
-|24    |Mult_Add_Pipelined_COL__63 |     1|
-|25    |Mult_Add_Pipelined_COL__64 |     1|
-|26    |Mult_Add_Pipelined_COL__65 |     1|
-|27    |Mult_Add_Pipelined_COL__66 |     1|
-|28    |Mult_Add_Pipelined_COL__67 |     1|
-|29    |Mult_Add_Pipelined_COL__68 |     1|
-|30    |Mult_Add_Pipelined_COL__69 |     1|
-|31    |Mult_Add_Pipelined_COL__70 |     1|
-|32    |Mult_Add_Pipelined_COL__71 |     1|
-|33    |Mult_Add_Pipelined_COL__72 |     1|
-|34    |Mult_Add_Pipelined_COL__73 |     1|
-|35    |Mult_Add_Pipelined_COL__74 |     1|
-|36    |Mult_Add_Pipelined_COL__75 |     1|
-|37    |Mult_Add_Pipelined_COL__76 |     1|
-|38    |Mult_Add_Pipelined_COL__77 |     1|
-|39    |Mult_Add_Pipelined_COL__78 |     1|
-|40    |Mult_Add_Pipelined_COL__79 |     1|
-|41    |Mult_Add_Pipelined_COL__80 |     1|
-|42    |Mult_Add_Pipelined_COL__81 |     1|
-|43    |Mult_Add_Pipelined_COL__82 |     1|
-|44    |Mult_Add_Pipelined_COL__83 |     1|
-|45    |Mult_Add_Pipelined_COL__84 |     1|
-|46    |Mult_Add_Pipelined_COL__85 |     1|
-|47    |Mult_Add_Pipelined_COL__86 |     1|
-|48    |Mult_Add_Pipelined_COL__87 |     1|
-|49    |Mult_Add_Pipelined_COL__88 |     1|
-|50    |Mult_Add_Pipelined_COL__89 |     1|
-|51    |Mult_Add_Pipelined_COL__90 |     1|
-|52    |Mult_Add_Pipelined_COL__91 |     1|
-|53    |Mult_Add_Pipelined_COL__92 |     1|
-|54    |Mult_Add_Pipelined_COL__93 |     1|
-|55    |Mult_Add_Pipelined_COL__94 |     1|
-|56    |Mult_Add_Pipelined_NC      |     1|
-|57    |Mult_Add_Pipelined_NC__10  |     1|
-|58    |Mult_Add_Pipelined_NC__6   |     1|
-|59    |Mult_Add_Pipelined_NC__7   |     1|
-|60    |Mult_Add_Pipelined_NC__8   |     1|
-|61    |Mult_Add_Pipelined_NC__9   |     1|
-|62    |BUFG                       |     1|
-|63    |CARRY4                     |    60|
-|64    |LUT1                       |     5|
-|65    |LUT2                       |    19|
-|66    |LUT3                       |   114|
-|67    |LUT4                       |    46|
-|68    |LUT5                       |    25|
-|69    |LUT6                       |    45|
-|70    |FDRE                       |   208|
-|71    |FDSE                       |     3|
-|72    |IBUF                       |    42|
-|73    |OBUF                       |   109|
+|2     |Conv_1_BRAM__13            |     1|
+|3     |Conv_1_BRAM__14            |     1|
+|4     |Conv_1_BRAM__15            |     1|
+|5     |Conv_1_BRAM__16            |     1|
+|6     |Conv_1_BRAM__17            |     1|
+|7     |Conv_1_BRAM__18            |     1|
+|8     |Conv_1_BRAM__19            |     1|
+|9     |Conv_1_BRAM__20            |     1|
+|10    |Conv_1_BRAM__21            |     1|
+|11    |Conv_1_BRAM__22            |     1|
+|12    |Conv_1_BRAM__23            |     1|
+|13    |Conv_1_BRAM__24            |     1|
+|14    |Mult_Add_Pipelined_COL     |     1|
+|15    |Mult_Add_Pipelined_COL__48 |     1|
+|16    |Mult_Add_Pipelined_COL__49 |     1|
+|17    |Mult_Add_Pipelined_COL__50 |     1|
+|18    |Mult_Add_Pipelined_COL__51 |     1|
+|19    |Mult_Add_Pipelined_COL__52 |     1|
+|20    |Mult_Add_Pipelined_COL__53 |     1|
+|21    |Mult_Add_Pipelined_COL__54 |     1|
+|22    |Mult_Add_Pipelined_COL__55 |     1|
+|23    |Mult_Add_Pipelined_COL__56 |     1|
+|24    |Mult_Add_Pipelined_COL__57 |     1|
+|25    |Mult_Add_Pipelined_COL__58 |     1|
+|26    |Mult_Add_Pipelined_COL__59 |     1|
+|27    |Mult_Add_Pipelined_COL__60 |     1|
+|28    |Mult_Add_Pipelined_COL__61 |     1|
+|29    |Mult_Add_Pipelined_COL__62 |     1|
+|30    |Mult_Add_Pipelined_COL__63 |     1|
+|31    |Mult_Add_Pipelined_COL__64 |     1|
+|32    |Mult_Add_Pipelined_COL__65 |     1|
+|33    |Mult_Add_Pipelined_COL__66 |     1|
+|34    |Mult_Add_Pipelined_COL__67 |     1|
+|35    |Mult_Add_Pipelined_COL__68 |     1|
+|36    |Mult_Add_Pipelined_COL__69 |     1|
+|37    |Mult_Add_Pipelined_COL__70 |     1|
+|38    |Mult_Add_Pipelined_COL__71 |     1|
+|39    |Mult_Add_Pipelined_COL__72 |     1|
+|40    |Mult_Add_Pipelined_COL__73 |     1|
+|41    |Mult_Add_Pipelined_COL__74 |     1|
+|42    |Mult_Add_Pipelined_COL__75 |     1|
+|43    |Mult_Add_Pipelined_COL__76 |     1|
+|44    |Mult_Add_Pipelined_COL__77 |     1|
+|45    |Mult_Add_Pipelined_COL__78 |     1|
+|46    |Mult_Add_Pipelined_COL__79 |     1|
+|47    |Mult_Add_Pipelined_COL__80 |     1|
+|48    |Mult_Add_Pipelined_COL__81 |     1|
+|49    |Mult_Add_Pipelined_COL__82 |     1|
+|50    |Mult_Add_Pipelined_COL__83 |     1|
+|51    |Mult_Add_Pipelined_COL__84 |     1|
+|52    |Mult_Add_Pipelined_COL__85 |     1|
+|53    |Mult_Add_Pipelined_COL__86 |     1|
+|54    |Mult_Add_Pipelined_COL__87 |     1|
+|55    |Mult_Add_Pipelined_COL__88 |     1|
+|56    |Mult_Add_Pipelined_COL__89 |     1|
+|57    |Mult_Add_Pipelined_COL__90 |     1|
+|58    |Mult_Add_Pipelined_COL__91 |     1|
+|59    |Mult_Add_Pipelined_COL__92 |     1|
+|60    |Mult_Add_Pipelined_COL__93 |     1|
+|61    |Mult_Add_Pipelined_COL__94 |     1|
+|62    |Mult_Add_Pipelined_NC      |     1|
+|63    |Mult_Add_Pipelined_NC__10  |     1|
+|64    |Mult_Add_Pipelined_NC__6   |     1|
+|65    |Mult_Add_Pipelined_NC__7   |     1|
+|66    |Mult_Add_Pipelined_NC__8   |     1|
+|67    |Mult_Add_Pipelined_NC__9   |     1|
+|68    |BUFG                       |     1|
+|69    |CARRY4                     |    78|
+|70    |LUT1                       |     8|
+|71    |LUT2                       |    38|
+|72    |LUT3                       |   123|
+|73    |LUT4                       |   163|
+|74    |LUT5                       |    48|
+|75    |LUT6                       |    54|
+|76    |FDRE                       |   453|
+|77    |FDSE                       |     9|
+|78    |IBUF                       |    42|
+|79    |OBUF                       |   109|
 +------+---------------------------+------+
 
 Report Instance Areas: 
 +------+----------------------------------+---------------------------------+------+
 |      |Instance                          |Module                           |Cells |
 +------+----------------------------------+---------------------------------+------+
-|1     |top                               |                                 |  5987|
+|1     |top                               |                                 |  6544|
 |2     |  DUT                             |Conv_Layer_1                     |  5709|
 |3     |    \conv_channels_gen[0].kernel  |Conv_Kernel_3by3                 |   899|
 |4     |    \conv_channels_gen[1].kernel  |Conv_Kernel_3by3__parameterized0 |   898|
@@ -818,36 +868,43 @@ Report Instance Areas:
 |6     |    \conv_channels_gen[3].kernel  |Conv_Kernel_3by3__parameterized2 |   898|
 |7     |    \conv_channels_gen[4].kernel  |Conv_Kernel_3by3__parameterized3 |   898|
 |8     |    \conv_channels_gen[5].kernel  |Conv_Kernel_3by3__parameterized4 |   898|
-|9     |  in_buf                          |Conv_1_Frame_Buffer__xdcDup__1   |    18|
-|10    |  \obuf_gen[0].obuf               |Conv_1_Frame_Buffer__xdcDup__2   |    18|
-|11    |  \obuf_gen[1].obuf               |Conv_1_Frame_Buffer__xdcDup__3   |    18|
-|12    |  \obuf_gen[2].obuf               |Conv_1_Frame_Buffer__xdcDup__4   |    18|
-|13    |  \obuf_gen[3].obuf               |Conv_1_Frame_Buffer__xdcDup__5   |    18|
-|14    |  \obuf_gen[4].obuf               |Conv_1_Frame_Buffer__xdcDup__6   |    18|
-|15    |  \obuf_gen[5].obuf               |Conv_1_Frame_Buffer              |    18|
+|9     |  MP                              |Max_Pool_Layer                   |   341|
+|10    |  in_buf                          |Conv_1_Frame_Buffer__xdcDup__1   |    18|
+|11    |  \obuf_gen[0].c1_obuf            |Conv_1_Frame_Buffer__xdcDup__2   |    36|
+|12    |  \obuf_gen[0].mp_obuf            |Conv_1_Frame_Buffer__xdcDup__3   |    18|
+|13    |  \obuf_gen[1].c1_obuf            |Conv_1_Frame_Buffer__xdcDup__4   |    36|
+|14    |  \obuf_gen[1].mp_obuf            |Conv_1_Frame_Buffer__xdcDup__5   |    18|
+|15    |  \obuf_gen[2].c1_obuf            |Conv_1_Frame_Buffer__xdcDup__6   |    36|
+|16    |  \obuf_gen[2].mp_obuf            |Conv_1_Frame_Buffer__xdcDup__7   |    18|
+|17    |  \obuf_gen[3].c1_obuf            |Conv_1_Frame_Buffer__xdcDup__8   |    36|
+|18    |  \obuf_gen[3].mp_obuf            |Conv_1_Frame_Buffer__xdcDup__9   |    18|
+|19    |  \obuf_gen[4].c1_obuf            |Conv_1_Frame_Buffer__xdcDup__10  |    36|
+|20    |  \obuf_gen[4].mp_obuf            |Conv_1_Frame_Buffer__xdcDup__11  |    18|
+|21    |  \obuf_gen[5].c1_obuf            |Conv_1_Frame_Buffer__xdcDup__12  |    36|
+|22    |  \obuf_gen[5].mp_obuf            |Conv_1_Frame_Buffer              |    18|
 +------+----------------------------------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.465 ; gain = 464.449 ; free physical = 11709 ; free virtual = 24956
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.473 ; gain = 482.457 ; free physical = 16829 ; free virtual = 27400
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 2304 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1821.465 ; gain = 122.605 ; free physical = 11763 ; free virtual = 25009
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1821.473 ; gain = 464.449 ; free physical = 11773 ; free virtual = 25020
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1839.473 ; gain = 138.613 ; free physical = 16882 ; free virtual = 27453
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1839.480 ; gain = 482.457 ; free physical = 16892 ; free virtual = 27463
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 60 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1821.473 ; gain = 0.000 ; free physical = 11705 ; free virtual = 24952
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1839.480 ; gain = 0.000 ; free physical = 16823 ; free virtual = 27394
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-52 Infos, 128 Warnings, 100 Critical Warnings and 0 Errors encountered.
+59 Infos, 134 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1821.473 ; gain = 464.602 ; free physical = 11763 ; free virtual = 25010
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1821.473 ; gain = 0.000 ; free physical = 11763 ; free virtual = 25010
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1839.480 ; gain = 482.609 ; free physical = 16884 ; free virtual = 27455
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1839.480 ; gain = 0.000 ; free physical = 16884 ; free virtual = 27455
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MNIST_Solver_utilization_synth.rpt -pb MNIST_Solver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 15 16:05:16 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 16 23:31:23 2021...

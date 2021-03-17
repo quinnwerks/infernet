@@ -36,6 +36,7 @@ read_verilog -library xil_defaultlib -sv {
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/ReLU.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv
 }

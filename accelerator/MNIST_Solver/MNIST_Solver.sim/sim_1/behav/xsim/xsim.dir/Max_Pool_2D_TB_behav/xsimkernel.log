@@ -1,0 +1,7 @@
+Running: xsim.dir/Max_Pool_2D_TB_behav/xsimk -simmode gui -wdb Max_Pool_2D_TB_behav.wdb -simrunnum 0 -socket 34207
+Design successfully loaded
+Design Loading Memory Usage: 34820 KB (Peak: 34828 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 115324 KB (Peak: 182092 KB)
+Simulation CPU Usage: 110 ms

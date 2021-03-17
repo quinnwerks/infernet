@@ -7,23 +7,38 @@ module MNIST_Solver(
     input start,
     output done,
     
-//    // Input data
+    // Input data, i.e. write to the first ibuf
     input [4:0] w_row,
     input [4:0] w_col,
-    input [17:0] w_data,
+    input signed [17:0] w_data,
     input w_en,
     
-//    // Output data
+    // Output data, i.e. read from the last obuf
     input [4:0] r_row,
     input [4:0] r_col,
-    output [17:0] r_data [5:0]
+    output signed [17:0] r_data [5:0]
 );
 
+    // start/done signals
+    logic c1_done;
+
+    // Input data buffer signals
     wire signed [17:0] c1_in_data, c1_out_data;
     wire [4:0] c1_in_row, c1_in_col;
-    wire [4:0] obuf_row, obuf_col;
-    wire obuf_w_en;
-    wire signed [17:0] obuf_wdata [5:0];
+    
+    // conv_1 output buffer signals
+    wire [4:0] c1_obuf_row, c1_obuf_col;
+    wire c1_obuf_w_en;
+    wire signed [17:0] c1_obuf_wdata [5:0];
+    
+    // max_pool input buffer signals
+    wire [4:0] mp_ibuf_row, mp_ibuf_col;
+    wire signed [17:0] mp_ibuf_rdata [5:0];
+    
+    // max pool output buffer signals
+    wire [4:0] mp_obuf_row, mp_obuf_col;
+    wire mp_obuf_w_en;
+    wire signed [17:0] mp_obuf_wdata [5:0];
 
     Conv_Layer_1 #(
         .weights('{
@@ -63,26 +78,53 @@ module MNIST_Solver(
         .clock(clock),
         .reset_n(reset_n),
         .start(start),
-        .done(done),
+        .done(c1_done),
         .in_data(c1_in_data),
         .in_row(c1_in_row),
         .in_col(c1_in_col),
-        .out_data(obuf_wdata),
-        .out_row(obuf_col),
-        .out_col(obuf_row),
-        .out_w_enable(obuf_w_en)
+        .out_data(c1_obuf_wdata),
+        .out_row(c1_obuf_row),
+        .out_col(c1_obuf_col),
+        .out_w_enable(c1_obuf_w_en)
+    );
+    
+    Max_Pool_Layer MP (
+        .clock(clock),
+        .reset_n(reset_n),
+        .start(c1_done),
+        .done(done),
+        .in_data(mp_ibuf_rdata),
+        .in_row(mp_ibuf_row),
+        .in_col(mp_ibuf_col),
+        .out_data(mp_obuf_wdata),
+        .out_row(mp_obuf_row),
+        .out_col(mp_obuf_col),
+        .out_w_enable(mp_obuf_w_en)
     );
     
     genvar i;
     generate
     for (i = 0; i < 6; i++) begin : obuf_gen
-        Conv_1_Frame_Buffer obuf (
+        Conv_1_Frame_Buffer c1_obuf (
             .clock(clock),
             
-            .w_row(obuf_row),
-            .w_col(obuf_col),
-            .w_data(obuf_wdata[i]),
-            .w_en(obuf_w_en),
+            .w_row(c1_obuf_row),
+            .w_col(c1_obuf_col),
+            .w_data(c1_obuf_wdata[i]),
+            .w_en(c1_obuf_w_en),
+            
+            .r_row(mp_ibuf_row),
+            .r_col(mp_ibuf_col),
+            .r_data(mp_ibuf_rdata[i])
+        );
+        
+        Conv_1_Frame_Buffer mp_obuf (
+            .clock(clock),
+            
+            .w_row(mp_obuf_row),
+            .w_col(mp_obuf_col),
+            .w_data(mp_obuf_wdata[i]),
+            .w_en(mp_obuf_w_en),
             
             .r_row(r_row),
             .r_col(r_col),

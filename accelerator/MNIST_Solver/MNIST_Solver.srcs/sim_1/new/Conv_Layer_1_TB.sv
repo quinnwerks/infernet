@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module Conv_1_Channel_TB(
+module Conv_Layer_1_TB (
 
 );
 
@@ -156,6 +156,62 @@ module Conv_1_Channel_TB(
             end
         end
         ibuf_wen = 1'b0;
+        
+        // 4. Trigger channel with "start"
+        start = 1'b1;
+        #PERIOD;
+        start = 1'b0;
+        
+        // 5. Wait for "done"
+        while (!done) begin
+            #PERIOD;
+        end
+        
+        // 6. Iterate over output frame buffer and compare against expected
+        for (int row = 0; row < 28; row++) begin
+            for (int col = 0; col < 28; col++) begin
+                obuf_rrow = row;
+                obuf_rcol = col;
+                #PERIOD;
+                difference = expected[row][col] - obuf_data_out[0];
+                if (difference[17]) begin
+                    difference = -difference;
+                end
+                if (difference > max_fault) begin
+                    PASS = 1'b0;
+                    $display("Mismatch at row = %d col = %d. Expected = %b_%b_%b Output = %b_%b_%b", row, col, expected[row][col][17], expected[row][col][16:10], expected[row][col][9:0], obuf_data_out[17], obuf_data_out[16:10], obuf_data_out[9:0]);
+                    $display("Difference = %b_%b_%b", difference[17], difference[16:10], difference[9:0]);
+                end
+            end
+        end
+        
+        // 4. Trigger channel with "start"
+        start = 1'b1;
+        #PERIOD;
+        start = 1'b0;
+        
+        // 5. Wait for "done"
+        while (!done) begin
+            #PERIOD;
+        end
+        
+        // 6. Iterate over output frame buffer and compare against expected
+        for (int row = 0; row < 28; row++) begin
+            for (int col = 0; col < 28; col++) begin
+                obuf_rrow = row;
+                obuf_rcol = col;
+                #PERIOD;
+                difference = expected[row][col] - obuf_data_out[0];
+                if (difference[17]) begin
+                    difference = -difference;
+                end
+                if (difference > max_fault) begin
+                    PASS = 1'b0;
+                    $display("Mismatch at row = %d col = %d. Expected = %b_%b_%b Output = %b_%b_%b", row, col, expected[row][col][17], expected[row][col][16:10], expected[row][col][9:0], obuf_data_out[17], obuf_data_out[16:10], obuf_data_out[9:0]);
+                    $display("Difference = %b_%b_%b", difference[17], difference[16:10], difference[9:0]);
+                end
+            end
+        end
         
         // 4. Trigger channel with "start"
         start = 1'b1;

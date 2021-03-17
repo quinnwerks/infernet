@@ -1,0 +1,12 @@
+
+{ 
+    crc :  2206857407562703045  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto f121a475fec14a31b9530a7d3d2796fb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot Max_Pool_2D_TB_behav xil_defaultlib.Max_Pool_2D_TB xil_defaultlib.glbl" , 
+    buildDate : "Mar 26 2019" , 
+    buildTime : "04:21:55" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/Max_Pool_2D_TB_behav/xsimk\"   \"xsim.dir/Max_Pool_2D_TB_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/Max_Pool_2D_TB_behav/obj/xsim_1.lnx64.o\" -L\"/home/andrew/Xilinx/install-dir/Vivado/2018.3/lib/lnx64.o\" -lrdi_simulator_kernel  -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
