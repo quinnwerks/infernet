@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="Mult_Add_Pipelined_COL_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1614041685">
-  <File Type="RDS-UTIL-PB" Name="Mult_Add_Pipelined_COL_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="Mult_Add_Pipelined_COL_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Mult_Add_Pipelined_COL_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="Mult_Add_Pipelined_COL.vds"/>
   <File Type="RDS-DCP" Name="Mult_Add_Pipelined_COL.dcp"/>
   <File Type="PA-TCL" Name="Mult_Add_Pipelined_COL.tcl"/>

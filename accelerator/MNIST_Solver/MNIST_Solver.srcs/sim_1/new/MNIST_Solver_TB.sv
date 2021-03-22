@@ -14,6 +14,8 @@ module MNIST_Solver_TB (
 
     localparam PERIOD = 100;
     localparam HALF_PERIOD = 50;
+    localparam NUM_FRAMES = 3;
+    localparam NUM_ITERS_PER_FRAME = 1;
 
     logic clock, reset_n, start, done;
     // x contains our test frame
@@ -31,7 +33,7 @@ module MNIST_Solver_TB (
     logic in_wen;
     logic [4:0] in_row, in_col, out_row, out_col;
     
-    int fd, read_ret;
+    int fd1, fd2, read_ret;
     
     MNIST_Solver DUT (
         .clock(clock),
@@ -55,22 +57,6 @@ module MNIST_Solver_TB (
     end
     
     initial begin
-        // 1. Read frame in
-        fd = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Conv_1_Channel_TB_frame.mem", "r");
-        for (int i = 0; i < 28; i++) begin
-            for (int j = 0; j < 28; j++) begin
-                read_ret = $fscanf(fd, "%b", x[i][j]);
-            end
-        end
-    
-        // 2. Read expected data in    
-        fd = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Max_Pool_2D_TB_expected.mem", "r");
-        for (int i = 0; i < 9; i++) begin
-            for (int j = 0; j < 9; j++) begin
-                read_ret = $fscanf(fd, "%b", expected[i][j]);
-            end
-        end
-        
         PASS = 1'b1;
         reset_n = 1'b0;
         start = 1'b0;
@@ -86,43 +72,64 @@ module MNIST_Solver_TB (
         reset_n = 1'b1;
         #PERIOD;
         #PERIOD;
-        
-        // 3. Write test frame into input frame buffer
-        for (int row = 0; row < 28; row++) begin
-            for (int col = 0; col < 28; col++) begin
-                in_row = row;
-                in_col = col;
-                in_data = x[row][col];
-                in_wen = 1'b1;
-                #PERIOD;
-            end
-        end
-        in_wen = 1'b0;
-        
-        // 4. Trigger channel with "start"
-        start = 1'b1;
-        #PERIOD;
-        start = 1'b0;
-        
-        // 5. Wait for "done"
-        while (!done) begin
-            #PERIOD;
-        end
-        
-        // 6. Iterate over output frame buffer and compare against expected
-        for (int row = 0; row < 9; row++) begin
-            for (int col = 0; col < 9; col++) begin
-                out_row = row;
-                out_col = col;
-                #PERIOD;
-                difference = expected[row][col] - out_data[0];
-                if (difference[17]) begin
-                    difference = -difference;
+    
+        fd1 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Conv_1_Channel_TB_frame.mem", "r");
+        fd2 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Max_Pool_2D_TB_expected.mem", "r");
+    
+        for (int frame = 0; frame < NUM_FRAMES; frame++) begin
+            // 1. Read frame in
+            for (int i = 0; i < 28; i++) begin
+                for (int j = 0; j < 28; j++) begin
+                    read_ret = $fscanf(fd1, "%b", x[i][j]);
                 end
-                if (difference > max_fault) begin
-                    PASS = 1'b0;
-                    $display("Mismatch at row = %d col = %d. Expected = %b_%b_%b Output = %b_%b_%b", row, col, expected[row][col][17], expected[row][col][16:10], expected[row][col][9:0], out_data[0][17], out_data[0][16:10], out_data[0][9:0]);
-                    $display("Difference = %b_%b_%b", difference[17], difference[16:10], difference[9:0]);
+            end
+        
+            // 2. Read expected data in        
+            for (int i = 0; i < 9; i++) begin
+                for (int j = 0; j < 9; j++) begin
+                    read_ret = $fscanf(fd2, "%b", expected[i][j]);
+                end
+            end
+            
+            // 3. Write test frame into input frame buffer
+            for (int row = 0; row < 28; row++) begin
+                for (int col = 0; col < 28; col++) begin
+                    in_row = row;
+                    in_col = col;
+                    in_data = x[row][col];
+                    in_wen = 1'b1;
+                    #PERIOD;
+                end
+            end
+            in_wen = 1'b0;
+            
+            for (int iter = 0; iter < NUM_ITERS_PER_FRAME; iter++) begin
+                // 4. Trigger channel with "start"
+                start = 1'b1;
+                #PERIOD;
+                start = 1'b0;
+                
+                // 5. Wait for "done"
+                while (!done) begin
+                    #PERIOD;
+                end
+                
+                // 6. Iterate over output frame buffer and compare against expected
+                for (int row = 0; row < 9; row++) begin
+                    for (int col = 0; col < 9; col++) begin
+                        out_row = row;
+                        out_col = col;
+                        #PERIOD;
+                        difference = expected[row][col] - out_data[0];
+                        if (difference[17]) begin
+                            difference = -difference;
+                        end
+                        if (difference > max_fault) begin
+                            PASS = 1'b0;
+                            $display("Mismatch at row = %d col = %d. Expected = %b_%b_%b Output = %b_%b_%b", row, col, expected[row][col][17], expected[row][col][16:10], expected[row][col][9:0], out_data[0][17], out_data[0][16:10], out_data[0][9:0]);
+                            $display("Difference = %b_%b_%b", difference[17], difference[16:10], difference[9:0]);
+                        end
+                    end
                 end
             end
         end
