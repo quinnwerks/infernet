@@ -16,11 +16,11 @@ module MNIST_Solver(
     // Output data, i.e. read from the last obuf
     input [4:0] r_row,
     input [4:0] r_col,
-    output signed [17:0] r_data [5:0]
+    output signed [17:0] r_data [19:0]
 );
 
     // start/done signals
-    logic c1_done;
+    logic c1_done, mp_done;
 
     // Input data buffer signals
     wire signed [17:0] c1_in_data, c1_out_data;
@@ -39,6 +39,32 @@ module MNIST_Solver(
     wire [4:0] mp_obuf_row, mp_obuf_col;
     wire mp_obuf_w_en;
     wire signed [17:0] mp_obuf_wdata [5:0];
+    
+    // conv_2 input buffer signals
+    wire [4:0] c2_ibuf_row, c2_ibuf_col;
+    wire signed [17:0] c2_ibuf_rdata [5:0];
+    
+    // conv_2 weight buffer signals
+    wire [4:0] c2_wbuf_addr;
+    wire signed [17:0] c2_wbuf_data [19:0];
+    
+    // conv_2 output buffer signals
+    wire [4:0] c2_obuf_row, c2_obuf_col;
+    wire c2_obuf_w_en;
+    wire signed [17:0] c2_obuf_wdata [19:0];
+
+    Conv_1_Frame_Buffer in_buf (
+        .clock(clock),
+        
+        .w_row(w_row),
+        .w_col(w_col),
+        .w_data(w_data),
+        .w_en(w_en),
+        
+        .r_row(c1_in_row),
+        .r_col(c1_in_col),
+        .r_data(c1_in_data)
+    );
 
     Conv_Layer_1 #(
         .weights('{
@@ -74,7 +100,7 @@ module MNIST_Solver(
                     }
                    }),
         .biases('{18'b0_0000010_1100000110, 18'b1_1111111_1111111001, 18'b1_1111111_1111111011, 18'b1_1111111_1111111110, 18'b1_1111111_0100110100, 18'b1_1111111_1000000000})
-    ) DUT (
+    ) C1 (
         .clock(clock),
         .reset_n(reset_n),
         .start(start),
@@ -92,7 +118,7 @@ module MNIST_Solver(
         .clock(clock),
         .reset_n(reset_n),
         .start(c1_done),
-        .done(done),
+        .done(mp_done),
         .in_data(mp_ibuf_rdata),
         .in_row(mp_ibuf_row),
         .in_col(mp_ibuf_col),
@@ -100,6 +126,39 @@ module MNIST_Solver(
         .out_row(mp_obuf_row),
         .out_col(mp_obuf_col),
         .out_w_enable(mp_obuf_w_en)
+    );
+    
+    Conv_2_Weight_Buffer c2_wbuf (
+        .clock(clock),
+        .addr(c2_wbuf_addr),
+        .data(c2_wbuf_data)
+    );
+    
+    Conv_Layer_2 #(
+        .biases('{18'b0_0000000_0010011101,18'b1_1111111_0011011110,18'b1_1111111_1000000111,18'b0_0000000_0111110111,
+                  18'b1_1111111_0000011101,18'b1_1111110_1110111011,18'b1_1111111_1011100001,18'b1_1111111_1010001001,
+                  18'b1_1111111_0101000110,18'b1_1111110_0101110100,18'b1_1111101_1000000001,18'b0_0000000_0011101000,
+                  18'b0_0000000_1000110101,18'b1_1111110_0010000010,18'b1_1111111_1000100001,18'b0_0000000_0111101011,
+                  18'b1_1111110_1001100010,18'b0_0000001_1001111001,18'b1_1111111_0101101100,18'b1_1111111_0001110011})
+    ) C2 (
+        .clock(clock),
+        .reset_n(reset_n),
+        .start(mp_done),
+        .done(done),
+        
+        .in_weight_row(c2_wbuf_addr[1]),
+        .in_weight_col(c2_wbuf_addr[0]),
+        .in_weight_chan(c2_wbuf_addr[4:2]),
+        .in_weight(c2_wbuf_data),
+        
+        .in_data(c2_ibuf_rdata),
+        .in_row(c2_ibuf_row),
+        .in_col(c2_ibuf_col),
+        
+        .out_data(c2_obuf_wdata),
+        .out_row(c2_obuf_row),
+        .out_col(c2_obuf_col),
+        .out_w_enable(c2_obuf_w_en)
     );
     
     genvar i;
@@ -126,24 +185,26 @@ module MNIST_Solver(
             .w_data(mp_obuf_wdata[i]),
             .w_en(mp_obuf_w_en),
             
+            .r_row(c2_ibuf_row),
+            .r_col(c2_ibuf_col),
+            .r_data(c2_ibuf_rdata[i])
+        );
+    end
+    
+    for (i = 0; i < 20; i++) begin : conv_2_obuf_gen
+        Conv_1_Frame_Buffer c2_obuf (
+            .clock(clock),
+            
+            .w_row(c2_obuf_row),
+            .w_col(c2_obuf_col),
+            .w_data(c2_obuf_wdata[i]),
+            .w_en(c2_obuf_w_en),
+            
             .r_row(r_row),
             .r_col(r_col),
             .r_data(r_data[i])
         );
     end
     endgenerate
-    
-    Conv_1_Frame_Buffer in_buf (
-        .clock(clock),
-        
-        .w_row(w_row),
-        .w_col(w_col),
-        .w_data(w_data),
-        .w_en(w_en),
-        
-        .r_row(c1_in_row),
-        .r_col(c1_in_col),
-        .r_data(c1_in_data)
-    );
 
 endmodule

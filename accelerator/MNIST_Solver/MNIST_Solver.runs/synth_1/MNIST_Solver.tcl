@@ -33,12 +33,17 @@ set_property ip_output_repo /home/andrew/infernet/accelerator/MNIST_Solver/MNIST
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib -sv {
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_1_Channel.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_2D.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/ReLU.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv
 }
 read_ip -quiet /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC.xci
 set_property used_in_implementation false [get_files -all /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_ooc.xdc]

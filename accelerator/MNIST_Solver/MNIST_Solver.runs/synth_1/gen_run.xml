@@ -1,15 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1615951859">
-  <File Type="PA-TCL" Name="MNIST_Solver.tcl"/>
-  <File Type="REPORTS-TCL" Name="MNIST_Solver_reports.tcl"/>
-  <File Type="RDS-RDS" Name="MNIST_Solver.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1616462070">
+  <File Type="VDS-TIMING-PB" Name="MNIST_Solver_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MNIST_Solver_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="MNIST_Solver.dcp"/>
   <File Type="RDS-UTIL-PB" Name="MNIST_Solver_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="MNIST_Solver_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="MNIST_Solver_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="MNIST_Solver.vds"/>
+  <File Type="REPORTS-TCL" Name="MNIST_Solver_reports.tcl"/>
+  <File Type="PA-TCL" Name="MNIST_Solver.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Conv1_Frame_Buffer.sv">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Conv_1_Channel.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/Conv_Kernel_2by2.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../rtl/Conv_Kernel_2by2.sv"/>
+        <Attr Name="ImportTime" Val="1614040402"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -31,10 +50,24 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Conv_Layer_2.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/FP_Round.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../rtl/FP_Round.sv"/>
         <Attr Name="ImportTime" Val="1614040439"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Max_Pool_2D.sv">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -63,37 +96,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Conv_1_Channel.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/rtl/Conv_Kernel_2by2.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../rtl/Conv_Kernel_2by2.sv"/>
-        <Attr Name="ImportTime" Val="1614040402"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Max_Pool_2D.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/Conv_1_Channel_TB.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/Conv_1_Channel_TB.sv"/>
         <Attr Name="ImportTime" Val="1615227266"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Conv_2_Weight_Buffer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -125,7 +138,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="Mult_Add_Pipelined_NC"/>
   <BlockFileSet Type="BlockSrcs" Name="Conv_1_BRAM"/>
   <BlockFileSet Type="BlockSrcs" Name="Mult_Add_Pipelined_COL"/>
+  <BlockFileSet Type="BlockSrcs" Name="Mult_Add_Pipelined_NC"/>
 </GenRun>

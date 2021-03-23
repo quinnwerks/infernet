@@ -29,7 +29,7 @@ module MNIST_Solver_TB (
     logic PASS;
     
     logic signed [17:0] in_data;
-    logic signed [17:0] out_data [5:0];
+    logic signed [17:0] out_data [19:0];
     logic in_wen;
     logic [4:0] in_row, in_col, out_row, out_col;
     
@@ -74,7 +74,7 @@ module MNIST_Solver_TB (
         #PERIOD;
     
         fd1 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Conv_1_Channel_TB_frame.mem", "r");
-        fd2 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Max_Pool_2D_TB_expected.mem", "r");
+        fd2 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Conv_2_TB_expected.mem", "r");
     
         for (int frame = 0; frame < NUM_FRAMES; frame++) begin
             // 1. Read frame in
