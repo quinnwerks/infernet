@@ -41,10 +41,10 @@ module Conv_Layer_2 #(
     
     assign cell_row = row + cell_row_offset;
     assign cell_col = col + cell_col_offset;
-    assign in_row = (cell_row != 9) ? cell_row - 1 : 0;
-    assign in_col = (cell_col != 9) ? cell_col - 1 : 0;
-    assign out_row = row;
-    assign out_col = col;
+    assign in_row = (cell_row != 9) ? cell_row : 0;
+    assign in_col = (cell_col != 9) ? cell_col : 0;
+//    assign out_row = row;
+//    assign out_col = col;
     assign in_weight_row = cell_row_offset[0];
     assign in_weight_col = cell_col_offset[0];
     assign in_weight_chan = in_chan;
@@ -98,8 +98,25 @@ module Conv_Layer_2 #(
     end
     endgenerate
     
-    assign out_w_enable = (channel_enable && move_window_counter == 4'd0 & in_chan == 'd5);
+//    assign out_w_enable = (channel_enable && move_window_counter == 4'd0 & in_chan == 'd5);
     assign sum_enable = (channel_enable && move_window_counter == 4'd0);
+    
+    always_ff @(posedge clock) begin
+        if (reset_n == 1'b0) begin
+            out_w_enable <= 1'b0;
+            out_row <= 'b0;
+            out_col <= 'b0;
+        end else begin
+            if (sum_enable && in_chan == 'd5) begin
+                out_w_enable <= 1'b1;
+                out_row <= row;
+                out_col <= col;
+            end
+            if (out_w_enable) begin
+                out_w_enable <= 1'b0;
+            end
+        end
+    end
     
     always_ff @(posedge clock) begin
         if (reset_n == 1'b0) begin

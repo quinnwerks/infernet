@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"MNIST_Solver_TB_func_impl.v" \
+
+sv xil_defaultlib  \
+"../../../../../MNIST_Solver.srcs/sim_1/new/MNIST_Solver_TB.sv" \
+"../../../../../MNIST_Solver.srcs/sim_1/new/Max_Pool_2D_TB.sv" \
+"../../../../../MNIST_Solver.srcs/sim_1/new/Conv_Layer_1_TB.sv" \
+"../../../../../MNIST_Solver.srcs/sim_1/new/Conv_Kernel_TB.sv" \
+"../../../../../MNIST_Solver.srcs/sim_1/new/FP_Round_TB.sv" \
+"../../../../../MNIST_Solver.srcs/sim_1/new/Conv_2_Weight_Buffer_TB.sv" \
+
+# Do not sort compile order
+nosort

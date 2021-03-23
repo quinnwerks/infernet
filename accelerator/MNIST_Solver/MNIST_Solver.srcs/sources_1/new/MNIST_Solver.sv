@@ -16,8 +16,13 @@ module MNIST_Solver(
     // Output data, i.e. read from the last obuf
     input [4:0] r_row,
     input [4:0] r_col,
-    output signed [17:0] r_data [19:0]
+    input [4:0] r_chan,
+//    output signed [17:0] r_data [19:0]
+    output signed [17:0] r_data_out
 );
+
+    logic signed [17:0] r_data [19:0];
+    assign r_data_out = r_data[r_chan];
 
     // start/done signals
     logic c1_done, mp_done;

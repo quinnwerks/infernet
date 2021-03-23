@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Mon Mar 22 21:14:31 2021
-# Process ID: 12437
+# Start of session at: Tue Mar 23 14:35:46 2021
+# Process ID: 26665
 # Current directory: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1
 # Command line: vivado -log MNIST_Solver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MNIST_Solver.tcl
 # Log file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12544 
+INFO: Helper process launched with PID 26680 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.539 ; gain = 89.855 ; free physical = 7847 ; free virtual = 21649
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.539 ; gain = 89.855 ; free physical = 12740 ; free virtual = 24959
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MNIST_Solver' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_1_Frame_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-12437-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-12437-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-26665-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-26665-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Frame_Buffer' (2#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_1' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
 	Parameter weights bound to: 972'b111111101011011110111111101100110010111111001111100100111111010010000011111111101100011110111111011101111101111111000111110010000000101001001101000000001000011110111110111011100001111111000100111000111110101111011101000000100000011110111111111000011101111110100101000010000001011101110100000001000001001001000000010010000001000001000111111001000000011101011110111111100110010100111111101000011111000000100000100011000000000011010010111111000011010110111111111101111010000000010101010101000000101001011010000000100000111001111110110010000001000000101000001101000000010110001110111111000010101110000000101111001011111111011110001101111110101110011111111111100110100010111110111010010001111111110010100110111111011000011000000000011000101111000001001011010101000000101010110010000000101110001100000000001110001101111111011001100110111111100010110100000000111100100110111111100101110011111111011100111111000001000101111001111111100010101110111111010001111001000000110000010110 
@@ -36,12 +36,12 @@ INFO: [Synth 8-6157] synthesizing module 'FP_Round' [/home/andrew/infernet/accel
 	Parameter NUM_P bound to: 48 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'FP_Round' (3#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-12437-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-12437-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-26665-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-26665-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
 WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
 WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-12437-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-12437-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-26665-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-26665-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
 WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
 WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
 WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
@@ -134,60 +134,47 @@ INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_1' (8#1) [/home/andrew
 INFO: [Synth 8-6157] synthesizing module 'Max_Pool_Layer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'Max_Pool_Layer' (9#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_2_Weight_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:3]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:130]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:131]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:132]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:133]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:134]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:135]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:136]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:137]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:138]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:139]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:140]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:141]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:142]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:143]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:144]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:145]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:146]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:147]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:148]
-WARNING: [Synth 8-2898] ignoring malformed $readmem task [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:149]
-INFO: [Synth 8-6157] synthesizing module 'Conv_2_Weight_dist_rom' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:155]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed" *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-6026] Ignoring keep related attribute (keep/mark_debug/dont_touch) applied on memory [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-
-Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
-	1: Unable to determine number of words or word size in RAM. 
-	2: No valid read/write found for RAM. 
-RAM dissolved into registers
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-WARNING: [Synth 8-3848] Net mem in module/entity Conv_2_Weight_dist_rom does not have driver. [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:161]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_2_Weight_dist_rom' (10#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:155]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_2_Weight_Buffer' (11#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:3]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:129]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:130]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:131]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:132]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:133]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:134]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:135]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:136]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:137]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:138]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:139]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:140]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:141]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:142]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:143]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:144]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:145]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:146]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:147]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:148]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_0_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:174]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_1_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:175]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_2_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:176]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_3_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:177]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_4_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:178]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_5_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:179]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_6_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:180]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_7_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:181]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_8_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:182]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_9_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:183]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_10_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:184]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_11_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:185]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_12_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:186]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_13_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:187]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_14_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:188]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_15_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:189]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_16_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:190]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_17_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:191]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_18_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:192]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_19_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:193]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_2_Weight_Buffer' (10#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_2' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:3]
 	Parameter biases bound to: 360'b000000000010011101111111110011011110111111111000000111000000000111110111111111110000011101111111101110111011111111111011100001111111111010001001111111110101000110111111100101110100111111011000000001000000000011101000000000001000110101111111100010000010111111111000100001000000000111101011111111101001100010000000011001111001111111110101101100111111110001110011 
 INFO: [Synth 8-6157] synthesizing module 'Conv_Kernel_2by2' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv:4]
@@ -196,14 +183,14 @@ WARNING: [Synth 8-350] instance 'M1' of module 'Mult_Add_Pipelined_COL' requires
 WARNING: [Synth 8-350] instance 'M2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 9 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv:46]
 WARNING: [Synth 8-350] instance 'M3' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 9 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv:58]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv:74]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_2by2' (12#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Kernel_2by2' (11#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/Conv_Kernel_2by2.sv:4]
 WARNING: [Synth 8-5856] 3D RAM kernel_weights_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
 WARNING: [Synth 8-5856] 3D RAM kernel_in_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-WARNING: [Synth 8-6014] Unused sequential element in_chan_old_reg was removed.  [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:135]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_2' (13#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (14#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element in_chan_old_reg was removed.  [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:151]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_2' (12#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (13#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1491.289 ; gain = 146.605 ; free physical = 7846 ; free virtual = 21648
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1492.289 ; gain = 147.605 ; free physical = 12730 ; free virtual = 24954
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -216,10 +203,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1491.289 ; gain = 146.605 ; free physical = 7849 ; free virtual = 21652
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.289 ; gain = 147.605 ; free physical = 12734 ; free virtual = 24958
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1491.289 ; gain = 146.605 ; free physical = 7849 ; free virtual = 21652
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1492.289 ; gain = 147.605 ; free physical = 12734 ; free virtual = 24958
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -564,12 +551,12 @@ Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.sr
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/constrs_1/new/main.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1841.102 ; gain = 0.000 ; free physical = 7492 ; free virtual = 21337
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1841.102 ; gain = 0.000 ; free physical = 12389 ; free virtual = 24609
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1845.102 ; gain = 0.000 ; free physical = 7482 ; free virtual = 21329
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1845.102 ; gain = 4.000 ; free physical = 7482 ; free virtual = 21329
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1844.102 ; gain = 0.000 ; free physical = 12384 ; free virtual = 24605
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1845.102 ; gain = 4.000 ; free physical = 12384 ; free virtual = 24604
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
@@ -672,14 +659,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C2/conv_channels_gen[1].kernel/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 INFO: [Common 17-14] Message 'Timing 38-316' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 7617 ; free virtual = 21443
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12543 ; free virtual = 24764
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 7617 ; free virtual = 21443
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12543 ; free virtual = 24764
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -852,7 +839,7 @@ Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[17].c2_obuf /ram. (c
 Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[18].c2_obuf /ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[19].c2_obuf /ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 7641 ; free virtual = 21441
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12540 ; free virtual = 24760
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
@@ -867,7 +854,7 @@ INFO: [Synth 8-5546] ROM "kernel_in_reg[1][0]" won't be mapped to RAM because it
 INFO: [Synth 8-5544] ROM "col" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 7593 ; free virtual = 21437
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12531 ; free virtual = 24753
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -882,21 +869,21 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     48 Bit       Adders := 26    
 	   2 Input      5 Bit       Adders := 20    
-	   3 Input      5 Bit       Adders := 6     
+	   3 Input      5 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               18 Bit    Registers := 125   
-	                5 Bit    Registers := 22    
+	                5 Bit    Registers := 24    
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 15    
+	                1 Bit    Registers := 16    
 +---Muxes : 
 	   2 Input     18 Bit        Muxes := 78    
 	   2 Input      5 Bit        Muxes := 10    
 	   2 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 58    
+	   2 Input      1 Bit        Muxes := 59    
 	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -942,28 +929,27 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 15    
 	   3 Input      1 Bit        Muxes := 1     
-Module Conv_2_Weight_dist_rom 
+Module Conv_2_Weight_Buffer 
 Detailed RTL Component Info : 
 +---Registers : 
-	               18 Bit    Registers := 1     
+	               18 Bit    Registers := 20    
 Module Conv_Layer_2 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      5 Bit       Adders := 6     
-	   3 Input      5 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               18 Bit    Registers := 84    
-	                5 Bit    Registers := 8     
+	                5 Bit    Registers := 10    
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 6     
 +---Muxes : 
 	   2 Input      5 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 20    
+	   2 Input      1 Bit        Muxes := 21    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -985,116 +971,163 @@ INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_row_major" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "out_row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "col" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "C1/row" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "C1/cell_row_offset" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "MP/in_row_offset" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "MP/in_row_major" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[0]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[1]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[2]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[3]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[4]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[5]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[6]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[7]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[8]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[9]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[10]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[11]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[12]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[13]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[14]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[15]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[16]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom0/data_reg[17]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[0]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[1]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[2]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[3]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[4]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[5]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[6]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[7]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[8]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[9]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[10]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[11]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[12]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[13]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[14]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[15]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[16]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom1/data_reg[17]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[0]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[1]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[2]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[3]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[4]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[5]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[6]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[7]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[8]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[9]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[10]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[11]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[12]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[13]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[14]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[15]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[16]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom2/data_reg[17]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[0]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[1]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[2]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[3]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[4]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[5]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[6]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[7]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[8]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[9]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[10]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[11]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[12]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[13]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[14]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[15]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[16]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom3/data_reg[17]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[0]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[1]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[2]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[3]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[4]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[5]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[6]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[7]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[8]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[9]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[10]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[11]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[12]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[13]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[14]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[15]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[16]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom4/data_reg[17]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[0]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[1]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[2]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[3]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[4]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[5]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[6]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[7]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[8]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
-INFO: [Synth 8-3886] merging instance 'c2_wbuf/rom5/data_reg[9]' (FD) to 'c2_wbuf/rom18/data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][12]' (FD) to 'c2_wbuf/data_reg[19][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][13]' (FD) to 'c2_wbuf/data_reg[19][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][14]' (FD) to 'c2_wbuf/data_reg[19][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][15]' (FD) to 'c2_wbuf/data_reg[19][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][16]' (FD) to 'c2_wbuf/data_reg[19][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[18][12]' (FD) to 'c2_wbuf/data_reg[18][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[18][13]' (FD) to 'c2_wbuf/data_reg[18][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[18][14]' (FD) to 'c2_wbuf/data_reg[18][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[18][15]' (FD) to 'c2_wbuf/data_reg[18][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[18][16]' (FD) to 'c2_wbuf/data_reg[18][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[17][12]' (FD) to 'c2_wbuf/data_reg[17][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[17][13]' (FD) to 'c2_wbuf/data_reg[17][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[17][14]' (FD) to 'c2_wbuf/data_reg[17][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[17][15]' (FD) to 'c2_wbuf/data_reg[17][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[17][16]' (FD) to 'c2_wbuf/data_reg[17][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[16][12]' (FD) to 'c2_wbuf/data_reg[16][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[16][13]' (FD) to 'c2_wbuf/data_reg[16][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[16][14]' (FD) to 'c2_wbuf/data_reg[16][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[16][15]' (FD) to 'c2_wbuf/data_reg[16][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[16][16]' (FD) to 'c2_wbuf/data_reg[16][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[15][12]' (FD) to 'c2_wbuf/data_reg[15][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[15][13]' (FD) to 'c2_wbuf/data_reg[15][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[15][14]' (FD) to 'c2_wbuf/data_reg[15][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[15][15]' (FD) to 'c2_wbuf/data_reg[15][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[15][16]' (FD) to 'c2_wbuf/data_reg[15][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[14][12]' (FD) to 'c2_wbuf/data_reg[14][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[14][13]' (FD) to 'c2_wbuf/data_reg[14][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[14][14]' (FD) to 'c2_wbuf/data_reg[14][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[14][15]' (FD) to 'c2_wbuf/data_reg[14][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[14][16]' (FD) to 'c2_wbuf/data_reg[14][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[13][12]' (FD) to 'c2_wbuf/data_reg[13][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[13][13]' (FD) to 'c2_wbuf/data_reg[13][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[13][14]' (FD) to 'c2_wbuf/data_reg[13][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[13][15]' (FD) to 'c2_wbuf/data_reg[13][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[13][16]' (FD) to 'c2_wbuf/data_reg[13][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[12][12]' (FD) to 'c2_wbuf/data_reg[12][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[12][13]' (FD) to 'c2_wbuf/data_reg[12][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[12][14]' (FD) to 'c2_wbuf/data_reg[12][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[12][15]' (FD) to 'c2_wbuf/data_reg[12][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[12][16]' (FD) to 'c2_wbuf/data_reg[12][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[11][12]' (FD) to 'c2_wbuf/data_reg[11][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[11][13]' (FD) to 'c2_wbuf/data_reg[11][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[11][14]' (FD) to 'c2_wbuf/data_reg[11][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[11][15]' (FD) to 'c2_wbuf/data_reg[11][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[11][16]' (FD) to 'c2_wbuf/data_reg[11][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[10][12]' (FD) to 'c2_wbuf/data_reg[10][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[10][13]' (FD) to 'c2_wbuf/data_reg[10][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[10][14]' (FD) to 'c2_wbuf/data_reg[10][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[10][15]' (FD) to 'c2_wbuf/data_reg[10][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[10][16]' (FD) to 'c2_wbuf/data_reg[10][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[9][13]' (FD) to 'c2_wbuf/data_reg[9][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[9][14]' (FD) to 'c2_wbuf/data_reg[9][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[9][15]' (FD) to 'c2_wbuf/data_reg[9][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[9][16]' (FD) to 'c2_wbuf/data_reg[9][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[8][12]' (FD) to 'c2_wbuf/data_reg[8][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[8][13]' (FD) to 'c2_wbuf/data_reg[8][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[8][14]' (FD) to 'c2_wbuf/data_reg[8][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[8][15]' (FD) to 'c2_wbuf/data_reg[8][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[8][16]' (FD) to 'c2_wbuf/data_reg[8][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[7][13]' (FD) to 'c2_wbuf/data_reg[7][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[7][14]' (FD) to 'c2_wbuf/data_reg[7][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[7][15]' (FD) to 'c2_wbuf/data_reg[7][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[7][16]' (FD) to 'c2_wbuf/data_reg[7][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[6][12]' (FD) to 'c2_wbuf/data_reg[6][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[6][13]' (FD) to 'c2_wbuf/data_reg[6][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[6][14]' (FD) to 'c2_wbuf/data_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[6][15]' (FD) to 'c2_wbuf/data_reg[6][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[6][16]' (FD) to 'c2_wbuf/data_reg[6][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[5][12]' (FD) to 'c2_wbuf/data_reg[5][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[5][13]' (FD) to 'c2_wbuf/data_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[5][14]' (FD) to 'c2_wbuf/data_reg[5][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[5][15]' (FD) to 'c2_wbuf/data_reg[5][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[5][16]' (FD) to 'c2_wbuf/data_reg[5][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[4][12]' (FD) to 'c2_wbuf/data_reg[4][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[4][13]' (FD) to 'c2_wbuf/data_reg[4][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[4][14]' (FD) to 'c2_wbuf/data_reg[4][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[4][15]' (FD) to 'c2_wbuf/data_reg[4][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[4][16]' (FD) to 'c2_wbuf/data_reg[4][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[3][12]' (FD) to 'c2_wbuf/data_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[3][13]' (FD) to 'c2_wbuf/data_reg[3][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[3][14]' (FD) to 'c2_wbuf/data_reg[3][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[3][15]' (FD) to 'c2_wbuf/data_reg[3][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[3][16]' (FD) to 'c2_wbuf/data_reg[3][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[2][13]' (FD) to 'c2_wbuf/data_reg[2][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[2][14]' (FD) to 'c2_wbuf/data_reg[2][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[2][15]' (FD) to 'c2_wbuf/data_reg[2][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[2][16]' (FD) to 'c2_wbuf/data_reg[2][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[1][12]' (FD) to 'c2_wbuf/data_reg[1][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[1][13]' (FD) to 'c2_wbuf/data_reg[1][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[1][14]' (FD) to 'c2_wbuf/data_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[1][15]' (FD) to 'c2_wbuf/data_reg[1][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[1][16]' (FD) to 'c2_wbuf/data_reg[1][17]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[0][12]' (FD) to 'c2_wbuf/data_reg[0][13]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[0][13]' (FD) to 'c2_wbuf/data_reg[0][14]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[0][14]' (FD) to 'c2_wbuf/data_reg[0][15]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[0][15]' (FD) to 'c2_wbuf/data_reg[0][16]'
+INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[0][16]' (FD) to 'c2_wbuf/data_reg[0][17]'
+INFO: [Synth 8-3886] merging instance 'C2/conv_channels_gen[19].kernel_weights_reg[19][0][0][12]' (FDRE) to 'C2/conv_channels_gen[19].kernel_weights_reg[19][0][0][13]'
+INFO: [Synth 8-3886] merging instance 'C2/conv_channels_gen[19].kernel_weights_reg[19][0][0][13]' (FDRE) to 'C2/conv_channels_gen[19].kernel_weights_reg[19][0][0][14]'
+INFO: [Synth 8-3886] merging instance 'C2/conv_channels_gen[19].kernel_weights_reg[19][0][0][14]' (FDRE) to 'C2/conv_channels_gen[19].kernel_weights_reg[19][0][0][15]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (c2_wbuf/\rom19/data_reg[17] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 7553 ; free virtual = 21398
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12485 ; free virtual = 24711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++---------------------+------------+---------------+----------------+
+|Module Name          | RTL Object | Depth x Width | Implemented As | 
++---------------------+------------+---------------+----------------+
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
++---------------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1106,13 +1139,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 7456 ; free virtual = 21306
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12352 ; free virtual = 24690
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1898.727 ; gain = 554.043 ; free physical = 7444 ; free virtual = 21290
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1845.102 ; gain = 500.418 ; free physical = 12210 ; free virtual = 24620
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1124,7 +1157,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7438 ; free virtual = 21283
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12179 ; free virtual = 24618
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1249,7 +1282,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \C1/conv_channels_gen[0].kernel
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \C1/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[44]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1262,7 +1295,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1274,25 +1307,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1480,32 +1513,33 @@ Report Cell Usage:
 |167   |Mult_Add_Pipelined_NC__50   |     1|
 |168   |BUFG                        |     1|
 |169   |CARRY4                      |   378|
-|170   |LUT1                        |    11|
-|171   |LUT2                        |   432|
-|172   |LUT3                        |   128|
-|173   |LUT4                        |   349|
-|174   |LUT5                        |   110|
-|175   |LUT6                        |   475|
-|176   |FDRE                        |   729|
-|177   |FDSE                        |   215|
-|178   |IBUF                        |    42|
-|179   |OBUF                        |   361|
+|170   |LUT1                        |    14|
+|171   |LUT2                        |   406|
+|172   |LUT3                        |   138|
+|173   |LUT4                        |   684|
+|174   |LUT5                        |   400|
+|175   |LUT6                        |   248|
+|176   |MUXF7                       |    36|
+|177   |FDRE                        |  2061|
+|178   |FDSE                        |   215|
+|179   |IBUF                        |    47|
+|180   |OBUF                        |    19|
 +------+----------------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------+---------------------------------+------+
 |      |Instance                           |Module                           |Cells |
 +------+-----------------------------------+---------------------------------+------+
-|1     |top                                |                                 | 16689|
-|2     |  C1                               |Conv_Layer_1                     |  5710|
+|1     |top                                |                                 | 18105|
+|2     |  C1                               |Conv_Layer_1                     |  5708|
 |3     |    \conv_channels_gen[0].kernel   |Conv_Kernel_3by3                 |   898|
 |4     |    \conv_channels_gen[1].kernel   |Conv_Kernel_3by3__parameterized0 |   898|
 |5     |    \conv_channels_gen[2].kernel   |Conv_Kernel_3by3__parameterized1 |   898|
 |6     |    \conv_channels_gen[3].kernel   |Conv_Kernel_3by3__parameterized2 |   898|
 |7     |    \conv_channels_gen[4].kernel   |Conv_Kernel_3by3__parameterized3 |   898|
 |8     |    \conv_channels_gen[5].kernel   |Conv_Kernel_3by3__parameterized4 |   898|
-|9     |  C2                               |Conv_Layer_2                     |  9533|
-|10    |    \conv_channels_gen[0].kernel   |Conv_Kernel_2by2__xdcDup__1      |   430|
+|9     |  C2                               |Conv_Layer_2                     | 10881|
+|10    |    \conv_channels_gen[0].kernel   |Conv_Kernel_2by2__xdcDup__1      |   429|
 |11    |    \conv_channels_gen[10].kernel  |Conv_Kernel_2by2__xdcDup__11     |   429|
 |12    |    \conv_channels_gen[11].kernel  |Conv_Kernel_2by2__xdcDup__12     |   429|
 |13    |    \conv_channels_gen[12].kernel  |Conv_Kernel_2by2__xdcDup__13     |   429|
@@ -1515,7 +1549,7 @@ Report Instance Areas:
 |17    |    \conv_channels_gen[16].kernel  |Conv_Kernel_2by2__xdcDup__17     |   429|
 |18    |    \conv_channels_gen[17].kernel  |Conv_Kernel_2by2__xdcDup__18     |   429|
 |19    |    \conv_channels_gen[18].kernel  |Conv_Kernel_2by2__xdcDup__19     |   429|
-|20    |    \conv_channels_gen[19].kernel  |Conv_Kernel_2by2                 |   429|
+|20    |    \conv_channels_gen[19].kernel  |Conv_Kernel_2by2                 |   430|
 |21    |    \conv_channels_gen[1].kernel   |Conv_Kernel_2by2__xdcDup__2      |   429|
 |22    |    \conv_channels_gen[2].kernel   |Conv_Kernel_2by2__xdcDup__3      |   429|
 |23    |    \conv_channels_gen[3].kernel   |Conv_Kernel_2by2__xdcDup__4      |   429|
@@ -1525,63 +1559,64 @@ Report Instance Areas:
 |27    |    \conv_channels_gen[7].kernel   |Conv_Kernel_2by2__xdcDup__8      |   429|
 |28    |    \conv_channels_gen[8].kernel   |Conv_Kernel_2by2__xdcDup__9      |   429|
 |29    |    \conv_channels_gen[9].kernel   |Conv_Kernel_2by2__xdcDup__10     |   429|
-|30    |  MP                               |Max_Pool_Layer                   |   346|
-|31    |  \conv_2_obuf_gen[0].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__14  |    18|
-|32    |  \conv_2_obuf_gen[10].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__24  |    18|
-|33    |  \conv_2_obuf_gen[11].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__25  |    18|
-|34    |  \conv_2_obuf_gen[12].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__26  |    18|
-|35    |  \conv_2_obuf_gen[13].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__27  |    18|
-|36    |  \conv_2_obuf_gen[14].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__28  |    18|
-|37    |  \conv_2_obuf_gen[15].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__29  |    18|
-|38    |  \conv_2_obuf_gen[16].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__30  |    18|
-|39    |  \conv_2_obuf_gen[17].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__31  |    18|
-|40    |  \conv_2_obuf_gen[18].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__32  |    18|
-|41    |  \conv_2_obuf_gen[19].c2_obuf     |Conv_1_Frame_Buffer              |    18|
-|42    |  \conv_2_obuf_gen[1].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__15  |    18|
-|43    |  \conv_2_obuf_gen[2].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__16  |    18|
-|44    |  \conv_2_obuf_gen[3].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__17  |    18|
-|45    |  \conv_2_obuf_gen[4].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__18  |    18|
-|46    |  \conv_2_obuf_gen[5].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__19  |    18|
-|47    |  \conv_2_obuf_gen[6].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__20  |    18|
-|48    |  \conv_2_obuf_gen[7].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__21  |    18|
-|49    |  \conv_2_obuf_gen[8].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__22  |    18|
-|50    |  \conv_2_obuf_gen[9].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__23  |    18|
-|51    |  in_buf                           |Conv_1_Frame_Buffer__xdcDup__1   |    18|
-|52    |  \obuf_gen[0].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__2   |    35|
-|53    |  \obuf_gen[0].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__3   |    18|
-|54    |  \obuf_gen[1].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__4   |    35|
-|55    |  \obuf_gen[1].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__5   |    18|
-|56    |  \obuf_gen[2].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__6   |    35|
-|57    |  \obuf_gen[2].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__7   |    18|
-|58    |  \obuf_gen[3].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__8   |    35|
-|59    |  \obuf_gen[3].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__9   |    18|
-|60    |  \obuf_gen[4].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__10  |    35|
-|61    |  \obuf_gen[4].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__11  |    18|
-|62    |  \obuf_gen[5].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__12  |    35|
-|63    |  \obuf_gen[5].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__13  |    18|
+|30    |  MP                               |Max_Pool_Layer                   |   376|
+|31    |  c2_wbuf                          |Conv_2_Weight_Buffer             |   263|
+|32    |  \conv_2_obuf_gen[0].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__14  |    18|
+|33    |  \conv_2_obuf_gen[10].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__24  |    18|
+|34    |  \conv_2_obuf_gen[11].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__25  |    54|
+|35    |  \conv_2_obuf_gen[12].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__26  |    18|
+|36    |  \conv_2_obuf_gen[13].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__27  |    18|
+|37    |  \conv_2_obuf_gen[14].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__28  |    18|
+|38    |  \conv_2_obuf_gen[15].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__29  |    36|
+|39    |  \conv_2_obuf_gen[16].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__30  |    18|
+|40    |  \conv_2_obuf_gen[17].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__31  |    18|
+|41    |  \conv_2_obuf_gen[18].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__32  |    18|
+|42    |  \conv_2_obuf_gen[19].c2_obuf     |Conv_1_Frame_Buffer              |    54|
+|43    |  \conv_2_obuf_gen[1].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__15  |    18|
+|44    |  \conv_2_obuf_gen[2].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__16  |    18|
+|45    |  \conv_2_obuf_gen[3].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__17  |    54|
+|46    |  \conv_2_obuf_gen[4].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__18  |    18|
+|47    |  \conv_2_obuf_gen[5].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__19  |    18|
+|48    |  \conv_2_obuf_gen[6].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__20  |    18|
+|49    |  \conv_2_obuf_gen[7].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__21  |    36|
+|50    |  \conv_2_obuf_gen[8].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__22  |    18|
+|51    |  \conv_2_obuf_gen[9].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__23  |    18|
+|52    |  in_buf                           |Conv_1_Frame_Buffer__xdcDup__1   |    18|
+|53    |  \obuf_gen[0].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__2   |    30|
+|54    |  \obuf_gen[0].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__3   |    18|
+|55    |  \obuf_gen[1].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__4   |    30|
+|56    |  \obuf_gen[1].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__5   |    18|
+|57    |  \obuf_gen[2].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__6   |    30|
+|58    |  \obuf_gen[2].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__7   |    18|
+|59    |  \obuf_gen[3].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__8   |    30|
+|60    |  \obuf_gen[3].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__9   |    18|
+|61    |  \obuf_gen[4].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__10  |    30|
+|62    |  \obuf_gen[4].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__11  |    18|
+|63    |  \obuf_gen[5].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__12  |    30|
+|64    |  \obuf_gen[5].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__13  |    18|
 +------+-----------------------------------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.742 ; gain = 563.059 ; free physical = 7441 ; free virtual = 21287
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.703 ; gain = 526.020 ; free physical = 12177 ; free virtual = 24616
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 2304 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1907.742 ; gain = 209.246 ; free physical = 7492 ; free virtual = 21338
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.750 ; gain = 563.059 ; free physical = 7503 ; free virtual = 21349
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1870.703 ; gain = 173.207 ; free physical = 12230 ; free virtual = 24669
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1870.711 ; gain = 526.020 ; free physical = 12241 ; free virtual = 24680
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 378 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 414 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1907.750 ; gain = 0.000 ; free physical = 7436 ; free virtual = 21282
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1870.711 ; gain = 0.000 ; free physical = 12173 ; free virtual = 24612
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-177 Infos, 220 Warnings, 100 Critical Warnings and 0 Errors encountered.
+214 Infos, 175 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1907.750 ; gain = 574.664 ; free physical = 7529 ; free virtual = 21375
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1907.750 ; gain = 0.000 ; free physical = 7529 ; free virtual = 21375
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1870.711 ; gain = 537.625 ; free physical = 12234 ; free virtual = 24673
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1870.711 ; gain = 0.000 ; free physical = 12234 ; free virtual = 24673
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MNIST_Solver_utilization_synth.rpt -pb MNIST_Solver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 22 21:15:07 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 23 14:36:20 2021...

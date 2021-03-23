@@ -1,0 +1,111 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
+| Date         : Tue Mar 23 14:37:18 2021
+| Host         : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
+| Command      : report_control_sets -verbose -file MNIST_Solver_control_sets_placed.rpt
+| Design       : MNIST_Solver
+| Device       : xc7a100t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    43 |
+| Unused register locations in slices containing registers |   185 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      4 |            1 |
+|      5 |           12 |
+|      6 |            2 |
+|     10 |            1 |
+|    16+ |           27 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             274 |          101 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             249 |           76 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            1948 |          726 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+---------------------------------------------------------------+-----------------------------------------+------------------+----------------+
+|   Clock Signal   |                         Enable Signal                         |             Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------+---------------------------------------------------------------+-----------------------------------------+------------------+----------------+
+|  clock_IBUF_BUFG | C1/move_window_counter[3]_i_1_n_0                             | C2/conv_channels_gen[19].kernel/reset_n |                1 |              4 |
+|  clock_IBUF_BUFG | MP/out_row[4]_i_1_n_0                                         | MP/out_col[4]_i_1_n_0                   |                2 |              5 |
+|  clock_IBUF_BUFG | C2/out_w_enable0                                              | C2/in_chan                              |                2 |              5 |
+|  clock_IBUF_BUFG | C2/row[4]_i_2__0_n_0                                          | C2/row[4]_i_1__0_n_0                    |                1 |              5 |
+|  clock_IBUF_BUFG | MP/in_col_major[4]_i_2_n_0                                    | MP/in_col_major                         |                1 |              5 |
+|  clock_IBUF_BUFG | MP/in_col_offset[4]_i_2_n_0                                   | MP/in_col_offset                        |                2 |              5 |
+|  clock_IBUF_BUFG | C1/sel                                                        | C1/clear                                |                2 |              5 |
+|  clock_IBUF_BUFG | C1/read_enable                                                | C1/cell_col_offset[4]_i_1__0_n_0        |                1 |              5 |
+|  clock_IBUF_BUFG | MP/in_row_major                                               | MP/in_col_major                         |                2 |              5 |
+|  clock_IBUF_BUFG | MP/in_row_offset                                              | MP/in_col_offset                        |                2 |              5 |
+|  clock_IBUF_BUFG | MP/out_col[4]_i_2_n_0                                         | MP/out_col[4]_i_1_n_0                   |                2 |              5 |
+|  clock_IBUF_BUFG | C1/cell_row_offset[4]_i_1_n_0                                 | C1/cell_col_offset[4]_i_1__0_n_0        |                3 |              5 |
+|  clock_IBUF_BUFG | C1/c1_obuf_w_en                                               | C1/clear                                |                2 |              5 |
+|  clock_IBUF_BUFG | C2/cell_row_offset                                            | C2/cell_col_offset                      |                2 |              6 |
+|  clock_IBUF_BUFG | C2/read_enable                                                | C2/cell_col_offset                      |                1 |              6 |
+|  clock_IBUF_BUFG | C2/out_w_enable0                                              | C2/conv_channels_gen[19].kernel/reset_n |                3 |             10 |
+|  clock_IBUF_BUFG | MP/max                                                        | MP/max[5][17]_i_1_n_0                   |                6 |             18 |
+|  clock_IBUF_BUFG | MP/max[0][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                4 |             18 |
+|  clock_IBUF_BUFG | MP/max[1][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                4 |             18 |
+|  clock_IBUF_BUFG | MP/max[2][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                4 |             18 |
+|  clock_IBUF_BUFG | MP/max[3][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                5 |             18 |
+|  clock_IBUF_BUFG | MP/max[4][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                4 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in                                                  | C2/kernel_in[1][1][17]_i_1__0_n_0       |                7 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in[1][0][17]_i_2__0_n_0                             | C2/kernel_in[1][0][17]_i_1__0_n_0       |                8 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in[0][1][17]_i_2__0_n_0                             | C2/kernel_in[0][1][17]_i_1__0_n_0       |                7 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in[0][0][17]_i_2__0_n_0                             | C2/kernel_in[0][0][17]_i_1__0_n_0       |                7 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in0_in                                              | C1/kernel_in                            |                5 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[0][0][17]_i_2_n_0                                | C1/kernel_in[0][0][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[0][1][17]_i_2_n_0                                | C1/kernel_in[0][1][17]_i_1_n_0          |                3 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[0][2][17]_i_2_n_0                                | C1/kernel_in[0][2][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[2][1][17]_i_2_n_0                                | C1/kernel_in[2][1][17]_i_1_n_0          |                6 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[2][0][17]_i_2_n_0                                | C1/kernel_in[2][0][17]_i_1_n_0          |                3 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[1][2][17]_i_2_n_0                                | C1/kernel_in[1][2][17]_i_1_n_0          |                3 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[1][1][17]_i_2_n_0                                | C1/kernel_in[1][1][17]_i_1_n_0          |                7 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[1][0][17]_i_2_n_0                                | C1/kernel_in[1][0][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | MP/out_data                                                   | MP/done_cell                            |               33 |            108 |
+|  clock_IBUF_BUFG |                                                               | C2/conv_channels_gen[19].kernel/reset_n |               76 |            249 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[19].kernel_weights[19][0][0][17]_i_1_n_0 | C2/conv_channels_gen[19].kernel/reset_n |              110 |            263 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[19].kernel_weights[19][0][1][17]_i_1_n_0 | C2/conv_channels_gen[19].kernel/reset_n |              121 |            263 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[19].kernel_weights[19][1][0][17]_i_1_n_0 | C2/conv_channels_gen[19].kernel/reset_n |              118 |            263 |
+|  clock_IBUF_BUFG | C2/kernel_weights                                             | C2/conv_channels_gen[19].kernel/reset_n |              120 |            263 |
+|  clock_IBUF_BUFG |                                                               |                                         |              101 |            274 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[0].sums[0][0]_i_2_n_0                    | C2/sums                                 |              100 |            360 |
++------------------+---------------------------------------------------------------+-----------------------------------------+------------------+----------------+
+
+
