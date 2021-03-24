@@ -16,6 +16,7 @@ sv xil_defaultlib  \
 "../../../../MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv" \
 "../../../../MNIST_Solver.srcs/sources_1/imports/new/Conv_1_Channel_TB.sv" \
 "../../../../MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv" \
+"../../../../MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv" \
 "../../../../MNIST_Solver.srcs/sim_1/new/MNIST_Solver_TB.sv" \
 "../../../../MNIST_Solver.srcs/sim_1/new/Max_Pool_2D_TB.sv" \
 "../../../../MNIST_Solver.srcs/sim_1/new/Conv_Layer_1_TB.sv" \

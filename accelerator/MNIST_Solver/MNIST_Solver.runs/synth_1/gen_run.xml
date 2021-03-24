@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1616524545">
-  <File Type="VDS-TIMING-PB" Name="MNIST_Solver_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MNIST_Solver_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="MNIST_Solver.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="MNIST_Solver_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="MNIST_Solver_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="MNIST_Solver_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="MNIST_Solver.vds"/>
-  <File Type="REPORTS-TCL" Name="MNIST_Solver_reports.tcl"/>
-  <File Type="PA-TCL" Name="MNIST_Solver.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1616609986">
+  <File Type="VDS-TIMING-PB" Name="Global_Average_Layer_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Global_Average_Layer_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="Global_Average_Layer.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="Global_Average_Layer_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="Global_Average_Layer_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="Global_Average_Layer_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="Global_Average_Layer.vds"/>
+  <File Type="REPORTS-TCL" Name="Global_Average_Layer_reports.tcl"/>
+  <File Type="PA-TCL" Name="Global_Average_Layer.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Conv1_Frame_Buffer.sv">
@@ -110,9 +110,23 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Global_Average_Layer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="MNIST_Solver"/>
+      <Option Name="TopModule" Val="Global_Average_Layer"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

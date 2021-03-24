@@ -120,11 +120,11 @@ module Conv_Layer_2 #(
     
     always_ff @(posedge clock) begin
         if (reset_n == 1'b0) begin
-            move_window_counter <= 4'd05;
+            move_window_counter <= 4'd04;
         end else begin
             if (channel_enable && mult_enable) begin
                 if (move_window_counter == 4'd0) begin
-                    move_window_counter <= 4'd05;
+                    move_window_counter <= 4'd04;
                 end else begin
                     move_window_counter <= move_window_counter - 1;
                 end
