@@ -38,6 +38,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log Global_Average_Layer.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Global_Average_Layer.tcl -notrace
+EAStep vivado -log MNIST_Solver.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source MNIST_Solver.tcl -notrace
 
 

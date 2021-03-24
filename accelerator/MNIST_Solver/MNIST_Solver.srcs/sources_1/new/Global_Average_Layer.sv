@@ -55,7 +55,7 @@ module Global_Average_Layer(
                     state <= IDLE;
                 end
             end else if (state == ADD) begin
-                if (in_row == 'd8 && in_row == 'd8) begin
+                if (in_row == 'd8 && in_col == 'd8 && counter == 'b0) begin
                     state <= DIV;
                 end else begin
                     state <= ADD;
@@ -75,12 +75,14 @@ module Global_Average_Layer(
     // Input/output controls
     always_ff @(posedge clock) begin
         if (reset_n == 1'b0) begin
-            counter <= 'd3;
+            counter <= 'd5;
             done <= 1'b0;
+            in_row <= 'b0;
+            in_col <= 'b0;
         end else begin
             if (state == ADD || state == DIV) begin
                 if (counter == 'd0) begin
-                    counter <= 'd3;
+                    counter <= 'd5;
                     if (in_row == 'd8 && in_col == 'd8) begin
                         in_row <= 'd0;
                         in_col <= 'd0;
@@ -122,6 +124,7 @@ module Global_Average_Layer(
                 a[i] <= 'b0;
                 b[i] <= 'b0;
                 c[i] <= 'b0;
+                obuf[i] <= 'b0;
             end else begin
                 if (state == ADD) begin
                     a[i] <= in_data[i];
@@ -135,11 +138,13 @@ module Global_Average_Layer(
                     a[i] <= loopback_rounded[i];
                     b[i] <= 18'b0_0000000_0000001101;
                     c[i] <= 'b0;
+                    if (counter == 'b0) begin
+                        obuf[i] <= out_rounded[i];
+                    end
                 end else if (state == DONE) begin
                     a[i] <= 'b0;
                     b[i] <= 'b0;
                     c[i] <= 'b0;
-                    obuf[i] <= out_rounded[i];
                 end
             end
         end

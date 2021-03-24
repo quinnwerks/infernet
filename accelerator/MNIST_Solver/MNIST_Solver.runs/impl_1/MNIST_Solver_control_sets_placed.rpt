@@ -1,0 +1,118 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
+| Date         : Wed Mar 24 16:03:25 2021
+| Host         : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
+| Command      : report_control_sets -verbose -file MNIST_Solver_control_sets_placed.rpt
+| Design       : MNIST_Solver
+| Device       : xc7a100t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    49 |
+| Unused register locations in slices containing registers |   192 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      4 |            1 |
+|      5 |           14 |
+|      6 |            2 |
+|     10 |            1 |
+|     13 |            1 |
+|    16+ |           30 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             275 |          101 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             254 |          103 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            3791 |         1093 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+---------------------------------------------------------------+-----------------------------------------+------------------+----------------+
+|   Clock Signal   |                         Enable Signal                         |             Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------+---------------------------------------------------------------+-----------------------------------------+------------------+----------------+
+|  clock_IBUF_BUFG | C1/move_window_counter[3]_i_1_n_0                             | C2/conv_channels_gen[19].kernel/reset_n |                1 |              4 |
+|  clock_IBUF_BUFG | MP/out_row[4]_i_1__0_n_0                                      | MP/out_col[4]_i_1_n_0                   |                1 |              5 |
+|  clock_IBUF_BUFG | C2/out_w_enable0                                              | C2/in_chan                              |                2 |              5 |
+|  clock_IBUF_BUFG | C2/row[4]_i_2_n_0                                             | C2/row[4]_i_1_n_0                       |                2 |              5 |
+|  clock_IBUF_BUFG | GA/in_col[4]_i_2_n_0                                          | GA/in_col[4]_i_1_n_0                    |                1 |              5 |
+|  clock_IBUF_BUFG | GA/in_row[4]_i_1_n_0                                          | GA/in_col[4]_i_1_n_0                    |                1 |              5 |
+|  clock_IBUF_BUFG | MP/in_col_major[4]_i_2_n_0                                    | MP/in_col_major                         |                1 |              5 |
+|  clock_IBUF_BUFG | MP/in_col_offset[4]_i_2_n_0                                   | MP/in_col_offset                        |                1 |              5 |
+|  clock_IBUF_BUFG | C1/sel                                                        | C1/clear                                |                3 |              5 |
+|  clock_IBUF_BUFG | C1/read_enable                                                | C1/cell_col_offset[4]_i_1__0_n_0        |                2 |              5 |
+|  clock_IBUF_BUFG | MP/in_row_major                                               | MP/in_col_major                         |                3 |              5 |
+|  clock_IBUF_BUFG | MP/in_row_offset                                              | MP/in_col_offset                        |                1 |              5 |
+|  clock_IBUF_BUFG | MP/out_col[4]_i_2_n_0                                         | MP/out_col[4]_i_1_n_0                   |                1 |              5 |
+|  clock_IBUF_BUFG | C1/cell_row_offset[4]_i_1__0_n_0                              | C1/cell_col_offset[4]_i_1__0_n_0        |                2 |              5 |
+|  clock_IBUF_BUFG | C1/c1_obuf_w_en                                               | C1/clear                                |                3 |              5 |
+|  clock_IBUF_BUFG | C2/cell_row_offset                                            | C2/cell_col_offset                      |                3 |              6 |
+|  clock_IBUF_BUFG | C2/read_enable                                                | C2/cell_col_offset                      |                2 |              6 |
+|  clock_IBUF_BUFG | C2/out_w_enable0                                              | C2/conv_channels_gen[19].kernel/reset_n |                3 |             10 |
+|  clock_IBUF_BUFG | GA/FSM_onehot_state[3]_i_1_n_0                                | C2/conv_channels_gen[19].kernel/reset_n |                4 |             13 |
+|  clock_IBUF_BUFG | MP/max                                                        | MP/max[5][17]_i_1_n_0                   |                4 |             18 |
+|  clock_IBUF_BUFG | MP/max[0][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                6 |             18 |
+|  clock_IBUF_BUFG | MP/max[1][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                5 |             18 |
+|  clock_IBUF_BUFG | MP/max[2][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                5 |             18 |
+|  clock_IBUF_BUFG | MP/max[3][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                7 |             18 |
+|  clock_IBUF_BUFG | MP/max[4][17]_i_1_n_0                                         | MP/max[5][17]_i_1_n_0                   |                5 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in[1][0][17]_i_2__0_n_0                             | C2/kernel_in[1][0][17]_i_1__0_n_0       |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[0][1][17]_i_2_n_0                                | C1/kernel_in[0][1][17]_i_1_n_0          |                5 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in[0][1][17]_i_2__0_n_0                             | C2/kernel_in[0][1][17]_i_1__0_n_0       |                4 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in[0][0][17]_i_2__0_n_0                             | C2/kernel_in[0][0][17]_i_1__0_n_0       |                5 |             18 |
+|  clock_IBUF_BUFG | C2/kernel_in                                                  | C2/kernel_in[1][1][17]_i_1__0_n_0       |                3 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in0_in                                              | C1/kernel_in                            |                3 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[0][2][17]_i_2_n_0                                | C1/kernel_in[0][2][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[1][0][17]_i_2_n_0                                | C1/kernel_in[1][0][17]_i_1_n_0          |                5 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[1][1][17]_i_2_n_0                                | C1/kernel_in[1][1][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[0][0][17]_i_2_n_0                                | C1/kernel_in[0][0][17]_i_1_n_0          |                5 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[2][1][17]_i_2_n_0                                | C1/kernel_in[2][1][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[2][0][17]_i_2_n_0                                | C1/kernel_in[2][0][17]_i_1_n_0          |                4 |             18 |
+|  clock_IBUF_BUFG | C1/kernel_in[1][2][17]_i_2_n_0                                | C1/kernel_in[1][2][17]_i_1_n_0          |                6 |             18 |
+|  clock_IBUF_BUFG | MP/out_data                                                   | MP/out_data[5][17]_i_1_n_0              |               37 |            108 |
+|  clock_IBUF_BUFG |                                                               | C2/conv_channels_gen[19].kernel/reset_n |              103 |            254 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[19].kernel_weights[19][0][1][17]_i_1_n_0 | C2/conv_channels_gen[19].kernel/reset_n |              107 |            263 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[19].kernel_weights[19][0][0][17]_i_1_n_0 | C2/conv_channels_gen[19].kernel/reset_n |              100 |            263 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[19].kernel_weights[19][1][0][17]_i_1_n_0 | C2/conv_channels_gen[19].kernel/reset_n |              110 |            263 |
+|  clock_IBUF_BUFG | C2/kernel_weights                                             | C2/conv_channels_gen[19].kernel/reset_n |              108 |            263 |
+|  clock_IBUF_BUFG |                                                               |                                         |              101 |            275 |
+|  clock_IBUF_BUFG | C2/conv_channels_gen[0].sums[0][0]_i_2_n_0                    | C2/sums                                 |              100 |            360 |
+|  clock_IBUF_BUFG | GA/global_avg_gen[19].obuf[19][17]_i_1_n_0                    | C2/conv_channels_gen[19].kernel/reset_n |               97 |            360 |
+|  clock_IBUF_BUFG | GA/a                                                          | C2/conv_channels_gen[19].kernel/reset_n |              156 |            500 |
+|  clock_IBUF_BUFG | GA/global_avg_gen[19].c[19][47]_i_2_n_0                       | GA/global_avg_gen[19].c[19][47]_i_1_n_0 |              153 |            960 |
++------------------+---------------------------------------------------------------+-----------------------------------------+------------------+----------------+
+
+

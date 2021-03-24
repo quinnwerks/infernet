@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Global_Average_Layer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Global_Average_Layer.tcl
+EAStep vivado -log MNIST_Solver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MNIST_Solver.tcl

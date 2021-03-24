@@ -14,18 +14,12 @@ module MNIST_Solver(
     input w_en,
     
     // Output data, i.e. read from the last obuf
-    input [4:0] r_row,
-    input [4:0] r_col,
     input [4:0] r_chan,
-//    output signed [17:0] r_data [19:0]
     output signed [17:0] r_data_out
 );
 
-    logic signed [17:0] r_data [19:0];
-    assign r_data_out = r_data[r_chan];
-
     // start/done signals
-    logic c1_done, mp_done;
+    logic c1_done, mp_done, c2_done, ga_done;
 
     // Input data buffer signals
     wire signed [17:0] c1_in_data, c1_out_data;
@@ -57,6 +51,18 @@ module MNIST_Solver(
     wire [4:0] c2_obuf_row, c2_obuf_col;
     wire c2_obuf_w_en;
     wire signed [17:0] c2_obuf_wdata [19:0];
+    
+    // global average input buffer signals
+    wire [4:0] ga_ibuf_row, ga_ibuf_col;
+    wire signed [17:0] ga_ibuf_data [19:0];
+    
+    // global average output signals
+    wire [4:0] ga_obuf_chan;
+    wire signed [17:0] ga_obuf_data;
+    
+    assign r_data_out = ga_obuf_data;
+    assign ga_obuf_chan = r_chan;
+    assign done = ga_done;
 
     Conv_1_Frame_Buffer in_buf (
         .clock(clock),
@@ -149,7 +155,7 @@ module MNIST_Solver(
         .clock(clock),
         .reset_n(reset_n),
         .start(mp_done),
-        .done(done),
+        .done(c2_done),
         
         .in_weight_row(c2_wbuf_addr[1]),
         .in_weight_col(c2_wbuf_addr[0]),
@@ -164,6 +170,20 @@ module MNIST_Solver(
         .out_row(c2_obuf_row),
         .out_col(c2_obuf_col),
         .out_w_enable(c2_obuf_w_en)
+    );
+    
+    Global_Average_Layer GA (
+        .clock(clock),
+        .reset_n(reset_n),
+        .start(c2_done),
+        .done(ga_done),
+        
+        .in_data(ga_ibuf_data),
+        .in_row(ga_ibuf_row),
+        .in_col(ga_ibuf_col),
+        
+        .out_chan(ga_obuf_chan),
+        .out_data(ga_obuf_data)
     );
     
     genvar i;
@@ -205,9 +225,9 @@ module MNIST_Solver(
             .w_data(c2_obuf_wdata[i]),
             .w_en(c2_obuf_w_en),
             
-            .r_row(r_row),
-            .r_col(r_col),
-            .r_data(r_data[i])
+            .r_row(ga_ibuf_row),
+            .r_col(ga_ibuf_col),
+            .r_data(ga_ibuf_data[i])
         );
     end
     endgenerate

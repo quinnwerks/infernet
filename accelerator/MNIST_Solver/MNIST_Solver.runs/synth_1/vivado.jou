@@ -2,11 +2,11 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Wed Mar 24 14:19:47 2021
-# Process ID: 29792
+# Start of session at: Wed Mar 24 16:01:24 2021
+# Process ID: 18817
 # Current directory: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1
-# Command line: vivado -log Global_Average_Layer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Global_Average_Layer.tcl
-# Log file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/Global_Average_Layer.vds
+# Command line: vivado -log MNIST_Solver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MNIST_Solver.tcl
+# Log file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.vds
 # Journal file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source Global_Average_Layer.tcl -notrace
+source MNIST_Solver.tcl -notrace
