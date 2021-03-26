@@ -14,14 +14,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 21560 
+INFO: Helper process launched with PID 6985 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.871 ; gain = 77.855 ; free physical = 11508 ; free virtual = 24166
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.867 ; gain = 86.855 ; free physical = 9932 ; free virtual = 23639
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MNIST_Solver' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_1_Frame_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Frame_Buffer' (2#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_1' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
 	Parameter weights bound to: 972'b111111101011011110111111101100110010111111001111100100111111010010000011111111101100011110111111011101111101111111000111110010000000101001001101000000001000011110111110111011100001111111000100111000111110101111011101000000100000011110111111111000011101111110100101000010000001011101110100000001000001001001000000010010000001000001000111111001000000011101011110111111100110010100111111101000011111000000100000100011000000000011010010111111000011010110111111111101111010000000010101010101000000101001011010000000100000111001111110110010000001000000101000001101000000010110001110111111000010101110000000101111001011111111011110001101111110101110011111111111100110100010111110111010010001111111110010100110111111011000011000000000011000101111000001001011010101000000101010110010000000101110001100000000001110001101111111011001100110111111100010110100000000111100100110111111100101110011111111011100111111000001000101111001111111100010101110111111010001111001000000110000010110 
@@ -35,12 +35,12 @@ INFO: [Synth 8-6157] synthesizing module 'FP_Round' [/home/andrew/infernet/accel
 	Parameter NUM_P bound to: 48 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'FP_Round' (3#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
 WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
 WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
 WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
 WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
 WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
@@ -189,8 +189,8 @@ WARNING: [Synth 8-6014] Unused sequential element in_chan_old_reg was removed.  
 INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_2' (12#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Global_Average_Layer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:9]
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:26]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Global_Average' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Global_Average' (13#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Global_Average' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Global_Average' (13#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-6971-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
 WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:111]
 INFO: [Synth 8-6157] synthesizing module 'FP_Round__parameterized0' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 	Parameter NUM_M bound to: 14 - type: integer 
@@ -253,10 +253,12 @@ WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requi
 WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
 WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
 INFO: [Synth 8-6155] done synthesizing module 'Fully_Connected_Layer' (16#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (17#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'One_Hot_Encoder' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/One_Hot_Encoder.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'One_Hot_Encoder' (17#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/One_Hot_Encoder.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (18#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 WARNING: [Synth 8-3331] design Fully_Connected_Layer has unconnected port out_neuron[4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1509.621 ; gain = 152.605 ; free physical = 11487 ; free virtual = 24147
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1510.617 ; gain = 162.605 ; free physical = 9920 ; free virtual = 23628
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -269,10 +271,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1509.621 ; gain = 152.605 ; free physical = 11496 ; free virtual = 24156
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1510.617 ; gain = 162.605 ; free physical = 9929 ; free virtual = 23637
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1509.621 ; gain = 152.605 ; free physical = 11496 ; free virtual = 24156
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1510.617 ; gain = 162.605 ; free physical = 9929 ; free virtual = 23637
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -679,12 +681,12 @@ Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.ru
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1864.426 ; gain = 0.000 ; free physical = 11130 ; free virtual = 23845
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1865.414 ; gain = 0.000 ; free physical = 9541 ; free virtual = 23249
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1872.426 ; gain = 0.000 ; free physical = 11163 ; free virtual = 23834
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1873.426 ; gain = 9.000 ; free physical = 11163 ; free virtual = 23834
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1873.414 ; gain = 0.000 ; free physical = 9532 ; free virtual = 23240
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1874.414 ; gain = 9.000 ; free physical = 9532 ; free virtual = 23240
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
@@ -787,14 +789,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C2/conv_channels_gen[1].kernel/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 INFO: [Common 17-14] Message 'Timing 38-316' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11164 ; free virtual = 23954
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1874.414 ; gain = 526.402 ; free physical = 9717 ; free virtual = 23426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11164 ; free virtual = 23954
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1874.414 ; gain = 526.402 ; free physical = 9717 ; free virtual = 23426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -997,7 +999,7 @@ Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[17].c2_obuf /ram. (c
 Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[18].c2_obuf /ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[19].c2_obuf /ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11214 ; free virtual = 23948
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1874.414 ; gain = 526.402 ; free physical = 9712 ; free virtual = 23421
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
@@ -1043,6 +1045,11 @@ INFO: [Synth 8-5546] ROM "obuf" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'One_Hot_Encoder'
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "in_addr" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "max" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1062,8 +1069,17 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 *
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Fully_Connected_Layer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              001 |                               00
+                 iSTATE1 |                              010 |                               01
+                  iSTATE |                              100 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'One_Hot_Encoder'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11208 ; free virtual = 23943
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1874.414 ; gain = 526.402 ; free physical = 9705 ; free virtual = 23416
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1077,18 +1093,19 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     48 Bit       Adders := 76    
-	   2 Input      5 Bit       Adders := 23    
+	   2 Input      5 Bit       Adders := 24    
 	   3 Input      5 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 4     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               48 Bit    Registers := 30    
 	               25 Bit    Registers := 20    
-	               18 Bit    Registers := 156   
-	                5 Bit    Registers := 27    
-	                4 Bit    Registers := 4     
+	               18 Bit    Registers := 157   
+	               10 Bit    Registers := 1     
+	                5 Bit    Registers := 28    
+	                4 Bit    Registers := 5     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 18    
+	                1 Bit    Registers := 19    
 +---Muxes : 
 	   2 Input     48 Bit        Muxes := 30    
 	   2 Input     25 Bit        Muxes := 40    
@@ -1098,10 +1115,10 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 12    
 	   2 Input      4 Bit        Muxes := 6     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 3     
-	   3 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 75    
-	   3 Input      1 Bit        Muxes := 8     
+	   2 Input      3 Bit        Muxes := 4     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 82    
+	   3 Input      1 Bit        Muxes := 9     
 	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -1216,6 +1233,21 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 6     
 	   3 Input      1 Bit        Muxes := 3     
+Module One_Hot_Encoder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -1352,7 +1384,7 @@ INFO: [Synth 8-3886] merging instance 'GA/global_avg_gen[0].b_reg[0][2]' (FDRE) 
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (GA/\global_avg_gen[0].b_reg[0][17] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11034 ; free virtual = 23719
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1874.414 ; gain = 526.402 ; free physical = 9745 ; free virtual = 23441
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1426,13 +1458,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11981 ; free virtual = 24653
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1874.414 ; gain = 526.402 ; free physical = 9179 ; free virtual = 23048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1881.434 ; gain = 524.418 ; free physical = 11972 ; free virtual = 24648
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 1882.422 ; gain = 534.410 ; free physical = 9167 ; free virtual = 23037
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1444,7 +1476,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11944 ; free virtual = 24624
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9195 ; free virtual = 23065
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1569,7 +1601,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \C1/conv_channels_gen[0].kernel
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \C1/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[44]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11951 ; free virtual = 24630
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9216 ; free virtual = 23085
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1582,7 +1614,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11950 ; free virtual = 24630
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9216 ; free virtual = 23085
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1594,25 +1626,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11626 ; free virtual = 24613
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9215 ; free virtual = 23084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11626 ; free virtual = 24612
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9215 ; free virtual = 23084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11636 ; free virtual = 24610
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9215 ; free virtual = 23084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11636 ; free virtual = 24609
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9215 ; free virtual = 23084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1830,25 +1862,25 @@ Report Cell Usage:
 |196   |Mult_Add_Pipelined_NC__49   |     1|
 |197   |Mult_Add_Pipelined_NC__50   |     1|
 |198   |BUFG                        |     1|
-|199   |CARRY4                      |   878|
-|200   |LUT1                        |    17|
-|201   |LUT2                        |  1904|
-|202   |LUT3                        |   659|
-|203   |LUT4                        |  1144|
-|204   |LUT5                        |   589|
-|205   |LUT6                        |   847|
+|199   |CARRY4                      |   881|
+|200   |LUT1                        |    18|
+|201   |LUT2                        |  1907|
+|202   |LUT3                        |   669|
+|203   |LUT4                        |  1145|
+|204   |LUT5                        |   605|
+|205   |LUT6                        |   856|
 |206   |MUXF7                       |    36|
-|207   |FDRE                        |  4422|
-|208   |FDSE                        |   378|
-|209   |IBUF                        |    36|
-|210   |OBUF                        |    19|
+|207   |FDRE                        |  4461|
+|208   |FDSE                        |   380|
+|209   |IBUF                        |    32|
+|210   |OBUF                        |    11|
 +------+----------------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------+---------------------------------+------+
 |      |Instance                           |Module                           |Cells |
 +------+-----------------------------------+---------------------------------+------+
-|1     |top                                |                                 | 27268|
+|1     |top                                |                                 | 27340|
 |2     |  C1                               |Conv_Layer_1                     |  5708|
 |3     |    \conv_channels_gen[0].kernel   |Conv_Kernel_3by3                 |   898|
 |4     |    \conv_channels_gen[1].kernel   |Conv_Kernel_3by3__parameterized0 |   898|
@@ -1857,7 +1889,7 @@ Report Instance Areas:
 |7     |    \conv_channels_gen[4].kernel   |Conv_Kernel_3by3__parameterized3 |   898|
 |8     |    \conv_channels_gen[5].kernel   |Conv_Kernel_3by3__parameterized4 |   898|
 |9     |  C2                               |Conv_Layer_2                     | 10881|
-|10    |    \conv_channels_gen[0].kernel   |Conv_Kernel_2by2__xdcDup__1      |   429|
+|10    |    \conv_channels_gen[0].kernel   |Conv_Kernel_2by2__xdcDup__1      |   430|
 |11    |    \conv_channels_gen[10].kernel  |Conv_Kernel_2by2__xdcDup__11     |   429|
 |12    |    \conv_channels_gen[11].kernel  |Conv_Kernel_2by2__xdcDup__12     |   429|
 |13    |    \conv_channels_gen[12].kernel  |Conv_Kernel_2by2__xdcDup__13     |   429|
@@ -1867,7 +1899,7 @@ Report Instance Areas:
 |17    |    \conv_channels_gen[16].kernel  |Conv_Kernel_2by2__xdcDup__17     |   429|
 |18    |    \conv_channels_gen[17].kernel  |Conv_Kernel_2by2__xdcDup__18     |   429|
 |19    |    \conv_channels_gen[18].kernel  |Conv_Kernel_2by2__xdcDup__19     |   429|
-|20    |    \conv_channels_gen[19].kernel  |Conv_Kernel_2by2                 |   430|
+|20    |    \conv_channels_gen[19].kernel  |Conv_Kernel_2by2                 |   429|
 |21    |    \conv_channels_gen[1].kernel   |Conv_Kernel_2by2__xdcDup__2      |   429|
 |22    |    \conv_channels_gen[2].kernel   |Conv_Kernel_2by2__xdcDup__3      |   429|
 |23    |    \conv_channels_gen[3].kernel   |Conv_Kernel_2by2__xdcDup__4      |   429|
@@ -1877,66 +1909,67 @@ Report Instance Areas:
 |27    |    \conv_channels_gen[7].kernel   |Conv_Kernel_2by2__xdcDup__8      |   429|
 |28    |    \conv_channels_gen[8].kernel   |Conv_Kernel_2by2__xdcDup__9      |   429|
 |29    |    \conv_channels_gen[9].kernel   |Conv_Kernel_2by2__xdcDup__10     |   429|
-|30    |  FC                               |Fully_Connected_Layer            |  2725|
+|30    |  FC                               |Fully_Connected_Layer            |  2738|
 |31    |  GA                               |Global_Average_Layer             |  6593|
 |32    |  MP                               |Max_Pool_Layer                   |   376|
-|33    |  c2_wbuf                          |Conv_2_Weight_Buffer             |   263|
-|34    |  \conv_2_obuf_gen[0].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__14  |    18|
-|35    |  \conv_2_obuf_gen[10].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__24  |    18|
-|36    |  \conv_2_obuf_gen[11].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__25  |    18|
-|37    |  \conv_2_obuf_gen[12].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__26  |    18|
-|38    |  \conv_2_obuf_gen[13].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__27  |    18|
-|39    |  \conv_2_obuf_gen[14].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__28  |    18|
-|40    |  \conv_2_obuf_gen[15].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__29  |    18|
-|41    |  \conv_2_obuf_gen[16].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__30  |    18|
-|42    |  \conv_2_obuf_gen[17].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__31  |    18|
-|43    |  \conv_2_obuf_gen[18].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__32  |    18|
-|44    |  \conv_2_obuf_gen[19].c2_obuf     |Conv_1_Frame_Buffer              |    18|
-|45    |  \conv_2_obuf_gen[1].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__15  |    18|
-|46    |  \conv_2_obuf_gen[2].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__16  |    18|
-|47    |  \conv_2_obuf_gen[3].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__17  |    18|
-|48    |  \conv_2_obuf_gen[4].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__18  |    18|
-|49    |  \conv_2_obuf_gen[5].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__19  |    18|
-|50    |  \conv_2_obuf_gen[6].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__20  |    18|
-|51    |  \conv_2_obuf_gen[7].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__21  |    18|
-|52    |  \conv_2_obuf_gen[8].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__22  |    18|
-|53    |  \conv_2_obuf_gen[9].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__23  |    18|
-|54    |  in_buf                           |Conv_1_Frame_Buffer__xdcDup__1   |    18|
-|55    |  \obuf_gen[0].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__2   |    30|
-|56    |  \obuf_gen[0].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__3   |    18|
-|57    |  \obuf_gen[1].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__4   |    30|
-|58    |  \obuf_gen[1].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__5   |    18|
-|59    |  \obuf_gen[2].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__6   |    30|
-|60    |  \obuf_gen[2].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__7   |    18|
-|61    |  \obuf_gen[3].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__8   |    30|
-|62    |  \obuf_gen[3].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__9   |    18|
-|63    |  \obuf_gen[4].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__10  |    30|
-|64    |  \obuf_gen[4].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__11  |    18|
-|65    |  \obuf_gen[5].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__12  |    30|
-|66    |  \obuf_gen[5].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__13  |    18|
+|33    |  OH                               |One_Hot_Encoder                  |    71|
+|34    |  c2_wbuf                          |Conv_2_Weight_Buffer             |   263|
+|35    |  \conv_2_obuf_gen[0].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__14  |    18|
+|36    |  \conv_2_obuf_gen[10].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__24  |    18|
+|37    |  \conv_2_obuf_gen[11].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__25  |    18|
+|38    |  \conv_2_obuf_gen[12].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__26  |    18|
+|39    |  \conv_2_obuf_gen[13].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__27  |    18|
+|40    |  \conv_2_obuf_gen[14].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__28  |    18|
+|41    |  \conv_2_obuf_gen[15].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__29  |    18|
+|42    |  \conv_2_obuf_gen[16].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__30  |    18|
+|43    |  \conv_2_obuf_gen[17].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__31  |    18|
+|44    |  \conv_2_obuf_gen[18].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__32  |    18|
+|45    |  \conv_2_obuf_gen[19].c2_obuf     |Conv_1_Frame_Buffer              |    18|
+|46    |  \conv_2_obuf_gen[1].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__15  |    18|
+|47    |  \conv_2_obuf_gen[2].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__16  |    18|
+|48    |  \conv_2_obuf_gen[3].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__17  |    18|
+|49    |  \conv_2_obuf_gen[4].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__18  |    18|
+|50    |  \conv_2_obuf_gen[5].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__19  |    18|
+|51    |  \conv_2_obuf_gen[6].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__20  |    18|
+|52    |  \conv_2_obuf_gen[7].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__21  |    18|
+|53    |  \conv_2_obuf_gen[8].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__22  |    18|
+|54    |  \conv_2_obuf_gen[9].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__23  |    18|
+|55    |  in_buf                           |Conv_1_Frame_Buffer__xdcDup__1   |    18|
+|56    |  \obuf_gen[0].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__2   |    30|
+|57    |  \obuf_gen[0].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__3   |    18|
+|58    |  \obuf_gen[1].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__4   |    30|
+|59    |  \obuf_gen[1].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__5   |    18|
+|60    |  \obuf_gen[2].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__6   |    30|
+|61    |  \obuf_gen[2].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__7   |    18|
+|62    |  \obuf_gen[3].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__8   |    30|
+|63    |  \obuf_gen[3].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__9   |    18|
+|64    |  \obuf_gen[4].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__10  |    30|
+|65    |  \obuf_gen[4].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__11  |    18|
+|66    |  \obuf_gen[5].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__12  |    30|
+|67    |  \obuf_gen[5].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__13  |    18|
 +------+-----------------------------------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11636 ; free virtual = 24609
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1921.555 ; gain = 573.543 ; free physical = 9215 ; free virtual = 23084
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 2304 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1923.535 ; gain = 202.715 ; free physical = 11690 ; free virtual = 24660
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.543 ; gain = 566.520 ; free physical = 11700 ; free virtual = 24671
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1921.555 ; gain = 209.746 ; free physical = 9265 ; free virtual = 23134
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1921.562 ; gain = 573.543 ; free physical = 9276 ; free virtual = 23145
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 914 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 917 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1923.543 ; gain = 0.000 ; free physical = 11922 ; free virtual = 24589
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1921.562 ; gain = 0.000 ; free physical = 9208 ; free virtual = 23078
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-285 Infos, 207 Warnings, 100 Critical Warnings and 0 Errors encountered.
+293 Infos, 207 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1923.543 ; gain = 566.672 ; free physical = 11994 ; free virtual = 24661
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1923.543 ; gain = 0.000 ; free physical = 11994 ; free virtual = 24661
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 1921.562 ; gain = 573.695 ; free physical = 9279 ; free virtual = 23149
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1921.562 ; gain = 0.000 ; free physical = 9279 ; free virtual = 23149
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MNIST_Solver_utilization_synth.rpt -pb MNIST_Solver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar 26 13:03:25 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 26 15:26:34 2021...

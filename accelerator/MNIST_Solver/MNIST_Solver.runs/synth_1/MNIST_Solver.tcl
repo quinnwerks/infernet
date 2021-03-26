@@ -47,6 +47,7 @@ read_verilog -library xil_defaultlib -sv {
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv
   /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv
+  /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/One_Hot_Encoder.sv
 }
 read_ip -quiet /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average.xci
 set_property used_in_implementation false [get_files -all /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average_ooc.xdc]

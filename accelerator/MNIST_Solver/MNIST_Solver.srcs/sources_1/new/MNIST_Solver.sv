@@ -14,12 +14,11 @@ module MNIST_Solver(
     input w_en,
     
     // Output data, i.e. read from the last obuf
-    input [4:0] r_chan,
-    output signed [17:0] r_data_out
+    output [9:0] out
 );
 
     // start/done signals
-    logic c1_done, mp_done, c2_done, ga_done, fc_done;
+    logic c1_done, mp_done, c2_done, ga_done, fc_done, oh_done;
 
     // Input data buffer signals
     wire signed [17:0] c1_in_data, c1_out_data;
@@ -68,9 +67,7 @@ module MNIST_Solver(
     wire [4:0] fc_obuf_neuron;
     wire signed [17:0] fc_obuf_data;
     
-    assign r_data_out = fc_obuf_data;
-    assign fc_obuf_neuron = r_chan;
-    assign done = fc_done;
+    assign done = oh_done;
 
     Conv_1_Frame_Buffer in_buf (
         .clock(clock),
@@ -218,8 +215,18 @@ module MNIST_Solver(
         .in_chan(fc_ibuf_chan),
         
         .out_neuron(fc_obuf_neuron),
-        .out_data(fc_obuf_data)
+        .out_data(fc_obuf_data)  
+    );
+    
+    One_Hot_Encoder OH (
+        .clock(clock),
+        .reset_n(reset_n),
+        .start(fc_done),
+        .done(oh_done),
         
+        .in_addr(fc_obuf_neuron),
+        .in_data(fc_obuf_data),
+        .out(out)
     );
     
     genvar i;

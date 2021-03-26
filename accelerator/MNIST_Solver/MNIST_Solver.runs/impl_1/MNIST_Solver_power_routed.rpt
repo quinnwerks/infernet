@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date             : Fri Mar 26 13:05:33 2021
+| Date             : Fri Mar 26 15:28:51 2021
 | Host             : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
 | Command          : report_power -file MNIST_Solver_power_routed.rpt -pb MNIST_Solver_power_summary_routed.pb -rpx MNIST_Solver_power_routed.rpx
 | Design           : MNIST_Solver
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.301        |
+| Total On-Chip Power (W)  | 0.296        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.215        |
+| Dynamic (W)              | 0.210        |
 | Device Static (W)        | 0.086        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.6         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.024 |        3 |       --- |             --- |
-| Slice Logic    |     0.012 |    11592 |       --- |             --- |
-|   LUT as Logic |     0.009 |     3535 |     63400 |            5.58 |
-|   CARRY4       |     0.002 |      878 |     15850 |            5.54 |
-|   Register     |    <0.001 |     5034 |    126800 |            3.97 |
-|   Others       |     0.000 |      484 |       --- |             --- |
+| Clocks         |     0.022 |        3 |       --- |             --- |
+| Slice Logic    |     0.012 |    11638 |       --- |             --- |
+|   LUT as Logic |     0.009 |     3592 |     63400 |            5.67 |
+|   CARRY4       |     0.002 |      881 |     15850 |            5.56 |
+|   Register     |    <0.001 |     5036 |    126800 |            3.97 |
+|   Others       |     0.000 |      485 |       --- |             --- |
 |   F7/F8 Muxes  |     0.000 |       36 |     63400 |            0.06 |
-| Signals        |     0.031 |    18713 |       --- |             --- |
+| Signals        |     0.029 |    18714 |       --- |             --- |
 | Block RAM      |     0.041 |     16.5 |       135 |           12.22 |
 | DSPs           |     0.106 |      164 |       240 |           68.33 |
-| I/O            |    <0.001 |       55 |       210 |           26.19 |
+| I/O            |    <0.001 |       43 |       210 |           20.48 |
 | Static Power   |     0.086 |          |           |                 |
-| Total          |     0.301 |          |           |                 |
+| Total          |     0.296 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.228 |       0.212 |      0.016 |
+| Vccint    |       1.000 |     0.223 |       0.207 |      0.016 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,11 +143,11 @@ Table of Contents
 +----------------------------------+-----------+
 | Name                             | Power (W) |
 +----------------------------------+-----------+
-| MNIST_Solver                     |     0.215 |
+| MNIST_Solver                     |     0.210 |
 |   C1                             |     0.055 |
-|     conv_channels_gen[0].kernel  |     0.009 |
+|     conv_channels_gen[0].kernel  |     0.010 |
 |       M2_1                       |     0.001 |
-|       M2_2                       |     0.001 |
+|       M2_2                       |     0.002 |
 |     conv_channels_gen[1].kernel  |     0.008 |
 |       M2_2                       |     0.001 |
 |     conv_channels_gen[2].kernel  |     0.009 |
@@ -159,8 +159,8 @@ Table of Contents
 |       M2_2                       |     0.001 |
 |     conv_channels_gen[5].kernel  |     0.009 |
 |       M2_1                       |     0.001 |
-|       M2_2                       |     0.001 |
-|   C2                             |     0.093 |
+|       M2_2                       |     0.002 |
+|   C2                             |     0.090 |
 |     conv_channels_gen[0].kernel  |     0.004 |
 |       M3                         |     0.001 |
 |     conv_channels_gen[10].kernel |     0.004 |
@@ -181,11 +181,11 @@ Table of Contents
 |       M3                         |     0.001 |
 |     conv_channels_gen[18].kernel |     0.004 |
 |       M3                         |     0.001 |
-|     conv_channels_gen[19].kernel |     0.005 |
-|       M3                         |     0.002 |
+|     conv_channels_gen[19].kernel |     0.004 |
+|       M3                         |     0.001 |
 |     conv_channels_gen[1].kernel  |     0.004 |
 |       M3                         |     0.001 |
-|     conv_channels_gen[2].kernel  |     0.005 |
+|     conv_channels_gen[2].kernel  |     0.004 |
 |       M3                         |     0.001 |
 |     conv_channels_gen[3].kernel  |     0.004 |
 |       M3                         |     0.001 |
@@ -202,9 +202,9 @@ Table of Contents
 |     conv_channels_gen[9].kernel  |     0.004 |
 |       M3                         |     0.001 |
 |   FC                             |     0.003 |
-|   GA                             |     0.009 |
-|   MP                             |     0.003 |
-|   c2_wbuf                        |     0.006 |
+|   GA                             |     0.008 |
+|   MP                             |     0.002 |
+|   c2_wbuf                        |     0.005 |
 |   conv_2_obuf_gen[0].c2_obuf     |     0.001 |
 |     ram                          |     0.001 |
 |       U0                         |     0.001 |

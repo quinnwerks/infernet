@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date         : Fri Mar 26 13:05:30 2021
+| Date         : Fri Mar 26 15:28:48 2021
 | Host         : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
 | Command      : report_methodology -file MNIST_Solver_methodology_drc_routed.rpt -pb MNIST_Solver_methodology_drc_routed.pb -rpx MNIST_Solver_methodology_drc_routed.rpx
 | Design       : MNIST_Solver
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 50
+             Violations found: 42
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 50         |
+| TIMING-18 | Warning  | Missing input or output delay | 42         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -194,92 +194,52 @@ Related violations: <none>
 
 TIMING-18#33 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[0] relative to clock(s) clock
+An output delay is missing on out[0] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#34 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[10] relative to clock(s) clock
+An output delay is missing on out[1] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#35 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[11] relative to clock(s) clock
+An output delay is missing on out[2] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#36 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[12] relative to clock(s) clock
+An output delay is missing on out[3] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#37 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[13] relative to clock(s) clock
+An output delay is missing on out[4] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#38 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[14] relative to clock(s) clock
+An output delay is missing on out[5] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#39 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[15] relative to clock(s) clock
+An output delay is missing on out[6] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#40 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[16] relative to clock(s) clock
+An output delay is missing on out[7] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#41 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[17] relative to clock(s) clock
+An output delay is missing on out[8] relative to clock(s) clock
 Related violations: <none>
 
 TIMING-18#42 Warning
 Missing input or output delay  
-An output delay is missing on r_data_out[1] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#43 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[2] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#44 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[3] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#45 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[4] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#46 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[5] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#47 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[6] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#48 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[7] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#49 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[8] relative to clock(s) clock
-Related violations: <none>
-
-TIMING-18#50 Warning
-Missing input or output delay  
-An output delay is missing on r_data_out[9] relative to clock(s) clock
+An output delay is missing on out[9] relative to clock(s) clock
 Related violations: <none>
 
 
