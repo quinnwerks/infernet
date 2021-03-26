@@ -21,10 +21,10 @@ module MNIST_Solver_TB (
     // x contains our test frame
     logic signed [17:0] x [27:0][27:0];
     // Expected contains the expected contents of the output frame buffer
-    logic signed [17:0] expected [19:0];
+    logic signed [17:0] expected [9:0];
     // max_fault is the maximum discrepancy the testbench will tolerate between
     //     any one output of the DUT and the expected data
-    localparam signed [17:0] max_fault = 18'b0100000000;
+    localparam signed [17:0] max_fault = 18'b10000000000;
     logic signed [17:0] difference;
     logic PASS;
     
@@ -72,7 +72,7 @@ module MNIST_Solver_TB (
         #PERIOD;
     
         fd1 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Conv_1_Channel_TB_frame.mem", "r");
-        fd2 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/Global_Average_TB_expected.mem", "r");
+        fd2 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/FC_TB_expected.mem", "r");
     
         for (int frame = 0; frame < NUM_FRAMES; frame++) begin
             // 1. Read frame in
@@ -83,7 +83,7 @@ module MNIST_Solver_TB (
             end
         
             // 2. Read expected data in        
-            for (int chan = 0; chan < 20; chan++) begin
+            for (int chan = 0; chan < 10; chan++) begin
                 read_ret = $fscanf(fd2, "%b", expected[chan]);
             end
             
@@ -111,7 +111,7 @@ module MNIST_Solver_TB (
                 end
                 
                 // 6. Iterate over output frame buffer and compare against expected
-                for (int chan = 0; chan < 20; chan++) begin
+                for (int chan = 0; chan < 10; chan++) begin
                     out_chan = chan;
                     #PERIOD;
                     difference = expected[chan] - out_data;

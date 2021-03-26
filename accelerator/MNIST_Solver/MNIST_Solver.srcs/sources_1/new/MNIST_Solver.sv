@@ -19,7 +19,7 @@ module MNIST_Solver(
 );
 
     // start/done signals
-    logic c1_done, mp_done, c2_done, ga_done;
+    logic c1_done, mp_done, c2_done, ga_done, fc_done;
 
     // Input data buffer signals
     wire signed [17:0] c1_in_data, c1_out_data;
@@ -56,13 +56,21 @@ module MNIST_Solver(
     wire [4:0] ga_ibuf_row, ga_ibuf_col;
     wire signed [17:0] ga_ibuf_data [19:0];
     
-    // global average output signals
-    wire [4:0] ga_obuf_chan;
-    wire signed [17:0] ga_obuf_data;
+    // fully connected input signals
+    wire [4:0] fc_ibuf_chan;
+    wire signed [17:0] fc_ibuf_data;
     
-    assign r_data_out = ga_obuf_data;
-    assign ga_obuf_chan = r_chan;
-    assign done = ga_done;
+    // fully connected weight buffer signals
+    wire [4:0] fc_wbuf_addr;
+    wire signed [17:0] fc_wbuf_data [9:0];
+    
+    // fully connected output signals
+    wire [4:0] fc_obuf_neuron;
+    wire signed [17:0] fc_obuf_data;
+    
+    assign r_data_out = fc_obuf_data;
+    assign fc_obuf_neuron = r_chan;
+    assign done = fc_done;
 
     Conv_1_Frame_Buffer in_buf (
         .clock(clock),
@@ -182,8 +190,36 @@ module MNIST_Solver(
         .in_row(ga_ibuf_row),
         .in_col(ga_ibuf_col),
         
-        .out_chan(ga_obuf_chan),
-        .out_data(ga_obuf_data)
+        .out_chan(fc_ibuf_chan),
+        .out_data(fc_ibuf_data)
+    );
+    
+    FC_Weight_Buffer fc_wbuf (
+        .addr(fc_wbuf_addr),
+        .data(fc_wbuf_data)
+    );
+    
+    Fully_Connected_Layer #(
+        .biases('{  18'b0_0000000_0010010110,18'b1_1111111_1000011101,
+                    18'b0_0000000_1111010000,18'b0_0000000_0011001101,
+                    18'b1_1111111_0000000111,18'b0_0000000_0010001100,
+                    18'b1_1111111_0011111111,18'b0_0000000_1000011010,
+                    18'b0_0000000_1010010011,18'b1_1111111_1001110000  })
+    ) FC (
+        .clock(clock),
+        .reset_n(reset_n),
+        .start(ga_done),
+        .done(fc_done),
+        
+        .in_weight_chan(fc_wbuf_addr),
+        .in_weight(fc_wbuf_data),
+        
+        .in_data(fc_ibuf_data),
+        .in_chan(fc_ibuf_chan),
+        
+        .out_neuron(fc_obuf_neuron),
+        .out_data(fc_obuf_data)
+        
     );
     
     genvar i;

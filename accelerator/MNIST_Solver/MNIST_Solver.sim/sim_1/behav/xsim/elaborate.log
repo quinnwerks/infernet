@@ -66,6 +66,8 @@ Compiling module xil_defaultlib.Conv_Layer_2(biases='{18'sb01001...
 Compiling architecture mult_add_global_average_arch of entity xil_defaultlib.Mult_Add_Global_Average [mult_add_global_average_default]
 Compiling module xil_defaultlib.FP_Round(NUM_M=14,NUM_P=48)
 Compiling module xil_defaultlib.Global_Average_Layer_default
+Compiling module xil_defaultlib.FC_Weight_Buffer
+Compiling module xil_defaultlib.Fully_Connected_Layer(biases='{1...
 Compiling module xil_defaultlib.MNIST_Solver_default
 Compiling module xil_defaultlib.MNIST_Solver_TB
 Compiling module xil_defaultlib.glbl

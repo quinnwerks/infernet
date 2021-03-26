@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Wed Mar 24 16:01:24 2021
-# Process ID: 18817
+# Start of session at: Fri Mar 26 13:02:34 2021
+# Process ID: 21543
 # Current directory: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1
 # Command line: vivado -log MNIST_Solver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MNIST_Solver.tcl
 # Log file: /home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18841 
+INFO: Helper process launched with PID 21560 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.871 ; gain = 82.855 ; free physical = 10140 ; free virtual = 23480
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1434.871 ; gain = 77.855 ; free physical = 11508 ; free virtual = 24166
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'MNIST_Solver' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_1_Frame_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Conv_1_BRAM' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Conv_1_BRAM' (1#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Conv_1_BRAM_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'Conv_1_Frame_Buffer' (2#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv1_Frame_Buffer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_1' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_1.sv:3]
 	Parameter weights bound to: 972'b111111101011011110111111101100110010111111001111100100111111010010000011111111101100011110111111011101111101111111000111110010000000101001001101000000001000011110111110111011100001111111000100111000111110101111011101000000100000011110111111111000011101111110100101000010000001011101110100000001000001001001000000010010000001000001000111111001000000011101011110111111100110010100111111101000011111000000100000100011000000000011010010111111000011010110111111111101111010000000010101010101000000101001011010000000100000111001111110110010000001000000101000001101000000010110001110111111000010101110000000101111001011111111011110001101111110101110011111111111100110100010111110111010010001111111110010100110111111011000011000000000011000101111000001001011010101000000101010110010000000101110001100000000001110001101111111011001100110111111100010110100000000111100100110111111100101110011111111011100111111000001000101111001111111100010101110111111010001111001000000110000010110 
@@ -36,12 +36,12 @@ INFO: [Synth 8-6157] synthesizing module 'FP_Round' [/home/andrew/infernet/accel
 	Parameter NUM_P bound to: 48 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'FP_Round' (3#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 WARNING: [Synth 8-350] instance 'rounding' of module 'FP_Round' requires 5 connections, but only 2 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:39]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_NC' (4#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_NC_stub.v:6]
 WARNING: [Synth 8-689] width (58) of port connection 'C' does not match port width (48) of module 'Mult_Add_Pipelined_NC' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:51]
 WARNING: [Synth 8-350] instance 'M0_0' of module 'Mult_Add_Pipelined_NC' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:45]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Pipelined_COL' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Pipelined_COL' (5#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Pipelined_COL_stub.v:6]
 WARNING: [Synth 8-350] instance 'M0_1' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:56]
 WARNING: [Synth 8-350] instance 'M0_2' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:67]
 WARNING: [Synth 8-350] instance 'M1_0' of module 'Mult_Add_Pipelined_COL' requires 10 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/new/Conv_Kernel_3by3.sv:78]
@@ -134,46 +134,46 @@ INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_1' (8#1) [/home/andrew
 INFO: [Synth 8-6157] synthesizing module 'Max_Pool_Layer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv:3]
 INFO: [Synth 8-6155] done synthesizing module 'Max_Pool_Layer' (9#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Max_Pool_Layer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_2_Weight_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:3]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:129]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:130]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:131]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:132]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:133]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:134]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:135]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:136]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:137]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:138]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:139]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:140]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:141]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:142]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:143]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:144]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:145]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:146]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:147]
-INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:148]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_0_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:174]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_1_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:175]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_2_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:176]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_3_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:177]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_4_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:178]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_5_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:179]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_6_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:180]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_7_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:181]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_8_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:182]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_9_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:183]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_10_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:184]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_11_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:185]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_12_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:186]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_13_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:187]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_14_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:188]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_15_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:189]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_16_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:190]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_17_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:191]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_18_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:192]
-INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_19_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:193]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:9]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:10]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:11]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:12]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:13]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:14]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:15]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:16]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:17]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:18]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:19]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:20]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:21]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:22]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:23]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:24]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:25]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:26]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:27]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:28]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_0_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:54]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_1_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:55]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_2_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:56]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_3_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:57]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_4_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:58]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_5_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:59]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_6_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:60]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_7_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:61]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_8_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:62]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_9_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:63]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_10_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:64]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_11_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:65]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_12_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:66]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_13_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:67]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_14_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:68]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_15_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:69]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_16_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:70]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_17_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:71]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_18_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:72]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/conv_2_weights/Conv_2_Channel_19_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:73]
 INFO: [Synth 8-6155] done synthesizing module 'Conv_2_Weight_Buffer' (10#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_2_Weight_Buffer.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Conv_Layer_2' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:3]
 	Parameter biases bound to: 360'b000000000010011101111111110011011110111111111000000111000000000111110111111111110000011101111111101110111011111111111011100001111111111010001001111111110101000110111111100101110100111111011000000001000000000011101000000000001000110101111111100010000010111111111000100001000000000111101011111111101001100010000000011001111001111111110101101100111111110001110011 
@@ -190,8 +190,8 @@ WARNING: [Synth 8-6014] Unused sequential element in_chan_old_reg was removed.  
 INFO: [Synth 8-6155] done synthesizing module 'Conv_Layer_2' (12#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Conv_Layer_2.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'Global_Average_Layer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:9]
 INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:26]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Global_Average' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Global_Average' (13#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-18817-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_Global_Average' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_Global_Average' (13#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/.Xil/Vivado-21543-andrew-debian/realtime/Mult_Add_Global_Average_stub.v:6]
 WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:111]
 INFO: [Synth 8-6157] synthesizing module 'FP_Round__parameterized0' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/imports/rtl/FP_Round.sv:7]
 	Parameter NUM_M bound to: 14 - type: integer 
@@ -218,9 +218,46 @@ WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requi
 WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:111]
 WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:111]
 INFO: [Synth 8-6155] done synthesizing module 'Global_Average_Layer' (14#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Global_Average_Layer.sv:9]
-INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (15#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'FC_Weight_Buffer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:3]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:8]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:9]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:10]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:11]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:12]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:13]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:14]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:15]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:16]
+INFO: [Synth 8-5534] Detected attribute (* rom_style = "distributed " *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:17]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_0_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:33]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_1_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:34]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_2_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:35]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_3_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:36]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_4_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:37]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_5_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:38]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_6_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:39]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_7_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:40]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_8_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:41]
+INFO: [Synth 8-3876] $readmem data file '/home/andrew/infernet/misc/fc_weights/FC_Neuron_9_weights.mem' is read successfully [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:42]
+INFO: [Synth 8-6155] done synthesizing module 'FC_Weight_Buffer' (15#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/FC_Weight_Buffer.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Fully_Connected_Layer' [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:3]
+	Parameter biases bound to: 180'b000000000010010110111111111000011101000000001111010000000000000011001101111111110000000111000000000010001100111111110011111111000000001000011010000000001010010011111111111001110000 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:23]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+WARNING: [Synth 8-350] instance 'mult' of module 'Mult_Add_Global_Average' requires 9 connections, but only 8 given [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:103]
+INFO: [Synth 8-6155] done synthesizing module 'Fully_Connected_Layer' (16#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/Fully_Connected_Layer.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'MNIST_Solver' (17#1) [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/new/MNIST_Solver.sv:3]
+WARNING: [Synth 8-3331] design Fully_Connected_Layer has unconnected port out_neuron[4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1506.621 ; gain = 154.605 ; free physical = 10123 ; free virtual = 23465
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1509.621 ; gain = 152.605 ; free physical = 11487 ; free virtual = 24147
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -233,10 +270,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1506.621 ; gain = 154.605 ; free physical = 10130 ; free virtual = 23472
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1509.621 ; gain = 152.605 ; free physical = 11496 ; free virtual = 24156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1506.621 ; gain = 154.605 ; free physical = 10130 ; free virtual = 23472
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1509.621 ; gain = 152.605 ; free physical = 11496 ; free virtual = 24156
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -283,6 +320,26 @@ Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.sr
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'GA/global_avg_gen[18].mult'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'GA/global_avg_gen[19].mult'
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'GA/global_avg_gen[19].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[0].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[0].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[1].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[1].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[2].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[2].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[3].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[3].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[4].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[4].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[5].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[5].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[6].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[6].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[7].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[7].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[8].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[8].mult'
+Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[9].mult'
+Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'FC/fc_neuron_gen[9].mult'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'C1/conv_channels_gen[0].kernel/M0_0'
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'C1/conv_channels_gen[0].kernel/M0_0'
 Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC_in_context.xdc] for cell 'C1/conv_channels_gen[1].kernel/M0_0'
@@ -623,12 +680,12 @@ Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.ru
 Finished Parsing XDC File [/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1859.426 ; gain = 0.000 ; free physical = 9824 ; free virtual = 23166
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1864.426 ; gain = 0.000 ; free physical = 11130 ; free virtual = 23845
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1867.426 ; gain = 0.000 ; free physical = 9815 ; free virtual = 23156
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1867.426 ; gain = 8.000 ; free physical = 9815 ; free virtual = 23156
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1872.426 ; gain = 0.000 ; free physical = 11163 ; free virtual = 23834
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1873.426 ; gain = 9.000 ; free physical = 11163 ; free virtual = 23834
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C1/conv_channels_gen[0].kernel/M0_2' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
@@ -731,18 +788,28 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'C2/conv_channels_gen[1].kernel/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 INFO: [Common 17-14] Message 'Timing 38-316' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1867.426 ; gain = 515.410 ; free physical = 9934 ; free virtual = 23276
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11164 ; free virtual = 23954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1867.426 ; gain = 515.410 ; free physical = 9934 ; free virtual = 23276
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11164 ; free virtual = 23954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[0].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[1].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[2].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[3].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[4].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[5].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[6].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[7].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[8].mult . (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FC/\fc_neuron_gen[9].mult . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for GA/\global_avg_gen[0].mult . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for GA/\global_avg_gen[10].mult . (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for GA/\global_avg_gen[11].mult . (constraint file  auto generated constraint, line ).
@@ -931,7 +998,7 @@ Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[17].c2_obuf /ram. (c
 Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[18].c2_obuf /ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for \conv_2_obuf_gen[19].c2_obuf /ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1867.426 ; gain = 515.410 ; free physical = 9931 ; free virtual = 23272
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11214 ; free virtual = 23948
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
@@ -970,6 +1037,13 @@ INFO: [Synth 8-5546] ROM "in_row" won't be mapped to RAM because it is too spars
 INFO: [Synth 8-5544] ROM "c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Fully_Connected_Layer'
+INFO: [Synth 8-5544] ROM "in_chan" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "obuf" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -980,8 +1054,17 @@ INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address si
 *
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Global_Average_Layer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Fully_Connected_Layer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1867.426 ; gain = 515.410 ; free physical = 9925 ; free virtual = 23268
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11208 ; free virtual = 23943
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -994,31 +1077,32 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     48 Bit       Adders := 66    
-	   2 Input      5 Bit       Adders := 22    
+	   2 Input     48 Bit       Adders := 76    
+	   2 Input      5 Bit       Adders := 23    
 	   3 Input      5 Bit       Adders := 4     
-	   2 Input      4 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 4     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               48 Bit    Registers := 20    
+	               48 Bit    Registers := 30    
 	               25 Bit    Registers := 20    
-	               18 Bit    Registers := 146   
-	                5 Bit    Registers := 26    
-	                4 Bit    Registers := 3     
+	               18 Bit    Registers := 156   
+	                5 Bit    Registers := 27    
+	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 17    
+	                1 Bit    Registers := 18    
 +---Muxes : 
-	   2 Input     48 Bit        Muxes := 20    
+	   2 Input     48 Bit        Muxes := 30    
 	   2 Input     25 Bit        Muxes := 40    
 	   3 Input     25 Bit        Muxes := 20    
-	   2 Input     18 Bit        Muxes := 119   
+	   2 Input     18 Bit        Muxes := 139   
 	   4 Input     18 Bit        Muxes := 2     
-	   2 Input      5 Bit        Muxes := 11    
-	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 6     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 69    
-	   3 Input      1 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 75    
+	   3 Input      1 Bit        Muxes := 8     
 	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -1114,6 +1198,25 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 10    
 	   3 Input      1 Bit        Muxes := 4     
 	   4 Input      1 Bit        Muxes := 1     
+Module Fully_Connected_Layer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 10    
+	               18 Bit    Registers := 10    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 10    
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -1135,14 +1238,18 @@ INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "kernel_in_reg[2][0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_row_offset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "in_row_major" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "out_row" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cell_row_offset" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "col" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "C1/row" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "C1/cell_row_offset" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "MP/in_row_offset" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "MP/in_row_major" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "c" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "in_chan" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-3331] design Fully_Connected_Layer has unconnected port out_neuron[4]
 INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][12]' (FD) to 'c2_wbuf/data_reg[19][13]'
 INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][13]' (FD) to 'c2_wbuf/data_reg[19][14]'
 INFO: [Synth 8-3886] merging instance 'c2_wbuf/data_reg[19][14]' (FD) to 'c2_wbuf/data_reg[19][15]'
@@ -1246,7 +1353,7 @@ INFO: [Synth 8-3886] merging instance 'GA/global_avg_gen[0].b_reg[0][2]' (FDRE) 
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (GA/\global_avg_gen[0].b_reg[0][17] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1867.426 ; gain = 515.410 ; free physical = 9855 ; free virtual = 23204
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11034 ; free virtual = 23719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1276,7 +1383,16 @@ ROM:
 |Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
 |Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
 |Conv_2_Weight_Buffer | p_0_out    | 32x18         | LUT            | 
-|MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
+|FC_Weight_Buffer     | p_0_out    | 32x18         | LUT            | 
 |MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
 |MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
 |MNIST_Solver         | p_0_out    | 32x18         | LUT            | 
@@ -1311,13 +1427,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1867.426 ; gain = 515.410 ; free physical = 9732 ; free virtual = 23082
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1873.426 ; gain = 516.410 ; free physical = 11981 ; free virtual = 24653
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1885.434 ; gain = 533.418 ; free physical = 9709 ; free virtual = 23059
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1881.434 ; gain = 524.418 ; free physical = 11972 ; free virtual = 24648
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1329,7 +1445,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9688 ; free virtual = 23037
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11944 ; free virtual = 24624
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1454,7 +1570,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module \C1/conv_channels_gen[0].kernel
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \C1/conv_channels_gen[0].kernel/M1_0  has unconnected pin C[44]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9687 ; free virtual = 23036
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11951 ; free virtual = 24630
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1467,7 +1583,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9687 ; free virtual = 23036
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11950 ; free virtual = 24630
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1479,25 +1595,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9683 ; free virtual = 23033
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11626 ; free virtual = 24613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9683 ; free virtual = 23033
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11626 ; free virtual = 24612
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9683 ; free virtual = 23033
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11636 ; free virtual = 24610
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9683 ; free virtual = 23033
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11636 ; free virtual = 24609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1509,7 +1625,7 @@ Report BlackBoxes:
 +------+------------------------+----------+
 |1     |Mult_Add_Pipelined_NC   |        26|
 |2     |Mult_Add_Pipelined_COL  |       108|
-|3     |Mult_Add_Global_Average |        20|
+|3     |Mult_Add_Global_Average |        30|
 |4     |Conv_1_BRAM             |        33|
 +------+------------------------+----------+
 
@@ -1551,179 +1667,189 @@ Report Cell Usage:
 |32    |Conv_1_BRAM__63             |     1|
 |33    |Conv_1_BRAM__64             |     1|
 |34    |Mult_Add_Global_Average     |     1|
-|35    |Mult_Add_Global_Average__20 |     1|
-|36    |Mult_Add_Global_Average__21 |     1|
-|37    |Mult_Add_Global_Average__22 |     1|
-|38    |Mult_Add_Global_Average__23 |     1|
-|39    |Mult_Add_Global_Average__24 |     1|
-|40    |Mult_Add_Global_Average__25 |     1|
-|41    |Mult_Add_Global_Average__26 |     1|
-|42    |Mult_Add_Global_Average__27 |     1|
-|43    |Mult_Add_Global_Average__28 |     1|
-|44    |Mult_Add_Global_Average__29 |     1|
-|45    |Mult_Add_Global_Average__30 |     1|
-|46    |Mult_Add_Global_Average__31 |     1|
-|47    |Mult_Add_Global_Average__32 |     1|
-|48    |Mult_Add_Global_Average__33 |     1|
-|49    |Mult_Add_Global_Average__34 |     1|
-|50    |Mult_Add_Global_Average__35 |     1|
-|51    |Mult_Add_Global_Average__36 |     1|
-|52    |Mult_Add_Global_Average__37 |     1|
-|53    |Mult_Add_Global_Average__38 |     1|
-|54    |Mult_Add_Pipelined_COL      |     1|
-|55    |Mult_Add_Pipelined_COL__108 |     1|
-|56    |Mult_Add_Pipelined_COL__109 |     1|
-|57    |Mult_Add_Pipelined_COL__110 |     1|
-|58    |Mult_Add_Pipelined_COL__111 |     1|
-|59    |Mult_Add_Pipelined_COL__112 |     1|
-|60    |Mult_Add_Pipelined_COL__113 |     1|
-|61    |Mult_Add_Pipelined_COL__114 |     1|
-|62    |Mult_Add_Pipelined_COL__115 |     1|
-|63    |Mult_Add_Pipelined_COL__116 |     1|
-|64    |Mult_Add_Pipelined_COL__117 |     1|
-|65    |Mult_Add_Pipelined_COL__118 |     1|
-|66    |Mult_Add_Pipelined_COL__119 |     1|
-|67    |Mult_Add_Pipelined_COL__120 |     1|
-|68    |Mult_Add_Pipelined_COL__121 |     1|
-|69    |Mult_Add_Pipelined_COL__122 |     1|
-|70    |Mult_Add_Pipelined_COL__123 |     1|
-|71    |Mult_Add_Pipelined_COL__124 |     1|
-|72    |Mult_Add_Pipelined_COL__125 |     1|
-|73    |Mult_Add_Pipelined_COL__126 |     1|
-|74    |Mult_Add_Pipelined_COL__127 |     1|
-|75    |Mult_Add_Pipelined_COL__128 |     1|
-|76    |Mult_Add_Pipelined_COL__129 |     1|
-|77    |Mult_Add_Pipelined_COL__130 |     1|
-|78    |Mult_Add_Pipelined_COL__131 |     1|
-|79    |Mult_Add_Pipelined_COL__132 |     1|
-|80    |Mult_Add_Pipelined_COL__133 |     1|
-|81    |Mult_Add_Pipelined_COL__134 |     1|
-|82    |Mult_Add_Pipelined_COL__135 |     1|
-|83    |Mult_Add_Pipelined_COL__136 |     1|
-|84    |Mult_Add_Pipelined_COL__137 |     1|
-|85    |Mult_Add_Pipelined_COL__138 |     1|
-|86    |Mult_Add_Pipelined_COL__139 |     1|
-|87    |Mult_Add_Pipelined_COL__140 |     1|
-|88    |Mult_Add_Pipelined_COL__141 |     1|
-|89    |Mult_Add_Pipelined_COL__142 |     1|
-|90    |Mult_Add_Pipelined_COL__143 |     1|
-|91    |Mult_Add_Pipelined_COL__144 |     1|
-|92    |Mult_Add_Pipelined_COL__145 |     1|
-|93    |Mult_Add_Pipelined_COL__146 |     1|
-|94    |Mult_Add_Pipelined_COL__147 |     1|
-|95    |Mult_Add_Pipelined_COL__148 |     1|
-|96    |Mult_Add_Pipelined_COL__149 |     1|
-|97    |Mult_Add_Pipelined_COL__150 |     1|
-|98    |Mult_Add_Pipelined_COL__151 |     1|
-|99    |Mult_Add_Pipelined_COL__152 |     1|
-|100   |Mult_Add_Pipelined_COL__153 |     1|
-|101   |Mult_Add_Pipelined_COL__154 |     1|
-|102   |Mult_Add_Pipelined_COL__155 |     1|
-|103   |Mult_Add_Pipelined_COL__156 |     1|
-|104   |Mult_Add_Pipelined_COL__157 |     1|
-|105   |Mult_Add_Pipelined_COL__158 |     1|
-|106   |Mult_Add_Pipelined_COL__159 |     1|
-|107   |Mult_Add_Pipelined_COL__160 |     1|
-|108   |Mult_Add_Pipelined_COL__161 |     1|
-|109   |Mult_Add_Pipelined_COL__162 |     1|
-|110   |Mult_Add_Pipelined_COL__163 |     1|
-|111   |Mult_Add_Pipelined_COL__164 |     1|
-|112   |Mult_Add_Pipelined_COL__165 |     1|
-|113   |Mult_Add_Pipelined_COL__166 |     1|
-|114   |Mult_Add_Pipelined_COL__167 |     1|
-|115   |Mult_Add_Pipelined_COL__168 |     1|
-|116   |Mult_Add_Pipelined_COL__169 |     1|
-|117   |Mult_Add_Pipelined_COL__170 |     1|
-|118   |Mult_Add_Pipelined_COL__171 |     1|
-|119   |Mult_Add_Pipelined_COL__172 |     1|
-|120   |Mult_Add_Pipelined_COL__173 |     1|
-|121   |Mult_Add_Pipelined_COL__174 |     1|
-|122   |Mult_Add_Pipelined_COL__175 |     1|
-|123   |Mult_Add_Pipelined_COL__176 |     1|
-|124   |Mult_Add_Pipelined_COL__177 |     1|
-|125   |Mult_Add_Pipelined_COL__178 |     1|
-|126   |Mult_Add_Pipelined_COL__179 |     1|
-|127   |Mult_Add_Pipelined_COL__180 |     1|
-|128   |Mult_Add_Pipelined_COL__181 |     1|
-|129   |Mult_Add_Pipelined_COL__182 |     1|
-|130   |Mult_Add_Pipelined_COL__183 |     1|
-|131   |Mult_Add_Pipelined_COL__184 |     1|
-|132   |Mult_Add_Pipelined_COL__185 |     1|
-|133   |Mult_Add_Pipelined_COL__186 |     1|
-|134   |Mult_Add_Pipelined_COL__187 |     1|
-|135   |Mult_Add_Pipelined_COL__188 |     1|
-|136   |Mult_Add_Pipelined_COL__189 |     1|
-|137   |Mult_Add_Pipelined_COL__190 |     1|
-|138   |Mult_Add_Pipelined_COL__191 |     1|
-|139   |Mult_Add_Pipelined_COL__192 |     1|
-|140   |Mult_Add_Pipelined_COL__193 |     1|
-|141   |Mult_Add_Pipelined_COL__194 |     1|
-|142   |Mult_Add_Pipelined_COL__195 |     1|
-|143   |Mult_Add_Pipelined_COL__196 |     1|
-|144   |Mult_Add_Pipelined_COL__197 |     1|
-|145   |Mult_Add_Pipelined_COL__198 |     1|
-|146   |Mult_Add_Pipelined_COL__199 |     1|
-|147   |Mult_Add_Pipelined_COL__200 |     1|
-|148   |Mult_Add_Pipelined_COL__201 |     1|
-|149   |Mult_Add_Pipelined_COL__202 |     1|
-|150   |Mult_Add_Pipelined_COL__203 |     1|
-|151   |Mult_Add_Pipelined_COL__204 |     1|
-|152   |Mult_Add_Pipelined_COL__205 |     1|
-|153   |Mult_Add_Pipelined_COL__206 |     1|
-|154   |Mult_Add_Pipelined_COL__207 |     1|
-|155   |Mult_Add_Pipelined_COL__208 |     1|
-|156   |Mult_Add_Pipelined_COL__209 |     1|
-|157   |Mult_Add_Pipelined_COL__210 |     1|
-|158   |Mult_Add_Pipelined_COL__211 |     1|
-|159   |Mult_Add_Pipelined_COL__212 |     1|
-|160   |Mult_Add_Pipelined_COL__213 |     1|
-|161   |Mult_Add_Pipelined_COL__214 |     1|
-|162   |Mult_Add_Pipelined_NC       |     1|
-|163   |Mult_Add_Pipelined_NC__26   |     1|
-|164   |Mult_Add_Pipelined_NC__27   |     1|
-|165   |Mult_Add_Pipelined_NC__28   |     1|
-|166   |Mult_Add_Pipelined_NC__29   |     1|
-|167   |Mult_Add_Pipelined_NC__30   |     1|
-|168   |Mult_Add_Pipelined_NC__31   |     1|
-|169   |Mult_Add_Pipelined_NC__32   |     1|
-|170   |Mult_Add_Pipelined_NC__33   |     1|
-|171   |Mult_Add_Pipelined_NC__34   |     1|
-|172   |Mult_Add_Pipelined_NC__35   |     1|
-|173   |Mult_Add_Pipelined_NC__36   |     1|
-|174   |Mult_Add_Pipelined_NC__37   |     1|
-|175   |Mult_Add_Pipelined_NC__38   |     1|
-|176   |Mult_Add_Pipelined_NC__39   |     1|
-|177   |Mult_Add_Pipelined_NC__40   |     1|
-|178   |Mult_Add_Pipelined_NC__41   |     1|
-|179   |Mult_Add_Pipelined_NC__42   |     1|
-|180   |Mult_Add_Pipelined_NC__43   |     1|
-|181   |Mult_Add_Pipelined_NC__44   |     1|
-|182   |Mult_Add_Pipelined_NC__45   |     1|
-|183   |Mult_Add_Pipelined_NC__46   |     1|
-|184   |Mult_Add_Pipelined_NC__47   |     1|
-|185   |Mult_Add_Pipelined_NC__48   |     1|
-|186   |Mult_Add_Pipelined_NC__49   |     1|
-|187   |Mult_Add_Pipelined_NC__50   |     1|
-|188   |BUFG                        |     1|
-|189   |CARRY4                      |   778|
-|190   |LUT1                        |    15|
-|191   |LUT2                        |  1410|
-|192   |LUT3                        |   486|
-|193   |LUT4                        |  1036|
-|194   |LUT5                        |   451|
-|195   |LUT6                        |   773|
-|196   |MUXF7                       |    36|
-|197   |FDRE                        |  3908|
-|198   |FDSE                        |   217|
-|199   |IBUF                        |    37|
-|200   |OBUF                        |    19|
+|35    |Mult_Add_Global_Average__30 |     1|
+|36    |Mult_Add_Global_Average__31 |     1|
+|37    |Mult_Add_Global_Average__32 |     1|
+|38    |Mult_Add_Global_Average__33 |     1|
+|39    |Mult_Add_Global_Average__34 |     1|
+|40    |Mult_Add_Global_Average__35 |     1|
+|41    |Mult_Add_Global_Average__36 |     1|
+|42    |Mult_Add_Global_Average__37 |     1|
+|43    |Mult_Add_Global_Average__38 |     1|
+|44    |Mult_Add_Global_Average__39 |     1|
+|45    |Mult_Add_Global_Average__40 |     1|
+|46    |Mult_Add_Global_Average__41 |     1|
+|47    |Mult_Add_Global_Average__42 |     1|
+|48    |Mult_Add_Global_Average__43 |     1|
+|49    |Mult_Add_Global_Average__44 |     1|
+|50    |Mult_Add_Global_Average__45 |     1|
+|51    |Mult_Add_Global_Average__46 |     1|
+|52    |Mult_Add_Global_Average__47 |     1|
+|53    |Mult_Add_Global_Average__48 |     1|
+|54    |Mult_Add_Global_Average__49 |     1|
+|55    |Mult_Add_Global_Average__50 |     1|
+|56    |Mult_Add_Global_Average__51 |     1|
+|57    |Mult_Add_Global_Average__52 |     1|
+|58    |Mult_Add_Global_Average__53 |     1|
+|59    |Mult_Add_Global_Average__54 |     1|
+|60    |Mult_Add_Global_Average__55 |     1|
+|61    |Mult_Add_Global_Average__56 |     1|
+|62    |Mult_Add_Global_Average__57 |     1|
+|63    |Mult_Add_Global_Average__58 |     1|
+|64    |Mult_Add_Pipelined_COL      |     1|
+|65    |Mult_Add_Pipelined_COL__108 |     1|
+|66    |Mult_Add_Pipelined_COL__109 |     1|
+|67    |Mult_Add_Pipelined_COL__110 |     1|
+|68    |Mult_Add_Pipelined_COL__111 |     1|
+|69    |Mult_Add_Pipelined_COL__112 |     1|
+|70    |Mult_Add_Pipelined_COL__113 |     1|
+|71    |Mult_Add_Pipelined_COL__114 |     1|
+|72    |Mult_Add_Pipelined_COL__115 |     1|
+|73    |Mult_Add_Pipelined_COL__116 |     1|
+|74    |Mult_Add_Pipelined_COL__117 |     1|
+|75    |Mult_Add_Pipelined_COL__118 |     1|
+|76    |Mult_Add_Pipelined_COL__119 |     1|
+|77    |Mult_Add_Pipelined_COL__120 |     1|
+|78    |Mult_Add_Pipelined_COL__121 |     1|
+|79    |Mult_Add_Pipelined_COL__122 |     1|
+|80    |Mult_Add_Pipelined_COL__123 |     1|
+|81    |Mult_Add_Pipelined_COL__124 |     1|
+|82    |Mult_Add_Pipelined_COL__125 |     1|
+|83    |Mult_Add_Pipelined_COL__126 |     1|
+|84    |Mult_Add_Pipelined_COL__127 |     1|
+|85    |Mult_Add_Pipelined_COL__128 |     1|
+|86    |Mult_Add_Pipelined_COL__129 |     1|
+|87    |Mult_Add_Pipelined_COL__130 |     1|
+|88    |Mult_Add_Pipelined_COL__131 |     1|
+|89    |Mult_Add_Pipelined_COL__132 |     1|
+|90    |Mult_Add_Pipelined_COL__133 |     1|
+|91    |Mult_Add_Pipelined_COL__134 |     1|
+|92    |Mult_Add_Pipelined_COL__135 |     1|
+|93    |Mult_Add_Pipelined_COL__136 |     1|
+|94    |Mult_Add_Pipelined_COL__137 |     1|
+|95    |Mult_Add_Pipelined_COL__138 |     1|
+|96    |Mult_Add_Pipelined_COL__139 |     1|
+|97    |Mult_Add_Pipelined_COL__140 |     1|
+|98    |Mult_Add_Pipelined_COL__141 |     1|
+|99    |Mult_Add_Pipelined_COL__142 |     1|
+|100   |Mult_Add_Pipelined_COL__143 |     1|
+|101   |Mult_Add_Pipelined_COL__144 |     1|
+|102   |Mult_Add_Pipelined_COL__145 |     1|
+|103   |Mult_Add_Pipelined_COL__146 |     1|
+|104   |Mult_Add_Pipelined_COL__147 |     1|
+|105   |Mult_Add_Pipelined_COL__148 |     1|
+|106   |Mult_Add_Pipelined_COL__149 |     1|
+|107   |Mult_Add_Pipelined_COL__150 |     1|
+|108   |Mult_Add_Pipelined_COL__151 |     1|
+|109   |Mult_Add_Pipelined_COL__152 |     1|
+|110   |Mult_Add_Pipelined_COL__153 |     1|
+|111   |Mult_Add_Pipelined_COL__154 |     1|
+|112   |Mult_Add_Pipelined_COL__155 |     1|
+|113   |Mult_Add_Pipelined_COL__156 |     1|
+|114   |Mult_Add_Pipelined_COL__157 |     1|
+|115   |Mult_Add_Pipelined_COL__158 |     1|
+|116   |Mult_Add_Pipelined_COL__159 |     1|
+|117   |Mult_Add_Pipelined_COL__160 |     1|
+|118   |Mult_Add_Pipelined_COL__161 |     1|
+|119   |Mult_Add_Pipelined_COL__162 |     1|
+|120   |Mult_Add_Pipelined_COL__163 |     1|
+|121   |Mult_Add_Pipelined_COL__164 |     1|
+|122   |Mult_Add_Pipelined_COL__165 |     1|
+|123   |Mult_Add_Pipelined_COL__166 |     1|
+|124   |Mult_Add_Pipelined_COL__167 |     1|
+|125   |Mult_Add_Pipelined_COL__168 |     1|
+|126   |Mult_Add_Pipelined_COL__169 |     1|
+|127   |Mult_Add_Pipelined_COL__170 |     1|
+|128   |Mult_Add_Pipelined_COL__171 |     1|
+|129   |Mult_Add_Pipelined_COL__172 |     1|
+|130   |Mult_Add_Pipelined_COL__173 |     1|
+|131   |Mult_Add_Pipelined_COL__174 |     1|
+|132   |Mult_Add_Pipelined_COL__175 |     1|
+|133   |Mult_Add_Pipelined_COL__176 |     1|
+|134   |Mult_Add_Pipelined_COL__177 |     1|
+|135   |Mult_Add_Pipelined_COL__178 |     1|
+|136   |Mult_Add_Pipelined_COL__179 |     1|
+|137   |Mult_Add_Pipelined_COL__180 |     1|
+|138   |Mult_Add_Pipelined_COL__181 |     1|
+|139   |Mult_Add_Pipelined_COL__182 |     1|
+|140   |Mult_Add_Pipelined_COL__183 |     1|
+|141   |Mult_Add_Pipelined_COL__184 |     1|
+|142   |Mult_Add_Pipelined_COL__185 |     1|
+|143   |Mult_Add_Pipelined_COL__186 |     1|
+|144   |Mult_Add_Pipelined_COL__187 |     1|
+|145   |Mult_Add_Pipelined_COL__188 |     1|
+|146   |Mult_Add_Pipelined_COL__189 |     1|
+|147   |Mult_Add_Pipelined_COL__190 |     1|
+|148   |Mult_Add_Pipelined_COL__191 |     1|
+|149   |Mult_Add_Pipelined_COL__192 |     1|
+|150   |Mult_Add_Pipelined_COL__193 |     1|
+|151   |Mult_Add_Pipelined_COL__194 |     1|
+|152   |Mult_Add_Pipelined_COL__195 |     1|
+|153   |Mult_Add_Pipelined_COL__196 |     1|
+|154   |Mult_Add_Pipelined_COL__197 |     1|
+|155   |Mult_Add_Pipelined_COL__198 |     1|
+|156   |Mult_Add_Pipelined_COL__199 |     1|
+|157   |Mult_Add_Pipelined_COL__200 |     1|
+|158   |Mult_Add_Pipelined_COL__201 |     1|
+|159   |Mult_Add_Pipelined_COL__202 |     1|
+|160   |Mult_Add_Pipelined_COL__203 |     1|
+|161   |Mult_Add_Pipelined_COL__204 |     1|
+|162   |Mult_Add_Pipelined_COL__205 |     1|
+|163   |Mult_Add_Pipelined_COL__206 |     1|
+|164   |Mult_Add_Pipelined_COL__207 |     1|
+|165   |Mult_Add_Pipelined_COL__208 |     1|
+|166   |Mult_Add_Pipelined_COL__209 |     1|
+|167   |Mult_Add_Pipelined_COL__210 |     1|
+|168   |Mult_Add_Pipelined_COL__211 |     1|
+|169   |Mult_Add_Pipelined_COL__212 |     1|
+|170   |Mult_Add_Pipelined_COL__213 |     1|
+|171   |Mult_Add_Pipelined_COL__214 |     1|
+|172   |Mult_Add_Pipelined_NC       |     1|
+|173   |Mult_Add_Pipelined_NC__26   |     1|
+|174   |Mult_Add_Pipelined_NC__27   |     1|
+|175   |Mult_Add_Pipelined_NC__28   |     1|
+|176   |Mult_Add_Pipelined_NC__29   |     1|
+|177   |Mult_Add_Pipelined_NC__30   |     1|
+|178   |Mult_Add_Pipelined_NC__31   |     1|
+|179   |Mult_Add_Pipelined_NC__32   |     1|
+|180   |Mult_Add_Pipelined_NC__33   |     1|
+|181   |Mult_Add_Pipelined_NC__34   |     1|
+|182   |Mult_Add_Pipelined_NC__35   |     1|
+|183   |Mult_Add_Pipelined_NC__36   |     1|
+|184   |Mult_Add_Pipelined_NC__37   |     1|
+|185   |Mult_Add_Pipelined_NC__38   |     1|
+|186   |Mult_Add_Pipelined_NC__39   |     1|
+|187   |Mult_Add_Pipelined_NC__40   |     1|
+|188   |Mult_Add_Pipelined_NC__41   |     1|
+|189   |Mult_Add_Pipelined_NC__42   |     1|
+|190   |Mult_Add_Pipelined_NC__43   |     1|
+|191   |Mult_Add_Pipelined_NC__44   |     1|
+|192   |Mult_Add_Pipelined_NC__45   |     1|
+|193   |Mult_Add_Pipelined_NC__46   |     1|
+|194   |Mult_Add_Pipelined_NC__47   |     1|
+|195   |Mult_Add_Pipelined_NC__48   |     1|
+|196   |Mult_Add_Pipelined_NC__49   |     1|
+|197   |Mult_Add_Pipelined_NC__50   |     1|
+|198   |BUFG                        |     1|
+|199   |CARRY4                      |   878|
+|200   |LUT1                        |    17|
+|201   |LUT2                        |  1904|
+|202   |LUT3                        |   659|
+|203   |LUT4                        |  1144|
+|204   |LUT5                        |   589|
+|205   |LUT6                        |   847|
+|206   |MUXF7                       |    36|
+|207   |FDRE                        |  4422|
+|208   |FDSE                        |   378|
+|209   |IBUF                        |    36|
+|210   |OBUF                        |    19|
 +------+----------------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------+---------------------------------+------+
 |      |Instance                           |Module                           |Cells |
 +------+-----------------------------------+---------------------------------+------+
-|1     |top                                |                                 | 24545|
+|1     |top                                |                                 | 27268|
 |2     |  C1                               |Conv_Layer_1                     |  5708|
 |3     |    \conv_channels_gen[0].kernel   |Conv_Kernel_3by3                 |   898|
 |4     |    \conv_channels_gen[1].kernel   |Conv_Kernel_3by3__parameterized0 |   898|
@@ -1752,65 +1878,66 @@ Report Instance Areas:
 |27    |    \conv_channels_gen[7].kernel   |Conv_Kernel_2by2__xdcDup__8      |   429|
 |28    |    \conv_channels_gen[8].kernel   |Conv_Kernel_2by2__xdcDup__9      |   429|
 |29    |    \conv_channels_gen[9].kernel   |Conv_Kernel_2by2__xdcDup__10     |   429|
-|30    |  GA                               |Global_Average_Layer             |  6593|
-|31    |  MP                               |Max_Pool_Layer                   |   341|
-|32    |  c2_wbuf                          |Conv_2_Weight_Buffer             |   263|
-|33    |  \conv_2_obuf_gen[0].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__14  |    18|
-|34    |  \conv_2_obuf_gen[10].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__24  |    18|
-|35    |  \conv_2_obuf_gen[11].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__25  |    18|
-|36    |  \conv_2_obuf_gen[12].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__26  |    18|
-|37    |  \conv_2_obuf_gen[13].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__27  |    18|
-|38    |  \conv_2_obuf_gen[14].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__28  |    18|
-|39    |  \conv_2_obuf_gen[15].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__29  |    18|
-|40    |  \conv_2_obuf_gen[16].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__30  |    18|
-|41    |  \conv_2_obuf_gen[17].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__31  |    18|
-|42    |  \conv_2_obuf_gen[18].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__32  |    18|
-|43    |  \conv_2_obuf_gen[19].c2_obuf     |Conv_1_Frame_Buffer              |    18|
-|44    |  \conv_2_obuf_gen[1].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__15  |    18|
-|45    |  \conv_2_obuf_gen[2].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__16  |    18|
-|46    |  \conv_2_obuf_gen[3].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__17  |    18|
-|47    |  \conv_2_obuf_gen[4].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__18  |    18|
-|48    |  \conv_2_obuf_gen[5].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__19  |    18|
-|49    |  \conv_2_obuf_gen[6].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__20  |    18|
-|50    |  \conv_2_obuf_gen[7].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__21  |    18|
-|51    |  \conv_2_obuf_gen[8].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__22  |    18|
-|52    |  \conv_2_obuf_gen[9].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__23  |    18|
-|53    |  in_buf                           |Conv_1_Frame_Buffer__xdcDup__1   |    18|
-|54    |  \obuf_gen[0].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__2   |    36|
-|55    |  \obuf_gen[0].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__3   |    18|
-|56    |  \obuf_gen[1].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__4   |    36|
-|57    |  \obuf_gen[1].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__5   |    18|
-|58    |  \obuf_gen[2].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__6   |    36|
-|59    |  \obuf_gen[2].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__7   |    18|
-|60    |  \obuf_gen[3].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__8   |    36|
-|61    |  \obuf_gen[3].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__9   |    18|
-|62    |  \obuf_gen[4].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__10  |    36|
-|63    |  \obuf_gen[4].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__11  |    18|
-|64    |  \obuf_gen[5].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__12  |    36|
-|65    |  \obuf_gen[5].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__13  |    18|
+|30    |  FC                               |Fully_Connected_Layer            |  2725|
+|31    |  GA                               |Global_Average_Layer             |  6593|
+|32    |  MP                               |Max_Pool_Layer                   |   376|
+|33    |  c2_wbuf                          |Conv_2_Weight_Buffer             |   263|
+|34    |  \conv_2_obuf_gen[0].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__14  |    18|
+|35    |  \conv_2_obuf_gen[10].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__24  |    18|
+|36    |  \conv_2_obuf_gen[11].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__25  |    18|
+|37    |  \conv_2_obuf_gen[12].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__26  |    18|
+|38    |  \conv_2_obuf_gen[13].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__27  |    18|
+|39    |  \conv_2_obuf_gen[14].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__28  |    18|
+|40    |  \conv_2_obuf_gen[15].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__29  |    18|
+|41    |  \conv_2_obuf_gen[16].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__30  |    18|
+|42    |  \conv_2_obuf_gen[17].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__31  |    18|
+|43    |  \conv_2_obuf_gen[18].c2_obuf     |Conv_1_Frame_Buffer__xdcDup__32  |    18|
+|44    |  \conv_2_obuf_gen[19].c2_obuf     |Conv_1_Frame_Buffer              |    18|
+|45    |  \conv_2_obuf_gen[1].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__15  |    18|
+|46    |  \conv_2_obuf_gen[2].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__16  |    18|
+|47    |  \conv_2_obuf_gen[3].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__17  |    18|
+|48    |  \conv_2_obuf_gen[4].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__18  |    18|
+|49    |  \conv_2_obuf_gen[5].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__19  |    18|
+|50    |  \conv_2_obuf_gen[6].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__20  |    18|
+|51    |  \conv_2_obuf_gen[7].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__21  |    18|
+|52    |  \conv_2_obuf_gen[8].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__22  |    18|
+|53    |  \conv_2_obuf_gen[9].c2_obuf      |Conv_1_Frame_Buffer__xdcDup__23  |    18|
+|54    |  in_buf                           |Conv_1_Frame_Buffer__xdcDup__1   |    18|
+|55    |  \obuf_gen[0].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__2   |    30|
+|56    |  \obuf_gen[0].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__3   |    18|
+|57    |  \obuf_gen[1].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__4   |    30|
+|58    |  \obuf_gen[1].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__5   |    18|
+|59    |  \obuf_gen[2].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__6   |    30|
+|60    |  \obuf_gen[2].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__7   |    18|
+|61    |  \obuf_gen[3].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__8   |    30|
+|62    |  \obuf_gen[3].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__9   |    18|
+|63    |  \obuf_gen[4].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__10  |    30|
+|64    |  \obuf_gen[4].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__11  |    18|
+|65    |  \obuf_gen[5].c1_obuf             |Conv_1_Frame_Buffer__xdcDup__12  |    30|
+|66    |  \obuf_gen[5].mp_obuf             |Conv_1_Frame_Buffer__xdcDup__13  |    18|
 +------+-----------------------------------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1922.215 ; gain = 570.199 ; free physical = 9683 ; free virtual = 23033
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.535 ; gain = 566.520 ; free physical = 11636 ; free virtual = 24609
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 2304 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1922.215 ; gain = 209.395 ; free physical = 9734 ; free virtual = 23084
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1922.223 ; gain = 570.199 ; free physical = 9745 ; free virtual = 23094
+Synthesis finished with 0 errors, 2304 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1923.535 ; gain = 202.715 ; free physical = 11690 ; free virtual = 24660
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1923.543 ; gain = 566.520 ; free physical = 11700 ; free virtual = 24671
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 814 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 914 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1922.223 ; gain = 0.000 ; free physical = 9675 ; free virtual = 23025
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1923.543 ; gain = 0.000 ; free physical = 11922 ; free virtual = 24589
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-249 Infos, 195 Warnings, 100 Critical Warnings and 0 Errors encountered.
+285 Infos, 207 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1922.223 ; gain = 570.352 ; free physical = 9748 ; free virtual = 23097
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1922.223 ; gain = 0.000 ; free physical = 9748 ; free virtual = 23097
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1923.543 ; gain = 566.672 ; free physical = 11994 ; free virtual = 24661
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1923.543 ; gain = 0.000 ; free physical = 11994 ; free virtual = 24661
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.runs/synth_1/MNIST_Solver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file MNIST_Solver_utilization_synth.rpt -pb MNIST_Solver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 24 16:02:11 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 26 13:03:25 2021...
