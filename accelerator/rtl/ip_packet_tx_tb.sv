@@ -9,10 +9,12 @@ logic areset;
 
 logic [ 0:31] accelerator_ip_address;
 logic [ 0:47] accelerator_mac_address;
+logic [ 0:15] accelerator_udp_port;
 
 // Signals interfacing with accelerator
 logic [ 0:31] recipient_ip_address;
 logic [ 0:47] recipient_mac_address;
+logic [ 0:15] recipient_udp_port;
 logic [ 0:9]  recipient_message; // Either a response to LB or an inference result
 logic        start_ip_txn;
 logic        ready_for_send;
@@ -29,11 +31,15 @@ localparam [ 0:15] eth_packet_type = 'h0800; // ip protocol
 
 localparam [ 0: 7] ip_version = 'h45;
 localparam [ 0: 7] service_type = 'h00;
-localparam [ 0:15] packet_length = 'd20 + 'd26; // header length + data length (bytes)
+localparam [ 0:15] packet_length = 'd20 + 'd8 + 'd18; // ip hdr length + udp hdr lenght + data length (bytes)
 localparam [ 0:15] identification = 'h0000;
 localparam [ 0:15] flags_and_fragment = 'h0000;
 localparam [ 0: 7] time_to_live = 'h80;
-localparam [ 0: 7] protocol = 'h00; 
+localparam [ 0: 7] protocol = 'h11; 
+
+localparam [0:15] packet_length_udp = 'd8 + 'd18;
+localparam [0:15] checksum_udp = 'd0;
+
 int checksum;
 int passed;
 
@@ -42,7 +48,7 @@ int unsigned data_out_list[];
 int ready_wait_list[];
 int ready_low_list[];
 
-// Eth hdr + ip hdr + payload - checksum
+// Eth hdr + ip hdr + udp hdr + payload - checksum
 localparam MIN_PAYLOAD_SIZE = 60;
 
 initial begin
@@ -50,9 +56,11 @@ initial begin
    areset = 'd0;
    accelerator_ip_address =  32'h01_02_03_04;
    accelerator_mac_address = 48'h54b00bedabba;
+   accelerator_udp_port = 16'h66ff;
    
    recipient_ip_address =  32'h0a_0b_0c_0d;
    recipient_mac_address = 48'h32dabbadebd5;
+   recipient_udp_port = 16'h99dd;
    recipient_message = 10'h1ff;
 
    
@@ -95,16 +103,16 @@ initial begin
                     recipient_ip_address[ 8:15],
                     recipient_ip_address[16:23],
                     recipient_ip_address[24:31],
+                    accelerator_udp_port[ 0: 7],
+                    accelerator_udp_port[ 8:15],
+                    recipient_udp_port[ 0: 7],
+                    recipient_udp_port[ 8:15],
+                    packet_length_udp[ 0: 7],
+                    packet_length_udp[ 8:15],
+                    checksum_udp[0:7],
+                    checksum_udp[8:15],
                     recipient_message[0:1],
                     recipient_message[2:9],
-                    'h00,
-                    'h00,
-                    'h00,
-                    'h00,
-                    'h00,
-                    'h00,
-                    'h00,
-                    'h00,
                     'h00,
                     'h00,
                     'h00,
@@ -189,10 +197,12 @@ ip_packet_tx dut (
     .ARESET(areset),
     .ACCELERATOR_IP_ADDRESS(accelerator_ip_address),
     .ACCELERATOR_MAC_ADDRESS(accelerator_mac_address),
+    .ACCELERATOR_UDP_PORT(accelerator_udp_port),
 
     // Signals interfacing with accelerator
     .RECIPIENT_IP_ADDRESS(recipient_ip_address),
     .RECIPIENT_MAC_ADDRESS(recipient_mac_address),
+    .RECIPIENT_UDP_PORT(recipient_udp_port),
     .RECIPIENT_MESSAGE(recipient_message), // Either a response to LB or an inference result
     .START_IP_TXN(start_ip_txn),
     .READY_FOR_SEND(ready_for_send),

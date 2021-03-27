@@ -13,7 +13,7 @@ logic [31:0] dst_ip_address;
 logic [15:0] checksum;
 
 initial begin
-    int golden_value = 'h22cc;
+    static int golden_value = 'h22cc;
     // See: 
     // https://en.wikipedia.org/wiki/IPv4_header_checksum#Calculating_the_IPv4_header_checksum
     version = 'h45;
