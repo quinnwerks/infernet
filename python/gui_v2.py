@@ -23,6 +23,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from PIL import Image as Pil_Image, ImageTk as Pil_ImageTk
 import PIL.ImageOps as Pil_ImageOps
+from tkinter_custom_button import TkinterCustomButton as TCB
 
 import networking532 as n532
 import client as cli
@@ -145,6 +146,56 @@ def make_fixed_label(parent, x, y, h, w, *args, **kwargs) -> tk.Label:
     return lbl
 
 
+class Dumb_Button(tk.Button):
+    def __init__(self, parent, x, y, w, h, imgs: dict, action):
+        super().__init__()
+        self.imgs = {}
+        for k, v in imgs.items():
+            self.imgs[k] = Pil_ImageTk.PhotoImage(Pil_Image.open(v))
+
+        self.canvas = tk.Canvas(parent, width=w, height=h)
+        self.canvas.place(x=x, y=y)
+        self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+        # print(self.imgs['default'].tobytes())
+        self.disabled = False
+        self.canvas.bind("<Enter>", self.entered)
+        self.canvas.bind("<Leave>", self.left)
+        self.canvas.bind("<Button-1>", self.clicked)
+        self.canvas.bind("<ButtonRelease-1>", self.unclicked)
+        self.action = action
+
+    def unclicked(self, event):
+        if not self.disabled:
+            # for x in self.canvas.find_all():
+            #     self.canvas.delete(x)
+            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+
+    def clicked(self, event):
+        if not self.disabled:
+            # for x in self.canvas.find_all():
+            #     self.canvas.delete(x)
+            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['active'])
+            self.action()
+
+    def left(self, event):
+        if not self.disabled:
+            # for x in self.canvas.find_all():
+            #     self.canvas.delete(x)
+            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+
+    def entered(self, event):
+        if not self.disabled:
+            # for x in self.canvas.find_all():
+            #     # self.canvas.delete(x)
+            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['hover'])
+
+    def disable(self):
+        self.disabled = True
+
+    def enable(self):
+        self.disabled = False
+
+
 class Infernet_GUI:
     """
     """
@@ -155,6 +206,16 @@ class Infernet_GUI:
         self.color_1 = "#4D1C00"
         self.color_2 = "#821800"
         self.color_3 = "#FFAE00"
+        self.color_h0 = "#EEEEEE"
+        self.color_h1 = "#E69D00"
+        if os.name == 'nt':
+            self.font = ('ariel', 14)
+            self.font2 = ('ariel', 16, 'bold')
+            self.fontb = ('ariel', 12, 'bold')
+        else:
+            self.font = ('ariel', 14)
+            self.font2 = ('ariel', 16, 'bold')
+            self.fontb = ('ariel', 12, 'bold')
 
         # instantiate window
         self.root = tk.Tk()
@@ -167,17 +228,17 @@ class Infernet_GUI:
         self.bg = Pil_ImageTk.PhotoImage(Pil_Image.open("Static.png"))
         self.bg_label = tk.Label(self.content, image=self.bg)
         self.bg_label.place(relx=0.5, rely=0.5, anchor='center')
-        # self.bg_label.place(x=-2, y=-2)
 
         # instantiate string labels
         self.lb_address = tk.StringVar()
         self.lb_address.set("1.1.1.1")
         self.lb_address_lbl = make_fixed_label(self.content, 94, 285, 22, 198,
-                                       textvariable=self.lb_address,
-                                       bg='white',
-                                       fg=self.color_1,
-                                       justify="left",
-                                       anchor=tk.W)
+                                               textvariable=self.lb_address,
+                                               bg='white',
+                                               fg=self.color_1,
+                                               justify="left",
+                                               anchor=tk.W,
+                                               font=self.font)
 
         self.nn_address = tk.StringVar()
         self.nn_address.set("2.2.2.2")
@@ -186,53 +247,88 @@ class Infernet_GUI:
                                                bg='white',
                                                fg=self.color_1,
                                                justify="left",
-                                               anchor=tk.W)
+                                               anchor=tk.W,
+                                               font=self.font)
 
         self.directory = tk.StringVar()
         self.directory.set("/.././.././../.")
         self.directory_lbl = make_fixed_label(self.content, 186, 154, 22, 680,
-                                               textvariable=self.directory,
-                                               bg='white',
-                                               fg=self.color_1,
-                                               justify="left",
-                                               anchor=tk.W)
+                                              textvariable=self.directory,
+                                              bg='white',
+                                              fg=self.color_1,
+                                              justify="left",
+                                              anchor=tk.W,
+                                              font=self.font)
 
         self.file_count = tk.StringVar()
-        self.file_count.set("No Files Detected")
-        self.file_count_lbl = make_fixed_label(self.content, 882, 159, 14, 111,
-                                              textvariable=self.file_count,
-                                              bg=self.color_1,
-                                              fg=self.color_3,
-                                              justify="left",
-                                              anchor=tk.W)
+        self.file_count.set("No Files Found")
+        self.file_count_lbl = make_fixed_label(self.content, 882, 158, 14, 142,
+                                               textvariable=self.file_count,
+                                               bg=self.color_1,
+                                               fg=self.color_3,
+                                               justify="left",
+                                               anchor=tk.W,
+                                               font=self.font)
 
-        self.main_btn_text = tk.StringVar()
-        self.main_btn_text.set("START")
+        #instantiate buttons
+        self.infer_btn = TCB(text="START",
+                             width=96,
+                             height=30,
+                             corner_radius=5,
+                             command=None,
+                             bg_color=self.color_2,
+                             fg_color=self.color_3,
+                             text_color=self.color_1,
+                             text_font=self.font2,
+                             hover_color=self.color_h1)
+        self.infer_btn.place(x=736, y=208)
 
-        # self.infer_button = tk.Button(self.content, text="Infer", command=None)
-        # self.infer_button.place(x=0+DX, y=0+DY)
+        self.browse_btn = TCB(text="Browse",
+                              width=74,
+                              height=22,
+                              corner_radius=5,
+                              command=None,
+                              bg_color=self.color_1,
+                              fg_color='white',
+                              text_color=self.color_1,
+                              text_font=self.fontb,
+                              hover_color=self.color_h0)
+        self.browse_btn.place(x=96, y=154)
 
-        # self.image_list = []
-        # self.stats = Infernet_Statistics()
+        self.lb_btn = TCB(text="Auto-Detect",
+                              width=83,
+                              height=22,
+                              corner_radius=5,
+                              command=None,
+                              bg_color=self.color_2,
+                              fg_color='white',
+                              text_color=self.color_1,
+                              text_font=self.fontb,
+                              hover_color=self.color_h0)
+        self.lb_btn.place(x=209, y=254)
 
-        # self.title_frame = self.build_title(self.root)
-        # self.user_entry_frame = self.build_user_entry(self.root)
-        #
+        self.ia_btn = TCB(text="Request",
+                              width=83,
+                              height=22,
+                              corner_radius=5,
+                              command=None,
+                              bg_color=self.color_2,
+                              fg_color='white',
+                              text_color=self.color_1,
+                              text_font=self.fontb,
+                              hover_color=self.color_h0)
+        self.ia_btn.place(x=209, y=334)
+
+        # other properties
+        self.image_list = []
+        self.stats = Infernet_Statistics()
+
         # self.image_display_frame, \
         # self.sent_img_canvas, \
         # self.sent_img_id, \
         # self.stats_canvas, \
         # self.stats_fig = self.build_image_display(self.root,
         #                                           self.placeholder_sent_image)
-        #
-        # self.status_bar = self.build_status_bar(self.root, self.system_status)
-        # self.infer_panel = self.build_infer_button_panel(self.root)
-        #
-        # self.title_frame.pack()
-        # self.user_entry_frame.pack()
-        # self.image_display_frame.pack()
-        # self.status_bar.pack()
-        # self.infer_panel.pack()
 
     def browse_for_directory_callback(self):
         directory = tk.filedialog.askdirectory(title="Select Directory")
