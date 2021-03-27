@@ -5,10 +5,10 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design_ddr
 #  (
-      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_02,
+      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_08,
       //01_00_00_35_0a_00,
       parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h01_01_02_02,
+      parameter OUR_IP_ADDRESS=32'h01_01_08_02,
       parameter OUR_UDP_PORT = 16'd0666,
       //02_01_01_01,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA

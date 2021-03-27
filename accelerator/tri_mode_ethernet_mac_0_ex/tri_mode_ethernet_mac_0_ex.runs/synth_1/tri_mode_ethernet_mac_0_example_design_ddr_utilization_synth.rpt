@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date         : Thu Mar 11 09:29:38 2021
+| Date         : Sun Mar 14 19:16:49 2021
 | Host         : hw-dev running 64-bit Ubuntu 18.04.5 LTS
 | Command      : report_utilization -file tri_mode_ethernet_mac_0_example_design_ddr_utilization_synth.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_utilization_synth.pb
 | Design       : tri_mode_ethernet_mac_0_example_design_ddr
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 8150 |     0 |     63400 | 12.85 |
-|   LUT as Logic             | 8141 |     0 |     63400 | 12.84 |
+| Slice LUTs*                | 8146 |     0 |     63400 | 12.85 |
+|   LUT as Logic             | 8137 |     0 |     63400 | 12.83 |
 |   LUT as Memory            |    9 |     0 |     19000 |  0.05 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    9 |     0 |           |       |
-| Slice Registers            | 7308 |     0 |    126800 |  5.76 |
-|   Register as Flip Flop    | 7308 |     0 |    126800 |  5.76 |
+| Slice Registers            | 7307 |     0 |    126800 |  5.76 |
+|   Register as Flip Flop    | 7307 |     0 |    126800 |  5.76 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 30    |          Yes |           - |          Set |
 | 6     |          Yes |           - |        Reset |
 | 344   |          Yes |         Set |            - |
-| 6928  |          Yes |       Reset |            - |
+| 6927  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,14 +149,14 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 6928 |        Flop & Latch |
-| LUT5     | 6679 |                 LUT |
-| LUT6     |  939 |                 LUT |
+| FDRE     | 6927 |        Flop & Latch |
+| LUT5     | 6675 |                 LUT |
+| LUT6     |  940 |                 LUT |
 | FDSE     |  344 |        Flop & Latch |
 | LUT1     |  230 |                 LUT |
-| LUT3     |  185 |                 LUT |
-| LUT2     |  164 |                 LUT |
-| LUT4     |  126 |                 LUT |
+| LUT3     |  182 |                 LUT |
+| LUT2     |  163 |                 LUT |
+| LUT4     |  128 |                 LUT |
 | CARRY4   |   90 |          CarryLogic |
 | FDPE     |   30 |        Flop & Latch |
 | SRL16E   |    8 |  Distributed Memory |

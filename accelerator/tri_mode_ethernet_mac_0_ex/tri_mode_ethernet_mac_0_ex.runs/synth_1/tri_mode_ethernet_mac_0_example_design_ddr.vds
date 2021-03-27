@@ -2,8 +2,8 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Thu Mar 11 09:25:48 2021
-# Process ID: 3229
+# Start of session at: Sun Mar 14 19:12:55 2021
+# Process ID: 3152
 # Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1
 # Command line: vivado -log tri_mode_ethernet_mac_0_example_design_ddr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tri_mode_ethernet_mac_0_example_design_ddr.tcl
 # Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3286 
+INFO: Helper process launched with PID 3269 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1481.176 ; gain = 72.996 ; free physical = 3717 ; free virtual = 7666
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1481.172 ; gain = 82.996 ; free physical = 3555 ; free virtual = 7557
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_ddr' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:6]
-	Parameter OUR_MAC_ADDRESS bound to: 48'b000000000000101000110101000000000000000000000010 
+	Parameter OUR_MAC_ADDRESS bound to: 48'b000000000000101000110101000000000000000000001000 
 	Parameter USER_DATA_BYTES bound to: 784 - type: integer 
-	Parameter OUR_IP_ADDRESS bound to: 16843266 - type: integer 
+	Parameter OUR_IP_ADDRESS bound to: 16844802 - type: integer 
 	Parameter OUR_UDP_PORT bound to: 16'b0000001010011010 
 	Parameter DUMMY_MAC_ADDRESS bound to: 48'b101010101010101010101010101010101010101010101010 
 INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:35]
@@ -44,13 +44,13 @@ INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/e
 INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:269]
 INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:270]
 INFO: [Synth 8-5534] Detected attribute (* mark_debug = "true" *) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:271]
-INFO: [Synth 8-6157] synthesizing module 'mii_to_rmii_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/mii_to_rmii_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mii_to_rmii_0' (1#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/mii_to_rmii_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'accelerator_controls' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/accelerator_controls_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'accelerator_controls' (2#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/accelerator_controls_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mii_to_rmii_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/mii_to_rmii_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mii_to_rmii_0' (1#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/mii_to_rmii_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'accelerator_controls' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/accelerator_controls_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'accelerator_controls' (2#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/accelerator_controls_stub.v:6]
 WARNING: [Synth 8-350] instance 'vio' of module 'accelerator_controls' requires 4 connections, but only 2 given [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/accelerator.sv:333]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (3#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (3#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_example_design_resets' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design_resets.v:54]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_sync_block' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_sync_block.v:63]
 	Parameter INITIALISE bound to: 1'b0 
@@ -131,8 +131,8 @@ WARNING: [Synth 8-6014] Unused sequential element design_on_board_reg was remove
 INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_axi_lite_sm' (9#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_axi_lite_sm.v:64]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_fifo_block' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_fifo_block.v:89]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_support' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_support.v:66]
-INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0' (10#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0' (10#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/tri_mode_ethernet_mac_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'tri_mode_ethernet_mac_0_support' (11#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_support.v:66]
 INFO: [Synth 8-6157] synthesizing module 'tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_ten_100_1g_eth_fifo.v:71]
 	Parameter FULL_DUPLEX_ONLY bound to: 1 - type: integer 
@@ -277,10 +277,10 @@ INFO: [Synth 8-6157] synthesizing module 'XOR_NN' [/home/quinn/ece532-project/mi
 INFO: [Synth 8-6157] synthesizing module 'FC_Neuron' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/XOR_NN.sv:104]
 	Parameter weights bound to: 36'b000000010000000000000000010000000000 
 	Parameter bias bound to: 18'sb111111110111111111 
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_NC' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/Mult_Add_NC_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_NC' (23#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/Mult_Add_NC_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'Mult_Add_COL' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/Mult_Add_COL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_COL' (24#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3229-hw-dev/realtime/Mult_Add_COL_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_NC' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/Mult_Add_NC_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_NC' (23#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/Mult_Add_NC_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Mult_Add_COL' [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/Mult_Add_COL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Mult_Add_COL' (24#1) [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/.Xil/Vivado-3152-hw-dev/realtime/Mult_Add_COL_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'FW_FP_Converter' [/home/quinn/ece532-project/misc/XOR_NN/XOR_NN.srcs/sources_1/new/FW_FP_Converter.sv:7]
 	Parameter NUM_M bound to: 7 - type: integer 
 	Parameter NUM_F bound to: 10 - type: integer 
@@ -419,7 +419,7 @@ WARNING: [Synth 8-3331] design tri_mode_ethernet_mac_0_axi_lite_sm has unconnect
 WARNING: [Synth 8-3331] design tri_mode_ethernet_mac_0_axi_lite_sm has unconnected port src_mac_address[15]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1564.926 ; gain = 156.746 ; free physical = 3687 ; free virtual = 7641
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1564.922 ; gain = 166.746 ; free physical = 3516 ; free virtual = 7529
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -432,10 +432,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1564.926 ; gain = 156.746 ; free physical = 3695 ; free virtual = 7649
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1564.922 ; gain = 166.746 ; free physical = 3513 ; free virtual = 7528
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1564.926 ; gain = 156.746 ; free physical = 3695 ; free virtual = 7649
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1564.922 ; gain = 166.746 ; free physical = 3513 ; free virtual = 7528
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -468,20 +468,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.762 ; gain = 0.000 ; free physical = 3324 ; free virtual = 7315
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.750 ; gain = 0.000 ; free physical = 3055 ; free virtual = 7165
 Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
 Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/tri_mode_ethernet_mac_0_example_design_ddr_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.762 ; gain = 0.000 ; free physical = 3324 ; free virtual = 7315
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1931.750 ; gain = 0.000 ; free physical = 3055 ; free virtual = 7165
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.762 ; gain = 0.000 ; free physical = 3325 ; free virtual = 7316
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.750 ; gain = 0.000 ; free physical = 3056 ; free virtual = 7167
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.762 ; gain = 0.000 ; free physical = 3325 ; free virtual = 7316
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1931.762 ; gain = 0.000 ; free physical = 3325 ; free virtual = 7316
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1931.750 ; gain = 0.000 ; free physical = 3056 ; free virtual = 7167
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1931.750 ; gain = 0.000 ; free physical = 3056 ; free virtual = 7167
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N1/M0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N1/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N2/M0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
@@ -489,14 +489,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N3/M0' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'nn/N3/M1' at clock pin 'CLK' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1931.762 ; gain = 523.582 ; free physical = 3453 ; free virtual = 7445
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1931.750 ; gain = 533.574 ; free physical = 3178 ; free virtual = 7287
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1931.762 ; gain = 523.582 ; free physical = 3453 ; free virtual = 7445
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1931.750 ; gain = 533.574 ; free physical = 3178 ; free virtual = 7287
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -518,7 +518,7 @@ Applied set_property DONT_TOUCH = true for vio. (constraint file  auto generated
 Applied set_property DONT_TOUCH = true for clocking_wizard. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mii_to_rmii. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1931.762 ; gain = 523.582 ; free physical = 3456 ; free virtual = 7447
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1931.750 ; gain = 533.574 ; free physical = 3178 ; free virtual = 7287
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'axi_state_reg' in module 'tri_mode_ethernet_mac_0_axi_lite_sm'
 INFO: [Synth 8-802] inferred FSM for state register 'mdio_access_sm_reg' in module 'tri_mode_ethernet_mac_0_axi_lite_sm'
@@ -778,7 +778,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ip_packet_rx'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 1931.762 ; gain = 523.582 ; free physical = 3289 ; free virtual = 7351
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1931.750 ; gain = 533.574 ; free physical = 3135 ; free virtual = 7246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1220,6 +1220,7 @@ INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_sh
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[18]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[20]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[25]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[11]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[21]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\axi_lite_controller/serial_command_shift_reg[14] )
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/serial_command_shift_reg[26]' (FD) to 'i_0/axi_lite_controller/serial_command_shift_reg[14]'
 INFO: [Synth 8-3886] merging instance 'i_0/axi_lite_controller/axi_wr_data_reg[14]' (FDRE) to 'i_0/axi_lite_controller/axi_wr_data_reg[22]'
@@ -1256,7 +1257,7 @@ INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:07 . Memory (MB): peak = 1935.684 ; gain = 527.504 ; free physical = 1075 ; free virtual = 5227
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:01:11 . Memory (MB): peak = 1935.672 ; gain = 537.496 ; free physical = 1033 ; free virtual = 5171
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1288,7 +1289,7 @@ Report RTL Partitions:
 |7     |byte_write_register_little_endian__parameterized2__GB6 |           1|       262|
 |8     |ip_packet_rx__GC0                                      |           1|       919|
 |9     |ip_packet_tx                                           |           1|       946|
-|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0        |           1|      2386|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0        |           1|      2384|
 +------+-------------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
@@ -1303,13 +1304,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking_wizard/clk_out3'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking_wizard/clk_out4' to pin 'clocking_wizard/bbstub_clk_out4/O'
 INFO: [Synth 8-5819] Moved 8 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:01:13 . Memory (MB): peak = 1935.684 ; gain = 527.504 ; free physical = 934 ; free virtual = 5105
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:01:17 . Memory (MB): peak = 1935.672 ; gain = 537.496 ; free physical = 894 ; free virtual = 5052
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:01:16 . Memory (MB): peak = 1939.770 ; gain = 531.590 ; free physical = 900 ; free virtual = 5073
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:20 . Memory (MB): peak = 1939.758 ; gain = 541.582 ; free physical = 858 ; free virtual = 5017
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1340,13 +1341,13 @@ Report RTL Partitions:
 |7     |byte_write_register_little_endian__parameterized2__GB6 |           1|       262|
 |8     |ip_packet_rx__GC0                                      |           1|       919|
 |9     |ip_packet_tx                                           |           1|       950|
-|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0        |           1|      2386|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0        |           1|      2384|
 +------+-------------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:01:30 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 731 ; free virtual = 4908
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:01:34 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 687 ; free virtual = 4850
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1362,7 +1363,7 @@ Report RTL Partitions:
 |7     |byte_write_register_little_endian__parameterized2__GB6 |           1|       204|
 |8     |ip_packet_rx__GC0                                      |           1|       660|
 |9     |ip_packet_tx                                           |           1|       280|
-|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0        |           1|      1894|
+|10    |tri_mode_ethernet_mac_0_example_design_ddr__GC0        |           1|      1888|
 +------+-------------------------------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -1380,7 +1381,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 718 ; free virtual = 4910
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:01:36 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 671 ; free virtual = 4850
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1393,7 +1394,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:01:32 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 718 ; free virtual = 4910
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:01:36 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 671 ; free virtual = 4850
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1405,25 +1406,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:01:33 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 716 ; free virtual = 4908
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:01:38 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 670 ; free virtual = 4849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:01:33 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 716 ; free virtual = 4908
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:01:38 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 670 ; free virtual = 4849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:28 ; elapsed = 00:03:16 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 712 ; free virtual = 4905
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:35 ; elapsed = 00:03:23 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 669 ; free virtual = 4848
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:28 ; elapsed = 00:03:16 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 711 ; free virtual = 4904
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:35 ; elapsed = 00:03:24 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 670 ; free virtual = 4850
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1472,17 +1473,17 @@ Report Cell Usage:
 |10    |tri_mode_ethernet_mac_0 |     1|
 |11    |CARRY4                  |    90|
 |12    |LUT1                    |   230|
-|13    |LUT2                    |   164|
-|14    |LUT3                    |   185|
-|15    |LUT4                    |   126|
-|16    |LUT5                    |  6679|
-|17    |LUT6                    |   939|
+|13    |LUT2                    |   163|
+|14    |LUT3                    |   182|
+|15    |LUT4                    |   128|
+|16    |LUT5                    |  6675|
+|17    |LUT6                    |   940|
 |18    |RAMB36E1_1              |     2|
 |19    |SRL16E                  |     8|
 |20    |SRLC32E                 |     1|
 |21    |FDCE                    |     6|
 |22    |FDPE                    |    30|
-|23    |FDRE                    |  6928|
+|23    |FDRE                    |  6927|
 |24    |FDSE                    |   344|
 |25    |IBUF                    |     4|
 |26    |OBUF                    |     4|
@@ -1492,7 +1493,7 @@ Report Instance Areas:
 +------+-----------------------------------+--------------------------------------------------+------+
 |      |Instance                           |Module                                            |Cells |
 +------+-----------------------------------+--------------------------------------------------+------+
-|1     |top                                |                                                  | 16474|
+|1     |top                                |                                                  | 16468|
 |2     |  ip_layer_inst                    |ip_layer                                          | 14590|
 |3     |    rx                             |ip_packet_rx                                      | 14305|
 |4     |      user_data_register           |byte_write_register_little_endian__parameterized2 | 13544|
@@ -1531,15 +1532,15 @@ Report Instance Areas:
 |37    |    N1                             |FC_Neuron                                         |   205|
 |38    |    N2                             |FC_Neuron__parameterized0                         |   204|
 |39    |    N3                             |FC_Neuron__parameterized1                         |   204|
-|40    |  axi_lite_controller              |tri_mode_ethernet_mac_0_axi_lite_sm               |   316|
+|40    |  axi_lite_controller              |tri_mode_ethernet_mac_0_axi_lite_sm               |   310|
 |41    |    update_speed_sync_inst         |tri_mode_ethernet_mac_0_sync_block__8             |     5|
 +------+-----------------------------------+--------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:28 ; elapsed = 00:03:16 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 711 ; free virtual = 4904
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:35 ; elapsed = 00:03:24 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 670 ; free virtual = 4850
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 65 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:23 ; elapsed = 00:03:12 . Memory (MB): peak = 1959.695 ; gain = 184.680 ; free physical = 3035 ; free virtual = 7231
-Synthesis Optimization Complete : Time (s): cpu = 00:02:29 ; elapsed = 00:03:21 . Memory (MB): peak = 1959.695 ; gain = 551.516 ; free physical = 3042 ; free virtual = 7232
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:29 ; elapsed = 00:03:13 . Memory (MB): peak = 1959.684 ; gain = 194.680 ; free physical = 2988 ; free virtual = 7172
+Synthesis Optimization Complete : Time (s): cpu = 00:02:36 ; elapsed = 00:03:24 . Memory (MB): peak = 1959.684 ; gain = 561.508 ; free physical = 2996 ; free virtual = 7172
 INFO: [Project 1-571] Translating synthesized netlist
 WARNING: [Synth 37-28] Duplicate attribute 'INIT' found for instance 'rd_store_frame_delay_reg' of module 'FDRE'.
 Resolution: Check your design sources near the definition of the module or any related 'include files, looking for duplicate definitions with different values.
@@ -1560,17 +1561,17 @@ INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'tri_mode_ethernet_mac_0_example_design_ddr' is not ideal for floorplanning, since the cellview 'byte_write_register_little_endian__parameterized2' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1971.789 ; gain = 0.000 ; free physical = 2982 ; free virtual = 7172
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1971.777 ; gain = 0.000 ; free physical = 2911 ; free virtual = 7088
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-417 Infos, 132 Warnings, 0 Critical Warnings and 0 Errors encountered.
+418 Infos, 132 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:31 ; elapsed = 00:03:23 . Memory (MB): peak = 1971.789 ; gain = 563.609 ; free physical = 3048 ; free virtual = 7238
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1971.789 ; gain = 0.000 ; free physical = 3048 ; free virtual = 7238
+synth_design: Time (s): cpu = 00:02:38 ; elapsed = 00:03:27 . Memory (MB): peak = 1971.777 ; gain = 573.602 ; free physical = 2973 ; free virtual = 7150
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1971.777 ; gain = 0.000 ; free physical = 2973 ; free virtual = 7150
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file tri_mode_ethernet_mac_0_example_design_ddr_utilization_synth.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 11 09:29:38 2021...
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 14 19:16:49 2021...
