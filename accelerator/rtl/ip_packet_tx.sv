@@ -6,17 +6,19 @@
 
 module ip_packet_tx (
     // Global signals
-    input        ACLK,
-    input        ARESET,
+    input         ACLK,
+    input         ARESET,
     input [ 0:31] ACCELERATOR_IP_ADDRESS,
     input [ 0:47] ACCELERATOR_MAC_ADDRESS,
+    input [ 0:15] ACCELERATOR_UDP_PORT,
 
     // Signals interfacing with accelerator
     input [ 0:31] RECIPIENT_IP_ADDRESS,
     input [ 0:47] RECIPIENT_MAC_ADDRESS,
-    input [ 0: 9]  RECIPIENT_MESSAGE, // Either a response to LB or an inference result
-    input        START_IP_TXN,
-    output       READY_FOR_SEND,
+    input [ 0:15] RECIPIENT_UDP_PORT,
+    input [ 0: 9] RECIPIENT_MESSAGE, // Either a response to LB or an inference result
+    input         START_IP_TXN,
+    output        READY_FOR_SEND,
 
     // Signals interfacing with MAC
     output [7:0] MAC_DATA_OUT,
@@ -30,12 +32,14 @@ parameter AXI_S_DATA_WIDTH = 8;
 parameter IP_ADDR_WIDTH = 32;
 parameter MAC_ADDR_WIDTH = 48;
 parameter ACCEL_DATA_WIDTH = 10;
+parameter UDP_PORT_WIDTH = 16;
 
 // List of FSM states
 (* mark_debug = "true" *) enum logic[7:0] {
     IDLE,          // No transation IPR
     SEND_ETH_HDR,  // Send ethernet header
     SEND_IP_HDR,   // Send ip header
+    SEND_UDP_HDR,  // Send udp header
     SEND_USER_DATA // Send user data
 } state, nextstate;
 
@@ -52,9 +56,12 @@ end
 // Exposed signals
 logic [0:IP_ADDR_WIDTH-1]    accelerator_ip_address;
 logic [0:MAC_ADDR_WIDTH-1]   accelerator_mac_address;
+logic [0:UDP_PORT_WIDTH-1]   accelerator_udp_port;
 
 logic [0:IP_ADDR_WIDTH-1]    recipient_ip_address;
 logic [0:MAC_ADDR_WIDTH-1]   recipient_mac_address;
+logic [0:UDP_PORT_WIDTH-1]   recipient_udp_port;
+
 logic [0:ACCEL_DATA_WIDTH-1] recipient_message;
 logic                        start_ip_txn;
 logic                        ready_for_send;
@@ -71,20 +78,31 @@ logic        state_counter_reset;
 logic [0:15] checksum;
 
 // Constants
+localparam ETH_HDR_SIZE_BYTES = 14;
+localparam IP_HDR_SIZE_BYTES = 20;
+localparam FRAME_CHECKSUM_BYTES = 4;
+localparam UDP_HDR_SIZE_BYTES = 8;
+localparam DATA_SIZE_BYTES = 64 
+                           - ETH_HDR_SIZE_BYTES 
+                           - IP_HDR_SIZE_BYTES 
+                           - FRAME_CHECKSUM_BYTES 
+                           - UDP_HDR_SIZE_BYTES;
+
 localparam [ 0:15] eth_packet_type = 'h0800; // ip protocol
 
 localparam [ 0: 7] ip_version = 'h45;
 localparam [ 0: 7] service_type = 'h00;
-localparam [ 0:15] packet_length = 'd20 + 'd26; // header length + data length (bytes)
+localparam [ 0:15] packet_length = IP_HDR_SIZE_BYTES + UDP_HDR_SIZE_BYTES + DATA_SIZE_BYTES; // header length + data length (bytes)
 localparam [ 0:15] identification = 'h0000;
 localparam [ 0:15] flags_and_fragment = 'h0000;
 localparam [ 0:7] time_to_live = 'h80;
-localparam [ 0:7] protocol = 'h00; // 0 for IP protocol. Determined experimentally with python script.
+localparam [ 0:7] protocol = 'h11; // 0 for IP protocol, 0x11 for UDP protocol. 
+                                   // Determined experimentally with python script.
 
-localparam ETH_HDR_SIZE_BYTES = 14;
-localparam IP_HDR_SIZE_BYTES = 20;
-localparam FRAME_CHECKSUM_BYTES = 4;
-localparam DATA_SIZE_BYTES = 64 - ETH_HDR_SIZE_BYTES - IP_HDR_SIZE_BYTES - FRAME_CHECKSUM_BYTES;
+localparam [0:15] packet_length_udp = UDP_HDR_SIZE_BYTES + DATA_SIZE_BYTES;
+localparam [0:15] checksum_udp = 'd0;
+
+
 
 always_comb begin
     ready_for_send = 'd0;
@@ -175,7 +193,7 @@ case(state)
                       mac_data_out = recipient_ip_address[24:31];
                       state_counter_reset = 'd1;
                       state_counter_enable = 'd0;
-                      nextstate = SEND_USER_DATA;
+                      nextstate = SEND_UDP_HDR;
                 end
                 default: begin
                       // Flag error? We should never reach this.
@@ -183,6 +201,35 @@ case(state)
                       state_counter_reset = 'd1;
                       nextstate = IDLE;
                 end
+            endcase
+        end
+    end
+    SEND_UDP_HDR: begin
+        ready_for_send = 'd0;
+        mac_data_valid = 'd1;
+        nextstate = SEND_UDP_HDR;
+        if(mac_data_ready == 'd1) begin
+            state_counter_enable = 'd1;
+            case(state_counter)
+            'h00: mac_data_out = accelerator_udp_port[0: 7];
+            'h01: mac_data_out = accelerator_udp_port[8:15];
+            'h02: mac_data_out = recipient_udp_port[0: 7];
+            'h03: mac_data_out = recipient_udp_port[8:15];
+            'h04: mac_data_out = packet_length_udp[0: 7];
+            'h05: mac_data_out = packet_length_udp[8:15];
+            'h06: mac_data_out = checksum_udp[0:7];
+            'h07: begin
+                mac_data_out = checksum_udp[8:15];
+                state_counter_reset = 'd1;
+                state_counter_enable = 'd0;
+                nextstate = SEND_USER_DATA;
+            end
+            default: begin
+                // Flag error? We should never reach this.
+                mac_data_last = 'd1;
+                state_counter_reset = 'd1;
+                nextstate = IDLE;
+            end
             endcase
         end
     end
@@ -215,10 +262,12 @@ end
 // Internal to external
 assign accelerator_ip_address  = ACCELERATOR_IP_ADDRESS;
 assign accelerator_mac_address = ACCELERATOR_MAC_ADDRESS;
+assign accelerator_udp_port    = ACCELERATOR_UDP_PORT;
 
 assign recipient_ip_address  = RECIPIENT_IP_ADDRESS;
 assign recipient_message     = RECIPIENT_MESSAGE;
 assign recipient_mac_address = RECIPIENT_MAC_ADDRESS;
+assign recipient_udp_port    = RECIPIENT_UDP_PORT;
 assign start_ip_txn          = START_IP_TXN;
 assign READY_FOR_SEND        = ready_for_send;
 assign MAC_DATA_OUT          = mac_data_out;
