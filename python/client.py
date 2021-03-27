@@ -61,7 +61,7 @@ def do_inference(fpganet, ia_ip, imgpath):
     img = ImageOps.grayscale(img)
     if NN_INPUT_W < img.width or NN_INPUT_H < img.height:
         img = img.resize((NN_INPUT_W, NN_INPUT_H), Image.BILINEAR)
-    elif NN_INPUT_W == img.wifth or NN_INPUT_H == img.height:
+    elif NN_INPUT_W == img.width or NN_INPUT_H == img.height:
         pass
     else:
         img = img.resize((NN_INPUT_W, NN_INPUT_H), Image.BICUBIC)
