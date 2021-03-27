@@ -5,7 +5,7 @@ module MNIST_Solver(
     input clock,
     input reset_n,
     input start,
-    output done,
+    output logic done,
     
     // Input data, i.e. write to the first ibuf
     input [4:0] w_row,
@@ -13,12 +13,32 @@ module MNIST_Solver(
     input signed [17:0] w_data,
     input w_en,
     
-    // Output data, i.e. read from the last obuf
+    // IP stuff
+    input [0:31] SRC_IP_ADDRESS,
+    input [0:47] SRC_MAC_ADDRESS,
+    input [0:15] SRC_UDP_PORT,
+    
+    output logic [0:31] IP_ADDRESS_OUT,
+    output logic [0:47] MAC_ADDRESS_OUT,
+    output logic [0:15] UDP_PORT_OUT,
+    
+    // Output data
     output [9:0] out
 );
 
+    // Top-level state machine
+    enum logic [1:0] {
+        IDLE,
+        WORKING,
+        DONE
+    } top_state;
+    
+    assign done = (top_state == DONE);
+    
     // start/done signals
-    logic c1_done, mp_done, c2_done, ga_done, fc_done, oh_done;
+    logic c1_start, c1_done, mp_done, c2_done, ga_done, fc_done, oh_done;
+    
+    assign c1_start = start & (top_state == IDLE);
 
     // Input data buffer signals
     wire signed [17:0] c1_in_data, c1_out_data;
@@ -66,8 +86,46 @@ module MNIST_Solver(
     // fully connected output signals
     wire [4:0] fc_obuf_neuron;
     wire signed [17:0] fc_obuf_data;
+
+    // State machine control
+    always_ff @(posedge clock) begin
+        if (reset_n == 1'b0) begin
+            top_state <= IDLE;
+        end else begin
+            if (top_state == IDLE) begin
+                if (start) begin
+                    top_state <= WORKING;
+                end else begin
+                    top_state <= IDLE;
+                end
+            end else if (top_state == WORKING) begin
+                if (oh_done) begin
+                    top_state <= DONE;
+                end else begin
+                    top_state <= WORKING;
+                end
+            end else if (top_state == DONE) begin
+                top_state <= IDLE;
+            end else begin
+                top_state <= top_state;
+            end
+        end
+    end
     
-    assign done = oh_done;
+    // Start/done control and IP stuff latching
+    always_ff @(posedge clock) begin
+        if (reset_n == 1'b0) begin
+            IP_ADDRESS_OUT <= 'b0;
+            MAC_ADDRESS_OUT <= 'b0;
+            UDP_PORT_OUT <= 'b0;
+        end else begin
+            if (top_state == IDLE && start) begin
+                IP_ADDRESS_OUT <= SRC_IP_ADDRESS;
+                MAC_ADDRESS_OUT <= SRC_MAC_ADDRESS;
+                UDP_PORT_OUT <= SRC_UDP_PORT; 
+            end
+        end
+    end
 
     Conv_1_Frame_Buffer in_buf (
         .clock(clock),
@@ -119,7 +177,7 @@ module MNIST_Solver(
     ) C1 (
         .clock(clock),
         .reset_n(reset_n),
-        .start(start),
+        .start(c1_start),
         .done(c1_done),
         .in_data(c1_in_data),
         .in_row(c1_in_row),

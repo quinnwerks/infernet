@@ -26,6 +26,14 @@ module MNIST_Solver_TB (
     logic [3:0] prediction;
     logic PASS;
     
+    logic [0:31] IP_ADDRESSES [9:0] = {32'h10101010, 32'h23232323, 32'h12345678, 32'h98765432, 32'hABCD1234, 32'hFFAA0022, 32'h10293847, 32'hAFAFAFAF, 32'h00000000, 32'hFFFFFFFF};
+    logic [0:47] MAC_ADDRESSES [9:0] = {48'h0123456789AB, 48'h01010101ABAB, 48'h0123456789AB, 48'h01010101ABAB, 48'h0123456789AB, 48'h01010101ABAB, 48'h0123456789AB, 48'h01010101ABAB, 48'h0123456789AB, 48'h01010101ABAB};
+    logic [0:15] UDP_PORTS [9:0] = {16'h1234, 16'h9876, 16'h1234, 16'h9876, 16'h1234, 16'h9876, 16'h1234, 16'h9876, 16'h1234, 16'h9876};
+    
+    logic [0:31] SRC_IP_ADDRESS, OUT_IP_ADDRESS;
+    logic [0:47] SRC_MAC_ADDRESS, OUT_MAC_ADDRESS;
+    logic [0:15] SRC_UDP_PORT, OUT_UDP_PORT;
+    
     logic signed [17:0] in_data;
     logic [9:0] out_data;
     logic in_wen;
@@ -38,6 +46,12 @@ module MNIST_Solver_TB (
         .reset_n(reset_n),
         .start(start),
         .done(done),
+        .SRC_IP_ADDRESS(SRC_IP_ADDRESS),
+        .SRC_MAC_ADDRESS(SRC_MAC_ADDRESS),
+        .SRC_UDP_PORT(SRC_UDP_PORT),
+        .IP_ADDRESS_OUT(OUT_IP_ADDRESS),
+        .MAC_ADDRESS_OUT(OUT_MAC_ADDRESS),
+        .UDP_PORT_OUT(OUT_UDP_PORT),
         .w_row(in_row),
         .w_col(in_col),
         .w_data(in_data),
@@ -59,6 +73,9 @@ module MNIST_Solver_TB (
         in_row = 'b0;
         in_col = 'b0;
         in_data = 'b0;
+        SRC_IP_ADDRESS = 'b0;
+        SRC_MAC_ADDRESS = 'b0;
+        SRC_UDP_PORT = 'b0;
         in_wen = 'b0;
         #PERIOD;
         #PERIOD;
@@ -94,6 +111,10 @@ module MNIST_Solver_TB (
             end
             in_wen = 1'b0;
             
+            SRC_IP_ADDRESS = IP_ADDRESSES[frame];
+            SRC_MAC_ADDRESS = MAC_ADDRESSES[frame];
+            SRC_UDP_PORT = UDP_PORTS[frame];
+            
             for (int iter = 0; iter < NUM_ITERS_PER_FRAME; iter++) begin
                 // 4. Trigger channel with "start"
                 start = 1'b1;
@@ -117,6 +138,18 @@ module MNIST_Solver_TB (
                     PASS = 1'b0;
                 end else begin
                     $display("Prediction: %d Label: %d Expected: %d", prediction, label, expected);
+                end
+                if (OUT_IP_ADDRESS != IP_ADDRESSES[frame]) begin
+                    $display("FAIL! Output IP address did not match input. Out 0x%x Expected 0x%x", OUT_IP_ADDRESS, IP_ADDRESSES[frame]);
+                    PASS = 1'b0;
+                end else if (OUT_MAC_ADDRESS != MAC_ADDRESSES[frame]) begin
+                    $display("FAIL! Output MAC address did not match input. Out 0x%x Expected 0x%x", OUT_MAC_ADDRESS, MAC_ADDRESSES[frame]);
+                    PASS = 1'b0;
+                end else if (OUT_UDP_PORT != UDP_PORTS[frame]) begin
+                    $display("FAIL! Output UDP port did not match input. Out 0x%x Expected 0x%x", OUT_UDP_PORT, UDP_PORTS[frame]);
+                    PASS = 1'b0;
+                end else begin
+                    $display("IP/UDP/MAC stuff works on frame %d iter %d", frame, iter);
                 end
             end
         end
