@@ -31,8 +31,8 @@ import client as cli
 NN_INPUT_W = 28
 NN_INPUT_H = 28
 
-GUI_IMG_INPUT_W = 280
-GUI_IMG_INPUT_H = 280
+GUI_IMG_INPUT_W = 134-4
+GUI_IMG_INPUT_H = 134-4
 
 DX = -2
 DY = -2
@@ -146,54 +146,34 @@ def make_fixed_label(parent, x, y, h, w, *args, **kwargs) -> tk.Label:
     return lbl
 
 
-class Dumb_Button(tk.Button):
-    def __init__(self, parent, x, y, w, h, imgs: dict, action):
-        super().__init__()
-        self.imgs = {}
-        for k, v in imgs.items():
-            self.imgs[k] = Pil_ImageTk.PhotoImage(Pil_Image.open(v))
+def make_fixed_entry(parent, x, y, h, w, *args, **kwargs) -> tk.Entry:
+    f = tk.Frame(parent, height=h-2, width=w, highlightthickness=0)
+    f.place(x=x, y=y)
+    f.pack_propagate(0)  # don't shrink
+    lbl = tk.Entry(f, highlightthickness=0, relief='flat', *args, **kwargs)
+    lbl.pack(fill=tk.BOTH, expand=1)
+    return lbl
 
-        self.canvas = tk.Canvas(parent, width=w, height=h)
-        self.canvas.place(x=x, y=y)
-        self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
-        # print(self.imgs['default'].tobytes())
-        self.disabled = False
-        self.canvas.bind("<Enter>", self.entered)
-        self.canvas.bind("<Leave>", self.left)
-        self.canvas.bind("<Button-1>", self.clicked)
-        self.canvas.bind("<ButtonRelease-1>", self.unclicked)
-        self.action = action
 
-    def unclicked(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+def load_and_shape_image_for_nn(img_path):
+    img = Pil_Image.open(img_path)
+    img = Pil_ImageOps.grayscale(img)
+    if NN_INPUT_W < img.width or NN_INPUT_H < img.height:
+        img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BILINEAR)
+    elif NN_INPUT_W == img.width and NN_INPUT_H == img.height:
+        pass
+    else:
+        img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BICUBIC)
+    return img
 
-    def clicked(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['active'])
-            self.action()
 
-    def left(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+def reshape_nn_img_for_gui(img):
+    img = img.resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST)
+    return img
 
-    def entered(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     # self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['hover'])
 
-    def disable(self):
-        self.disabled = True
-
-    def enable(self):
-        self.disabled = False
+def decode_result(encoded_bytes):
+    return int.from_bytes(encoded_bytes, byteorder='big')
 
 
 class Infernet_GUI:
@@ -202,12 +182,18 @@ class Infernet_GUI:
 
     def __init__(self):
         # constants
-        self.color_0 = "#1A0E00"
-        self.color_1 = "#4D1C00"
-        self.color_2 = "#821800"
-        self.color_3 = "#FFAE00"
-        self.color_h0 = "#EEEEEE"
-        self.color_h1 = "#E69D00"
+        self.colors = {
+            "0": "#1A0E00",
+            "1": "#4D1C00",
+            "2": "#821800",
+            "3": "#B30000",
+            "hl": "#FFAE00",
+            "btn": "#FFFFFF",
+            "btn_h": "#EEEEEE",
+            "hl_h": "#E69D00",
+            "hl_d": "#996900",
+            "1_d": "#4D2F1F"
+        }
         if os.name == 'nt':
             self.font = ('ariel', 14)
             self.font2 = ('ariel', 16, 'bold')
@@ -232,96 +218,109 @@ class Infernet_GUI:
         # instantiate string labels
         self.lb_address = tk.StringVar()
         self.lb_address.set("1.1.1.1")
-        self.lb_address_lbl = make_fixed_label(self.content, 94, 285, 22, 198,
+        self.lb_address_lbl = make_fixed_entry(self.content, 94, 287-2, 22+2, 198,
                                                textvariable=self.lb_address,
-                                               bg='white',
-                                               fg=self.color_1,
+                                               bg=self.colors['btn'],
+                                               fg=self.colors['1'],
                                                justify="left",
-                                               anchor=tk.W,
                                                font=self.font)
 
-        self.nn_address = tk.StringVar()
-        self.nn_address.set("2.2.2.2")
-        self.nn_address_lbl = make_fixed_label(self.content, 94, 365, 22, 198,
-                                               textvariable=self.nn_address,
-                                               bg='white',
-                                               fg=self.color_1,
+        self.ia_address = tk.StringVar()
+        self.ia_address.set("2.2.2.2")
+        self.ia_address.trace_add("write", self.update_start_btn_status)
+        self.ia_address_lbl = make_fixed_entry(self.content, 94, 367-2, 22+2, 198,
+                                               textvariable=self.ia_address,
+                                               bg=self.colors['btn'],
+                                               fg=self.colors['1'],
                                                justify="left",
-                                               anchor=tk.W,
                                                font=self.font)
 
         self.directory = tk.StringVar()
-        self.directory.set("/.././.././../.")
-        self.directory_lbl = make_fixed_label(self.content, 186, 154, 22, 680,
+        self.directory.set("Please Browse for Path")
+        self.directory_lbl = make_fixed_entry(self.content, 186, 154, 22+2, 680,
                                               textvariable=self.directory,
-                                              bg='white',
-                                              fg=self.color_1,
+                                              bg=self.colors['btn'],
+                                              fg=self.colors['1'],
                                               justify="left",
-                                              anchor=tk.W,
                                               font=self.font)
 
         self.file_count = tk.StringVar()
-        self.file_count.set("No Files Found")
-        self.file_count_lbl = make_fixed_label(self.content, 882, 158, 14, 142,
+        self.file_count.set("No Images Found")
+        self.file_count_lbl = make_fixed_label(self.content, 878, 154, 22, 142,
                                                textvariable=self.file_count,
-                                               bg=self.color_1,
-                                               fg=self.color_3,
+                                               bg=self.colors['1'],
+                                               fg=self.colors['hl'],
                                                justify="left",
                                                anchor=tk.W,
                                                font=self.font)
 
-        #instantiate buttons
+        # instantiate buttons
         self.infer_btn = TCB(text="START",
                              width=96,
                              height=30,
                              corner_radius=5,
                              command=None,
-                             bg_color=self.color_2,
-                             fg_color=self.color_3,
-                             text_color=self.color_1,
+                             bg_color=self.colors['2'],
+                             fg_color=self.colors['hl_d'],
+                             text_color=self.colors['1_d'],
                              text_font=self.font2,
-                             hover_color=self.color_h1)
+                             hover_color=self.colors['hl_d'])
         self.infer_btn.place(x=736, y=208)
 
         self.browse_btn = TCB(text="Browse",
                               width=74,
                               height=22,
                               corner_radius=5,
-                              command=None,
-                              bg_color=self.color_1,
-                              fg_color='white',
-                              text_color=self.color_1,
+                              command=self.browse_for_directory_callback,
+                              bg_color=self.colors['1'],
+                              fg_color=self.colors['btn'],
+                              text_color=self.colors['1'],
                               text_font=self.fontb,
-                              hover_color=self.color_h0)
+                              hover_color=self.colors['btn_h'])
         self.browse_btn.place(x=96, y=154)
 
         self.lb_btn = TCB(text="Auto-Detect",
-                              width=83,
-                              height=22,
-                              corner_radius=5,
-                              command=None,
-                              bg_color=self.color_2,
-                              fg_color='white',
-                              text_color=self.color_1,
-                              text_font=self.fontb,
-                              hover_color=self.color_h0)
+                          width=83,
+                          height=22,
+                          corner_radius=5,
+                          command=None,
+                          bg_color=self.colors['2'],
+                          fg_color=self.colors['btn'],
+                          text_color=self.colors['1'],
+                          text_font=self.fontb,
+                          hover_color=self.colors['btn_h'])
         self.lb_btn.place(x=209, y=254)
 
         self.ia_btn = TCB(text="Request",
-                              width=83,
-                              height=22,
-                              corner_radius=5,
-                              command=None,
-                              bg_color=self.color_2,
-                              fg_color='white',
-                              text_color=self.color_1,
-                              text_font=self.fontb,
-                              hover_color=self.color_h0)
+                          width=83,
+                          height=22,
+                          corner_radius=5,
+                          command=None,
+                          bg_color=self.colors['2'],
+                          fg_color=self.colors['btn'],
+                          text_color=self.colors['1'],
+                          text_font=self.fontb,
+                          hover_color=self.colors['btn_h'])
         self.ia_btn.place(x=209, y=334)
+
+        # instantiate inference images
+        self.infer_input_bg_img = Pil_ImageTk.PhotoImage(
+            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
+        self.infer_input_img_label = tk.Label(self.content, image=self.infer_input_bg_img, bg=self.colors['1'])
+        self.infer_input_img_label.place(x=324, y=253)
+
+        self.infer_output_bg_img = Pil_ImageTk.PhotoImage(
+            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
+        self.infer_output_img_label = tk.Label(self.content, image=self.infer_output_bg_img, bg=self.colors['1'])
+        self.infer_output_img_label.place(x=570, y=253)
 
         # other properties
         self.image_list = []
-        self.stats = Infernet_Statistics()
+        self.num_imgs = [
+            Pil_ImageTk.PhotoImage(Pil_Image.open("num/classification ("+str(x)+").png"))
+            for x in range(10)]
+        self.last_start_btn_status = False
+        # self.stats = Infernet_Statistics()
 
         # self.image_display_frame, \
         # self.sent_img_canvas, \
@@ -333,6 +332,7 @@ class Infernet_GUI:
     def browse_for_directory_callback(self):
         directory = tk.filedialog.askdirectory(title="Select Directory")
         self.directory.set(directory)
+        self.configure_image_list()
 
     def infer_button_callback(self):
         """
@@ -348,12 +348,12 @@ class Infernet_GUI:
             self.system_status.set(err_msg)
             return
 
-        mnist_image_regex = "[0-9]-*.jpg"
-        image_path_list = glob.glob(directory + "/" + mnist_image_regex)
-        if len(image_path_list) == 0:
-            logging.info("No images found in directory " + directory)
-            self.system_status.set("No Images Found")
-            return
+        # mnist_image_regex = "[0-9]-*.jpg"
+        # image_path_list = glob.glob(directory + "/" + mnist_image_regex)
+        # if len(image_path_list) == 0:
+        #     logging.info("No images found in directory " + directory)
+        #     self.system_status.set("No Images Found")
+        #     return
 
         self.system_status.set("CONTACTING LB")
         # TODO interface with LB
@@ -361,8 +361,6 @@ class Infernet_GUI:
         lb, ia = self.contact_lb_and_get_ips()
         if lb is None or ia is None:
             return
-
-        self.configure_image_list(image_path_list)
 
         self.inference_loop(ia, 666)
         self.system_status.set("DONE WITH INFERENCE")
@@ -402,7 +400,7 @@ class Infernet_GUI:
             # Do inference, get result
             start_time = timer()
             encoded_result = n532.send_inference_packet_hardcore(fpganet, ia_ip, image_nn.tobytes())
-            decoded_result = self.decode_result(encoded_result)
+            decoded_result = decode_result(encoded_result)
             logging.info("Result is %d" % (decoded_result))
             inference_correct = image_label == decoded_result
             end_time = timer()
@@ -420,109 +418,48 @@ class Infernet_GUI:
 
         self.system_status.set("DONE")
 
-    def decode_result(self, encoded_bytes):
-        return int.from_bytes(encoded_bytes, byteorder='big')
-
-    def configure_image_list(self, image_path_list):
-        self.image_list = []
-        for image_path in image_path_list:
-            image_nn = self.load_and_shape_image_for_nn(image_path)
-            image_gui = Pil_ImageTk.PhotoImage(self.reshape_nn_img_for_gui(image_nn))
-            image_label = int(os.path.basename(image_path)[0])
-            image_data_dict = {"nn": image_nn, "gui": image_gui, "path": image_path, "label": image_label}
-            self.image_list.append(image_data_dict)
-
-    def validate_inputs(self, ip, port, directory):
-        return True, ""
-
-    def build_title(self, root):
-        """
-        Build title
-        """
-        frame = tk.Label(root, image=self.title_image)
-        return frame
-
-    def build_user_entry(self, root):
-        """
-        Build user input for inferences
-        """
-        user_entry_frame = tk.Frame(root)
-
-        directory_label = tk.Label(user_entry_frame, text="Select Directory:", font=FONT_LABELS)
-
-        directory_select = tk.Button(user_entry_frame,
-                                     text="Browse",
-                                     command=self.browse_for_directory_callback,
-                                     font=FONT_ENTRIES)
-
-        directory_display = tk.Label(user_entry_frame, textvariable=self.directory, font=FONT_ENTRIES)
-
-        directory_display_label = tk.Label(user_entry_frame, text="Using Directory:", font=FONT_LABELS)
-
-        directory_label.grid(row=0, column=0)
-        directory_select.grid(row=0, column=1)
-        directory_display_label.grid(row=1, column=0)
-        directory_display.grid(row=1, column=1, columnspan=3, sticky="W")
-
-        return user_entry_frame
-
-    def build_metrics_bar(self):
-        pass
-
-    def build_image_display(self, root, initial_image):
-        frame = tk.Frame(root)
-
-        sent_image_canvas = tk.Canvas(frame, width=GUI_IMG_INPUT_W, height=GUI_IMG_INPUT_H)
-        image_id = sent_image_canvas.create_image(0,
-                                                  0,
-                                                  anchor="nw",
-                                                  image=initial_image)
-
-        fig = Figure(figsize=(5, 4), dpi=100)
-        fig_canvas = FigureCanvasTkAgg(fig, master=frame)
-
-        sent_image_canvas.grid(row=0, column=0, padx=20, pady=40)
-        fig_canvas.get_tk_widget().grid(row=0, column=1, padx=20, pady=40)
-
-        return frame, sent_image_canvas, image_id, fig_canvas, fig
-
-    def build_verified_sign_display(self, root):
-        pass
-
-    def build_status_bar(self, root, status_var):
-        status_frame = tk.Frame(root)
-        status_label = tk.Label(status_frame, text="System Status", font=FONT_LABELS)
-        status_text = tk.Label(status_frame,
-                               textvariable=status_var,
-                               height=1,
-                               width=25,
-                               bg="light cyan")
-        status_label.pack()
-        status_text.pack()
-        return status_frame
-
-    def build_infer_button_panel(self, root):
-        infer_button_frame = tk.Frame(root)
-        infer_button = tk.Button(infer_button_frame, text="Infer", command=self.infer_button_callback)
-        infer_button.pack()
-        return infer_button_frame
-
-    def load_and_shape_image_for_nn(self, img_path):
-        img = Pil_Image.open(img_path)
-        img = Pil_ImageOps.grayscale(img)
-
-        if NN_INPUT_W < img.width or NN_INPUT_H < img.height:
-            img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BILINEAR)
-        elif NN_INPUT_W == img.width or NN_INPUT_H == img.height:
-            pass
+    def change_start_btn_mode(self, is_inference):
+        if is_inference:
+            self.infer_btn.text_label['text'] = "STOP"
+            self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+            self.infer_btn.function = self.infer_stop_callback
         else:
-            img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BICUBIC)
+            self.infer_btn.text_label['text'] = "START"
+            self.update_start_btn_status()
 
-        return img
+    def update_start_btn_status(self, name=None, index=None, mode=None) -> None:
+        new_status = bool(n532.fpga_ip_to_num(self.ia_address.get()) and self.image_list)
+        if new_status != self.last_start_btn_status:
+            if new_status:
+                self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+                self.infer_btn.function = self.infer_button_callback
+            else:
+                self.infer_btn.configure_color(self.colors['2'], self.colors['hl_d'], self.colors['hl_d'], self.colors['1_d'])
+                self.infer_btn.function = lambda: print("START button disabled!")
+        self.last_start_btn_status = new_status
 
-    def reshape_nn_img_for_gui(self, img):
-        img = img.resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.BICUBIC)
-        return img
+    def put_gui_inference_img(self, img) -> None:
+        self.infer_input_img_label.configure(image=img)
+
+    def put_gui_output_img(self, num: int) -> None:
+        self.infer_output_img_label.configure(image=self.num_imgs[num])
+
+    def configure_image_list(self):
+        self.image_list = []
+        mnist_image_regex = "[0-9]-*.jpg"
+        image_path_list = glob.glob(self.directory.get() + "/" + mnist_image_regex)
+        if len(image_path_list) == 0:
+            self.file_count.set("No Images Found")
+        else:
+            for image_path in image_path_list:
+                image_nn = load_and_shape_image_for_nn(image_path)
+                image_gui = Pil_ImageTk.PhotoImage(reshape_nn_img_for_gui(image_nn))
+                image_label = int(os.path.basename(image_path)[0])
+                image_data_dict = {"nn": image_nn, "gui": image_gui, "path": image_path, "label": image_label}
+                self.image_list.append(image_data_dict)
+            self.file_count.set(f"{len(image_path_list)} Images Found")
+            self.put_gui_inference_img(self.image_list[0]['gui'])
+            self.update_start_btn_status()
 
 
 def main():

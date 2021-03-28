@@ -1,11 +1,22 @@
 import scapy.all as scapy
 from netifaces import interfaces, ifaddresses, AF_INET
 import os
+import re
+from typing import Union
 import time
 
 
 def fpganet_num_to_ip(i):
     return f"1.1.{i}.2"
+
+
+def fpga_ip_to_num(ip: str) -> Union[None, int]:
+    r = re.search(r'^1\.1\.(\d{1,2})\.2$', ip)
+    if not r:
+        return None
+    if int(r.group(1)) not in FPGA_NUM_SET:
+        return None
+    return int(r.group(1))
 
 
 def fpganet_num_to_mac(i):
