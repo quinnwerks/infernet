@@ -66,13 +66,29 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp
+  create_project -in_memory -part xc7a100tcsg324-1
+  set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.cache/wt [current_project]
   set_property parent.project_path /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.xpr [current_project]
   set_property ip_output_repo /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  add_files -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp
+  read_ip -quiet /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0.xci
+  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_xdc /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc
+  read_xdc /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc
+  set_property processing_order LATE [get_files /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
+  link_design -top tri_mode_ethernet_mac_0_example_design_ddr -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -160,25 +176,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force tri_mode_ethernet_mac_0_example_design_ddr.mmi }
-  write_bitstream -force tri_mode_ethernet_mac_0_example_design_ddr.bit 
-  catch {write_debug_probes -quiet -force tri_mode_ethernet_mac_0_example_design_ddr}
-  catch {file copy -force tri_mode_ethernet_mac_0_example_design_ddr.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

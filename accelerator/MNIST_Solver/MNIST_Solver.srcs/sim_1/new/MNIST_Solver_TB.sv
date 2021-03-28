@@ -52,8 +52,7 @@ module MNIST_Solver_TB (
         .IP_ADDRESS_OUT(OUT_IP_ADDRESS),
         .MAC_ADDRESS_OUT(OUT_MAC_ADDRESS),
         .UDP_PORT_OUT(OUT_UDP_PORT),
-        .w_row(in_row),
-        .w_col(in_col),
+        .w_addr({in_row, in_col}),
         .w_data(in_data),
         .w_en(in_wen),
         .out(out_data)
@@ -83,9 +82,9 @@ module MNIST_Solver_TB (
         #PERIOD;
         #PERIOD;
     
-        fd1 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/MNIST_Solver_TB_frames.mem", "r");
-        fd2 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/MNIST_Solver_TB_expected.mem", "r");
-        fd3 = $fopen("/home/andrew/infernet/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/MNIST_Solver_TB_labels.mem", "r");
+        fd1 = $fopen("/home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/MNIST_Solver_TB_frames.mem", "r");
+        fd2 = $fopen("/home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/MNIST_Solver_TB_expected.mem", "r");
+        fd3 = $fopen("/home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/tb_data/MNIST_Solver_TB_labels.mem", "r");
     
         for (int frame = 0; frame < NUM_FRAMES; frame++) begin
             // 1. Read frame in

@@ -15,7 +15,7 @@ logic [0:IP_ADDR_WIDTH-1]        src_ip_address_nn;
 logic [0:MAC_ADDR_WIDTH-1]       src_mac_address_nn;
 logic [0:UDP_PORT_WIDTH-1]       src_udp_port_nn;
 logic [4:0]                      w_row, w_col;
-logic [17:0]                     w_data;
+logic signed [17:0]                     w_data;
 logic                            w_en;
 logic                            w_done;
 
@@ -101,9 +101,9 @@ buff_ip_to_nn #(
    .ARESET(areset),
    
    .DATA_FRAME_IP(data_frame),
-   .SRC_IP_ADDRESS_IP(),
-   .SRC_MAC_ADDRESS_IP(),
-   .SRC_UDP_PORT_IP(),
+   .SRC_IP_ADDRESS_IP(src_ip_address_ip),
+   .SRC_MAC_ADDRESS_IP(src_mac_address_ip),
+   .SRC_UDP_PORT_IP(src_udp_port_ip),
    .FRAME_READY(frame_ready),
 
    .SRC_IP_ADDRESS_NN(src_ip_address_nn),

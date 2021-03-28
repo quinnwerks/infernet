@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date             : Sun Mar 28 19:05:03 2021
+| Date             : Sun Mar 28 19:36:00 2021
 | Host             : hw-dev running 64-bit Ubuntu 18.04.5 LTS
 | Command          : report_power -file tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_power_summary_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpx
 | Design           : tri_mode_ethernet_mac_0_example_design_ddr

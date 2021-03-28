@@ -30,16 +30,16 @@ module FC_Weight_Buffer (
 
 
     initial begin
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_0_weights.mem", mem0);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_1_weights.mem", mem1);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_2_weights.mem", mem2);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_3_weights.mem", mem3);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_4_weights.mem", mem4);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_5_weights.mem", mem5);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_6_weights.mem", mem6);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_7_weights.mem", mem7);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_8_weights.mem", mem8);
-        $readmemb("/home/andrew/infernet/misc/fc_weights/FC_Neuron_9_weights.mem", mem9);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_0_weights.mem", mem0);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_1_weights.mem", mem1);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_2_weights.mem", mem2);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_3_weights.mem", mem3);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_4_weights.mem", mem4);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_5_weights.mem", mem5);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_6_weights.mem", mem6);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_7_weights.mem", mem7);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_8_weights.mem", mem8);
+        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_9_weights.mem", mem9);
     end
 
 endmodule

@@ -7,7 +7,7 @@ module ip_layer # (
     input        ARESET,
     input [ 0:31] ACCELERATOR_IP_ADDRESS,
     input [ 0:47] ACCELERATOR_MAC_ADDRESS,
-    input [ 0:16] ACCELERATOR_UDP_PORT,
+    input [ 0:15] ACCELERATOR_UDP_PORT,
 
     // To/From FIFO/MAC:
     // data from the RX data path
@@ -24,7 +24,11 @@ module ip_layer # (
     
     // To/From NN Core   
     // Rx
-    output [0:USER_DATA_BYTES*8-1] DATA_FRAME,
+    
+    //output [0:USER_DATA_BYTES*8-1] DATA_FRAME,
+    output [7:0] RX_DATA,
+    output [9:0] RX_ADDR,
+    output       RX_EN,
     output [0:31] SRC_IP_ADDRESS,
     output [0:47] SRC_MAC_ADDRESS,
     output [0:15] SRC_UDP_PORT,
@@ -84,7 +88,10 @@ module ip_layer # (
         .MAC_DATA_TUSER(RX_AXIS_TUSER),
         
         // To Accelerator
-        .DATA_FRAME(DATA_FRAME),
+        //.DATA_FRAME(DATA_FRAME),
+        .RX_DATA(RX_DATA),
+        .RX_ADDR(RX_ADDR),
+        .RX_EN(RX_EN),
         .SRC_IP_ADDRESS(SRC_IP_ADDRESS),
         .SRC_MAC_ADDRESS(SRC_MAC_ADDRESS),
         .SRC_UDP_PORT(SRC_UDP_PORT),

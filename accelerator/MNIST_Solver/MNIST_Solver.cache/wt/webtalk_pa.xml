@@ -3,7 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< Updated upstream
 <application name="pa" timeStamp="Fri Mar 26 18:02:35 2021">
+=======
+<application name="pa" timeStamp="Sat Mar 27 16:03:10 2021">
+>>>>>>> Stashed changes
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="d33a34b987bb4a1e885b87c3e6206116" type="ProjectID"/>
 <property name="ProjectIteration" value="38" type="ProjectIteration"/>
@@ -85,7 +89,11 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ExpReportTreePanel_EXP_REPORT_TREE_TABLE" value="3" type="GuiHandlerData"/>
 <property name="ExpRunMenu_LAUNCH_STEP" value="3" type="GuiHandlerData"/>
 <property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="15" type="GuiHandlerData"/>
+<<<<<<< Updated upstream
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="581" type="GuiHandlerData"/>
+=======
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="588" type="GuiHandlerData"/>
+>>>>>>> Stashed changes
 <property name="FindAndReplaceAllDialog_FIND" value="1" type="GuiHandlerData"/>
 <property name="FloatingTopDialog_IGNORE_AND_CONTINUE_WITH_INVALID_TOP" value="1" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="155" type="GuiHandlerData"/>
@@ -213,9 +221,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="XdcViewerTreeTablePanel_XDC_VIEWER_TREE_TABLE" value="2" type="GuiHandlerData"/>
 </item>
 <item name="Other">
+<<<<<<< Updated upstream
 <property name="GuiMode" value="72" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="61" type="TclMode"/>
+=======
+<property name="GuiMode" value="99" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="50" type="TclMode"/>
+>>>>>>> Stashed changes
 </item>
 </section>
 </application>

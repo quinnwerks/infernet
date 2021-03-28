@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Sat Mar 27 15:03:33 2021
+# Process ID: 13537
+# Current directory: /home/quinn/ece532-project/accelerator/MNIST_Solver
+# Command line: vivado MNIST_Solver.xpr
+# Log file: /home/quinn/ece532-project/accelerator/MNIST_Solver/vivado.log
+# Journal file: /home/quinn/ece532-project/accelerator/MNIST_Solver/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project MNIST_Solver.xpr

@@ -15,7 +15,10 @@ module ip_packet_rx # (
     input            MAC_DATA_TUSER,
     
     // Interface with Accelerator
-    output [0:USER_DATA_BYTES*8-1] DATA_FRAME,
+    //output [0:USER_DATA_BYTES*8-1] DATA_FRAME,
+    output [7:0] RX_DATA,
+    output [9:0] RX_ADDR,
+    output       RX_EN,
     output [0:31] SRC_IP_ADDRESS,
     output [0:47] SRC_MAC_ADDRESS,
     output [0:15] SRC_UDP_PORT,
@@ -53,7 +56,7 @@ localparam DATA_FRAME_WIDTH = USER_DATA_BYTES*8;
 } state, nextstate;
 
 // State logic
-always_ff @ (posedge ACLK or negedge ARESET) begin
+always_ff @ (posedge ACLK) begin
     if (ARESET == 'd0) begin
         state <= START;
     end
@@ -73,8 +76,8 @@ logic                            mac_data_valid;
 logic                            mac_data_last;
 (* mark_debug = "true" *) logic                            mac_data_tuser;
 
-logic [0:DATA_FRAME_WIDTH-1]     data_frame;
-logic [0:DATA_FRAME_WIDTH-1]     data_frame_external;
+//logic [0:DATA_FRAME_WIDTH-1]     data_frame;
+//logic [0:DATA_FRAME_WIDTH-1]     data_frame_external;
 
 logic [0:IP_ADDR_WIDTH-1]        src_ip_address;
 logic [0:MAC_ADDR_WIDTH-1]       src_mac_address;
@@ -103,7 +106,7 @@ logic                            packet_for_accelerator;
 (* mark_debug = "true" *) logic                            data_frame_enable;
 
 always_comb begin
-    data_frame_external = data_frame;
+    //data_frame_external = data_frame;
     
     frame_ready = 'd0;
     mac_data_ready = 'd0;
@@ -251,7 +254,7 @@ assign mac_data_valid         = MAC_DATA_VALID;
 assign mac_data_last          = MAC_DATA_LAST;
 assign mac_data_tuser         = MAC_DATA_TUSER;
 
-assign DATA_FRAME             = data_frame_external;
+//assign DATA_FRAME             = data_frame_external;
 assign SRC_IP_ADDRESS         = src_ip_address;
 assign SRC_MAC_ADDRESS        = src_mac_address;
 assign SRC_UDP_PORT           = src_udp_port;
@@ -316,6 +319,7 @@ byte_write_register_little_endian #(
     .OUTPUT_VALUE(udp_header_data)
 );
 
+/*
 byte_write_register_little_endian #(
     .SIZE_IN_BYTES(USER_DATA_BYTES),
     .BYTE_NUM_SIZE(COUNTER_WIDTH)    
@@ -326,7 +330,10 @@ byte_write_register_little_endian #(
     .INPUT_VALUE(mac_data_out),
     .BYTE_NUM(USER_DATA_BYTES-1-state_counter),
     .OUTPUT_VALUE(data_frame)
-);
+);*/
+assign RX_DATA = mac_data_out;
+assign RX_EN = data_frame_enable;
+assign RX_ADDR = state_counter[9:0];
 
 endmodule
 

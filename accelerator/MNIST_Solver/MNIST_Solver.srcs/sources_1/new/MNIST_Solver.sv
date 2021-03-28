@@ -8,8 +8,7 @@ module MNIST_Solver(
     output logic done,
     
     // Input data, i.e. write to the first ibuf
-    input [4:0] w_row,
-    input [4:0] w_col,
+    input [9:0] w_addr,
     input signed [17:0] w_data,
     input w_en,
     
@@ -130,8 +129,8 @@ module MNIST_Solver(
     Conv_1_Frame_Buffer in_buf (
         .clock(clock),
         
-        .w_row(w_row),
-        .w_col(w_col),
+        .w_row(w_addr[9:5]),
+        .w_col(w_addr[4:0]),
         .w_data(w_data),
         .w_en(w_en),
         
