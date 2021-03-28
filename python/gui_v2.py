@@ -28,6 +28,19 @@ from tkinter_custom_button import TkinterCustomButton as TCB
 import networking532 as n532
 import client as cli
 
+COLORS = {
+    "0": "#1A0E00",
+    "1": "#4D1C00",
+    "2": "#821800",
+    "3": "#B30000",
+    "hl": "#FFAE00",
+    "btn": "#FFFFFF",
+    "btn_h": "#EEEEEE",
+    "hl_h": "#E69D00",
+    "hl_d": "#996900",
+    "1_d": "#4D2F1F"
+}
+
 NN_INPUT_W = 28
 NN_INPUT_H = 28
 
@@ -137,6 +150,33 @@ class Infernet_Statistics:
                                           "5": 0, "6": 0, "7": 0, "8": 0, "9": 0}
 
 
+class Piece:
+    def __init__(self, parent, num, x, y, w, h, hover_cb):
+        self.num = num
+        self.frame = tk.Frame(parent, height=h, width=w, bg=COLORS['1'],
+                              highlightbackground=COLORS['1'], highlightthickness=0)
+        self.frame.place(x=x, y=y)
+        self._state = 'init'
+        self.frame.bind('<Enter>', lambda *args: hover_cb(self, True))
+        self.frame.bind('<Leave>', lambda *args: hover_cb(self, False))
+
+    def destroy(self):
+        self.frame.destroy()
+
+    def state(self, state: str):
+        self._state = state
+        if state == 'init':
+            self.frame.configure(bg=COLORS['1'], highlightthickness=0)
+        if state == 'null':
+            self.frame.configure(bg=COLORS['2'], highlightthickness=2)
+        if state == 'bad':
+            self.frame.configure(bg=COLORS['3'], highlightthickness=0)
+        if state == 'good':
+            self.frame.configure(bg=COLORS['hl'], highlightthickness=0)
+        if state == 'dark':
+            self.frame.configure(bg=COLORS['0'], highlightthickness=0)
+
+
 def make_fixed_label(parent, x, y, h, w, *args, **kwargs) -> tk.Label:
     f = tk.Frame(parent, height=h, width=w)
     f.place(x=x, y=y)
@@ -182,18 +222,7 @@ class Infernet_GUI:
 
     def __init__(self):
         # constants
-        self.colors = {
-            "0": "#1A0E00",
-            "1": "#4D1C00",
-            "2": "#821800",
-            "3": "#B30000",
-            "hl": "#FFAE00",
-            "btn": "#FFFFFF",
-            "btn_h": "#EEEEEE",
-            "hl_h": "#E69D00",
-            "hl_d": "#996900",
-            "1_d": "#4D2F1F"
-        }
+        self.colors = COLORS
         if os.name == 'nt':
             self.font = ('ariel', 14)
             self.font2 = ('ariel', 16, 'bold')
@@ -210,40 +239,68 @@ class Infernet_GUI:
         self.content = ttk.Frame(self.root, padding=0)
         self.content.pack(fill=tk.BOTH, expand=1)
 
+        # other properties and state
+        self.image_list = []
+        self.pieces = []
+        self.result_labels = []
+        self.hovering = -1
+        self.num_imgs = [
+            Pil_ImageTk.PhotoImage(Pil_Image.open("num/classification (" + str(x) + ").png"))
+            for x in range(10)]
+        self.last_start_btn_status = False
+        self.stats = Infernet_Statistics()
+        # self.fpganet = n532.get_fpganet()
+
         # instantiate static bg
         self.bg = Pil_ImageTk.PhotoImage(Pil_Image.open("Static.png"))
         self.bg_label = tk.Label(self.content, image=self.bg)
         self.bg_label.place(relx=0.5, rely=0.5, anchor='center')
 
+        # instantiate contents
+        self.build_labels_and_fields()
+        self.build_buttons()
+        self.build_inference_images()
+        self.build_piece_map()
+        self.build_stats_display()
+
+    def build_inference_images(self):
+        # instantiate inference images
+        self.infer_input_bg_img = Pil_ImageTk.PhotoImage(
+            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
+        self.infer_input_img_label = tk.Label(self.content, image=self.infer_input_bg_img, bg=self.colors['1'])
+        self.infer_input_img_label.place(x=324, y=253)
+        self.infer_output_bg_img = Pil_ImageTk.PhotoImage(
+            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
+        self.infer_output_img_label = tk.Label(self.content, image=self.infer_output_bg_img, bg=self.colors['1'])
+        self.infer_output_img_label.place(x=570, y=253)
+
+    def build_labels_and_fields(self):
         # instantiate string labels
         self.lb_address = tk.StringVar()
         self.lb_address.set("1.1.1.1")
-        self.lb_address_lbl = make_fixed_entry(self.content, 94, 287-2, 22+2, 198,
+        self.lb_address_lbl = make_fixed_entry(self.content, 94, 287 - 2, 22 + 2, 198,
                                                textvariable=self.lb_address,
                                                bg=self.colors['btn'],
                                                fg=self.colors['1'],
                                                justify="left",
                                                font=self.font)
-
         self.ia_address = tk.StringVar()
         self.ia_address.set("2.2.2.2")
         self.ia_address.trace_add("write", self.update_start_btn_status)
-        self.ia_address_lbl = make_fixed_entry(self.content, 94, 367-2, 22+2, 198,
+        self.ia_address_lbl = make_fixed_entry(self.content, 94, 367 - 2, 22 + 2, 198,
                                                textvariable=self.ia_address,
                                                bg=self.colors['btn'],
                                                fg=self.colors['1'],
                                                justify="left",
                                                font=self.font)
-
         self.directory = tk.StringVar()
         self.directory.set("Please Browse for Path")
-        self.directory_lbl = make_fixed_entry(self.content, 186, 154, 22+2, 680,
+        self.directory_lbl = make_fixed_entry(self.content, 186, 154, 22 + 2, 680,
                                               textvariable=self.directory,
                                               bg=self.colors['btn'],
                                               fg=self.colors['1'],
                                               justify="left",
                                               font=self.font)
-
         self.file_count = tk.StringVar()
         self.file_count.set("No Images Found")
         self.file_count_lbl = make_fixed_label(self.content, 878, 154, 22, 142,
@@ -254,6 +311,7 @@ class Infernet_GUI:
                                                anchor=tk.W,
                                                font=self.font)
 
+    def build_buttons(self):
         # instantiate buttons
         self.infer_btn = TCB(text="START",
                              width=96,
@@ -266,7 +324,6 @@ class Infernet_GUI:
                              text_font=self.font2,
                              hover_color=self.colors['hl_d'])
         self.infer_btn.place(x=736, y=208)
-
         self.browse_btn = TCB(text="Browse",
                               width=74,
                               height=22,
@@ -278,24 +335,22 @@ class Infernet_GUI:
                               text_font=self.fontb,
                               hover_color=self.colors['btn_h'])
         self.browse_btn.place(x=96, y=154)
-
         self.lb_btn = TCB(text="Auto-Detect",
                           width=83,
                           height=22,
                           corner_radius=5,
-                          command=None,
+                          command=self.scan_for_lb_callback,
                           bg_color=self.colors['2'],
                           fg_color=self.colors['btn'],
                           text_color=self.colors['1'],
                           text_font=self.fontb,
                           hover_color=self.colors['btn_h'])
         self.lb_btn.place(x=209, y=254)
-
         self.ia_btn = TCB(text="Request",
                           width=83,
                           height=22,
                           corner_radius=5,
-                          command=None,
+                          command=self.request_ia_callback,
                           bg_color=self.colors['2'],
                           fg_color=self.colors['btn'],
                           text_color=self.colors['1'],
@@ -303,36 +358,67 @@ class Infernet_GUI:
                           hover_color=self.colors['btn_h'])
         self.ia_btn.place(x=209, y=334)
 
-        # instantiate inference images
-        self.infer_input_bg_img = Pil_ImageTk.PhotoImage(
-            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
-        self.infer_input_img_label = tk.Label(self.content, image=self.infer_input_bg_img, bg=self.colors['1'])
-        self.infer_input_img_label.place(x=324, y=253)
+    def build_piece_map(self):
+        x_start = 736
+        y_start = 254
+        # dataset has 41100
+        w_thresh = [((16, 4, 14, 7), 98),
+                    ((8, 2, 27, 13), 351),
+                    ((4, 1, 55, 27), 1485),
+                    ((2, 0, 136, 67), 9114),
+                    ((1, 0, 272, 134), 36448)]
+        if not self.pieces:
+            self.pieces = []
+            self.pieces.append(Piece(self.content, 0, x_start, y_start, 16, 16, lambda *args: None))
+            self.pieces[0].state('null')
+        else:
+            for piece in self.pieces:
+                piece.destroy()
+            piece_count = len(self.image_list)
+            sizes = min([x for x in w_thresh if x[1] > piece_count], key=lambda x: x[1])[0]
+            for i in range(piece_count):
+                x = x_start + (sizes[0] + sizes[1]) * (i % sizes[2])
+                y = y_start + (sizes[0] + sizes[1]) * (i // sizes[2])
+                self.pieces.append(Piece(self.content, i, x, y, sizes[0], sizes[0], self.piece_hover_callback))
 
-        self.infer_output_bg_img = Pil_ImageTk.PhotoImage(
-            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
-        self.infer_output_img_label = tk.Label(self.content, image=self.infer_output_bg_img, bg=self.colors['1'])
-        self.infer_output_img_label.place(x=570, y=253)
+    def build_stats_display(self) -> None:
+        self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.rtt_canvas = FigureCanvasTkAgg(self.rtt_fig, master=self.content)
+        self.rtt_canvas.get_tk_widget().place(x=94, y=464)
 
-        # other properties
-        self.image_list = []
-        self.num_imgs = [
-            Pil_ImageTk.PhotoImage(Pil_Image.open("num/classification ("+str(x)+").png"))
-            for x in range(10)]
-        self.last_start_btn_status = False
-        # self.stats = Infernet_Statistics()
-
-        # self.image_display_frame, \
-        # self.sent_img_canvas, \
-        # self.sent_img_id, \
-        # self.stats_canvas, \
-        # self.stats_fig = self.build_image_display(self.root,
-        #                                           self.placeholder_sent_image)
+        self.acc_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.acc_canvas = FigureCanvasTkAgg(self.acc_fig, master=self.content)
+        self.acc_canvas.get_tk_widget().place(x=558, y=464)
 
     def browse_for_directory_callback(self):
         directory = tk.filedialog.askdirectory(title="Select Directory")
         self.directory.set(directory)
         self.configure_image_list()
+
+    def scan_for_lb_callback(self):
+        lb_ip = cli.scan_for_lb(self.fpganet)
+        if lb_ip:
+            self.lb_address.set(lb_ip)
+        else:
+            self.lb_address.set("Scan Failed")
+
+    def request_ia_callback(self):
+        ia_ip = cli.get_ia_from_lb(self.fpganet, self.lb_address.get())
+        if ia_ip:
+            self.ia_address.set(ia_ip)
+            self.ia_btn.configure(command=self.return_ia_callback, text="Return")
+            self.ia_address_lbl.configure(state='disabled')
+        else:
+            self.ia_address.set("Request Failed")
+
+    def return_ia_callback(self):
+        success = cli.return_ia_to_lb(self.fpganet, self.lb_address.get(), self.ia_address.get())
+        if success:
+            self.ia_address.set("Returned")
+        else:
+            self.ia_address.set("Return Failed")
+        self.ia_address_lbl.configure(state='normal')
+        self.ia_btn.configure(command=self.request_ia_callback, text="Request")
 
     def infer_button_callback(self):
         """
@@ -365,6 +451,16 @@ class Infernet_GUI:
         self.inference_loop(ia, 666)
         self.system_status.set("DONE WITH INFERENCE")
         cli.return_ia_to_lb(None, lb, ia)
+
+    def piece_hover_callback(self, piece, entered):
+        if entered:
+            self.hovering = piece.num
+            imgs: dict = self.image_list[piece.num]
+            self.put_gui_inference_img(imgs['gui'])
+            if len(self.result_labels) > piece.num:
+                self.put_gui_output_img(self.result_labels[piece.num])
+        else:
+            self.hovering = -1
 
     def contact_lb_and_get_ips(self):
         fpganet = n532.get_fpganet()
@@ -409,6 +505,7 @@ class Infernet_GUI:
             round_trip_time = end_time - start_time
             logging.info("Got round trip time of %f" % (round_trip_time))
             self.stats.update(round_trip_time, str(image_label), inference_correct)
+            self.result_labels.append(image_label)
             self.stats.plot(self.stats_fig)
             self.stats_canvas.draw()
             self.stats_canvas.get_tk_widget().update_idletasks()
@@ -435,7 +532,7 @@ class Infernet_GUI:
                 self.infer_btn.function = self.infer_button_callback
             else:
                 self.infer_btn.configure_color(self.colors['2'], self.colors['hl_d'], self.colors['hl_d'], self.colors['1_d'])
-                self.infer_btn.function = lambda: print("START button disabled!")
+                self.infer_btn.function = lambda *args: print("START button disabled!")
         self.last_start_btn_status = new_status
 
     def put_gui_inference_img(self, img) -> None:
@@ -459,6 +556,7 @@ class Infernet_GUI:
                 self.image_list.append(image_data_dict)
             self.file_count.set(f"{len(image_path_list)} Images Found")
             self.put_gui_inference_img(self.image_list[0]['gui'])
+            self.build_piece_map()
             self.update_start_btn_status()
 
 
