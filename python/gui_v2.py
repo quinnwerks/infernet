@@ -10,6 +10,9 @@ import time
 from timeit import default_timer as timer
 
 import os
+import threading
+import queue
+import concurrent.futures as cf
 import statistics
 import numpy as np
 import matplotlib as plt
@@ -28,11 +31,26 @@ from tkinter_custom_button import TkinterCustomButton as TCB
 import networking532 as n532
 import client as cli
 
+COLORS = {
+    "0": "#1A0E00",
+    "1": "#4D1C00",
+    "2": "#821800",
+    "3": "#B30000",
+    "hl": "#FFAE00",
+    "btn": "#FFFFFF",
+    "btn_h": "#EEEEEE",
+    "btn_d": "#CCCCCC",
+    "btn_dt": "#4D4D4D",
+    "hl_h": "#E69D00",
+    "hl_d": "#996900",
+    "1_d": "#4D2F1F"
+}
+
 NN_INPUT_W = 28
 NN_INPUT_H = 28
 
-GUI_IMG_INPUT_W = 280
-GUI_IMG_INPUT_H = 280
+GUI_IMG_INPUT_W = 134-4
+GUI_IMG_INPUT_H = 134-4
 
 DX = -2
 DY = -2
@@ -57,11 +75,12 @@ class Infernet_Statistics:
         self.incorrect_classifications = {"0": 0, "1": 0, "2": 0, "3": 0, "4": 0,
                                           "5": 0, "6": 0, "7": 0, "8": 0, "9": 0}
 
-    def plot(self, figure):
-        figure.clf()
+    def plot(self, rtt_fig, acc_fig):
+        rtt_fig.clf()
+        acc_fig.clf()
 
         # Line graph for round trip time
-        rtt_plot = figure.add_subplot(2, 1, 1)
+        rtt_plot = rtt_fig.add_subplot(1, 1, 1)
         rtt_x = range(0, len(self.rtt_list))
         rtt_y = self.rtt_list
 
@@ -84,7 +103,7 @@ class Infernet_Statistics:
         rtt_plot.title.set_text("Round Trip Time")
 
         # Bar graph for correct classifications
-        class_bar = figure.add_subplot(2, 1, 2)
+        class_bar = acc_fig.add_subplot(1, 1, 1)
         bar_x = np.arange(len(self.correct_classifications.keys()))
         class_bar.set_xticks(bar_x)
         class_bar.set_xticklabels(self.correct_classifications.keys())
@@ -112,7 +131,7 @@ class Infernet_Statistics:
         class_bar.set_ylabel("# Classifications")
         class_bar.set_xlabel("Digit")
 
-        figure.tight_layout(pad=2.0)
+        # figure.tight_layout(pad=2.0)
 
     def update(self, new_rtt, label, correct):
         """
@@ -137,6 +156,92 @@ class Infernet_Statistics:
                                           "5": 0, "6": 0, "7": 0, "8": 0, "9": 0}
 
 
+class Piece:
+    def __init__(self, parent, num, x, y, w, h, hover_cb):
+        self.num = num
+        self.frame = tk.Frame(parent, height=h, width=w, bg=COLORS['1'],
+                              highlightbackground=COLORS['1'], highlightthickness=0)
+        self.frame.place(x=x, y=y)
+        self._state = 'init'
+        self.frame.bind('<Enter>', lambda *args: hover_cb(self, True))
+        self.frame.bind('<Leave>', lambda *args: hover_cb(self, False))
+
+    def destroy(self):
+        self.frame.destroy()
+
+    def state(self, state: str):
+        self._state = state
+        if state == 'init':
+            self.frame.configure(bg=COLORS['1'], highlightthickness=0)
+        if state == 'null':
+            self.frame.configure(bg=COLORS['2'], highlightthickness=2)
+        if state == 'bad':
+            self.frame.configure(bg=COLORS['3'], highlightthickness=0)
+        if state == 'good':
+            self.frame.configure(bg=COLORS['hl'], highlightthickness=0)
+        if state == 'dark':
+            self.frame.configure(bg=COLORS['0'], highlightthickness=0)
+
+
+class PieceMap:
+    def __init__(self, parent, count, hover_cb):
+        self.count = count
+        self.hover_cb = hover_cb
+        x_start = 736
+        y_start = 254
+        # dataset has 41100, w = 272, h = 134
+        w_thresh = [((16, 4, 14, 7), 98),
+                    ((14, 3, 16, 8), 128),
+                    ((12, 3, 18, 9), 162),
+                    ((10, 2, 23, 11), 253),
+                    ((8, 2, 27, 13), 351),
+                    ((6, 2, 34, 17), 578),
+                    ((5, 2, 39, 19), 741),
+                    ((5, 1, 45, 23), 1035),
+                    ((4, 1, 55, 27), 1485),
+                    ((3, 1, 68, 34), 2312),
+                    ((4, 1, 55, 27), 1485),
+                    ((2, 1, 91, 45), 4095),
+                    ((2, 0, 136, 67), 9112),
+                    ((1, 0, 272, 134), 36448)]
+        sizes = min([x for x in w_thresh if x[1] > count], key=lambda x: x[1])[0]
+        self.sizes = sizes
+        w = sizes[0] * sizes[2] + sizes[1] * (sizes[2] - 1)
+        h = sizes[0] * sizes[3] + sizes[1] * (sizes[3] - 1)
+        self.canvas = tk.Canvas(parent, width=w, height=h, bg=COLORS['2'], highlightthickness=0)
+        self.canvas.place(x=x_start, y=y_start)
+        self.pieces = []
+
+        def make_cb_lambda(cb, i, entered):
+            return lambda *args: cb(i, entered)
+
+        for i in range(count):
+            i2 = int(i)
+            x1 = (sizes[0] + sizes[1]) * (i % sizes[2])
+            x2 = x1 + sizes[0]
+            y1 = (sizes[0] + sizes[1]) * (i // sizes[2])
+            y2 = y1 + sizes[0]
+            tag = self.canvas.create_rectangle(x1, y1, x2, y2, fill=COLORS['1'], outline=COLORS['1'], width=0)
+            self.pieces.append(tag)
+            self.canvas.tag_bind(tag, '<Enter>', make_cb_lambda(hover_cb, i, True))
+            self.canvas.tag_bind(tag, '<Leave>', make_cb_lambda(hover_cb, i, False))
+
+    def destroy(self):
+        self.canvas.destroy()
+
+    def state(self, num: int, state: str):
+        if state == 'init':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['1'], width=0)
+        if state == 'null':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['2'], width=1)
+        if state == 'bad':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['3'], width=0)
+        if state == 'good':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['hl'], width=0)
+        if state == 'dark':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['0'], width=0)
+
+
 def make_fixed_label(parent, x, y, h, w, *args, **kwargs) -> tk.Label:
     f = tk.Frame(parent, height=h, width=w)
     f.place(x=x, y=y)
@@ -146,54 +251,34 @@ def make_fixed_label(parent, x, y, h, w, *args, **kwargs) -> tk.Label:
     return lbl
 
 
-class Dumb_Button(tk.Button):
-    def __init__(self, parent, x, y, w, h, imgs: dict, action):
-        super().__init__()
-        self.imgs = {}
-        for k, v in imgs.items():
-            self.imgs[k] = Pil_ImageTk.PhotoImage(Pil_Image.open(v))
+def make_fixed_entry(parent, x, y, h, w, *args, **kwargs) -> tk.Entry:
+    f = tk.Frame(parent, height=h-2, width=w, highlightthickness=0)
+    f.place(x=x, y=y)
+    f.pack_propagate(0)  # don't shrink
+    lbl = tk.Entry(f, highlightthickness=0, relief='flat', *args, **kwargs)
+    lbl.pack(fill=tk.BOTH, expand=1)
+    return lbl
 
-        self.canvas = tk.Canvas(parent, width=w, height=h)
-        self.canvas.place(x=x, y=y)
-        self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
-        # print(self.imgs['default'].tobytes())
-        self.disabled = False
-        self.canvas.bind("<Enter>", self.entered)
-        self.canvas.bind("<Leave>", self.left)
-        self.canvas.bind("<Button-1>", self.clicked)
-        self.canvas.bind("<ButtonRelease-1>", self.unclicked)
-        self.action = action
 
-    def unclicked(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+def load_and_shape_image_for_nn(img_path):
+    img = Pil_Image.open(img_path)
+    img = Pil_ImageOps.grayscale(img)
+    if NN_INPUT_W < img.width or NN_INPUT_H < img.height:
+        img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BILINEAR)
+    elif NN_INPUT_W == img.width and NN_INPUT_H == img.height:
+        pass
+    else:
+        img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BICUBIC)
+    return img
 
-    def clicked(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['active'])
-            self.action()
 
-    def left(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['default'])
+def reshape_nn_img_for_gui(img):
+    img = img.resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST)
+    return img
 
-    def entered(self, event):
-        if not self.disabled:
-            # for x in self.canvas.find_all():
-            #     # self.canvas.delete(x)
-            self.canvas.create_image(0, 0, anchor=tk.NW, image=self.imgs['hover'])
 
-    def disable(self):
-        self.disabled = True
-
-    def enable(self):
-        self.disabled = False
+def decode_result(encoded_bytes):
+    return int.from_bytes(encoded_bytes, byteorder='big')
 
 
 class Infernet_GUI:
@@ -202,12 +287,7 @@ class Infernet_GUI:
 
     def __init__(self):
         # constants
-        self.color_0 = "#1A0E00"
-        self.color_1 = "#4D1C00"
-        self.color_2 = "#821800"
-        self.color_3 = "#FFAE00"
-        self.color_h0 = "#EEEEEE"
-        self.color_h1 = "#E69D00"
+        self.colors = COLORS
         if os.name == 'nt':
             self.font = ('ariel', 14)
             self.font2 = ('ariel', 16, 'bold')
@@ -224,305 +304,384 @@ class Infernet_GUI:
         self.content = ttk.Frame(self.root, padding=0)
         self.content.pack(fill=tk.BOTH, expand=1)
 
+        # other properties and state
+        self.image_list = []
+        self.pieces = []
+        self.piece_map = None
+        self.result_labels = []
+        self.hovering = -1
+        self.num_imgs = [
+            Pil_ImageTk.PhotoImage(Pil_Image.open("num/classification (" + str(x) + ").png"))
+            for x in range(11)]
+        self.last_start_btn_status = False
+        self.last_ia_btn_status = False
+        self.stats = Infernet_Statistics()
+        if os.name == 'nt':
+            self.fpganet = n532.get_fpganet()
+        self.piece_state_queue = queue.SimpleQueue()
+        self.piece_creation_queue = queue.SimpleQueue()
+        self.result_render_queue = queue.SimpleQueue()
+        self.stop_event_mainthread = threading.Event()
+        self.root.bind('<<update>>', self.queue_update_hook)
+        self.update_generator_thread = threading.Thread(target=self.update_event_generator)
+        self.update_generator_thread.start()
+
         # instantiate static bg
         self.bg = Pil_ImageTk.PhotoImage(Pil_Image.open("Static.png"))
         self.bg_label = tk.Label(self.content, image=self.bg)
         self.bg_label.place(relx=0.5, rely=0.5, anchor='center')
 
+        # instantiate contents
+        self.build_labels_and_fields()
+        self.build_buttons()
+        self.build_inference_images()
+        self.build_piece_map()
+        self.build_stats_display()
+
+    def update_event_generator(self):
+        time.sleep(1)
+        while True:
+            time.sleep(1/60)
+            self.root.event_generate('<<update>>', when='tail')
+
+    def queue_update_hook(self, ev):
+        max_updates = 100
+        while max_updates and not self.piece_state_queue.empty():
+            num, state = self.piece_state_queue.get()
+            self.pieces[num].state(state)
+            max_updates -= 1
+        max_updates = 100
+        while max_updates and not self.piece_creation_queue.empty():
+            p, i, x, y, w, h, c = self.piece_creation_queue.get()
+            self.pieces.append(Piece(p, i, x, y, w, h, c))
+            max_updates -= 1
+        max_updates = 10
+        while max_updates and not self.result_render_queue.empty():
+            i, encoded_result, rtt = self.result_render_queue.get()
+            image_dict = self.image_list[i]
+            image_gui = image_dict["gui"]
+            image_label = image_dict["label"]
+            if encoded_result:
+                # decode
+                decoded_result = decode_result(encoded_result)
+                inference_correct = bool(image_label == decoded_result)
+                self.result_labels.append(decoded_result)
+                # update piecemap
+                if inference_correct:
+                    self.piece_state_queue.put((i, 'good'))
+                else:
+                    self.piece_state_queue.put((i, 'bad'))
+                if self.hovering == -1:
+                    self.put_gui_inference_img(image_gui)
+                    self.put_gui_output_img(decoded_result)
+                elif self.hovering == i:
+                    self.put_gui_output_img(decoded_result)
+                # update graphs
+                self.stats.update(rtt, str(image_label), inference_correct)
+                self.stats.plot(self.rtt_fig, self.acc_fig)
+                self.rtt_canvas.draw()
+                self.acc_canvas.draw()
+                self.rtt_canvas.get_tk_widget().update_idletasks()
+                self.acc_canvas.get_tk_widget().update_idletasks()
+            else:
+                self.piece_state_queue.put((i, 'dark'))
+                self.result_labels.append(10)
+                if self.hovering == -1:
+                    self.put_gui_inference_img(image_gui)
+                    self.put_gui_output_img(10)
+        if self.stop_event_mainthread.isSet():
+            self.change_start_btn_mode(False)
+            self.return_ia_callback()
+            self.change_ia_btn_mode(True)
+            self.stop_event_mainthread.clear()
+
+    def build_inference_images(self):
+        # instantiate inference images
+        self.infer_input_bg_img = Pil_ImageTk.PhotoImage(
+            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
+        self.infer_input_img_label = tk.Label(self.content, image=self.infer_input_bg_img, bg=self.colors['1'])
+        self.infer_input_img_label.place(x=324, y=253)
+        self.infer_output_bg_img = Pil_ImageTk.PhotoImage(
+            Pil_Image.open("nn_bg.png").resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.NEAREST))
+        self.infer_output_img_label = tk.Label(self.content, image=self.infer_output_bg_img, bg=self.colors['1'])
+        self.infer_output_img_label.place(x=570, y=253)
+
+    def build_labels_and_fields(self):
         # instantiate string labels
         self.lb_address = tk.StringVar()
         self.lb_address.set("1.1.1.1")
-        self.lb_address_lbl = make_fixed_label(self.content, 94, 285, 22, 198,
+        self.lb_address.trace_add("write", self.update_ia_btn_status)
+        self.lb_address_lbl = make_fixed_entry(self.content, 94, 287 - 2, 22 + 2, 198,
                                                textvariable=self.lb_address,
-                                               bg='white',
-                                               fg=self.color_1,
+                                               bg=self.colors['btn'],
+                                               fg=self.colors['1'],
                                                justify="left",
-                                               anchor=tk.W,
                                                font=self.font)
 
-        self.nn_address = tk.StringVar()
-        self.nn_address.set("2.2.2.2")
-        self.nn_address_lbl = make_fixed_label(self.content, 94, 365, 22, 198,
-                                               textvariable=self.nn_address,
-                                               bg='white',
-                                               fg=self.color_1,
+        self.ia_address = tk.StringVar()
+        self.ia_address.set("2.2.2.2")
+        self.ia_address.trace_add("write", self.update_start_btn_status)
+        self.ia_address_lbl = make_fixed_entry(self.content, 94, 367 - 2, 22 + 2, 198,
+                                               textvariable=self.ia_address,
+                                               bg=self.colors['btn'],
+                                               fg=self.colors['1'],
                                                justify="left",
-                                               anchor=tk.W,
                                                font=self.font)
 
         self.directory = tk.StringVar()
-        self.directory.set("/.././.././../.")
-        self.directory_lbl = make_fixed_label(self.content, 186, 154, 22, 680,
+        self.directory.set("Please Browse for Path")
+        self.directory_lbl = make_fixed_entry(self.content, 186, 154, 22 + 2, 680,
                                               textvariable=self.directory,
-                                              bg='white',
-                                              fg=self.color_1,
+                                              bg=self.colors['btn'],
+                                              fg=self.colors['1'],
                                               justify="left",
-                                              anchor=tk.W,
                                               font=self.font)
 
         self.file_count = tk.StringVar()
-        self.file_count.set("No Files Found")
-        self.file_count_lbl = make_fixed_label(self.content, 882, 158, 14, 142,
+        self.file_count.set("No Images Found")
+        self.file_count_lbl = make_fixed_label(self.content, 878, 154, 22, 142,
                                                textvariable=self.file_count,
-                                               bg=self.color_1,
-                                               fg=self.color_3,
+                                               bg=self.colors['1'],
+                                               fg=self.colors['hl'],
                                                justify="left",
                                                anchor=tk.W,
                                                font=self.font)
 
-        #instantiate buttons
+    def build_buttons(self):
+        # instantiate buttons
         self.infer_btn = TCB(text="START",
                              width=96,
                              height=30,
                              corner_radius=5,
                              command=None,
-                             bg_color=self.color_2,
-                             fg_color=self.color_3,
-                             text_color=self.color_1,
+                             bg_color=self.colors['2'],
+                             fg_color=self.colors['hl_d'],
+                             text_color=self.colors['1_d'],
                              text_font=self.font2,
-                             hover_color=self.color_h1)
+                             hover_color=self.colors['hl_d'])
         self.infer_btn.place(x=736, y=208)
-
         self.browse_btn = TCB(text="Browse",
                               width=74,
                               height=22,
                               corner_radius=5,
-                              command=None,
-                              bg_color=self.color_1,
-                              fg_color='white',
-                              text_color=self.color_1,
+                              command=self.browse_for_directory_callback,
+                              bg_color=self.colors['1'],
+                              fg_color=self.colors['btn'],
+                              text_color=self.colors['1'],
                               text_font=self.fontb,
-                              hover_color=self.color_h0)
+                              hover_color=self.colors['btn_h'])
         self.browse_btn.place(x=96, y=154)
-
         self.lb_btn = TCB(text="Auto-Detect",
-                              width=83,
-                              height=22,
-                              corner_radius=5,
-                              command=None,
-                              bg_color=self.color_2,
-                              fg_color='white',
-                              text_color=self.color_1,
-                              text_font=self.fontb,
-                              hover_color=self.color_h0)
+                          width=83,
+                          height=22,
+                          corner_radius=5,
+                          command=self.scan_for_lb_callback,
+                          bg_color=self.colors['2'],
+                          fg_color=self.colors['btn'],
+                          text_color=self.colors['1'],
+                          text_font=self.fontb,
+                          hover_color=self.colors['btn_h'])
         self.lb_btn.place(x=209, y=254)
-
         self.ia_btn = TCB(text="Request",
-                              width=83,
-                              height=22,
-                              corner_radius=5,
-                              command=None,
-                              bg_color=self.color_2,
-                              fg_color='white',
-                              text_color=self.color_1,
-                              text_font=self.fontb,
-                              hover_color=self.color_h0)
+                          width=83,
+                          height=22,
+                          corner_radius=5,
+                          command=lambda *args: None,
+                          bg_color=self.colors['2'],
+                          fg_color=self.colors['btn_d'],
+                          text_color=self.colors['btn_dt'],
+                          text_font=self.fontb,
+                          hover_color=self.colors['btn_d'])
         self.ia_btn.place(x=209, y=334)
 
-        # other properties
-        self.image_list = []
-        self.stats = Infernet_Statistics()
+    def build_piece_map(self):
+        if self.piece_map:
+            self.piece_map.destroy()
+        if len(self.image_list):
+            self.piece_map = PieceMap(self.content, len(self.image_list), self.piece_hover_callback)
+        else:
+            self.piece_map = PieceMap(self.root, 1, lambda *args: None)
+            self.piece_map.state(0, 'null')
 
-        # self.image_display_frame, \
-        # self.sent_img_canvas, \
-        # self.sent_img_id, \
-        # self.stats_canvas, \
-        # self.stats_fig = self.build_image_display(self.root,
-        #                                           self.placeholder_sent_image)
+    def build_stats_display(self) -> None:
+        self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.rtt_canvas = FigureCanvasTkAgg(self.rtt_fig, master=self.content)
+        self.rtt_canvas.get_tk_widget().place(x=94, y=464)
+
+        self.acc_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.acc_canvas = FigureCanvasTkAgg(self.acc_fig, master=self.content)
+        self.acc_canvas.get_tk_widget().place(x=558, y=464)
 
     def browse_for_directory_callback(self):
         directory = tk.filedialog.askdirectory(title="Select Directory")
         self.directory.set(directory)
+        self.configure_image_list()
+
+    def scan_for_lb_callback(self):
+        lb_ip = cli.scan_for_lb(self.fpganet)
+        if lb_ip:
+            self.lb_address.set(lb_ip)
+        else:
+            self.lb_address.set("Scan Failed")
+
+    def request_ia_callback(self):
+        ia_ip = cli.get_ia_from_lb(self.fpganet, self.lb_address.get())
+        if ia_ip:
+            self.ia_address.set(ia_ip)
+            self.ia_btn.configure(command=self.return_ia_callback, text="Return")
+            self.ia_address_lbl.configure(state='disabled')
+            self.lb_address_lbl.configure(state='disabled')
+            self.change_lb_btn_mode(False)
+        else:
+            self.ia_address.set("Request Failed")
+
+    def return_ia_callback(self):
+        success = cli.return_ia_to_lb(self.fpganet, self.lb_address.get(), self.ia_address.get())
+        if success:
+            self.ia_address.set("Returned")
+        else:
+            self.ia_address.set("Return Failed")
+        self.ia_address_lbl.configure(state='normal')
+        self.lb_address_lbl.configure(state='normal')
+        self.ia_btn.configure(command=self.request_ia_callback, text="Request")
+        self.change_lb_btn_mode(True)
 
     def infer_button_callback(self):
-        """
-        Validate inputs and kick off inferences
-        """
-        logging.info("Infer button pressed, verifying inputs")
-        lb_ip = self.lb_address.get()
-        lb_port = self.lb_port.get()
-        directory = self.directory.get()
-        inputs_okay, err_msg = self.validate_inputs(lb_ip, lb_port, directory)
-        if not inputs_okay:
-            logging.info("User entered bad inputs" + err_msg)
-            self.system_status.set(err_msg)
-            return
-
-        mnist_image_regex = "[0-9]-*.jpg"
-        image_path_list = glob.glob(directory + "/" + mnist_image_regex)
-        if len(image_path_list) == 0:
-            logging.info("No images found in directory " + directory)
-            self.system_status.set("No Images Found")
-            return
-
-        self.system_status.set("CONTACTING LB")
-        # TODO interface with LB
-        # ia = "1.1.8.2"
-        lb, ia = self.contact_lb_and_get_ips()
-        if lb is None or ia is None:
-            return
-
-        self.configure_image_list(image_path_list)
-
-        self.inference_loop(ia, 666)
-        self.system_status.set("DONE WITH INFERENCE")
-        cli.return_ia_to_lb(None, lb, ia)
-
-    def contact_lb_and_get_ips(self):
-        fpganet = n532.get_fpganet()
-        lb = cli.scan_for_lb(fpganet)
-        if lb is None:
-            self.system_status.set("ERROR: LB NOT FOUND")
-            return None, None
-        logging.info("Found lb:" + lb)
-        ia = cli.get_ia_from_lb(fpganet, lb)
-        if ia is not None:
-            logging.info("Got ia:" + ia)
-
-        # get_ia_from_lb(fpganet, lb)
-
-        return lb, ia
-
-    def inference_loop(self, ia_ip, ia_port):
         self.stats.reset()
-        fpganet = n532.get_fpganet()
+        self.change_lb_btn_mode(False)
+        self.change_ia_btn_mode(False)
+        self.change_start_btn_mode(True)
+        self.ia_address_lbl.configure(state='disabled')
+        self.lb_address_lbl.configure(state='disabled')
+        self.infer_thread_inst = threading.Thread(target=self.infer_thread)
+        self.infer_thread_inst.start()
 
-        curr_img = 0
-        for image_dict in self.image_list:
-            image_nn = image_dict["nn"]
-            image_gui = image_dict["gui"]
-            image_label = image_dict["label"]
-            logging.info(image_dict["path"])
+    def infer_thread(self):
+        self.stop_event = threading.Event()
 
-            # Update GUI before inference
-            self.system_status.set("INFERING (%d/%d)" % (curr_img + 1, len(self.image_list)))
-            self.sent_img_canvas.itemconfig(self.sent_img_id, image=image_gui)
-            self.sent_img_canvas.update_idletasks()
-
-            # Do inference, get result
-            start_time = timer()
-            encoded_result = n532.send_inference_packet_hardcore(fpganet, ia_ip, image_nn.tobytes())
-            decoded_result = self.decode_result(encoded_result)
-            logging.info("Result is %d" % (decoded_result))
-            inference_correct = image_label == decoded_result
-            end_time = timer()
-
-            # Update statistics and redraw
-            round_trip_time = end_time - start_time
-            logging.info("Got round trip time of %f" % (round_trip_time))
-            self.stats.update(round_trip_time, str(image_label), inference_correct)
-            self.stats.plot(self.stats_fig)
-            self.stats_canvas.draw()
-            self.stats_canvas.get_tk_widget().update_idletasks()
-
-            time.sleep(0)
-            curr_img += 1
-
-        self.system_status.set("DONE")
-
-    def decode_result(self, encoded_bytes):
-        return int.from_bytes(encoded_bytes, byteorder='big')
-
-    def configure_image_list(self, image_path_list):
-        self.image_list = []
-        for image_path in image_path_list:
-            image_nn = self.load_and_shape_image_for_nn(image_path)
-            image_gui = Pil_ImageTk.PhotoImage(self.reshape_nn_img_for_gui(image_nn))
-            image_label = int(os.path.basename(image_path)[0])
-            image_data_dict = {"nn": image_nn, "gui": image_gui, "path": image_path, "label": image_label}
-            self.image_list.append(image_data_dict)
-
-    def validate_inputs(self, ip, port, directory):
-        return True, ""
-
-    def build_title(self, root):
-        """
-        Build title
-        """
-        frame = tk.Label(root, image=self.title_image)
-        return frame
-
-    def build_user_entry(self, root):
-        """
-        Build user input for inferences
-        """
-        user_entry_frame = tk.Frame(root)
-
-        directory_label = tk.Label(user_entry_frame, text="Select Directory:", font=FONT_LABELS)
-
-        directory_select = tk.Button(user_entry_frame,
-                                     text="Browse",
-                                     command=self.browse_for_directory_callback,
-                                     font=FONT_ENTRIES)
-
-        directory_display = tk.Label(user_entry_frame, textvariable=self.directory, font=FONT_ENTRIES)
-
-        directory_display_label = tk.Label(user_entry_frame, text="Using Directory:", font=FONT_LABELS)
-
-        directory_label.grid(row=0, column=0)
-        directory_select.grid(row=0, column=1)
-        directory_display_label.grid(row=1, column=0)
-        directory_display.grid(row=1, column=1, columnspan=3, sticky="W")
-
-        return user_entry_frame
-
-    def build_metrics_bar(self):
-        pass
-
-    def build_image_display(self, root, initial_image):
-        frame = tk.Frame(root)
-
-        sent_image_canvas = tk.Canvas(frame, width=GUI_IMG_INPUT_W, height=GUI_IMG_INPUT_H)
-        image_id = sent_image_canvas.create_image(0,
-                                                  0,
-                                                  anchor="nw",
-                                                  image=initial_image)
-
-        fig = Figure(figsize=(5, 4), dpi=100)
-        fig_canvas = FigureCanvasTkAgg(fig, master=frame)
-
-        sent_image_canvas.grid(row=0, column=0, padx=20, pady=40)
-        fig_canvas.get_tk_widget().grid(row=0, column=1, padx=20, pady=40)
-
-        return frame, sent_image_canvas, image_id, fig_canvas, fig
-
-    def build_verified_sign_display(self, root):
-        pass
-
-    def build_status_bar(self, root, status_var):
-        status_frame = tk.Frame(root)
-        status_label = tk.Label(status_frame, text="System Status", font=FONT_LABELS)
-        status_text = tk.Label(status_frame,
-                               textvariable=status_var,
-                               height=1,
-                               width=25,
-                               bg="light cyan")
-        status_label.pack()
-        status_text.pack()
-        return status_frame
-
-    def build_infer_button_panel(self, root):
-        infer_button_frame = tk.Frame(root)
-        infer_button = tk.Button(infer_button_frame, text="Infer", command=self.infer_button_callback)
-        infer_button.pack()
-        return infer_button_frame
-
-    def load_and_shape_image_for_nn(self, img_path):
-        img = Pil_Image.open(img_path)
-        img = Pil_ImageOps.grayscale(img)
-
-        if NN_INPUT_W < img.width or NN_INPUT_H < img.height:
-            img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BILINEAR)
-        elif NN_INPUT_W == img.width or NN_INPUT_H == img.height:
+        def network_worker():
+            for i in range(len(self.image_list)):
+                if self.stop_event.isSet():
+                    self.stop_event.clear()
+                    break
+                image_dict = self.image_list[i]
+                start_time = timer()
+                encoded_result = n532.send_inference_packet_hardcore(self.fpganet,
+                                                                     self.ia_address.get(),
+                                                                     image_dict["nn"].tobytes(),
+                                                                     0.1)
+                end_time = timer()
+                rtt = end_time - start_time
+                self.result_render_queue.put((i, encoded_result, rtt))
             pass
+
+        network_thread = threading.Thread(target=network_worker)
+        network_thread.start()
+        network_thread.join()
+        self.stop_event_mainthread.set()
+
+    def infer_stop_callback(self):
+        self.stop_event.set()
+        pass
+
+    def piece_hover_callback(self, i, entered):
+        if entered:
+            self.hovering = i
+            imgs: dict = self.image_list[i]
+            self.put_gui_inference_img(imgs['gui'])
+            if len(self.result_labels) > i:
+                self.put_gui_output_img(self.result_labels[i])
         else:
-            img = img.resize((NN_INPUT_W, NN_INPUT_H), Pil_Image.BICUBIC)
+            self.hovering = -1
 
-        return img
+    def change_start_btn_mode(self, is_inference):
+        if is_inference:
+            self.infer_btn.text_label['text'] = "STOP"
+            self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+            self.infer_btn.function = self.infer_stop_callback
+        else:
+            self.infer_btn.text_label['text'] = "START"
+            self.update_start_btn_status()
 
-    def reshape_nn_img_for_gui(self, img):
-        img = img.resize((GUI_IMG_INPUT_W, GUI_IMG_INPUT_H), Pil_Image.BICUBIC)
-        return img
+    def change_ia_btn_mode(self, enabled):
+        if enabled:
+            self.ia_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'], self.colors['1'])
+            self.ia_btn.function = self.request_ia_callback
+        else:
+            self.ia_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'], self.colors['btn_dt'])
+            self.ia_btn.function = lambda *args: None
+
+    def change_lb_btn_mode(self, enabled):
+        if enabled:
+            self.lb_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'], self.colors['1'])
+            self.lb_btn.function = self.scan_for_lb_callback
+        else:
+            self.lb_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'], self.colors['btn_dt'])
+            self.lb_btn.function = lambda *args: None
+
+    def update_start_btn_status(self, name=None, index=None, mode=None) -> None:
+        new_status = bool(n532.fpga_ip_to_num(self.ia_address.get()) and self.image_list)
+        if new_status != self.last_start_btn_status:
+            if new_status:
+                self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+                self.infer_btn.function = self.infer_button_callback
+            else:
+                self.infer_btn.configure_color(self.colors['2'], self.colors['hl_d'], self.colors['hl_d'], self.colors['1_d'])
+                self.infer_btn.function = lambda *args: print("START button disabled!")
+        self.last_start_btn_status = new_status
+
+    def update_ia_btn_status(self, name=None, index=None, mode=None) -> None:
+        r = n532.fpga_ip_to_num(self.lb_address.get())
+        r = bool(r)
+        if r != self.last_ia_btn_status:
+            self.change_ia_btn_mode(r)
+        self.last_ia_btn_status = r
+
+    def put_gui_inference_img(self, img) -> None:
+        img2 = Pil_ImageTk.PhotoImage(img)
+        self.infer_input_img_label.configure(image=img2)
+        self.infer_input_img_label.image = img2
+
+    def put_gui_output_img(self, num: int) -> None:
+        self.infer_output_img_label.configure(image=self.num_imgs[num])
+
+    def configure_image_list(self):
+        mnist_image_regex = "[0-9]-*.jpg"
+        image_path_list = glob.glob(self.directory.get() + "/" + mnist_image_regex)
+        self.file_count.set(f"Working...")
+        self.root.update_idletasks()
+
+        def image_loader_worker(image_path_list) -> list:
+            local = threading.local()
+            local.image_list = []
+            if len(image_path_list):
+                for local.image_path in image_path_list:
+                    local.image_nn = load_and_shape_image_for_nn(local.image_path)
+                    local.image_label = int(os.path.basename(local.image_path)[0])
+                    local.image_gui = reshape_nn_img_for_gui(local.image_nn)
+                    local.image_data_dict = {"nn": local.image_nn, "gui": local.image_gui, "path": local.image_path, "label": local.image_label}
+                    local.image_list.append(local.image_data_dict)
+            return local.image_list
+
+        with cf.ThreadPoolExecutor() as pool:
+            n = 500
+            futures = [pool.submit(image_loader_worker, image_path_list[i * n: (i + 1) * n])
+                       for i in range(len(image_path_list) // n + 1)]
+            futures = [f.result() for f in futures]
+            self.image_list = []
+            for x in futures:
+                self.image_list += x
+
+        if self.image_list:
+            self.file_count.set(f"{len(self.image_list)} Images Found")
+            self.put_gui_inference_img(self.image_list[0]['gui'])
+        else:
+            self.file_count.set(f"No Images Found")
+        self.build_piece_map()
+        self.update_start_btn_status()
+
+
+
 
 
 def main():
