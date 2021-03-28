@@ -2,59 +2,24 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Sun Mar 14 19:16:50 2021
-# Process ID: 3832
+# Start of session at: Sun Mar 28 18:52:33 2021
+# Process ID: 32652
 # Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1
 # Command line: vivado -log tri_mode_ethernet_mac_0_example_design_ddr.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source tri_mode_ethernet_mac_0_example_design_ddr.tcl -notrace
 # Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.vdi
 # Journal file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/vivado.jou
 #-----------------------------------------------------------
 source tri_mode_ethernet_mac_0_example_design_ddr.tcl -notrace
-Command: link_design -top tri_mode_ethernet_mac_0_example_design_ddr -part xc7a100tcsg324-1
-Design is defaulting to srcset: sources_1
-Design is defaulting to constrset: constrs_1
-INFO: [Project 1-454] Reading design checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'clocking_wizard'
-INFO: [Project 1-454] Reading design checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0.dcp' for cell 'mii_to_rmii'
-INFO: [Project 1-454] Reading design checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls.dcp' for cell 'vio'
-INFO: [Project 1-454] Reading design checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.dcp' for cell 'nn/N1/M0'
-INFO: [Project 1-454] Reading design checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.dcp' for cell 'nn/N1/M1'
-INFO: [Project 1-454] Reading design checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.dcp' for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i'
-INFO: [Netlist 29-17] Analyzing 307 Unisim elements for replacement
+Command: open_checkpoint /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1384.016 ; gain = 0.000 ; free physical = 2185 ; free virtual = 5948
+INFO: [Netlist 29-17] Analyzing 1393 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2018.3.1
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/ibuf_data[0].mii_rxd_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/ibuf_data[1].mii_rxd_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/ibuf_data[2].mii_rxd_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/ibuf_data[3].mii_rxd_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_rx_clk_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_rx_dv_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_rx_er_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_tx_clk_ibuf_i 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/obuf_data[3].mii_txd_obuf_i 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/obuf_data[2].mii_txd_obuf_i 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_tx_en_obuf_i 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_tx_er_obuf_i 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/obuf_data[0].mii_txd_obuf_i 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/obuf_data[1].mii_txd_obuf_i 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
-WARNING: [Opt 31-35] Removing redundant IBUF, clocking_wizard/inst/clkin1_ibufg, from the path connected to top-level port: sys_clk 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'clocking_wizard/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
 WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_rx_clk' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
 WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_rx_dv' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
@@ -76,44 +41,24 @@ WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 't
 WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_txd[2]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
 WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_txd[3]' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
 WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/mii_txd[3]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
-INFO: [Chipscope 16-324] Core: vio UUID: 1be27d51-1a4c-50dc-974f-3e22d2c609b9 
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_board.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst'
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_board.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst'
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls.xdc] for cell 'vio'
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls.xdc] for cell 'vio'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clocking_wizard/inst'
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clocking_wizard/inst'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clocking_wizard/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
-INFO: [Timing 38-2] Deriving generated clocks [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2227.027 ; gain = 494.516 ; free physical = 2767 ; free virtual = 6909
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clocking_wizard/inst'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0_board.xdc] for cell 'mii_to_rmii/U0'
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0_board.xdc] for cell 'mii_to_rmii/U0'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc]
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst'
-CRITICAL WARNING: [Constraints 18-602] set_input_delay: list contains '6' objects of types '(pin)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]
-CRITICAL WARNING: [Constraints 18-472] set_input_delay: list does not contain any object of type(s) '(input port,internal pin)' supported by the constraint. The constraint will not be applied. Please check to make sure that this is intended. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:27]
-CRITICAL WARNING: [Constraints 18-602] set_input_delay: list contains '6' objects of types '(pin)' other than the types '(input port,internal pin)' supported by the constraint. These objects will not be used for this constraint. Please review the object list and ensure unsupported object types are removed. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:28]
-CRITICAL WARNING: [Constraints 18-472] set_input_delay: list does not contain any object of type(s) '(input port,internal pin)' supported by the constraint. The constraint will not be applied. Please check to make sure that this is intended. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc:28]
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/synth/tri_mode_ethernet_mac_0_clocks.xdc] for cell 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst'
-Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
-WARNING: [Vivado 12-507] No nets matched 'ip_layer_inst/rx/n_0_5_BUFG'. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc:15]
-CRITICAL WARNING: [Vivado 12-1419] Debug core 'u_ila_2' was not found. [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc:15]
-Finished Parsing XDC File [/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2227.027 ; gain = 0.000 ; free physical = 2776 ; free virtual = 6919
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2127.621 ; gain = 0.000 ; free physical = 1380 ; free virtual = 5143
+Restored from archive | CPU: 0.130000 secs | Memory: 0.999237 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2127.621 ; gain = 0.000 ; free physical = 1380 ; free virtual = 5143
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2127.621 ; gain = 0.000 ; free physical = 1388 ; free virtual = 5151
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 161 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
   RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 160 instances
 
-17 Infos, 37 Warnings, 5 Critical Warnings and 0 Errors encountered.
-link_design completed successfully
-link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2227.027 ; gain = 819.844 ; free physical = 2776 ; free virtual = 6919
+INFO: [Project 1-604] Checkpoint was created with Vivado v2018.3.1 (64-bit) build 2489853
+open_checkpoint: Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 2127.621 ; gain = 743.605 ; free physical = 1387 ; free virtual = 5151
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -124,18 +69,21 @@ INFO: [DRC 23-27] Running DRC with 4 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2259.043 ; gain = 32.016 ; free physical = 2768 ; free virtual = 6912
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2159.637 ; gain = 32.016 ; free physical = 1380 ; free virtual = 5144
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 1df6cbe66
+Ending Cache Timing Information Task | Checksum: 123b1cf85
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.58 . Memory (MB): peak = 2259.043 ; gain = 0.000 ; free physical = 2759 ; free virtual = 6902
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2250.637 ; gain = 91.000 ; free physical = 1335 ; free virtual = 5098
 
 Starting Logic Optimization Task
 
 Phase 1 Generate And Synthesize Debug Cores
 INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2018.3/data/ip'.
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
 INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_0 
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_0_CV.
@@ -144,62 +92,61 @@ INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_1_CV.
 INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_2 
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_2_CV.
 INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:xsdbm:3.0", from Vivado IP cache entry "27cd86f966a86750".
-INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:ila:6.2", from Vivado IP cache entry "c79739f613ef3d24".
-INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:ila:6.2", from Vivado IP cache entry "819f764df9cd5859".
+INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:ila:6.2", from Vivado IP cache entry "ef5466f4744f18a4".
 INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:ila:6.2", from Vivado IP cache entry "b981b59ea21952de".
-Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2439.918 ; gain = 0.000 ; free physical = 2443 ; free virtual = 6705
-Phase 1 Generate And Synthesize Debug Cores | Checksum: 1f11e2f0b
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2530.047 ; gain = 0.000 ; free physical = 1547 ; free virtual = 4867
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 1ec4b40ec
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 2439.918 ; gain = 137.875 ; free physical = 2443 ; free virtual = 6705
+Time (s): cpu = 00:03:53 ; elapsed = 00:04:06 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1547 ; free virtual = 4867
 
 Phase 2 Retarget
-INFO: [Opt 31-138] Pushed 6 inverter(s) to 11 load pin(s).
+INFO: [Opt 31-138] Pushed 8 inverter(s) to 15 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 2 Retarget | Checksum: 139ab17f3
+Phase 2 Retarget | Checksum: 1fcf9fef5
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2465 ; free virtual = 6728
-INFO: [Opt 31-389] Phase Retarget created 126 cells and removed 154 cells
-INFO: [Opt 31-1021] In phase Retarget, 487 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:03:56 ; elapsed = 00:04:08 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1581 ; free virtual = 4901
+INFO: [Opt 31-389] Phase Retarget created 120 cells and removed 146 cells
+INFO: [Opt 31-1021] In phase Retarget, 489 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 3 Constant propagation
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 3 Constant propagation | Checksum: 208b783d5
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+Phase 3 Constant propagation | Checksum: 17107ea57
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2465 ; free virtual = 6728
-INFO: [Opt 31-389] Phase Constant propagation created 31 cells and removed 157 cells
-INFO: [Opt 31-1021] In phase Constant propagation, 569 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:03:57 ; elapsed = 00:04:09 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1581 ; free virtual = 4901
+INFO: [Opt 31-389] Phase Constant propagation created 23 cells and removed 145 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 577 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 Sweep
-Phase 4 Sweep | Checksum: 1bfd14492
+Phase 4 Sweep | Checksum: 2249bd7ff
 
-Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2464 ; free virtual = 6727
-INFO: [Opt 31-389] Phase Sweep created 11 cells and removed 13980 cells
-INFO: [Opt 31-1021] In phase Sweep, 2943 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:04:11 ; elapsed = 00:04:24 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1578 ; free virtual = 4899
+INFO: [Opt 31-389] Phase Sweep created 11 cells and removed 443 cells
+INFO: [Opt 31-1021] In phase Sweep, 2983 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 BUFG optimization
 INFO: [Opt 31-194] Inserted BUFG clocking_wizard/inst/clk_out1_clk_wiz_0_BUFG_inst to drive 0 load(s) on clock net clocking_wizard/inst/clk_out1_clk_wiz_0_BUFG
 INFO: [Opt 31-194] Inserted BUFG clocking_wizard/inst/clk_out2_clk_wiz_0_BUFG_inst to drive 0 load(s) on clock net clocking_wizard/inst/clk_out2_clk_wiz_0_BUFG
 INFO: [Opt 31-194] Inserted BUFG clocking_wizard/inst/clk_out3_clk_wiz_0_BUFG_inst to drive 0 load(s) on clock net clocking_wizard/inst/clk_out3_clk_wiz_0_BUFG
 INFO: [Opt 31-194] Inserted BUFG clocking_wizard/inst/clk_out4_clk_wiz_0_BUFG_inst to drive 0 load(s) on clock net clocking_wizard/inst/clk_out4_clk_wiz_0_BUFG
-INFO: [Opt 31-194] Inserted BUFG sys_clk_IBUF_BUFG_inst to drive 5584 load(s) on clock net sys_clk_IBUF_BUFG
+INFO: [Opt 31-194] Inserted BUFG sys_clk_IBUF_BUFG_inst to drive 5703 load(s) on clock net sys_clk_IBUF_BUFG
 INFO: [Opt 31-193] Inserted 5 BUFG(s) on clock nets
-Phase 5 BUFG optimization | Checksum: 1409621fb
+Phase 5 BUFG optimization | Checksum: 187174bb6
 
-Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2466 ; free virtual = 6728
+Time (s): cpu = 00:04:12 ; elapsed = 00:04:25 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1579 ; free virtual = 4900
 INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
 
 Phase 6 Shift Register Optimization
-Phase 6 Shift Register Optimization | Checksum: 22af5fa18
+Phase 6 Shift Register Optimization | Checksum: 1c2726b3e
 
-Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2467 ; free virtual = 6730
+Time (s): cpu = 00:04:17 ; elapsed = 00:04:29 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1578 ; free virtual = 4898
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 7 Post Processing Netlist
-Phase 7 Post Processing Netlist | Checksum: 1d75c699e
+Phase 7 Post Processing Netlist | Checksum: 2502028b6
 
-Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2467 ; free virtual = 6730
+Time (s): cpu = 00:04:17 ; elapsed = 00:04:29 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1577 ; free virtual = 4897
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
-INFO: [Opt 31-1021] In phase Post Processing Netlist, 184 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 181 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 Opt_design Change Summary
 =========================
 
@@ -207,69 +154,69 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |             126  |             154  |                                            487  |
-|  Constant propagation         |              31  |             157  |                                            569  |
-|  Sweep                        |              11  |           13980  |                                           2943  |
+|  Retarget                     |             120  |             146  |                                            489  |
+|  Constant propagation         |              23  |             145  |                                            577  |
+|  Sweep                        |              11  |             443  |                                           2983  |
 |  BUFG optimization            |               1  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
-|  Post Processing Netlist      |               0  |               0  |                                            184  |
+|  Post Processing Netlist      |               0  |               0  |                                            181  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2442.918 ; gain = 0.000 ; free physical = 2467 ; free virtual = 6730
-Ending Logic Optimization Task | Checksum: 2c90b99e8
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2530.047 ; gain = 0.000 ; free physical = 1577 ; free virtual = 4897
+Ending Logic Optimization Task | Checksum: 2490f08d5
 
-Time (s): cpu = 00:00:49 ; elapsed = 00:00:52 . Memory (MB): peak = 2442.918 ; gain = 140.875 ; free physical = 2467 ; free virtual = 6730
+Time (s): cpu = 00:04:17 ; elapsed = 00:04:30 . Memory (MB): peak = 2530.047 ; gain = 210.410 ; free physical = 1577 ; free virtual = 4897
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.216 | TNS=0.000 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.131 | TNS=-0.313 |
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 18 BRAM(s) out of a total of 20 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 19 BRAM(s) out of a total of 55 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
-Number of BRAM Ports augmented: 18 newly gated: 0 Total Ports: 40
-Ending PowerOpt Patch Enables Task | Checksum: 296e39bfc
+Number of BRAM Ports augmented: 19 newly gated: 0 Total Ports: 110
+Ending PowerOpt Patch Enables Task | Checksum: 22f28b6de
 
-Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2408 ; free virtual = 6674
-Ending Power Optimization Task | Checksum: 296e39bfc
+Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1464 ; free virtual = 4789
+Ending Power Optimization Task | Checksum: 22f28b6de
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 2809.398 ; gain = 366.480 ; free physical = 2427 ; free virtual = 6694
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 3086.273 ; gain = 556.227 ; free physical = 1495 ; free virtual = 4820
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 296e39bfc
+Ending Final Cleanup Task | Checksum: 22f28b6de
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2427 ; free virtual = 6694
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1495 ; free virtual = 4820
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2427 ; free virtual = 6694
-Ending Netlist Obfuscation Task | Checksum: 203690c45
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1495 ; free virtual = 4820
+Ending Netlist Obfuscation Task | Checksum: 1c7b98a96
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2428 ; free virtual = 6695
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1495 ; free virtual = 4820
 INFO: [Common 17-83] Releasing license: Implementation
-73 Infos, 37 Warnings, 5 Critical Warnings and 0 Errors encountered.
+69 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:01:03 ; elapsed = 00:01:00 . Memory (MB): peak = 2809.398 ; gain = 582.371 ; free physical = 2428 ; free virtual = 6695
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2428 ; free virtual = 6695
+opt_design: Time (s): cpu = 00:04:46 ; elapsed = 00:04:45 . Memory (MB): peak = 3086.273 ; gain = 958.652 ; free physical = 1498 ; free virtual = 4822
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1498 ; free virtual = 4822
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2427 ; free virtual = 6695
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2422 ; free virtual = 6692
+Write XDEF Complete: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1496 ; free virtual = 4822
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1493 ; free virtual = 4822
 INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr_opt.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2412 ; free virtual = 6685
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1488 ; free virtual = 4825
 INFO: [runtcl-4] Executing : report_drc -file tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.rpx
 Command: report_drc -file tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -277,7 +224,7 @@ INFO: [DRC 23-27] Running DRC with 4 threads
 INFO: [Coretcl 2-168] The results of DRC are in file /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr_drc_opted.rpt.
 report_drc completed successfully
 INFO: [Chipscope 16-240] Debug cores have already been implemented
-Command: place_design
+Command: place_design -directive ExtraTimingOpt
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [DRC 23-27] Running DRC with 4 threads
@@ -286,25 +233,23 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 Running DRC as a precondition to command place_design
 INFO: [DRC 23-27] Running DRC with 4 threads
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENARDEN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/reset_out) which is driven by a register (trimac_fifo_block/rx_mac_reset_gen/reset_sync4) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg_i_2__0_n_0) which is driven by a register (ip_layer_inst/rx/FSM_sequential_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg_i_2__0_n_0) which is driven by a register (ip_layer_inst/rx/FSM_sequential_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg_i_2__0_n_0) which is driven by a register (ip_layer_inst/rx/FSM_sequential_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg_i_1_n_0) which is driven by a register (trimac_fifo_block/tx_mac_reset_gen/reset_sync4) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg/RSTRAMB (net: trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/SR[0]) which is driven by a register (trimac_fifo_block/tx_mac_reset_gen/reset_sync4) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 6 Warnings
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 3 Warnings
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'ExtraTimingOpt' directive.
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 4 CPUs
 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2408 ; free virtual = 6681
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1d31858b5
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1482 ; free virtual = 4820
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1a2e40e52
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2408 ; free virtual = 6681
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2408 ; free virtual = 6681
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1482 ; free virtual = 4820
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1482 ; free virtual = 4820
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 CRITICAL WARNING: [Place 30-73] Invalid constraint on register 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_tx_en_obuf_reg'. It has the property IOB=TRUE, but it is not driving or driven by any IO element.
@@ -320,29 +265,29 @@ CRITICAL WARNING: [Place 30-73] Invalid constraint on register 'trimac_fifo_bloc
 CRITICAL WARNING: [Place 30-73] Invalid constraint on register 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/rxd_to_mac_reg[2]'. It has the property IOB=TRUE, but it is not driving or driven by any IO element.
 CRITICAL WARNING: [Place 30-73] Invalid constraint on register 'trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/rxd_to_mac_reg[3]'. It has the property IOB=TRUE, but it is not driving or driven by any IO element.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: ad278a15
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 9cd68a80
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2393 ; free virtual = 6670
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1437 ; free virtual = 4774
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 96a5c39f
+Phase 1.3 Build Placer Netlist Model | Checksum: 13eb51e0e
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2364 ; free virtual = 6642
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1379 ; free virtual = 4717
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 96a5c39f
+Phase 1.4 Constrain Clocks/Macros | Checksum: 13eb51e0e
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2365 ; free virtual = 6642
-Phase 1 Placer Initialization | Checksum: 96a5c39f
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1379 ; free virtual = 4717
+Phase 1 Placer Initialization | Checksum: 13eb51e0e
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2365 ; free virtual = 6642
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1379 ; free virtual = 4717
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 12851f9a9
+Phase 2.1 Floorplanning | Checksum: d6c6676e
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2351 ; free virtual = 6629
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1363 ; free virtual = 4700
 
 Phase 2.2 Physical Synthesis In Placer
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
@@ -356,7 +301,7 @@ INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found i
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for HD net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2343 ; free virtual = 6622
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1349 ; free virtual = 4687
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -370,71 +315,71 @@ Summary of Physical Synthesis Optimizations
 |  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                         |            0  |              0  |                     0  |           0  |           5  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           5  |  00:00:01  |
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2 Physical Synthesis In Placer | Checksum: 1d8ceaa60
+Phase 2.2 Physical Synthesis In Placer | Checksum: 1a7b188a5
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2343 ; free virtual = 6622
-Phase 2 Global Placement | Checksum: 13d107207
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:37 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1350 ; free virtual = 4688
+Phase 2 Global Placement | Checksum: f79ef5f0
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2345 ; free virtual = 6625
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1359 ; free virtual = 4696
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 13d107207
+Phase 3.1 Commit Multi Column Macros | Checksum: f79ef5f0
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:16 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2345 ; free virtual = 6625
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1359 ; free virtual = 4696
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: c614b56b
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: e3ece521
 
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2339 ; free virtual = 6620
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:43 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1354 ; free virtual = 4691
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 17af03b65
+Phase 3.3 Area Swap Optimization | Checksum: 115ecc120
 
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2339 ; free virtual = 6620
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1353 ; free virtual = 4691
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: de653e91
+Phase 3.4 Pipeline Register Optimization | Checksum: eec2419d
 
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:18 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2339 ; free virtual = 6620
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1353 ; free virtual = 4691
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 171c45c64
+Phase 3.5 Fast Optimization | Checksum: bbd41341
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:19 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2339 ; free virtual = 6620
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:48 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1355 ; free virtual = 4693
 
 Phase 3.6 Small Shape Detail Placement
 
 Phase 3.6.1 Place Remaining
-Phase 3.6.1 Place Remaining | Checksum: 13f3da654
+Phase 3.6.1 Place Remaining | Checksum: 147e1f0fb
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2324 ; free virtual = 6604
-Phase 3.6 Small Shape Detail Placement | Checksum: 13f3da654
+Time (s): cpu = 00:01:29 ; elapsed = 00:00:58 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1328 ; free virtual = 4666
+Phase 3.6 Small Shape Detail Placement | Checksum: 147e1f0fb
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6607
+Time (s): cpu = 00:01:30 ; elapsed = 00:00:59 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1332 ; free virtual = 4670
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 1eb2e4c57
+Phase 3.7 Re-assign LUT pins | Checksum: 185da0a71
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2328 ; free virtual = 6608
+Time (s): cpu = 00:01:31 ; elapsed = 00:01:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1333 ; free virtual = 4671
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 1c1936db3
+Phase 3.8 Pipeline Register Optimization | Checksum: 1f255a3f3
 
-Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2328 ; free virtual = 6608
+Time (s): cpu = 00:01:31 ; elapsed = 00:01:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1333 ; free virtual = 4671
 
 Phase 3.9 Fast Optimization
-Phase 3.9 Fast Optimization | Checksum: a9e9d906
+Phase 3.9 Fast Optimization | Checksum: 18600c73d
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:28 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6608
-Phase 3 Detail Placement | Checksum: a9e9d906
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1330 ; free virtual = 4670
+Phase 3 Detail Placement | Checksum: 18600c73d
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:28 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6608
+Time (s): cpu = 00:01:47 ; elapsed = 00:01:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1330 ; free virtual = 4670
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -442,64 +387,417 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: e3d1ef98
+Post Placement Optimization Initialization | Checksum: f6bfb817
 
 Phase 4.1.1.1 BUFG Insertion
-INFO: [Place 46-46] BUFG insertion identified 0 candidate nets, 0 success, 0 bufg driver replicated, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason
-Phase 4.1.1.1 BUFG Insertion | Checksum: e3d1ef98
+INFO: [Place 46-33] Processed net neural_net/C2/conv_channels_gen[19].kernel/gtx_resetn_reg, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-46] BUFG insertion identified 1 candidate nets, 0 success, 0 bufg driver replicated, 1 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason
+Phase 4.1.1.1 BUFG Insertion | Checksum: f6bfb817
 
-Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6607
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.500. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 102206486
+Time (s): cpu = 00:01:58 ; elapsed = 00:01:12 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1347 ; free virtual = 4686
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.072. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: a3cee25b
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6608
-Phase 4.1 Post Commit Optimization | Checksum: 102206486
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:02 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1340 ; free virtual = 4679
+Phase 4.1 Post Commit Optimization | Checksum: a3cee25b
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6608
+Time (s): cpu = 00:02:54 ; elapsed = 00:02:03 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1340 ; free virtual = 4679
+Post Placement Optimization Initialization | Checksum: 1abb921d3
+INFO: [Place 46-33] Processed net neural_net/C2/conv_channels_gen[19].kernel/gtx_resetn_reg, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-46] BUFG insertion identified 1 candidate nets, 0 success, 0 bufg driver replicated, 1 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.072. For the most accurate timing information please run report_timing.
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 102206486
+Phase 4.2 Post Placement Cleanup | Checksum: 91c642a4
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2327 ; free virtual = 6608
+Time (s): cpu = 00:03:49 ; elapsed = 00:02:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1339 ; free virtual = 4678
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 102206486
+Phase 4.3 Placer Reporting | Checksum: 91c642a4
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2328 ; free virtual = 6609
+Time (s): cpu = 00:03:49 ; elapsed = 00:02:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1339 ; free virtual = 4678
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2328 ; free virtual = 6609
-Phase 4.4 Final Placement Cleanup | Checksum: 1641f27dc
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1339 ; free virtual = 4678
+Phase 4.4 Final Placement Cleanup | Checksum: 1560c900f
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2328 ; free virtual = 6609
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1641f27dc
+Time (s): cpu = 00:03:49 ; elapsed = 00:02:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1339 ; free virtual = 4678
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1560c900f
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2328 ; free virtual = 6609
-Ending Placer Task | Checksum: 137465a6c
+Time (s): cpu = 00:03:49 ; elapsed = 00:02:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1339 ; free virtual = 4678
+Ending Placer Task | Checksum: 12ef61a81
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:35 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2345 ; free virtual = 6626
+Time (s): cpu = 00:03:49 ; elapsed = 00:02:44 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1361 ; free virtual = 4700
 INFO: [Common 17-83] Releasing license: Implementation
-104 Infos, 43 Warnings, 17 Critical Warnings and 0 Errors encountered.
+105 Infos, 24 Warnings, 12 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:36 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2345 ; free virtual = 6626
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2345 ; free virtual = 6626
+place_design: Time (s): cpu = 00:03:53 ; elapsed = 00:02:46 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1361 ; free virtual = 4700
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1361 ; free virtual = 4700
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2336 ; free virtual = 6624
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1335 ; free virtual = 4688
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2317 ; free virtual = 6622
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1303 ; free virtual = 4687
 INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr_placed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2336 ; free virtual = 6625
+write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1340 ; free virtual = 4696
 INFO: [runtcl-4] Executing : report_io -file tri_mode_ethernet_mac_0_example_design_ddr_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2329 ; free virtual = 6618
+report_io: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.14 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1332 ; free virtual = 4689
 INFO: [runtcl-4] Executing : report_utilization -file tri_mode_ethernet_mac_0_example_design_ddr_utilization_placed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file tri_mode_ethernet_mac_0_example_design_ddr_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2334 ; free virtual = 6624
-Command: route_design
+report_control_sets: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.19 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1338 ; free virtual = 4695
+Command: phys_opt_design -directive Explore
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: Explore
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1311 ; free virtual = 4668
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 4 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.072 | TNS=-0.072 |
+Phase 1 Physical Synthesis Initialization | Checksum: 111742507
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:04 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1294 ; free virtual = 4651
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.072 | TNS=-0.072 |
+
+Phase 2 Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 Fanout Optimization | Checksum: 111742507
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 3 Placement Based Optimization
+INFO: [Physopt 32-660] Identified 90 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[0].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_17__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_29__0_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_29__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_31__0_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_31__0
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[1].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_16__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[8].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_9__0
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[9].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_8__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[10].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_7__0
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[5].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_12__1
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[2].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_15__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[3].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_14__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[12].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_5__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[6].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_11__1
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[4].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_13__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[11].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_6__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_30__0_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_30__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[14].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_3__0
+INFO: [Physopt 32-663] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[7].  Re-placed instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_10__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[13].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_4__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[15].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_2__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_20__1_0[16].  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_1__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_27__0_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_27__0
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_26__1_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_26__1
+INFO: [Physopt 32-662] Processed net neural_net/C1/conv_channels_gen[2].kernel/ram_i_28__0_n_0.  Did not re-place instance neural_net/C1/conv_channels_gen[2].kernel/ram_i_28__0
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[3].  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[3]_INST_0
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[5].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[5]
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_10_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_10
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_1_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_1
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/TX_AXIS_TDATA[3]_INST_0_i_21_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/TX_AXIS_TDATA[3]_INST_0_i_21
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_5_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_5
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[3]_INST_0_i_16_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[3]_INST_0_i_16
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[3]_INST_0_i_2_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[3]_INST_0_i_2
+INFO: [Physopt 32-662] Processed net u_ila_0/inst/ila_core_inst/shifted_data_in_reg[7][405]_srl8_n_0.  Did not re-place instance u_ila_0/inst/ila_core_inst/shifted_data_in_reg[7][405]_srl8
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[5].  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[5]_INST_0
+INFO: [Physopt 32-663] Processed net neural_net/IP_ADDRESS_OUT[9].  Re-placed instance neural_net/IP_ADDRESS_OUT_reg[9]
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_1_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_1
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_9_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_9
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_5_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_5
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[5]_INST_0_i_12_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[5]_INST_0_i_12
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[5]_INST_0_i_2_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[5]_INST_0_i_2
+INFO: [Physopt 32-662] Processed net trimac_fifo_block/user_side_FIFO/tx_fifo_i/wr_data_pipe_reg[0][5].  Did not re-place instance trimac_fifo_block/user_side_FIFO/tx_fifo_i/wr_data_pipe_reg[0][5]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[4].  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[4]_INST_0
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[4]_INST_0_i_10_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[4]_INST_0_i_10
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[4]_INST_0_i_1_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[4]_INST_0_i_1
+INFO: [Physopt 32-662] Processed net trimac_fifo_block/user_side_FIFO/tx_fifo_i/wr_data_pipe_reg[0][4].  Did not re-place instance trimac_fifo_block/user_side_FIFO/tx_fifo_i/wr_data_pipe_reg[0][4]
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[10].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[10]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_10_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_10
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_2_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_2
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_6_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_6
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[2].  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[2]_INST_0
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[2]_INST_0_i_13_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[2]_INST_0_i_13
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[2]_INST_0_i_1_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[2]_INST_0_i_1
+INFO: [Physopt 32-662] Processed net u_ila_0/inst/ila_core_inst/shifted_data_in_reg[7][404]_srl8_n_0.  Did not re-place instance u_ila_0/inst/ila_core_inst/shifted_data_in_reg[7][404]_srl8
+INFO: [Physopt 32-663] Processed net neural_net/IP_ADDRESS_OUT[17].  Re-placed instance neural_net/IP_ADDRESS_OUT_reg[17]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_10_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_10
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_1_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_1
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_5_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_5
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6].  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0_i_16_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0_i_16
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0_i_2_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0_i_2
+INFO: [Physopt 32-662] Processed net u_ila_0/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[12].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[12].  Did not re-place instance u_ila_0/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[12].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[6]
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[6].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[6]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_9_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__1_i_9
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0_i_14_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[6]_INST_0_i_14
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[25].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[25]
+INFO: [Physopt 32-662] Processed net u_ila_0/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[12].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/all_in[6].  Did not re-place instance u_ila_0/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[12].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/probeDelay1_reg[3]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[7].  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[7]_INST_0
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[7]_INST_0_i_20_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[7]_INST_0_i_20
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[7]_INST_0_i_3_n_0.  Did not re-place instance ip_layer_inst/tx/state_counter_business_logic/TX_AXIS_TDATA[7]_INST_0_i_3
+INFO: [Physopt 32-662] Processed net u_ila_0/inst/ila_core_inst/shifted_data_in_reg[7][409]_srl8_n_0.  Did not re-place instance u_ila_0/inst/ila_core_inst/shifted_data_in_reg[7][409]_srl8
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[4].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[4]
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_3_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_3
+INFO: [Physopt 32-663] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_14_n_0.  Re-placed instance ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_14
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_7_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__2_i_7
+INFO: [Physopt 32-662] Processed net trimac_fifo_block/user_side_FIFO/tx_fifo_i/wr_data_pipe_reg[0][2].  Did not re-place instance trimac_fifo_block/user_side_FIFO/tx_fifo_i/wr_data_pipe_reg[0][2]
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[21].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[21]
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[12].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[12]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_4_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_4
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry_i_11_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry_i_11
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_8_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/sum__1_carry__0_i_8
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[1].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[1]
+INFO: [Physopt 32-662] Processed net neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_8_n_0.  Did not re-place instance neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_8
+INFO: [Physopt 32-663] Processed net neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_18_n_0.  Re-placed instance neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_18
+INFO: [Physopt 32-662] Processed net neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_20_n_0.  Did not re-place instance neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_20
+INFO: [Physopt 32-662] Processed net neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_4_n_0.  Did not re-place instance neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_4
+INFO: [Physopt 32-662] Processed net neural_net/C2/conv_channels_gen[15].sums_reg[15]_75[17].  Did not re-place instance neural_net/C2/conv_channels_gen[15].sums_reg[15][17]
+INFO: [Physopt 32-662] Processed net ip_layer_inst/tx/get_checksum/TX_AXIS_TDATA[3]_INST_0_i_22_n_0.  Did not re-place instance ip_layer_inst/tx/get_checksum/TX_AXIS_TDATA[3]_INST_0_i_22
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[26].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[26]
+INFO: [Physopt 32-662] Processed net neural_net/IP_ADDRESS_OUT[11].  Did not re-place instance neural_net/IP_ADDRESS_OUT_reg[11]
+INFO: [Physopt 32-662] Processed net neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_5_n_0.  Did not re-place instance neural_net/C2/conv_channels_gen[15].kernel/conv_channels_gen[15].sums[15][0]_i_5
+INFO: [Physopt 32-661] Optimized 17 nets.  Re-placed 17 instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 17 nets or cells. Created 0 new cell, deleted 0 existing cell and moved 17 existing cells
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.040 | TNS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+Phase 3 Placement Based Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 4 MultiInst Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  MultiInst Placement Optimization was not performed.
+Phase 4 MultiInst Placement Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 5 Rewire
+INFO: [Physopt 32-670] No setup violation found.  Rewire was not performed.
+Phase 5 Rewire | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 6 Critical Cell Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Cell Optimization was not performed.
+Phase 6 Critical Cell Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 7 Fanout Optimization
+INFO: [Physopt 32-670] No setup violation found.  Fanout Optimization was not performed.
+Phase 7 Fanout Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 8 Placement Based Optimization
+INFO: [Physopt 32-670] No setup violation found.  Placement Based Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+Phase 8 Placement Based Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 9 MultiInst Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  MultiInst Placement Optimization was not performed.
+Phase 9 MultiInst Placement Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 10 Rewire
+INFO: [Physopt 32-670] No setup violation found.  Rewire was not performed.
+Phase 10 Rewire | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 11 Critical Cell Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Cell Optimization was not performed.
+Phase 11 Critical Cell Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 12 Slr Crossing Optimization
+Phase 12 Slr Crossing Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 13 Fanout Optimization
+INFO: [Physopt 32-670] No setup violation found.  Fanout Optimization was not performed.
+Phase 13 Fanout Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 14 Placement Based Optimization
+INFO: [Physopt 32-670] No setup violation found.  Placement Based Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+Phase 14 Placement Based Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 15 MultiInst Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  MultiInst Placement Optimization was not performed.
+Phase 15 MultiInst Placement Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 16 Rewire
+INFO: [Physopt 32-670] No setup violation found.  Rewire was not performed.
+Phase 16 Rewire | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 17 Critical Cell Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Cell Optimization was not performed.
+Phase 17 Critical Cell Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 18 DSP Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+Phase 18 DSP Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 19 BRAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+Phase 19 BRAM Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 20 URAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+Phase 20 URAM Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 21 Shift Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+Phase 21 Shift Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 22 DSP Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+Phase 22 DSP Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 23 BRAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+Phase 23 BRAM Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 24 URAM Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+Phase 24 URAM Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 25 Shift Register Optimization
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+Phase 25 Shift Register Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 26 Critical Pin Optimization
+INFO: [Physopt 32-670] No setup violation found.  Critical Pin Optimization was not performed.
+Phase 26 Critical Pin Optimization | Checksum: 9abbe72b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1291 ; free virtual = 4648
+
+Phase 27 Very High Fanout Optimization
+INFO: [Physopt 32-76] Pass 1. Identified 8 candidate nets for fanout optimization.
+INFO: [Physopt 32-81] Processed net neural_net/GA/global_avg_gen[19].c[19][47]_i_1_n_0. Replicated 2 times.
+INFO: [Physopt 32-81] Processed net neural_net/C2/conv_channels_gen[19].kernel/gtx_resetn_reg. Replicated 8 times.
+INFO: [Physopt 32-232] Optimized 2 nets. Created 10 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 10 new cells, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.040 | TNS=0.000 |
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+Phase 27 Very High Fanout Optimization | Checksum: 11de45a38
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:16 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+
+Phase 28 Placement Based Optimization
+INFO: [Physopt 32-670] No setup violation found.  Placement Based Optimization was not performed.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+Phase 28 Placement Based Optimization | Checksum: 11de45a38
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:16 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+
+Phase 29 MultiInst Placement Optimization
+INFO: [Physopt 32-670] No setup violation found.  MultiInst Placement Optimization was not performed.
+Phase 29 MultiInst Placement Optimization | Checksum: 11de45a38
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:16 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+
+Phase 30 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.040 | TNS=0.000 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.040 | TNS=0.000 |
+Phase 30 Critical Path Optimization | Checksum: 11de45a38
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:16 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+
+Phase 31 BRAM Enable Optimization
+Phase 31 BRAM Enable Optimization | Checksum: 11de45a38
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:16 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1280 ; free virtual = 4637
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1282 ; free virtual = 4640
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=0.040 | TNS=0.000 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization          |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Fanout                |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:01  |
+|  Placement Based       |          0.112  |          0.072  |            0  |              0  |                    17  |           0  |           1  |  00:00:02  |
+|  MultiInst Placement   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Rewire                |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Critical Cell         |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Slr Crossing          |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register          |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register         |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register         |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register        |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Critical Pin          |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Very High Fanout      |          0.000  |          0.000  |           10  |              0  |                     2  |           0  |           1  |  00:00:08  |
+|  BRAM Enable           |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path         |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                 |          0.112  |          0.072  |           10  |              0  |                    19  |           0  |           6  |  00:00:12  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1282 ; free virtual = 4640
+Ending Physical Synthesis Task | Checksum: 11de45a38
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:16 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1282 ; free virtual = 4640
+INFO: [Common 17-83] Releasing license: Implementation
+246 Infos, 24 Warnings, 12 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1297 ; free virtual = 4655
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1297 ; free virtual = 4655
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1277 ; free virtual = 4647
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1242 ; free virtual = 4644
+INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1277 ; free virtual = 4652
+Command: route_design -directive NoTimingRelaxation
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 Running DRC as a precondition to command route_design
 INFO: [DRC 23-27] Running DRC with 4 threads
 WARNING: [DRC PLIO-6] Placement Constraints Check for IO constraints: Invalid constraint on register trimac_fifo_block/trimac_sup_block/tri_mode_ethernet_mac_i/inst/mii_interface/mii_tx_en_obuf_reg. It has the property IOB=TRUE, but it is not driving or driven by any IO element.
@@ -519,133 +817,186 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 
 Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'NoTimingRelaxation'.
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 4 CPUs
-Checksum: PlaceDB: 95d5ce4a ConstDB: 0 ShapeSum: a1708c22 RouteDB: 0
+Checksum: PlaceDB: dc1348a ConstDB: 0 ShapeSum: 511e0cf7 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: e47c39d2
+Phase 1 Build RT Design | Checksum: dc913109
 
-Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2193 ; free virtual = 6482
-Post Restoration Checksum: NetGraph: caf9cf08 NumContArr: 19826aca Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1139 ; free virtual = 4514
+Post Restoration Checksum: NetGraph: b3b14cbd NumContArr: 28dfe44c Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: e47c39d2
+Phase 2.1 Create Timer | Checksum: dc913109
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2171 ; free virtual = 6461
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1142 ; free virtual = 4517
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: e47c39d2
+Phase 2.2 Fix Topology Constraints | Checksum: dc913109
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2154 ; free virtual = 6444
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1126 ; free virtual = 4501
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: e47c39d2
+Phase 2.3 Pre Route Cleanup | Checksum: dc913109
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:00:20 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2154 ; free virtual = 6444
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1126 ; free virtual = 4501
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 166be500d
+Phase 2.4 Update Timing | Checksum: 1017635d6
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2138 ; free virtual = 6428
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.579  | TNS=0.000  | WHS=-0.949 | THS=-452.422|
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:27 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1100 ; free virtual = 4475
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.096  | TNS=0.000  | WHS=-0.745 | THS=-804.201|
 
 
 Phase 2.5 Update Timing for Bus Skew
 
 Phase 2.5.1 Update Timing
-Phase 2.5.1 Update Timing | Checksum: 1c64ad60d
+Phase 2.5.1 Update Timing | Checksum: 1129d8b6b
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2135 ; free virtual = 6425
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.579  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:31 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1098 ; free virtual = 4473
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.096  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 2.5 Update Timing for Bus Skew | Checksum: 1557ebd4c
+Phase 2.5 Update Timing for Bus Skew | Checksum: 160100386
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2134 ; free virtual = 6425
-Phase 2 Router Initialization | Checksum: 119ea543a
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:31 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1097 ; free virtual = 4472
+Phase 2 Router Initialization | Checksum: 1b09ea164
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2134 ; free virtual = 6425
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:31 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1097 ; free virtual = 4472
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 259c172a3
+Phase 3 Initial Routing | Checksum: ce1a2790
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:27 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2129 ; free virtual = 6420
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:35 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1088 ; free virtual = 4463
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 1399
- Number of Nodes with overlaps = 207
- Number of Nodes with overlaps = 58
- Number of Nodes with overlaps = 22
- Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4041
+ Number of Nodes with overlaps = 1089
+ Number of Nodes with overlaps = 614
+ Number of Nodes with overlaps = 327
+ Number of Nodes with overlaps = 176
+ Number of Nodes with overlaps = 105
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.256  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.275 | TNS=-1.088 | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 20548330e
+Phase 4.1 Global Iteration 0 | Checksum: 8acbf663
 
-Time (s): cpu = 00:00:52 ; elapsed = 00:00:34 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2126 ; free virtual = 6417
+Time (s): cpu = 00:01:57 ; elapsed = 00:01:04 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4457
 
 Phase 4.2 Global Iteration 1
- Number of Nodes with overlaps = 2
- Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 222
+ Number of Nodes with overlaps = 79
+ Number of Nodes with overlaps = 53
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 6
  Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.322  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.192 | TNS=-1.370 | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 1e1fd268b
+Phase 4.2 Global Iteration 1 | Checksum: 1e5702bf0
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:36 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
-Phase 4 Rip-up And Reroute | Checksum: 1e1fd268b
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:15 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1081 ; free virtual = 4456
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:36 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 151
+ Number of Nodes with overlaps = 22
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.130 | TNS=-0.263 | WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 291511b8b
+
+Time (s): cpu = 00:02:15 ; elapsed = 00:01:20 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
+
+Phase 4.4 Global Iteration 3
+ Number of Nodes with overlaps = 127
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.347 | TNS=-3.881 | WHS=N/A    | THS=N/A    |
+
+Phase 4.4 Global Iteration 3 | Checksum: 19a889198
+
+Time (s): cpu = 00:02:20 ; elapsed = 00:01:25 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4457
+Phase 4 Rip-up And Reroute | Checksum: 19a889198
+
+Time (s): cpu = 00:02:21 ; elapsed = 00:01:25 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4457
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 168529504
+Phase 5.1.1 Update Timing | Checksum: 1203d1d86
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:37 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.353  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:26 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4457
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.130 | TNS=-0.199 | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: 17b9fb6b8
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 26cbbd149
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:37 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
+Time (s): cpu = 00:02:23 ; elapsed = 00:01:26 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 17b9fb6b8
+Phase 5.2 Clock Skew Optimization | Checksum: 26cbbd149
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:37 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
-Phase 5 Delay and Skew Optimization | Checksum: 17b9fb6b8
+Time (s): cpu = 00:02:24 ; elapsed = 00:01:26 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
+Phase 5 Delay and Skew Optimization | Checksum: 26cbbd149
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:37 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
+Time (s): cpu = 00:02:24 ; elapsed = 00:01:26 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 16e3bdcda
+Phase 6.1.1 Update Timing | Checksum: 2adf5f48e
 
-Time (s): cpu = 00:00:56 ; elapsed = 00:00:37 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2118 ; free virtual = 6409
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.353  | TNS=0.000  | WHS=-0.069 | THS=-0.324 |
+Time (s): cpu = 00:02:26 ; elapsed = 00:01:27 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.130 | TNS=-0.199 | WHS=0.017  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 1f2a5b5f0
+Phase 6.1 Hold Fix Iter | Checksum: 29e8f9d7b
 
-Time (s): cpu = 00:00:57 ; elapsed = 00:00:38 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2110 ; free virtual = 6401
-Phase 6 Post Hold Fix | Checksum: 18b9c7225
+Time (s): cpu = 00:02:26 ; elapsed = 00:01:28 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
+Phase 6 Post Hold Fix | Checksum: 29e8f9d7b
 
-Time (s): cpu = 00:00:57 ; elapsed = 00:00:38 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2110 ; free virtual = 6401
+Time (s): cpu = 00:02:26 ; elapsed = 00:01:28 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1080 ; free virtual = 4455
 
-Phase 7 Route finalize
+Phase 7 Timing Verification
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: 25038efa7
+
+Time (s): cpu = 00:02:31 ; elapsed = 00:01:29 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1083 ; free virtual = 4458
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.130 | TNS=-0.199 | WHS=N/A    | THS=N/A    |
+
+Phase 7 Timing Verification | Checksum: 25038efa7
+
+Time (s): cpu = 00:02:31 ; elapsed = 00:01:29 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1083 ; free virtual = 4458
+
+Phase 8 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 2.39979 %
-  Global Horizontal Routing Utilization  = 3.12582 %
+  Global Vertical Routing Utilization    = 8.43661 %
+  Global Horizontal Routing Utilization  = 8.8501 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -654,53 +1005,302 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1a48338b5
+Congestion Report
+North Dir 1x1 Area, Max Cong = 79.2793%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 73.8739%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 82.3529%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 77.9412%, No Congested Regions.
 
-Time (s): cpu = 00:00:57 ; elapsed = 00:00:38 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2110 ; free virtual = 6401
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
 
-Phase 8 Verifying routed nets
+Phase 8 Route finalize | Checksum: 25038efa7
+
+Time (s): cpu = 00:02:31 ; elapsed = 00:01:30 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1083 ; free virtual = 4458
+
+Phase 9 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1a48338b5
+Phase 9 Verifying routed nets | Checksum: 25038efa7
 
-Time (s): cpu = 00:00:57 ; elapsed = 00:00:38 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2109 ; free virtual = 6400
+Time (s): cpu = 00:02:31 ; elapsed = 00:01:30 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4457
 
-Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 10e0aa51b
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 21a5d43d1
 
-Time (s): cpu = 00:00:58 ; elapsed = 00:00:39 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2114 ; free virtual = 6405
+Time (s): cpu = 00:02:33 ; elapsed = 00:01:31 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1081 ; free virtual = 4456
 
-Phase 10 Post Router Timing
+Phase 11 Incr Placement Change
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1089 ; free virtual = 4464
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.058. For the most accurate timing information please run report_timing.
+Ending IncrPlace Task | Checksum: 11c5afe17
 
-Phase 10.1 Update Timing
-Phase 10.1 Update Timing | Checksum: cb8086df
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:21 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1116 ; free virtual = 4491
+Phase 11 Incr Placement Change | Checksum: 21a5d43d1
 
-Time (s): cpu = 00:00:59 ; elapsed = 00:00:39 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2114 ; free virtual = 6405
-INFO: [Route 35-57] Estimated Timing Summary | WNS=0.353  | TNS=0.000  | WHS=0.050  | THS=0.000  |
+Time (s): cpu = 00:03:05 ; elapsed = 00:01:53 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1116 ; free virtual = 4491
 
-INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: cb8086df
+Phase 12 Build RT Design
+Phase 12 Build RT Design | Checksum: 116edea9b
 
-Time (s): cpu = 00:00:59 ; elapsed = 00:00:39 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2114 ; free virtual = 6405
+Time (s): cpu = 00:03:11 ; elapsed = 00:01:59 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1103 ; free virtual = 4478
+Post Restoration Checksum: NetGraph: 9f34c4dc NumContArr: 875d3e51 Constraints: 0 Timing: 0
+
+Phase 13 Router Initialization
+
+Phase 13.1 Create Timer
+Phase 13.1 Create Timer | Checksum: 12692032d
+
+Time (s): cpu = 00:03:12 ; elapsed = 00:02:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1074 ; free virtual = 4449
+
+Phase 13.2 Fix Topology Constraints
+Phase 13.2 Fix Topology Constraints | Checksum: 12692032d
+
+Time (s): cpu = 00:03:12 ; elapsed = 00:02:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1057 ; free virtual = 4432
+
+Phase 13.3 Pre Route Cleanup
+Phase 13.3 Pre Route Cleanup | Checksum: b55e93e2
+
+Time (s): cpu = 00:03:12 ; elapsed = 00:02:00 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1057 ; free virtual = 4432
+ Number of Nodes with overlaps = 0
+
+Phase 13.4 Update Timing
+Phase 13.4 Update Timing | Checksum: 18f841b44
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:02:06 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1032 ; free virtual = 4407
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.049 | TNS=-0.119 | WHS=-0.724 | THS=-802.935|
+
+
+Phase 13.5 Update Timing for Bus Skew
+
+Phase 13.5.1 Update Timing
+Phase 13.5.1 Update Timing | Checksum: 1ece91238
+
+Time (s): cpu = 00:03:36 ; elapsed = 00:02:10 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1030 ; free virtual = 4405
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.049 | TNS=-0.061 | WHS=N/A    | THS=N/A    |
+
+Phase 13.5 Update Timing for Bus Skew | Checksum: 10649d780
+
+Time (s): cpu = 00:03:36 ; elapsed = 00:02:10 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1028 ; free virtual = 4403
+Phase 13 Router Initialization | Checksum: 198183a3d
+
+Time (s): cpu = 00:03:36 ; elapsed = 00:02:10 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1028 ; free virtual = 4403
+
+Phase 14 Initial Routing
+Phase 14 Initial Routing | Checksum: 16853a72e
+
+Time (s): cpu = 00:03:37 ; elapsed = 00:02:11 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1024 ; free virtual = 4399
+
+Phase 15 Rip-up And Reroute
+
+Phase 15.1 Global Iteration 0
+ Number of Nodes with overlaps = 149
+ Number of Nodes with overlaps = 109
+ Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 42
+ Number of Nodes with overlaps = 26
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.461 | TNS=-5.761 | WHS=N/A    | THS=N/A    |
+
+Phase 15.1 Global Iteration 0 | Checksum: 54aa5c53
+
+Time (s): cpu = 00:03:52 ; elapsed = 00:02:21 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1015 ; free virtual = 4391
+
+Phase 15.2 Global Iteration 1
+ Number of Nodes with overlaps = 165
+ Number of Nodes with overlaps = 114
+ Number of Nodes with overlaps = 76
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.055 | TNS=-0.105 | WHS=N/A    | THS=N/A    |
+
+Phase 15.2 Global Iteration 1 | Checksum: 1ecd7b35f
+
+Time (s): cpu = 00:04:04 ; elapsed = 00:02:31 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1013 ; free virtual = 4389
+
+Phase 15.3 Global Iteration 2
+ Number of Nodes with overlaps = 160
+ Number of Nodes with overlaps = 53
+ Number of Nodes with overlaps = 30
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 13
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.110 | TNS=-0.371 | WHS=N/A    | THS=N/A    |
+
+Phase 15.3 Global Iteration 2 | Checksum: 190a6c4fa
+
+Time (s): cpu = 00:04:12 ; elapsed = 00:02:38 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1014 ; free virtual = 4389
+Phase 15 Rip-up And Reroute | Checksum: 190a6c4fa
+
+Time (s): cpu = 00:04:12 ; elapsed = 00:02:38 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1014 ; free virtual = 4389
+
+Phase 16 Delay and Skew Optimization
+
+Phase 16.1 Delay CleanUp
+
+Phase 16.1.1 Update Timing
+Phase 16.1.1 Update Timing | Checksum: 16111f7af
+
+Time (s): cpu = 00:04:14 ; elapsed = 00:02:39 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1014 ; free virtual = 4389
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.039 | TNS=-0.073 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 16.1 Delay CleanUp | Checksum: 16e54e136
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:40 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1012 ; free virtual = 4387
+
+Phase 16.2 Clock Skew Optimization
+Phase 16.2 Clock Skew Optimization | Checksum: 16e54e136
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:40 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1012 ; free virtual = 4387
+Phase 16 Delay and Skew Optimization | Checksum: 16e54e136
+
+Time (s): cpu = 00:04:15 ; elapsed = 00:02:40 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1012 ; free virtual = 4387
+
+Phase 17 Post Hold Fix
+
+Phase 17.1 Hold Fix Iter
+
+Phase 17.1.1 Update Timing
+Phase 17.1.1 Update Timing | Checksum: 1220fc30d
+
+Time (s): cpu = 00:04:17 ; elapsed = 00:02:41 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1017 ; free virtual = 4392
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.039 | TNS=-0.073 | WHS=0.017  | THS=0.000  |
+
+Phase 17.1 Hold Fix Iter | Checksum: 112239c26
+
+Time (s): cpu = 00:04:17 ; elapsed = 00:02:41 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1016 ; free virtual = 4391
+Phase 17 Post Hold Fix | Checksum: 112239c26
+
+Time (s): cpu = 00:04:18 ; elapsed = 00:02:41 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1016 ; free virtual = 4391
+
+Phase 18 Timing Verification
+
+Phase 18.1 Update Timing
+Phase 18.1 Update Timing | Checksum: 108e2cdf1
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:43 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1018 ; free virtual = 4393
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.039 | TNS=-0.073 | WHS=N/A    | THS=N/A    |
+
+Phase 18 Timing Verification | Checksum: 108e2cdf1
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:43 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1018 ; free virtual = 4393
+
+Phase 19 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 8.43687 %
+  Global Horizontal Routing Utilization  = 8.84967 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 79.2793%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 73.8739%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 82.3529%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 77.9412%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 19 Route finalize | Checksum: 108e2cdf1
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:43 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1018 ; free virtual = 4393
+
+Phase 20 Verifying routed nets
+
+ Verification completed successfully
+Phase 20 Verifying routed nets | Checksum: 108e2cdf1
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:43 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1017 ; free virtual = 4392
+
+Phase 21 Depositing Routes
+Phase 21 Depositing Routes | Checksum: 93249afe
+
+Time (s): cpu = 00:04:24 ; elapsed = 00:02:45 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1017 ; free virtual = 4392
+
+Phase 22 Post Router Timing
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=-0.033 | TNS=-0.062 | WHS=0.018  | THS=0.000  |
+
+CRITICAL WARNING: [Route 35-39] The design did not meet timing requirements. Please run report_timing_summary for detailed reports.
+Resolution: Verify that the timing was met or had small violations at all previous steps (synthesis, placement, power_opt, and phys_opt). Run report_timing_summary and analyze individual timing paths.
+INFO: [Route 35-253] TNS is the sum of the worst slack violation on every endpoint in the design. Review the paths with the biggest WNS violations in the timing reports and modify your constraints or your design to improve both WNS and TNS.
+Phase 22 Post Router Timing | Checksum: 87311a9c
+
+Time (s): cpu = 00:04:35 ; elapsed = 00:02:49 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1049 ; free virtual = 4424
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:59 ; elapsed = 00:00:39 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2145 ; free virtual = 6437
+Time (s): cpu = 00:04:35 ; elapsed = 00:02:49 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1178 ; free virtual = 4553
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-124 Infos, 55 Warnings, 17 Critical Warnings and 0 Errors encountered.
+279 Infos, 36 Warnings, 13 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2145 ; free virtual = 6437
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2145 ; free virtual = 6437
+route_design: Time (s): cpu = 00:04:40 ; elapsed = 00:02:51 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1178 ; free virtual = 4553
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1178 ; free virtual = 4553
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2133 ; free virtual = 6432
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1154 ; free virtual = 4544
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2106 ; free virtual = 6427
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1109 ; free virtual = 4542
 INFO: [Common 17-1381] The checkpoint '/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr_routed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2809.398 ; gain = 0.000 ; free physical = 2136 ; free virtual = 6436
+write_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 3086.273 ; gain = 0.000 ; free physical = 1154 ; free virtual = 4549
 INFO: [runtcl-4] Executing : report_drc -file tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpx
 Command: report_drc -file tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -713,7 +1313,7 @@ INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 4 threads
 INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 2834.406 ; gain = 0.000 ; free physical = 2051 ; free virtual = 6353
+report_methodology: Time (s): cpu = 00:00:28 ; elapsed = 00:00:10 . Memory (MB): peak = 3103.344 ; gain = 0.000 ; free physical = 1030 ; free virtual = 4425
 INFO: [runtcl-4] Executing : report_power -file tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_power_summary_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpx
 Command: report_power -file tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_power_summary_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
@@ -722,12 +1322,14 @@ Running Vector-less Activity Propagation...
 Finished Running Vector-less Activity Propagation
 WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
 Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
-136 Infos, 56 Warnings, 17 Critical Warnings and 0 Errors encountered.
+291 Infos, 37 Warnings, 13 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 3103.352 ; gain = 0.008 ; free physical = 984 ; free virtual = 4391
 INFO: [runtcl-4] Executing : report_route_status -file tri_mode_ethernet_mac_0_example_design_ddr_route_status.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file tri_mode_ethernet_mac_0_example_design_ddr_timing_summary_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_timing_summary_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 4 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
 WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
 INFO: [runtcl-4] Executing : report_incremental_reuse -file tri_mode_ethernet_mac_0_example_design_ddr_incremental_reuse_routed.rpt
 INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
@@ -759,19 +1361,111 @@ WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Nei
 
 Refer to the device configuration user guide for more information.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENARDEN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/reset_out) which is driven by a register (trimac_fifo_block/rx_mac_reset_gen/reset_sync4) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg_i_2__0_n_0) which is driven by a register (ip_layer_inst/rx/FSM_sequential_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg_i_2__0_n_0) which is driven by a register (ip_layer_inst/rx/FSM_sequential_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/rx_fifo_i/rx_ramgen_i/mem_reg_i_2__0_n_0) which is driven by a register (ip_layer_inst/rx/FSM_sequential_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg/ENBWREN (net: trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg_i_1_n_0) which is driven by a register (trimac_fifo_block/tx_mac_reset_gen/reset_sync4) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg has an input control pin trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/mem_reg/RSTRAMB (net: trimac_fifo_block/user_side_FIFO/tx_fifo_i/tx_ramgen_i/SR[0]) which is driven by a register (trimac_fifo_block/tx_mac_reset_gen/reset_sync4) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC RTSTAT-10] No routable loads: 43 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], tx_stats_sync/data_out, rx_stats_sync/data_out, dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, vio/inst/PROBE_OUT_ALL_INST/G_PROBE_OUT[1].PROBE_OUT0_INST/probe_out1[1:0], vio/inst/PROBE_OUT_ALL_INST/G_PROBE_OUT[2].PROBE_OUT0_INST/probe_out2[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i... and (the first 15 of 40 listed).
-INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: nn/N1/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: nn/N1/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: nn/N2/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: nn/N2/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: nn/N3/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: nn/N3/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 8 Warnings, 6 Advisories
+WARNING: [DRC RTSTAT-10] No routable loads: 43 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], rx_stats_sync/data_out, tx_stats_sync/data_out, dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwhf.whf/overflow, vio/inst/PROBE_OUT_ALL_INST/G_PROBE_OUT[1].PROBE_OUT0_INST/probe_out1[1:0], vio/inst/PROBE_OUT_ALL_INST/G_PROBE_OUT[2].PROBE_OUT0_INST/probe_out2[0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i... and (the first 15 of 40 listed).
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M0_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M0_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M0_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M1_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M1_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M1_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M2_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M2_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[0].kernel/M2_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M0_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M0_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M0_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M1_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M1_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M1_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M2_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M2_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[1].kernel/M2_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M0_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M0_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M0_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M1_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M1_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M1_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M2_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M2_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[2].kernel/M2_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M0_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M0_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M0_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M1_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M1_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M1_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M2_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M2_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[3].kernel/M2_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M0_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M0_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M0_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M1_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M1_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M1_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M2_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M2_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[4].kernel/M2_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M0_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M0_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M0_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M1_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M1_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M1_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M2_0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M2_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C1/conv_channels_gen[5].kernel/M2_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[0].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[0].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[0].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[0].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[10].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[10].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[10].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[10].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[11].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[11].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[11].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[11].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[12].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[12].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[12].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[12].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[13].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[13].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[13].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[13].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[14].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[14].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[14].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[14].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[15].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[15].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[15].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[15].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[16].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[16].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[16].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[16].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[17].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[17].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[17].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[17].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[18].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[18].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[18].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[18].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[19].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[19].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[19].kernel/M2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[19].kernel/M3/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[1].kernel/M0/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: neural_net/C2/conv_channels_gen[1].kernel/M1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [Common 17-14] Message 'DRC AVAL-4' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 5 Warnings, 164 Advisories
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
 Loading data files...
@@ -784,7 +1478,7 @@ Writing bitstream ./tri_mode_ethernet_mac_0_example_design_ddr.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
 INFO: [Common 17-83] Releasing license: Implementation
-161 Infos, 65 Warnings, 18 Critical Warnings and 0 Errors encountered.
+411 Infos, 43 Warnings, 15 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 3232.215 ; gain = 331.770 ; free physical = 1958 ; free virtual = 6284
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 14 19:20:30 2021...
+write_bitstream: Time (s): cpu = 00:00:39 ; elapsed = 00:00:24 . Memory (MB): peak = 3409.262 ; gain = 305.910 ; free physical = 940 ; free virtual = 4359
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 28 19:05:31 2021...

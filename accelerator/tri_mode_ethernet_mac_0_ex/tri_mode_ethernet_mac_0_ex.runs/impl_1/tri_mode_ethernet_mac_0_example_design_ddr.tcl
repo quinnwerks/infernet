@@ -60,31 +60,19 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  create_project -in_memory -part xc7a100tcsg324-1
-  set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp
   set_property webtalk.parent_dir /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.cache/wt [current_project]
   set_property parent.project_path /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.xpr [current_project]
   set_property ip_output_repo /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.dcp
-  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_COL/Mult_Add_COL.xci
-  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/Mult_Add_NC/Mult_Add_NC.xci
-  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/tri_mode_ethernet_mac_0/tri_mode_ethernet_mac_0.xci
-  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/accelerator_controls/accelerator_controls.xci
-  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-  read_ip -quiet /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.srcs/sources_1/ip/mii_to_rmii_0/mii_to_rmii_0.xci
-  read_xdc /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_example_design.xdc
-  read_xdc /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc
-  set_property processing_order LATE [get_files /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc]
-  link_design -top tri_mode_ethernet_mac_0_example_design_ddr -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -119,7 +107,7 @@ set rc [catch {
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 
     implement_debug_core 
   } 
-  place_design 
+  place_design -directive ExtraTimingOpt
   write_checkpoint -force tri_mode_ethernet_mac_0_example_design_ddr_placed.dcp
   create_report "impl_1_place_report_io_0" "report_io -file tri_mode_ethernet_mac_0_example_design_ddr_io_placed.rpt"
   create_report "impl_1_place_report_utilization_0" "report_utilization -file tri_mode_ethernet_mac_0_example_design_ddr_utilization_placed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_utilization_placed.pb"
@@ -134,11 +122,27 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+start_step phys_opt_design
+set ACTIVE_STEP phys_opt_design
+set rc [catch {
+  create_msg_db phys_opt_design.pb
+  phys_opt_design -directive Explore
+  write_checkpoint -force tri_mode_ethernet_mac_0_example_design_ddr_physopt.dcp
+  close_msg_db -file phys_opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step phys_opt_design
+  unset ACTIVE_STEP 
+}
+
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
-  route_design 
+  route_design -directive NoTimingRelaxation
   write_checkpoint -force tri_mode_ethernet_mac_0_example_design_ddr_routed.dcp
   create_report "impl_1_route_report_drc_0" "report_drc -file tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpx"
   create_report "impl_1_route_report_methodology_0" "report_methodology -file tri_mode_ethernet_mac_0_example_design_ddr_methodology_drc_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_methodology_drc_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_methodology_drc_routed.rpx"

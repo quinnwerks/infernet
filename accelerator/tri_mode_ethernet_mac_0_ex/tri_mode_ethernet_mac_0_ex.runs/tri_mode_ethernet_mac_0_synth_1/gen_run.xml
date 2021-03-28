@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="tri_mode_ethernet_mac_0_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1614219976">
-  <File Type="RDS-UTIL" Name="tri_mode_ethernet_mac_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="tri_mode_ethernet_mac_0_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="tri_mode_ethernet_mac_0_utilization_synth.rpt"/>
   <File Type="RDS-RDS" Name="tri_mode_ethernet_mac_0.vds"/>
   <File Type="RDS-DCP" Name="tri_mode_ethernet_mac_0.dcp"/>
   <File Type="PA-TCL" Name="tri_mode_ethernet_mac_0.tcl"/>

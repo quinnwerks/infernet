@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2018.3.1 (64-bit)
+# SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
+# IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
+# Start of session at: Mon Mar 15 19:20:35 2021
+# Process ID: 2408
+# Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex
+# Command line: vivado tri_mode_ethernet_mac_0_ex.xpr
+# Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.log
+# Journal file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project tri_mode_ethernet_mac_0_ex.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 6483.500 ; gain = 183.637 ; free physical = 4612 ; free virtual = 8199
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 15 21:08:53 2021...

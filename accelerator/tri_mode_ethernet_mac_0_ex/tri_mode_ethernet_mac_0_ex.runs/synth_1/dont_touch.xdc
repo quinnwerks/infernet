@@ -5,8 +5,14 @@
 
 # XDC: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/imports/tri_mode_ethernet_mac_0_user_phytiming.xdc
 
-# IP: ip/Mult_Add_COL/Mult_Add_COL.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_COL || ORIG_REF_NAME==Mult_Add_COL} -quiet] -quiet
+# IP: /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Conv_1_BRAM/Conv_1_BRAM.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Conv_1_BRAM || ORIG_REF_NAME==Conv_1_BRAM} -quiet] -quiet
 
-# IP: ip/Mult_Add_NC/Mult_Add_NC.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_NC || ORIG_REF_NAME==Mult_Add_NC} -quiet] -quiet
+# IP: /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Global_Average/Mult_Add_Global_Average.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_Global_Average || ORIG_REF_NAME==Mult_Add_Global_Average} -quiet] -quiet
+
+# IP: /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_COL/Mult_Add_Pipelined_COL.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_Pipelined_COL || ORIG_REF_NAME==Mult_Add_Pipelined_COL} -quiet] -quiet
+
+# IP: /home/quinn/ece532-project/accelerator/MNIST_Solver/MNIST_Solver.srcs/sources_1/ip/Mult_Add_Pipelined_NC/Mult_Add_Pipelined_NC.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Mult_Add_Pipelined_NC || ORIG_REF_NAME==Mult_Add_Pipelined_NC} -quiet] -quiet

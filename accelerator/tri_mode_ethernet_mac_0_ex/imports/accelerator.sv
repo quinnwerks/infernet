@@ -5,10 +5,10 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design_ddr
 #  (
-      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_08,
+      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_01,
       //01_00_00_35_0a_00,
       parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h01_01_08_02,
+      parameter OUR_IP_ADDRESS=32'h01_01_01_02,
       parameter OUR_UDP_PORT = 16'd0666,
       //02_01_01_01,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
@@ -255,11 +255,17 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    wire  [7:0]          tx_ifg_delay = 0;    // not used in this example
    
    
-   wire [0:USER_DATA_BYTES*8-1] data_frame_from_rx;
+   //wire [0:USER_DATA_BYTES*8-1] data_frame_from_rx;
+   (* mark_debug = "true" *) wire [7:0] rx_data_from_ip;
+   (* mark_debug = "true" *) wire [9:0] rx_addr_from_ip;
+   (* mark_debug = "true" *) wire       rx_en_from_ip;
+   
    (* mark_debug = "true" *) wire                         frame_ready_from_rx;
    (* mark_debug = "true" *) wire [0:47]                  mac_address_from_rx;
    (* mark_debug = "true" *) wire [0:31]                  ip_address_from_rx;
    (* mark_debug = "true" *) wire [0:15]                  udp_port_from_rx;
+   
+   
 
    wire                         packet_for_accelerator_from_rx;
    
@@ -708,7 +714,10 @@ module tri_mode_ethernet_mac_0_example_design_ddr
       
       // To/From NN Core   
       // Rx
-      .DATA_FRAME(data_frame_from_rx),
+      //.DATA_FRAME(data_frame_from_rx),
+      .RX_DATA(rx_data_from_ip),
+      .RX_ADDR(rx_addr_from_ip),
+      .RX_EN(rx_en_from_ip),
       .SRC_IP_ADDRESS(ip_address_from_rx),
       .SRC_MAC_ADDRESS(mac_address_from_rx),
       .SRC_UDP_PORT(udp_port_from_rx),
@@ -728,6 +737,63 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    assign int_frame_error = 1'b0;
    assign int_activity_flash = 1'b0;
    
+   wire [0:31] ip_address_from_buff;
+   wire [0:47] mac_address_from_buff;
+   wire [0:15] udp_port_from_buff;
+   wire w_en_from_buff;
+   wire signed [17:0] w_data_from_buff;
+   wire [9:0] w_addr_from_buff;
+   wire w_done_from_buff;
+   
+   buff_ip_to_nn #(
+    .USER_DATA_BYTES(USER_DATA_BYTES)
+    ) ip_to_nn_buffer (
+   .ACLK(tx_fifo_clock),
+   .ARESET(tx_fifo_resetn),
+   
+   .RX_DATA(rx_data_from_ip),
+   .RX_ADDR(rx_addr_from_ip),
+   .RX_EN(rx_en_from_ip),
+   .SRC_IP_ADDRESS_IP(ip_address_from_rx),
+   .SRC_MAC_ADDRESS_IP(mac_address_from_rx),
+   .SRC_UDP_PORT_IP(udp_port_from_rx),
+   .FRAME_READY(frame_ready_from_rx),
+
+   .SRC_IP_ADDRESS_NN(ip_address_from_buff),
+   .SRC_MAC_ADDRESS_NN(mac_address_from_buff),
+   .SRC_UDP_PORT_NN(udp_port_from_buff),
+   .W_DATA(w_data_from_buff),
+   .W_EN(w_en_from_buff),
+   .W_ADDR(w_addr_from_buff),
+   .W_DONE(w_done_from_buff)   
+);
+
+MNIST_Solver neural_net (
+    // Control signals
+   .clock(tx_fifo_clock),
+   .reset_n(tx_fifo_resetn),
+   .start(w_done_from_buff),
+   .done(start_ip_txn_to_tx),
+    
+   // Input data, i.e. write to the first ibuf
+   .w_addr(w_addr_from_buff),
+   .w_data(w_data_from_buff),
+   .w_en(w_en_from_buff),
+    
+   // IP stuff
+   .SRC_IP_ADDRESS(ip_address_from_buff),
+   .SRC_MAC_ADDRESS(mac_address_from_buff),
+   .SRC_UDP_PORT(udp_port_from_buff),
+    
+   .IP_ADDRESS_OUT(ip_address_to_tx),
+   .MAC_ADDRESS_OUT(mac_address_to_tx),
+   .UDP_PORT_OUT(udp_port_to_tx),
+    
+   // Output data
+   .out(recipient_message_to_tx)
+);
+   
+   /*
    // Neural Network
    wire net_out_to_tx;
    XOR_NN nn(
@@ -746,6 +812,7 @@ module tri_mode_ethernet_mac_0_example_design_ddr
     .out(net_out_to_tx)
    );
    assign recipient_message_to_tx = {9'd0, net_out_to_tx};
+   */
    
 
 
