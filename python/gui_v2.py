@@ -10,6 +10,9 @@ import time
 from timeit import default_timer as timer
 
 import os
+import threading
+import queue
+import concurrent.futures as cf
 import statistics
 import numpy as np
 import matplotlib as plt
@@ -36,6 +39,8 @@ COLORS = {
     "hl": "#FFAE00",
     "btn": "#FFFFFF",
     "btn_h": "#EEEEEE",
+    "btn_d": "#CCCCCC",
+    "btn_dt": "#4D4D4D",
     "hl_h": "#E69D00",
     "hl_d": "#996900",
     "1_d": "#4D2F1F"
@@ -70,11 +75,12 @@ class Infernet_Statistics:
         self.incorrect_classifications = {"0": 0, "1": 0, "2": 0, "3": 0, "4": 0,
                                           "5": 0, "6": 0, "7": 0, "8": 0, "9": 0}
 
-    def plot(self, figure):
-        figure.clf()
+    def plot(self, rtt_fig, acc_fig):
+        rtt_fig.clf()
+        acc_fig.clf()
 
         # Line graph for round trip time
-        rtt_plot = figure.add_subplot(2, 1, 1)
+        rtt_plot = rtt_fig.add_subplot(1, 1, 1)
         rtt_x = range(0, len(self.rtt_list))
         rtt_y = self.rtt_list
 
@@ -97,7 +103,7 @@ class Infernet_Statistics:
         rtt_plot.title.set_text("Round Trip Time")
 
         # Bar graph for correct classifications
-        class_bar = figure.add_subplot(2, 1, 2)
+        class_bar = acc_fig.add_subplot(1, 1, 1)
         bar_x = np.arange(len(self.correct_classifications.keys()))
         class_bar.set_xticks(bar_x)
         class_bar.set_xticklabels(self.correct_classifications.keys())
@@ -125,7 +131,7 @@ class Infernet_Statistics:
         class_bar.set_ylabel("# Classifications")
         class_bar.set_xlabel("Digit")
 
-        figure.tight_layout(pad=2.0)
+        # figure.tight_layout(pad=2.0)
 
     def update(self, new_rtt, label, correct):
         """
@@ -246,10 +252,19 @@ class Infernet_GUI:
         self.hovering = -1
         self.num_imgs = [
             Pil_ImageTk.PhotoImage(Pil_Image.open("num/classification (" + str(x) + ").png"))
-            for x in range(10)]
+            for x in range(11)]
         self.last_start_btn_status = False
+        self.last_ia_btn_status = False
         self.stats = Infernet_Statistics()
-        # self.fpganet = n532.get_fpganet()
+        if os.name == 'nt':
+            self.fpganet = n532.get_fpganet()
+        self.piece_state_queue = queue.SimpleQueue()
+        self.piece_creation_queue = queue.SimpleQueue()
+        self.result_render_queue = queue.SimpleQueue()
+        self.stop_event_mainthread = threading.Event()
+        self.root.bind('<<update>>', self.queue_update_hook)
+        self.update_generator_thread = threading.Thread(target=self.update_event_generator)
+        self.update_generator_thread.start()
 
         # instantiate static bg
         self.bg = Pil_ImageTk.PhotoImage(Pil_Image.open("Static.png"))
@@ -262,6 +277,60 @@ class Infernet_GUI:
         self.build_inference_images()
         self.build_piece_map()
         self.build_stats_display()
+
+    def update_event_generator(self):
+        while True:
+            time.sleep(1/60)
+            self.root.event_generate('<<update>>', when='tail')
+
+    def queue_update_hook(self, ev):
+        max_updates = 100
+        while max_updates and not self.piece_state_queue.empty():
+            num, state = self.piece_state_queue.get()
+            self.pieces[num].state(state)
+            max_updates -= 1
+        max_updates = 100
+        while max_updates and not self.piece_creation_queue.empty():
+            p, i, x, y, w, h, c = self.piece_creation_queue.get()
+            self.pieces.append(Piece(p, i, x, y, w, h, c))
+            max_updates -= 1
+        max_updates = 10
+        while max_updates and not self.result_render_queue.empty():
+            i, encoded_result, rtt = self.result_render_queue.get()
+            image_dict = self.image_list[i]
+            image_gui = image_dict["gui"]
+            image_label = image_dict["label"]
+            if encoded_result:
+                # decode
+                decoded_result = decode_result(encoded_result)
+                inference_correct = bool(image_label == decoded_result)
+                self.result_labels.append(decoded_result)
+                # update piecemap
+                if inference_correct:
+                    self.piece_state_queue.put((i, 'good'))
+                else:
+                    self.piece_state_queue.put((i, 'bad'))
+                if not self.hovering:
+                    self.put_gui_inference_img(image_gui)
+                    self.put_gui_output_img(decoded_result)
+                # update graphs
+                self.stats.update(rtt, str(image_label), inference_correct)
+                self.stats.plot(self.rtt_fig, self.acc_fig)
+                self.rtt_canvas.draw()
+                self.acc_canvas.draw()
+                self.rtt_canvas.get_tk_widget().update_idletasks()
+                self.acc_canvas.get_tk_widget().update_idletasks()
+            else:
+                self.piece_state_queue.put((i, 'dark'))
+                self.result_labels.append(10)
+                if not self.hovering:
+                    self.put_gui_inference_img(image_gui)
+                    self.put_gui_output_img(10)
+        if self.stop_event_mainthread.isSet():
+            self.change_start_btn_mode(False)
+            self.return_ia_callback()
+            self.change_ia_btn_mode(True)
+            self.stop_event_mainthread.clear()
 
     def build_inference_images(self):
         # instantiate inference images
@@ -278,12 +347,14 @@ class Infernet_GUI:
         # instantiate string labels
         self.lb_address = tk.StringVar()
         self.lb_address.set("1.1.1.1")
+        self.lb_address.trace_add("write", self.update_ia_btn_status)
         self.lb_address_lbl = make_fixed_entry(self.content, 94, 287 - 2, 22 + 2, 198,
                                                textvariable=self.lb_address,
                                                bg=self.colors['btn'],
                                                fg=self.colors['1'],
                                                justify="left",
                                                font=self.font)
+
         self.ia_address = tk.StringVar()
         self.ia_address.set("2.2.2.2")
         self.ia_address.trace_add("write", self.update_start_btn_status)
@@ -293,6 +364,7 @@ class Infernet_GUI:
                                                fg=self.colors['1'],
                                                justify="left",
                                                font=self.font)
+
         self.directory = tk.StringVar()
         self.directory.set("Please Browse for Path")
         self.directory_lbl = make_fixed_entry(self.content, 186, 154, 22 + 2, 680,
@@ -301,6 +373,7 @@ class Infernet_GUI:
                                               fg=self.colors['1'],
                                               justify="left",
                                               font=self.font)
+
         self.file_count = tk.StringVar()
         self.file_count.set("No Images Found")
         self.file_count_lbl = make_fixed_label(self.content, 878, 154, 22, 142,
@@ -350,12 +423,12 @@ class Infernet_GUI:
                           width=83,
                           height=22,
                           corner_radius=5,
-                          command=self.request_ia_callback,
+                          command=lambda *args: None,
                           bg_color=self.colors['2'],
-                          fg_color=self.colors['btn'],
-                          text_color=self.colors['1'],
+                          fg_color=self.colors['btn_d'],
+                          text_color=self.colors['btn_dt'],
                           text_font=self.fontb,
-                          hover_color=self.colors['btn_h'])
+                          hover_color=self.colors['btn_d'])
         self.ia_btn.place(x=209, y=334)
 
     def build_piece_map(self):
@@ -379,7 +452,7 @@ class Infernet_GUI:
             for i in range(piece_count):
                 x = x_start + (sizes[0] + sizes[1]) * (i % sizes[2])
                 y = y_start + (sizes[0] + sizes[1]) * (i // sizes[2])
-                self.pieces.append(Piece(self.content, i, x, y, sizes[0], sizes[0], self.piece_hover_callback))
+                self.piece_creation_queue.put((self.content, i, x, y, sizes[0], sizes[0], self.piece_hover_callback))
 
     def build_stats_display(self) -> None:
         self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100)
@@ -408,6 +481,8 @@ class Infernet_GUI:
             self.ia_address.set(ia_ip)
             self.ia_btn.configure(command=self.return_ia_callback, text="Return")
             self.ia_address_lbl.configure(state='disabled')
+            self.lb_address_lbl.configure(state='disabled')
+            self.change_lb_btn_mode(False)
         else:
             self.ia_address.set("Request Failed")
 
@@ -418,39 +493,47 @@ class Infernet_GUI:
         else:
             self.ia_address.set("Return Failed")
         self.ia_address_lbl.configure(state='normal')
+        self.lb_address_lbl.configure(state='normal')
         self.ia_btn.configure(command=self.request_ia_callback, text="Request")
+        self.change_lb_btn_mode(True)
 
     def infer_button_callback(self):
-        """
-        Validate inputs and kick off inferences
-        """
-        logging.info("Infer button pressed, verifying inputs")
-        lb_ip = self.lb_address.get()
-        lb_port = self.lb_port.get()
-        directory = self.directory.get()
-        inputs_okay, err_msg = self.validate_inputs(lb_ip, lb_port, directory)
-        if not inputs_okay:
-            logging.info("User entered bad inputs" + err_msg)
-            self.system_status.set(err_msg)
-            return
+        self.stats.reset()
+        self.change_lb_btn_mode(False)
+        self.change_ia_btn_mode(False)
+        self.change_start_btn_mode(True)
+        self.ia_address_lbl.configure(state='disabled')
+        self.lb_address_lbl.configure(state='disabled')
+        self.infer_thread_inst = threading.Thread(target=self.infer_thread)
+        self.infer_thread_inst.start()
 
-        # mnist_image_regex = "[0-9]-*.jpg"
-        # image_path_list = glob.glob(directory + "/" + mnist_image_regex)
-        # if len(image_path_list) == 0:
-        #     logging.info("No images found in directory " + directory)
-        #     self.system_status.set("No Images Found")
-        #     return
+    def infer_thread(self):
+        self.stop_event = threading.Event()
 
-        self.system_status.set("CONTACTING LB")
-        # TODO interface with LB
-        # ia = "1.1.8.2"
-        lb, ia = self.contact_lb_and_get_ips()
-        if lb is None or ia is None:
-            return
+        def network_worker():
+            for i in range(len(self.image_list)):
+                if self.stop_event.isSet():
+                    self.stop_event.clear()
+                    break
+                image_dict = self.image_list[i]
+                start_time = timer()
+                encoded_result = n532.send_inference_packet_hardcore(self.fpganet,
+                                                                     self.ia_address.get(),
+                                                                     image_dict["nn"].tobytes(),
+                                                                     0.1)
+                end_time = timer()
+                rtt = end_time - start_time
+                self.result_render_queue.put((i, encoded_result, rtt))
+            pass
 
-        self.inference_loop(ia, 666)
-        self.system_status.set("DONE WITH INFERENCE")
-        cli.return_ia_to_lb(None, lb, ia)
+        network_thread = threading.Thread(target=network_worker)
+        network_thread.start()
+        network_thread.join()
+        self.stop_event_mainthread.set()
+
+    def infer_stop_callback(self):
+        self.stop_event.set()
+        pass
 
     def piece_hover_callback(self, piece, entered):
         if entered:
@@ -462,59 +545,6 @@ class Infernet_GUI:
         else:
             self.hovering = -1
 
-    def contact_lb_and_get_ips(self):
-        fpganet = n532.get_fpganet()
-        lb = cli.scan_for_lb(fpganet)
-        if lb is None:
-            self.system_status.set("ERROR: LB NOT FOUND")
-            return None, None
-        logging.info("Found lb:" + lb)
-        ia = cli.get_ia_from_lb(fpganet, lb)
-        if ia is not None:
-            logging.info("Got ia:" + ia)
-
-        # get_ia_from_lb(fpganet, lb)
-
-        return lb, ia
-
-    def inference_loop(self, ia_ip, ia_port):
-        self.stats.reset()
-        fpganet = n532.get_fpganet()
-
-        curr_img = 0
-        for image_dict in self.image_list:
-            image_nn = image_dict["nn"]
-            image_gui = image_dict["gui"]
-            image_label = image_dict["label"]
-            logging.info(image_dict["path"])
-
-            # Update GUI before inference
-            self.system_status.set("INFERING (%d/%d)" % (curr_img + 1, len(self.image_list)))
-            self.sent_img_canvas.itemconfig(self.sent_img_id, image=image_gui)
-            self.sent_img_canvas.update_idletasks()
-
-            # Do inference, get result
-            start_time = timer()
-            encoded_result = n532.send_inference_packet_hardcore(fpganet, ia_ip, image_nn.tobytes())
-            decoded_result = decode_result(encoded_result)
-            logging.info("Result is %d" % (decoded_result))
-            inference_correct = image_label == decoded_result
-            end_time = timer()
-
-            # Update statistics and redraw
-            round_trip_time = end_time - start_time
-            logging.info("Got round trip time of %f" % (round_trip_time))
-            self.stats.update(round_trip_time, str(image_label), inference_correct)
-            self.result_labels.append(image_label)
-            self.stats.plot(self.stats_fig)
-            self.stats_canvas.draw()
-            self.stats_canvas.get_tk_widget().update_idletasks()
-
-            time.sleep(0)
-            curr_img += 1
-
-        self.system_status.set("DONE")
-
     def change_start_btn_mode(self, is_inference):
         if is_inference:
             self.infer_btn.text_label['text'] = "STOP"
@@ -523,6 +553,22 @@ class Infernet_GUI:
         else:
             self.infer_btn.text_label['text'] = "START"
             self.update_start_btn_status()
+
+    def change_ia_btn_mode(self, enabled):
+        if enabled:
+            self.ia_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'], self.colors['1'])
+            self.ia_btn.function = self.request_ia_callback
+        else:
+            self.ia_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'], self.colors['btn_dt'])
+            self.ia_btn.function = lambda *args: None
+
+    def change_lb_btn_mode(self, enabled):
+        if enabled:
+            self.lb_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'], self.colors['1'])
+            self.lb_btn.function = self.scan_for_lb_callback
+        else:
+            self.lb_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'], self.colors['btn_dt'])
+            self.lb_btn.function = lambda *args: None
 
     def update_start_btn_status(self, name=None, index=None, mode=None) -> None:
         new_status = bool(n532.fpga_ip_to_num(self.ia_address.get()) and self.image_list)
@@ -535,29 +581,58 @@ class Infernet_GUI:
                 self.infer_btn.function = lambda *args: print("START button disabled!")
         self.last_start_btn_status = new_status
 
+    def update_ia_btn_status(self, name=None, index=None, mode=None) -> None:
+        r = n532.fpga_ip_to_num(self.lb_address.get())
+        r = bool(r)
+        if r != self.last_ia_btn_status:
+            self.change_ia_btn_mode(r)
+        self.last_ia_btn_status = r
+
     def put_gui_inference_img(self, img) -> None:
-        self.infer_input_img_label.configure(image=img)
+        img2 = Pil_ImageTk.PhotoImage(img)
+        self.infer_input_img_label.configure(image=img2)
+        self.infer_input_img_label.image = img2
 
     def put_gui_output_img(self, num: int) -> None:
         self.infer_output_img_label.configure(image=self.num_imgs[num])
 
     def configure_image_list(self):
-        self.image_list = []
         mnist_image_regex = "[0-9]-*.jpg"
         image_path_list = glob.glob(self.directory.get() + "/" + mnist_image_regex)
-        if len(image_path_list) == 0:
-            self.file_count.set("No Images Found")
-        else:
-            for image_path in image_path_list:
-                image_nn = load_and_shape_image_for_nn(image_path)
-                image_gui = Pil_ImageTk.PhotoImage(reshape_nn_img_for_gui(image_nn))
-                image_label = int(os.path.basename(image_path)[0])
-                image_data_dict = {"nn": image_nn, "gui": image_gui, "path": image_path, "label": image_label}
-                self.image_list.append(image_data_dict)
-            self.file_count.set(f"{len(image_path_list)} Images Found")
+        self.file_count.set(f"Working...")
+        self.root.update_idletasks()
+
+        def image_loader_worker(image_path_list) -> list:
+            local = threading.local()
+            local.image_list = []
+            if len(image_path_list):
+                for local.image_path in image_path_list:
+                    local.image_nn = load_and_shape_image_for_nn(local.image_path)
+                    local.image_label = int(os.path.basename(local.image_path)[0])
+                    local.image_gui = reshape_nn_img_for_gui(local.image_nn)
+                    local.image_data_dict = {"nn": local.image_nn, "gui": local.image_gui, "path": local.image_path, "label": local.image_label}
+                    local.image_list.append(local.image_data_dict)
+            return local.image_list
+
+        with cf.ThreadPoolExecutor() as pool:
+            n = 500
+            futures = [pool.submit(image_loader_worker, image_path_list[i * n: (i + 1) * n])
+                       for i in range(len(image_path_list) // n + 1)]
+            futures = [f.result() for f in futures]
+            self.image_list = []
+            for x in futures:
+                self.image_list += x
+
+        if self.image_list:
+            self.file_count.set(f"{len(self.image_list)} Images Found")
             self.put_gui_inference_img(self.image_list[0]['gui'])
-            self.build_piece_map()
-            self.update_start_btn_status()
+        else:
+            self.file_count.set(f"No Images Found")
+        self.build_piece_map()
+        self.update_start_btn_status()
+
+
+
 
 
 def main():
