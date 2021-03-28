@@ -183,6 +183,65 @@ class Piece:
             self.frame.configure(bg=COLORS['0'], highlightthickness=0)
 
 
+class PieceMap:
+    def __init__(self, parent, count, hover_cb):
+        self.count = count
+        self.hover_cb = hover_cb
+        x_start = 736
+        y_start = 254
+        # dataset has 41100, w = 272, h = 134
+        w_thresh = [((16, 4, 14, 7), 98),
+                    ((14, 3, 16, 8), 128),
+                    ((12, 3, 18, 9), 162),
+                    ((10, 2, 23, 11), 253),
+                    ((8, 2, 27, 13), 351),
+                    ((6, 2, 34, 17), 578),
+                    ((5, 2, 39, 19), 741),
+                    ((5, 1, 45, 23), 1035),
+                    ((4, 1, 55, 27), 1485),
+                    ((3, 1, 68, 34), 2312),
+                    ((4, 1, 55, 27), 1485),
+                    ((2, 1, 91, 45), 4095),
+                    ((2, 0, 136, 67), 9112),
+                    ((1, 0, 272, 134), 36448)]
+        sizes = min([x for x in w_thresh if x[1] > count], key=lambda x: x[1])[0]
+        self.sizes = sizes
+        w = sizes[0] * sizes[2] + sizes[1] * (sizes[2] - 1)
+        h = sizes[0] * sizes[3] + sizes[1] * (sizes[3] - 1)
+        self.canvas = tk.Canvas(parent, width=w, height=h, bg=COLORS['2'], highlightthickness=0)
+        self.canvas.place(x=x_start, y=y_start)
+        self.pieces = []
+
+        def make_cb_lambda(cb, i, entered):
+            return lambda *args: cb(i, entered)
+
+        for i in range(count):
+            i2 = int(i)
+            x1 = (sizes[0] + sizes[1]) * (i % sizes[2])
+            x2 = x1 + sizes[0]
+            y1 = (sizes[0] + sizes[1]) * (i // sizes[2])
+            y2 = y1 + sizes[0]
+            tag = self.canvas.create_rectangle(x1, y1, x2, y2, fill=COLORS['1'], outline=COLORS['1'], width=0)
+            self.pieces.append(tag)
+            self.canvas.tag_bind(tag, '<Enter>', make_cb_lambda(hover_cb, i, True))
+            self.canvas.tag_bind(tag, '<Leave>', make_cb_lambda(hover_cb, i, False))
+
+    def destroy(self):
+        self.canvas.destroy()
+
+    def state(self, num: int, state: str):
+        if state == 'init':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['1'], width=0)
+        if state == 'null':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['2'], width=1)
+        if state == 'bad':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['3'], width=0)
+        if state == 'good':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['hl'], width=0)
+        if state == 'dark':
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['0'], width=0)
+
+
 def make_fixed_label(parent, x, y, h, w, *args, **kwargs) -> tk.Label:
     f = tk.Frame(parent, height=h, width=w)
     f.place(x=x, y=y)
@@ -248,6 +307,7 @@ class Infernet_GUI:
         # other properties and state
         self.image_list = []
         self.pieces = []
+        self.piece_map = None
         self.result_labels = []
         self.hovering = -1
         self.num_imgs = [
@@ -279,6 +339,7 @@ class Infernet_GUI:
         self.build_stats_display()
 
     def update_event_generator(self):
+        time.sleep(1)
         while True:
             time.sleep(1/60)
             self.root.event_generate('<<update>>', when='tail')
@@ -310,8 +371,10 @@ class Infernet_GUI:
                     self.piece_state_queue.put((i, 'good'))
                 else:
                     self.piece_state_queue.put((i, 'bad'))
-                if not self.hovering:
+                if self.hovering == -1:
                     self.put_gui_inference_img(image_gui)
+                    self.put_gui_output_img(decoded_result)
+                elif self.hovering == i:
                     self.put_gui_output_img(decoded_result)
                 # update graphs
                 self.stats.update(rtt, str(image_label), inference_correct)
@@ -323,7 +386,7 @@ class Infernet_GUI:
             else:
                 self.piece_state_queue.put((i, 'dark'))
                 self.result_labels.append(10)
-                if not self.hovering:
+                if self.hovering == -1:
                     self.put_gui_inference_img(image_gui)
                     self.put_gui_output_img(10)
         if self.stop_event_mainthread.isSet():
@@ -432,27 +495,13 @@ class Infernet_GUI:
         self.ia_btn.place(x=209, y=334)
 
     def build_piece_map(self):
-        x_start = 736
-        y_start = 254
-        # dataset has 41100
-        w_thresh = [((16, 4, 14, 7), 98),
-                    ((8, 2, 27, 13), 351),
-                    ((4, 1, 55, 27), 1485),
-                    ((2, 0, 136, 67), 9114),
-                    ((1, 0, 272, 134), 36448)]
-        if not self.pieces:
-            self.pieces = []
-            self.pieces.append(Piece(self.content, 0, x_start, y_start, 16, 16, lambda *args: None))
-            self.pieces[0].state('null')
+        if self.piece_map:
+            self.piece_map.destroy()
+        if len(self.image_list):
+            self.piece_map = PieceMap(self.content, len(self.image_list), self.piece_hover_callback)
         else:
-            for piece in self.pieces:
-                piece.destroy()
-            piece_count = len(self.image_list)
-            sizes = min([x for x in w_thresh if x[1] > piece_count], key=lambda x: x[1])[0]
-            for i in range(piece_count):
-                x = x_start + (sizes[0] + sizes[1]) * (i % sizes[2])
-                y = y_start + (sizes[0] + sizes[1]) * (i // sizes[2])
-                self.piece_creation_queue.put((self.content, i, x, y, sizes[0], sizes[0], self.piece_hover_callback))
+            self.piece_map = PieceMap(self.root, 1, lambda *args: None)
+            self.piece_map.state(0, 'null')
 
     def build_stats_display(self) -> None:
         self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100)
@@ -535,13 +584,13 @@ class Infernet_GUI:
         self.stop_event.set()
         pass
 
-    def piece_hover_callback(self, piece, entered):
+    def piece_hover_callback(self, i, entered):
         if entered:
-            self.hovering = piece.num
-            imgs: dict = self.image_list[piece.num]
+            self.hovering = i
+            imgs: dict = self.image_list[i]
             self.put_gui_inference_img(imgs['gui'])
-            if len(self.result_labels) > piece.num:
-                self.put_gui_output_img(self.result_labels[piece.num])
+            if len(self.result_labels) > i:
+                self.put_gui_output_img(self.result_labels[i])
         else:
             self.hovering = -1
 
