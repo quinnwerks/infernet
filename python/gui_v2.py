@@ -10,6 +10,7 @@ import time
 from timeit import default_timer as timer
 
 import os
+import math
 import threading
 import queue
 import concurrent.futures as cf
@@ -43,7 +44,13 @@ COLORS = {
     "btn_dt": "#4D4D4D",
     "hl_h": "#E69D00",
     "hl_d": "#996900",
-    "1_d": "#4D2F1F"
+    "1_d": "#4D2F1F",
+    "plot_red": "#B30000",
+    "plot_green": "#68B312",
+    "plot_cyan": "#12B3B2",
+    "plot_purple": "#9A09B3",
+    "plot_label": "#FFAE00",
+    "plot_bg": "#4D1C00"
 }
 
 NN_INPUT_W = 28
@@ -189,7 +196,7 @@ class PieceMap:
         self.hover_cb = hover_cb
         x_start = 736
         y_start = 254
-        # dataset has 41100, w = 272, h = 134
+        # dataset has 42000, w = 272, h = 134
         w_thresh = [((16, 4, 14, 7), 98),
                     ((14, 3, 16, 8), 128),
                     ((12, 3, 18, 9), 162),
@@ -203,7 +210,8 @@ class PieceMap:
                     ((4, 1, 55, 27), 1485),
                     ((2, 1, 91, 45), 4095),
                     ((2, 0, 136, 67), 9112),
-                    ((1, 0, 272, 134), 36448)]
+                    # ((1, 0, 272, 134), 36448)]
+                    ((1, 0, 272, 134), 0x7fffffff)]
         sizes = min([x for x in w_thresh if x[1] > count], key=lambda x: x[1])[0]
         self.sizes = sizes
         w = sizes[0] * sizes[2] + sizes[1] * (sizes[2] - 1)
@@ -216,7 +224,6 @@ class PieceMap:
             return lambda *args: cb(i, entered)
 
         for i in range(count):
-            i2 = int(i)
             x1 = (sizes[0] + sizes[1]) * (i % sizes[2])
             x2 = x1 + sizes[0]
             y1 = (sizes[0] + sizes[1]) * (i // sizes[2])
@@ -278,7 +285,7 @@ def reshape_nn_img_for_gui(img):
 
 
 def decode_result(encoded_bytes):
-    return int.from_bytes(encoded_bytes, byteorder='big')
+    return int(math.log2(encoded_bytes))
 
 
 class Infernet_GUI:
@@ -300,7 +307,8 @@ class Infernet_GUI:
         # instantiate window
         self.root = tk.Tk()
         self.root.title("Infernet")
-        self.root.geometry("1024x640")
+        self.root.geometry(f"1024x640+{int(self.root.winfo_screenwidth()/2-512)}+{int(self.root.winfo_screenheight()/2-320)}")
+        self.root.resizable(False, False)
         self.content = ttk.Frame(self.root, padding=0)
         self.content.pack(fill=tk.BOTH, expand=1)
 
@@ -322,6 +330,7 @@ class Infernet_GUI:
         self.piece_creation_queue = queue.SimpleQueue()
         self.result_render_queue = queue.SimpleQueue()
         self.stop_event_mainthread = threading.Event()
+        self.quit_event = threading.Event()
         self.root.bind('<<update>>', self.queue_update_hook)
         self.update_generator_thread = threading.Thread(target=self.update_event_generator)
         self.update_generator_thread.start()
@@ -342,6 +351,8 @@ class Infernet_GUI:
         time.sleep(1)
         while True:
             time.sleep(1/60)
+            if self.quit_event.isSet():
+                return
             self.root.event_generate('<<update>>', when='tail')
 
     def queue_update_hook(self, ev):
@@ -564,6 +575,8 @@ class Infernet_GUI:
                 if self.stop_event.isSet():
                     self.stop_event.clear()
                     break
+                if self.quit_event.isSet():
+                    return
                 image_dict = self.image_list[i]
                 start_time = timer()
                 encoded_result = n532.send_inference_packet_hardcore(self.fpganet,
@@ -655,6 +668,8 @@ class Infernet_GUI:
             local = threading.local()
             local.image_list = []
             if len(image_path_list):
+                if self.quit_event.isSet():
+                    return []
                 for local.image_path in image_path_list:
                     local.image_nn = load_and_shape_image_for_nn(local.image_path)
                     local.image_label = int(os.path.basename(local.image_path)[0])
@@ -692,6 +707,7 @@ def main():
     logging.info("Starting Infernet.")
     gui = Infernet_GUI()
     gui.root.mainloop()
+    gui.quit_event.set()
 
 
 if __name__ == '__main__':

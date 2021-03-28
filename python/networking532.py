@@ -167,9 +167,9 @@ def send_inference_packet_hardcore(fpganet, ia_ip, imgdata, timeout=None):
     else:
         res = None
     # print result
-    # byte_list = list(res[0].getlayer(scapy.Raw).load)
-    # return [byte_list[0], byte_list[1]]
-    return res
+    byte_list = list(res.getlayer(scapy.Raw).load)
+    return (int(byte_list[0] << 8)) | int(byte_list[1])
+    # return res
 
 
 # sniff(iface="ASIX AX88772 USB2.0 to Fast Ethernet Adapter", filter="ether[0:4] = 0x000a3500 or ether [6:4] = 0x000a3500", prn=lambda x: x.show())
