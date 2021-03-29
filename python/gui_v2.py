@@ -32,6 +32,14 @@ from tkinter_custom_button import TkinterCustomButton as TCB
 import networking532 as n532
 import client as cli
 
+plt.rc('font', size=10)          # controls default text sizes
+plt.rc('axes', titlesize=10)     # fontsize of the axes title
+plt.rc('axes', labelsize=10)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=8)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=8)    # fontsize of the tick labels
+plt.rc('legend', fontsize=8)    # legend fontsize
+plt.rc('figure', titlesize=10)  # fontsize of the figure title
+
 COLORS = {
     "0": "#1A0E00",
     "1": "#4D1C00",
@@ -50,7 +58,7 @@ COLORS = {
     "plot_cyan": "#12B3B2",
     "plot_purple": "#9A09B3",
     "plot_label": "#FFAE00",
-    "plot_bg": "#4D1C00"
+    "plot_bg": "#5C2100"
 }
 
 NN_INPUT_W = 28
@@ -88,14 +96,26 @@ class Infernet_Statistics:
 
         # Line graph for round trip time
         rtt_plot = rtt_fig.add_subplot(1, 1, 1)
+        rtt_fig.patch.set_facecolor(COLORS['plot_bg'])
+        rtt_plot.set_facecolor(COLORS['plot_bg'])
+        rtt_plot.spines['bottom'].set_color(COLORS['plot_label'])
+        rtt_plot.spines['top'].set_color(COLORS['plot_label'])
+        rtt_plot.spines['right'].set_color(COLORS['plot_label'])
+        rtt_plot.spines['left'].set_color(COLORS['plot_label'])
+        rtt_plot.tick_params(axis='x', colors=COLORS['plot_label'])
+        rtt_plot.tick_params(axis='y', colors=COLORS['plot_label'])
+        rtt_plot.yaxis.label.set_color(COLORS['plot_label'])
+        rtt_plot.xaxis.label.set_color(COLORS['plot_label'])
+        rtt_plot.title.set_color(COLORS['plot_label'])
+
         rtt_x = range(0, len(self.rtt_list))
         rtt_y = self.rtt_list
 
         rtt_y_mean = self.mean_rtt_list
-        rtt_plot.plot(rtt_x, rtt_y, '-b', label="round trip time")
-        rtt_plot.plot(rtt_x, rtt_y_mean, '--g', label="mean round trip time")
+        rtt_plot.plot(rtt_x, rtt_y, '-', color=COLORS['plot_cyan'], label="rtt")
+        rtt_plot.plot(rtt_x, rtt_y_mean, '--', color=COLORS['plot_purple'], label="µ")
 
-        rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.1e'))
+        rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f'))
         rtt_plot.legend()
 
         max_rtt_x = max(rtt_x) + 1
@@ -105,12 +125,31 @@ class Infernet_Statistics:
             ticks_rtt_x = max_rtt_x / max_ticks_rtt_x
         rtt_plot.xaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
         rtt_plot.xaxis.set_major_locator(mtick.MultipleLocator(ticks_rtt_x))
-        rtt_plot.set_ylabel("Time (Seconds)")
-        rtt_plot.set_xlabel("Inference #")
-        rtt_plot.title.set_text("Round Trip Time")
+        max_rtt_y = max(rtt_y)
+        ticks_rtt_y = 1
+        max_ticks_rtt_y = 6
+        if max_rtt_y > max_ticks_rtt_y:
+            ticks_rtt_y = max_rtt_y // max_ticks_rtt_y + 1
+        rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
+        rtt_plot.yaxis.set_major_locator(mtick.MultipleLocator(ticks_rtt_y))
+        # rtt_plot.set_ylabel("Time (Seconds)")
+        # rtt_plot.set_xlabel("Inference #")
+        rtt_plot.title.set_text("Round Trip Time (ms vs #)")
 
         # Bar graph for correct classifications
         class_bar = acc_fig.add_subplot(1, 1, 1)
+        acc_fig.patch.set_facecolor(COLORS['plot_bg'])
+        class_bar.set_facecolor(COLORS['plot_bg'])
+        class_bar.spines['bottom'].set_color(COLORS['plot_label'])
+        class_bar.spines['top'].set_color(COLORS['plot_label'])
+        class_bar.spines['right'].set_color(COLORS['plot_label'])
+        class_bar.spines['left'].set_color(COLORS['plot_label'])
+        class_bar.tick_params(axis='x', colors=COLORS['plot_label'])
+        class_bar.tick_params(axis='y', colors=COLORS['plot_label'])
+        class_bar.yaxis.label.set_color(COLORS['plot_label'])
+        class_bar.xaxis.label.set_color(COLORS['plot_label'])
+        class_bar.title.set_color(COLORS['plot_label'])
+
         bar_x = np.arange(len(self.correct_classifications.keys()))
         class_bar.set_xticks(bar_x)
         class_bar.set_xticklabels(self.correct_classifications.keys())
@@ -120,9 +159,9 @@ class Infernet_Statistics:
 
         bar_width = 0.2
         class_bar.bar(bar_x - bar_width / 2, bar_y_correct, width=bar_width,
-                      color='b', align='center', label="correct")
+                      color=COLORS['plot_green'], align='center', label="√")
         class_bar.bar(bar_x + bar_width / 2, bar_y_incorrect, width=bar_width,
-                      color='r', align='center', label="incorrect")
+                      color=COLORS['plot_red'], align='center', label="x")
 
         # Set bar graph to integer labels only on y axis
         max_bar_y = max(max(bar_y_incorrect) + 1, max(bar_y_correct) + 1)
@@ -133,18 +172,19 @@ class Infernet_Statistics:
         class_bar.yaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
         class_bar.yaxis.set_major_locator(mtick.MultipleLocator(ticks_bar_y))
 
-        class_bar.title.set_text("Classification Accuracy")
+        class_bar.title.set_text("Classification Accuracy (count vs digit)")
         class_bar.legend()
-        class_bar.set_ylabel("# Classifications")
-        class_bar.set_xlabel("Digit")
+        # class_bar.set_ylabel("# Classifications")
+        # class_bar.set_xlabel("Digit")
 
-        # figure.tight_layout(pad=2.0)
+        rtt_fig.tight_layout(pad=0.5)
+        acc_fig.tight_layout(pad=0.5)
 
     def update(self, new_rtt, label, correct):
         """
         Update the current statistics state.
         """
-        self.rtt_list.append(new_rtt)
+        self.rtt_list.append(new_rtt*1000)
         self.mean_rtt_list.append(statistics.mean(self.rtt_list))
         if correct:
             self.correct_classifications[label] += 1
@@ -213,7 +253,7 @@ class PieceMap:
         if state == 'init':
             self.canvas.itemconfigure(self.pieces[num], fill=COLORS['1'], width=0)
         if state == 'null':
-            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['2'], width=1)
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['2'], width=2)
         if state == 'bad':
             self.canvas.itemconfigure(self.pieces[num], fill=COLORS['3'], width=0)
         if state == 'good':
@@ -299,6 +339,8 @@ class Infernet_GUI:
         self.lb_got = False
         self.ia_got = False
         self.inferring = False
+        self.lb_btn_mode = True
+        self.ia_btn_mode = (False, True)
         self.stats = Infernet_Statistics()
         if os.name == 'nt':
             self.fpganet = n532.get_fpganet()
@@ -306,8 +348,7 @@ class Infernet_GUI:
         self.quit_event = threading.Event()
         self.stop_event = threading.Event()
         self.root.bind('<<update>>', self.queue_update_hook)
-        self.update_generator_thread = threading.Thread(target=self.update_event_generator)
-        self.update_generator_thread.start()
+        self.update_generator_thread = None
 
         # instantiate static bg
         self.bg = Pil_ImageTk.PhotoImage(Pil_Image.open("Static.png"))
@@ -342,7 +383,7 @@ class Infernet_GUI:
         self.root.destroy()
 
     def update_event_generator(self):
-        time.sleep(1)
+        time.sleep(3)
         while True:
             time.sleep(1/60)
             if self.quit_event.isSet():
@@ -505,11 +546,10 @@ class Infernet_GUI:
             self.piece_map.state(0, 'null')
 
     def build_stats_display(self) -> None:
-        self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100, facecolor=COLORS['plot_bg'])
         self.rtt_canvas = FigureCanvasTkAgg(self.rtt_fig, master=self.content)
         self.rtt_canvas.get_tk_widget().place(x=94, y=464)
-
-        self.acc_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.acc_fig = Figure(figsize=(4.5, 1.6), dpi=100, facecolor=COLORS['plot_bg'])
         self.acc_canvas = FigureCanvasTkAgg(self.acc_fig, master=self.content)
         self.acc_canvas.get_tk_widget().place(x=558, y=464)
 
@@ -568,6 +608,9 @@ class Infernet_GUI:
         self.lb_address_lbl.configure(state='disabled')
         self.infer_thread_inst = threading.Thread(target=self.infer_thread)
         self.infer_thread_inst.start()
+        if not self.update_generator_thread:
+            self.update_generator_thread = threading.Thread(target=self.update_event_generator)
+            self.update_generator_thread.start()
 
     def infer_thread(self):
 

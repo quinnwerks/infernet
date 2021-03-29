@@ -74,7 +74,7 @@ def do_inference(fpganet, ia_ip, imgpath):
 
 def scan_for_lb_thread(fpganet, ip) -> Union[str, None]:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.settimeout(0.5)
+        s.settimeout(2)
         try:
             s.connect((ip, n532.LB_TCP_PORT))
             s.sendall(n532.CLIENT_DONE_STR)
