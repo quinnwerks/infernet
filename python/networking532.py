@@ -166,6 +166,8 @@ def send_inference_packet_hardcore(fpganet, ia_ip, imgdata, timeout=None):
         # res.show()
     else:
         res = None
+    if not res:
+        return None
     # print result
     byte_list = list(res.getlayer(scapy.Raw).load)
     return (int(byte_list[0] << 8)) | int(byte_list[1])

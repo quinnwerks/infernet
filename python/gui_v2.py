@@ -359,7 +359,7 @@ class Infernet_GUI:
         max_updates = 100
         while max_updates and not self.piece_state_queue.empty():
             num, state = self.piece_state_queue.get()
-            self.pieces[num].state(state)
+            self.piece_map.state(num, state)
             max_updates -= 1
         max_updates = 100
         while max_updates and not self.piece_creation_queue.empty():
@@ -402,7 +402,7 @@ class Infernet_GUI:
                     self.put_gui_output_img(10)
         if self.stop_event_mainthread.isSet():
             self.change_start_btn_mode(False)
-            self.return_ia_callback()
+            #self.return_ia_callback()
             self.change_ia_btn_mode(True)
             self.stop_event_mainthread.clear()
 
