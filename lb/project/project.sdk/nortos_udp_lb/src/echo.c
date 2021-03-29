@@ -189,6 +189,7 @@ u8_t fpgaNumToMacByte(u8_t num){
 
 int fpga_list_add(uint8_t* list, uint8_t num){
 	for(size_t i = 0; i < FPGA_COUNT; i++){
+		if(list[i] == num) return -1;
 		if(list[i] == FPGA_NUM_SENTINEL){
 			list[i] = num;
 			return 1;
