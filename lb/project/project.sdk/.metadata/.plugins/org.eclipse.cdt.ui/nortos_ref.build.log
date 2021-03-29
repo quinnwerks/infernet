@@ -1,6 +1,36 @@
-23:12:05 **** Incremental Build of configuration Debug for project nortos_ref ****
+00:05:17 **** Auto Build of configuration Debug for project nortos_ref ****
 make all 
-make: Nothing to be done for 'all'.
+'Building file: ../src/echo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -I../../nortos_ref_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+'Finished building: ../src/echo.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../nortos_ref_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../nortos_ref_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/platform_mb.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_mb.o" -I../../nortos_ref_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform_mb.d" -MT"src/platform_mb.o" -o "src/platform_mb.o" "../src/platform_mb.c"
+'Finished building: ../src/platform_mb.c'
+' '
+'Building target: nortos_ref.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../nortos_ref_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "nortos_ref.elf"  ./src/echo.o ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+'Finished building target: nortos_ref.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size nortos_ref.elf  |tee "nortos_ref.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  92654	   1428	3962278	4056360	 3de528	nortos_ref.elf
+'Finished building: nortos_ref.elf.size'
+' '
 
-23:12:05 Build Finished (took 649ms)
+00:05:24 Build Finished (took 6s.422ms)
 

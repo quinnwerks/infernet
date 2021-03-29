@@ -107,6 +107,8 @@ class TkinterCustomButton(tkinter.Frame):
         self.text_label = None
         self.image_label = None
 
+        self.is_hovered = False
+
         self.draw()
 
     def draw(self):
@@ -118,32 +120,33 @@ class TkinterCustomButton(tkinter.Frame):
         # border button parts
         if self.border_width > 0:
 
-            if self.corner_radius > 0:
-                self.canvas_border_parts.append(self.canvas.create_oval(0,
-                                                                        0,
-                                                                        self.corner_radius * 2,
-                                                                        self.corner_radius * 2))
-                self.canvas_border_parts.append(self.canvas.create_oval(self.width - self.corner_radius * 2,
-                                                                        0,
-                                                                        self.width,
-                                                                        self.corner_radius * 2))
-                self.canvas_border_parts.append(self.canvas.create_oval(0,
-                                                                        self.height - self.corner_radius * 2,
-                                                                        self.corner_radius * 2,
-                                                                        self.height))
-                self.canvas_border_parts.append(self.canvas.create_oval(self.width - self.corner_radius * 2,
-                                                                        self.height - self.corner_radius * 2,
-                                                                        self.width,
-                                                                        self.height))
-
-            self.canvas_border_parts.append(self.canvas.create_rectangle(0,
-                                                                         self.corner_radius,
-                                                                         self.width,
-                                                                         self.height - self.corner_radius))
-            self.canvas_border_parts.append(self.canvas.create_rectangle(self.corner_radius,
-                                                                         0,
-                                                                         self.width - self.corner_radius,
-                                                                         self.height))
+            # if self.corner_radius > 0:
+            #     self.canvas_border_parts.append(self.canvas.create_oval(0,
+            #                                                             0,
+            #                                                             self.corner_radius * 2,
+            #                                                             self.corner_radius * 2))
+            #     self.canvas_border_parts.append(self.canvas.create_oval(self.width - 1 - self.corner_radius * 2,
+            #                                                             0,
+            #                                                             self.width - 1,
+            #                                                             self.corner_radius * 2))
+            #     self.canvas_border_parts.append(self.canvas.create_oval(0,
+            #                                                             self.height - 1 - self.corner_radius * 2,
+            #                                                             self.corner_radius * 2,
+            #                                                             self.height - 1))
+            #     self.canvas_border_parts.append(self.canvas.create_oval(self.width - 1 - self.corner_radius * 2,
+            #                                                             self.height - 1 - self.corner_radius * 2,
+            #                                                             self.width - 1,
+            #                                                             self.height - 1))
+            #
+            # self.canvas_border_parts.append(self.canvas.create_rectangle(0,
+            #                                                              self.corner_radius - 1,
+            #                                                              self.width,
+            #                                                              self.height - self.corner_radius))
+            # self.canvas_border_parts.append(self.canvas.create_rectangle(self.corner_radius - 1,
+            #                                                              0,
+            #                                                              self.width - self.corner_radius,
+            #                                                              self.height))
+            pass
 
         # inner button parts
 
@@ -152,16 +155,16 @@ class TkinterCustomButton(tkinter.Frame):
                                                                 self.border_width,
                                                                 self.border_width + self.inner_corner_radius * 2,
                                                                 self.border_width + self.inner_corner_radius * 2))
-            self.canvas_fg_parts.append(self.canvas.create_oval(self.width - self.border_width - self.inner_corner_radius * 2,
+            self.canvas_fg_parts.append(self.canvas.create_oval(self.width - self.border_width - self.inner_corner_radius * 2 - 1,
                                                                 self.border_width,
                                                                 self.width - self.border_width,
                                                                 self.border_width + self.inner_corner_radius * 2))
             self.canvas_fg_parts.append(self.canvas.create_oval(self.border_width,
-                                                                self.height - self.border_width - self.inner_corner_radius * 2,
+                                                                self.height - self.border_width - self.inner_corner_radius * 2 - 1,
                                                                 self.border_width + self.inner_corner_radius * 2,
                                                                 self.height-self.border_width))
-            self.canvas_fg_parts.append(self.canvas.create_oval(self.width - self.border_width - self.inner_corner_radius * 2,
-                                                                self.height - self.border_width - self.inner_corner_radius * 2,
+            self.canvas_fg_parts.append(self.canvas.create_oval(self.width - self.border_width - self.inner_corner_radius * 2 - 1,
+                                                                self.height - self.border_width - self.inner_corner_radius * 2 - 1,
                                                                 self.width - self.border_width,
                                                                 self.height - self.border_width))
 
@@ -240,13 +243,20 @@ class TkinterCustomButton(tkinter.Frame):
             if self.text_part is not None:
                 self.canvas.itemconfig(self.text_part, fill=self.text_color)
 
-        self.draw()
+        # self.draw()
+        if self.is_hovered:
+            self.on_enter()
+        else:
+            self.on_leave()
 
     def set_text(self, text):
         if self.text_label is not None:
+            self.text = text
             self.text_label.configure(text=text)
 
     def on_enter(self, event=0):
+        self.is_hovered = True
+
         for part in self.canvas_fg_parts:
             self.canvas.itemconfig(part, fill=self.hover_color, width=0)
 
@@ -259,6 +269,8 @@ class TkinterCustomButton(tkinter.Frame):
             self.image_label.configure(bg=self.hover_color)
 
     def on_leave(self, event=0):
+        self.is_hovered = False
+
         for part in self.canvas_fg_parts:
             self.canvas.itemconfig(part, fill=self.fg_color, width=0)
 

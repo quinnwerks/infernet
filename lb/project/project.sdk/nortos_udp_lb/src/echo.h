@@ -23,8 +23,10 @@
 #define SRC_ECHO_H_
 
 #ifndef THIS_BOARD_NUM
-#define THIS_BOARD_NUM 2
+#define THIS_BOARD_NUM 8
 #endif
+
+#define MIN_SCAN_TRIES 10
 
 #define CLIENT_UDP_PORT 4000
 #define IA_UDP_PORT 666

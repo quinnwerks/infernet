@@ -32,6 +32,14 @@ from tkinter_custom_button import TkinterCustomButton as TCB
 import networking532 as n532
 import client as cli
 
+plt.rc('font', size=10)          # controls default text sizes
+plt.rc('axes', titlesize=10)     # fontsize of the axes title
+plt.rc('axes', labelsize=10)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=8)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=8)    # fontsize of the tick labels
+plt.rc('legend', fontsize=8)    # legend fontsize
+plt.rc('figure', titlesize=10)  # fontsize of the figure title
+
 COLORS = {
     "0": "#1A0E00",
     "1": "#4D1C00",
@@ -50,7 +58,7 @@ COLORS = {
     "plot_cyan": "#12B3B2",
     "plot_purple": "#9A09B3",
     "plot_label": "#FFAE00",
-    "plot_bg": "#4D1C00"
+    "plot_bg": "#5C2100"
 }
 
 NN_INPUT_W = 28
@@ -88,14 +96,26 @@ class Infernet_Statistics:
 
         # Line graph for round trip time
         rtt_plot = rtt_fig.add_subplot(1, 1, 1)
+        rtt_fig.patch.set_facecolor(COLORS['plot_bg'])
+        rtt_plot.set_facecolor(COLORS['plot_bg'])
+        rtt_plot.spines['bottom'].set_color(COLORS['plot_label'])
+        rtt_plot.spines['top'].set_color(COLORS['plot_label'])
+        rtt_plot.spines['right'].set_color(COLORS['plot_label'])
+        rtt_plot.spines['left'].set_color(COLORS['plot_label'])
+        rtt_plot.tick_params(axis='x', colors=COLORS['plot_label'])
+        rtt_plot.tick_params(axis='y', colors=COLORS['plot_label'])
+        rtt_plot.yaxis.label.set_color(COLORS['plot_label'])
+        rtt_plot.xaxis.label.set_color(COLORS['plot_label'])
+        rtt_plot.title.set_color(COLORS['plot_label'])
+
         rtt_x = range(0, len(self.rtt_list))
         rtt_y = self.rtt_list
 
         rtt_y_mean = self.mean_rtt_list
-        rtt_plot.plot(rtt_x, rtt_y, '-b', label="round trip time")
-        rtt_plot.plot(rtt_x, rtt_y_mean, '--g', label="mean round trip time")
+        rtt_plot.plot(rtt_x, rtt_y, '-', color=COLORS['plot_cyan'], label="rtt")
+        rtt_plot.plot(rtt_x, rtt_y_mean, '--', color=COLORS['plot_purple'], label="µ")
 
-        rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.1e'))
+        rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%.0f'))
         rtt_plot.legend()
 
         max_rtt_x = max(rtt_x) + 1
@@ -105,12 +125,31 @@ class Infernet_Statistics:
             ticks_rtt_x = max_rtt_x / max_ticks_rtt_x
         rtt_plot.xaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
         rtt_plot.xaxis.set_major_locator(mtick.MultipleLocator(ticks_rtt_x))
-        rtt_plot.set_ylabel("Time (Seconds)")
-        rtt_plot.set_xlabel("Inference #")
-        rtt_plot.title.set_text("Round Trip Time")
+        max_rtt_y = max(rtt_y)
+        ticks_rtt_y = 1
+        max_ticks_rtt_y = 6
+        if max_rtt_y > max_ticks_rtt_y:
+            ticks_rtt_y = max_rtt_y // max_ticks_rtt_y + 1
+        rtt_plot.yaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
+        rtt_plot.yaxis.set_major_locator(mtick.MultipleLocator(ticks_rtt_y))
+        # rtt_plot.set_ylabel("Time (Seconds)")
+        # rtt_plot.set_xlabel("Inference #")
+        rtt_plot.title.set_text("Round Trip Time (ms vs #)")
 
         # Bar graph for correct classifications
         class_bar = acc_fig.add_subplot(1, 1, 1)
+        acc_fig.patch.set_facecolor(COLORS['plot_bg'])
+        class_bar.set_facecolor(COLORS['plot_bg'])
+        class_bar.spines['bottom'].set_color(COLORS['plot_label'])
+        class_bar.spines['top'].set_color(COLORS['plot_label'])
+        class_bar.spines['right'].set_color(COLORS['plot_label'])
+        class_bar.spines['left'].set_color(COLORS['plot_label'])
+        class_bar.tick_params(axis='x', colors=COLORS['plot_label'])
+        class_bar.tick_params(axis='y', colors=COLORS['plot_label'])
+        class_bar.yaxis.label.set_color(COLORS['plot_label'])
+        class_bar.xaxis.label.set_color(COLORS['plot_label'])
+        class_bar.title.set_color(COLORS['plot_label'])
+
         bar_x = np.arange(len(self.correct_classifications.keys()))
         class_bar.set_xticks(bar_x)
         class_bar.set_xticklabels(self.correct_classifications.keys())
@@ -120,9 +159,9 @@ class Infernet_Statistics:
 
         bar_width = 0.2
         class_bar.bar(bar_x - bar_width / 2, bar_y_correct, width=bar_width,
-                      color='b', align='center', label="correct")
+                      color=COLORS['plot_green'], align='center', label="√")
         class_bar.bar(bar_x + bar_width / 2, bar_y_incorrect, width=bar_width,
-                      color='r', align='center', label="incorrect")
+                      color=COLORS['plot_red'], align='center', label="x")
 
         # Set bar graph to integer labels only on y axis
         max_bar_y = max(max(bar_y_incorrect) + 1, max(bar_y_correct) + 1)
@@ -133,18 +172,19 @@ class Infernet_Statistics:
         class_bar.yaxis.set_major_formatter(mtick.FormatStrFormatter('%d'))
         class_bar.yaxis.set_major_locator(mtick.MultipleLocator(ticks_bar_y))
 
-        class_bar.title.set_text("Classification Accuracy")
+        class_bar.title.set_text("Classification Accuracy (count vs digit)")
         class_bar.legend()
-        class_bar.set_ylabel("# Classifications")
-        class_bar.set_xlabel("Digit")
+        # class_bar.set_ylabel("# Classifications")
+        # class_bar.set_xlabel("Digit")
 
-        # figure.tight_layout(pad=2.0)
+        rtt_fig.tight_layout(pad=0.5)
+        acc_fig.tight_layout(pad=0.5)
 
     def update(self, new_rtt, label, correct):
         """
         Update the current statistics state.
         """
-        self.rtt_list.append(new_rtt)
+        self.rtt_list.append(new_rtt*1000)
         self.mean_rtt_list.append(statistics.mean(self.rtt_list))
         if correct:
             self.correct_classifications[label] += 1
@@ -161,33 +201,6 @@ class Infernet_Statistics:
                                         "5": 0, "6": 0, "7": 0, "8": 0, "9": 0}
         self.incorrect_classifications = {"0": 0, "1": 0, "2": 0, "3": 0, "4": 0,
                                           "5": 0, "6": 0, "7": 0, "8": 0, "9": 0}
-
-
-class Piece:
-    def __init__(self, parent, num, x, y, w, h, hover_cb):
-        self.num = num
-        self.frame = tk.Frame(parent, height=h, width=w, bg=COLORS['1'],
-                              highlightbackground=COLORS['1'], highlightthickness=0)
-        self.frame.place(x=x, y=y)
-        self._state = 'init'
-        self.frame.bind('<Enter>', lambda *args: hover_cb(self, True))
-        self.frame.bind('<Leave>', lambda *args: hover_cb(self, False))
-
-    def destroy(self):
-        self.frame.destroy()
-
-    def state(self, state: str):
-        self._state = state
-        if state == 'init':
-            self.frame.configure(bg=COLORS['1'], highlightthickness=0)
-        if state == 'null':
-            self.frame.configure(bg=COLORS['2'], highlightthickness=2)
-        if state == 'bad':
-            self.frame.configure(bg=COLORS['3'], highlightthickness=0)
-        if state == 'good':
-            self.frame.configure(bg=COLORS['hl'], highlightthickness=0)
-        if state == 'dark':
-            self.frame.configure(bg=COLORS['0'], highlightthickness=0)
 
 
 class PieceMap:
@@ -240,7 +253,7 @@ class PieceMap:
         if state == 'init':
             self.canvas.itemconfigure(self.pieces[num], fill=COLORS['1'], width=0)
         if state == 'null':
-            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['2'], width=1)
+            self.canvas.itemconfigure(self.pieces[num], fill=COLORS['2'], width=2)
         if state == 'bad':
             self.canvas.itemconfigure(self.pieces[num], fill=COLORS['3'], width=0)
         if state == 'good':
@@ -296,25 +309,25 @@ class Infernet_GUI:
         # constants
         self.colors = COLORS
         if os.name == 'nt':
-            self.font = ('ariel', 14)
-            self.font2 = ('ariel', 16, 'bold')
-            self.fontb = ('ariel', 12, 'bold')
+            self.font = ('ariel', 10)
+            self.font2 = ('ariel', 12, 'bold')
+            self.fontb = ('ariel', 9, 'bold')
         else:
-            self.font = ('ariel', 14)
-            self.font2 = ('ariel', 16, 'bold')
-            self.fontb = ('ariel', 12, 'bold')
+            self.font = ('helvetica', 14)
+            self.font2 = ('helvetica', 16, 'bold')
+            self.fontb = ('helvetica', 12, 'bold')
 
         # instantiate window
         self.root = tk.Tk()
         self.root.title("Infernet")
         self.root.geometry(f"1024x640+{int(self.root.winfo_screenwidth()/2-512)}+{int(self.root.winfo_screenheight()/2-320)}")
         self.root.resizable(False, False)
+        self.root.protocol("WM_DELETE_WINDOW", self.close_up_shop)
         self.content = ttk.Frame(self.root, padding=0)
         self.content.pack(fill=tk.BOTH, expand=1)
 
         # other properties and state
         self.image_list = []
-        self.pieces = []
         self.piece_map = None
         self.result_labels = []
         self.hovering = -1
@@ -323,17 +336,19 @@ class Infernet_GUI:
             for x in range(11)]
         self.last_start_btn_status = False
         self.last_ia_btn_status = False
+        self.lb_got = False
+        self.ia_got = False
+        self.inferring = False
+        self.lb_btn_mode = True
+        self.ia_btn_mode = (False, True)
         self.stats = Infernet_Statistics()
         if os.name == 'nt':
             self.fpganet = n532.get_fpganet()
-        self.piece_state_queue = queue.SimpleQueue()
-        self.piece_creation_queue = queue.SimpleQueue()
         self.result_render_queue = queue.SimpleQueue()
-        self.stop_event_mainthread = threading.Event()
         self.quit_event = threading.Event()
+        self.stop_event = threading.Event()
         self.root.bind('<<update>>', self.queue_update_hook)
-        self.update_generator_thread = threading.Thread(target=self.update_event_generator)
-        self.update_generator_thread.start()
+        self.update_generator_thread = None
 
         # instantiate static bg
         self.bg = Pil_ImageTk.PhotoImage(Pil_Image.open("Static.png"))
@@ -347,8 +362,28 @@ class Infernet_GUI:
         self.build_piece_map()
         self.build_stats_display()
 
+        # get accelerator
+        if os.name == 'nt' and self.fpganet:
+            self.scan_for_lb_callback()
+            if self.lb_got:
+                self.request_ia_callback()
+
+
+    def close_up_shop(self, *args):
+        if self.inferring:
+            self.stop_event.set()
+            self.infer_thread_inst.join()
+        self.quit_event.set()
+        while not self.result_render_queue.empty():
+            self.result_render_queue.get()
+        if self.update_generator_thread:
+            self.update_generator_thread.join()
+        if self.ia_got:
+            cli.return_ia_to_lb(self.fpganet, self.lb_address.get(), self.ia_got)
+        self.root.destroy()
+
     def update_event_generator(self):
-        time.sleep(1)
+        time.sleep(3)
         while True:
             time.sleep(1/60)
             if self.quit_event.isSet():
@@ -356,16 +391,6 @@ class Infernet_GUI:
             self.root.event_generate('<<update>>', when='tail')
 
     def queue_update_hook(self, ev):
-        max_updates = 100
-        while max_updates and not self.piece_state_queue.empty():
-            num, state = self.piece_state_queue.get()
-            self.piece_map.state(num, state)
-            max_updates -= 1
-        max_updates = 100
-        while max_updates and not self.piece_creation_queue.empty():
-            p, i, x, y, w, h, c = self.piece_creation_queue.get()
-            self.pieces.append(Piece(p, i, x, y, w, h, c))
-            max_updates -= 1
         max_updates = 10
         while max_updates and not self.result_render_queue.empty():
             i, encoded_result, rtt = self.result_render_queue.get()
@@ -379,9 +404,9 @@ class Infernet_GUI:
                 self.result_labels.append(decoded_result)
                 # update piecemap
                 if inference_correct:
-                    self.piece_state_queue.put((i, 'good'))
+                    self.piece_map.state(i, 'good')
                 else:
-                    self.piece_state_queue.put((i, 'bad'))
+                    self.piece_map.state(i, 'bad')
                 if self.hovering == -1:
                     self.put_gui_inference_img(image_gui)
                     self.put_gui_output_img(decoded_result)
@@ -395,16 +420,22 @@ class Infernet_GUI:
                 self.rtt_canvas.get_tk_widget().update_idletasks()
                 self.acc_canvas.get_tk_widget().update_idletasks()
             else:
-                self.piece_state_queue.put((i, 'dark'))
+                self.piece_map.state(i, 'dark')
                 self.result_labels.append(10)
                 if self.hovering == -1:
                     self.put_gui_inference_img(image_gui)
                     self.put_gui_output_img(10)
-        if self.stop_event_mainthread.isSet():
-            self.change_start_btn_mode(False)
-            #self.return_ia_callback()
-            self.change_ia_btn_mode(True)
-            self.stop_event_mainthread.clear()
+            if i == len(self.image_list) - 1:
+                self.inferring = False
+                self.infer_restore_state()
+                self.update_start_btn_status()
+        if self.stop_event.isSet():
+            while not self.result_render_queue.empty():
+                self.result_render_queue.get()
+            self.inferring = False
+            self.update_start_btn_status()
+            self.infer_restore_state()
+            self.stop_event.clear()
 
     def build_inference_images(self):
         # instantiate inference images
@@ -463,7 +494,7 @@ class Infernet_GUI:
         self.infer_btn = TCB(text="START",
                              width=96,
                              height=30,
-                             corner_radius=5,
+                             corner_radius=6,
                              command=None,
                              bg_color=self.colors['2'],
                              fg_color=self.colors['hl_d'],
@@ -474,7 +505,7 @@ class Infernet_GUI:
         self.browse_btn = TCB(text="Browse",
                               width=74,
                               height=22,
-                              corner_radius=5,
+                              corner_radius=4,
                               command=self.browse_for_directory_callback,
                               bg_color=self.colors['1'],
                               fg_color=self.colors['btn'],
@@ -485,7 +516,7 @@ class Infernet_GUI:
         self.lb_btn = TCB(text="Auto-Detect",
                           width=83,
                           height=22,
-                          corner_radius=5,
+                          corner_radius=4,
                           command=self.scan_for_lb_callback,
                           bg_color=self.colors['2'],
                           fg_color=self.colors['btn'],
@@ -496,7 +527,7 @@ class Infernet_GUI:
         self.ia_btn = TCB(text="Request",
                           width=83,
                           height=22,
-                          corner_radius=5,
+                          corner_radius=4,
                           command=lambda *args: None,
                           bg_color=self.colors['2'],
                           fg_color=self.colors['btn_d'],
@@ -515,11 +546,10 @@ class Infernet_GUI:
             self.piece_map.state(0, 'null')
 
     def build_stats_display(self) -> None:
-        self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.rtt_fig = Figure(figsize=(4.5, 1.6), dpi=100, facecolor=COLORS['plot_bg'])
         self.rtt_canvas = FigureCanvasTkAgg(self.rtt_fig, master=self.content)
         self.rtt_canvas.get_tk_widget().place(x=94, y=464)
-
-        self.acc_fig = Figure(figsize=(4.5, 1.6), dpi=100)
+        self.acc_fig = Figure(figsize=(4.5, 1.6), dpi=100, facecolor=COLORS['plot_bg'])
         self.acc_canvas = FigureCanvasTkAgg(self.acc_fig, master=self.content)
         self.acc_canvas.get_tk_widget().place(x=558, y=464)
 
@@ -532,21 +562,27 @@ class Infernet_GUI:
         lb_ip = cli.scan_for_lb(self.fpganet)
         if lb_ip:
             self.lb_address.set(lb_ip)
+            self.lb_got = True
         else:
             self.lb_address.set("Scan Failed")
+            self.lb_got = False
+        self.update_ia_btn_status()
 
     def request_ia_callback(self):
         ia_ip = cli.get_ia_from_lb(self.fpganet, self.lb_address.get())
         if ia_ip:
             self.ia_address.set(ia_ip)
-            self.ia_btn.configure(command=self.return_ia_callback, text="Return")
+            self.ia_got = ia_ip
+            self.change_ia_btn_mode(True, False)
             self.ia_address_lbl.configure(state='disabled')
             self.lb_address_lbl.configure(state='disabled')
             self.change_lb_btn_mode(False)
         else:
+            self.ia_got = False
             self.ia_address.set("Request Failed")
 
     def return_ia_callback(self):
+        self.ia_got = False
         success = cli.return_ia_to_lb(self.fpganet, self.lb_address.get(), self.ia_address.get())
         if success:
             self.ia_address.set("Returned")
@@ -554,29 +590,36 @@ class Infernet_GUI:
             self.ia_address.set("Return Failed")
         self.ia_address_lbl.configure(state='normal')
         self.lb_address_lbl.configure(state='normal')
-        self.ia_btn.configure(command=self.request_ia_callback, text="Request")
+        self.change_ia_btn_mode(True, True)
+        self.ia_btn.function = self.request_ia_callback
         self.change_lb_btn_mode(True)
 
     def infer_button_callback(self):
+        self.inferring = True
         self.stats.reset()
+        self.piece_map.destroy()
+        self.result_labels = []
+        self.build_piece_map()
+        self.infer_backup_state()
         self.change_lb_btn_mode(False)
-        self.change_ia_btn_mode(False)
-        self.change_start_btn_mode(True)
+        self.change_ia_btn_mode(False, self.ia_btn_mode[1])
+        self.update_start_btn_status()
         self.ia_address_lbl.configure(state='disabled')
         self.lb_address_lbl.configure(state='disabled')
         self.infer_thread_inst = threading.Thread(target=self.infer_thread)
         self.infer_thread_inst.start()
+        if not self.update_generator_thread:
+            self.update_generator_thread = threading.Thread(target=self.update_event_generator)
+            self.update_generator_thread.start()
 
     def infer_thread(self):
-        self.stop_event = threading.Event()
 
         def network_worker():
             for i in range(len(self.image_list)):
                 if self.stop_event.isSet():
-                    self.stop_event.clear()
                     break
                 if self.quit_event.isSet():
-                    return
+                    break
                 image_dict = self.image_list[i]
                 start_time = timer()
                 encoded_result = n532.send_inference_packet_hardcore(self.fpganet,
@@ -591,7 +634,18 @@ class Infernet_GUI:
         network_thread = threading.Thread(target=network_worker)
         network_thread.start()
         network_thread.join()
-        self.stop_event_mainthread.set()
+
+    def infer_backup_state(self):
+        self.prev_lb_lbl_state = self.lb_address_lbl.cget('state')
+        self.prev_ia_lbl_state = self.ia_address_lbl.cget('state')
+        self.prev_lb_btn_mode = self.lb_btn_mode
+        self.prev_ia_btn_mode = self.ia_btn_mode
+
+    def infer_restore_state(self):
+        self.ia_address_lbl.configure(state=self.prev_ia_lbl_state)
+        self.lb_address_lbl.configure(state=self.prev_lb_lbl_state)
+        self.change_lb_btn_mode(self.prev_lb_btn_mode)
+        self.change_ia_btn_mode(self.prev_ia_btn_mode[0], self.prev_ia_btn_mode[1])
 
     def infer_stop_callback(self):
         self.stop_event.set()
@@ -604,25 +658,33 @@ class Infernet_GUI:
             self.put_gui_inference_img(imgs['gui'])
             if len(self.result_labels) > i:
                 self.put_gui_output_img(self.result_labels[i])
+            else:
+                self.infer_output_img_label.configure(image=self.infer_output_bg_img)
         else:
             self.hovering = -1
 
-    def change_start_btn_mode(self, is_inference):
-        if is_inference:
-            self.infer_btn.text_label['text'] = "STOP"
-            self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
-            self.infer_btn.function = self.infer_stop_callback
+    def change_ia_btn_mode(self, enabled, req):
+        self.ia_btn_mode = (enabled, req)
+        if req:
+            self.ia_btn.set_text("Request")
+            if enabled:
+                self.ia_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'],
+                                            self.colors['1'])
+                self.ia_btn.function = self.request_ia_callback
+            else:
+                self.ia_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'],
+                                            self.colors['btn_dt'])
+                self.ia_btn.function = lambda *args: None
         else:
-            self.infer_btn.text_label['text'] = "START"
-            self.update_start_btn_status()
-
-    def change_ia_btn_mode(self, enabled):
-        if enabled:
-            self.ia_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'], self.colors['1'])
-            self.ia_btn.function = self.request_ia_callback
-        else:
-            self.ia_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'], self.colors['btn_dt'])
-            self.ia_btn.function = lambda *args: None
+            self.ia_btn.set_text("Return")
+            if enabled:
+                self.ia_btn.configure_color(self.colors['2'], self.colors['btn'], self.colors['btn_h'],
+                                            self.colors['1'])
+                self.ia_btn.function = self.return_ia_callback
+            else:
+                self.ia_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'],
+                                            self.colors['btn_dt'])
+                self.ia_btn.function = lambda *args: None
 
     def change_lb_btn_mode(self, enabled):
         if enabled:
@@ -631,23 +693,47 @@ class Infernet_GUI:
         else:
             self.lb_btn.configure_color(self.colors['2'], self.colors['btn_d'], self.colors['btn_d'], self.colors['btn_dt'])
             self.lb_btn.function = lambda *args: None
+        self.lb_btn_mode = enabled
 
     def update_start_btn_status(self, name=None, index=None, mode=None) -> None:
-        new_status = bool(n532.fpga_ip_to_num(self.ia_address.get()) and self.image_list)
-        if new_status != self.last_start_btn_status:
-            if new_status:
-                self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+        if self.inferring:
+            # self.infer_btn.text_label.configure(text="STOP")
+            self.infer_btn.set_text("STOP")
+            self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+            self.infer_btn.function = self.infer_stop_callback
+            # self.infer_btn.draw()
+        else:
+            if self.infer_btn.text != "START":
+                # self.infer_btn.text_label.configure(text="START")
+                self.infer_btn.set_text("START")
+                self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'],self.colors['1'])
                 self.infer_btn.function = self.infer_button_callback
-            else:
-                self.infer_btn.configure_color(self.colors['2'], self.colors['hl_d'], self.colors['hl_d'], self.colors['1_d'])
-                self.infer_btn.function = lambda *args: print("START button disabled!")
-        self.last_start_btn_status = new_status
+                # self.infer_btn.draw()
+            if name and self.ia_got:
+                if self.lb_got:
+                    cli.return_ia_to_lb(self.fpganet, self.lb_address.get(), self.ia_got)
+                self.ia_got = False
+                self.change_ia_btn_mode(True, True)
+                self.change_lb_btn_mode(True)
+            new_status = bool(n532.fpga_ip_to_num(self.ia_address.get()) and self.image_list)
+            if new_status != self.last_start_btn_status:
+                # self.infer_btn.text_label['text'] = "START"
+                if new_status:
+                    self.infer_btn.configure_color(self.colors['2'], self.colors['hl'], self.colors['hl_h'], self.colors['1'])
+                    self.infer_btn.function = self.infer_button_callback
+                    # self.infer_btn.draw()
+                else:
+                    self.infer_btn.configure_color(self.colors['2'], self.colors['hl_d'], self.colors['hl_d'], self.colors['1_d'])
+                    self.infer_btn.function = lambda *args: print("START button disabled!")
+                    # self.infer_btn.draw()
+            self.last_start_btn_status = new_status
 
     def update_ia_btn_status(self, name=None, index=None, mode=None) -> None:
         r = n532.fpga_ip_to_num(self.lb_address.get())
         r = bool(r)
         if r != self.last_ia_btn_status:
-            self.change_ia_btn_mode(r)
+            self.change_ia_btn_mode(r, True)
+            self.lb_got = r
         self.last_ia_btn_status = r
 
     def put_gui_inference_img(self, img) -> None:
@@ -707,7 +793,6 @@ def main():
     logging.info("Starting Infernet.")
     gui = Infernet_GUI()
     gui.root.mainloop()
-    gui.quit_event.set()
 
 
 if __name__ == '__main__':

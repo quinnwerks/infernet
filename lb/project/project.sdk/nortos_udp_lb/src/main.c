@@ -232,7 +232,7 @@ int main()
 	etharp_gratuitous(lb_netif);
 	/* start the application (web server, rxtest, txtest, etc..) */
 	int tries = 0;
-	while(!fpga_list_len(fpgaFreeNums)){
+	while(!fpga_list_len(fpgaFreeNums) || tries < MIN_SCAN_TRIES){
 		scan_for_IAs();
 		u8_t tmrCount = 0; // wait for 250-500 ms
 		while (tmrCount < IA_TIMEOUT+1) {
