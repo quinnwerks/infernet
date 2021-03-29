@@ -5,10 +5,10 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module tri_mode_ethernet_mac_0_example_design_ddr
 #  (
-      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_01,
+      parameter OUR_MAC_ADDRESS=48'h00_0a_35_00_00_06,
       //01_00_00_35_0a_00,
       parameter USER_DATA_BYTES=784, // SIZE OF MIN PACKET
-      parameter OUR_IP_ADDRESS=32'h01_01_01_02,
+      parameter OUR_IP_ADDRESS=32'h01_01_06_02,
       parameter OUR_UDP_PORT = 16'd0666,
       //02_01_01_01,
       parameter DUMMY_MAC_ADDRESS = 48'hAA_AA_AA_AA_AA_AA
@@ -256,9 +256,9 @@ module tri_mode_ethernet_mac_0_example_design_ddr
    
    
    //wire [0:USER_DATA_BYTES*8-1] data_frame_from_rx;
-   (* mark_debug = "true" *) wire [7:0] rx_data_from_ip;
-   (* mark_debug = "true" *) wire [9:0] rx_addr_from_ip;
-   (* mark_debug = "true" *) wire       rx_en_from_ip;
+   wire [7:0] rx_data_from_ip;
+   wire [9:0] rx_addr_from_ip;
+   wire       rx_en_from_ip;
    
    (* mark_debug = "true" *) wire                         frame_ready_from_rx;
    (* mark_debug = "true" *) wire [0:47]                  mac_address_from_rx;

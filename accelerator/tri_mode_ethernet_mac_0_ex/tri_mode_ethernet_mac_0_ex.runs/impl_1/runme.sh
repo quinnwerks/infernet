@@ -7,20 +7,20 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/tools/Xilinx/SDK/2018.3/bin:/tools/Xilinx/Vivado/2018.3/ids_lite/ISE/bin/lin64:/tools/Xilinx/Vivado/2018.3/bin
+  PATH=/home/andrew/Xilinx/install-dir/SDK/2018.3/bin:/home/andrew/Xilinx/install-dir/Vivado/2018.3/ids_lite/ISE/bin/lin64:/home/andrew/Xilinx/install-dir/Vivado/2018.3/bin
 else
-  PATH=/tools/Xilinx/SDK/2018.3/bin:/tools/Xilinx/Vivado/2018.3/ids_lite/ISE/bin/lin64:/tools/Xilinx/Vivado/2018.3/bin:$PATH
+  PATH=/home/andrew/Xilinx/install-dir/SDK/2018.3/bin:/home/andrew/Xilinx/install-dir/Vivado/2018.3/ids_lite/ISE/bin/lin64:/home/andrew/Xilinx/install-dir/Vivado/2018.3/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/tools/Xilinx/Vivado/2018.3/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/home/andrew/Xilinx/install-dir/Vivado/2018.3/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/tools/Xilinx/Vivado/2018.3/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/home/andrew/Xilinx/install-dir/Vivado/2018.3/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1'
+HD_PWD='/home/andrew/infernet/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -37,7 +37,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log tri_mode_ethernet_mac_0_example_design_ddr.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source tri_mode_ethernet_mac_0_example_design_ddr.tcl -notrace
 
 

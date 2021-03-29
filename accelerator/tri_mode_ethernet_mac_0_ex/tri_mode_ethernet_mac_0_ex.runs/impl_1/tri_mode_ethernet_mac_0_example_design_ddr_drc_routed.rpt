@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3.1 (lin64) Build 2489853 Tue Mar 26 04:18:30 MDT 2019
-| Date         : Sun Mar 28 19:35:41 2021
-| Host         : hw-dev running 64-bit Ubuntu 18.04.5 LTS
+| Date         : Sun Mar 28 21:46:10 2021
+| Host         : andrew-debian running 64-bit Debian GNU/Linux 10 (buster)
 | Command      : report_drc -file tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpt -pb tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.pb -rpx tri_mode_ethernet_mac_0_example_design_ddr_drc_routed.rpx
 | Design       : tri_mode_ethernet_mac_0_example_design_ddr
 | Device       : xc7a100tcsg324-1

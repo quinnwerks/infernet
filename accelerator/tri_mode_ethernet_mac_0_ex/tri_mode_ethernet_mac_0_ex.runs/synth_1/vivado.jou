@@ -2,11 +2,11 @@
 # Vivado v2018.3.1 (64-bit)
 # SW Build 2489853 on Tue Mar 26 04:18:30 MDT 2019
 # IP Build 2486929 on Tue Mar 26 06:44:21 MDT 2019
-# Start of session at: Sun Mar 28 19:24:25 2021
-# Process ID: 11602
-# Current directory: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1
+# Start of session at: Sun Mar 28 21:40:41 2021
+# Process ID: 18042
+# Current directory: /home/andrew/infernet/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1
 # Command line: vivado -log tri_mode_ethernet_mac_0_example_design_ddr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tri_mode_ethernet_mac_0_example_design_ddr.tcl
-# Log file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.vds
-# Journal file: /home/quinn/ece532-project/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/vivado.jou
+# Log file: /home/andrew/infernet/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/tri_mode_ethernet_mac_0_example_design_ddr.vds
+# Journal file: /home/andrew/infernet/accelerator/tri_mode_ethernet_mac_0_ex/tri_mode_ethernet_mac_0_ex.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source tri_mode_ethernet_mac_0_example_design_ddr.tcl -notrace
