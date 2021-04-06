@@ -1,7 +1,0 @@
-Running: xsim.dir/XOR_NN_TB_behav/xsimk -simmode gui -wdb XOR_NN_TB_behav.wdb -simrunnum 0 -socket 44255
-Design successfully loaded
-Design Loading Memory Usage: 44864 KB (Peak: 44872 KB)
-Design Loading CPU Usage: 10 ms
-Simulation completed
-Simulation Memory Usage: 135060 KB (Peak: 192136 KB)
-Simulation CPU Usage: 20 ms

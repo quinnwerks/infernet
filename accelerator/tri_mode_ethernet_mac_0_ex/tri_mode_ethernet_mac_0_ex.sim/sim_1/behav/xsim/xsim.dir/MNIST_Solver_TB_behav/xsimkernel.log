@@ -1,7 +1,0 @@
-Running: xsim.dir/MNIST_Solver_TB_behav/xsimk -simmode gui -wdb MNIST_Solver_TB_behav.wdb -simrunnum 0 -socket 49575
-Design successfully loaded
-Design Loading Memory Usage: 70588 KB (Peak: 70784 KB)
-Design Loading CPU Usage: 90 ms
-Simulation completed
-Simulation Memory Usage: 160004 KB (Peak: 217860 KB)
-Simulation CPU Usage: 46910 ms
