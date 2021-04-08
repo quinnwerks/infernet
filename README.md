@@ -27,15 +27,18 @@ Infernet is a MNIST inference accelerator service. The system is composed of 3 m
 
 ### Bring Up Procedure
 1. Setup the accelerator
-    1. Open the `tri_mode_ethernet_mac` project
+    1. Open the project in `src/accelerator/tri_mode_ethernet_mac_0_ex`.
     2. In `accelerator.sv` set the `OUR_MAC_ADDRESS`, `OUR_IP_ADDRESS` to the appropriate values based on your networking setup.
     3. Compile the `accelerator.sv` through to bitstream generation. Insert debug logic after synthesis.
     4. Use the Vivado hardware manager to load the bitstream and the `debug_nets.ltx` file onto the board.
     5. Open a dashboard for the vios. Toggle the signal `glbl_reset` from 1 to 0.
+    6. To test that the accelerator send a request using the CLI Client (See )
+    7. Perform steps `1.i` to `1.vi` for as many accelerators as you want to have running.
 2. Setup the load balancer
-3. Run the client
-    * GUI Mode: ``
-    * CLI Mode: ``
+### Running The client
+The client can be run in two ways:
+#### GUI Mode
+#### CLI Mode
 
 
 
