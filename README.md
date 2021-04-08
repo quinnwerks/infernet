@@ -19,7 +19,7 @@ Infernet is a MNIST inference accelerator service. The system is composed of 3 m
 - A correctly configured router (the address of the accelerator board must be the same as the one cached by the router)
 - Vivado 2018.3.1
 - Vivado SDK 2018.3.1
-- Xilinx licences that are not included:
+- Xilinx licences that might not be included in your Vivado install:
   - Tri Mode Ethernet Mac
   - AXI Ethernet Lite
 #### The client
@@ -28,12 +28,13 @@ Infernet is a MNIST inference accelerator service. The system is composed of 3 m
 ### Bring Up Procedure
 1. Setup the accelerator
     1. Open the project in `src/accelerator/tri_mode_ethernet_mac_0_ex`.
-    2. In `accelerator.sv` set the `OUR_MAC_ADDRESS`, `OUR_IP_ADDRESS` to the appropriate values based on your networking setup.
-    3. Compile the `accelerator.sv` through to bitstream generation. Insert debug logic after synthesis.
-    4. Use the Vivado hardware manager to load the bitstream and the `debug_nets.ltx` file onto the board.
-    5. Open a dashboard for the vios. Toggle the signal `glbl_reset` from 1 to 0.
-    6. To test that the accelerator send a request using the CLI Client (See )
-    7. Perform steps `1.i` to `1.vi` for as many accelerators as you want to have running.
+    2. TODO: Fix neural net paths 
+    3. In `accelerator.sv` set the `OUR_MAC_ADDRESS`, `OUR_IP_ADDRESS` to the appropriate values based on your networking setup.
+    4. Compile the `accelerator.sv` through to bitstream generation. Insert debug logic after synthesis.
+    5. Use the Vivado hardware manager to load the bitstream and the `debug_nets.ltx` file onto the board.
+    6. Open a dashboard for the vios. Toggle the signal `glbl_reset` from 1 to 0.
+    7. To test that the accelerator send a request using the CLI Client (See )
+    8. Perform steps `1.i` to `1.vi` for as many accelerators as you want to have running.
 2. Setup the load balancer
 ### Running The client
 The client can be run in two ways:
