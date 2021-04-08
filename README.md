@@ -1,4 +1,5 @@
 # Infernet
+![](doc/images/infernet.png?raw=true)
 ## Contributors
 
 - [James Liu](https://github.com/diesisfox)
@@ -11,7 +12,7 @@ Infernet is a MNIST inference accelerator service. The system is composed of 3 m
 - A hardware inference accelerator implemented on an FPGA
 - A load balancer implemented using a soft processor on an FPGA
 - A GUI client written in python for use on conventional computers
-
+![](doc/images/system_diagram.jpg?raw=true)
 ## How to Use
 ### Prerequisites
 #### Accelerator and Load Balancer
