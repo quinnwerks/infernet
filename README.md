@@ -13,6 +13,28 @@ Infernet is a MNIST inference accelerator service. The system is composed of 3 m
 - A load balancer implemented using a soft processor on an FPGA
 - A GUI client written in python for use on conventional computers
 ![](doc/images/system_diagram.jpg?raw=true)
+
+## Directory Structure
+
+```
+infernet
+├── doc // Project documentation
+│   ├── images // Images used in the README
+│   ├── reports // The reports written throughout the course
+│   └── slides // Slideware that was presented throughout the course
+├── README.md // What you're reading right now.
+└── src // The project source files
+    ├── accelerator // Accelerator source and Vivado project.
+    │   ├── MNIST_Solver // MNIST neural net source files
+    │   ├── rtl // Networking module source files
+    │   └── tri_mode_ethernet_mac_0_ex // Top level and Xilinx source files. The directory of the accelerator project.
+    ├── bitstreams // Bitstreams for the various DESL machines. The folder names corresponds to the 3rd octet of the boards IP address.
+    ├── lb // Load balancer project and source files
+    ├── misc // Various files used to configure neural net
+    ├── python // Python client source code.
+    └── util // Generic RTL. Used only in the tri_mode_ethernet_mac_0_ex project.
+```
+
 ## How to Use
 ### Prerequisites
 #### Accelerator and Load Balancer
