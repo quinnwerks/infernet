@@ -25,12 +25,12 @@ infernet
 ├── README.md // What you're reading right now.
 └── src // The project source files
     ├── accelerator // Accelerator source and Vivado project.
-    │   ├── MNIST_Solver // MNIST neural net source files
-    │   ├── rtl // Networking module source files
+    │   ├── MNIST_Solver // MNIST neural net source files.
+    │   ├── rtl // Networking module source files.
     │   └── tri_mode_ethernet_mac_0_ex // Top level and Xilinx source files. The directory of the accelerator project.
     ├── bitstreams // Bitstreams for the various DESL machines. The folder names corresponds to the 3rd octet of the boards IP address.
     ├── lb // Load balancer project and source files
-    ├── misc // Various files used to configure neural net
+    ├── misc // MNIST solver weights, biases, and testbench test data. Also contains the XOR neural net used during development of this project.
     ├── python // Python client source code.
     └── util // Generic RTL. Used only in the tri_mode_ethernet_mac_0_ex project.
 ```
@@ -50,9 +50,10 @@ infernet
 ### Bring Up Procedure
 1. Setup the accelerator
     1. Open the project in `src/accelerator/tri_mode_ethernet_mac_0_ex`.
-    2. TODO: Fix neural net paths 
+    2. In `Conv2_Weight_Buffer.sv` and `FC_Weight_Buffer.sv` change the weight file paths to match your local copy of the Git repo.
     3. In `accelerator.sv` set the `OUR_MAC_ADDRESS`, `OUR_IP_ADDRESS` to the appropriate values based on your networking setup.
     4. Compile the `accelerator.sv` through to bitstream generation. Insert debug logic after synthesis.
+        * Note: the design is marginal with regards to timing closure. If timing fails, don't panic, and try again with a different high-effort Implementation strategy.
     5. Use the Vivado hardware manager to load the bitstream and the `debug_nets.ltx` file onto the board.
     6. Open a dashboard for the vios. Toggle the signal `glbl_reset` from 1 to 0.
     7. To test that the accelerator send a request using the CLI Client (See )
