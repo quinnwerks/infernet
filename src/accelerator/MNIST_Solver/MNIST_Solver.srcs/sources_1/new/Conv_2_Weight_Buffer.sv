@@ -50,27 +50,30 @@ module Conv_2_Weight_Buffer (
         data[19] <= mem19[addr];
     end
 
+    // Note: these paths MUST be set for the NN to simulate or run successfully.
+    // In these paths, "infernet" is the top-level directory of the Git repo
+    // It is recommended to set these using a regex or sed job outside of Vivado, and the paste in the new lines
     initial begin
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_0_weights.mem", mem0);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_1_weights.mem", mem1);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_2_weights.mem", mem2);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_3_weights.mem", mem3);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_4_weights.mem", mem4);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_5_weights.mem", mem5);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_6_weights.mem", mem6);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_7_weights.mem", mem7);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_8_weights.mem", mem8);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_9_weights.mem", mem9);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_10_weights.mem", mem10);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_11_weights.mem", mem11);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_12_weights.mem", mem12);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_13_weights.mem", mem13);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_14_weights.mem", mem14);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_15_weights.mem", mem15);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_16_weights.mem", mem16);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_17_weights.mem", mem17);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_18_weights.mem", mem18);
-        $readmemb("/home/quinn/ece532-project/misc/conv_2_weights/Conv_2_Channel_19_weights.mem", mem19);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_0_weights.mem", mem0);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_1_weights.mem", mem1);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_2_weights.mem", mem2);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_3_weights.mem", mem3);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_4_weights.mem", mem4);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_5_weights.mem", mem5);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_6_weights.mem", mem6);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_7_weights.mem", mem7);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_8_weights.mem", mem8);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_9_weights.mem", mem9);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_10_weights.mem", mem10);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_11_weights.mem", mem11);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_12_weights.mem", mem12);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_13_weights.mem", mem13);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_14_weights.mem", mem14);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_15_weights.mem", mem15);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_16_weights.mem", mem16);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_17_weights.mem", mem17);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_18_weights.mem", mem18);
+        $readmemb("/home/andrew/infernet/src/misc/conv_2_weights/Conv_2_Channel_19_weights.mem", mem19);
     end
 
 endmodule

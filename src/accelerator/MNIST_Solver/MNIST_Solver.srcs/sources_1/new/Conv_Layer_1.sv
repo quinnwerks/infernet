@@ -12,7 +12,7 @@ module Conv_Layer_1 #(
     input start,
     output logic done,
     // Channel to read data in
-    input signed [17:0] in_data,
+    input signed [17:0] in_data [0:0],
     output logic [4:0] in_row,
     output logic [4:0] in_col,
     // Output data
@@ -147,7 +147,7 @@ module Conv_Layer_1 #(
                 if (cell_row_old == 5'd0 || cell_col_old == 5'd0 || cell_row_old == 5'd29 || cell_col_old == 5'd29) begin
                     kernel_in[cell_row_offset_old][cell_col_offset_old] <= 18'b0;
                 end else begin
-                    kernel_in[cell_row_offset_old][cell_col_offset_old] <= in_data;
+                    kernel_in[cell_row_offset_old][cell_col_offset_old] <= in_data[0];
                 end
             end
         end

@@ -16,7 +16,7 @@ module buff_ip_to_nn  # (
     output [0:31] SRC_IP_ADDRESS_NN,
     output [0:47] SRC_MAC_ADDRESS_NN,
     output [0:15] SRC_UDP_PORT_NN,
-    output signed [17:0] W_DATA,
+    output signed [17:0] W_DATA [0:0],
     output        W_EN,
     output [9:0]  W_ADDR,
     output        W_DONE
@@ -120,14 +120,14 @@ assign SRC_UDP_PORT_NN = src_udp_port_reg;
 
 assign W_DONE = done_signal; 
 assign W_EN = w_en;
-assign W_DATA = data_transformed;
+assign W_DATA[0] = data_transformed;
 
 logic [9:0] data_counter_clipped;
 assign data_counter_clipped = data_counter[9:0] < USER_DATA_BYTES ? data_counter[9:0] : 'd0;
 assign data_transformed = {8'b0, data_frame_out, 2'b0};
 
 //assign W_ADDR = data_counter_clipped_old;
-assign W_DATA = data_transformed;
+assign W_DATA[0] = data_transformed;
 blk_mem_gen_0 rx_data_buffer (
     .clka(ACLK),
     .clkb(ACLK),

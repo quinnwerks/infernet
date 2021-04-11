@@ -50,7 +50,7 @@ logic [0:UDP_PORT_WIDTH-1]       src_udp_port_nn_out;
 logic [9:0] nn_out;
 
 logic [9:0]                      w_addr;
-logic signed [17:0]                     w_data;
+logic signed [17:0]                     w_data [0:0];
 logic                            w_en;
 logic                            w_done;
 logic                            nn_done;

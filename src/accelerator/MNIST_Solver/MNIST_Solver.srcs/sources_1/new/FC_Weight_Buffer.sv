@@ -29,17 +29,19 @@ module FC_Weight_Buffer (
     assign data[9] = mem9[addr];
 
 
+    // Note: these paths MUST be set for the NN to simulate or run successfully.
+    // In these paths, "infernet" is the top-level directory of the Git repo
     initial begin
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_0_weights.mem", mem0);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_1_weights.mem", mem1);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_2_weights.mem", mem2);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_3_weights.mem", mem3);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_4_weights.mem", mem4);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_5_weights.mem", mem5);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_6_weights.mem", mem6);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_7_weights.mem", mem7);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_8_weights.mem", mem8);
-        $readmemb("/home/quinn/ece532-project/misc/fc_weights/FC_Neuron_9_weights.mem", mem9);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_0_weights.mem", mem0);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_1_weights.mem", mem1);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_2_weights.mem", mem2);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_3_weights.mem", mem3);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_4_weights.mem", mem4);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_5_weights.mem", mem5);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_6_weights.mem", mem6);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_7_weights.mem", mem7);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_8_weights.mem", mem8);
+        $readmemb("/home/andrew/infernet/src/misc/fc_weights/FC_Neuron_9_weights.mem", mem9);
     end
 
 endmodule

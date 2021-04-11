@@ -9,7 +9,7 @@ module MNIST_Solver(
     
     // Input data, i.e. write to the first ibuf
     input [9:0] w_addr,
-    input signed [17:0] w_data,
+    input signed [17:0] w_data [0:0],
     input w_en,
     
     // IP stuff
@@ -40,7 +40,8 @@ module MNIST_Solver(
     assign c1_start = start & (top_state == IDLE);
 
     // Input data buffer signals
-    wire signed [17:0] c1_in_data, c1_out_data;
+    wire signed [17:0] c1_in_data [0:0];
+    wire signed [17:0] c1_out_data [0:0];
     wire [4:0] c1_in_row, c1_in_col;
     
     // conv_1 output buffer signals
@@ -126,7 +127,9 @@ module MNIST_Solver(
         end
     end
 
-    Conv_1_Frame_Buffer in_buf (
+    N_Channel_Frame_Buffer #(
+        .N_CHANNELS(1)
+    ) in_buf (
         .clock(clock),
         
         .w_row(w_addr[9:5]),
@@ -286,50 +289,95 @@ module MNIST_Solver(
         .out(out)
     );
     
-    genvar i;
-    generate
-    for (i = 0; i < 6; i++) begin : obuf_gen
-        Conv_1_Frame_Buffer c1_obuf (
-            .clock(clock),
-            
-            .w_row(c1_obuf_row),
-            .w_col(c1_obuf_col),
-            .w_data(c1_obuf_wdata[i]),
-            .w_en(c1_obuf_w_en),
-            
-            .r_row(mp_ibuf_row),
-            .r_col(mp_ibuf_col),
-            .r_data(mp_ibuf_rdata[i])
-        );
+    N_Channel_Frame_Buffer #(
+        .N_CHANNELS(6)
+    ) c1_obuf (
+        .clock(clock),
         
-        Conv_1_Frame_Buffer mp_obuf (
-            .clock(clock),
-            
-            .w_row(mp_obuf_row),
-            .w_col(mp_obuf_col),
-            .w_data(mp_obuf_wdata[i]),
-            .w_en(mp_obuf_w_en),
-            
-            .r_row(c2_ibuf_row),
-            .r_col(c2_ibuf_col),
-            .r_data(c2_ibuf_rdata[i])
-        );
-    end
+        .w_row(c1_obuf_row),
+        .w_col(c1_obuf_col),
+        .w_data(c1_obuf_wdata),
+        .w_en(c1_obuf_w_en),
+        
+        .r_row(mp_ibuf_row),
+        .r_col(mp_ibuf_col),
+        .r_data(mp_ibuf_rdata)
+    );
     
-    for (i = 0; i < 20; i++) begin : conv_2_obuf_gen
-        Conv_1_Frame_Buffer c2_obuf (
-            .clock(clock),
+    N_Channel_Frame_Buffer #(
+        .N_CHANNELS(6)
+    ) mp_obuf (
+        .clock(clock),
+        
+        .w_row(mp_obuf_row),
+        .w_col(mp_obuf_col),
+        .w_data(mp_obuf_wdata),
+        .w_en(mp_obuf_w_en),
+        
+        .r_row(c2_ibuf_row),
+        .r_col(c2_ibuf_col),
+        .r_data(c2_ibuf_rdata)
+    );
+    
+     N_Channel_Frame_Buffer #(
+        .N_CHANNELS(20)
+     ) c2_obuf (
+        .clock(clock),
+        
+        .w_row(c2_obuf_row),
+        .w_col(c2_obuf_col),
+        .w_data(c2_obuf_wdata),
+        .w_en(c2_obuf_w_en),
+        
+        .r_row(ga_ibuf_row),
+        .r_col(ga_ibuf_col),
+        .r_data(ga_ibuf_data)
+    );
+    
+//    genvar i;
+//    generate
+//    for (i = 0; i < 6; i++) begin : obuf_gen
+//        Wide_Frame_Buffer c1_obuf (
+//            .clock(clock),
             
-            .w_row(c2_obuf_row),
-            .w_col(c2_obuf_col),
-            .w_data(c2_obuf_wdata[i]),
-            .w_en(c2_obuf_w_en),
+//            .w_row(c1_obuf_row),
+//            .w_col(c1_obuf_col),
+//            .w_data(c1_obuf_wdata[i]),
+//            .w_en(c1_obuf_w_en),
             
-            .r_row(ga_ibuf_row),
-            .r_col(ga_ibuf_col),
-            .r_data(ga_ibuf_data[i])
-        );
-    end
-    endgenerate
+//            .r_row(mp_ibuf_row),
+//            .r_col(mp_ibuf_col),
+//            .r_data(mp_ibuf_rdata[i])
+//        );
+        
+//        Wide_Frame_Buffer mp_obuf (
+//            .clock(clock),
+            
+//            .w_row(mp_obuf_row),
+//            .w_col(mp_obuf_col),
+//            .w_data(mp_obuf_wdata[i]),
+//            .w_en(mp_obuf_w_en),
+            
+//            .r_row(c2_ibuf_row),
+//            .r_col(c2_ibuf_col),
+//            .r_data(c2_ibuf_rdata[i])
+//        );
+//    end
+    
+//    for (i = 0; i < 20; i++) begin : conv_2_obuf_gen
+//        Wide_Frame_Buffer c2_obuf (
+//            .clock(clock),
+            
+//            .w_row(c2_obuf_row),
+//            .w_col(c2_obuf_col),
+//            .w_data(c2_obuf_wdata[i]),
+//            .w_en(c2_obuf_w_en),
+            
+//            .r_row(ga_ibuf_row),
+//            .r_col(ga_ibuf_col),
+//            .r_data(ga_ibuf_data[i])
+//        );
+//    end
+//    endgenerate
 
 endmodule
