@@ -27,7 +27,8 @@ infernet
     ├── accelerator // Accelerator source and Vivado project.
     │   ├── MNIST_Solver // MNIST neural net source files.
     │   ├── rtl // Networking module source files.
-    │   └── tri_mode_ethernet_mac_0_ex // Top level and Xilinx source files. The directory of the accelerator project.
+    │   └── tri_mode_ethernet_mac_0_ex // The directory of the accelerator project.
+    │      └── imports // Top level and Xilinx verilog files for the accelerator. 
     ├── bitstreams // Bitstreams for the various DESL machines. The folder names corresponds to the 3rd octet of the boards IP address.
     ├── lb // Load balancer project and source files
     ├── misc // MNIST solver weights, biases, and testbench test data. Also contains the XOR neural net used during development of this project.
