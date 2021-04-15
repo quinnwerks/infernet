@@ -39,20 +39,27 @@ infernet
     │       └── * // other components of the Load balancer Vivado project
     ├── misc // MNIST solver weights, biases, and testbench test data. Also contains the XOR neural net used during development of this project.
     ├── python // Python client source code.
-    │   ├── 
-    │   └── 
+    │   ├── networking532.py // common utilities and constants shared by most of our python code
+    │   ├── client.py // module implementing client functionality
+    │   ├── lb.py // module modelling LB functionality
+    │   ├── gui.py // prototype GUI
+    │   ├── gui_v2.py // final GUI as seen in demo
+    │   ├── btn/ and num/ // GUI assets
+    │   └── RUNME.bat // double click to run UI
     └── util // Generic RTL. Used only in the tri_mode_ethernet_mac_0_ex project.
 ```
 
 ## How to Use
 ### Prerequisites
+#### In General
+- An ethernet LAN configured the same way as the social distancing setup in Winter 2020-2021, with Nexys DDR boards in address range `1.1.1.2` to `1.1.12.2` with MAC addresses `00:0a:35:00:00:01` to `00:0a:35:00:00:12`, and Windows workstations in IP address range `1.1.x.1`.
 #### Accelerator and Load Balancer
-- A correctly configured router (the address of the accelerator board must be the same as the one cached by the router)
 - Vivado 2018.3.1
 - Vivado SDK 2018.3.1
 - Xilinx licences that might not be included in your Vivado install:
   - Tri Mode Ethernet Mac
   - AXI Ethernet Lite
+- In the case of the accelerator, the ethernet switch the accelerator board is plugged in to must already have cached the correct MAC/IP tuple for the board
 #### The client
 - Python ≥3.7.2
 - Appropriate Pip version for the Python above
@@ -83,21 +90,24 @@ infernet
 ### Running The client
 The client can be run in two ways:
 #### GUI Mode
-1. Navigate to `src/python`.
-2. Double click `RUNME.bat`.
-    * Note: I promise it's not a virus, I just wanted the name to stand out in this busy folder. Feel free read over the script in your editor, it's not long.
-3. Wait for it to automatically set up your Python environment correctly.
-4. If the GUI shows up, you're done! Go to section Using the GUI.
-5. If you're here, the batch file did not work or you're not on Windows.
-6. Perform `CLI Mode` steps `1` through `3` as listed in the section below.
-    * Note: note the note in CLI Mode step 3.
-7. 
+1. Try this first:
+   1. Navigate to `src/python`.
+   2. Double click `RUNME.bat`.
+       * Note: I promise it's not a virus, I just wanted the name to stand out in this busy folder. Feel free to read over the script in your editor, it's not long.
+   3. Wait for it to automatically set up your Python environment correctly.
+   4. If the GUI shows up, you're done! Go to [§Using the GUI](#-Using-the-GUI).
+2. If you're here, the batch file did not work or you're not on Windows. Try the following steps:
+   1. Perform [§CLI Mode](#-CLI-Mode) steps `1` through `3` as listed in the section below.
+       * Note: note the note in [§CLI Mode](#-CLI-Mode) step 3.
+   2. `pipenv run python gui_v2.py`
+   3. If the GUI shows up, you're done! Go to [§Using the GUI](#-Using-the-GUI).
+3.  If you're here, the GUI has failed for reasons I did not anticipate in this document. If you are familiar with the tools, feel free to debug it yourself, else go to [§CLI Mode](#-CLI-Mode) for a more pared down but still functional experience.
 #### CLI Mode
 1. Open up a terminal and cd to `src/python`.
 2. `pip install pipenv`
 3. `pipenv install`
     * Note: if `pipenv install` is broken, just run the code as described and install missing packages the code complains about using `pipenv run pip install <missing_module>` as you go.
-4. 
+4. Invoke `client.py ia <IA IP addr> <image file>` to send an inference request to the specified accelerator with the specified input image, print the result, and exit.
 
 ### Using the GUI
 1. 
