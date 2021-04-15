@@ -114,4 +114,22 @@ The client can be run in two ways:
 4. Invoke `pipenv run python client.py ia <IA IP addr> <image file>` to send an inference request to the specified accelerator with the specified input image, print the result, and exit.
 
 ### Using the GUI
-1. 
+1. Upon startup, the UI will automatically detect the correct network interface and scan for the LB on that interface. If LB acquisition was successful, it will automatically request an IA from the LB.
+   * Note: Upon startup, if none of your accessible network interfaces are hooked up to a LAN as described in the [§prerequistes](#-In-General), there will be a dialogue in the command prompt from which you launched the GUI, asking you to specify your desired network interface.
+       * Note note: even after you specify that interface, the whole thing is unlikely to work because of what addresses the application logic expects the LB to have.
+   * Note: LB and IA acquisition can also be semi-automatically done via the buttons, or manually done via the entry fields.
+     * Before you read all the below points, this is just listed for clarification in case of confusion, but it should all be pretty intuitive from the start.
+     * The LB Address field can be freely edited before an IA has been requested
+     * The LB Address field cannot be edited after IA acquisition until the IA is returned.
+     * The IA Address field can be freely edited before an IA has been requested
+     * The IA Address field cannot be edited after IA acquisition until the IA is returned.
+     * The IA Request button is disabled until a valid IP address on the LAN is in the LB Address field.
+     * The IA Request button turns into the IA Return button on IA acquisition
+     * The START button is disabled until until a valid IP address on the LAN is in the IA Address field.
+2. Press the Browse button in section 1 of the UI and browse for a folder with input images.
+   * Note: They all need to be at the root of the folder, but do not have to all be greyscale and 28x28px. The UI will automatically squash and process the images for you.
+3. Press the START button to start the batch inference job.
+4. As the inference runs, statuses will start to populate the piecemap. Yellow means correct, red means incorrect, and black means timeout. You can hover over each piece to see the input image and output classification of that particular inference. Even before the inference starts, you can mouse over to preview the inputs.
+5. As the inference runs, the stats in section 3 of the UI will also procedurally populate.
+6. Let the batch finish, or press STOP to stop it at any time. After stopping, the job needs to be restarted from the first input.
+7. After you are done inspecting the results, load in another dataset per step 2, and repeat!
