@@ -133,3 +133,5 @@ The client can be run in two ways:
 5. As the inference runs, the stats in section 3 of the UI will also procedurally populate.
 6. Let the batch finish, or press STOP to stop it at any time. After stopping, the job needs to be restarted from the first input.
 7. After you are done inspecting the results, load in another dataset per step 2, and repeat!
+8. The GUI should automatically release the IA it has requested upon quit, so go ahead and just close that window.
+   * Due to LB network conditions, this may take a little bit sometimes because it's a TCP connection. Just wait it out if it appears to hang, a few seconds should do it.
