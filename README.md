@@ -99,13 +99,13 @@ The client can be run in two ways:
    2. Double click `RUNME.bat`.
        * Note: I promise it's not a virus, I just wanted the name to stand out in this busy folder. Feel free to read over the script in your editor, it's not long.
    3. Wait for it to automatically set up your Python environment correctly.
-   4. If the GUI shows up, you're done! Go to [§Using the GUI](#-Using-the-GUI).
+   4. If the GUI shows up, you're done! Go to [§Using the GUI](#using-the-gui).
 2. If you're here, the batch file did not work or you're not on Windows. Try the following steps:
-   1. Perform [§CLI Mode](#-CLI-Mode) steps `1` through `3` as listed in the section below.
-       * Note: note the note in [§CLI Mode](#-CLI-Mode) step 3.
+   1. Perform [§CLI Mode](#cli-mode) steps `1` through `3` as listed in the section below.
+       * Note: note the note in [§CLI Mode](#cli-mode) step 3.
    2. `pipenv run python gui_v2.py`
-   3. If the GUI shows up, you're done! Go to [§Using the GUI](#-Using-the-GUI).
-3.  If you're here, the GUI has failed for reasons I did not anticipate in this document. If you are familiar with the tools, feel free to debug it yourself, else go to [§CLI Mode](#-CLI-Mode) for a more pared down but still functional experience.
+   3. If the GUI shows up, you're done! Go to [§Using the GUI](#using-the-gui).
+3.  If you're here, the GUI has failed for reasons I did not anticipate in this document. If you are familiar with the tools, feel free to debug it yourself, else go to [§CLI Mode](#cli-mode) for a more pared down but still functional experience.
 #### CLI Mode
 1. Open up a terminal and cd to `src/python`.
 2. `pip install pipenv`
@@ -115,7 +115,7 @@ The client can be run in two ways:
 
 ### Using the GUI
 1. Upon startup, the UI will automatically detect the correct network interface and scan for the LB on that interface. If LB acquisition was successful, it will automatically request an IA from the LB.
-   * Note: Upon startup, if none of your accessible network interfaces are hooked up to a LAN as described in the [§prerequistes](#-In-General), there will be a dialogue in the command prompt from which you launched the GUI, asking you to specify your desired network interface.
+   * Note: Upon startup, if none of your accessible network interfaces are hooked up to a LAN as described in the [§prerequistes](#in-general), there will be a dialogue in the command prompt from which you launched the GUI, asking you to specify your desired network interface.
        * Note note: even after you specify that interface, the whole thing is unlikely to work because of what addresses the application logic expects the LB to have.
    * Note: LB and IA acquisition can also be semi-automatically done via the buttons, or manually done via the entry fields.
      * Before you read all the below points, this is just listed for clarification in case of confusion, but it should all be pretty intuitive from the start.
