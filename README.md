@@ -111,7 +111,7 @@ The client can be run in two ways:
 2. `pip install pipenv`
 3. `pipenv install`
     * Note: if `pipenv install` is broken, just run the code as described and install missing packages the code complains about using `pipenv run pip install <missing_module>` as you go.
-4. Invoke `client.py ia <IA IP addr> <image file>` to send an inference request to the specified accelerator with the specified input image, print the result, and exit.
+4. Invoke `pipenv run python client.py ia <IA IP addr> <image file>` to send an inference request to the specified accelerator with the specified input image, print the result, and exit.
 
 ### Using the GUI
 1. 
