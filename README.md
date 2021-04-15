@@ -1,10 +1,14 @@
 # Infernet
 ![](doc/images/infernet.png?raw=true)
+
 ## Contributors
 
 - [James Liu](https://github.com/diesisfox)
 - [Quinn Smith](https://github.com/quinnwerks)
 - [Andrew Uderian](https://github.com/auderian)
+
+## Video
+[Available on YouTube](https://youtu.be/tGFEsRELrLE)
 
 ## Project Description
 
