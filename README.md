@@ -77,7 +77,7 @@ infernet
         * Note: the design is marginal with regards to timing closure. If timing fails, don't panic, and try again with a different high-effort Implementation strategy.
     5. Use the Vivado hardware manager to load the bitstream and the `debug_nets.ltx` file onto the board.
     6. Open a dashboard for the vios. Toggle the signal `glbl_reset` from 1 to 0.
-    7. To test that the accelerator send a request using the (#cli-mode) of the client.
+    7. To test that the accelerator send a request using the [§CLI Mode](#cli-mode) of the client.
     8. Perform steps `1.i` to `1.vi` for as many accelerators as you want to have running.
 2. Setup the load balancer
     1. Open the project in `src/lb/project/project.sdk/`
